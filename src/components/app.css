@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  background: #222;
+}
+
+.index {
+  width: 40%;
+  margin: 50px auto;
+  padding: 10px;
+  background: #333;
+  border: 1px solid #000;
+  border-radius: 2px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.index code {
+  padding: 3px 6px;
+  color: #000;
+  background: #fff;
+  font-size: 14px;
+}
+
+.index img {
+  margin: 40px auto;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+}
+
+.notice {
+  margin: 20px auto;
+  padding: 15px 0;
+  text-align: center;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  background: #666;
+}

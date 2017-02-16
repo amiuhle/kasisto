@@ -1,0 +1,9 @@
+{
+  "generator-react-webpack": {
+    "appName": "kasisto",
+    "style": "scss",
+    "cssmodules": false,
+    "postcss": true,
+    "generatedWithVersion": 4
+  }
+}
