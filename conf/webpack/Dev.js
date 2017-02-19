@@ -1,15 +1,15 @@
-'use strict';
+'use strict'
 
 /**
  * Default dev server configuration.
  */
-const webpack = require('webpack');
-const WebpackBaseConfig = require('./Base');
+const webpack = require('webpack')
+const WebpackBaseConfig = require('./Base')
 
 class WebpackDevConfig extends WebpackBaseConfig {
 
-  constructor() {
-    super();
+  constructor () {
+    super()
     this.config = {
       devtool: 'cheap-module-source-map',
       entry: [
@@ -22,8 +22,8 @@ class WebpackDevConfig extends WebpackBaseConfig {
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
       ]
-    };
+    }
   }
 }
 
-module.exports = WebpackDevConfig;
+module.exports = WebpackDevConfig

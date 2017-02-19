@@ -1,7 +1,7 @@
-import baseConfig from './base';
+import baseConfig from './base'
 
 const config = {
-  appEnv: 'dist',
-};
+  appEnv: 'dist'
+}
 
-export default Object.freeze(Object.assign({}, baseConfig, config));
+export default Object.freeze(Object.assign({}, baseConfig, config))

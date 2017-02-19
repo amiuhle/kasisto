@@ -1,9 +1,8 @@
-'use strict';
+'use strict'
 
-const webpackCfg = require('./webpack.config')('test');
+const webpackCfg = require('./webpack.config')('test')
 
-module.exports = function karmaConfig(config) {
-
+module.exports = function karmaConfig (config) {
   config.set({
     browsers: ['PhantomJS'],
     files: [
@@ -60,5 +59,5 @@ module.exports = function karmaConfig(config) {
         }
       ]
     }
-  });
-};
+  })
+}

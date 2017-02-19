@@ -1,36 +1,36 @@
-'use strict';
-const fs = require('fs');
-const path = require('path');
-const npmBase = path.join(__dirname, '../../node_modules');
+'use strict'
+const fs = require('fs')
+const path = require('path')
+const npmBase = path.join(__dirname, '../../node_modules')
 class WebpackBaseConfig {
-  constructor() {
-    this._config = {};
+  constructor () {
+    this._config = {}
   }
-  get includedPackages() {
-    return [].map(pkg => fs.realpathSync(path.join(npmBase, pkg)));
+  get includedPackages () {
+    return [].map(pkg => fs.realpathSync(path.join(npmBase, pkg)))
   }
-  set config(data) {
-    this._config = Object.assign({}, this.defaultSettings, data);
-    return this._config;
+  set config (data) {
+    this._config = Object.assign({}, this.defaultSettings, data)
+    return this._config
   }
-  get config() {
-    return this._config;
+  get config () {
+    return this._config
   }
-  get env() {
-    return 'dev';
+  get env () {
+    return 'dev'
   }
-  get srcPathAbsolute() {
-    return path.resolve('./src');
+  get srcPathAbsolute () {
+    return path.resolve('./src')
   }
-  get testPathAbsolute() {
-    return path.resolve('./test');
+  get testPathAbsolute () {
+    return path.resolve('./test')
   }
-  get defaultSettings() {
+  get defaultSettings () {
     const cssModulesQuery = {
       modules: true,
       importLoaders: 1,
       localIdentName: '[name]-[local]-[hash:base64:5]'
-    };
+    }
     return {
       context: this.srcPathAbsolute,
       devtool: 'eval',
@@ -157,13 +157,13 @@ class WebpackBaseConfig {
       plugins: [],
       resolve: {
         alias: {
-          actions: `${ this.srcPathAbsolute }/actions/`,
-          components: `${ this.srcPathAbsolute }/components/`,
-          config: `${ this.srcPathAbsolute }/config/${ this.env }.js`,
-          images: `${ this.srcPathAbsolute }/images/`,
-          sources: `${ this.srcPathAbsolute }/sources/`,
-          stores: `${ this.srcPathAbsolute }/stores/`,
-          styles: `${ this.srcPathAbsolute }/styles/`
+          actions: `${this.srcPathAbsolute}/actions/`,
+          components: `${this.srcPathAbsolute}/components/`,
+          config: `${this.srcPathAbsolute}/config/${this.env}.js`,
+          images: `${this.srcPathAbsolute}/images/`,
+          sources: `${this.srcPathAbsolute}/sources/`,
+          stores: `${this.srcPathAbsolute}/stores/`,
+          styles: `${this.srcPathAbsolute}/styles/`
         },
         extensions: [
           '.js',
@@ -175,9 +175,9 @@ class WebpackBaseConfig {
         ]
       },
       postcss: function () {
-        return [];
+        return []
       }
-    };
+    }
   }
 }
-module.exports = WebpackBaseConfig;
+module.exports = WebpackBaseConfig

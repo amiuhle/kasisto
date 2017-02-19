@@ -3,19 +3,19 @@
 /**
  * Default test configuration.
  */
-const WebpackBaseConfig = require('./Base');
-const webpack = require('webpack');
+const WebpackBaseConfig = require('./Base')
+const webpack = require('webpack')
 
 class WebpackTestConfig extends WebpackBaseConfig {
 
-  constructor() {
-    super();
+  constructor () {
+    super()
 
     const cssModulesQuery = {
       modules: true,
       importLoaders: 1,
       localIdentName: '[name]-[local]-[hash:base64:5]'
-    };
+    }
 
     this.config = {
       devtool: 'inline-source-map',
@@ -115,7 +115,7 @@ class WebpackTestConfig extends WebpackBaseConfig {
           'process.env.NODE_ENV': '"test"'
         })
       ]
-    };
+    }
   }
 
   /**
@@ -125,29 +125,28 @@ class WebpackTestConfig extends WebpackBaseConfig {
    * @param {Object} data Keys to assign
    * @return {Object}
    */
-  set config(data) {
-
-    const baseSettings = this.defaultSettings;
-    delete baseSettings.devServer;
-    this._config = Object.assign({}, baseSettings, data);
-    return this._config;
+  set config (data) {
+    const baseSettings = this.defaultSettings
+    delete baseSettings.devServer
+    this._config = Object.assign({}, baseSettings, data)
+    return this._config
   }
 
   /**
    * Get the global config
    * @param {Object} config Final webpack config
    */
-  get config() {
-    return super.config;
+  get config () {
+    return super.config
   }
 
   /**
    * Get the environment name
    * @return {String} The current environment
    */
-  get env() {
-    return 'test';
+  get env () {
+    return 'test'
   }
 }
 
-module.exports = WebpackTestConfig;
+module.exports = WebpackTestConfig
