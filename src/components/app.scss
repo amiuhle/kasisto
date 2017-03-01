@@ -1,14 +1,63 @@
 body {
   margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: normal;
 }
 
 main {
   width: 100vw;
   height: 100vh;
+
   display: flex;
 }
 
 .app {
+  flex: 1;
+
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+
+  textarea {
+    text-align: center;
+    padding: 2em;
+    margin: 2em;
+    border: 1px solid #ccc;
+    border-radius: 0.1em;
+    font-family: Courier New, Courier, monospace;
+  }
+
+  .success {
+    padding: 2em;
+    margin: 2em;
+    width: 60%;
+    align-self: center;
+    color: green;
+    border: 2px solid green;
+    border-radius: 0.2em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.2em;
+    text-transform: uppercase;
+
+    .check {
+      display: inline-block;
+      text-align: center;
+      font-size: 1.5em;
+      width: 1.5em;
+      height: 1.5em;
+      border: inherit;
+      border-radius: 50%;
+
+      margin-right: 0.5em;
+    }
+  }
 }

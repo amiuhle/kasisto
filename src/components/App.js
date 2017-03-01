@@ -44,12 +44,22 @@ class AppComponent extends Component {
     if (ready) {
       return (
         <div className='app'>
-          <QRCode value={uri} />
-          <input value={integratedAddress} />
+          <p>
+            Please pay <code>1 XMR</code> to the following <strong>testnet</strong> address:
+          </p>
+          <p>
+            <QRCode value={uri} />
+          </p>
+          <textarea>{integratedAddress}</textarea>
           {
             (() => {
               if (paymentReceived) {
-                return <div>Payment received</div>
+                return (
+                  <p className='success'>
+                    <span className='check'>✔</span>
+                    <strong>Payment received</strong>
+                  </p>
+                )
               }
             })()
           }
