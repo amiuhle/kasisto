@@ -13,7 +13,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </AppContainer>,
-  document.getElementById('app')
+  document.querySelector('main')
 )
 
 if (module.hot) {
@@ -26,7 +26,7 @@ if (module.hot) {
           <NextApp />
         </Provider>
       </AppContainer>,
-      document.getElementById('app')
+      document.querySelector('main')
     )
   })
 }
