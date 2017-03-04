@@ -57,17 +57,26 @@ header {
 
   h1 {
     flex: 1;
-    order: 1;
+    order: 2;
     text-align: center;
   }
 
   h2 {
     flex: 0 0 200px;
+
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      margin-right: 0.5em;
+    }
   }
 
+  h2:first-of-type {
+    order: 3;
+  }
   h2:last-of-type {
-    order: 2;
-    @extend %flip;
+    order: 1;
   }
 }
 
