@@ -43,26 +43,49 @@ class AppComponent extends Component {
 
     if (ready) {
       return (
-        <div className='app'>
-          <p>
-            Please pay <code>1 XMR</code> to the following <strong>testnet</strong> address:
-          </p>
-          <p>
-            <QRCode value={uri} />
-          </p>
-          <textarea>{integratedAddress}</textarea>
-          {
-            (() => {
-              if (paymentReceived) {
-                return (
-                  <p className='success'>
-                    <span className='check'>✔</span>
-                    <strong>Payment received</strong>
-                  </p>
-                )
-              }
-            })()
-          }
+        <div className='app flip'>
+          <section className='merchant-view flip'>
+            <div className='payment-request'>
+              <h3>Transaction details</h3>
+              <label>
+                <span>Receipt #</span>
+                <input type='text' />
+              </label>
+              <label>
+                <span>Amount</span>
+                <input type='number' />
+              </label>
+            </div>
+            <div className='payment-result'>
+              <h3>Waiting for payment...</h3>
+            </div>
+          </section>
+          <header className='flip'>
+            <h1>Kasisto</h1>
+            <h2>Merchant view</h2>
+            <h2>Client view</h2>
+          </header>
+          <section className='client-view'>
+            <p>
+              Please pay <code>1 XMR</code> to the following <strong>testnet</strong> address:
+            </p>
+            <p>
+              <QRCode value={uri} />
+            </p>
+            <textarea>{integratedAddress}</textarea>
+            {
+              (() => {
+                if (paymentReceived) {
+                  return (
+                    <p className='success'>
+                      <span className='check'>✔</span>
+                      <strong>Payment received</strong>
+                    </p>
+                  )
+                }
+              })()
+            }
+          </section>
         </div>
       )
     } else {

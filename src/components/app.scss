@@ -1,23 +1,80 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  text-align: center;
 }
 
-h1 {
+h1, h2, h3 {
   font-family: 'Ubuntu', sans-serif;
   font-weight: normal;
 }
 
-main {
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+.flip, %flip {
+  transform: rotate(180deg);
+}
+
+body {
   width: 100vw;
   height: 100vh;
 
   display: flex;
+  flex-direction: column;
+
+}
+
+main {
+  flex: 1;
+  display: flex;
+}
+
+header {
+  display: flex;
+  align-items: center;
+
+  border-width: 1px;
+  border-color: #333;
+  border-style: solid none;
+
+  padding: 0.5em 1em;
+  margin: 2.5em -1em;
+
+  h1, h2 {
+    margin: 0;
+  }
+
+  h1 {
+    flex: 1;
+    order: 1;
+    text-align: center;
+  }
+
+  h2 {
+    flex: 0 0 200px;
+  }
+
+  h2:last-of-type {
+    order: 2;
+    @extend %flip;
+  }
 }
 
 .app {
   flex: 1;
+
+  margin: 0 1em;
 
   display: flex;
   flex-direction: column;
@@ -26,38 +83,72 @@ main {
   textarea {
     text-align: center;
     padding: 2em;
-    margin: 2em;
     border: 1px solid #ccc;
     border-radius: 0.1em;
     font-family: Courier New, Courier, monospace;
   }
+}
 
-  .success {
-    padding: 2em;
-    margin: 2em;
-    width: 60%;
-    align-self: center;
-    color: green;
-    border: 2px solid green;
-    border-radius: 0.2em;
+.client-view, .merchant-view {
+    flex: 1;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: stretch;
+}
 
-    font-size: 1.2em;
-    text-transform: uppercase;
+.client-view {
+  flex-direction: column;
+}
 
-    .check {
-      display: inline-block;
-      text-align: center;
-      font-size: 1.5em;
-      width: 1.5em;
-      height: 1.5em;
-      border: inherit;
-      border-radius: 50%;
+.success {
+  padding: 2em;
+  width: 60%;
+  align-self: center;
+  color: green;
+  border: 2px solid green;
+  border-radius: 0.2em;
 
-      margin-right: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2em;
+  text-transform: uppercase;
+
+  .check {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    border: inherit;
+    border-radius: 50%;
+
+    margin-right: 0.5em;
+  }
+}
+
+.merchant-view {
+  justify-content: space-between;
+}
+
+.payment-request, .payment-result {
+  flex: 0 0 calc(50% - 1em);
+}
+
+.payment-request {
+  label {
+    display: flex;
+
+    span {
+      flex: 1;
+    }
+
+    input {
+      border: 1px solid #333;
+      padding: 3px;
+      margin: 2px;
+      flex: 0 0 200px;
     }
   }
 }
