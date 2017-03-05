@@ -16,12 +16,30 @@ A Proof Of Concept of the above. Receiving unconfirmed payments on testnet with 
 Roadmap
 -------
 
-* [ ] Make it pretty
+* [ ] Make it pretty - If you'd like to make a design proposal, please submit an issue!
 * [ ] Make it progressive
+
+Questions
+---------
+
+If you can help with any of these, please submit an issue, or comment if there already is one.
+
+* What's required for proper taxation? Reference to receipt # enough? Would a barcode scanner help?
+
+Development
+-----------
+
+Clone, install dependencies and run.
+
+```
+git clone https://github.com/amiuhle/kasisto.git
+yarn
+yarn start
+```
 
 TODOs
 -----
 
 ### `src/lib/monero-payments`
 
-will eventually become a separate node library.
+will eventually become a separate node library to easily receive Monero. Any suggestions for a top level API would be welcome, please submit an issue.
