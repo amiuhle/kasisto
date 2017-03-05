@@ -10,13 +10,17 @@ import React, {
 } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import {} from '../actions/'
+import {
+  setReceipt,
+  setAmount,
+  setTip
+} from '../actions/'
 import Main from '../components/App'
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render () {
-    const { actions } = this.props
-    return <Main actions={actions} />
+    const { actions, payment } = this.props
+    return <Main {... { actions, payment }} />
   }
 }
 /* Populated by react-webpack-redux:reducer
@@ -25,16 +29,22 @@ class App extends Component {
  *       adjust it here.
  */
 App.propTypes = {
-  actions: PropTypes.shape({})
+  actions: PropTypes.shape({}),
+  payment: PropTypes.object.isRequired
 }
-function mapStateToProps (state) { // eslint-disable-line no-unused-vars
+function mapStateToProps (state) {
+  // eslint-disable-line no-unused-vars
   /* Populated by react-webpack-redux:reducer */
-  const props = {}
+  const props = { payment: state.payment }
   return props
 }
 function mapDispatchToProps (dispatch) {
   /* Populated by react-webpack-redux:action */
-  const actions = {}
+  const actions = {
+    setReceipt,
+    setAmount,
+    setTip
+  }
   const actionMap = { actions: bindActionCreators(actions, dispatch) }
   return actionMap
 }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 import QRCode from 'qrcode.react'
 
@@ -7,6 +7,78 @@ import {
 } from '../lib/monero-payments'
 
 import './app.scss'
+
+class PaymentRequest extends Component {
+
+  constructor (props) {
+    super(props)
+
+    const relevant = ['amount', 'receipt', 'tip']
+
+    this.state = relevant.reduce((state, prop) => {
+      state[prop] = props[prop]
+      return state
+    }, {})
+
+    relevant.forEach((prop) => {
+      const capitalized = prop.charAt(0).toUpperCase() + prop.slice(1)
+      this[`on${capitalized}Change`] = (e) => {
+        console.log(`on${capitalized}Change`, prop, e)
+        // debugger
+        const state = {}
+        state[prop] = e.target.value
+        console.log('setState', state)
+        this.setState(state)
+      }
+    })
+  }
+
+  get isMerchant () {
+    return this.props.view === 'merchant'
+  }
+
+  get isClient () {
+    return this.props.view === 'client'
+  }
+
+  get title () {
+    return this.isMerchant ? 'Transaction details' : 'Payment due'
+  }
+
+  render () {
+    const { isClient, isMerchant } = this
+    const { amount, receipt, tip, setAmount, setReceipt, setTip, children } = this.props
+
+    return (
+      <div className='payment-request'>
+        <h3>{this.title}</h3>
+        {children}
+        <label>
+          <span>Receipt #</span>
+          <input type='text' className='align-right' value={receipt} readOnly={isClient} onChange={setReceipt} />
+        </label>
+        <label>
+          <span>Amount due</span>
+          <input type='number' className='align-right' value={amount} readOnly={isClient} onChange={setAmount} />
+        </label>
+        <label>
+          <span>Tip</span>
+          <input type='number' className='align-right' value={tip} readOnly={isMerchant} onChange={setTip} />
+        </label>
+        <label>
+          <span>Total</span>
+          <input className='align-right' value={amount + tip} readOnly />
+        </label>
+      </div>
+    )
+  }
+}
+
+PaymentRequest.propTypes = {
+  onAmountChange: PropTypes.func,
+  onTipChange: PropTypes.func,
+  view: PropTypes.oneOf(['client', 'merchant']).isRequired
+}
 
 class AppComponent extends Component {
 
@@ -54,49 +126,53 @@ class AppComponent extends Component {
     }
 
     if (ready) {
+      const { payment, actions } = this.props
+
+      console.log(payment, actions)
+
       return (
         <div className={`app ${isRotated ? 'flip' : ''}`}>
-          <section className='merchant-view flip'>
-            <div className='payment-request'>
-              <h3>Transaction details</h3>
-              <label>
-                <span>Receipt #</span>
-                <input type='text' />
-              </label>
-              <label>
-                <span>Amount</span>
-                <input type='number' />
-              </label>
-            </div>
-            <div className='payment-result'>
-              <h3>Waiting for payment...</h3>
-            </div>
-          </section>
           <header>
             <h1 className={isRotated ? 'flip' : ''}>Kasisto</h1>
             <h2 className='flip'>{rotateButton(isRotated)} Merchant view</h2>
             <h2>{rotateButton(!isRotated)} Client view</h2>
           </header>
-          <section className='client-view'>
-            <p>
-              Please pay <code>1 XMR</code> to the following <strong>testnet</strong> address:
-            </p>
-            <p>
-              <QRCode value={uri} />
-            </p>
-            <textarea>{integratedAddress}</textarea>
-            {
-              (() => {
-                if (paymentReceived) {
-                  return (
-                    <p className='success'>
-                      <span className='check'>✔</span>
-                      <strong>Payment received</strong>
-                    </p>
-                  )
-                }
-              })()
-            }
+          <section className='merchant-view halves flip'>
+            <PaymentRequest view='merchant' {... payment} {... actions} />
+            <div className='payment-result'>
+              <h3>Waiting for payment...</h3>
+            </div>
+          </section>
+          <section className='client-view halves'>
+            <div>
+              <PaymentRequest view='client' {... payment} {... actions} >
+                <p>
+                <em><strong>Trinkejo</strong></em> is requesting a payment from you.
+                </p>
+              </PaymentRequest>
+            </div>
+            <div className='align-center'>
+              <h3>Send Monero</h3>
+              {
+                (() => {
+                  if (paymentReceived) {
+                    return (
+                      <p className='success'>
+                        <span className='check'>✔</span>
+                        <strong>Payment received</strong>
+                      </p>
+                    )
+                  } else {
+                    return (
+                      <div>
+                        <QRCode value={uri} />
+                        <textarea value={integratedAddress} readOnly />
+                      </div>
+                    )
+                  }
+                })()
+              }
+            </div>
           </section>
         </div>
       )
