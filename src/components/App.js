@@ -96,7 +96,7 @@ class AppComponent extends Component {
       isRotated: false
     }
 
-    this.wallet = new Wallet('207.154.197.71', 28082)
+    this.wallet = new Wallet('testnet.kasisto.io', 28082, true)
     this.payment = this.wallet.requestPayment()
   }
 
@@ -160,7 +160,7 @@ class AppComponent extends Component {
           </header>
           <section className='merchant-view halves flip'>
             <PaymentRequest view='merchant' {... payment} {... actions} />
-            <div className='payment-result'>
+            <div className='flex flex--column'>
               <h3>Waiting for payment...</h3>
               {
                 (() => {
