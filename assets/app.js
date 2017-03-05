@@ -21685,7 +21685,7 @@ var AppComponent = function (_Component2) {
 
           this.payment.amount = payment.amount;
 
-          return _react2['default'].createElement('div', { className: 'app ' + (isRotated ? 'flip' : '') }, _react2['default'].createElement('header', null, _react2['default'].createElement('h1', { className: isRotated ? 'flip' : '' }, 'Kasisto'), _react2['default'].createElement('h2', { className: 'flip' }, rotateButton(isRotated), ' Merchant view'), _react2['default'].createElement('h2', null, rotateButton(!isRotated), ' Client view')), _react2['default'].createElement('section', { className: 'merchant-view halves flip' }, _react2['default'].createElement(PaymentRequest, _extends({ view: 'merchant' }, payment, actions)), _react2['default'].createElement('div', { className: 'payment-result' }, _react2['default'].createElement('h3', null, 'Waiting for payment...'), function () {
+          return _react2['default'].createElement('div', { className: 'app ' + (isRotated ? 'flip' : '') }, _react2['default'].createElement('header', null, _react2['default'].createElement('h1', { className: isRotated ? 'flip' : '' }, 'Kasisto'), _react2['default'].createElement('h2', { className: 'flip' }, rotateButton(isRotated), ' Merchant view'), _react2['default'].createElement('h2', null, rotateButton(!isRotated), ' Client view')), _react2['default'].createElement('section', { className: 'merchant-view halves flip' }, _react2['default'].createElement(PaymentRequest, _extends({ view: 'merchant' }, payment, actions)), _react2['default'].createElement('div', { className: 'flex flex--column' }, _react2['default'].createElement('h3', null, 'Waiting for payment...'), function () {
             if (amountReceived > 0) {
               return paymentReceived;
             }
