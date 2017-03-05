@@ -7,7 +7,7 @@ import {SET_AMOUNT, SET_RECEIPT, SET_TIP} from '../actions/const'
 
 const initialState = {
   amount: 0.89,
-  receipt: '',
+  receipt: `${new Date().toISOString().slice(0, 10)} / 001`,
   tip: 0
 }
 

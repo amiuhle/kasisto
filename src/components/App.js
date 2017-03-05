@@ -92,6 +92,7 @@ class AppComponent extends Component {
     this.state = {
       ready: false,
       amountReceived: 0,
+      transactionIds: ['5d57c4cc534db0acb8169dff752600757c8e5bc117af61225175a3dab855a6af'],
       isRotated: false
     }
 
@@ -106,15 +107,18 @@ class AppComponent extends Component {
       })
     })
     this.payment.on('payment', (event) => {
-      this.setState({
-        amountReceived: event.amount
-      })
       console.log('onPayment', event, this.payment)
+      this.setState({
+        amountReceived: event.amount,
+        transactionIds: event.transactionIds
+      })
+      const {actions: {setTip}, payment: {amount}} = this.props
+      setTip((Math.round((event.amount - amount) * 1e12) / 1e12))
     })
   }
 
   render () {
-    const { amountReceived, ready, isRotated } = this.state
+    const { amountReceived, transactionIds, ready, isRotated } = this.state
     const { integratedAddress, uri } = this.payment
 
     const rotateButton = (render) => {
@@ -127,6 +131,21 @@ class AppComponent extends Component {
         )
       }
     }
+
+    const paymentReceived = (
+      <div className='payment-result'>
+        <p className='success'>
+          <span className='check'>✔</span>
+          <strong>Payment received</strong>
+        </p>
+        <label>
+          <span>Amount received</span>
+          <input type='text' className='align-right' readOnly value={amountReceived} onFocus={selectAll} />
+        </label>
+        <p className='align-center'>Transaction Ids</p>
+        <textarea className='integrated-address' value={transactionIds.join('\n')} readOnly onFocus={selectAll} />
+      </div>
+    )
 
     if (ready) {
       const { payment, actions } = this.props
@@ -143,6 +162,13 @@ class AppComponent extends Component {
             <PaymentRequest view='merchant' {... payment} {... actions} />
             <div className='payment-result'>
               <h3>Waiting for payment...</h3>
+              {
+                (() => {
+                  if (amountReceived > 0) {
+                    return paymentReceived
+                  }
+                })()
+              }
             </div>
           </section>
           <section className='client-view halves'>
@@ -158,18 +184,11 @@ class AppComponent extends Component {
               {
                 (() => {
                   if (amountReceived > 0) {
-                    return (
-                      <div className='payment-result'>
-                        <p className='success'>
-                          <span className='check'>✔</span>
-                          <strong>Payment received</strong>
-                        </p>
-                      </div>
-                    )
+                    return paymentReceived
                   } else {
                     return (
                       <div className='payment-result'>
-                        <a className='align-center qr-code' href={uri}><QRCode value={uri} /></a>
+                        <a className='align-center qr-code'><QRCode value={`${uri}?tx_amount=${encodeURIComponent(payment.amount)}`} /></a>
                         <label>
                           <span>Please send</span>
                           <input type='text' className='align-right' readOnly value={payment.amount + payment.tip} onFocus={selectAll} />

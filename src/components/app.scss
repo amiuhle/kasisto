@@ -119,8 +119,7 @@ header {
 }
 
 .success {
-  padding: 2em;
-  width: 60%;
+  padding: 1em;
   align-self: center;
   color: green;
   border: 2px solid green;
@@ -130,7 +129,6 @@ header {
   align-items: center;
   justify-content: center;
 
-  font-size: 1.2em;
   text-transform: uppercase;
 
   .check {
