@@ -57,13 +57,13 @@
     "rimraf": "^2.5.2",
     "sass-loader": "^6.0.1",
     "sinon": "^1.17.3",
-    "standard": "^8.6.0",
+    "standard": "^9.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack-dev-server": "^2.1.0-beta"
   },
   "dependencies": {
-    "cross-env": "^3.1.0",
+    "cross-env": "^3.2.3",
     "monero-nodejs": "https://github.com/amiuhle/monero-nodejs.git#fetch-only",
     "qrcode.react": "^0.6.1",
     "react": "^15.0.1",
