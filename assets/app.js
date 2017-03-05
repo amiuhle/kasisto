@@ -259,7 +259,7 @@ module.exports = reactProdInvariant;
 
 
 var base64 = __webpack_require__(138)
-var ieee754 = __webpack_require__(175)
+var ieee754 = __webpack_require__(158)
 var isArray = __webpack_require__(76)
 
 exports.Buffer = Buffer
@@ -2157,7 +2157,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 var _prodInvariant = __webpack_require__(2);
 
 var DOMProperty = __webpack_require__(20);
-var ReactDOMComponentFlags = __webpack_require__(91);
+var ReactDOMComponentFlags = __webpack_require__(90);
 
 var invariant = __webpack_require__(0);
 
@@ -2684,9 +2684,9 @@ module.exports = { debugTool: debugTool };
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
-var CallbackQueue = __webpack_require__(89);
+var CallbackQueue = __webpack_require__(88);
 var PooledClass = __webpack_require__(17);
-var ReactFeatureFlags = __webpack_require__(94);
+var ReactFeatureFlags = __webpack_require__(93);
 var ReactReconciler = __webpack_require__(21);
 var Transaction = __webpack_require__(36);
 
@@ -3299,11 +3299,11 @@ var EE = __webpack_require__(26).EventEmitter;
 var inherits = __webpack_require__(14);
 
 inherits(Stream, EE);
-Stream.Readable = __webpack_require__(69);
-Stream.Writable = __webpack_require__(306);
-Stream.Duplex = __webpack_require__(303);
-Stream.Transform = __webpack_require__(120);
-Stream.PassThrough = __webpack_require__(305);
+Stream.Readable = __webpack_require__(67);
+Stream.Writable = __webpack_require__(282);
+Stream.Duplex = __webpack_require__(279);
+Stream.Transform = __webpack_require__(119);
+Stream.PassThrough = __webpack_require__(281);
 
 // Backwards-compat with node 0.4.x
 Stream.Stream = Stream;
@@ -3543,7 +3543,7 @@ var objectKeys = Object.keys || function (obj) {
 module.exports = Duplex;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(47);
+var processNextTick = __webpack_require__(45);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -3551,8 +3551,8 @@ var util = __webpack_require__(25);
 util.inherits = __webpack_require__(14);
 /*</replacement>*/
 
-var Readable = __webpack_require__(119);
-var Writable = __webpack_require__(68);
+var Readable = __webpack_require__(118);
+var Writable = __webpack_require__(66);
 
 util.inherits(Duplex, Readable);
 
@@ -3616,11 +3616,11 @@ function forEach(xs, f) {
 
 
 
-var DOMNamespaces = __webpack_require__(49);
+var DOMNamespaces = __webpack_require__(47);
 var setInnerHTML = __webpack_require__(38);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(57);
-var setTextContent = __webpack_require__(106);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(55);
+var setTextContent = __webpack_require__(105);
 
 var ELEMENT_NODE_TYPE = 1;
 var DOCUMENT_FRAGMENT_NODE_TYPE = 11;
@@ -3954,7 +3954,7 @@ module.exports = DOMProperty;
 
 
 
-var ReactRef = __webpack_require__(251);
+var ReactRef = __webpack_require__(227);
 var ReactInstrumentation = __webpack_require__(10);
 
 var warning = __webpack_require__(1);
@@ -4129,16 +4129,16 @@ module.exports = ReactReconciler;
 
 var _assign = __webpack_require__(4);
 
-var ReactChildren = __webpack_require__(294);
-var ReactComponent = __webpack_require__(65);
-var ReactPureComponent = __webpack_require__(299);
-var ReactClass = __webpack_require__(295);
-var ReactDOMFactories = __webpack_require__(296);
+var ReactChildren = __webpack_require__(270);
+var ReactComponent = __webpack_require__(63);
+var ReactPureComponent = __webpack_require__(275);
+var ReactClass = __webpack_require__(271);
+var ReactDOMFactories = __webpack_require__(272);
 var ReactElement = __webpack_require__(23);
-var ReactPropTypes = __webpack_require__(297);
-var ReactVersion = __webpack_require__(300);
+var ReactPropTypes = __webpack_require__(273);
+var ReactVersion = __webpack_require__(276);
 
-var onlyChild = __webpack_require__(301);
+var onlyChild = __webpack_require__(277);
 var warning = __webpack_require__(1);
 
 var createElement = ReactElement.createElement;
@@ -4226,10 +4226,10 @@ var _assign = __webpack_require__(4);
 var ReactCurrentOwner = __webpack_require__(13);
 
 var warning = __webpack_require__(1);
-var canDefineProperty = __webpack_require__(116);
+var canDefineProperty = __webpack_require__(115);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
-var REACT_ELEMENT_TYPE = __webpack_require__(114);
+var REACT_ELEMENT_TYPE = __webpack_require__(113);
 
 var RESERVED_PROPS = {
   key: true,
@@ -5060,12 +5060,12 @@ module.exports = emptyObject;
 
 var _prodInvariant = __webpack_require__(2);
 
-var EventPluginRegistry = __webpack_require__(50);
-var EventPluginUtils = __webpack_require__(51);
-var ReactErrorUtils = __webpack_require__(55);
+var EventPluginRegistry = __webpack_require__(48);
+var EventPluginUtils = __webpack_require__(49);
+var ReactErrorUtils = __webpack_require__(53);
 
-var accumulateInto = __webpack_require__(100);
-var forEachAccumulated = __webpack_require__(101);
+var accumulateInto = __webpack_require__(99);
+var forEachAccumulated = __webpack_require__(100);
 var invariant = __webpack_require__(0);
 
 /**
@@ -5342,10 +5342,10 @@ module.exports = EventPluginHub;
 
 
 var EventPluginHub = __webpack_require__(28);
-var EventPluginUtils = __webpack_require__(51);
+var EventPluginUtils = __webpack_require__(49);
 
-var accumulateInto = __webpack_require__(100);
-var forEachAccumulated = __webpack_require__(101);
+var accumulateInto = __webpack_require__(99);
+var forEachAccumulated = __webpack_require__(100);
 var warning = __webpack_require__(1);
 
 var getListener = EventPluginHub.getListener;
@@ -5535,7 +5535,7 @@ module.exports = ReactInstanceMap;
 
 var SyntheticEvent = __webpack_require__(12);
 
-var getEventTarget = __webpack_require__(60);
+var getEventTarget = __webpack_require__(58);
 
 /**
  * @interface UIEvent
@@ -5756,12 +5756,12 @@ exports.setTyped(TYPED_OK);
 
 var _assign = __webpack_require__(4);
 
-var EventPluginRegistry = __webpack_require__(50);
-var ReactEventEmitterMixin = __webpack_require__(243);
-var ViewportMetrics = __webpack_require__(99);
+var EventPluginRegistry = __webpack_require__(48);
+var ReactEventEmitterMixin = __webpack_require__(219);
+var ViewportMetrics = __webpack_require__(98);
 
-var getVendorPrefixedEventName = __webpack_require__(276);
-var isEventSupported = __webpack_require__(61);
+var getVendorPrefixedEventName = __webpack_require__(252);
+var isEventSupported = __webpack_require__(59);
 
 /**
  * Summary of `ReactBrowserEventEmitter` event handling:
@@ -6088,9 +6088,9 @@ module.exports = ReactBrowserEventEmitter;
 
 
 var SyntheticUIEvent = __webpack_require__(31);
-var ViewportMetrics = __webpack_require__(99);
+var ViewportMetrics = __webpack_require__(98);
 
-var getEventModifierState = __webpack_require__(59);
+var getEventModifierState = __webpack_require__(57);
 
 /**
  * @interface MouseEvent
@@ -6523,12 +6523,12 @@ module.exports = escapeTextContentForBrowser;
 
 
 var ExecutionEnvironment = __webpack_require__(7);
-var DOMNamespaces = __webpack_require__(49);
+var DOMNamespaces = __webpack_require__(47);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
 var NONVISIBLE_TEST = /<(!--|link|noscript|meta|script|style)[ \r\n\t\f\/>]/;
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(57);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(55);
 
 // SVG temp container for IE lacking innerHTML
 var reusableSVGContainer;
@@ -6614,12 +6614,12 @@ module.exports = setInnerHTML;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(309);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(308);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__combineReducers__ = __webpack_require__(285);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__applyMiddleware__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__compose__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils_warning__ = __webpack_require__(122);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "createStore", function() { return __WEBPACK_IMPORTED_MODULE_0__createStore__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "combineReducers", function() { return __WEBPACK_IMPORTED_MODULE_1__combineReducers__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "bindActionCreators", function() { return __WEBPACK_IMPORTED_MODULE_2__bindActionCreators__["a"]; });
@@ -6672,8 +6672,8 @@ if (false) {
 
 
 
-var punycode = __webpack_require__(203);
-var util = __webpack_require__(320);
+var punycode = __webpack_require__(180);
+var util = __webpack_require__(296);
 
 exports.parse = urlParse;
 exports.resolve = urlResolve;
@@ -6748,7 +6748,7 @@ var protocolPattern = /^([a-z0-9.+-]+:)/i,
       'gopher:': true,
       'file:': true
     },
-    querystring = __webpack_require__(212);
+    querystring = __webpack_require__(189);
 
 function urlParse(url, parseQueryString, slashesDenoteHost) {
   if (url && util.isObject(url) && url instanceof Url) return url;
@@ -10201,9 +10201,9 @@ module.exports = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseGetTag_js__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(185);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isObjectLike_js__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseGetTag_js__ = __webpack_require__(165);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getPrototype_js__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isObjectLike_js__ = __webpack_require__(172);
 
 
 
@@ -10272,420 +10272,6 @@ function isPlainObject(value) {
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer, global) {
-/**
- * body.js
- *
- * Body interface provides common methods for Request and Response
- */
-
-var convert = __webpack_require__(146).convert;
-var bodyStream = __webpack_require__(177);
-var PassThrough = __webpack_require__(16).PassThrough;
-var FetchError = __webpack_require__(80);
-
-module.exports = Body;
-
-/**
- * Body class
- *
- * @param   Stream  body  Readable stream
- * @param   Object  opts  Response options
- * @return  Void
- */
-function Body(body, opts) {
-
-	opts = opts || {};
-
-	this.body = body;
-	this.bodyUsed = false;
-	this.size = opts.size || 0;
-	this.timeout = opts.timeout || 0;
-	this._raw = [];
-	this._abort = false;
-
-}
-
-/**
- * Decode response as json
- *
- * @return  Promise
- */
-Body.prototype.json = function() {
-
-	// for 204 No Content response, buffer will be empty, parsing it will throw error
-	if (this.status === 204) {
-		return Body.Promise.resolve({});
-	}
-
-	return this._decode().then(function(buffer) {
-		return JSON.parse(buffer.toString());
-	});
-
-};
-
-/**
- * Decode response as text
- *
- * @return  Promise
- */
-Body.prototype.text = function() {
-
-	return this._decode().then(function(buffer) {
-		return buffer.toString();
-	});
-
-};
-
-/**
- * Decode response as buffer (non-spec api)
- *
- * @return  Promise
- */
-Body.prototype.buffer = function() {
-
-	return this._decode();
-
-};
-
-/**
- * Decode buffers into utf-8 string
- *
- * @return  Promise
- */
-Body.prototype._decode = function() {
-
-	var self = this;
-
-	if (this.bodyUsed) {
-		return Body.Promise.reject(new Error('body used already for: ' + this.url));
-	}
-
-	this.bodyUsed = true;
-	this._bytes = 0;
-	this._abort = false;
-	this._raw = [];
-
-	return new Body.Promise(function(resolve, reject) {
-		var resTimeout;
-
-		// body is string
-		if (typeof self.body === 'string') {
-			self._bytes = self.body.length;
-			self._raw = [new Buffer(self.body)];
-			return resolve(self._convert());
-		}
-
-		// body is buffer
-		if (self.body instanceof Buffer) {
-			self._bytes = self.body.length;
-			self._raw = [self.body];
-			return resolve(self._convert());
-		}
-
-		// allow timeout on slow response body
-		if (self.timeout) {
-			resTimeout = setTimeout(function() {
-				self._abort = true;
-				reject(new FetchError('response timeout at ' + self.url + ' over limit: ' + self.timeout, 'body-timeout'));
-			}, self.timeout);
-		}
-
-		// handle stream error, such as incorrect content-encoding
-		self.body.on('error', function(err) {
-			reject(new FetchError('invalid response body at: ' + self.url + ' reason: ' + err.message, 'system', err));
-		});
-
-		// body is stream
-		self.body.on('data', function(chunk) {
-			if (self._abort || chunk === null) {
-				return;
-			}
-
-			if (self.size && self._bytes + chunk.length > self.size) {
-				self._abort = true;
-				reject(new FetchError('content size at ' + self.url + ' over limit: ' + self.size, 'max-size'));
-				return;
-			}
-
-			self._bytes += chunk.length;
-			self._raw.push(chunk);
-		});
-
-		self.body.on('end', function() {
-			if (self._abort) {
-				return;
-			}
-
-			clearTimeout(resTimeout);
-			resolve(self._convert());
-		});
-	});
-
-};
-
-/**
- * Detect buffer encoding and convert to target encoding
- * ref: http://www.w3.org/TR/2011/WD-html5-20110113/parsing.html#determining-the-character-encoding
- *
- * @param   String  encoding  Target encoding
- * @return  String
- */
-Body.prototype._convert = function(encoding) {
-
-	encoding = encoding || 'utf-8';
-
-	var ct = this.headers.get('content-type');
-	var charset = 'utf-8';
-	var res, str;
-
-	// header
-	if (ct) {
-		// skip encoding detection altogether if not html/xml/plain text
-		if (!/text\/html|text\/plain|\+xml|\/xml/i.test(ct)) {
-			return Buffer.concat(this._raw);
-		}
-
-		res = /charset=([^;]*)/i.exec(ct);
-	}
-
-	// no charset in content type, peek at response body for at most 1024 bytes
-	if (!res && this._raw.length > 0) {
-		for (var i = 0; i < this._raw.length; i++) {
-			str += this._raw[i].toString()
-			if (str.length > 1024) {
-				break;
-			}
-		}
-		str = str.substr(0, 1024);
-	}
-
-	// html5
-	if (!res && str) {
-		res = /<meta.+?charset=(['"])(.+?)\1/i.exec(str);
-	}
-
-	// html4
-	if (!res && str) {
-		res = /<meta[\s]+?http-equiv=(['"])content-type\1[\s]+?content=(['"])(.+?)\2/i.exec(str);
-
-		if (res) {
-			res = /charset=(.*)/i.exec(res.pop());
-		}
-	}
-
-	// xml
-	if (!res && str) {
-		res = /<\?xml.+?encoding=(['"])(.+?)\1/i.exec(str);
-	}
-
-	// found charset
-	if (res) {
-		charset = res.pop();
-
-		// prevent decode issues when sites use incorrect encoding
-		// ref: https://hsivonen.fi/encoding-menu/
-		if (charset === 'gb2312' || charset === 'gbk') {
-			charset = 'gb18030';
-		}
-	}
-
-	// turn raw buffers into a single utf-8 buffer
-	return convert(
-		Buffer.concat(this._raw)
-		, encoding
-		, charset
-	);
-
-};
-
-/**
- * Clone body given Res/Req instance
- *
- * @param   Mixed  instance  Response or Request instance
- * @return  Mixed
- */
-Body.prototype._clone = function(instance) {
-	var p1, p2;
-	var body = instance.body;
-
-	// don't allow cloning a used body
-	if (instance.bodyUsed) {
-		throw new Error('cannot clone body after it is used');
-	}
-
-	// check that body is a stream and not form-data object
-	// note: we can't clone the form-data object without having it as a dependency
-	if (bodyStream(body) && typeof body.getBoundary !== 'function') {
-		// tee instance body
-		p1 = new PassThrough();
-		p2 = new PassThrough();
-		body.pipe(p1);
-		body.pipe(p2);
-		// set instance body to teed body and return the other teed body
-		instance.body = p1;
-		body = p2;
-	}
-
-	return body;
-}
-
-// expose Promise
-Body.Promise = global.Promise;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(6)))
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports) {
-
-
-/**
- * headers.js
- *
- * Headers class offers convenient helpers
- */
-
-module.exports = Headers;
-
-/**
- * Headers class
- *
- * @param   Object  headers  Response headers
- * @return  Void
- */
-function Headers(headers) {
-
-	var self = this;
-	this._headers = {};
-
-	// Headers
-	if (headers instanceof Headers) {
-		headers = headers.raw();
-	}
-
-	// plain object
-	for (var prop in headers) {
-		if (!headers.hasOwnProperty(prop)) {
-			continue;
-		}
-
-		if (typeof headers[prop] === 'string') {
-			this.set(prop, headers[prop]);
-
-		} else if (typeof headers[prop] === 'number' && !isNaN(headers[prop])) {
-			this.set(prop, headers[prop].toString());
-
-		} else if (headers[prop] instanceof Array) {
-			headers[prop].forEach(function(item) {
-				self.append(prop, item.toString());
-			});
-		}
-	}
-
-}
-
-/**
- * Return first header value given name
- *
- * @param   String  name  Header name
- * @return  Mixed
- */
-Headers.prototype.get = function(name) {
-	var list = this._headers[name.toLowerCase()];
-	return list ? list[0] : null;
-};
-
-/**
- * Return all header values given name
- *
- * @param   String  name  Header name
- * @return  Array
- */
-Headers.prototype.getAll = function(name) {
-	if (!this.has(name)) {
-		return [];
-	}
-
-	return this._headers[name.toLowerCase()];
-};
-
-/**
- * Iterate over all headers
- *
- * @param   Function  callback  Executed for each item with parameters (value, name, thisArg)
- * @param   Boolean   thisArg   `this` context for callback function
- * @return  Void
- */
-Headers.prototype.forEach = function(callback, thisArg) {
-	Object.getOwnPropertyNames(this._headers).forEach(function(name) {
-		this._headers[name].forEach(function(value) {
-			callback.call(thisArg, value, name, this)
-		}, this)
-	}, this)
-}
-
-/**
- * Overwrite header values given name
- *
- * @param   String  name   Header name
- * @param   String  value  Header value
- * @return  Void
- */
-Headers.prototype.set = function(name, value) {
-	this._headers[name.toLowerCase()] = [value];
-};
-
-/**
- * Append a value onto existing header
- *
- * @param   String  name   Header name
- * @param   String  value  Header value
- * @return  Void
- */
-Headers.prototype.append = function(name, value) {
-	if (!this.has(name)) {
-		this.set(name, value);
-		return;
-	}
-
-	this._headers[name.toLowerCase()].push(value);
-};
-
-/**
- * Check for header name existence
- *
- * @param   String   name  Header name
- * @return  Boolean
- */
-Headers.prototype.has = function(name) {
-	return this._headers.hasOwnProperty(name.toLowerCase());
-};
-
-/**
- * Delete all header values given name
- *
- * @param   String  name  Header name
- * @return  Void
- */
-Headers.prototype['delete'] = function(name) {
-	delete this._headers[name.toLowerCase()];
-};
-
-/**
- * Return raw headers (non-spec api)
- *
- * @return  Object
- */
-Headers.prototype.raw = function() {
-	return this._headers;
-};
-
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -10734,7 +10320,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 48 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10751,13 +10337,13 @@ function nextTick(fn, arg1, arg2, arg3) {
 
 
 var DOMLazyTree = __webpack_require__(19);
-var Danger = __webpack_require__(220);
+var Danger = __webpack_require__(196);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(10);
 
-var createMicrosoftUnsafeLocalFunction = __webpack_require__(57);
+var createMicrosoftUnsafeLocalFunction = __webpack_require__(55);
 var setInnerHTML = __webpack_require__(38);
-var setTextContent = __webpack_require__(106);
+var setTextContent = __webpack_require__(105);
 
 function getNodeAfter(parentNode, node) {
   // Special case for text components, which return [open, close] comments
@@ -10964,7 +10550,7 @@ var DOMChildrenOperations = {
 module.exports = DOMChildrenOperations;
 
 /***/ }),
-/* 49 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10989,7 +10575,7 @@ var DOMNamespaces = {
 module.exports = DOMNamespaces;
 
 /***/ }),
-/* 50 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11249,7 +10835,7 @@ var EventPluginRegistry = {
 module.exports = EventPluginRegistry;
 
 /***/ }),
-/* 51 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11267,7 +10853,7 @@ module.exports = EventPluginRegistry;
 
 var _prodInvariant = __webpack_require__(2);
 
-var ReactErrorUtils = __webpack_require__(55);
+var ReactErrorUtils = __webpack_require__(53);
 
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
@@ -11480,7 +11066,7 @@ var EventPluginUtils = {
 module.exports = EventPluginUtils;
 
 /***/ }),
-/* 52 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11544,7 +11130,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 53 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11563,7 +11149,7 @@ module.exports = KeyEscapeUtils;
 var _prodInvariant = __webpack_require__(2);
 
 var React = __webpack_require__(22);
-var ReactPropTypesSecret = __webpack_require__(249);
+var ReactPropTypesSecret = __webpack_require__(225);
 
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
@@ -11684,7 +11270,7 @@ var LinkedValueUtils = {
 module.exports = LinkedValueUtils;
 
 /***/ }),
-/* 54 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11735,7 +11321,7 @@ var ReactComponentEnvironment = {
 module.exports = ReactComponentEnvironment;
 
 /***/ }),
-/* 55 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -11817,7 +11403,7 @@ if (false) {
 module.exports = ReactErrorUtils;
 
 /***/ }),
-/* 56 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12048,7 +11634,7 @@ var ReactUpdateQueue = {
 module.exports = ReactUpdateQueue;
 
 /***/ }),
-/* 57 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12085,7 +11671,7 @@ var createMicrosoftUnsafeLocalFunction = function (func) {
 module.exports = createMicrosoftUnsafeLocalFunction;
 
 /***/ }),
-/* 58 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12140,7 +11726,7 @@ function getEventCharCode(nativeEvent) {
 module.exports = getEventCharCode;
 
 /***/ }),
-/* 59 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12188,7 +11774,7 @@ function getEventModifierState(nativeEvent) {
 module.exports = getEventModifierState;
 
 /***/ }),
-/* 60 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12228,7 +11814,7 @@ function getEventTarget(nativeEvent) {
 module.exports = getEventTarget;
 
 /***/ }),
-/* 61 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12293,7 +11879,7 @@ function isEventSupported(eventNameSuffix, capture) {
 module.exports = isEventSupported;
 
 /***/ }),
-/* 62 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12340,7 +11926,7 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 module.exports = shouldUpdateReactComponent;
 
 /***/ }),
-/* 63 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12727,7 +12313,7 @@ if (false) {
 module.exports = validateDOMNesting;
 
 /***/ }),
-/* 64 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12755,7 +12341,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 65 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12773,9 +12359,9 @@ function warning(message) {
 
 var _prodInvariant = __webpack_require__(24);
 
-var ReactNoopUpdateQueue = __webpack_require__(66);
+var ReactNoopUpdateQueue = __webpack_require__(64);
 
-var canDefineProperty = __webpack_require__(116);
+var canDefineProperty = __webpack_require__(115);
 var emptyObject = __webpack_require__(27);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
@@ -12878,7 +12464,7 @@ if (false) {
 module.exports = ReactComponent;
 
 /***/ }),
-/* 66 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12979,7 +12565,7 @@ var ReactNoopUpdateQueue = {
 module.exports = ReactNoopUpdateQueue;
 
 /***/ }),
-/* 67 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13167,7 +12753,7 @@ function done(stream, er, data) {
 }
 
 /***/ }),
-/* 68 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -13180,7 +12766,7 @@ function done(stream, er, data) {
 module.exports = Writable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(47);
+var processNextTick = __webpack_require__(45);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -13200,7 +12786,7 @@ util.inherits = __webpack_require__(14);
 
 /*<replacement>*/
 var internalUtil = {
-  deprecate: __webpack_require__(321)
+  deprecate: __webpack_require__(297)
 };
 /*</replacement>*/
 
@@ -13725,10 +13311,10 @@ function CorkedRequest(state) {
     }
   };
 }
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(318).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(294).setImmediate))
 
 /***/ }),
-/* 69 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(process) {var Stream = (function (){
@@ -13736,13 +13322,13 @@ function CorkedRequest(state) {
     return __webpack_require__(16); // hack to fix a circular dependency issue when used with browserify
   } catch(_){}
 }());
-exports = module.exports = __webpack_require__(119);
+exports = module.exports = __webpack_require__(118);
 exports.Stream = Stream || exports;
 exports.Readable = exports;
-exports.Writable = __webpack_require__(68);
+exports.Writable = __webpack_require__(66);
 exports.Duplex = __webpack_require__(18);
-exports.Transform = __webpack_require__(67);
-exports.PassThrough = __webpack_require__(118);
+exports.Transform = __webpack_require__(65);
+exports.PassThrough = __webpack_require__(117);
 
 if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
   module.exports = Stream;
@@ -13751,12 +13337,12 @@ if (!process.browser && process.env.READABLE_STREAM === 'disable' && Stream) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 70 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(311)
-var extend = __webpack_require__(324)
-var statusCodes = __webpack_require__(142)
+/* WEBPACK VAR INJECTION */(function(global) {var ClientRequest = __webpack_require__(287)
+var extend = __webpack_require__(300)
+var statusCodes = __webpack_require__(141)
 var url = __webpack_require__(40)
 
 var http = exports
@@ -13836,7 +13422,7 @@ http.METHODS = [
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 71 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Copyright Joyent, Inc. and other Node contributors.
@@ -14063,7 +13649,7 @@ function base64DetectIncompleteChar(buffer) {
 
 
 /***/ }),
-/* 72 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -14591,7 +14177,7 @@ function isPrimitive(arg) {
 }
 exports.isPrimitive = isPrimitive;
 
-exports.isBuffer = __webpack_require__(323);
+exports.isBuffer = __webpack_require__(299);
 
 function objectToString(o) {
   return Object.prototype.toString.call(o);
@@ -14635,7 +14221,7 @@ exports.log = function() {
  *     prototype.
  * @param {function} superCtor Constructor function to inherit prototype from.
  */
-exports.inherits = __webpack_require__(322);
+exports.inherits = __webpack_require__(298);
 
 exports._extend = function(origin, add) {
   // Don't do anything if add isn't an object
@@ -14654,6 +14240,420 @@ function hasOwnProperty(obj, prop) {
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(8)))
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(Buffer, global) {
+/**
+ * body.js
+ *
+ * Body interface provides common methods for Request and Response
+ */
+
+var convert = __webpack_require__(305).convert;
+var bodyStream = __webpack_require__(320);
+var PassThrough = __webpack_require__(16).PassThrough;
+var FetchError = __webpack_require__(125);
+
+module.exports = Body;
+
+/**
+ * Body class
+ *
+ * @param   Stream  body  Readable stream
+ * @param   Object  opts  Response options
+ * @return  Void
+ */
+function Body(body, opts) {
+
+	opts = opts || {};
+
+	this.body = body;
+	this.bodyUsed = false;
+	this.size = opts.size || 0;
+	this.timeout = opts.timeout || 0;
+	this._raw = [];
+	this._abort = false;
+
+}
+
+/**
+ * Decode response as json
+ *
+ * @return  Promise
+ */
+Body.prototype.json = function() {
+
+	// for 204 No Content response, buffer will be empty, parsing it will throw error
+	if (this.status === 204) {
+		return Body.Promise.resolve({});
+	}
+
+	return this._decode().then(function(buffer) {
+		return JSON.parse(buffer.toString());
+	});
+
+};
+
+/**
+ * Decode response as text
+ *
+ * @return  Promise
+ */
+Body.prototype.text = function() {
+
+	return this._decode().then(function(buffer) {
+		return buffer.toString();
+	});
+
+};
+
+/**
+ * Decode response as buffer (non-spec api)
+ *
+ * @return  Promise
+ */
+Body.prototype.buffer = function() {
+
+	return this._decode();
+
+};
+
+/**
+ * Decode buffers into utf-8 string
+ *
+ * @return  Promise
+ */
+Body.prototype._decode = function() {
+
+	var self = this;
+
+	if (this.bodyUsed) {
+		return Body.Promise.reject(new Error('body used already for: ' + this.url));
+	}
+
+	this.bodyUsed = true;
+	this._bytes = 0;
+	this._abort = false;
+	this._raw = [];
+
+	return new Body.Promise(function(resolve, reject) {
+		var resTimeout;
+
+		// body is string
+		if (typeof self.body === 'string') {
+			self._bytes = self.body.length;
+			self._raw = [new Buffer(self.body)];
+			return resolve(self._convert());
+		}
+
+		// body is buffer
+		if (self.body instanceof Buffer) {
+			self._bytes = self.body.length;
+			self._raw = [self.body];
+			return resolve(self._convert());
+		}
+
+		// allow timeout on slow response body
+		if (self.timeout) {
+			resTimeout = setTimeout(function() {
+				self._abort = true;
+				reject(new FetchError('response timeout at ' + self.url + ' over limit: ' + self.timeout, 'body-timeout'));
+			}, self.timeout);
+		}
+
+		// handle stream error, such as incorrect content-encoding
+		self.body.on('error', function(err) {
+			reject(new FetchError('invalid response body at: ' + self.url + ' reason: ' + err.message, 'system', err));
+		});
+
+		// body is stream
+		self.body.on('data', function(chunk) {
+			if (self._abort || chunk === null) {
+				return;
+			}
+
+			if (self.size && self._bytes + chunk.length > self.size) {
+				self._abort = true;
+				reject(new FetchError('content size at ' + self.url + ' over limit: ' + self.size, 'max-size'));
+				return;
+			}
+
+			self._bytes += chunk.length;
+			self._raw.push(chunk);
+		});
+
+		self.body.on('end', function() {
+			if (self._abort) {
+				return;
+			}
+
+			clearTimeout(resTimeout);
+			resolve(self._convert());
+		});
+	});
+
+};
+
+/**
+ * Detect buffer encoding and convert to target encoding
+ * ref: http://www.w3.org/TR/2011/WD-html5-20110113/parsing.html#determining-the-character-encoding
+ *
+ * @param   String  encoding  Target encoding
+ * @return  String
+ */
+Body.prototype._convert = function(encoding) {
+
+	encoding = encoding || 'utf-8';
+
+	var ct = this.headers.get('content-type');
+	var charset = 'utf-8';
+	var res, str;
+
+	// header
+	if (ct) {
+		// skip encoding detection altogether if not html/xml/plain text
+		if (!/text\/html|text\/plain|\+xml|\/xml/i.test(ct)) {
+			return Buffer.concat(this._raw);
+		}
+
+		res = /charset=([^;]*)/i.exec(ct);
+	}
+
+	// no charset in content type, peek at response body for at most 1024 bytes
+	if (!res && this._raw.length > 0) {
+		for (var i = 0; i < this._raw.length; i++) {
+			str += this._raw[i].toString()
+			if (str.length > 1024) {
+				break;
+			}
+		}
+		str = str.substr(0, 1024);
+	}
+
+	// html5
+	if (!res && str) {
+		res = /<meta.+?charset=(['"])(.+?)\1/i.exec(str);
+	}
+
+	// html4
+	if (!res && str) {
+		res = /<meta[\s]+?http-equiv=(['"])content-type\1[\s]+?content=(['"])(.+?)\2/i.exec(str);
+
+		if (res) {
+			res = /charset=(.*)/i.exec(res.pop());
+		}
+	}
+
+	// xml
+	if (!res && str) {
+		res = /<\?xml.+?encoding=(['"])(.+?)\1/i.exec(str);
+	}
+
+	// found charset
+	if (res) {
+		charset = res.pop();
+
+		// prevent decode issues when sites use incorrect encoding
+		// ref: https://hsivonen.fi/encoding-menu/
+		if (charset === 'gb2312' || charset === 'gbk') {
+			charset = 'gb18030';
+		}
+	}
+
+	// turn raw buffers into a single utf-8 buffer
+	return convert(
+		Buffer.concat(this._raw)
+		, encoding
+		, charset
+	);
+
+};
+
+/**
+ * Clone body given Res/Req instance
+ *
+ * @param   Mixed  instance  Response or Request instance
+ * @return  Mixed
+ */
+Body.prototype._clone = function(instance) {
+	var p1, p2;
+	var body = instance.body;
+
+	// don't allow cloning a used body
+	if (instance.bodyUsed) {
+		throw new Error('cannot clone body after it is used');
+	}
+
+	// check that body is a stream and not form-data object
+	// note: we can't clone the form-data object without having it as a dependency
+	if (bodyStream(body) && typeof body.getBoundary !== 'function') {
+		// tee instance body
+		p1 = new PassThrough();
+		p2 = new PassThrough();
+		body.pipe(p1);
+		body.pipe(p2);
+		// set instance body to teed body and return the other teed body
+		instance.body = p1;
+		body = p2;
+	}
+
+	return body;
+}
+
+// expose Promise
+Body.Promise = global.Promise;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(6)))
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+
+/**
+ * headers.js
+ *
+ * Headers class offers convenient helpers
+ */
+
+module.exports = Headers;
+
+/**
+ * Headers class
+ *
+ * @param   Object  headers  Response headers
+ * @return  Void
+ */
+function Headers(headers) {
+
+	var self = this;
+	this._headers = {};
+
+	// Headers
+	if (headers instanceof Headers) {
+		headers = headers.raw();
+	}
+
+	// plain object
+	for (var prop in headers) {
+		if (!headers.hasOwnProperty(prop)) {
+			continue;
+		}
+
+		if (typeof headers[prop] === 'string') {
+			this.set(prop, headers[prop]);
+
+		} else if (typeof headers[prop] === 'number' && !isNaN(headers[prop])) {
+			this.set(prop, headers[prop].toString());
+
+		} else if (headers[prop] instanceof Array) {
+			headers[prop].forEach(function(item) {
+				self.append(prop, item.toString());
+			});
+		}
+	}
+
+}
+
+/**
+ * Return first header value given name
+ *
+ * @param   String  name  Header name
+ * @return  Mixed
+ */
+Headers.prototype.get = function(name) {
+	var list = this._headers[name.toLowerCase()];
+	return list ? list[0] : null;
+};
+
+/**
+ * Return all header values given name
+ *
+ * @param   String  name  Header name
+ * @return  Array
+ */
+Headers.prototype.getAll = function(name) {
+	if (!this.has(name)) {
+		return [];
+	}
+
+	return this._headers[name.toLowerCase()];
+};
+
+/**
+ * Iterate over all headers
+ *
+ * @param   Function  callback  Executed for each item with parameters (value, name, thisArg)
+ * @param   Boolean   thisArg   `this` context for callback function
+ * @return  Void
+ */
+Headers.prototype.forEach = function(callback, thisArg) {
+	Object.getOwnPropertyNames(this._headers).forEach(function(name) {
+		this._headers[name].forEach(function(value) {
+			callback.call(thisArg, value, name, this)
+		}, this)
+	}, this)
+}
+
+/**
+ * Overwrite header values given name
+ *
+ * @param   String  name   Header name
+ * @param   String  value  Header value
+ * @return  Void
+ */
+Headers.prototype.set = function(name, value) {
+	this._headers[name.toLowerCase()] = [value];
+};
+
+/**
+ * Append a value onto existing header
+ *
+ * @param   String  name   Header name
+ * @param   String  value  Header value
+ * @return  Void
+ */
+Headers.prototype.append = function(name, value) {
+	if (!this.has(name)) {
+		this.set(name, value);
+		return;
+	}
+
+	this._headers[name.toLowerCase()].push(value);
+};
+
+/**
+ * Check for header name existence
+ *
+ * @param   String   name  Header name
+ * @return  Boolean
+ */
+Headers.prototype.has = function(name) {
+	return this._headers.hasOwnProperty(name.toLowerCase());
+};
+
+/**
+ * Delete all header values given name
+ *
+ * @param   String  name  Header name
+ * @return  Void
+ */
+Headers.prototype['delete'] = function(name) {
+	delete this._headers[name.toLowerCase()];
+};
+
+/**
+ * Return raw headers (non-spec api)
+ *
+ * @return  Object
+ */
+Headers.prototype.raw = function() {
+	return this._headers;
+};
+
 
 /***/ }),
 /* 73 */
@@ -15827,7 +15827,7 @@ module.exports = [
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__root_js__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__root_js__ = __webpack_require__(171);
 
 
 /** Built-in value references. */
@@ -15838,46 +15838,6 @@ var Symbol = __WEBPACK_IMPORTED_MODULE_0__root_js__["a" /* default */].Symbol;
 
 /***/ }),
 /* 80 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/**
- * fetch-error.js
- *
- * FetchError interface for operational errors
- */
-
-module.exports = FetchError;
-
-/**
- * Create FetchError instance
- *
- * @param   String      message      Error message for human
- * @param   String      type         Error type for machine
- * @param   String      systemError  For Node.js system error
- * @return  FetchError
- */
-function FetchError(message, type, systemError) {
-
-	// hide custom error implementation details from end-users
-	Error.captureStackTrace(this, this.constructor);
-
-	this.name = this.constructor.name;
-	this.message = message;
-	this.type = type;
-
-	// when err.type is `system`, err.code contains system error code
-	if (systemError) {
-		this.code = this.errno = systemError.code;
-	}
-
-}
-
-__webpack_require__(72).inherits(FetchError, Error);
-
-
-/***/ }),
-/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15916,7 +15876,7 @@ module.exports = adler32;
 
 
 /***/ }),
-/* 82 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15964,7 +15924,7 @@ module.exports = crc32;
 
 
 /***/ }),
-/* 83 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -15984,7 +15944,7 @@ module.exports = {
 
 
 /***/ }),
-/* 84 */
+/* 83 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -15997,10 +15957,10 @@ module.exports = {
 
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var math = __webpack_require__(86);
+var math = __webpack_require__(85);
 
 function QRPolynomial(num, shift) {
 
@@ -16070,7 +16030,7 @@ module.exports = QRPolynomial;
 
 
 /***/ }),
-/* 86 */
+/* 85 */
 /***/ (function(module, exports) {
 
 var QRMath = {
@@ -16120,7 +16080,7 @@ module.exports = QRMath;
 
 
 /***/ }),
-/* 87 */
+/* 86 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -16132,7 +16092,7 @@ module.exports = {
 
 
 /***/ }),
-/* 88 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16285,7 +16245,7 @@ var CSSProperty = {
 module.exports = CSSProperty;
 
 /***/ }),
-/* 89 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16409,7 +16369,7 @@ var CallbackQueue = function () {
 module.exports = PooledClass.addPoolingTo(CallbackQueue);
 
 /***/ }),
-/* 90 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16429,7 +16389,7 @@ var DOMProperty = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(10);
 
-var quoteAttributeValueForBrowser = __webpack_require__(277);
+var quoteAttributeValueForBrowser = __webpack_require__(253);
 var warning = __webpack_require__(1);
 
 var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + DOMProperty.ATTRIBUTE_NAME_START_CHAR + '][' + DOMProperty.ATTRIBUTE_NAME_CHAR + ']*$');
@@ -16651,7 +16611,7 @@ var DOMPropertyOperations = {
 module.exports = DOMPropertyOperations;
 
 /***/ }),
-/* 91 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16674,7 +16634,7 @@ var ReactDOMComponentFlags = {
 module.exports = ReactDOMComponentFlags;
 
 /***/ }),
-/* 92 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16692,7 +16652,7 @@ module.exports = ReactDOMComponentFlags;
 
 var _assign = __webpack_require__(4);
 
-var LinkedValueUtils = __webpack_require__(53);
+var LinkedValueUtils = __webpack_require__(51);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
 
@@ -16879,7 +16839,7 @@ function _handleChange(event) {
 module.exports = ReactDOMSelect;
 
 /***/ }),
-/* 93 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16914,7 +16874,7 @@ ReactEmptyComponent.injection = ReactEmptyComponentInjection;
 module.exports = ReactEmptyComponent;
 
 /***/ }),
-/* 94 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -16941,7 +16901,7 @@ var ReactFeatureFlags = {
 module.exports = ReactFeatureFlags;
 
 /***/ }),
-/* 95 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17014,7 +16974,7 @@ var ReactHostComponent = {
 module.exports = ReactHostComponent;
 
 /***/ }),
-/* 96 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17030,9 +16990,9 @@ module.exports = ReactHostComponent;
 
 
 
-var ReactDOMSelection = __webpack_require__(236);
+var ReactDOMSelection = __webpack_require__(212);
 
-var containsNode = __webpack_require__(150);
+var containsNode = __webpack_require__(146);
 var focusNode = __webpack_require__(74);
 var getActiveElement = __webpack_require__(75);
 
@@ -17143,7 +17103,7 @@ var ReactInputSelection = {
 module.exports = ReactInputSelection;
 
 /***/ }),
-/* 97 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17167,21 +17127,21 @@ var React = __webpack_require__(22);
 var ReactBrowserEventEmitter = __webpack_require__(34);
 var ReactCurrentOwner = __webpack_require__(13);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactDOMContainerInfo = __webpack_require__(230);
-var ReactDOMFeatureFlags = __webpack_require__(232);
-var ReactFeatureFlags = __webpack_require__(94);
+var ReactDOMContainerInfo = __webpack_require__(206);
+var ReactDOMFeatureFlags = __webpack_require__(208);
+var ReactFeatureFlags = __webpack_require__(93);
 var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(10);
-var ReactMarkupChecksum = __webpack_require__(246);
+var ReactMarkupChecksum = __webpack_require__(222);
 var ReactReconciler = __webpack_require__(21);
-var ReactUpdateQueue = __webpack_require__(56);
+var ReactUpdateQueue = __webpack_require__(54);
 var ReactUpdates = __webpack_require__(11);
 
 var emptyObject = __webpack_require__(27);
-var instantiateReactComponent = __webpack_require__(104);
+var instantiateReactComponent = __webpack_require__(103);
 var invariant = __webpack_require__(0);
 var setInnerHTML = __webpack_require__(38);
-var shouldUpdateReactComponent = __webpack_require__(62);
+var shouldUpdateReactComponent = __webpack_require__(60);
 var warning = __webpack_require__(1);
 
 var ATTR_NAME = DOMProperty.ID_ATTRIBUTE_NAME;
@@ -17686,7 +17646,7 @@ var ReactMount = {
 module.exports = ReactMount;
 
 /***/ }),
-/* 98 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17731,7 +17691,7 @@ var ReactNodeTypes = {
 module.exports = ReactNodeTypes;
 
 /***/ }),
-/* 99 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17763,7 +17723,7 @@ var ViewportMetrics = {
 module.exports = ViewportMetrics;
 
 /***/ }),
-/* 100 */
+/* 99 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17826,7 +17786,7 @@ function accumulateInto(current, next) {
 module.exports = accumulateInto;
 
 /***/ }),
-/* 101 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17862,7 +17822,7 @@ function forEachAccumulated(arr, cb, scope) {
 module.exports = forEachAccumulated;
 
 /***/ }),
-/* 102 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17878,7 +17838,7 @@ module.exports = forEachAccumulated;
 
 
 
-var ReactNodeTypes = __webpack_require__(98);
+var ReactNodeTypes = __webpack_require__(97);
 
 function getHostComponentFromComposite(inst) {
   var type;
@@ -17897,7 +17857,7 @@ function getHostComponentFromComposite(inst) {
 module.exports = getHostComponentFromComposite;
 
 /***/ }),
-/* 103 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17935,7 +17895,7 @@ function getTextContentAccessor() {
 module.exports = getTextContentAccessor;
 
 /***/ }),
-/* 104 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17954,11 +17914,11 @@ module.exports = getTextContentAccessor;
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
-var ReactCompositeComponent = __webpack_require__(227);
-var ReactEmptyComponent = __webpack_require__(93);
-var ReactHostComponent = __webpack_require__(95);
+var ReactCompositeComponent = __webpack_require__(203);
+var ReactEmptyComponent = __webpack_require__(92);
+var ReactHostComponent = __webpack_require__(94);
 
-var getNextDebugID = __webpack_require__(274);
+var getNextDebugID = __webpack_require__(250);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
 
@@ -18068,7 +18028,7 @@ function instantiateReactComponent(node, shouldHaveDebugID) {
 module.exports = instantiateReactComponent;
 
 /***/ }),
-/* 105 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18124,7 +18084,7 @@ function isTextInputElement(elem) {
 module.exports = isTextInputElement;
 
 /***/ }),
-/* 106 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18181,7 +18141,7 @@ if (ExecutionEnvironment.canUseDOM) {
 module.exports = setTextContent;
 
 /***/ }),
-/* 107 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18200,11 +18160,11 @@ module.exports = setTextContent;
 var _prodInvariant = __webpack_require__(2);
 
 var ReactCurrentOwner = __webpack_require__(13);
-var REACT_ELEMENT_TYPE = __webpack_require__(242);
+var REACT_ELEMENT_TYPE = __webpack_require__(218);
 
-var getIteratorFn = __webpack_require__(273);
+var getIteratorFn = __webpack_require__(249);
 var invariant = __webpack_require__(0);
-var KeyEscapeUtils = __webpack_require__(52);
+var KeyEscapeUtils = __webpack_require__(50);
 var warning = __webpack_require__(1);
 
 var SEPARATOR = '.';
@@ -18362,18 +18322,18 @@ function traverseAllChildren(children, callback, traverseContext) {
 module.exports = traverseAllChildren;
 
 /***/ }),
-/* 108 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_hoist_non_react_statics__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(290);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_Subscription__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils_PropTypes__ = __webpack_require__(110);
 /* harmony export (immutable) */ __webpack_exports__["a"] = connectAdvanced;
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -18649,11 +18609,11 @@ selectorFactory) {
 }
 
 /***/ }),
-/* 109 */
+/* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(111);
 /* harmony export (immutable) */ __webpack_exports__["b"] = wrapMapToPropsConstant;
 /* unused harmony export getDependsOnOwnProps */
 /* harmony export (immutable) */ __webpack_exports__["a"] = wrapMapToPropsFunc;
@@ -18726,14 +18686,14 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
 }
 
 /***/ }),
-/* 110 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_Provider__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__connect_connect__ = __webpack_require__(260);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "Provider", function() { return __WEBPACK_IMPORTED_MODULE_0__components_Provider__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connectAdvanced", function() { return __WEBPACK_IMPORTED_MODULE_1__components_connectAdvanced__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "connect", function() { return __WEBPACK_IMPORTED_MODULE_2__connect_connect__["a"]; });
@@ -18744,7 +18704,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /***/ }),
-/* 111 */
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18768,12 +18728,12 @@ var storeShape = __WEBPACK_IMPORTED_MODULE_0_react__["PropTypes"].shape({
 });
 
 /***/ }),
-/* 112 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__warning__ = __webpack_require__(62);
 /* unused harmony export default */
 
 
@@ -18785,7 +18745,7 @@ function verifyPlainObject(value, displayName, methodName) {
 }
 
 /***/ }),
-/* 113 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19124,7 +19084,7 @@ var ReactComponentTreeHook = {
 module.exports = ReactComponentTreeHook;
 
 /***/ }),
-/* 114 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19149,7 +19109,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 115 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19179,7 +19139,7 @@ if (false) {
 module.exports = ReactPropTypeLocationNames;
 
 /***/ }),
-/* 116 */
+/* 115 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19210,7 +19170,7 @@ if (false) {
 module.exports = canDefineProperty;
 
 /***/ }),
-/* 117 */
+/* 116 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19256,7 +19216,7 @@ function getIteratorFn(maybeIterable) {
 module.exports = getIteratorFn;
 
 /***/ }),
-/* 118 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19268,7 +19228,7 @@ module.exports = getIteratorFn;
 
 module.exports = PassThrough;
 
-var Transform = __webpack_require__(67);
+var Transform = __webpack_require__(65);
 
 /*<replacement>*/
 var util = __webpack_require__(25);
@@ -19288,7 +19248,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19297,7 +19257,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 module.exports = Readable;
 
 /*<replacement>*/
-var processNextTick = __webpack_require__(47);
+var processNextTick = __webpack_require__(45);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -19349,7 +19309,7 @@ if (debugUtil && debugUtil.debuglog) {
 }
 /*</replacement>*/
 
-var BufferList = __webpack_require__(304);
+var BufferList = __webpack_require__(280);
 var StringDecoder;
 
 util.inherits(Readable, Stream);
@@ -19431,7 +19391,7 @@ function ReadableState(options, stream) {
   this.decoder = null;
   this.encoding = null;
   if (options.encoding) {
-    if (!StringDecoder) StringDecoder = __webpack_require__(71).StringDecoder;
+    if (!StringDecoder) StringDecoder = __webpack_require__(69).StringDecoder;
     this.decoder = new StringDecoder(options.encoding);
     this.encoding = options.encoding;
   }
@@ -19541,7 +19501,7 @@ function needMoreData(state) {
 
 // backwards compatibility.
 Readable.prototype.setEncoding = function (enc) {
-  if (!StringDecoder) StringDecoder = __webpack_require__(71).StringDecoder;
+  if (!StringDecoder) StringDecoder = __webpack_require__(69).StringDecoder;
   this._readableState.decoder = new StringDecoder(enc);
   this._readableState.encoding = enc;
   return this;
@@ -20236,14 +20196,14 @@ function indexOf(xs, x) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 120 */
+/* 119 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(67)
+module.exports = __webpack_require__(65)
 
 
 /***/ }),
-/* 121 */
+/* 120 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20284,12 +20244,12 @@ function compose() {
 }
 
 /***/ }),
-/* 122 */
+/* 121 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_es_isPlainObject__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable__ = __webpack_require__(291);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_symbol_observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_symbol_observable__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ActionTypes; });
 /* harmony export (immutable) */ __webpack_exports__["a"] = createStore;
@@ -20543,7 +20503,7 @@ function createStore(reducer, preloadedState, enhancer) {
 }
 
 /***/ }),
-/* 123 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20571,7 +20531,7 @@ function warning(message) {
 }
 
 /***/ }),
-/* 124 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {exports.fetch = isFunction(global.fetch) && isFunction(global.ReadableStream)
@@ -20647,7 +20607,7 @@ xhr = null // Help gc
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 125 */
+/* 124 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -20675,6 +20635,46 @@ module.exports = function(module) {
 
 
 /***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/**
+ * fetch-error.js
+ *
+ * FetchError interface for operational errors
+ */
+
+module.exports = FetchError;
+
+/**
+ * Create FetchError instance
+ *
+ * @param   String      message      Error message for human
+ * @param   String      type         Error type for machine
+ * @param   String      systemError  For Node.js system error
+ * @return  FetchError
+ */
+function FetchError(message, type, systemError) {
+
+	// hide custom error implementation details from end-users
+	Error.captureStackTrace(this, this.constructor);
+
+	this.name = this.constructor.name;
+	this.message = message;
+	this.type = type;
+
+	// when err.type is `system`, err.code contains system error code
+	if (systemError) {
+		this.code = this.errno = systemError.code;
+	}
+
+}
+
+__webpack_require__(70).inherits(FetchError, Error);
+
+
+/***/ }),
 /* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20685,13 +20685,13 @@ var _react = __webpack_require__(15);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(214);
+var _reactDom = __webpack_require__(190);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _reactHotLoader = __webpack_require__(279);
+var _reactHotLoader = __webpack_require__(255);
 
-var _reactRedux = __webpack_require__(110);
+var _reactRedux = __webpack_require__(109);
 
 var _App = __webpack_require__(133);
 
@@ -20824,7 +20824,7 @@ function isBuffer(b) {
 // ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var util = __webpack_require__(72);
+var util = __webpack_require__(70);
 var hasOwn = Object.prototype.hasOwnProperty;
 var pSlice = Array.prototype.slice;
 var functionsHaveNames = (function () {
@@ -21473,13 +21473,13 @@ var _react = __webpack_require__(15);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _qrcode = __webpack_require__(209);
+var _qrcode = __webpack_require__(186);
 
 var _qrcode2 = _interopRequireDefault(_qrcode);
 
 var _moneroPayments = __webpack_require__(134);
 
-__webpack_require__(314);
+__webpack_require__(290);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { "default": obj };
@@ -21613,7 +21613,7 @@ var AppComponent = function (_Component2) {
       isRotated: false
     };
 
-    _this2.wallet = new _moneroPayments.WatchOnlyWallet('207.154.197.71', 28082);
+    _this2.wallet = new _moneroPayments.WatchOnlyWallet('testnet.kasisto.io', 28082, true);
     _this2.payment = _this2.wallet.requestPayment();
     return _this2;
   }
@@ -21794,7 +21794,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _redux = __webpack_require__(39);
 
-var _reactRedux = __webpack_require__(110);
+var _reactRedux = __webpack_require__(109);
 
 var _actions = __webpack_require__(128);
 
@@ -21963,7 +21963,7 @@ var _createClass = function () {
 
 var _events = __webpack_require__(26);
 
-var _moneroNodejs = __webpack_require__(192);
+var _moneroNodejs = __webpack_require__(302);
 
 var _moneroNodejs2 = _interopRequireDefault(_moneroNodejs);
 
@@ -21994,14 +21994,16 @@ function _classCallCheck(instance, Constructor) {
 // MUST be a wallet generated by `monero-wallet-cli --generate-from-view-key`
 var WatchOnlyWallet = exports.WatchOnlyWallet = function () {
   function WatchOnlyWallet() {
+    var host = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'localhost';
+
     var _this = this;
 
-    var host = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'localhost';
     var port = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 18082;
+    var secure = arguments[2];
 
     _classCallCheck(this, WatchOnlyWallet);
 
-    this.wallet = new _moneroNodejs2['default'](host, port);
+    this.wallet = new _moneroNodejs2['default'](host, port, secure);
 
     // Proxy selected MoneroWallet methods
     ['makeIntegratedAddress', 'getTransfers'].forEach(function (fn, index) {
@@ -22542,1160 +22544,11 @@ function fromByteArray (uint8) {
 /* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/big.js/LICENCE */
-;(function (global) {
-    'use strict';
-
-/*
-  big.js v3.1.3
-  A small, fast, easy-to-use library for arbitrary-precision decimal arithmetic.
-  https://github.com/MikeMcl/big.js/
-  Copyright (c) 2014 Michael Mclaughlin <M8ch88l@gmail.com>
-  MIT Expat Licence
-*/
-
-/***************************** EDITABLE DEFAULTS ******************************/
-
-    // The default values below must be integers within the stated ranges.
-
-    /*
-     * The maximum number of decimal places of the results of operations
-     * involving division: div and sqrt, and pow with negative exponents.
-     */
-    var DP = 20,                           // 0 to MAX_DP
-
-        /*
-         * The rounding mode used when rounding to the above decimal places.
-         *
-         * 0 Towards zero (i.e. truncate, no rounding).       (ROUND_DOWN)
-         * 1 To nearest neighbour. If equidistant, round up.  (ROUND_HALF_UP)
-         * 2 To nearest neighbour. If equidistant, to even.   (ROUND_HALF_EVEN)
-         * 3 Away from zero.                                  (ROUND_UP)
-         */
-        RM = 1,                            // 0, 1, 2 or 3
-
-        // The maximum value of DP and Big.DP.
-        MAX_DP = 1E6,                      // 0 to 1000000
-
-        // The maximum magnitude of the exponent argument to the pow method.
-        MAX_POWER = 1E6,                   // 1 to 1000000
-
-        /*
-         * The exponent value at and beneath which toString returns exponential
-         * notation.
-         * JavaScript's Number type: -7
-         * -1000000 is the minimum recommended exponent value of a Big.
-         */
-        E_NEG = -7,                   // 0 to -1000000
-
-        /*
-         * The exponent value at and above which toString returns exponential
-         * notation.
-         * JavaScript's Number type: 21
-         * 1000000 is the maximum recommended exponent value of a Big.
-         * (This limit is not enforced or checked.)
-         */
-        E_POS = 21,                   // 0 to 1000000
-
-/******************************************************************************/
-
-        // The shared prototype object.
-        P = {},
-        isValid = /^-?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,
-        Big;
-
-
-    /*
-     * Create and return a Big constructor.
-     *
-     */
-    function bigFactory() {
-
-        /*
-         * The Big constructor and exported function.
-         * Create and return a new instance of a Big number object.
-         *
-         * n {number|string|Big} A numeric value.
-         */
-        function Big(n) {
-            var x = this;
-
-            // Enable constructor usage without new.
-            if (!(x instanceof Big)) {
-                return n === void 0 ? bigFactory() : new Big(n);
-            }
-
-            // Duplicate.
-            if (n instanceof Big) {
-                x.s = n.s;
-                x.e = n.e;
-                x.c = n.c.slice();
-            } else {
-                parse(x, n);
-            }
-
-            /*
-             * Retain a reference to this Big constructor, and shadow
-             * Big.prototype.constructor which points to Object.
-             */
-            x.constructor = Big;
-        }
-
-        Big.prototype = P;
-        Big.DP = DP;
-        Big.RM = RM;
-        Big.E_NEG = E_NEG;
-        Big.E_POS = E_POS;
-
-        return Big;
-    }
-
-
-    // Private functions
-
-
-    /*
-     * Return a string representing the value of Big x in normal or exponential
-     * notation to dp fixed decimal places or significant digits.
-     *
-     * x {Big} The Big to format.
-     * dp {number} Integer, 0 to MAX_DP inclusive.
-     * toE {number} 1 (toExponential), 2 (toPrecision) or undefined (toFixed).
-     */
-    function format(x, dp, toE) {
-        var Big = x.constructor,
-
-            // The index (normal notation) of the digit that may be rounded up.
-            i = dp - (x = new Big(x)).e,
-            c = x.c;
-
-        // Round?
-        if (c.length > ++dp) {
-            rnd(x, i, Big.RM);
-        }
-
-        if (!c[0]) {
-            ++i;
-        } else if (toE) {
-            i = dp;
-
-        // toFixed
-        } else {
-            c = x.c;
-
-            // Recalculate i as x.e may have changed if value rounded up.
-            i = x.e + i + 1;
-        }
-
-        // Append zeros?
-        for (; c.length < i; c.push(0)) {
-        }
-        i = x.e;
-
-        /*
-         * toPrecision returns exponential notation if the number of
-         * significant digits specified is less than the number of digits
-         * necessary to represent the integer part of the value in normal
-         * notation.
-         */
-        return toE === 1 || toE && (dp <= i || i <= Big.E_NEG) ?
-
-          // Exponential notation.
-          (x.s < 0 && c[0] ? '-' : '') +
-            (c.length > 1 ? c[0] + '.' + c.join('').slice(1) : c[0]) +
-              (i < 0 ? 'e' : 'e+') + i
-
-          // Normal notation.
-          : x.toString();
-    }
-
-
-    /*
-     * Parse the number or string value passed to a Big constructor.
-     *
-     * x {Big} A Big number instance.
-     * n {number|string} A numeric value.
-     */
-    function parse(x, n) {
-        var e, i, nL;
-
-        // Minus zero?
-        if (n === 0 && 1 / n < 0) {
-            n = '-0';
-
-        // Ensure n is string and check validity.
-        } else if (!isValid.test(n += '')) {
-            throwErr(NaN);
-        }
-
-        // Determine sign.
-        x.s = n.charAt(0) == '-' ? (n = n.slice(1), -1) : 1;
-
-        // Decimal point?
-        if ((e = n.indexOf('.')) > -1) {
-            n = n.replace('.', '');
-        }
-
-        // Exponential form?
-        if ((i = n.search(/e/i)) > 0) {
-
-            // Determine exponent.
-            if (e < 0) {
-                e = i;
-            }
-            e += +n.slice(i + 1);
-            n = n.substring(0, i);
-
-        } else if (e < 0) {
-
-            // Integer.
-            e = n.length;
-        }
-
-        // Determine leading zeros.
-        for (i = 0; n.charAt(i) == '0'; i++) {
-        }
-
-        if (i == (nL = n.length)) {
-
-            // Zero.
-            x.c = [ x.e = 0 ];
-        } else {
-
-            // Determine trailing zeros.
-            for (; n.charAt(--nL) == '0';) {
-            }
-
-            x.e = e - i - 1;
-            x.c = [];
-
-            // Convert string to array of digits without leading/trailing zeros.
-            for (e = 0; i <= nL; x.c[e++] = +n.charAt(i++)) {
-            }
-        }
-
-        return x;
-    }
-
-
-    /*
-     * Round Big x to a maximum of dp decimal places using rounding mode rm.
-     * Called by div, sqrt and round.
-     *
-     * x {Big} The Big to round.
-     * dp {number} Integer, 0 to MAX_DP inclusive.
-     * rm {number} 0, 1, 2 or 3 (DOWN, HALF_UP, HALF_EVEN, UP)
-     * [more] {boolean} Whether the result of division was truncated.
-     */
-    function rnd(x, dp, rm, more) {
-        var u,
-            xc = x.c,
-            i = x.e + dp + 1;
-
-        if (rm === 1) {
-
-            // xc[i] is the digit after the digit that may be rounded up.
-            more = xc[i] >= 5;
-        } else if (rm === 2) {
-            more = xc[i] > 5 || xc[i] == 5 &&
-              (more || i < 0 || xc[i + 1] !== u || xc[i - 1] & 1);
-        } else if (rm === 3) {
-            more = more || xc[i] !== u || i < 0;
-        } else {
-            more = false;
-
-            if (rm !== 0) {
-                throwErr('!Big.RM!');
-            }
-        }
-
-        if (i < 1 || !xc[0]) {
-
-            if (more) {
-
-                // 1, 0.1, 0.01, 0.001, 0.0001 etc.
-                x.e = -dp;
-                x.c = [1];
-            } else {
-
-                // Zero.
-                x.c = [x.e = 0];
-            }
-        } else {
-
-            // Remove any digits after the required decimal places.
-            xc.length = i--;
-
-            // Round up?
-            if (more) {
-
-                // Rounding up may mean the previous digit has to be rounded up.
-                for (; ++xc[i] > 9;) {
-                    xc[i] = 0;
-
-                    if (!i--) {
-                        ++x.e;
-                        xc.unshift(1);
-                    }
-                }
-            }
-
-            // Remove trailing zeros.
-            for (i = xc.length; !xc[--i]; xc.pop()) {
-            }
-        }
-
-        return x;
-    }
-
-
-    /*
-     * Throw a BigError.
-     *
-     * message {string} The error message.
-     */
-    function throwErr(message) {
-        var err = new Error(message);
-        err.name = 'BigError';
-
-        throw err;
-    }
-
-
-    // Prototype/instance methods
-
-
-    /*
-     * Return a new Big whose value is the absolute value of this Big.
-     */
-    P.abs = function () {
-        var x = new this.constructor(this);
-        x.s = 1;
-
-        return x;
-    };
-
-
-    /*
-     * Return
-     * 1 if the value of this Big is greater than the value of Big y,
-     * -1 if the value of this Big is less than the value of Big y, or
-     * 0 if they have the same value.
-    */
-    P.cmp = function (y) {
-        var xNeg,
-            x = this,
-            xc = x.c,
-            yc = (y = new x.constructor(y)).c,
-            i = x.s,
-            j = y.s,
-            k = x.e,
-            l = y.e;
-
-        // Either zero?
-        if (!xc[0] || !yc[0]) {
-            return !xc[0] ? !yc[0] ? 0 : -j : i;
-        }
-
-        // Signs differ?
-        if (i != j) {
-            return i;
-        }
-        xNeg = i < 0;
-
-        // Compare exponents.
-        if (k != l) {
-            return k > l ^ xNeg ? 1 : -1;
-        }
-
-        i = -1;
-        j = (k = xc.length) < (l = yc.length) ? k : l;
-
-        // Compare digit by digit.
-        for (; ++i < j;) {
-
-            if (xc[i] != yc[i]) {
-                return xc[i] > yc[i] ^ xNeg ? 1 : -1;
-            }
-        }
-
-        // Compare lengths.
-        return k == l ? 0 : k > l ^ xNeg ? 1 : -1;
-    };
-
-
-    /*
-     * Return a new Big whose value is the value of this Big divided by the
-     * value of Big y, rounded, if necessary, to a maximum of Big.DP decimal
-     * places using rounding mode Big.RM.
-     */
-    P.div = function (y) {
-        var x = this,
-            Big = x.constructor,
-            // dividend
-            dvd = x.c,
-            //divisor
-            dvs = (y = new Big(y)).c,
-            s = x.s == y.s ? 1 : -1,
-            dp = Big.DP;
-
-        if (dp !== ~~dp || dp < 0 || dp > MAX_DP) {
-            throwErr('!Big.DP!');
-        }
-
-        // Either 0?
-        if (!dvd[0] || !dvs[0]) {
-
-            // If both are 0, throw NaN
-            if (dvd[0] == dvs[0]) {
-                throwErr(NaN);
-            }
-
-            // If dvs is 0, throw +-Infinity.
-            if (!dvs[0]) {
-                throwErr(s / 0);
-            }
-
-            // dvd is 0, return +-0.
-            return new Big(s * 0);
-        }
-
-        var dvsL, dvsT, next, cmp, remI, u,
-            dvsZ = dvs.slice(),
-            dvdI = dvsL = dvs.length,
-            dvdL = dvd.length,
-            // remainder
-            rem = dvd.slice(0, dvsL),
-            remL = rem.length,
-            // quotient
-            q = y,
-            qc = q.c = [],
-            qi = 0,
-            digits = dp + (q.e = x.e - y.e) + 1;
-
-        q.s = s;
-        s = digits < 0 ? 0 : digits;
-
-        // Create version of divisor with leading zero.
-        dvsZ.unshift(0);
-
-        // Add zeros to make remainder as long as divisor.
-        for (; remL++ < dvsL; rem.push(0)) {
-        }
-
-        do {
-
-            // 'next' is how many times the divisor goes into current remainder.
-            for (next = 0; next < 10; next++) {
-
-                // Compare divisor and remainder.
-                if (dvsL != (remL = rem.length)) {
-                    cmp = dvsL > remL ? 1 : -1;
-                } else {
-
-                    for (remI = -1, cmp = 0; ++remI < dvsL;) {
-
-                        if (dvs[remI] != rem[remI]) {
-                            cmp = dvs[remI] > rem[remI] ? 1 : -1;
-                            break;
-                        }
-                    }
-                }
-
-                // If divisor < remainder, subtract divisor from remainder.
-                if (cmp < 0) {
-
-                    // Remainder can't be more than 1 digit longer than divisor.
-                    // Equalise lengths using divisor with extra leading zero?
-                    for (dvsT = remL == dvsL ? dvs : dvsZ; remL;) {
-
-                        if (rem[--remL] < dvsT[remL]) {
-                            remI = remL;
-
-                            for (; remI && !rem[--remI]; rem[remI] = 9) {
-                            }
-                            --rem[remI];
-                            rem[remL] += 10;
-                        }
-                        rem[remL] -= dvsT[remL];
-                    }
-                    for (; !rem[0]; rem.shift()) {
-                    }
-                } else {
-                    break;
-                }
-            }
-
-            // Add the 'next' digit to the result array.
-            qc[qi++] = cmp ? next : ++next;
-
-            // Update the remainder.
-            if (rem[0] && cmp) {
-                rem[remL] = dvd[dvdI] || 0;
-            } else {
-                rem = [ dvd[dvdI] ];
-            }
-
-        } while ((dvdI++ < dvdL || rem[0] !== u) && s--);
-
-        // Leading zero? Do not remove if result is simply zero (qi == 1).
-        if (!qc[0] && qi != 1) {
-
-            // There can't be more than one zero.
-            qc.shift();
-            q.e--;
-        }
-
-        // Round?
-        if (qi > digits) {
-            rnd(q, dp, Big.RM, rem[0] !== u);
-        }
-
-        return q;
-    };
-
-
-    /*
-     * Return true if the value of this Big is equal to the value of Big y,
-     * otherwise returns false.
-     */
-    P.eq = function (y) {
-        return !this.cmp(y);
-    };
-
-
-    /*
-     * Return true if the value of this Big is greater than the value of Big y,
-     * otherwise returns false.
-     */
-    P.gt = function (y) {
-        return this.cmp(y) > 0;
-    };
-
-
-    /*
-     * Return true if the value of this Big is greater than or equal to the
-     * value of Big y, otherwise returns false.
-     */
-    P.gte = function (y) {
-        return this.cmp(y) > -1;
-    };
-
-
-    /*
-     * Return true if the value of this Big is less than the value of Big y,
-     * otherwise returns false.
-     */
-    P.lt = function (y) {
-        return this.cmp(y) < 0;
-    };
-
-
-    /*
-     * Return true if the value of this Big is less than or equal to the value
-     * of Big y, otherwise returns false.
-     */
-    P.lte = function (y) {
-         return this.cmp(y) < 1;
-    };
-
-
-    /*
-     * Return a new Big whose value is the value of this Big minus the value
-     * of Big y.
-     */
-    P.sub = P.minus = function (y) {
-        var i, j, t, xLTy,
-            x = this,
-            Big = x.constructor,
-            a = x.s,
-            b = (y = new Big(y)).s;
-
-        // Signs differ?
-        if (a != b) {
-            y.s = -b;
-            return x.plus(y);
-        }
-
-        var xc = x.c.slice(),
-            xe = x.e,
-            yc = y.c,
-            ye = y.e;
-
-        // Either zero?
-        if (!xc[0] || !yc[0]) {
-
-            // y is non-zero? x is non-zero? Or both are zero.
-            return yc[0] ? (y.s = -b, y) : new Big(xc[0] ? x : 0);
-        }
-
-        // Determine which is the bigger number.
-        // Prepend zeros to equalise exponents.
-        if (a = xe - ye) {
-
-            if (xLTy = a < 0) {
-                a = -a;
-                t = xc;
-            } else {
-                ye = xe;
-                t = yc;
-            }
-
-            t.reverse();
-            for (b = a; b--; t.push(0)) {
-            }
-            t.reverse();
-        } else {
-
-            // Exponents equal. Check digit by digit.
-            j = ((xLTy = xc.length < yc.length) ? xc : yc).length;
-
-            for (a = b = 0; b < j; b++) {
-
-                if (xc[b] != yc[b]) {
-                    xLTy = xc[b] < yc[b];
-                    break;
-                }
-            }
-        }
-
-        // x < y? Point xc to the array of the bigger number.
-        if (xLTy) {
-            t = xc;
-            xc = yc;
-            yc = t;
-            y.s = -y.s;
-        }
-
-        /*
-         * Append zeros to xc if shorter. No need to add zeros to yc if shorter
-         * as subtraction only needs to start at yc.length.
-         */
-        if (( b = (j = yc.length) - (i = xc.length) ) > 0) {
-
-            for (; b--; xc[i++] = 0) {
-            }
-        }
-
-        // Subtract yc from xc.
-        for (b = i; j > a;){
-
-            if (xc[--j] < yc[j]) {
-
-                for (i = j; i && !xc[--i]; xc[i] = 9) {
-                }
-                --xc[i];
-                xc[j] += 10;
-            }
-            xc[j] -= yc[j];
-        }
-
-        // Remove trailing zeros.
-        for (; xc[--b] === 0; xc.pop()) {
-        }
-
-        // Remove leading zeros and adjust exponent accordingly.
-        for (; xc[0] === 0;) {
-            xc.shift();
-            --ye;
-        }
-
-        if (!xc[0]) {
-
-            // n - n = +0
-            y.s = 1;
-
-            // Result must be zero.
-            xc = [ye = 0];
-        }
-
-        y.c = xc;
-        y.e = ye;
-
-        return y;
-    };
-
-
-    /*
-     * Return a new Big whose value is the value of this Big modulo the
-     * value of Big y.
-     */
-    P.mod = function (y) {
-        var yGTx,
-            x = this,
-            Big = x.constructor,
-            a = x.s,
-            b = (y = new Big(y)).s;
-
-        if (!y.c[0]) {
-            throwErr(NaN);
-        }
-
-        x.s = y.s = 1;
-        yGTx = y.cmp(x) == 1;
-        x.s = a;
-        y.s = b;
-
-        if (yGTx) {
-            return new Big(x);
-        }
-
-        a = Big.DP;
-        b = Big.RM;
-        Big.DP = Big.RM = 0;
-        x = x.div(y);
-        Big.DP = a;
-        Big.RM = b;
-
-        return this.minus( x.times(y) );
-    };
-
-
-    /*
-     * Return a new Big whose value is the value of this Big plus the value
-     * of Big y.
-     */
-    P.add = P.plus = function (y) {
-        var t,
-            x = this,
-            Big = x.constructor,
-            a = x.s,
-            b = (y = new Big(y)).s;
-
-        // Signs differ?
-        if (a != b) {
-            y.s = -b;
-            return x.minus(y);
-        }
-
-        var xe = x.e,
-            xc = x.c,
-            ye = y.e,
-            yc = y.c;
-
-        // Either zero?
-        if (!xc[0] || !yc[0]) {
-
-            // y is non-zero? x is non-zero? Or both are zero.
-            return yc[0] ? y : new Big(xc[0] ? x : a * 0);
-        }
-        xc = xc.slice();
-
-        // Prepend zeros to equalise exponents.
-        // Note: Faster to use reverse then do unshifts.
-        if (a = xe - ye) {
-
-            if (a > 0) {
-                ye = xe;
-                t = yc;
-            } else {
-                a = -a;
-                t = xc;
-            }
-
-            t.reverse();
-            for (; a--; t.push(0)) {
-            }
-            t.reverse();
-        }
-
-        // Point xc to the longer array.
-        if (xc.length - yc.length < 0) {
-            t = yc;
-            yc = xc;
-            xc = t;
-        }
-        a = yc.length;
-
-        /*
-         * Only start adding at yc.length - 1 as the further digits of xc can be
-         * left as they are.
-         */
-        for (b = 0; a;) {
-            b = (xc[--a] = xc[a] + yc[a] + b) / 10 | 0;
-            xc[a] %= 10;
-        }
-
-        // No need to check for zero, as +x + +y != 0 && -x + -y != 0
-
-        if (b) {
-            xc.unshift(b);
-            ++ye;
-        }
-
-         // Remove trailing zeros.
-        for (a = xc.length; xc[--a] === 0; xc.pop()) {
-        }
-
-        y.c = xc;
-        y.e = ye;
-
-        return y;
-    };
-
-
-    /*
-     * Return a Big whose value is the value of this Big raised to the power n.
-     * If n is negative, round, if necessary, to a maximum of Big.DP decimal
-     * places using rounding mode Big.RM.
-     *
-     * n {number} Integer, -MAX_POWER to MAX_POWER inclusive.
-     */
-    P.pow = function (n) {
-        var x = this,
-            one = new x.constructor(1),
-            y = one,
-            isNeg = n < 0;
-
-        if (n !== ~~n || n < -MAX_POWER || n > MAX_POWER) {
-            throwErr('!pow!');
-        }
-
-        n = isNeg ? -n : n;
-
-        for (;;) {
-
-            if (n & 1) {
-                y = y.times(x);
-            }
-            n >>= 1;
-
-            if (!n) {
-                break;
-            }
-            x = x.times(x);
-        }
-
-        return isNeg ? one.div(y) : y;
-    };
-
-
-    /*
-     * Return a new Big whose value is the value of this Big rounded to a
-     * maximum of dp decimal places using rounding mode rm.
-     * If dp is not specified, round to 0 decimal places.
-     * If rm is not specified, use Big.RM.
-     *
-     * [dp] {number} Integer, 0 to MAX_DP inclusive.
-     * [rm] 0, 1, 2 or 3 (ROUND_DOWN, ROUND_HALF_UP, ROUND_HALF_EVEN, ROUND_UP)
-     */
-    P.round = function (dp, rm) {
-        var x = this,
-            Big = x.constructor;
-
-        if (dp == null) {
-            dp = 0;
-        } else if (dp !== ~~dp || dp < 0 || dp > MAX_DP) {
-            throwErr('!round!');
-        }
-        rnd(x = new Big(x), dp, rm == null ? Big.RM : rm);
-
-        return x;
-    };
-
-
-    /*
-     * Return a new Big whose value is the square root of the value of this Big,
-     * rounded, if necessary, to a maximum of Big.DP decimal places using
-     * rounding mode Big.RM.
-     */
-    P.sqrt = function () {
-        var estimate, r, approx,
-            x = this,
-            Big = x.constructor,
-            xc = x.c,
-            i = x.s,
-            e = x.e,
-            half = new Big('0.5');
-
-        // Zero?
-        if (!xc[0]) {
-            return new Big(x);
-        }
-
-        // If negative, throw NaN.
-        if (i < 0) {
-            throwErr(NaN);
-        }
-
-        // Estimate.
-        i = Math.sqrt(x.toString());
-
-        // Math.sqrt underflow/overflow?
-        // Pass x to Math.sqrt as integer, then adjust the result exponent.
-        if (i === 0 || i === 1 / 0) {
-            estimate = xc.join('');
-
-            if (!(estimate.length + e & 1)) {
-                estimate += '0';
-            }
-
-            r = new Big( Math.sqrt(estimate).toString() );
-            r.e = ((e + 1) / 2 | 0) - (e < 0 || e & 1);
-        } else {
-            r = new Big(i.toString());
-        }
-
-        i = r.e + (Big.DP += 4);
-
-        // Newton-Raphson iteration.
-        do {
-            approx = r;
-            r = half.times( approx.plus( x.div(approx) ) );
-        } while ( approx.c.slice(0, i).join('') !==
-                       r.c.slice(0, i).join('') );
-
-        rnd(r, Big.DP -= 4, Big.RM);
-
-        return r;
-    };
-
-
-    /*
-     * Return a new Big whose value is the value of this Big times the value of
-     * Big y.
-     */
-    P.mul = P.times = function (y) {
-        var c,
-            x = this,
-            Big = x.constructor,
-            xc = x.c,
-            yc = (y = new Big(y)).c,
-            a = xc.length,
-            b = yc.length,
-            i = x.e,
-            j = y.e;
-
-        // Determine sign of result.
-        y.s = x.s == y.s ? 1 : -1;
-
-        // Return signed 0 if either 0.
-        if (!xc[0] || !yc[0]) {
-            return new Big(y.s * 0);
-        }
-
-        // Initialise exponent of result as x.e + y.e.
-        y.e = i + j;
-
-        // If array xc has fewer digits than yc, swap xc and yc, and lengths.
-        if (a < b) {
-            c = xc;
-            xc = yc;
-            yc = c;
-            j = a;
-            a = b;
-            b = j;
-        }
-
-        // Initialise coefficient array of result with zeros.
-        for (c = new Array(j = a + b); j--; c[j] = 0) {
-        }
-
-        // Multiply.
-
-        // i is initially xc.length.
-        for (i = b; i--;) {
-            b = 0;
-
-            // a is yc.length.
-            for (j = a + i; j > i;) {
-
-                // Current sum of products at this digit position, plus carry.
-                b = c[j] + yc[i] * xc[j - i - 1] + b;
-                c[j--] = b % 10;
-
-                // carry
-                b = b / 10 | 0;
-            }
-            c[j] = (c[j] + b) % 10;
-        }
-
-        // Increment result exponent if there is a final carry.
-        if (b) {
-            ++y.e;
-        }
-
-        // Remove any leading zero.
-        if (!c[0]) {
-            c.shift();
-        }
-
-        // Remove trailing zeros.
-        for (i = c.length; !c[--i]; c.pop()) {
-        }
-        y.c = c;
-
-        return y;
-    };
-
-
-    /*
-     * Return a string representing the value of this Big.
-     * Return exponential notation if this Big has a positive exponent equal to
-     * or greater than Big.E_POS, or a negative exponent equal to or less than
-     * Big.E_NEG.
-     */
-    P.toString = P.valueOf = P.toJSON = function () {
-        var x = this,
-            Big = x.constructor,
-            e = x.e,
-            str = x.c.join(''),
-            strL = str.length;
-
-        // Exponential notation?
-        if (e <= Big.E_NEG || e >= Big.E_POS) {
-            str = str.charAt(0) + (strL > 1 ? '.' + str.slice(1) : '') +
-              (e < 0 ? 'e' : 'e+') + e;
-
-        // Negative exponent?
-        } else if (e < 0) {
-
-            // Prepend zeros.
-            for (; ++e; str = '0' + str) {
-            }
-            str = '0.' + str;
-
-        // Positive exponent?
-        } else if (e > 0) {
-
-            if (++e > strL) {
-
-                // Append zeros.
-                for (e -= strL; e-- ; str += '0') {
-                }
-            } else if (e < strL) {
-                str = str.slice(0, e) + '.' + str.slice(e);
-            }
-
-        // Exponent zero.
-        } else if (strL > 1) {
-            str = str.charAt(0) + '.' + str.slice(1);
-        }
-
-        // Avoid '-0'
-        return x.s < 0 && x.c[0] ? '-' + str : str;
-    };
-
-
-    /*
-     ***************************************************************************
-     * If toExponential, toFixed, toPrecision and format are not required they
-     * can safely be commented-out or deleted. No redundant code will be left.
-     * format is used only by toExponential, toFixed and toPrecision.
-     ***************************************************************************
-     */
-
-
-    /*
-     * Return a string representing the value of this Big in exponential
-     * notation to dp fixed decimal places and rounded, if necessary, using
-     * Big.RM.
-     *
-     * [dp] {number} Integer, 0 to MAX_DP inclusive.
-     */
-    P.toExponential = function (dp) {
-
-        if (dp == null) {
-            dp = this.c.length - 1;
-        } else if (dp !== ~~dp || dp < 0 || dp > MAX_DP) {
-            throwErr('!toExp!');
-        }
-
-        return format(this, dp, 1);
-    };
-
-
-    /*
-     * Return a string representing the value of this Big in normal notation
-     * to dp fixed decimal places and rounded, if necessary, using Big.RM.
-     *
-     * [dp] {number} Integer, 0 to MAX_DP inclusive.
-     */
-    P.toFixed = function (dp) {
-        var str,
-            x = this,
-            Big = x.constructor,
-            neg = Big.E_NEG,
-            pos = Big.E_POS;
-
-        // Prevent the possibility of exponential notation.
-        Big.E_NEG = -(Big.E_POS = 1 / 0);
-
-        if (dp == null) {
-            str = x.toString();
-        } else if (dp === ~~dp && dp >= 0 && dp <= MAX_DP) {
-            str = format(x, x.e + dp);
-
-            // (-0).toFixed() is '0', but (-0.1).toFixed() is '-0'.
-            // (-0).toFixed(1) is '0.0', but (-0.01).toFixed(1) is '-0.0'.
-            if (x.s < 0 && x.c[0] && str.indexOf('-') < 0) {
-        //E.g. -0.5 if rounded to -0 will cause toString to omit the minus sign.
-                str = '-' + str;
-            }
-        }
-        Big.E_NEG = neg;
-        Big.E_POS = pos;
-
-        if (!str) {
-            throwErr('!toFix!');
-        }
-
-        return str;
-    };
-
-
-    /*
-     * Return a string representing the value of this Big rounded to sd
-     * significant digits using Big.RM. Use exponential notation if sd is less
-     * than the number of digits necessary to represent the integer part of the
-     * value in normal notation.
-     *
-     * sd {number} Integer, 1 to MAX_DP inclusive.
-     */
-    P.toPrecision = function (sd) {
-
-        if (sd == null) {
-            return this.toString();
-        } else if (sd !== ~~sd || sd < 1 || sd > MAX_DP) {
-            throwErr('!toPre!');
-        }
-
-        return format(this, sd - 1, 2);
-    };
-
-
-    // Export
-
-
-    Big = bigFactory();
-
-    //AMD.
-    if (true) {
-        !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-            return Big;
-        }.call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-
-    // Node and other CommonJS-like environments that support module.exports.
-    } else if (typeof module !== 'undefined' && module.exports) {
-        module.exports = Big;
-
-    //Browser.
-    } else {
-        global.Big = Big;
-    }
-})(this);
-
-
-/***/ }),
-/* 140 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process, Buffer) {var msg = __webpack_require__(83);
-var zstream = __webpack_require__(202);
-var zlib_deflate = __webpack_require__(197);
-var zlib_inflate = __webpack_require__(199);
-var constants = __webpack_require__(196);
+/* WEBPACK VAR INJECTION */(function(process, Buffer) {var msg = __webpack_require__(82);
+var zstream = __webpack_require__(179);
+var zlib_deflate = __webpack_require__(174);
+var zlib_inflate = __webpack_require__(176);
+var constants = __webpack_require__(173);
 
 for (var key in constants) {
   exports[key] = constants[key];
@@ -23931,7 +22784,7 @@ exports.Zlib = Zlib;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(3).Buffer))
 
 /***/ }),
-/* 141 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(Buffer, process) {// Copyright Joyent, Inc. and other Node contributors.
@@ -23955,10 +22808,10 @@ exports.Zlib = Zlib;
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-var Transform = __webpack_require__(120);
+var Transform = __webpack_require__(119);
 
-var binding = __webpack_require__(140);
-var util = __webpack_require__(72);
+var binding = __webpack_require__(139);
+var util = __webpack_require__(70);
 var assert = __webpack_require__(127).ok;
 
 // zlib doesn't provide these, so kludge them in following the same
@@ -24548,7 +23401,7 @@ util.inherits(Unzip, Zlib);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(8)))
 
 /***/ }),
-/* 142 */
+/* 141 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -24618,10 +23471,10 @@ module.exports = {
 
 
 /***/ }),
-/* 143 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(144)();
+exports = module.exports = __webpack_require__(143)();
 // imports
 
 
@@ -24632,7 +23485,7 @@ exports.push([module.i, "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-
 
 
 /***/ }),
-/* 144 */
+/* 143 */
 /***/ (function(module, exports) {
 
 /*
@@ -24688,162 +23541,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 145 */
-/***/ (function(module, exports) {
-
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 145;
-
-
-/***/ }),
-/* 146 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-var iconvLite = __webpack_require__(173);
-// Load Iconv from an external file to be able to disable Iconv for webpack
-// Add /\/iconv-loader$/ to webpack.IgnorePlugin to ignore it
-var Iconv = __webpack_require__(147);
-
-// Expose to the world
-module.exports.convert = convert;
-
-/**
- * Convert encoding of an UTF-8 string or a buffer
- *
- * @param {String|Buffer} str String to be converted
- * @param {String} to Encoding to be converted to
- * @param {String} [from='UTF-8'] Encoding to be converted from
- * @param {Boolean} useLite If set to ture, force to use iconvLite
- * @return {Buffer} Encoded string
- */
-function convert(str, to, from, useLite) {
-    from = checkEncoding(from || 'UTF-8');
-    to = checkEncoding(to || 'UTF-8');
-    str = str || '';
-
-    var result;
-
-    if (from !== 'UTF-8' && typeof str === 'string') {
-        str = new Buffer(str, 'binary');
-    }
-
-    if (from === to) {
-        if (typeof str === 'string') {
-            result = new Buffer(str);
-        } else {
-            result = str;
-        }
-    } else if (Iconv && !useLite) {
-        try {
-            result = convertIconv(str, to, from);
-        } catch (E) {
-            console.error(E);
-            try {
-                result = convertIconvLite(str, to, from);
-            } catch (E) {
-                console.error(E);
-                result = str;
-            }
-        }
-    } else {
-        try {
-            result = convertIconvLite(str, to, from);
-        } catch (E) {
-            console.error(E);
-            result = str;
-        }
-    }
-
-
-    if (typeof result === 'string') {
-        result = new Buffer(result, 'utf-8');
-    }
-
-    return result;
-}
-
-/**
- * Convert encoding of a string with node-iconv (if available)
- *
- * @param {String|Buffer} str String to be converted
- * @param {String} to Encoding to be converted to
- * @param {String} [from='UTF-8'] Encoding to be converted from
- * @return {Buffer} Encoded string
- */
-function convertIconv(str, to, from) {
-    var response, iconv;
-    iconv = new Iconv(from, to + '//TRANSLIT//IGNORE');
-    response = iconv.convert(str);
-    return response.slice(0, response.length);
-}
-
-/**
- * Convert encoding of astring with iconv-lite
- *
- * @param {String|Buffer} str String to be converted
- * @param {String} to Encoding to be converted to
- * @param {String} [from='UTF-8'] Encoding to be converted from
- * @return {Buffer} Encoded string
- */
-function convertIconvLite(str, to, from) {
-    if (to === 'UTF-8') {
-        return iconvLite.decode(str, from);
-    } else if (from === 'UTF-8') {
-        return iconvLite.encode(str, to);
-    } else {
-        return iconvLite.encode(iconvLite.decode(str, from), to);
-    }
-}
-
-/**
- * Converts charset name if needed
- *
- * @param {String} name Character set
- * @return {String} Character set name
- */
-function checkEncoding(name) {
-    return (name || '').toString().trim().
-    replace(/^latin[\-_]?(\d+)$/i, 'ISO-8859-$1').
-    replace(/^win(?:dows)?[\-_]?(\d+)$/i, 'WINDOWS-$1').
-    replace(/^utf[\-_]?(\d+)$/i, 'UTF-$1').
-    replace(/^ks_c_5601\-1987$/i, 'CP949').
-    replace(/^us[\-_]?ascii$/i, 'ASCII').
-    toUpperCase();
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 147 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var iconv_package;
-var Iconv;
-
-try {
-    // this is to fool browserify so it doesn't try (in vain) to install iconv.
-    iconv_package = 'iconv';
-    Iconv = !(function webpackMissingModule() { var e = new Error("Cannot find module \".\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()).Iconv;
-} catch (E) {
-    // node-iconv not present
-}
-
-module.exports = Iconv;
-
-
-/***/ }),
-/* 148 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24880,7 +23578,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 149 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24897,7 +23595,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(148);
+var camelize = __webpack_require__(144);
 
 var msPattern = /^-ms-/;
 
@@ -24925,7 +23623,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 150 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24942,7 +23640,7 @@ module.exports = camelizeStyleName;
  * 
  */
 
-var isTextNode = __webpack_require__(158);
+var isTextNode = __webpack_require__(154);
 
 /*eslint-disable no-bitwise */
 
@@ -24970,7 +23668,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 151 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25102,7 +23800,7 @@ function createArrayFromMixed(obj) {
 module.exports = createArrayFromMixed;
 
 /***/ }),
-/* 152 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25123,8 +23821,8 @@ module.exports = createArrayFromMixed;
 
 var ExecutionEnvironment = __webpack_require__(7);
 
-var createArrayFromMixed = __webpack_require__(151);
-var getMarkupWrap = __webpack_require__(153);
+var createArrayFromMixed = __webpack_require__(147);
+var getMarkupWrap = __webpack_require__(149);
 var invariant = __webpack_require__(0);
 
 /**
@@ -25191,7 +23889,7 @@ function createNodesFromMarkup(markup, handleScript) {
 module.exports = createNodesFromMarkup;
 
 /***/ }),
-/* 153 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25291,7 +23989,7 @@ function getMarkupWrap(nodeName) {
 module.exports = getMarkupWrap;
 
 /***/ }),
-/* 154 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25335,7 +24033,7 @@ function getUnboundedScrollPosition(scrollable) {
 module.exports = getUnboundedScrollPosition;
 
 /***/ }),
-/* 155 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25373,7 +24071,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 156 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25390,7 +24088,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(155);
+var hyphenate = __webpack_require__(151);
 
 var msPattern = /^ms-/;
 
@@ -25417,7 +24115,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 157 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25445,7 +24143,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 158 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25462,7 +24160,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(157);
+var isNode = __webpack_require__(153);
 
 /**
  * @param {*} object The object to check.
@@ -25475,7 +24173,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 159 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25510,7 +24208,7 @@ function memoizeStringOnly(callback) {
 module.exports = memoizeStringOnly;
 
 /***/ }),
-/* 160 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25567,10 +24265,10 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 
 
 /***/ }),
-/* 161 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var http = __webpack_require__(70);
+var http = __webpack_require__(68);
 
 var https = module.exports;
 
@@ -25587,2728 +24285,7 @@ https.request = function (params, cb) {
 
 
 /***/ }),
-/* 162 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-// Multibyte codec. In this scheme, a character is represented by 1 or more bytes.
-// Our codec supports UTF-16 surrogates, extensions for GB18030 and unicode sequences.
-// To save memory and loading time, we read table files only when requested.
-
-exports._dbcs = DBCSCodec;
-
-var UNASSIGNED = -1,
-    GB18030_CODE = -2,
-    SEQ_START  = -10,
-    NODE_START = -1000,
-    UNASSIGNED_NODE = new Array(0x100),
-    DEF_CHAR = -1;
-
-for (var i = 0; i < 0x100; i++)
-    UNASSIGNED_NODE[i] = UNASSIGNED;
-
-
-// Class DBCSCodec reads and initializes mapping tables.
-function DBCSCodec(codecOptions, iconv) {
-    this.encodingName = codecOptions.encodingName;
-    if (!codecOptions)
-        throw new Error("DBCS codec is called without the data.")
-    if (!codecOptions.table)
-        throw new Error("Encoding '" + this.encodingName + "' has no data.");
-
-    // Load tables.
-    var mappingTable = codecOptions.table();
-
-
-    // Decode tables: MBCS -> Unicode.
-
-    // decodeTables is a trie, encoded as an array of arrays of integers. Internal arrays are trie nodes and all have len = 256.
-    // Trie root is decodeTables[0].
-    // Values: >=  0 -> unicode character code. can be > 0xFFFF
-    //         == UNASSIGNED -> unknown/unassigned sequence.
-    //         == GB18030_CODE -> this is the end of a GB18030 4-byte sequence.
-    //         <= NODE_START -> index of the next node in our trie to process next byte.
-    //         <= SEQ_START  -> index of the start of a character code sequence, in decodeTableSeq.
-    this.decodeTables = [];
-    this.decodeTables[0] = UNASSIGNED_NODE.slice(0); // Create root node.
-
-    // Sometimes a MBCS char corresponds to a sequence of unicode chars. We store them as arrays of integers here. 
-    this.decodeTableSeq = [];
-
-    // Actual mapping tables consist of chunks. Use them to fill up decode tables.
-    for (var i = 0; i < mappingTable.length; i++)
-        this._addDecodeChunk(mappingTable[i]);
-
-    this.defaultCharUnicode = iconv.defaultCharUnicode;
-
-    
-    // Encode tables: Unicode -> DBCS.
-
-    // `encodeTable` is array mapping from unicode char to encoded char. All its values are integers for performance.
-    // Because it can be sparse, it is represented as array of buckets by 256 chars each. Bucket can be null.
-    // Values: >=  0 -> it is a normal char. Write the value (if <=256 then 1 byte, if <=65536 then 2 bytes, etc.).
-    //         == UNASSIGNED -> no conversion found. Output a default char.
-    //         <= SEQ_START  -> it's an index in encodeTableSeq, see below. The character starts a sequence.
-    this.encodeTable = [];
-    
-    // `encodeTableSeq` is used when a sequence of unicode characters is encoded as a single code. We use a tree of
-    // objects where keys correspond to characters in sequence and leafs are the encoded dbcs values. A special DEF_CHAR key
-    // means end of sequence (needed when one sequence is a strict subsequence of another).
-    // Objects are kept separately from encodeTable to increase performance.
-    this.encodeTableSeq = [];
-
-    // Some chars can be decoded, but need not be encoded.
-    var skipEncodeChars = {};
-    if (codecOptions.encodeSkipVals)
-        for (var i = 0; i < codecOptions.encodeSkipVals.length; i++) {
-            var val = codecOptions.encodeSkipVals[i];
-            if (typeof val === 'number')
-                skipEncodeChars[val] = true;
-            else
-                for (var j = val.from; j <= val.to; j++)
-                    skipEncodeChars[j] = true;
-        }
-        
-    // Use decode trie to recursively fill out encode tables.
-    this._fillEncodeTable(0, 0, skipEncodeChars);
-
-    // Add more encoding pairs when needed.
-    if (codecOptions.encodeAdd) {
-        for (var uChar in codecOptions.encodeAdd)
-            if (Object.prototype.hasOwnProperty.call(codecOptions.encodeAdd, uChar))
-                this._setEncodeChar(uChar.charCodeAt(0), codecOptions.encodeAdd[uChar]);
-    }
-
-    this.defCharSB  = this.encodeTable[0][iconv.defaultCharSingleByte.charCodeAt(0)];
-    if (this.defCharSB === UNASSIGNED) this.defCharSB = this.encodeTable[0]['?'];
-    if (this.defCharSB === UNASSIGNED) this.defCharSB = "?".charCodeAt(0);
-
-
-    // Load & create GB18030 tables when needed.
-    if (typeof codecOptions.gb18030 === 'function') {
-        this.gb18030 = codecOptions.gb18030(); // Load GB18030 ranges.
-
-        // Add GB18030 decode tables.
-        var thirdByteNodeIdx = this.decodeTables.length;
-        var thirdByteNode = this.decodeTables[thirdByteNodeIdx] = UNASSIGNED_NODE.slice(0);
-
-        var fourthByteNodeIdx = this.decodeTables.length;
-        var fourthByteNode = this.decodeTables[fourthByteNodeIdx] = UNASSIGNED_NODE.slice(0);
-
-        for (var i = 0x81; i <= 0xFE; i++) {
-            var secondByteNodeIdx = NODE_START - this.decodeTables[0][i];
-            var secondByteNode = this.decodeTables[secondByteNodeIdx];
-            for (var j = 0x30; j <= 0x39; j++)
-                secondByteNode[j] = NODE_START - thirdByteNodeIdx;
-        }
-        for (var i = 0x81; i <= 0xFE; i++)
-            thirdByteNode[i] = NODE_START - fourthByteNodeIdx;
-        for (var i = 0x30; i <= 0x39; i++)
-            fourthByteNode[i] = GB18030_CODE
-    }        
-}
-
-DBCSCodec.prototype.encoder = DBCSEncoder;
-DBCSCodec.prototype.decoder = DBCSDecoder;
-
-// Decoder helpers
-DBCSCodec.prototype._getDecodeTrieNode = function(addr) {
-    var bytes = [];
-    for (; addr > 0; addr >>= 8)
-        bytes.push(addr & 0xFF);
-    if (bytes.length == 0)
-        bytes.push(0);
-
-    var node = this.decodeTables[0];
-    for (var i = bytes.length-1; i > 0; i--) { // Traverse nodes deeper into the trie.
-        var val = node[bytes[i]];
-
-        if (val == UNASSIGNED) { // Create new node.
-            node[bytes[i]] = NODE_START - this.decodeTables.length;
-            this.decodeTables.push(node = UNASSIGNED_NODE.slice(0));
-        }
-        else if (val <= NODE_START) { // Existing node.
-            node = this.decodeTables[NODE_START - val];
-        }
-        else
-            throw new Error("Overwrite byte in " + this.encodingName + ", addr: " + addr.toString(16));
-    }
-    return node;
-}
-
-
-DBCSCodec.prototype._addDecodeChunk = function(chunk) {
-    // First element of chunk is the hex mbcs code where we start.
-    var curAddr = parseInt(chunk[0], 16);
-
-    // Choose the decoding node where we'll write our chars.
-    var writeTable = this._getDecodeTrieNode(curAddr);
-    curAddr = curAddr & 0xFF;
-
-    // Write all other elements of the chunk to the table.
-    for (var k = 1; k < chunk.length; k++) {
-        var part = chunk[k];
-        if (typeof part === "string") { // String, write as-is.
-            for (var l = 0; l < part.length;) {
-                var code = part.charCodeAt(l++);
-                if (0xD800 <= code && code < 0xDC00) { // Decode surrogate
-                    var codeTrail = part.charCodeAt(l++);
-                    if (0xDC00 <= codeTrail && codeTrail < 0xE000)
-                        writeTable[curAddr++] = 0x10000 + (code - 0xD800) * 0x400 + (codeTrail - 0xDC00);
-                    else
-                        throw new Error("Incorrect surrogate pair in "  + this.encodingName + " at chunk " + chunk[0]);
-                }
-                else if (0x0FF0 < code && code <= 0x0FFF) { // Character sequence (our own encoding used)
-                    var len = 0xFFF - code + 2;
-                    var seq = [];
-                    for (var m = 0; m < len; m++)
-                        seq.push(part.charCodeAt(l++)); // Simple variation: don't support surrogates or subsequences in seq.
-
-                    writeTable[curAddr++] = SEQ_START - this.decodeTableSeq.length;
-                    this.decodeTableSeq.push(seq);
-                }
-                else
-                    writeTable[curAddr++] = code; // Basic char
-            }
-        } 
-        else if (typeof part === "number") { // Integer, meaning increasing sequence starting with prev character.
-            var charCode = writeTable[curAddr - 1] + 1;
-            for (var l = 0; l < part; l++)
-                writeTable[curAddr++] = charCode++;
-        }
-        else
-            throw new Error("Incorrect type '" + typeof part + "' given in "  + this.encodingName + " at chunk " + chunk[0]);
-    }
-    if (curAddr > 0xFF)
-        throw new Error("Incorrect chunk in "  + this.encodingName + " at addr " + chunk[0] + ": too long" + curAddr);
-}
-
-// Encoder helpers
-DBCSCodec.prototype._getEncodeBucket = function(uCode) {
-    var high = uCode >> 8; // This could be > 0xFF because of astral characters.
-    if (this.encodeTable[high] === undefined)
-        this.encodeTable[high] = UNASSIGNED_NODE.slice(0); // Create bucket on demand.
-    return this.encodeTable[high];
-}
-
-DBCSCodec.prototype._setEncodeChar = function(uCode, dbcsCode) {
-    var bucket = this._getEncodeBucket(uCode);
-    var low = uCode & 0xFF;
-    if (bucket[low] <= SEQ_START)
-        this.encodeTableSeq[SEQ_START-bucket[low]][DEF_CHAR] = dbcsCode; // There's already a sequence, set a single-char subsequence of it.
-    else if (bucket[low] == UNASSIGNED)
-        bucket[low] = dbcsCode;
-}
-
-DBCSCodec.prototype._setEncodeSequence = function(seq, dbcsCode) {
-    
-    // Get the root of character tree according to first character of the sequence.
-    var uCode = seq[0];
-    var bucket = this._getEncodeBucket(uCode);
-    var low = uCode & 0xFF;
-
-    var node;
-    if (bucket[low] <= SEQ_START) {
-        // There's already a sequence with  - use it.
-        node = this.encodeTableSeq[SEQ_START-bucket[low]];
-    }
-    else {
-        // There was no sequence object - allocate a new one.
-        node = {};
-        if (bucket[low] !== UNASSIGNED) node[DEF_CHAR] = bucket[low]; // If a char was set before - make it a single-char subsequence.
-        bucket[low] = SEQ_START - this.encodeTableSeq.length;
-        this.encodeTableSeq.push(node);
-    }
-
-    // Traverse the character tree, allocating new nodes as needed.
-    for (var j = 1; j < seq.length-1; j++) {
-        var oldVal = node[uCode];
-        if (typeof oldVal === 'object')
-            node = oldVal;
-        else {
-            node = node[uCode] = {}
-            if (oldVal !== undefined)
-                node[DEF_CHAR] = oldVal
-        }
-    }
-
-    // Set the leaf to given dbcsCode.
-    uCode = seq[seq.length-1];
-    node[uCode] = dbcsCode;
-}
-
-DBCSCodec.prototype._fillEncodeTable = function(nodeIdx, prefix, skipEncodeChars) {
-    var node = this.decodeTables[nodeIdx];
-    for (var i = 0; i < 0x100; i++) {
-        var uCode = node[i];
-        var mbCode = prefix + i;
-        if (skipEncodeChars[mbCode])
-            continue;
-
-        if (uCode >= 0)
-            this._setEncodeChar(uCode, mbCode);
-        else if (uCode <= NODE_START)
-            this._fillEncodeTable(NODE_START - uCode, mbCode << 8, skipEncodeChars);
-        else if (uCode <= SEQ_START)
-            this._setEncodeSequence(this.decodeTableSeq[SEQ_START - uCode], mbCode);
-    }
-}
-
-
-
-// == Encoder ==================================================================
-
-function DBCSEncoder(options, codec) {
-    // Encoder state
-    this.leadSurrogate = -1;
-    this.seqObj = undefined;
-    
-    // Static data
-    this.encodeTable = codec.encodeTable;
-    this.encodeTableSeq = codec.encodeTableSeq;
-    this.defaultCharSingleByte = codec.defCharSB;
-    this.gb18030 = codec.gb18030;
-}
-
-DBCSEncoder.prototype.write = function(str) {
-    var newBuf = new Buffer(str.length * (this.gb18030 ? 4 : 3)), 
-        leadSurrogate = this.leadSurrogate,
-        seqObj = this.seqObj, nextChar = -1,
-        i = 0, j = 0;
-
-    while (true) {
-        // 0. Get next character.
-        if (nextChar === -1) {
-            if (i == str.length) break;
-            var uCode = str.charCodeAt(i++);
-        }
-        else {
-            var uCode = nextChar;
-            nextChar = -1;    
-        }
-
-        // 1. Handle surrogates.
-        if (0xD800 <= uCode && uCode < 0xE000) { // Char is one of surrogates.
-            if (uCode < 0xDC00) { // We've got lead surrogate.
-                if (leadSurrogate === -1) {
-                    leadSurrogate = uCode;
-                    continue;
-                } else {
-                    leadSurrogate = uCode;
-                    // Double lead surrogate found.
-                    uCode = UNASSIGNED;
-                }
-            } else { // We've got trail surrogate.
-                if (leadSurrogate !== -1) {
-                    uCode = 0x10000 + (leadSurrogate - 0xD800) * 0x400 + (uCode - 0xDC00);
-                    leadSurrogate = -1;
-                } else {
-                    // Incomplete surrogate pair - only trail surrogate found.
-                    uCode = UNASSIGNED;
-                }
-                
-            }
-        }
-        else if (leadSurrogate !== -1) {
-            // Incomplete surrogate pair - only lead surrogate found.
-            nextChar = uCode; uCode = UNASSIGNED; // Write an error, then current char.
-            leadSurrogate = -1;
-        }
-
-        // 2. Convert uCode character.
-        var dbcsCode = UNASSIGNED;
-        if (seqObj !== undefined && uCode != UNASSIGNED) { // We are in the middle of the sequence
-            var resCode = seqObj[uCode];
-            if (typeof resCode === 'object') { // Sequence continues.
-                seqObj = resCode;
-                continue;
-
-            } else if (typeof resCode == 'number') { // Sequence finished. Write it.
-                dbcsCode = resCode;
-
-            } else if (resCode == undefined) { // Current character is not part of the sequence.
-
-                // Try default character for this sequence
-                resCode = seqObj[DEF_CHAR];
-                if (resCode !== undefined) {
-                    dbcsCode = resCode; // Found. Write it.
-                    nextChar = uCode; // Current character will be written too in the next iteration.
-
-                } else {
-                    // TODO: What if we have no default? (resCode == undefined)
-                    // Then, we should write first char of the sequence as-is and try the rest recursively.
-                    // Didn't do it for now because no encoding has this situation yet.
-                    // Currently, just skip the sequence and write current char.
-                }
-            }
-            seqObj = undefined;
-        }
-        else if (uCode >= 0) {  // Regular character
-            var subtable = this.encodeTable[uCode >> 8];
-            if (subtable !== undefined)
-                dbcsCode = subtable[uCode & 0xFF];
-            
-            if (dbcsCode <= SEQ_START) { // Sequence start
-                seqObj = this.encodeTableSeq[SEQ_START-dbcsCode];
-                continue;
-            }
-
-            if (dbcsCode == UNASSIGNED && this.gb18030) {
-                // Use GB18030 algorithm to find character(s) to write.
-                var idx = findIdx(this.gb18030.uChars, uCode);
-                if (idx != -1) {
-                    var dbcsCode = this.gb18030.gbChars[idx] + (uCode - this.gb18030.uChars[idx]);
-                    newBuf[j++] = 0x81 + Math.floor(dbcsCode / 12600); dbcsCode = dbcsCode % 12600;
-                    newBuf[j++] = 0x30 + Math.floor(dbcsCode / 1260); dbcsCode = dbcsCode % 1260;
-                    newBuf[j++] = 0x81 + Math.floor(dbcsCode / 10); dbcsCode = dbcsCode % 10;
-                    newBuf[j++] = 0x30 + dbcsCode;
-                    continue;
-                }
-            }
-        }
-
-        // 3. Write dbcsCode character.
-        if (dbcsCode === UNASSIGNED)
-            dbcsCode = this.defaultCharSingleByte;
-        
-        if (dbcsCode < 0x100) {
-            newBuf[j++] = dbcsCode;
-        }
-        else if (dbcsCode < 0x10000) {
-            newBuf[j++] = dbcsCode >> 8;   // high byte
-            newBuf[j++] = dbcsCode & 0xFF; // low byte
-        }
-        else {
-            newBuf[j++] = dbcsCode >> 16;
-            newBuf[j++] = (dbcsCode >> 8) & 0xFF;
-            newBuf[j++] = dbcsCode & 0xFF;
-        }
-    }
-
-    this.seqObj = seqObj;
-    this.leadSurrogate = leadSurrogate;
-    return newBuf.slice(0, j);
-}
-
-DBCSEncoder.prototype.end = function() {
-    if (this.leadSurrogate === -1 && this.seqObj === undefined)
-        return; // All clean. Most often case.
-
-    var newBuf = new Buffer(10), j = 0;
-
-    if (this.seqObj) { // We're in the sequence.
-        var dbcsCode = this.seqObj[DEF_CHAR];
-        if (dbcsCode !== undefined) { // Write beginning of the sequence.
-            if (dbcsCode < 0x100) {
-                newBuf[j++] = dbcsCode;
-            }
-            else {
-                newBuf[j++] = dbcsCode >> 8;   // high byte
-                newBuf[j++] = dbcsCode & 0xFF; // low byte
-            }
-        } else {
-            // See todo above.
-        }
-        this.seqObj = undefined;
-    }
-
-    if (this.leadSurrogate !== -1) {
-        // Incomplete surrogate pair - only lead surrogate found.
-        newBuf[j++] = this.defaultCharSingleByte;
-        this.leadSurrogate = -1;
-    }
-    
-    return newBuf.slice(0, j);
-}
-
-// Export for testing
-DBCSEncoder.prototype.findIdx = findIdx;
-
-
-// == Decoder ==================================================================
-
-function DBCSDecoder(options, codec) {
-    // Decoder state
-    this.nodeIdx = 0;
-    this.prevBuf = new Buffer(0);
-
-    // Static data
-    this.decodeTables = codec.decodeTables;
-    this.decodeTableSeq = codec.decodeTableSeq;
-    this.defaultCharUnicode = codec.defaultCharUnicode;
-    this.gb18030 = codec.gb18030;
-}
-
-DBCSDecoder.prototype.write = function(buf) {
-    var newBuf = new Buffer(buf.length*2),
-        nodeIdx = this.nodeIdx, 
-        prevBuf = this.prevBuf, prevBufOffset = this.prevBuf.length,
-        seqStart = -this.prevBuf.length, // idx of the start of current parsed sequence.
-        uCode;
-
-    if (prevBufOffset > 0) // Make prev buf overlap a little to make it easier to slice later.
-        prevBuf = Buffer.concat([prevBuf, buf.slice(0, 10)]);
-    
-    for (var i = 0, j = 0; i < buf.length; i++) {
-        var curByte = (i >= 0) ? buf[i] : prevBuf[i + prevBufOffset];
-
-        // Lookup in current trie node.
-        var uCode = this.decodeTables[nodeIdx][curByte];
-
-        if (uCode >= 0) { 
-            // Normal character, just use it.
-        }
-        else if (uCode === UNASSIGNED) { // Unknown char.
-            // TODO: Callback with seq.
-            //var curSeq = (seqStart >= 0) ? buf.slice(seqStart, i+1) : prevBuf.slice(seqStart + prevBufOffset, i+1 + prevBufOffset);
-            i = seqStart; // Try to parse again, after skipping first byte of the sequence ('i' will be incremented by 'for' cycle).
-            uCode = this.defaultCharUnicode.charCodeAt(0);
-        }
-        else if (uCode === GB18030_CODE) {
-            var curSeq = (seqStart >= 0) ? buf.slice(seqStart, i+1) : prevBuf.slice(seqStart + prevBufOffset, i+1 + prevBufOffset);
-            var ptr = (curSeq[0]-0x81)*12600 + (curSeq[1]-0x30)*1260 + (curSeq[2]-0x81)*10 + (curSeq[3]-0x30);
-            var idx = findIdx(this.gb18030.gbChars, ptr);
-            uCode = this.gb18030.uChars[idx] + ptr - this.gb18030.gbChars[idx];
-        }
-        else if (uCode <= NODE_START) { // Go to next trie node.
-            nodeIdx = NODE_START - uCode;
-            continue;
-        }
-        else if (uCode <= SEQ_START) { // Output a sequence of chars.
-            var seq = this.decodeTableSeq[SEQ_START - uCode];
-            for (var k = 0; k < seq.length - 1; k++) {
-                uCode = seq[k];
-                newBuf[j++] = uCode & 0xFF;
-                newBuf[j++] = uCode >> 8;
-            }
-            uCode = seq[seq.length-1];
-        }
-        else
-            throw new Error("iconv-lite internal error: invalid decoding table value " + uCode + " at " + nodeIdx + "/" + curByte);
-
-        // Write the character to buffer, handling higher planes using surrogate pair.
-        if (uCode > 0xFFFF) { 
-            uCode -= 0x10000;
-            var uCodeLead = 0xD800 + Math.floor(uCode / 0x400);
-            newBuf[j++] = uCodeLead & 0xFF;
-            newBuf[j++] = uCodeLead >> 8;
-
-            uCode = 0xDC00 + uCode % 0x400;
-        }
-        newBuf[j++] = uCode & 0xFF;
-        newBuf[j++] = uCode >> 8;
-
-        // Reset trie node.
-        nodeIdx = 0; seqStart = i+1;
-    }
-
-    this.nodeIdx = nodeIdx;
-    this.prevBuf = (seqStart >= 0) ? buf.slice(seqStart) : prevBuf.slice(seqStart + prevBufOffset);
-    return newBuf.slice(0, j).toString('ucs2');
-}
-
-DBCSDecoder.prototype.end = function() {
-    var ret = '';
-
-    // Try to parse all remaining chars.
-    while (this.prevBuf.length > 0) {
-        // Skip 1 character in the buffer.
-        ret += this.defaultCharUnicode;
-        var buf = this.prevBuf.slice(1);
-
-        // Parse remaining as usual.
-        this.prevBuf = new Buffer(0);
-        this.nodeIdx = 0;
-        if (buf.length > 0)
-            ret += this.write(buf);
-    }
-
-    this.nodeIdx = 0;
-    return ret;
-}
-
-// Binary search for GB18030. Returns largest i such that table[i] <= val.
-function findIdx(table, val) {
-    if (table[0] > val)
-        return -1;
-
-    var l = 0, r = table.length;
-    while (l < r-1) { // always table[l] <= val < table[r]
-        var mid = l + Math.floor((r-l+1)/2);
-        if (table[mid] <= val)
-            l = mid;
-        else
-            r = mid;
-    }
-    return l;
-}
-
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 163 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Description of supported double byte encodings and aliases.
-// Tables are not require()-d until they are needed to speed up library load.
-// require()-s are direct to support Browserify.
-
-module.exports = {
-    
-    // == Japanese/ShiftJIS ====================================================
-    // All japanese encodings are based on JIS X set of standards:
-    // JIS X 0201 - Single-byte encoding of ASCII + ¥ + Kana chars at 0xA1-0xDF.
-    // JIS X 0208 - Main set of 6879 characters, placed in 94x94 plane, to be encoded by 2 bytes. 
-    //              Has several variations in 1978, 1983, 1990 and 1997.
-    // JIS X 0212 - Supplementary plane of 6067 chars in 94x94 plane. 1990. Effectively dead.
-    // JIS X 0213 - Extension and modern replacement of 0208 and 0212. Total chars: 11233.
-    //              2 planes, first is superset of 0208, second - revised 0212.
-    //              Introduced in 2000, revised 2004. Some characters are in Unicode Plane 2 (0x2xxxx)
-
-    // Byte encodings are:
-    //  * Shift_JIS: Compatible with 0201, uses not defined chars in top half as lead bytes for double-byte
-    //               encoding of 0208. Lead byte ranges: 0x81-0x9F, 0xE0-0xEF; Trail byte ranges: 0x40-0x7E, 0x80-0x9E, 0x9F-0xFC.
-    //               Windows CP932 is a superset of Shift_JIS. Some companies added more chars, notably KDDI.
-    //  * EUC-JP:    Up to 3 bytes per character. Used mostly on *nixes.
-    //               0x00-0x7F       - lower part of 0201
-    //               0x8E, 0xA1-0xDF - upper part of 0201
-    //               (0xA1-0xFE)x2   - 0208 plane (94x94).
-    //               0x8F, (0xA1-0xFE)x2 - 0212 plane (94x94).
-    //  * JIS X 208: 7-bit, direct encoding of 0208. Byte ranges: 0x21-0x7E (94 values). Uncommon.
-    //               Used as-is in ISO2022 family.
-    //  * ISO2022-JP: Stateful encoding, with escape sequences to switch between ASCII, 
-    //                0201-1976 Roman, 0208-1978, 0208-1983.
-    //  * ISO2022-JP-1: Adds esc seq for 0212-1990.
-    //  * ISO2022-JP-2: Adds esc seq for GB2313-1980, KSX1001-1992, ISO8859-1, ISO8859-7.
-    //  * ISO2022-JP-3: Adds esc seq for 0201-1976 Kana set, 0213-2000 Planes 1, 2.
-    //  * ISO2022-JP-2004: Adds 0213-2004 Plane 1.
-    //
-    // After JIS X 0213 appeared, Shift_JIS-2004, EUC-JISX0213 and ISO2022-JP-2004 followed, with just changing the planes.
-    //
-    // Overall, it seems that it's a mess :( http://www8.plala.or.jp/tkubota1/unicode-symbols-map2.html
-
-    'shiftjis': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(182) },
-        encodeAdd: {'\u00a5': 0x5C, '\u203E': 0x7E},
-        encodeSkipVals: [{from: 0xED40, to: 0xF940}],
-    },
-    'csshiftjis': 'shiftjis',
-    'mskanji': 'shiftjis',
-    'sjis': 'shiftjis',
-    'windows31j': 'shiftjis',
-    'ms31j': 'shiftjis',
-    'xsjis': 'shiftjis',
-    'windows932': 'shiftjis',
-    'ms932': 'shiftjis',
-    '932': 'shiftjis',
-    'cp932': 'shiftjis',
-
-    'eucjp': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(180) },
-        encodeAdd: {'\u00a5': 0x5C, '\u203E': 0x7E},
-    },
-
-    // TODO: KDDI extension to Shift_JIS
-    // TODO: IBM CCSID 942 = CP932, but F0-F9 custom chars and other char changes.
-    // TODO: IBM CCSID 943 = Shift_JIS = CP932 with original Shift_JIS lower 128 chars.
-
-
-    // == Chinese/GBK ==========================================================
-    // http://en.wikipedia.org/wiki/GBK
-    // We mostly implement W3C recommendation: https://www.w3.org/TR/encoding/#gbk-encoder
-
-    // Oldest GB2312 (1981, ~7600 chars) is a subset of CP936
-    'gb2312': 'cp936',
-    'gb231280': 'cp936',
-    'gb23121980': 'cp936',
-    'csgb2312': 'cp936',
-    'csiso58gb231280': 'cp936',
-    'euccn': 'cp936',
-
-    // Microsoft's CP936 is a subset and approximation of GBK.
-    'windows936': 'cp936',
-    'ms936': 'cp936',
-    '936': 'cp936',
-    'cp936': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(43) },
-    },
-
-    // GBK (~22000 chars) is an extension of CP936 that added user-mapped chars and some other.
-    'gbk': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(43).concat(__webpack_require__(78)) },
-    },
-    'xgbk': 'gbk',
-    'isoir58': 'gbk',
-
-    // GB18030 is an algorithmic extension of GBK.
-    // Main source: https://www.w3.org/TR/encoding/#gbk-encoder
-    // http://icu-project.org/docs/papers/gb18030.html
-    // http://source.icu-project.org/repos/icu/data/trunk/charset/data/xml/gb-18030-2000.xml
-    // http://www.khngai.com/chinese/charmap/tblgbk.php?page=0
-    'gb18030': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(43).concat(__webpack_require__(78)) },
-        gb18030: function() { return __webpack_require__(181) },
-        encodeSkipVals: [0x80],
-        encodeAdd: {'€': 0xA2E3},
-    },
-
-    'chinese': 'gb18030',
-
-
-    // == Korean ===============================================================
-    // EUC-KR, KS_C_5601 and KS X 1001 are exactly the same.
-    'windows949': 'cp949',
-    'ms949': 'cp949',
-    '949': 'cp949',
-    'cp949': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(179) },
-    },
-
-    'cseuckr': 'cp949',
-    'csksc56011987': 'cp949',
-    'euckr': 'cp949',
-    'isoir149': 'cp949',
-    'korean': 'cp949',
-    'ksc56011987': 'cp949',
-    'ksc56011989': 'cp949',
-    'ksc5601': 'cp949',
-
-
-    // == Big5/Taiwan/Hong Kong ================================================
-    // There are lots of tables for Big5 and cp950. Please see the following links for history:
-    // http://moztw.org/docs/big5/  http://www.haible.de/bruno/charsets/conversion-tables/Big5.html
-    // Variations, in roughly number of defined chars:
-    //  * Windows CP 950: Microsoft variant of Big5. Canonical: http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP950.TXT
-    //  * Windows CP 951: Microsoft variant of Big5-HKSCS-2001. Seems to be never public. http://me.abelcheung.org/articles/research/what-is-cp951/
-    //  * Big5-2003 (Taiwan standard) almost superset of cp950.
-    //  * Unicode-at-on (UAO) / Mozilla 1.8. Falling out of use on the Web. Not supported by other browsers.
-    //  * Big5-HKSCS (-2001, -2004, -2008). Hong Kong standard. 
-    //    many unicode code points moved from PUA to Supplementary plane (U+2XXXX) over the years.
-    //    Plus, it has 4 combining sequences.
-    //    Seems that Mozilla refused to support it for 10 yrs. https://bugzilla.mozilla.org/show_bug.cgi?id=162431 https://bugzilla.mozilla.org/show_bug.cgi?id=310299
-    //    because big5-hkscs is the only encoding to include astral characters in non-algorithmic way.
-    //    Implementations are not consistent within browsers; sometimes labeled as just big5.
-    //    MS Internet Explorer switches from big5 to big5-hkscs when a patch applied.
-    //    Great discussion & recap of what's going on https://bugzilla.mozilla.org/show_bug.cgi?id=912470#c31
-    //    In the encoder, it might make sense to support encoding old PUA mappings to Big5 bytes seq-s.
-    //    Official spec: http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/doc/2003cmp_2008.txt
-    //                   http://www.ogcio.gov.hk/tc/business/tech_promotion/ccli/terms/doc/hkscs-2008-big5-iso.txt
-    // 
-    // Current understanding of how to deal with Big5(-HKSCS) is in the Encoding Standard, http://encoding.spec.whatwg.org/#big5-encoder
-    // Unicode mapping (http://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/OTHER/BIG5.TXT) is said to be wrong.
-
-    'windows950': 'cp950',
-    'ms950': 'cp950',
-    '950': 'cp950',
-    'cp950': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(77) },
-    },
-
-    // Big5 has many variations and is an extension of cp950. We use Encoding Standard's as a consensus.
-    'big5': 'big5hkscs',
-    'big5hkscs': {
-        type: '_dbcs',
-        table: function() { return __webpack_require__(77).concat(__webpack_require__(178)) },
-        encodeSkipVals: [0xa2cc],
-    },
-
-    'cnbig5': 'big5hkscs',
-    'csbig5': 'big5hkscs',
-    'xxbig5': 'big5hkscs',
-};
-
-
-/***/ }),
-/* 164 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Update this array if you add/rename/remove files in this directory.
-// We support Browserify by skipping automatic module discovery and requiring modules directly.
-var modules = [
-    __webpack_require__(165),
-    __webpack_require__(169),
-    __webpack_require__(170),
-    __webpack_require__(166),
-    __webpack_require__(168),
-    __webpack_require__(167),
-    __webpack_require__(162),
-    __webpack_require__(163),
-];
-
-// Put all encoding/alias/codec definitions to single object and export it. 
-for (var i = 0; i < modules.length; i++) {
-    var module = modules[i];
-    for (var enc in module)
-        if (Object.prototype.hasOwnProperty.call(module, enc))
-            exports[enc] = module[enc];
-}
-
-
-/***/ }),
-/* 165 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-// Export Node.js internal encodings.
-
-module.exports = {
-    // Encodings
-    utf8:   { type: "_internal", bomAware: true},
-    cesu8:  { type: "_internal", bomAware: true},
-    unicode11utf8: "utf8",
-
-    ucs2:   { type: "_internal", bomAware: true},
-    utf16le: "ucs2",
-
-    binary: { type: "_internal" },
-    base64: { type: "_internal" },
-    hex:    { type: "_internal" },
-
-    // Codec.
-    _internal: InternalCodec,
-};
-
-//------------------------------------------------------------------------------
-
-function InternalCodec(codecOptions, iconv) {
-    this.enc = codecOptions.encodingName;
-    this.bomAware = codecOptions.bomAware;
-
-    if (this.enc === "base64")
-        this.encoder = InternalEncoderBase64;
-    else if (this.enc === "cesu8") {
-        this.enc = "utf8"; // Use utf8 for decoding.
-        this.encoder = InternalEncoderCesu8;
-
-        // Add decoder for versions of Node not supporting CESU-8
-        if (new Buffer("eda080", 'hex').toString().length == 3) {
-            this.decoder = InternalDecoderCesu8;
-            this.defaultCharUnicode = iconv.defaultCharUnicode;
-        }
-    }
-}
-
-InternalCodec.prototype.encoder = InternalEncoder;
-InternalCodec.prototype.decoder = InternalDecoder;
-
-//------------------------------------------------------------------------------
-
-// We use node.js internal decoder. Its signature is the same as ours.
-var StringDecoder = __webpack_require__(71).StringDecoder;
-
-if (!StringDecoder.prototype.end) // Node v0.8 doesn't have this method.
-    StringDecoder.prototype.end = function() {};
-
-
-function InternalDecoder(options, codec) {
-    StringDecoder.call(this, codec.enc);
-}
-
-InternalDecoder.prototype = StringDecoder.prototype;
-
-
-//------------------------------------------------------------------------------
-// Encoder is mostly trivial
-
-function InternalEncoder(options, codec) {
-    this.enc = codec.enc;
-}
-
-InternalEncoder.prototype.write = function(str) {
-    return new Buffer(str, this.enc);
-}
-
-InternalEncoder.prototype.end = function() {
-}
-
-
-//------------------------------------------------------------------------------
-// Except base64 encoder, which must keep its state.
-
-function InternalEncoderBase64(options, codec) {
-    this.prevStr = '';
-}
-
-InternalEncoderBase64.prototype.write = function(str) {
-    str = this.prevStr + str;
-    var completeQuads = str.length - (str.length % 4);
-    this.prevStr = str.slice(completeQuads);
-    str = str.slice(0, completeQuads);
-
-    return new Buffer(str, "base64");
-}
-
-InternalEncoderBase64.prototype.end = function() {
-    return new Buffer(this.prevStr, "base64");
-}
-
-
-//------------------------------------------------------------------------------
-// CESU-8 encoder is also special.
-
-function InternalEncoderCesu8(options, codec) {
-}
-
-InternalEncoderCesu8.prototype.write = function(str) {
-    var buf = new Buffer(str.length * 3), bufIdx = 0;
-    for (var i = 0; i < str.length; i++) {
-        var charCode = str.charCodeAt(i);
-        // Naive implementation, but it works because CESU-8 is especially easy
-        // to convert from UTF-16 (which all JS strings are encoded in).
-        if (charCode < 0x80)
-            buf[bufIdx++] = charCode;
-        else if (charCode < 0x800) {
-            buf[bufIdx++] = 0xC0 + (charCode >>> 6);
-            buf[bufIdx++] = 0x80 + (charCode & 0x3f);
-        }
-        else { // charCode will always be < 0x10000 in javascript.
-            buf[bufIdx++] = 0xE0 + (charCode >>> 12);
-            buf[bufIdx++] = 0x80 + ((charCode >>> 6) & 0x3f);
-            buf[bufIdx++] = 0x80 + (charCode & 0x3f);
-        }
-    }
-    return buf.slice(0, bufIdx);
-}
-
-InternalEncoderCesu8.prototype.end = function() {
-}
-
-//------------------------------------------------------------------------------
-// CESU-8 decoder is not implemented in Node v4.0+
-
-function InternalDecoderCesu8(options, codec) {
-    this.acc = 0;
-    this.contBytes = 0;
-    this.accBytes = 0;
-    this.defaultCharUnicode = codec.defaultCharUnicode;
-}
-
-InternalDecoderCesu8.prototype.write = function(buf) {
-    var acc = this.acc, contBytes = this.contBytes, accBytes = this.accBytes, 
-        res = '';
-    for (var i = 0; i < buf.length; i++) {
-        var curByte = buf[i];
-        if ((curByte & 0xC0) !== 0x80) { // Leading byte
-            if (contBytes > 0) { // Previous code is invalid
-                res += this.defaultCharUnicode;
-                contBytes = 0;
-            }
-
-            if (curByte < 0x80) { // Single-byte code
-                res += String.fromCharCode(curByte);
-            } else if (curByte < 0xE0) { // Two-byte code
-                acc = curByte & 0x1F;
-                contBytes = 1; accBytes = 1;
-            } else if (curByte < 0xF0) { // Three-byte code
-                acc = curByte & 0x0F;
-                contBytes = 2; accBytes = 1;
-            } else { // Four or more are not supported for CESU-8.
-                res += this.defaultCharUnicode;
-            }
-        } else { // Continuation byte
-            if (contBytes > 0) { // We're waiting for it.
-                acc = (acc << 6) | (curByte & 0x3f);
-                contBytes--; accBytes++;
-                if (contBytes === 0) {
-                    // Check for overlong encoding, but support Modified UTF-8 (encoding NULL as C0 80)
-                    if (accBytes === 2 && acc < 0x80 && acc > 0)
-                        res += this.defaultCharUnicode;
-                    else if (accBytes === 3 && acc < 0x800)
-                        res += this.defaultCharUnicode;
-                    else
-                        // Actually add character.
-                        res += String.fromCharCode(acc);
-                }
-            } else { // Unexpected continuation byte
-                res += this.defaultCharUnicode;
-            }
-        }
-    }
-    this.acc = acc; this.contBytes = contBytes; this.accBytes = accBytes;
-    return res;
-}
-
-InternalDecoderCesu8.prototype.end = function() {
-    var res = 0;
-    if (this.contBytes > 0)
-        res += this.defaultCharUnicode;
-    return res;
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 166 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-// Single-byte codec. Needs a 'chars' string parameter that contains 256 or 128 chars that
-// correspond to encoded bytes (if 128 - then lower half is ASCII). 
-
-exports._sbcs = SBCSCodec;
-function SBCSCodec(codecOptions, iconv) {
-    if (!codecOptions)
-        throw new Error("SBCS codec is called without the data.")
-    
-    // Prepare char buffer for decoding.
-    if (!codecOptions.chars || (codecOptions.chars.length !== 128 && codecOptions.chars.length !== 256))
-        throw new Error("Encoding '"+codecOptions.type+"' has incorrect 'chars' (must be of len 128 or 256)");
-    
-    if (codecOptions.chars.length === 128) {
-        var asciiString = "";
-        for (var i = 0; i < 128; i++)
-            asciiString += String.fromCharCode(i);
-        codecOptions.chars = asciiString + codecOptions.chars;
-    }
-
-    this.decodeBuf = new Buffer(codecOptions.chars, 'ucs2');
-    
-    // Encoding buffer.
-    var encodeBuf = new Buffer(65536);
-    encodeBuf.fill(iconv.defaultCharSingleByte.charCodeAt(0));
-
-    for (var i = 0; i < codecOptions.chars.length; i++)
-        encodeBuf[codecOptions.chars.charCodeAt(i)] = i;
-
-    this.encodeBuf = encodeBuf;
-}
-
-SBCSCodec.prototype.encoder = SBCSEncoder;
-SBCSCodec.prototype.decoder = SBCSDecoder;
-
-
-function SBCSEncoder(options, codec) {
-    this.encodeBuf = codec.encodeBuf;
-}
-
-SBCSEncoder.prototype.write = function(str) {
-    var buf = new Buffer(str.length);
-    for (var i = 0; i < str.length; i++)
-        buf[i] = this.encodeBuf[str.charCodeAt(i)];
-    
-    return buf;
-}
-
-SBCSEncoder.prototype.end = function() {
-}
-
-
-function SBCSDecoder(options, codec) {
-    this.decodeBuf = codec.decodeBuf;
-}
-
-SBCSDecoder.prototype.write = function(buf) {
-    // Strings are immutable in JS -> we use ucs2 buffer to speed up computations.
-    var decodeBuf = this.decodeBuf;
-    var newBuf = new Buffer(buf.length*2);
-    var idx1 = 0, idx2 = 0;
-    for (var i = 0; i < buf.length; i++) {
-        idx1 = buf[i]*2; idx2 = i*2;
-        newBuf[idx2] = decodeBuf[idx1];
-        newBuf[idx2+1] = decodeBuf[idx1+1];
-    }
-    return newBuf.toString('ucs2');
-}
-
-SBCSDecoder.prototype.end = function() {
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 167 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Generated data for sbcs codec. Don't edit manually. Regenerate using generation/gen-sbcs.js script.
-module.exports = {
-  "437": "cp437",
-  "737": "cp737",
-  "775": "cp775",
-  "850": "cp850",
-  "852": "cp852",
-  "855": "cp855",
-  "856": "cp856",
-  "857": "cp857",
-  "858": "cp858",
-  "860": "cp860",
-  "861": "cp861",
-  "862": "cp862",
-  "863": "cp863",
-  "864": "cp864",
-  "865": "cp865",
-  "866": "cp866",
-  "869": "cp869",
-  "874": "windows874",
-  "922": "cp922",
-  "1046": "cp1046",
-  "1124": "cp1124",
-  "1125": "cp1125",
-  "1129": "cp1129",
-  "1133": "cp1133",
-  "1161": "cp1161",
-  "1162": "cp1162",
-  "1163": "cp1163",
-  "1250": "windows1250",
-  "1251": "windows1251",
-  "1252": "windows1252",
-  "1253": "windows1253",
-  "1254": "windows1254",
-  "1255": "windows1255",
-  "1256": "windows1256",
-  "1257": "windows1257",
-  "1258": "windows1258",
-  "28591": "iso88591",
-  "28592": "iso88592",
-  "28593": "iso88593",
-  "28594": "iso88594",
-  "28595": "iso88595",
-  "28596": "iso88596",
-  "28597": "iso88597",
-  "28598": "iso88598",
-  "28599": "iso88599",
-  "28600": "iso885910",
-  "28601": "iso885911",
-  "28603": "iso885913",
-  "28604": "iso885914",
-  "28605": "iso885915",
-  "28606": "iso885916",
-  "windows874": {
-    "type": "_sbcs",
-    "chars": "€����…�����������‘’“”•–—�������� กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
-  },
-  "win874": "windows874",
-  "cp874": "windows874",
-  "windows1250": {
-    "type": "_sbcs",
-    "chars": "€�‚�„…†‡�‰Š‹ŚŤŽŹ�‘’“”•–—�™š›śťžź ˇ˘Ł¤Ą¦§¨©Ş«¬­®Ż°±˛ł´µ¶·¸ąş»Ľ˝ľżŔÁÂĂÄĹĆÇČÉĘËĚÍÎĎĐŃŇÓÔŐÖ×ŘŮÚŰÜÝŢßŕáâăäĺćçčéęëěíîďđńňóôőö÷řůúűüýţ˙"
-  },
-  "win1250": "windows1250",
-  "cp1250": "windows1250",
-  "windows1251": {
-    "type": "_sbcs",
-    "chars": "ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏђ‘’“”•–—�™љ›њќћџ ЎўЈ¤Ґ¦§Ё©Є«¬­®Ї°±Ііґµ¶·ё№є»јЅѕїАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
-  },
-  "win1251": "windows1251",
-  "cp1251": "windows1251",
-  "windows1252": {
-    "type": "_sbcs",
-    "chars": "€�‚ƒ„…†‡ˆ‰Š‹Œ�Ž��‘’“”•–—˜™š›œ�žŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
-  },
-  "win1252": "windows1252",
-  "cp1252": "windows1252",
-  "windows1253": {
-    "type": "_sbcs",
-    "chars": "€�‚ƒ„…†‡�‰�‹�����‘’“”•–—�™�›���� ΅Ά£¤¥¦§¨©�«¬­®―°±²³΄µ¶·ΈΉΊ»Ό½ΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡ�ΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώ�"
-  },
-  "win1253": "windows1253",
-  "cp1253": "windows1253",
-  "windows1254": {
-    "type": "_sbcs",
-    "chars": "€�‚ƒ„…†‡ˆ‰Š‹Œ����‘’“”•–—˜™š›œ��Ÿ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ"
-  },
-  "win1254": "windows1254",
-  "cp1254": "windows1254",
-  "windows1255": {
-    "type": "_sbcs",
-    "chars": "€�‚ƒ„…†‡ˆ‰�‹�����‘’“”•–—˜™�›���� ¡¢£₪¥¦§¨©×«¬­®¯°±²³´µ¶·¸¹÷»¼½¾¿ְֱֲֳִֵֶַָֹ�ֻּֽ־ֿ׀ׁׂ׃װױײ׳״�������אבגדהוזחטיךכלםמןנסעףפץצקרשת��‎‏�"
-  },
-  "win1255": "windows1255",
-  "cp1255": "windows1255",
-  "windows1256": {
-    "type": "_sbcs",
-    "chars": "€پ‚ƒ„…†‡ˆ‰ٹ‹Œچژڈگ‘’“”•–—ک™ڑ›œ‌‍ں ،¢£¤¥¦§¨©ھ«¬­®¯°±²³´µ¶·¸¹؛»¼½¾؟ہءآأؤإئابةتثجحخدذرزسشصض×طظعغـفقكàلâمنهوçèéêëىيîïًٌٍَôُِ÷ّùْûü‎‏ے"
-  },
-  "win1256": "windows1256",
-  "cp1256": "windows1256",
-  "windows1257": {
-    "type": "_sbcs",
-    "chars": "€�‚�„…†‡�‰�‹�¨ˇ¸�‘’“”•–—�™�›�¯˛� �¢£¤�¦§Ø©Ŗ«¬­®Æ°±²³´µ¶·ø¹ŗ»¼½¾æĄĮĀĆÄÅĘĒČÉŹĖĢĶĪĻŠŃŅÓŌÕÖ×ŲŁŚŪÜŻŽßąįāćäåęēčéźėģķīļšńņóōõö÷ųłśūüżž˙"
-  },
-  "win1257": "windows1257",
-  "cp1257": "windows1257",
-  "windows1258": {
-    "type": "_sbcs",
-    "chars": "€�‚ƒ„…†‡ˆ‰�‹Œ����‘’“”•–—˜™�›œ��Ÿ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂĂÄÅÆÇÈÉÊË̀ÍÎÏĐÑ̉ÓÔƠÖ×ØÙÚÛÜỮßàáâăäåæçèéêë́íîïđṇ̃óôơö÷øùúûüư₫ÿ"
-  },
-  "win1258": "windows1258",
-  "cp1258": "windows1258",
-  "iso88591": {
-    "type": "_sbcs",
-    "chars": " ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
-  },
-  "cp28591": "iso88591",
-  "iso88592": {
-    "type": "_sbcs",
-    "chars": " Ą˘Ł¤ĽŚ§¨ŠŞŤŹ­ŽŻ°ą˛ł´ľśˇ¸šşťź˝žżŔÁÂĂÄĹĆÇČÉĘËĚÍÎĎĐŃŇÓÔŐÖ×ŘŮÚŰÜÝŢßŕáâăäĺćçčéęëěíîďđńňóôőö÷řůúűüýţ˙"
-  },
-  "cp28592": "iso88592",
-  "iso88593": {
-    "type": "_sbcs",
-    "chars": " Ħ˘£¤�Ĥ§¨İŞĞĴ­�Ż°ħ²³´µĥ·¸ışğĵ½�żÀÁÂ�ÄĊĈÇÈÉÊËÌÍÎÏ�ÑÒÓÔĠÖ×ĜÙÚÛÜŬŜßàáâ�äċĉçèéêëìíîï�ñòóôġö÷ĝùúûüŭŝ˙"
-  },
-  "cp28593": "iso88593",
-  "iso88594": {
-    "type": "_sbcs",
-    "chars": " ĄĸŖ¤ĨĻ§¨ŠĒĢŦ­Ž¯°ą˛ŗ´ĩļˇ¸šēģŧŊžŋĀÁÂÃÄÅÆĮČÉĘËĖÍÎĪĐŅŌĶÔÕÖ×ØŲÚÛÜŨŪßāáâãäåæįčéęëėíîīđņōķôõö÷øųúûüũū˙"
-  },
-  "cp28594": "iso88594",
-  "iso88595": {
-    "type": "_sbcs",
-    "chars": " ЁЂЃЄЅІЇЈЉЊЋЌ­ЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя№ёђѓєѕіїјљњћќ§ўџ"
-  },
-  "cp28595": "iso88595",
-  "iso88596": {
-    "type": "_sbcs",
-    "chars": " ���¤�������،­�������������؛���؟�ءآأؤإئابةتثجحخدذرزسشصضطظعغ�����ـفقكلمنهوىيًٌٍَُِّْ�������������"
-  },
-  "cp28596": "iso88596",
-  "iso88597": {
-    "type": "_sbcs",
-    "chars": " ‘’£€₯¦§¨©ͺ«¬­�―°±²³΄΅Ά·ΈΉΊ»Ό½ΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡ�ΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώ�"
-  },
-  "cp28597": "iso88597",
-  "iso88598": {
-    "type": "_sbcs",
-    "chars": " �¢£¤¥¦§¨©×«¬­®¯°±²³´µ¶·¸¹÷»¼½¾��������������������������������‗אבגדהוזחטיךכלםמןנסעףפץצקרשת��‎‏�"
-  },
-  "cp28598": "iso88598",
-  "iso88599": {
-    "type": "_sbcs",
-    "chars": " ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ"
-  },
-  "cp28599": "iso88599",
-  "iso885910": {
-    "type": "_sbcs",
-    "chars": " ĄĒĢĪĨĶ§ĻĐŠŦŽ­ŪŊ°ąēģīĩķ·ļđšŧž―ūŋĀÁÂÃÄÅÆĮČÉĘËĖÍÎÏÐŅŌÓÔÕÖŨØŲÚÛÜÝÞßāáâãäåæįčéęëėíîïðņōóôõöũøųúûüýþĸ"
-  },
-  "cp28600": "iso885910",
-  "iso885911": {
-    "type": "_sbcs",
-    "chars": " กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
-  },
-  "cp28601": "iso885911",
-  "iso885913": {
-    "type": "_sbcs",
-    "chars": " ”¢£¤„¦§Ø©Ŗ«¬­®Æ°±²³“µ¶·ø¹ŗ»¼½¾æĄĮĀĆÄÅĘĒČÉŹĖĢĶĪĻŠŃŅÓŌÕÖ×ŲŁŚŪÜŻŽßąįāćäåęēčéźėģķīļšńņóōõö÷ųłśūüżž’"
-  },
-  "cp28603": "iso885913",
-  "iso885914": {
-    "type": "_sbcs",
-    "chars": " Ḃḃ£ĊċḊ§Ẁ©ẂḋỲ­®ŸḞḟĠġṀṁ¶ṖẁṗẃṠỳẄẅṡÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏŴÑÒÓÔÕÖṪØÙÚÛÜÝŶßàáâãäåæçèéêëìíîïŵñòóôõöṫøùúûüýŷÿ"
-  },
-  "cp28604": "iso885914",
-  "iso885915": {
-    "type": "_sbcs",
-    "chars": " ¡¢£€¥Š§š©ª«¬­®¯°±²³Žµ¶·ž¹º»ŒœŸ¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
-  },
-  "cp28605": "iso885915",
-  "iso885916": {
-    "type": "_sbcs",
-    "chars": " ĄąŁ€„Š§š©Ș«Ź­źŻ°±ČłŽ”¶·žčș»ŒœŸżÀÁÂĂÄĆÆÇÈÉÊËÌÍÎÏĐŃÒÓÔŐÖŚŰÙÚÛÜĘȚßàáâăäćæçèéêëìíîïđńòóôőöśűùúûüęțÿ"
-  },
-  "cp28606": "iso885916",
-  "cp437": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-  },
-  "ibm437": "cp437",
-  "csibm437": "cp437",
-  "cp737": {
-    "type": "_sbcs",
-    "chars": "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψ░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀ωάέήϊίόύϋώΆΈΉΊΌΎΏ±≥≤ΪΫ÷≈°∙·√ⁿ²■ "
-  },
-  "ibm737": "cp737",
-  "csibm737": "cp737",
-  "cp775": {
-    "type": "_sbcs",
-    "chars": "ĆüéāäģåćłēŖŗīŹÄÅÉæÆōöĢ¢ŚśÖÜø£Ø×¤ĀĪóŻżź”¦©®¬½¼Ł«»░▒▓│┤ĄČĘĖ╣║╗╝ĮŠ┐└┴┬├─┼ŲŪ╚╔╩╦╠═╬Žąčęėįšųūž┘┌█▄▌▐▀ÓßŌŃõÕµńĶķĻļņĒŅ’­±“¾¶§÷„°∙·¹³²■ "
-  },
-  "ibm775": "cp775",
-  "csibm775": "cp775",
-  "cp850": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ðÐÊËÈıÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµþÞÚÛÙýÝ¯´­±‗¾¶§÷¸°¨·¹³²■ "
-  },
-  "ibm850": "cp850",
-  "csibm850": "cp850",
-  "cp852": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäůćçłëŐőîŹÄĆÉĹĺôöĽľŚśÖÜŤťŁ×čáíóúĄąŽžĘę¬źČş«»░▒▓│┤ÁÂĚŞ╣║╗╝Żż┐└┴┬├─┼Ăă╚╔╩╦╠═╬¤đĐĎËďŇÍÎě┘┌█▄ŢŮ▀ÓßÔŃńňŠšŔÚŕŰýÝţ´­˝˛ˇ˘§÷¸°¨˙űŘř■ "
-  },
-  "ibm852": "cp852",
-  "csibm852": "cp852",
-  "cp855": {
-    "type": "_sbcs",
-    "chars": "ђЂѓЃёЁєЄѕЅіІїЇјЈљЉњЊћЋќЌўЎџЏюЮъЪаАбБцЦдДеЕфФгГ«»░▒▓│┤хХиИ╣║╗╝йЙ┐└┴┬├─┼кК╚╔╩╦╠═╬¤лЛмМнНоОп┘┌█▄Пя▀ЯрРсСтТуУжЖвВьЬ№­ыЫзЗшШэЭщЩчЧ§■ "
-  },
-  "ibm855": "cp855",
-  "csibm855": "cp855",
-  "cp856": {
-    "type": "_sbcs",
-    "chars": "אבגדהוזחטיךכלםמןנסעףפץצקרשת�£�×����������®¬½¼�«»░▒▓│┤���©╣║╗╝¢¥┐└┴┬├─┼��╚╔╩╦╠═╬¤���������┘┌█▄¦�▀������µ�������¯´­±‗¾¶§÷¸°¨·¹³²■ "
-  },
-  "ibm856": "cp856",
-  "csibm856": "cp856",
-  "cp857": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäàåçêëèïîıÄÅÉæÆôöòûùİÖÜø£ØŞşáíóúñÑĞğ¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ºªÊËÈ�ÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµ�×ÚÛÙìÿ¯´­±�¾¶§÷¸°¨·¹³²■ "
-  },
-  "ibm857": "cp857",
-  "csibm857": "cp857",
-  "cp858": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ðÐÊËÈ€ÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµþÞÚÛÙýÝ¯´­±‗¾¶§÷¸°¨·¹³²■ "
-  },
-  "ibm858": "cp858",
-  "csibm858": "cp858",
-  "cp860": {
-    "type": "_sbcs",
-    "chars": "ÇüéâãàÁçêÊèÍÔìÃÂÉÀÈôõòÚùÌÕÜ¢£Ù₧ÓáíóúñÑªº¿Ò¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-  },
-  "ibm860": "cp860",
-  "csibm860": "cp860",
-  "cp861": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäàåçêëèÐðÞÄÅÉæÆôöþûÝýÖÜø£Ø₧ƒáíóúÁÍÓÚ¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-  },
-  "ibm861": "cp861",
-  "csibm861": "cp861",
-  "cp862": {
-    "type": "_sbcs",
-    "chars": "אבגדהוזחטיךכלםמןנסעףפץצקרשת¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-  },
-  "ibm862": "cp862",
-  "csibm862": "cp862",
-  "cp863": {
-    "type": "_sbcs",
-    "chars": "ÇüéâÂà¶çêëèïî‗À§ÉÈÊôËÏûù¤ÔÜ¢£ÙÛƒ¦´óú¨¸³¯Î⌐¬½¼¾«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-  },
-  "ibm863": "cp863",
-  "csibm863": "cp863",
-  "cp864": {
-    "type": "_sbcs",
-    "chars": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$٪&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·∙√▒─│┼┤┬├┴┐┌└┘β∞φ±½¼≈«»ﻷﻸ��ﻻﻼ� ­ﺂ£¤ﺄ��ﺎﺏﺕﺙ،ﺝﺡﺥ٠١٢٣٤٥٦٧٨٩ﻑ؛ﺱﺵﺹ؟¢ﺀﺁﺃﺅﻊﺋﺍﺑﺓﺗﺛﺟﺣﺧﺩﺫﺭﺯﺳﺷﺻﺿﻁﻅﻋﻏ¦¬÷×ﻉـﻓﻗﻛﻟﻣﻧﻫﻭﻯﻳﺽﻌﻎﻍﻡﹽّﻥﻩﻬﻰﻲﻐﻕﻵﻶﻝﻙﻱ■�"
-  },
-  "ibm864": "cp864",
-  "csibm864": "cp864",
-  "cp865": {
-    "type": "_sbcs",
-    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø₧ƒáíóúñÑªº¿⌐¬½¼¡«¤░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
-  },
-  "ibm865": "cp865",
-  "csibm865": "cp865",
-  "cp866": {
-    "type": "_sbcs",
-    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмноп░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀рстуфхцчшщъыьэюяЁёЄєЇїЎў°∙·√№¤■ "
-  },
-  "ibm866": "cp866",
-  "csibm866": "cp866",
-  "cp869": {
-    "type": "_sbcs",
-    "chars": "������Ά�·¬¦‘’Έ―ΉΊΪΌ��ΎΫ©Ώ²³ά£έήίϊΐόύΑΒΓΔΕΖΗ½ΘΙ«»░▒▓│┤ΚΛΜΝ╣║╗╝ΞΟ┐└┴┬├─┼ΠΡ╚╔╩╦╠═╬ΣΤΥΦΧΨΩαβγ┘┌█▄δε▀ζηθικλμνξοπρσςτ΄­±υφχ§ψ΅°¨ωϋΰώ■ "
-  },
-  "ibm869": "cp869",
-  "csibm869": "cp869",
-  "cp922": {
-    "type": "_sbcs",
-    "chars": " ¡¢£¤¥¦§¨©ª«¬­®‾°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏŠÑÒÓÔÕÖ×ØÙÚÛÜÝŽßàáâãäåæçèéêëìíîïšñòóôõö÷øùúûüýžÿ"
-  },
-  "ibm922": "cp922",
-  "csibm922": "cp922",
-  "cp1046": {
-    "type": "_sbcs",
-    "chars": "ﺈ×÷ﹱ■│─┐┌└┘ﹹﹻﹽﹿﹷﺊﻰﻳﻲﻎﻏﻐﻶﻸﻺﻼ ¤ﺋﺑﺗﺛﺟﺣ،­ﺧﺳ٠١٢٣٤٥٦٧٨٩ﺷ؛ﺻﺿﻊ؟ﻋءآأؤإئابةتثجحخدذرزسشصضطﻇعغﻌﺂﺄﺎﻓـفقكلمنهوىيًٌٍَُِّْﻗﻛﻟﻵﻷﻹﻻﻣﻧﻬﻩ�"
-  },
-  "ibm1046": "cp1046",
-  "csibm1046": "cp1046",
-  "cp1124": {
-    "type": "_sbcs",
-    "chars": " ЁЂҐЄЅІЇЈЉЊЋЌ­ЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя№ёђґєѕіїјљњћќ§ўџ"
-  },
-  "ibm1124": "cp1124",
-  "csibm1124": "cp1124",
-  "cp1125": {
-    "type": "_sbcs",
-    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмноп░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀рстуфхцчшщъыьэюяЁёҐґЄєІіЇї·√№¤■ "
-  },
-  "ibm1125": "cp1125",
-  "csibm1125": "cp1125",
-  "cp1129": {
-    "type": "_sbcs",
-    "chars": " ¡¢£¤¥¦§œ©ª«¬­®¯°±²³Ÿµ¶·Œ¹º»¼½¾¿ÀÁÂĂÄÅÆÇÈÉÊË̀ÍÎÏĐÑ̉ÓÔƠÖ×ØÙÚÛÜỮßàáâăäåæçèéêë́íîïđṇ̃óôơö÷øùúûüư₫ÿ"
-  },
-  "ibm1129": "cp1129",
-  "csibm1129": "cp1129",
-  "cp1133": {
-    "type": "_sbcs",
-    "chars": " ກຂຄງຈສຊຍດຕຖທນບປຜຝພຟມຢຣລວຫອຮ���ຯະາຳິີຶືຸູຼັົຽ���ເແໂໃໄ່້໊໋໌ໍໆ�ໜໝ₭����������������໐໑໒໓໔໕໖໗໘໙��¢¬¦�"
-  },
-  "ibm1133": "cp1133",
-  "csibm1133": "cp1133",
-  "cp1161": {
-    "type": "_sbcs",
-    "chars": "��������������������������������่กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู้๊๋€฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛¢¬¦ "
-  },
-  "ibm1161": "cp1161",
-  "csibm1161": "cp1161",
-  "cp1162": {
-    "type": "_sbcs",
-    "chars": "€…‘’“”•–— กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
-  },
-  "ibm1162": "cp1162",
-  "csibm1162": "cp1162",
-  "cp1163": {
-    "type": "_sbcs",
-    "chars": " ¡¢£€¥¦§œ©ª«¬­®¯°±²³Ÿµ¶·Œ¹º»¼½¾¿ÀÁÂĂÄÅÆÇÈÉÊË̀ÍÎÏĐÑ̉ÓÔƠÖ×ØÙÚÛÜỮßàáâăäåæçèéêë́íîïđṇ̃óôơö÷øùúûüư₫ÿ"
-  },
-  "ibm1163": "cp1163",
-  "csibm1163": "cp1163",
-  "maccroatian": {
-    "type": "_sbcs",
-    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®Š™´¨≠ŽØ∞±≤≥∆µ∂∑∏š∫ªºΩžø¿¡¬√ƒ≈Ć«Č… ÀÃÕŒœĐ—“”‘’÷◊�©⁄¤‹›Æ»–·‚„‰ÂćÁčÈÍÎÏÌÓÔđÒÚÛÙıˆ˜¯πË˚¸Êæˇ"
-  },
-  "maccyrillic": {
-    "type": "_sbcs",
-    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ†°¢£§•¶І®©™Ђђ≠Ѓѓ∞±≤≥іµ∂ЈЄєЇїЉљЊњјЅ¬√ƒ≈∆«»… ЋћЌќѕ–—“”‘’÷„ЎўЏџ№Ёёяабвгдежзийклмнопрстуфхцчшщъыьэю¤"
-  },
-  "macgreek": {
-    "type": "_sbcs",
-    "chars": "Ä¹²É³ÖÜ΅àâä΄¨çéèêë£™îï•½‰ôö¦­ùûü†ΓΔΘΛΞΠß®©ΣΪ§≠°·Α±≤≥¥ΒΕΖΗΙΚΜΦΫΨΩάΝ¬ΟΡ≈Τ«»… ΥΧΆΈœ–―“”‘’÷ΉΊΌΎέήίόΏύαβψδεφγηιξκλμνοπώρστθωςχυζϊϋΐΰ�"
-  },
-  "maciceland": {
-    "type": "_sbcs",
-    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûüÝ°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤ÐðÞþý·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
-  },
-  "macroman": {
-    "type": "_sbcs",
-    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
-  },
-  "macromania": {
-    "type": "_sbcs",
-    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ĂŞ∞±≤≥¥µ∂∑∏π∫ªºΩăş¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤‹›Ţţ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
-  },
-  "macthai": {
-    "type": "_sbcs",
-    "chars": "«»…“”�•‘’� กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู﻿​–—฿เแโใไๅๆ็่้๊๋์ํ™๏๐๑๒๓๔๕๖๗๘๙®©����"
-  },
-  "macturkish": {
-    "type": "_sbcs",
-    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸĞğİıŞş‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙ�ˆ˜¯˘˙˚¸˝˛ˇ"
-  },
-  "macukraine": {
-    "type": "_sbcs",
-    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ†°Ґ£§•¶І®©™Ђђ≠Ѓѓ∞±≤≥іµґЈЄєЇїЉљЊњјЅ¬√ƒ≈∆«»… ЋћЌќѕ–—“”‘’÷„ЎўЏџ№Ёёяабвгдежзийклмнопрстуфхцчшщъыьэю¤"
-  },
-  "koi8r": {
-    "type": "_sbcs",
-    "chars": "─│┌┐└┘├┤┬┴┼▀▄█▌▐░▒▓⌠■∙√≈≤≥ ⌡°²·÷═║╒ё╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡Ё╢╣╤╥╦╧╨╩╪╫╬©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
-  },
-  "koi8u": {
-    "type": "_sbcs",
-    "chars": "─│┌┐└┘├┤┬┴┼▀▄█▌▐░▒▓⌠■∙√≈≤≥ ⌡°²·÷═║╒ёє╔ії╗╘╙╚╛ґ╝╞╟╠╡ЁЄ╣ІЇ╦╧╨╩╪Ґ╬©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
-  },
-  "koi8ru": {
-    "type": "_sbcs",
-    "chars": "─│┌┐└┘├┤┬┴┼▀▄█▌▐░▒▓⌠■∙√≈≤≥ ⌡°²·÷═║╒ёє╔ії╗╘╙╚╛ґў╞╟╠╡ЁЄ╣ІЇ╦╧╨╩╪ҐЎ©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
-  },
-  "koi8t": {
-    "type": "_sbcs",
-    "chars": "қғ‚Ғ„…†‡�‰ҳ‹ҲҷҶ�Қ‘’“”•–—�™�›�����ӯӮё¤ӣ¦§���«¬­®�°±²Ё�Ӣ¶·�№�»���©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
-  },
-  "armscii8": {
-    "type": "_sbcs",
-    "chars": " �և։)(»«—.՝,-֊…՜՛՞ԱաԲբԳգԴդԵեԶզԷէԸըԹթԺժԻիԼլԽխԾծԿկՀհՁձՂղՃճՄմՅյՆնՇշՈոՉչՊպՋջՌռՍսՎվՏտՐրՑցՒւՓփՔքՕօՖֆ՚�"
-  },
-  "rk1048": {
-    "type": "_sbcs",
-    "chars": "ЂЃ‚ѓ„…†‡€‰Љ‹ЊҚҺЏђ‘’“”•–—�™љ›њқһџ ҰұӘ¤Ө¦§Ё©Ғ«¬­®Ү°±Ііөµ¶·ё№ғ»әҢңүАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
-  },
-  "tcvn": {
-    "type": "_sbcs",
-    "chars": "\u0000ÚỤ\u0003ỪỬỮ\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010ỨỰỲỶỸÝỴ\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÀẢÃÁẠẶẬÈẺẼÉẸỆÌỈĨÍỊÒỎÕÓỌỘỜỞỠỚỢÙỦŨ ĂÂÊÔƠƯĐăâêôơưđẶ̀̀̉̃́àảãáạẲằẳẵắẴẮẦẨẪẤỀặầẩẫấậèỂẻẽéẹềểễếệìỉỄẾỒĩíịòỔỏõóọồổỗốộờởỡớợùỖủũúụừửữứựỳỷỹýỵỐ"
-  },
-  "georgianacademy": {
-    "type": "_sbcs",
-    "chars": "‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰჱჲჳჴჵჶçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
-  },
-  "georgianps": {
-    "type": "_sbcs",
-    "chars": "‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿აბგდევზჱთიკლმნჲოპჟრსტჳუფქღყშჩცძწჭხჴჯჰჵæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
-  },
-  "pt154": {
-    "type": "_sbcs",
-    "chars": "ҖҒӮғ„…ҶҮҲүҠӢҢҚҺҸҗ‘’“”•–—ҳҷҡӣңқһҹ ЎўЈӨҘҰ§Ё©Ә«¬ӯ®Ҝ°ұІіҙө¶·ё№ә»јҪҫҝАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
-  },
-  "viscii": {
-    "type": "_sbcs",
-    "chars": "\u0000\u0001Ẳ\u0003\u0004ẴẪ\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013Ỷ\u0015\u0016\u0017\u0018Ỹ\u001a\u001b\u001c\u001dỴ\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ẠẮẰẶẤẦẨẬẼẸẾỀỂỄỆỐỒỔỖỘỢỚỜỞỊỎỌỈỦŨỤỲÕắằặấầẩậẽẹếềểễệốồổỗỠƠộờởịỰỨỪỬơớƯÀÁÂÃẢĂẳẵÈÉÊẺÌÍĨỳĐứÒÓÔạỷừửÙÚỹỵÝỡưàáâãảăữẫèéêẻìíĩỉđựòóôõỏọụùúũủýợỮ"
-  },
-  "iso646cn": {
-    "type": "_sbcs",
-    "chars": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#¥%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}‾��������������������������������������������������������������������������������������������������������������������������������"
-  },
-  "iso646jp": {
-    "type": "_sbcs",
-    "chars": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[¥]^_`abcdefghijklmnopqrstuvwxyz{|}‾��������������������������������������������������������������������������������������������������������������������������������"
-  },
-  "hproman8": {
-    "type": "_sbcs",
-    "chars": " ÀÂÈÊËÎÏ´ˋˆ¨˜ÙÛ₤¯Ýý°ÇçÑñ¡¿¤£¥§ƒ¢âêôûáéóúàèòùäëöüÅîØÆåíøæÄìÖÜÉïßÔÁÃãÐðÍÌÓÒÕõŠšÚŸÿÞþ·µ¶¾—¼½ªº«■»±�"
-  },
-  "macintosh": {
-    "type": "_sbcs",
-    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
-  },
-  "ascii": {
-    "type": "_sbcs",
-    "chars": "��������������������������������������������������������������������������������������������������������������������������������"
-  },
-  "tis620": {
-    "type": "_sbcs",
-    "chars": "���������������������������������กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
-  }
-}
-
-/***/ }),
-/* 168 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// Manually added data to be used by sbcs codec in addition to generated one.
-
-module.exports = {
-    // Not supported by iconv, not sure why.
-    "10029": "maccenteuro",
-    "maccenteuro": {
-        "type": "_sbcs",
-        "chars": "ÄĀāÉĄÖÜáąČäčĆćéŹźĎíďĒēĖóėôöõúĚěü†°Ę£§•¶ß®©™ę¨≠ģĮįĪ≤≥īĶ∂∑łĻļĽľĹĺŅņŃ¬√ńŇ∆«»… ňŐÕőŌ–—“”‘’÷◊ōŔŕŘ‹›řŖŗŠ‚„šŚśÁŤťÍŽžŪÓÔūŮÚůŰűŲųÝýķŻŁżĢˇ"
-    },
-
-    "808": "cp808",
-    "ibm808": "cp808",
-    "cp808": {
-        "type": "_sbcs",
-        "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмноп░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀рстуфхцчшщъыьэюяЁёЄєЇїЎў°∙·√№€■ "
-    },
-
-    // Aliases of generated encodings.
-    "ascii8bit": "ascii",
-    "usascii": "ascii",
-    "ansix34": "ascii",
-    "ansix341968": "ascii",
-    "ansix341986": "ascii",
-    "csascii": "ascii",
-    "cp367": "ascii",
-    "ibm367": "ascii",
-    "isoir6": "ascii",
-    "iso646us": "ascii",
-    "iso646irv": "ascii",
-    "us": "ascii",
-
-    "latin1": "iso88591",
-    "latin2": "iso88592",
-    "latin3": "iso88593",
-    "latin4": "iso88594",
-    "latin5": "iso88599",
-    "latin6": "iso885910",
-    "latin7": "iso885913",
-    "latin8": "iso885914",
-    "latin9": "iso885915",
-    "latin10": "iso885916",
-
-    "csisolatin1": "iso88591",
-    "csisolatin2": "iso88592",
-    "csisolatin3": "iso88593",
-    "csisolatin4": "iso88594",
-    "csisolatincyrillic": "iso88595",
-    "csisolatinarabic": "iso88596",
-    "csisolatingreek" : "iso88597",
-    "csisolatinhebrew": "iso88598",
-    "csisolatin5": "iso88599",
-    "csisolatin6": "iso885910",
-
-    "l1": "iso88591",
-    "l2": "iso88592",
-    "l3": "iso88593",
-    "l4": "iso88594",
-    "l5": "iso88599",
-    "l6": "iso885910",
-    "l7": "iso885913",
-    "l8": "iso885914",
-    "l9": "iso885915",
-    "l10": "iso885916",
-
-    "isoir14": "iso646jp",
-    "isoir57": "iso646cn",
-    "isoir100": "iso88591",
-    "isoir101": "iso88592",
-    "isoir109": "iso88593",
-    "isoir110": "iso88594",
-    "isoir144": "iso88595",
-    "isoir127": "iso88596",
-    "isoir126": "iso88597",
-    "isoir138": "iso88598",
-    "isoir148": "iso88599",
-    "isoir157": "iso885910",
-    "isoir166": "tis620",
-    "isoir179": "iso885913",
-    "isoir199": "iso885914",
-    "isoir203": "iso885915",
-    "isoir226": "iso885916",
-
-    "cp819": "iso88591",
-    "ibm819": "iso88591",
-
-    "cyrillic": "iso88595",
-
-    "arabic": "iso88596",
-    "arabic8": "iso88596",
-    "ecma114": "iso88596",
-    "asmo708": "iso88596",
-
-    "greek" : "iso88597",
-    "greek8" : "iso88597",
-    "ecma118" : "iso88597",
-    "elot928" : "iso88597",
-
-    "hebrew": "iso88598",
-    "hebrew8": "iso88598",
-
-    "turkish": "iso88599",
-    "turkish8": "iso88599",
-
-    "thai": "iso885911",
-    "thai8": "iso885911",
-
-    "celtic": "iso885914",
-    "celtic8": "iso885914",
-    "isoceltic": "iso885914",
-
-    "tis6200": "tis620",
-    "tis62025291": "tis620",
-    "tis62025330": "tis620",
-
-    "10000": "macroman",
-    "10006": "macgreek",
-    "10007": "maccyrillic",
-    "10079": "maciceland",
-    "10081": "macturkish",
-
-    "cspc8codepage437": "cp437",
-    "cspc775baltic": "cp775",
-    "cspc850multilingual": "cp850",
-    "cspcp852": "cp852",
-    "cspc862latinhebrew": "cp862",
-    "cpgr": "cp869",
-
-    "msee": "cp1250",
-    "mscyrl": "cp1251",
-    "msansi": "cp1252",
-    "msgreek": "cp1253",
-    "msturk": "cp1254",
-    "mshebr": "cp1255",
-    "msarab": "cp1256",
-    "winbaltrim": "cp1257",
-
-    "cp20866": "koi8r",
-    "20866": "koi8r",
-    "ibm878": "koi8r",
-    "cskoi8r": "koi8r",
-
-    "cp21866": "koi8u",
-    "21866": "koi8u",
-    "ibm1168": "koi8u",
-
-    "strk10482002": "rk1048",
-
-    "tcvn5712": "tcvn",
-    "tcvn57121": "tcvn",
-
-    "gb198880": "iso646cn",
-    "cn": "iso646cn",
-
-    "csiso14jisc6220ro": "iso646jp",
-    "jisc62201969ro": "iso646jp",
-    "jp": "iso646jp",
-
-    "cshproman8": "hproman8",
-    "r8": "hproman8",
-    "roman8": "hproman8",
-    "xroman8": "hproman8",
-    "ibm1051": "hproman8",
-
-    "mac": "macintosh",
-    "csmacintosh": "macintosh",
-};
-
-
-
-/***/ }),
-/* 169 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-// Note: UTF16-LE (or UCS2) codec is Node.js native. See encodings/internal.js
-
-// == UTF16-BE codec. ==========================================================
-
-exports.utf16be = Utf16BECodec;
-function Utf16BECodec() {
-}
-
-Utf16BECodec.prototype.encoder = Utf16BEEncoder;
-Utf16BECodec.prototype.decoder = Utf16BEDecoder;
-Utf16BECodec.prototype.bomAware = true;
-
-
-// -- Encoding
-
-function Utf16BEEncoder() {
-}
-
-Utf16BEEncoder.prototype.write = function(str) {
-    var buf = new Buffer(str, 'ucs2');
-    for (var i = 0; i < buf.length; i += 2) {
-        var tmp = buf[i]; buf[i] = buf[i+1]; buf[i+1] = tmp;
-    }
-    return buf;
-}
-
-Utf16BEEncoder.prototype.end = function() {
-}
-
-
-// -- Decoding
-
-function Utf16BEDecoder() {
-    this.overflowByte = -1;
-}
-
-Utf16BEDecoder.prototype.write = function(buf) {
-    if (buf.length == 0)
-        return '';
-
-    var buf2 = new Buffer(buf.length + 1),
-        i = 0, j = 0;
-
-    if (this.overflowByte !== -1) {
-        buf2[0] = buf[0];
-        buf2[1] = this.overflowByte;
-        i = 1; j = 2;
-    }
-
-    for (; i < buf.length-1; i += 2, j+= 2) {
-        buf2[j] = buf[i+1];
-        buf2[j+1] = buf[i];
-    }
-
-    this.overflowByte = (i == buf.length-1) ? buf[buf.length-1] : -1;
-
-    return buf2.slice(0, j).toString('ucs2');
-}
-
-Utf16BEDecoder.prototype.end = function() {
-}
-
-
-// == UTF-16 codec =============================================================
-// Decoder chooses automatically from UTF-16LE and UTF-16BE using BOM and space-based heuristic.
-// Defaults to UTF-16LE, as it's prevalent and default in Node.
-// http://en.wikipedia.org/wiki/UTF-16 and http://encoding.spec.whatwg.org/#utf-16le
-// Decoder default can be changed: iconv.decode(buf, 'utf16', {defaultEncoding: 'utf-16be'});
-
-// Encoder uses UTF-16LE and prepends BOM (which can be overridden with addBOM: false).
-
-exports.utf16 = Utf16Codec;
-function Utf16Codec(codecOptions, iconv) {
-    this.iconv = iconv;
-}
-
-Utf16Codec.prototype.encoder = Utf16Encoder;
-Utf16Codec.prototype.decoder = Utf16Decoder;
-
-
-// -- Encoding (pass-through)
-
-function Utf16Encoder(options, codec) {
-    options = options || {};
-    if (options.addBOM === undefined)
-        options.addBOM = true;
-    this.encoder = codec.iconv.getEncoder('utf-16le', options);
-}
-
-Utf16Encoder.prototype.write = function(str) {
-    return this.encoder.write(str);
-}
-
-Utf16Encoder.prototype.end = function() {
-    return this.encoder.end();
-}
-
-
-// -- Decoding
-
-function Utf16Decoder(options, codec) {
-    this.decoder = null;
-    this.initialBytes = [];
-    this.initialBytesLen = 0;
-
-    this.options = options || {};
-    this.iconv = codec.iconv;
-}
-
-Utf16Decoder.prototype.write = function(buf) {
-    if (!this.decoder) {
-        // Codec is not chosen yet. Accumulate initial bytes.
-        this.initialBytes.push(buf);
-        this.initialBytesLen += buf.length;
-        
-        if (this.initialBytesLen < 16) // We need more bytes to use space heuristic (see below)
-            return '';
-
-        // We have enough bytes -> detect endianness.
-        var buf = Buffer.concat(this.initialBytes),
-            encoding = detectEncoding(buf, this.options.defaultEncoding);
-        this.decoder = this.iconv.getDecoder(encoding, this.options);
-        this.initialBytes.length = this.initialBytesLen = 0;
-    }
-
-    return this.decoder.write(buf);
-}
-
-Utf16Decoder.prototype.end = function() {
-    if (!this.decoder) {
-        var buf = Buffer.concat(this.initialBytes),
-            encoding = detectEncoding(buf, this.options.defaultEncoding);
-        this.decoder = this.iconv.getDecoder(encoding, this.options);
-
-        var res = this.decoder.write(buf),
-            trail = this.decoder.end();
-
-        return trail ? (res + trail) : res;
-    }
-    return this.decoder.end();
-}
-
-function detectEncoding(buf, defaultEncoding) {
-    var enc = defaultEncoding || 'utf-16le';
-
-    if (buf.length >= 2) {
-        // Check BOM.
-        if (buf[0] == 0xFE && buf[1] == 0xFF) // UTF-16BE BOM
-            enc = 'utf-16be';
-        else if (buf[0] == 0xFF && buf[1] == 0xFE) // UTF-16LE BOM
-            enc = 'utf-16le';
-        else {
-            // No BOM found. Try to deduce encoding from initial content.
-            // Most of the time, the content has ASCII chars (U+00**), but the opposite (U+**00) is uncommon.
-            // So, we count ASCII as if it was LE or BE, and decide from that.
-            var asciiCharsLE = 0, asciiCharsBE = 0, // Counts of chars in both positions
-                _len = Math.min(buf.length - (buf.length % 2), 64); // Len is always even.
-
-            for (var i = 0; i < _len; i += 2) {
-                if (buf[i] === 0 && buf[i+1] !== 0) asciiCharsBE++;
-                if (buf[i] !== 0 && buf[i+1] === 0) asciiCharsLE++;
-            }
-
-            if (asciiCharsBE > asciiCharsLE)
-                enc = 'utf-16be';
-            else if (asciiCharsBE < asciiCharsLE)
-                enc = 'utf-16le';
-        }
-    }
-
-    return enc;
-}
-
-
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 170 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-// UTF-7 codec, according to https://tools.ietf.org/html/rfc2152
-// See also below a UTF-7-IMAP codec, according to http://tools.ietf.org/html/rfc3501#section-5.1.3
-
-exports.utf7 = Utf7Codec;
-exports.unicode11utf7 = 'utf7'; // Alias UNICODE-1-1-UTF-7
-function Utf7Codec(codecOptions, iconv) {
-    this.iconv = iconv;
-};
-
-Utf7Codec.prototype.encoder = Utf7Encoder;
-Utf7Codec.prototype.decoder = Utf7Decoder;
-Utf7Codec.prototype.bomAware = true;
-
-
-// -- Encoding
-
-var nonDirectChars = /[^A-Za-z0-9'\(\),-\.\/:\? \n\r\t]+/g;
-
-function Utf7Encoder(options, codec) {
-    this.iconv = codec.iconv;
-}
-
-Utf7Encoder.prototype.write = function(str) {
-    // Naive implementation.
-    // Non-direct chars are encoded as "+<base64>-"; single "+" char is encoded as "+-".
-    return new Buffer(str.replace(nonDirectChars, function(chunk) {
-        return "+" + (chunk === '+' ? '' : 
-            this.iconv.encode(chunk, 'utf16-be').toString('base64').replace(/=+$/, '')) 
-            + "-";
-    }.bind(this)));
-}
-
-Utf7Encoder.prototype.end = function() {
-}
-
-
-// -- Decoding
-
-function Utf7Decoder(options, codec) {
-    this.iconv = codec.iconv;
-    this.inBase64 = false;
-    this.base64Accum = '';
-}
-
-var base64Regex = /[A-Za-z0-9\/+]/;
-var base64Chars = [];
-for (var i = 0; i < 256; i++)
-    base64Chars[i] = base64Regex.test(String.fromCharCode(i));
-
-var plusChar = '+'.charCodeAt(0), 
-    minusChar = '-'.charCodeAt(0),
-    andChar = '&'.charCodeAt(0);
-
-Utf7Decoder.prototype.write = function(buf) {
-    var res = "", lastI = 0,
-        inBase64 = this.inBase64,
-        base64Accum = this.base64Accum;
-
-    // The decoder is more involved as we must handle chunks in stream.
-
-    for (var i = 0; i < buf.length; i++) {
-        if (!inBase64) { // We're in direct mode.
-            // Write direct chars until '+'
-            if (buf[i] == plusChar) {
-                res += this.iconv.decode(buf.slice(lastI, i), "ascii"); // Write direct chars.
-                lastI = i+1;
-                inBase64 = true;
-            }
-        } else { // We decode base64.
-            if (!base64Chars[buf[i]]) { // Base64 ended.
-                if (i == lastI && buf[i] == minusChar) {// "+-" -> "+"
-                    res += "+";
-                } else {
-                    var b64str = base64Accum + buf.slice(lastI, i).toString();
-                    res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
-                }
-
-                if (buf[i] != minusChar) // Minus is absorbed after base64.
-                    i--;
-
-                lastI = i+1;
-                inBase64 = false;
-                base64Accum = '';
-            }
-        }
-    }
-
-    if (!inBase64) {
-        res += this.iconv.decode(buf.slice(lastI), "ascii"); // Write direct chars.
-    } else {
-        var b64str = base64Accum + buf.slice(lastI).toString();
-
-        var canBeDecoded = b64str.length - (b64str.length % 8); // Minimal chunk: 2 quads -> 2x3 bytes -> 3 chars.
-        base64Accum = b64str.slice(canBeDecoded); // The rest will be decoded in future.
-        b64str = b64str.slice(0, canBeDecoded);
-
-        res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
-    }
-
-    this.inBase64 = inBase64;
-    this.base64Accum = base64Accum;
-
-    return res;
-}
-
-Utf7Decoder.prototype.end = function() {
-    var res = "";
-    if (this.inBase64 && this.base64Accum.length > 0)
-        res = this.iconv.decode(new Buffer(this.base64Accum, 'base64'), "utf16-be");
-
-    this.inBase64 = false;
-    this.base64Accum = '';
-    return res;
-}
-
-
-// UTF-7-IMAP codec.
-// RFC3501 Sec. 5.1.3 Modified UTF-7 (http://tools.ietf.org/html/rfc3501#section-5.1.3)
-// Differences:
-//  * Base64 part is started by "&" instead of "+"
-//  * Direct characters are 0x20-0x7E, except "&" (0x26)
-//  * In Base64, "," is used instead of "/"
-//  * Base64 must not be used to represent direct characters.
-//  * No implicit shift back from Base64 (should always end with '-')
-//  * String must end in non-shifted position.
-//  * "-&" while in base64 is not allowed.
-
-
-exports.utf7imap = Utf7IMAPCodec;
-function Utf7IMAPCodec(codecOptions, iconv) {
-    this.iconv = iconv;
-};
-
-Utf7IMAPCodec.prototype.encoder = Utf7IMAPEncoder;
-Utf7IMAPCodec.prototype.decoder = Utf7IMAPDecoder;
-Utf7IMAPCodec.prototype.bomAware = true;
-
-
-// -- Encoding
-
-function Utf7IMAPEncoder(options, codec) {
-    this.iconv = codec.iconv;
-    this.inBase64 = false;
-    this.base64Accum = new Buffer(6);
-    this.base64AccumIdx = 0;
-}
-
-Utf7IMAPEncoder.prototype.write = function(str) {
-    var inBase64 = this.inBase64,
-        base64Accum = this.base64Accum,
-        base64AccumIdx = this.base64AccumIdx,
-        buf = new Buffer(str.length*5 + 10), bufIdx = 0;
-
-    for (var i = 0; i < str.length; i++) {
-        var uChar = str.charCodeAt(i);
-        if (0x20 <= uChar && uChar <= 0x7E) { // Direct character or '&'.
-            if (inBase64) {
-                if (base64AccumIdx > 0) {
-                    bufIdx += buf.write(base64Accum.slice(0, base64AccumIdx).toString('base64').replace(/\//g, ',').replace(/=+$/, ''), bufIdx);
-                    base64AccumIdx = 0;
-                }
-
-                buf[bufIdx++] = minusChar; // Write '-', then go to direct mode.
-                inBase64 = false;
-            }
-
-            if (!inBase64) {
-                buf[bufIdx++] = uChar; // Write direct character
-
-                if (uChar === andChar)  // Ampersand -> '&-'
-                    buf[bufIdx++] = minusChar;
-            }
-
-        } else { // Non-direct character
-            if (!inBase64) {
-                buf[bufIdx++] = andChar; // Write '&', then go to base64 mode.
-                inBase64 = true;
-            }
-            if (inBase64) {
-                base64Accum[base64AccumIdx++] = uChar >> 8;
-                base64Accum[base64AccumIdx++] = uChar & 0xFF;
-
-                if (base64AccumIdx == base64Accum.length) {
-                    bufIdx += buf.write(base64Accum.toString('base64').replace(/\//g, ','), bufIdx);
-                    base64AccumIdx = 0;
-                }
-            }
-        }
-    }
-
-    this.inBase64 = inBase64;
-    this.base64AccumIdx = base64AccumIdx;
-
-    return buf.slice(0, bufIdx);
-}
-
-Utf7IMAPEncoder.prototype.end = function() {
-    var buf = new Buffer(10), bufIdx = 0;
-    if (this.inBase64) {
-        if (this.base64AccumIdx > 0) {
-            bufIdx += buf.write(this.base64Accum.slice(0, this.base64AccumIdx).toString('base64').replace(/\//g, ',').replace(/=+$/, ''), bufIdx);
-            this.base64AccumIdx = 0;
-        }
-
-        buf[bufIdx++] = minusChar; // Write '-', then go to direct mode.
-        this.inBase64 = false;
-    }
-
-    return buf.slice(0, bufIdx);
-}
-
-
-// -- Decoding
-
-function Utf7IMAPDecoder(options, codec) {
-    this.iconv = codec.iconv;
-    this.inBase64 = false;
-    this.base64Accum = '';
-}
-
-var base64IMAPChars = base64Chars.slice();
-base64IMAPChars[','.charCodeAt(0)] = true;
-
-Utf7IMAPDecoder.prototype.write = function(buf) {
-    var res = "", lastI = 0,
-        inBase64 = this.inBase64,
-        base64Accum = this.base64Accum;
-
-    // The decoder is more involved as we must handle chunks in stream.
-    // It is forgiving, closer to standard UTF-7 (for example, '-' is optional at the end).
-
-    for (var i = 0; i < buf.length; i++) {
-        if (!inBase64) { // We're in direct mode.
-            // Write direct chars until '&'
-            if (buf[i] == andChar) {
-                res += this.iconv.decode(buf.slice(lastI, i), "ascii"); // Write direct chars.
-                lastI = i+1;
-                inBase64 = true;
-            }
-        } else { // We decode base64.
-            if (!base64IMAPChars[buf[i]]) { // Base64 ended.
-                if (i == lastI && buf[i] == minusChar) { // "&-" -> "&"
-                    res += "&";
-                } else {
-                    var b64str = base64Accum + buf.slice(lastI, i).toString().replace(/,/g, '/');
-                    res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
-                }
-
-                if (buf[i] != minusChar) // Minus may be absorbed after base64.
-                    i--;
-
-                lastI = i+1;
-                inBase64 = false;
-                base64Accum = '';
-            }
-        }
-    }
-
-    if (!inBase64) {
-        res += this.iconv.decode(buf.slice(lastI), "ascii"); // Write direct chars.
-    } else {
-        var b64str = base64Accum + buf.slice(lastI).toString().replace(/,/g, '/');
-
-        var canBeDecoded = b64str.length - (b64str.length % 8); // Minimal chunk: 2 quads -> 2x3 bytes -> 3 chars.
-        base64Accum = b64str.slice(canBeDecoded); // The rest will be decoded in future.
-        b64str = b64str.slice(0, canBeDecoded);
-
-        res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
-    }
-
-    this.inBase64 = inBase64;
-    this.base64Accum = base64Accum;
-
-    return res;
-}
-
-Utf7IMAPDecoder.prototype.end = function() {
-    var res = "";
-    if (this.inBase64 && this.base64Accum.length > 0)
-        res = this.iconv.decode(new Buffer(this.base64Accum, 'base64'), "utf16-be");
-
-    this.inBase64 = false;
-    this.base64Accum = '';
-    return res;
-}
-
-
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 171 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var BOMChar = '\uFEFF';
-
-exports.PrependBOM = PrependBOMWrapper
-function PrependBOMWrapper(encoder, options) {
-    this.encoder = encoder;
-    this.addBOM = true;
-}
-
-PrependBOMWrapper.prototype.write = function(str) {
-    if (this.addBOM) {
-        str = BOMChar + str;
-        this.addBOM = false;
-    }
-
-    return this.encoder.write(str);
-}
-
-PrependBOMWrapper.prototype.end = function() {
-    return this.encoder.end();
-}
-
-
-//------------------------------------------------------------------------------
-
-exports.StripBOM = StripBOMWrapper;
-function StripBOMWrapper(decoder, options) {
-    this.decoder = decoder;
-    this.pass = false;
-    this.options = options || {};
-}
-
-StripBOMWrapper.prototype.write = function(buf) {
-    var res = this.decoder.write(buf);
-    if (this.pass || !res)
-        return res;
-
-    if (res[0] === BOMChar) {
-        res = res.slice(1);
-        if (typeof this.options.stripBOM === 'function')
-            this.options.stripBOM();
-    }
-
-    this.pass = true;
-    return res;
-}
-
-StripBOMWrapper.prototype.end = function() {
-    return this.decoder.end();
-}
-
-
-
-/***/ }),
-/* 172 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-// == Extend Node primitives to use iconv-lite =================================
-
-module.exports = function (iconv) {
-    var original = undefined; // Place to keep original methods.
-
-    // Node authors rewrote Buffer internals to make it compatible with
-    // Uint8Array and we cannot patch key functions since then.
-    iconv.supportsNodeEncodingsExtension = !(new Buffer(0) instanceof Uint8Array);
-
-    iconv.extendNodeEncodings = function extendNodeEncodings() {
-        if (original) return;
-        original = {};
-
-        if (!iconv.supportsNodeEncodingsExtension) {
-            console.error("ACTION NEEDED: require('iconv-lite').extendNodeEncodings() is not supported in your version of Node");
-            console.error("See more info at https://github.com/ashtuchkin/iconv-lite/wiki/Node-v4-compatibility");
-            return;
-        }
-
-        var nodeNativeEncodings = {
-            'hex': true, 'utf8': true, 'utf-8': true, 'ascii': true, 'binary': true, 
-            'base64': true, 'ucs2': true, 'ucs-2': true, 'utf16le': true, 'utf-16le': true,
-        };
-
-        Buffer.isNativeEncoding = function(enc) {
-            return enc && nodeNativeEncodings[enc.toLowerCase()];
-        }
-
-        // -- SlowBuffer -----------------------------------------------------------
-        var SlowBuffer = __webpack_require__(3).SlowBuffer;
-
-        original.SlowBufferToString = SlowBuffer.prototype.toString;
-        SlowBuffer.prototype.toString = function(encoding, start, end) {
-            encoding = String(encoding || 'utf8').toLowerCase();
-
-            // Use native conversion when possible
-            if (Buffer.isNativeEncoding(encoding))
-                return original.SlowBufferToString.call(this, encoding, start, end);
-
-            // Otherwise, use our decoding method.
-            if (typeof start == 'undefined') start = 0;
-            if (typeof end == 'undefined') end = this.length;
-            return iconv.decode(this.slice(start, end), encoding);
-        }
-
-        original.SlowBufferWrite = SlowBuffer.prototype.write;
-        SlowBuffer.prototype.write = function(string, offset, length, encoding) {
-            // Support both (string, offset, length, encoding)
-            // and the legacy (string, encoding, offset, length)
-            if (isFinite(offset)) {
-                if (!isFinite(length)) {
-                    encoding = length;
-                    length = undefined;
-                }
-            } else {  // legacy
-                var swap = encoding;
-                encoding = offset;
-                offset = length;
-                length = swap;
-            }
-
-            offset = +offset || 0;
-            var remaining = this.length - offset;
-            if (!length) {
-                length = remaining;
-            } else {
-                length = +length;
-                if (length > remaining) {
-                    length = remaining;
-                }
-            }
-            encoding = String(encoding || 'utf8').toLowerCase();
-
-            // Use native conversion when possible
-            if (Buffer.isNativeEncoding(encoding))
-                return original.SlowBufferWrite.call(this, string, offset, length, encoding);
-
-            if (string.length > 0 && (length < 0 || offset < 0))
-                throw new RangeError('attempt to write beyond buffer bounds');
-
-            // Otherwise, use our encoding method.
-            var buf = iconv.encode(string, encoding);
-            if (buf.length < length) length = buf.length;
-            buf.copy(this, offset, 0, length);
-            return length;
-        }
-
-        // -- Buffer ---------------------------------------------------------------
-
-        original.BufferIsEncoding = Buffer.isEncoding;
-        Buffer.isEncoding = function(encoding) {
-            return Buffer.isNativeEncoding(encoding) || iconv.encodingExists(encoding);
-        }
-
-        original.BufferByteLength = Buffer.byteLength;
-        Buffer.byteLength = SlowBuffer.byteLength = function(str, encoding) {
-            encoding = String(encoding || 'utf8').toLowerCase();
-
-            // Use native conversion when possible
-            if (Buffer.isNativeEncoding(encoding))
-                return original.BufferByteLength.call(this, str, encoding);
-
-            // Slow, I know, but we don't have a better way yet.
-            return iconv.encode(str, encoding).length;
-        }
-
-        original.BufferToString = Buffer.prototype.toString;
-        Buffer.prototype.toString = function(encoding, start, end) {
-            encoding = String(encoding || 'utf8').toLowerCase();
-
-            // Use native conversion when possible
-            if (Buffer.isNativeEncoding(encoding))
-                return original.BufferToString.call(this, encoding, start, end);
-
-            // Otherwise, use our decoding method.
-            if (typeof start == 'undefined') start = 0;
-            if (typeof end == 'undefined') end = this.length;
-            return iconv.decode(this.slice(start, end), encoding);
-        }
-
-        original.BufferWrite = Buffer.prototype.write;
-        Buffer.prototype.write = function(string, offset, length, encoding) {
-            var _offset = offset, _length = length, _encoding = encoding;
-            // Support both (string, offset, length, encoding)
-            // and the legacy (string, encoding, offset, length)
-            if (isFinite(offset)) {
-                if (!isFinite(length)) {
-                    encoding = length;
-                    length = undefined;
-                }
-            } else {  // legacy
-                var swap = encoding;
-                encoding = offset;
-                offset = length;
-                length = swap;
-            }
-
-            encoding = String(encoding || 'utf8').toLowerCase();
-
-            // Use native conversion when possible
-            if (Buffer.isNativeEncoding(encoding))
-                return original.BufferWrite.call(this, string, _offset, _length, _encoding);
-
-            offset = +offset || 0;
-            var remaining = this.length - offset;
-            if (!length) {
-                length = remaining;
-            } else {
-                length = +length;
-                if (length > remaining) {
-                    length = remaining;
-                }
-            }
-
-            if (string.length > 0 && (length < 0 || offset < 0))
-                throw new RangeError('attempt to write beyond buffer bounds');
-
-            // Otherwise, use our encoding method.
-            var buf = iconv.encode(string, encoding);
-            if (buf.length < length) length = buf.length;
-            buf.copy(this, offset, 0, length);
-            return length;
-
-            // TODO: Set _charsWritten.
-        }
-
-
-        // -- Readable -------------------------------------------------------------
-        if (iconv.supportsStreams) {
-            var Readable = __webpack_require__(16).Readable;
-
-            original.ReadableSetEncoding = Readable.prototype.setEncoding;
-            Readable.prototype.setEncoding = function setEncoding(enc, options) {
-                // Use our own decoder, it has the same interface.
-                // We cannot use original function as it doesn't handle BOM-s.
-                this._readableState.decoder = iconv.getDecoder(enc, options);
-                this._readableState.encoding = enc;
-            }
-
-            Readable.prototype.collect = iconv._collect;
-        }
-    }
-
-    // Remove iconv-lite Node primitive extensions.
-    iconv.undoExtendNodeEncodings = function undoExtendNodeEncodings() {
-        if (!iconv.supportsNodeEncodingsExtension)
-            return;
-        if (!original)
-            throw new Error("require('iconv-lite').undoExtendNodeEncodings(): Nothing to undo; extendNodeEncodings() is not called.")
-
-        delete Buffer.isNativeEncoding;
-
-        var SlowBuffer = __webpack_require__(3).SlowBuffer;
-
-        SlowBuffer.prototype.toString = original.SlowBufferToString;
-        SlowBuffer.prototype.write = original.SlowBufferWrite;
-
-        Buffer.isEncoding = original.BufferIsEncoding;
-        Buffer.byteLength = original.BufferByteLength;
-        Buffer.prototype.toString = original.BufferToString;
-        Buffer.prototype.write = original.BufferWrite;
-
-        if (iconv.supportsStreams) {
-            var Readable = __webpack_require__(16).Readable;
-
-            Readable.prototype.setEncoding = original.ReadableSetEncoding;
-            delete Readable.prototype.collect;
-        }
-
-        original = undefined;
-    }
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 173 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer, process) {
-
-var bomHandling = __webpack_require__(171),
-    iconv = module.exports;
-
-// All codecs and aliases are kept here, keyed by encoding name/alias.
-// They are lazy loaded in `iconv.getCodec` from `encodings/index.js`.
-iconv.encodings = null;
-
-// Characters emitted in case of error.
-iconv.defaultCharUnicode = '�';
-iconv.defaultCharSingleByte = '?';
-
-// Public API.
-iconv.encode = function encode(str, encoding, options) {
-    str = "" + (str || ""); // Ensure string.
-
-    var encoder = iconv.getEncoder(encoding, options);
-
-    var res = encoder.write(str);
-    var trail = encoder.end();
-    
-    return (trail && trail.length > 0) ? Buffer.concat([res, trail]) : res;
-}
-
-iconv.decode = function decode(buf, encoding, options) {
-    if (typeof buf === 'string') {
-        if (!iconv.skipDecodeWarning) {
-            console.error('Iconv-lite warning: decode()-ing strings is deprecated. Refer to https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding');
-            iconv.skipDecodeWarning = true;
-        }
-
-        buf = new Buffer("" + (buf || ""), "binary"); // Ensure buffer.
-    }
-
-    var decoder = iconv.getDecoder(encoding, options);
-
-    var res = decoder.write(buf);
-    var trail = decoder.end();
-
-    return trail ? (res + trail) : res;
-}
-
-iconv.encodingExists = function encodingExists(enc) {
-    try {
-        iconv.getCodec(enc);
-        return true;
-    } catch (e) {
-        return false;
-    }
-}
-
-// Legacy aliases to convert functions
-iconv.toEncoding = iconv.encode;
-iconv.fromEncoding = iconv.decode;
-
-// Search for a codec in iconv.encodings. Cache codec data in iconv._codecDataCache.
-iconv._codecDataCache = {};
-iconv.getCodec = function getCodec(encoding) {
-    if (!iconv.encodings)
-        iconv.encodings = __webpack_require__(164); // Lazy load all encoding definitions.
-    
-    // Canonicalize encoding name: strip all non-alphanumeric chars and appended year.
-    var enc = (''+encoding).toLowerCase().replace(/[^0-9a-z]|:\d{4}$/g, "");
-
-    // Traverse iconv.encodings to find actual codec.
-    var codecOptions = {};
-    while (true) {
-        var codec = iconv._codecDataCache[enc];
-        if (codec)
-            return codec;
-
-        var codecDef = iconv.encodings[enc];
-
-        switch (typeof codecDef) {
-            case "string": // Direct alias to other encoding.
-                enc = codecDef;
-                break;
-
-            case "object": // Alias with options. Can be layered.
-                for (var key in codecDef)
-                    codecOptions[key] = codecDef[key];
-
-                if (!codecOptions.encodingName)
-                    codecOptions.encodingName = enc;
-                
-                enc = codecDef.type;
-                break;
-
-            case "function": // Codec itself.
-                if (!codecOptions.encodingName)
-                    codecOptions.encodingName = enc;
-
-                // The codec function must load all tables and return object with .encoder and .decoder methods.
-                // It'll be called only once (for each different options object).
-                codec = new codecDef(codecOptions, iconv);
-
-                iconv._codecDataCache[codecOptions.encodingName] = codec; // Save it to be reused later.
-                return codec;
-
-            default:
-                throw new Error("Encoding not recognized: '" + encoding + "' (searched as: '"+enc+"')");
-        }
-    }
-}
-
-iconv.getEncoder = function getEncoder(encoding, options) {
-    var codec = iconv.getCodec(encoding),
-        encoder = new codec.encoder(options, codec);
-
-    if (codec.bomAware && options && options.addBOM)
-        encoder = new bomHandling.PrependBOM(encoder, options);
-
-    return encoder;
-}
-
-iconv.getDecoder = function getDecoder(encoding, options) {
-    var codec = iconv.getCodec(encoding),
-        decoder = new codec.decoder(options, codec);
-
-    if (codec.bomAware && !(options && options.stripBOM === false))
-        decoder = new bomHandling.StripBOM(decoder, options);
-
-    return decoder;
-}
-
-
-// Load extensions in Node. All of them are omitted in Browserify build via 'browser' field in package.json.
-var nodeVer = typeof process !== 'undefined' && process.versions && process.versions.node;
-if (nodeVer) {
-
-    // Load streaming support in Node v0.10+
-    var nodeVerArr = nodeVer.split(".").map(Number);
-    if (nodeVerArr[0] > 0 || nodeVerArr[1] >= 10) {
-        __webpack_require__(174)(iconv);
-    }
-
-    // Load Node primitive extensions.
-    __webpack_require__(172)(iconv);
-}
-
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(8)))
-
-/***/ }),
-/* 174 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(Buffer) {
-
-var Transform = __webpack_require__(16).Transform;
-
-
-// == Exports ==================================================================
-module.exports = function(iconv) {
-    
-    // Additional Public API.
-    iconv.encodeStream = function encodeStream(encoding, options) {
-        return new IconvLiteEncoderStream(iconv.getEncoder(encoding, options), options);
-    }
-
-    iconv.decodeStream = function decodeStream(encoding, options) {
-        return new IconvLiteDecoderStream(iconv.getDecoder(encoding, options), options);
-    }
-
-    iconv.supportsStreams = true;
-
-
-    // Not published yet.
-    iconv.IconvLiteEncoderStream = IconvLiteEncoderStream;
-    iconv.IconvLiteDecoderStream = IconvLiteDecoderStream;
-    iconv._collect = IconvLiteDecoderStream.prototype.collect;
-};
-
-
-// == Encoder stream =======================================================
-function IconvLiteEncoderStream(conv, options) {
-    this.conv = conv;
-    options = options || {};
-    options.decodeStrings = false; // We accept only strings, so we don't need to decode them.
-    Transform.call(this, options);
-}
-
-IconvLiteEncoderStream.prototype = Object.create(Transform.prototype, {
-    constructor: { value: IconvLiteEncoderStream }
-});
-
-IconvLiteEncoderStream.prototype._transform = function(chunk, encoding, done) {
-    if (typeof chunk != 'string')
-        return done(new Error("Iconv encoding stream needs strings as its input."));
-    try {
-        var res = this.conv.write(chunk);
-        if (res && res.length) this.push(res);
-        done();
-    }
-    catch (e) {
-        done(e);
-    }
-}
-
-IconvLiteEncoderStream.prototype._flush = function(done) {
-    try {
-        var res = this.conv.end();
-        if (res && res.length) this.push(res);
-        done();
-    }
-    catch (e) {
-        done(e);
-    }
-}
-
-IconvLiteEncoderStream.prototype.collect = function(cb) {
-    var chunks = [];
-    this.on('error', cb);
-    this.on('data', function(chunk) { chunks.push(chunk); });
-    this.on('end', function() {
-        cb(null, Buffer.concat(chunks));
-    });
-    return this;
-}
-
-
-// == Decoder stream =======================================================
-function IconvLiteDecoderStream(conv, options) {
-    this.conv = conv;
-    options = options || {};
-    options.encoding = this.encoding = 'utf8'; // We output strings.
-    Transform.call(this, options);
-}
-
-IconvLiteDecoderStream.prototype = Object.create(Transform.prototype, {
-    constructor: { value: IconvLiteDecoderStream }
-});
-
-IconvLiteDecoderStream.prototype._transform = function(chunk, encoding, done) {
-    if (!Buffer.isBuffer(chunk))
-        return done(new Error("Iconv decoding stream needs buffers as its input."));
-    try {
-        var res = this.conv.write(chunk);
-        if (res && res.length) this.push(res, this.encoding);
-        done();
-    }
-    catch (e) {
-        done(e);
-    }
-}
-
-IconvLiteDecoderStream.prototype._flush = function(done) {
-    try {
-        var res = this.conv.end();
-        if (res && res.length) this.push(res, this.encoding);                
-        done();
-    }
-    catch (e) {
-        done(e);
-    }
-}
-
-IconvLiteDecoderStream.prototype.collect = function(cb) {
-    var res = '';
-    this.on('error', cb);
-    this.on('data', function(chunk) { res += chunk; });
-    this.on('end', function() {
-        cb(null, res);
-    });
-    return this;
-}
-
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
-
-/***/ }),
-/* 175 */
+/* 158 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -28398,7 +24375,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 176 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -28456,35 +24433,7 @@ module.exports = invariant;
 
 
 /***/ }),
-/* 177 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var isStream = module.exports = function (stream) {
-	return stream !== null && typeof stream === 'object' && typeof stream.pipe === 'function';
-};
-
-isStream.writable = function (stream) {
-	return isStream(stream) && stream.writable !== false && typeof stream._write === 'function' && typeof stream._writableState === 'object';
-};
-
-isStream.readable = function (stream) {
-	return isStream(stream) && stream.readable !== false && typeof stream._read === 'function' && typeof stream._readableState === 'object';
-};
-
-isStream.duplex = function (stream) {
-	return isStream.writable(stream) && isStream.readable(stream);
-};
-
-isStream.transform = function (stream) {
-	return isStream.duplex(stream) && typeof stream._transform === 'function' && typeof stream._transformState === 'object';
-};
-
-
-/***/ }),
-/* 178 */
+/* 160 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -28993,7 +24942,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 179 */
+/* 161 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -31376,7 +27325,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 180 */
+/* 162 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -32201,7 +28150,7 @@ module.exports = [
 ];
 
 /***/ }),
-/* 181 */
+/* 163 */
 /***/ (function(module, exports) {
 
 module.exports = {
@@ -32626,7 +28575,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 182 */
+/* 164 */
 /***/ (function(module, exports) {
 
 module.exports = [
@@ -33177,13 +29126,13 @@ module.exports = [
 ];
 
 /***/ }),
-/* 183 */
+/* 165 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(79);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__getRawTag_js__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__objectToString_js__ = __webpack_require__(169);
 
 
 
@@ -33215,7 +29164,7 @@ function baseGetTag(value) {
 
 
 /***/ }),
-/* 184 */
+/* 166 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33227,11 +29176,11 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(6)))
 
 /***/ }),
-/* 185 */
+/* 167 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overArg_js__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__overArg_js__ = __webpack_require__(170);
 
 
 /** Built-in value references. */
@@ -33241,7 +29190,7 @@ var getPrototype = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__overArg_js
 
 
 /***/ }),
-/* 186 */
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33295,7 +29244,7 @@ function getRawTag(value) {
 
 
 /***/ }),
-/* 187 */
+/* 169 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33324,7 +29273,7 @@ function objectToString(value) {
 
 
 /***/ }),
-/* 188 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33346,11 +29295,11 @@ function overArg(func, transform) {
 
 
 /***/ }),
-/* 189 */
+/* 171 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__ = __webpack_require__(166);
 
 
 /** Detect free variable `self`. */
@@ -33363,7 +29312,7 @@ var root = __WEBPACK_IMPORTED_MODULE_0__freeGlobal_js__["a" /* default */] || fr
 
 
 /***/ }),
-/* 190 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33399,635 +29348,7 @@ function isObjectLike(value) {
 
 
 /***/ }),
-/* 191 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Big = __webpack_require__(139);
-var Random = __webpack_require__(213);
-var engine = Random.engines.nativeMath;
-var distribution = Random.hex(false);
-
-
-class Utilities {
-    /**
-     * Generate a random payment id.
-     * @param type {string} use 'short' to generate a 16 char payment id for integrated addresses.
-     * @returns {*}
-     */
-    static generatePaymentId(type = 'std') {
-        let length = (type == 'short') ? 16 : 64;
-        let paymentId = distribution(engine, length);
-        return type == 'short' ? zeropad(paymentId, 48) : paymentId;
-    }
-
-    /**
-     * Convert atomic units to float.
-     * @param atomic
-     * @returns {number}
-     */
-    static toFloat(atomic) {
-        let big = new Big(atomic);
-        return Number(big.div(1e12));
-    }
-
-    /**
-     * Convert a float to atomic units.
-     * @param float
-     * @returns {number}
-     */
-    static toAtomic(float) {
-        let big = new Big(float);
-        return Number(big.times(1e12))
-    }
-}
-
-function zeropad(str, length) {
-    let arr = new Array(length);
-    arr.fill(0);
-    return str + arr.join('');
-}
-
-module.exports = Utilities;
-
-/***/ }),
-/* 192 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var fetch = (typeof self === 'undefined' || self.fetch) || __webpack_require__(193);
-var Utilities = __webpack_require__(191);
-
-class Wallet {
-    constructor(hostname, port) {
-        this.hostname = hostname || '127.0.0.1';
-        this.port = port || 18082;
-        this.params = {};
-    }
-
-    /**
-     * Get the standard public address of this wallet.
-     * @returns {object}
-     */
-    address() {
-        this.method = 'getaddress';
-        return _request(this);
-    }
-
-    /**
-     * Get the current balance of this wallet.
-     * @returns {object}
-     */
-    balance() {
-        this.method = 'getbalance';
-        return _request(this);
-    }
-
-    /**
-     * Get the current block height of this wallet.
-     * @returns {object}
-     */
-    height() {
-        this.method = 'getheight';
-        return _request(this);
-    }
-
-    /**
-     * Get incoming transfers to this wallet.
-     * @param type {string} must be one of: 'all', 'available', or 'unavailable'
-     * @returns {object}
-     */
-    incomingTransfers(type) {
-        this.method = 'incoming_transfers'
-        this.params = {transfer_type: type}
-        return _request(this);
-    }
-
-    /**
-     * Get payments to this wallet from a single payment id.
-     * @param paymentId
-     * @returns {object}
-     */
-    getPayments(paymentId) {
-        this.method = 'get_payments';
-        this.params = {payment_id: paymentId}
-        return _request(this);
-    }
-
-    /**
-     * Get payments to this wallet from a list of payment ids.
-     * @param paymentIds
-     * @param minBlockHeight
-     * @returns {object}
-     */
-    getBulkPayments(paymentIds, minBlockHeight) {
-        this.method = 'get_bulk_payments';
-        this.params.paymentIds = paymentIds;
-        this.params.minBlockHeight = minBlockHeight;
-        return _request(this);
-    }
-
-    makeIntegratedAddress(paymentId) {
-        this.method = 'make_integrated_address';
-        this.params.payment_id = paymentId;
-        return _request(this);
-    }
-
-    splitIntegratedAddress(address) {
-        return _request('split_integrated_address', {integrated_address: address});
-    }
-
-    store() {
-        return _request('store');
-    }
-
-    stopWallet() {
-        return _request('stop_wallet');
-    }
-
-    transfer(destinations, options = {}, method = 'transfer') {
-        if (Array.isArray(destinations)) {
-            destinations.forEach((dest) => dest.amount = Utilities.toAtomic(dest.amount));
-        } else {
-            destinations.amount = Utilities.toAtomic(destinations.amount);
-            destinations = [destinations];
-        }
-        let params = {
-            destinations: destinations,
-            mixin: parseInt(options.mixin) || 4,
-            unlock_time: parseInt(options.unlockTime) || 0,
-            payment_id: options.pid || null
-        };
-        return _request(method, params);
-    }
-
-    transferSplit(destinations, options) {
-        return this.transfer(destinations, options, 'transfer_split');
-    }
-
-    getTransfers(options) {
-        this.method = 'get_transfers'
-        this.params = options
-        return _request(this);
-    }
-}
-
-// private method for making RPC requests
-function _request(self) {
-    let body = {
-        jsonrpc: '2.0',
-        id: '0',
-        method: self.method,
-        params: self.params
-    };
-    let options = {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(body)
-    };
-
-    return new Promise((resolve, reject) => {
-        fetch(`http://${self.hostname}:${self.port}/json_rpc`, options)
-        .then((response) => {
-            if(response.ok) {
-                response.json().then((json) => {
-                    if (json && json.result) {
-                        resolve(json.result);
-                    } else if (json && json.error) {
-                        reject(json.error);
-                    } else {
-                        reject(response);
-                    }
-                })
-            } else {
-                reject(response);
-            }
-        })
-        .catch(reject);
-    });
-}
-
-module.exports = Wallet;
-
-
-
-/***/ }),
-/* 193 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(Buffer, global) {
-/**
- * index.js
- *
- * a request API compatible with window.fetch
- */
-
-var parse_url = __webpack_require__(40).parse;
-var resolve_url = __webpack_require__(40).resolve;
-var http = __webpack_require__(70);
-var https = __webpack_require__(161);
-var zlib = __webpack_require__(141);
-var stream = __webpack_require__(16);
-
-var Body = __webpack_require__(45);
-var Response = __webpack_require__(195);
-var Headers = __webpack_require__(46);
-var Request = __webpack_require__(194);
-var FetchError = __webpack_require__(80);
-
-// commonjs
-module.exports = Fetch;
-// es6 default export compatibility
-module.exports.default = module.exports;
-
-/**
- * Fetch class
- *
- * @param   Mixed    url   Absolute url or Request instance
- * @param   Object   opts  Fetch options
- * @return  Promise
- */
-function Fetch(url, opts) {
-
-	// allow call as function
-	if (!(this instanceof Fetch))
-		return new Fetch(url, opts);
-
-	// allow custom promise
-	if (!Fetch.Promise) {
-		throw new Error('native promise missing, set Fetch.Promise to your favorite alternative');
-	}
-
-	Body.Promise = Fetch.Promise;
-
-	var self = this;
-
-	// wrap http.request into fetch
-	return new Fetch.Promise(function(resolve, reject) {
-		// build request object
-		var options = new Request(url, opts);
-
-		if (!options.protocol || !options.hostname) {
-			throw new Error('only absolute urls are supported');
-		}
-
-		if (options.protocol !== 'http:' && options.protocol !== 'https:') {
-			throw new Error('only http(s) protocols are supported');
-		}
-
-		var send;
-		if (options.protocol === 'https:') {
-			send = https.request;
-		} else {
-			send = http.request;
-		}
-
-		// normalize headers
-		var headers = new Headers(options.headers);
-
-		if (options.compress) {
-			headers.set('accept-encoding', 'gzip,deflate');
-		}
-
-		if (!headers.has('user-agent')) {
-			headers.set('user-agent', 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)');
-		}
-
-		if (!headers.has('connection') && !options.agent) {
-			headers.set('connection', 'close');
-		}
-
-		if (!headers.has('accept')) {
-			headers.set('accept', '*/*');
-		}
-
-		// detect form data input from form-data module, this hack avoid the need to pass multipart header manually
-		if (!headers.has('content-type') && options.body && typeof options.body.getBoundary === 'function') {
-			headers.set('content-type', 'multipart/form-data; boundary=' + options.body.getBoundary());
-		}
-
-		// bring node-fetch closer to browser behavior by setting content-length automatically
-		if (!headers.has('content-length') && /post|put|patch|delete/i.test(options.method)) {
-			if (typeof options.body === 'string') {
-				headers.set('content-length', Buffer.byteLength(options.body));
-			// detect form data input from form-data module, this hack avoid the need to add content-length header manually
-			} else if (options.body && typeof options.body.getLengthSync === 'function') {
-				// for form-data 1.x
-				if (options.body._lengthRetrievers && options.body._lengthRetrievers.length == 0) {
-					headers.set('content-length', options.body.getLengthSync().toString());
-				// for form-data 2.x
-				} else if (options.body.hasKnownLength && options.body.hasKnownLength()) {
-					headers.set('content-length', options.body.getLengthSync().toString());
-				}
-			// this is only necessary for older nodejs releases (before iojs merge)
-			} else if (options.body === undefined || options.body === null) {
-				headers.set('content-length', '0');
-			}
-		}
-
-		options.headers = headers.raw();
-
-		// http.request only support string as host header, this hack make custom host header possible
-		if (options.headers.host) {
-			options.headers.host = options.headers.host[0];
-		}
-
-		// send request
-		var req = send(options);
-		var reqTimeout;
-
-		if (options.timeout) {
-			req.once('socket', function(socket) {
-				reqTimeout = setTimeout(function() {
-					req.abort();
-					reject(new FetchError('network timeout at: ' + options.url, 'request-timeout'));
-				}, options.timeout);
-			});
-		}
-
-		req.on('error', function(err) {
-			clearTimeout(reqTimeout);
-			reject(new FetchError('request to ' + options.url + ' failed, reason: ' + err.message, 'system', err));
-		});
-
-		req.on('response', function(res) {
-			clearTimeout(reqTimeout);
-
-			// handle redirect
-			if (self.isRedirect(res.statusCode) && options.redirect !== 'manual') {
-				if (options.redirect === 'error') {
-					reject(new FetchError('redirect mode is set to error: ' + options.url, 'no-redirect'));
-					return;
-				}
-
-				if (options.counter >= options.follow) {
-					reject(new FetchError('maximum redirect reached at: ' + options.url, 'max-redirect'));
-					return;
-				}
-
-				if (!res.headers.location) {
-					reject(new FetchError('redirect location header missing at: ' + options.url, 'invalid-redirect'));
-					return;
-				}
-
-				// per fetch spec, for POST request with 301/302 response, or any request with 303 response, use GET when following redirect
-				if (res.statusCode === 303
-					|| ((res.statusCode === 301 || res.statusCode === 302) && options.method === 'POST'))
-				{
-					options.method = 'GET';
-					delete options.body;
-					delete options.headers['content-length'];
-				}
-
-				options.counter++;
-
-				resolve(Fetch(resolve_url(options.url, res.headers.location), options));
-				return;
-			}
-
-			// normalize location header for manual redirect mode
-			var headers = new Headers(res.headers);
-			if (options.redirect === 'manual' && headers.has('location')) {
-				headers.set('location', resolve_url(options.url, headers.get('location')));
-			}
-
-			// prepare response
-			var body = res.pipe(new stream.PassThrough());
-			var response_options = {
-				url: options.url
-				, status: res.statusCode
-				, statusText: res.statusMessage
-				, headers: headers
-				, size: options.size
-				, timeout: options.timeout
-			};
-
-			// response object
-			var output;
-
-			// in following scenarios we ignore compression support
-			// 1. compression support is disabled
-			// 2. HEAD request
-			// 3. no content-encoding header
-			// 4. no content response (204)
-			// 5. content not modified response (304)
-			if (!options.compress || options.method === 'HEAD' || !headers.has('content-encoding') || res.statusCode === 204 || res.statusCode === 304) {
-				output = new Response(body, response_options);
-				resolve(output);
-				return;
-			}
-
-			// otherwise, check for gzip or deflate
-			var name = headers.get('content-encoding');
-
-			// for gzip
-			if (name == 'gzip' || name == 'x-gzip') {
-				body = body.pipe(zlib.createGunzip());
-				output = new Response(body, response_options);
-				resolve(output);
-				return;
-
-			// for deflate
-			} else if (name == 'deflate' || name == 'x-deflate') {
-				// handle the infamous raw deflate response from old servers
-				// a hack for old IIS and Apache servers
-				var raw = res.pipe(new stream.PassThrough());
-				raw.once('data', function(chunk) {
-					// see http://stackoverflow.com/questions/37519828
-					if ((chunk[0] & 0x0F) === 0x08) {
-						body = body.pipe(zlib.createInflate());
-					} else {
-						body = body.pipe(zlib.createInflateRaw());
-					}
-					output = new Response(body, response_options);
-					resolve(output);
-				});
-				return;
-			}
-
-			// otherwise, use response as-is
-			output = new Response(body, response_options);
-			resolve(output);
-			return;
-		});
-
-		// accept string, buffer or readable stream as body
-		// per spec we will call tostring on non-stream objects
-		if (typeof options.body === 'string') {
-			req.write(options.body);
-			req.end();
-		} else if (options.body instanceof Buffer) {
-			req.write(options.body);
-			req.end()
-		} else if (typeof options.body === 'object' && options.body.pipe) {
-			options.body.pipe(req);
-		} else if (typeof options.body === 'object') {
-			req.write(options.body.toString());
-			req.end();
-		} else {
-			req.end();
-		}
-	});
-
-};
-
-/**
- * Redirect code matching
- *
- * @param   Number   code  Status code
- * @return  Boolean
- */
-Fetch.prototype.isRedirect = function(code) {
-	return code === 301 || code === 302 || code === 303 || code === 307 || code === 308;
-}
-
-// expose Promise
-Fetch.Promise = global.Promise;
-Fetch.Response = Response;
-Fetch.Headers = Headers;
-Fetch.Request = Request;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(6)))
-
-/***/ }),
-/* 194 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/**
- * request.js
- *
- * Request class contains server only options
- */
-
-var parse_url = __webpack_require__(40).parse;
-var Headers = __webpack_require__(46);
-var Body = __webpack_require__(45);
-
-module.exports = Request;
-
-/**
- * Request class
- *
- * @param   Mixed   input  Url or Request instance
- * @param   Object  init   Custom options
- * @return  Void
- */
-function Request(input, init) {
-	var url, url_parsed;
-
-	// normalize input
-	if (!(input instanceof Request)) {
-		url = input;
-		url_parsed = parse_url(url);
-		input = {};
-	} else {
-		url = input.url;
-		url_parsed = parse_url(url);
-	}
-
-	// normalize init
-	init = init || {};
-
-	// fetch spec options
-	this.method = init.method || input.method || 'GET';
-	this.redirect = init.redirect || input.redirect || 'follow';
-	this.headers = new Headers(init.headers || input.headers || {});
-	this.url = url;
-
-	// server only options
-	this.follow = init.follow !== undefined ?
-		init.follow : input.follow !== undefined ?
-		input.follow : 20;
-	this.compress = init.compress !== undefined ?
-		init.compress : input.compress !== undefined ?
-		input.compress : true;
-	this.counter = init.counter || input.counter || 0;
-	this.agent = init.agent || input.agent;
-
-	Body.call(this, init.body || this._clone(input), {
-		timeout: init.timeout || input.timeout || 0,
-		size: init.size || input.size || 0
-	});
-
-	// server request options
-	this.protocol = url_parsed.protocol;
-	this.hostname = url_parsed.hostname;
-	this.port = url_parsed.port;
-	this.path = url_parsed.path;
-	this.auth = url_parsed.auth;
-}
-
-Request.prototype = Object.create(Body.prototype);
-
-/**
- * Clone this request
- *
- * @return  Request
- */
-Request.prototype.clone = function() {
-	return new Request(this);
-};
-
-
-/***/ }),
-/* 195 */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/**
- * response.js
- *
- * Response class provides content decoding
- */
-
-var http = __webpack_require__(70);
-var Headers = __webpack_require__(46);
-var Body = __webpack_require__(45);
-
-module.exports = Response;
-
-/**
- * Response class
- *
- * @param   Stream  body  Readable stream
- * @param   Object  opts  Response options
- * @return  Void
- */
-function Response(body, opts) {
-
-	opts = opts || {};
-
-	this.url = opts.url;
-	this.status = opts.status || 200;
-	this.statusText = opts.statusText || http.STATUS_CODES[this.status];
-	this.headers = new Headers(opts.headers);
-	this.ok = this.status >= 200 && this.status < 300;
-
-	Body.call(this, body, opts);
-
-}
-
-Response.prototype = Object.create(Body.prototype);
-
-/**
- * Clone this response
- *
- * @return  Response
- */
-Response.prototype.clone = function() {
-	return new Response(this._clone(this), {
-		url: this.url
-		, status: this.status
-		, statusText: this.statusText
-		, headers: this.headers
-		, ok: this.ok
-	});
-};
-
-
-/***/ }),
-/* 196 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34084,17 +29405,17 @@ module.exports = {
 
 
 /***/ }),
-/* 197 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils   = __webpack_require__(33);
-var trees   = __webpack_require__(201);
-var adler32 = __webpack_require__(81);
-var crc32   = __webpack_require__(82);
-var msg     = __webpack_require__(83);
+var trees   = __webpack_require__(178);
+var adler32 = __webpack_require__(80);
+var crc32   = __webpack_require__(81);
+var msg     = __webpack_require__(82);
 
 /* Public constants ==========================================================*/
 /* ===========================================================================*/
@@ -35946,7 +31267,7 @@ exports.deflateTune = deflateTune;
 
 
 /***/ }),
-/* 198 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36279,7 +31600,7 @@ module.exports = function inflate_fast(strm, start) {
 
 
 /***/ }),
-/* 199 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36287,10 +31608,10 @@ module.exports = function inflate_fast(strm, start) {
 
 
 var utils         = __webpack_require__(33);
-var adler32       = __webpack_require__(81);
-var crc32         = __webpack_require__(82);
-var inflate_fast  = __webpack_require__(198);
-var inflate_table = __webpack_require__(200);
+var adler32       = __webpack_require__(80);
+var crc32         = __webpack_require__(81);
+var inflate_fast  = __webpack_require__(175);
+var inflate_table = __webpack_require__(177);
 
 var CODES = 0;
 var LENS = 1;
@@ -37824,7 +33145,7 @@ exports.inflateUndermine = inflateUndermine;
 
 
 /***/ }),
-/* 200 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38158,7 +33479,7 @@ module.exports = function inflate_table(type, lens, lens_index, codes, table, ta
 
 
 /***/ }),
-/* 201 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39367,7 +34688,7 @@ exports._tr_align = _tr_align;
 
 
 /***/ }),
-/* 202 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39403,7 +34724,7 @@ module.exports = ZStream;
 
 
 /***/ }),
-/* 203 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(module, global) {var __WEBPACK_AMD_DEFINE_RESULT__;/*! https://mths.be/punycode v1.4.1 by @mathias */
@@ -39939,13 +35260,13 @@ module.exports = ZStream;
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(125)(module), __webpack_require__(6)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(124)(module), __webpack_require__(6)))
 
 /***/ }),
-/* 204 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mode = __webpack_require__(87);
+var mode = __webpack_require__(86);
 
 function QR8bitByte(data) {
 	this.mode = mode.MODE_8BIT_BYTE;
@@ -39971,7 +35292,7 @@ module.exports = QR8bitByte;
 
 
 /***/ }),
-/* 205 */
+/* 182 */
 /***/ (function(module, exports) {
 
 function QRBitBuffer() {
@@ -40015,14 +35336,14 @@ module.exports = QRBitBuffer;
 
 
 /***/ }),
-/* 206 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BitByte = __webpack_require__(204);
-var RSBlock = __webpack_require__(207);
-var BitBuffer = __webpack_require__(205);
-var util = __webpack_require__(208);
-var Polynomial = __webpack_require__(85);
+var BitByte = __webpack_require__(181);
+var RSBlock = __webpack_require__(184);
+var BitBuffer = __webpack_require__(182);
+var util = __webpack_require__(185);
+var Polynomial = __webpack_require__(84);
 
 function QRCode(typeNumber, errorCorrectLevel) {
 	this.typeNumber = typeNumber;
@@ -40459,11 +35780,11 @@ module.exports = QRCode;
 
 
 /***/ }),
-/* 207 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ErrorCorrectLevel
-var ECL = __webpack_require__(84);
+var ECL = __webpack_require__(83);
 
 function QRRSBlock(totalCount, dataCount) {
 	this.totalCount = totalCount;
@@ -40764,12 +36085,12 @@ module.exports = QRRSBlock;
 
 
 /***/ }),
-/* 208 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Mode = __webpack_require__(87);
-var Polynomial = __webpack_require__(85);
-var math = __webpack_require__(86);
+var Mode = __webpack_require__(86);
+var Polynomial = __webpack_require__(84);
+var math = __webpack_require__(85);
 
 var QRMaskPattern = {
 	PATTERN000 : 0,
@@ -41049,7 +36370,7 @@ module.exports = QRUtil;
 
 
 /***/ }),
-/* 209 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41058,8 +36379,8 @@ module.exports = QRUtil;
 var React = __webpack_require__(15);
 // qr.js doesn't handle error level of zero (M) so we need to do it right,
 // thus the deep require.
-var QRCodeImpl = __webpack_require__(206);
-var ErrorCorrectLevel = __webpack_require__(84);
+var QRCodeImpl = __webpack_require__(183);
+var ErrorCorrectLevel = __webpack_require__(83);
 
 function getBackingStorePixelRatio(ctx) {
   return ctx.webkitBackingStorePixelRatio || ctx.mozBackingStorePixelRatio || ctx.msBackingStorePixelRatio || ctx.oBackingStorePixelRatio || ctx.backingStorePixelRatio || 1;
@@ -41162,7 +36483,7 @@ var QRCode = React.createClass({
 module.exports = QRCode;
 
 /***/ }),
-/* 210 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41253,7 +36574,7 @@ var isArray = Array.isArray || function (xs) {
 
 
 /***/ }),
-/* 211 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -41345,750 +36666,28 @@ var objectKeys = Object.keys || function (obj) {
 
 
 /***/ }),
-/* 212 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-exports.decode = exports.parse = __webpack_require__(210);
-exports.encode = exports.stringify = __webpack_require__(211);
+exports.decode = exports.parse = __webpack_require__(187);
+exports.encode = exports.stringify = __webpack_require__(188);
 
 
 /***/ }),
-/* 213 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var __WEBPACK_AMD_DEFINE_RESULT__;/*jshint eqnull:true*/
-(function (root) {
-  "use strict";
-
-  var GLOBAL_KEY = "Random";
-
-  var imul = (typeof Math.imul !== "function" || Math.imul(0xffffffff, 5) !== -5 ?
-    function (a, b) {
-      var ah = (a >>> 16) & 0xffff;
-      var al = a & 0xffff;
-      var bh = (b >>> 16) & 0xffff;
-      var bl = b & 0xffff;
-      // the shift by 0 fixes the sign on the high part
-      // the final |0 converts the unsigned value into a signed value
-      return (al * bl) + (((ah * bl + al * bh) << 16) >>> 0) | 0;
-    } :
-    Math.imul);
-
-  var stringRepeat = (typeof String.prototype.repeat === "function" && "x".repeat(3) === "xxx" ?
-    function (x, y) {
-      return x.repeat(y);
-    } : function (pattern, count) {
-      var result = "";
-      while (count > 0) {
-        if (count & 1) {
-          result += pattern;
-        }
-        count >>= 1;
-        pattern += pattern;
-      }
-      return result;
-    });
-
-  function Random(engine) {
-    if (!(this instanceof Random)) {
-      return new Random(engine);
-    }
-
-    if (engine == null) {
-      engine = Random.engines.nativeMath;
-    } else if (typeof engine !== "function") {
-      throw new TypeError("Expected engine to be a function, got " + typeof engine);
-    }
-    this.engine = engine;
-  }
-  var proto = Random.prototype;
-
-  Random.engines = {
-    nativeMath: function () {
-      return (Math.random() * 0x100000000) | 0;
-    },
-    mt19937: (function (Int32Array) {
-      // http://en.wikipedia.org/wiki/Mersenne_twister
-      function refreshData(data) {
-        var k = 0;
-        var tmp = 0;
-        for (;
-          (k | 0) < 227; k = (k + 1) | 0) {
-          tmp = (data[k] & 0x80000000) | (data[(k + 1) | 0] & 0x7fffffff);
-          data[k] = data[(k + 397) | 0] ^ (tmp >>> 1) ^ ((tmp & 0x1) ? 0x9908b0df : 0);
-        }
-
-        for (;
-          (k | 0) < 623; k = (k + 1) | 0) {
-          tmp = (data[k] & 0x80000000) | (data[(k + 1) | 0] & 0x7fffffff);
-          data[k] = data[(k - 227) | 0] ^ (tmp >>> 1) ^ ((tmp & 0x1) ? 0x9908b0df : 0);
-        }
-
-        tmp = (data[623] & 0x80000000) | (data[0] & 0x7fffffff);
-        data[623] = data[396] ^ (tmp >>> 1) ^ ((tmp & 0x1) ? 0x9908b0df : 0);
-      }
-
-      function temper(value) {
-        value ^= value >>> 11;
-        value ^= (value << 7) & 0x9d2c5680;
-        value ^= (value << 15) & 0xefc60000;
-        return value ^ (value >>> 18);
-      }
-
-      function seedWithArray(data, source) {
-        var i = 1;
-        var j = 0;
-        var sourceLength = source.length;
-        var k = Math.max(sourceLength, 624) | 0;
-        var previous = data[0] | 0;
-        for (;
-          (k | 0) > 0; --k) {
-          data[i] = previous = ((data[i] ^ imul((previous ^ (previous >>> 30)), 0x0019660d)) + (source[j] | 0) + (j | 0)) | 0;
-          i = (i + 1) | 0;
-          ++j;
-          if ((i | 0) > 623) {
-            data[0] = data[623];
-            i = 1;
-          }
-          if (j >= sourceLength) {
-            j = 0;
-          }
-        }
-        for (k = 623;
-          (k | 0) > 0; --k) {
-          data[i] = previous = ((data[i] ^ imul((previous ^ (previous >>> 30)), 0x5d588b65)) - i) | 0;
-          i = (i + 1) | 0;
-          if ((i | 0) > 623) {
-            data[0] = data[623];
-            i = 1;
-          }
-        }
-        data[0] = 0x80000000;
-      }
-
-      function mt19937() {
-        var data = new Int32Array(624);
-        var index = 0;
-        var uses = 0;
-
-        function next() {
-          if ((index | 0) >= 624) {
-            refreshData(data);
-            index = 0;
-          }
-
-          var value = data[index];
-          index = (index + 1) | 0;
-          uses += 1;
-          return temper(value) | 0;
-        }
-        next.getUseCount = function() {
-          return uses;
-        };
-        next.discard = function (count) {
-          uses += count;
-          if ((index | 0) >= 624) {
-            refreshData(data);
-            index = 0;
-          }
-          while ((count - index) > 624) {
-            count -= 624 - index;
-            refreshData(data);
-            index = 0;
-          }
-          index = (index + count) | 0;
-          return next;
-        };
-        next.seed = function (initial) {
-          var previous = 0;
-          data[0] = previous = initial | 0;
-
-          for (var i = 1; i < 624; i = (i + 1) | 0) {
-            data[i] = previous = (imul((previous ^ (previous >>> 30)), 0x6c078965) + i) | 0;
-          }
-          index = 624;
-          uses = 0;
-          return next;
-        };
-        next.seedWithArray = function (source) {
-          next.seed(0x012bd6aa);
-          seedWithArray(data, source);
-          return next;
-        };
-        next.autoSeed = function () {
-          return next.seedWithArray(Random.generateEntropyArray());
-        };
-        return next;
-      }
-
-      return mt19937;
-    }(typeof Int32Array === "function" ? Int32Array : Array)),
-    browserCrypto: (typeof crypto !== "undefined" && typeof crypto.getRandomValues === "function" && typeof Int32Array === "function") ? (function () {
-      var data = null;
-      var index = 128;
-
-      return function () {
-        if (index >= 128) {
-          if (data === null) {
-            data = new Int32Array(128);
-          }
-          crypto.getRandomValues(data);
-          index = 0;
-        }
-
-        return data[index++] | 0;
-      };
-    }()) : null
-  };
-
-  Random.generateEntropyArray = function () {
-    var array = [];
-    var engine = Random.engines.nativeMath;
-    for (var i = 0; i < 16; ++i) {
-      array[i] = engine() | 0;
-    }
-    array.push(new Date().getTime() | 0);
-    return array;
-  };
-
-  function returnValue(value) {
-    return function () {
-      return value;
-    };
-  }
-
-  // [-0x80000000, 0x7fffffff]
-  Random.int32 = function (engine) {
-    return engine() | 0;
-  };
-  proto.int32 = function () {
-    return Random.int32(this.engine);
-  };
-
-  // [0, 0xffffffff]
-  Random.uint32 = function (engine) {
-    return engine() >>> 0;
-  };
-  proto.uint32 = function () {
-    return Random.uint32(this.engine);
-  };
-
-  // [0, 0x1fffffffffffff]
-  Random.uint53 = function (engine) {
-    var high = engine() & 0x1fffff;
-    var low = engine() >>> 0;
-    return (high * 0x100000000) + low;
-  };
-  proto.uint53 = function () {
-    return Random.uint53(this.engine);
-  };
-
-  // [0, 0x20000000000000]
-  Random.uint53Full = function (engine) {
-    while (true) {
-      var high = engine() | 0;
-      if (high & 0x200000) {
-        if ((high & 0x3fffff) === 0x200000 && (engine() | 0) === 0) {
-          return 0x20000000000000;
-        }
-      } else {
-        var low = engine() >>> 0;
-        return ((high & 0x1fffff) * 0x100000000) + low;
-      }
-    }
-  };
-  proto.uint53Full = function () {
-    return Random.uint53Full(this.engine);
-  };
-
-  // [-0x20000000000000, 0x1fffffffffffff]
-  Random.int53 = function (engine) {
-    var high = engine() | 0;
-    var low = engine() >>> 0;
-    return ((high & 0x1fffff) * 0x100000000) + low + (high & 0x200000 ? -0x20000000000000 : 0);
-  };
-  proto.int53 = function () {
-    return Random.int53(this.engine);
-  };
-
-  // [-0x20000000000000, 0x20000000000000]
-  Random.int53Full = function (engine) {
-    while (true) {
-      var high = engine() | 0;
-      if (high & 0x400000) {
-        if ((high & 0x7fffff) === 0x400000 && (engine() | 0) === 0) {
-          return 0x20000000000000;
-        }
-      } else {
-        var low = engine() >>> 0;
-        return ((high & 0x1fffff) * 0x100000000) + low + (high & 0x200000 ? -0x20000000000000 : 0);
-      }
-    }
-  };
-  proto.int53Full = function () {
-    return Random.int53Full(this.engine);
-  };
-
-  function add(generate, addend) {
-    if (addend === 0) {
-      return generate;
-    } else {
-      return function (engine) {
-        return generate(engine) + addend;
-      };
-    }
-  }
-
-  Random.integer = (function () {
-    function isPowerOfTwoMinusOne(value) {
-      return ((value + 1) & value) === 0;
-    }
-
-    function bitmask(masking) {
-      return function (engine) {
-        return engine() & masking;
-      };
-    }
-
-    function downscaleToLoopCheckedRange(range) {
-      var extendedRange = range + 1;
-      var maximum = extendedRange * Math.floor(0x100000000 / extendedRange);
-      return function (engine) {
-        var value = 0;
-        do {
-          value = engine() >>> 0;
-        } while (value >= maximum);
-        return value % extendedRange;
-      };
-    }
-
-    function downscaleToRange(range) {
-      if (isPowerOfTwoMinusOne(range)) {
-        return bitmask(range);
-      } else {
-        return downscaleToLoopCheckedRange(range);
-      }
-    }
-
-    function isEvenlyDivisibleByMaxInt32(value) {
-      return (value | 0) === 0;
-    }
-
-    function upscaleWithHighMasking(masking) {
-      return function (engine) {
-        var high = engine() & masking;
-        var low = engine() >>> 0;
-        return (high * 0x100000000) + low;
-      };
-    }
-
-    function upscaleToLoopCheckedRange(extendedRange) {
-      var maximum = extendedRange * Math.floor(0x20000000000000 / extendedRange);
-      return function (engine) {
-        var ret = 0;
-        do {
-          var high = engine() & 0x1fffff;
-          var low = engine() >>> 0;
-          ret = (high * 0x100000000) + low;
-        } while (ret >= maximum);
-        return ret % extendedRange;
-      };
-    }
-
-    function upscaleWithinU53(range) {
-      var extendedRange = range + 1;
-      if (isEvenlyDivisibleByMaxInt32(extendedRange)) {
-        var highRange = ((extendedRange / 0x100000000) | 0) - 1;
-        if (isPowerOfTwoMinusOne(highRange)) {
-          return upscaleWithHighMasking(highRange);
-        }
-      }
-      return upscaleToLoopCheckedRange(extendedRange);
-    }
-
-    function upscaleWithinI53AndLoopCheck(min, max) {
-      return function (engine) {
-        var ret = 0;
-        do {
-          var high = engine() | 0;
-          var low = engine() >>> 0;
-          ret = ((high & 0x1fffff) * 0x100000000) + low + (high & 0x200000 ? -0x20000000000000 : 0);
-        } while (ret < min || ret > max);
-        return ret;
-      };
-    }
-
-    return function (min, max) {
-      min = Math.floor(min);
-      max = Math.floor(max);
-      if (min < -0x20000000000000 || !isFinite(min)) {
-        throw new RangeError("Expected min to be at least " + (-0x20000000000000));
-      } else if (max > 0x20000000000000 || !isFinite(max)) {
-        throw new RangeError("Expected max to be at most " + 0x20000000000000);
-      }
-
-      var range = max - min;
-      if (range <= 0 || !isFinite(range)) {
-        return returnValue(min);
-      } else if (range === 0xffffffff) {
-        if (min === 0) {
-          return Random.uint32;
-        } else {
-          return add(Random.int32, min + 0x80000000);
-        }
-      } else if (range < 0xffffffff) {
-        return add(downscaleToRange(range), min);
-      } else if (range === 0x1fffffffffffff) {
-        return add(Random.uint53, min);
-      } else if (range < 0x1fffffffffffff) {
-        return add(upscaleWithinU53(range), min);
-      } else if (max - 1 - min === 0x1fffffffffffff) {
-        return add(Random.uint53Full, min);
-      } else if (min === -0x20000000000000 && max === 0x20000000000000) {
-        return Random.int53Full;
-      } else if (min === -0x20000000000000 && max === 0x1fffffffffffff) {
-        return Random.int53;
-      } else if (min === -0x1fffffffffffff && max === 0x20000000000000) {
-        return add(Random.int53, 1);
-      } else if (max === 0x20000000000000) {
-        return add(upscaleWithinI53AndLoopCheck(min - 1, max - 1), 1);
-      } else {
-        return upscaleWithinI53AndLoopCheck(min, max);
-      }
-    };
-  }());
-  proto.integer = function (min, max) {
-    return Random.integer(min, max)(this.engine);
-  };
-
-  // [0, 1] (floating point)
-  Random.realZeroToOneInclusive = function (engine) {
-    return Random.uint53Full(engine) / 0x20000000000000;
-  };
-  proto.realZeroToOneInclusive = function () {
-    return Random.realZeroToOneInclusive(this.engine);
-  };
-
-  // [0, 1) (floating point)
-  Random.realZeroToOneExclusive = function (engine) {
-    return Random.uint53(engine) / 0x20000000000000;
-  };
-  proto.realZeroToOneExclusive = function () {
-    return Random.realZeroToOneExclusive(this.engine);
-  };
-
-  Random.real = (function () {
-    function multiply(generate, multiplier) {
-      if (multiplier === 1) {
-        return generate;
-      } else if (multiplier === 0) {
-        return function () {
-          return 0;
-        };
-      } else {
-        return function (engine) {
-          return generate(engine) * multiplier;
-        };
-      }
-    }
-
-    return function (left, right, inclusive) {
-      if (!isFinite(left)) {
-        throw new RangeError("Expected left to be a finite number");
-      } else if (!isFinite(right)) {
-        throw new RangeError("Expected right to be a finite number");
-      }
-      return add(
-        multiply(
-          inclusive ? Random.realZeroToOneInclusive : Random.realZeroToOneExclusive,
-          right - left),
-        left);
-    };
-  }());
-  proto.real = function (min, max, inclusive) {
-    return Random.real(min, max, inclusive)(this.engine);
-  };
-
-  Random.bool = (function () {
-    function isLeastBitTrue(engine) {
-      return (engine() & 1) === 1;
-    }
-
-    function lessThan(generate, value) {
-      return function (engine) {
-        return generate(engine) < value;
-      };
-    }
-
-    function probability(percentage) {
-      if (percentage <= 0) {
-        return returnValue(false);
-      } else if (percentage >= 1) {
-        return returnValue(true);
-      } else {
-        var scaled = percentage * 0x100000000;
-        if (scaled % 1 === 0) {
-          return lessThan(Random.int32, (scaled - 0x80000000) | 0);
-        } else {
-          return lessThan(Random.uint53, Math.round(percentage * 0x20000000000000));
-        }
-      }
-    }
-
-    return function (numerator, denominator) {
-      if (denominator == null) {
-        if (numerator == null) {
-          return isLeastBitTrue;
-        }
-        return probability(numerator);
-      } else {
-        if (numerator <= 0) {
-          return returnValue(false);
-        } else if (numerator >= denominator) {
-          return returnValue(true);
-        }
-        return lessThan(Random.integer(0, denominator - 1), numerator);
-      }
-    };
-  }());
-  proto.bool = function (numerator, denominator) {
-    return Random.bool(numerator, denominator)(this.engine);
-  };
-
-  function toInteger(value) {
-    var number = +value;
-    if (number < 0) {
-      return Math.ceil(number);
-    } else {
-      return Math.floor(number);
-    }
-  }
-
-  function convertSliceArgument(value, length) {
-    if (value < 0) {
-      return Math.max(value + length, 0);
-    } else {
-      return Math.min(value, length);
-    }
-  }
-  Random.pick = function (engine, array, begin, end) {
-    var length = array.length;
-    var start = begin == null ? 0 : convertSliceArgument(toInteger(begin), length);
-    var finish = end === void 0 ? length : convertSliceArgument(toInteger(end), length);
-    if (start >= finish) {
-      return void 0;
-    }
-    var distribution = Random.integer(start, finish - 1);
-    return array[distribution(engine)];
-  };
-  proto.pick = function (array, begin, end) {
-    return Random.pick(this.engine, array, begin, end);
-  };
-
-  function returnUndefined() {
-    return void 0;
-  }
-  var slice = Array.prototype.slice;
-  Random.picker = function (array, begin, end) {
-    var clone = slice.call(array, begin, end);
-    if (!clone.length) {
-      return returnUndefined;
-    }
-    var distribution = Random.integer(0, clone.length - 1);
-    return function (engine) {
-      return clone[distribution(engine)];
-    };
-  };
-
-  Random.shuffle = function (engine, array, downTo) {
-    var length = array.length;
-    if (length) {
-      if (downTo == null) {
-        downTo = 0;
-      }
-      for (var i = (length - 1) >>> 0; i > downTo; --i) {
-        var distribution = Random.integer(0, i);
-        var j = distribution(engine);
-        if (i !== j) {
-          var tmp = array[i];
-          array[i] = array[j];
-          array[j] = tmp;
-        }
-      }
-    }
-    return array;
-  };
-  proto.shuffle = function (array) {
-    return Random.shuffle(this.engine, array);
-  };
-
-  Random.sample = function (engine, population, sampleSize) {
-    if (sampleSize < 0 || sampleSize > population.length || !isFinite(sampleSize)) {
-      throw new RangeError("Expected sampleSize to be within 0 and the length of the population");
-    }
-
-    if (sampleSize === 0) {
-      return [];
-    }
-
-    var clone = slice.call(population);
-    var length = clone.length;
-    if (length === sampleSize) {
-      return Random.shuffle(engine, clone, 0);
-    }
-    var tailLength = length - sampleSize;
-    return Random.shuffle(engine, clone, tailLength - 1).slice(tailLength);
-  };
-  proto.sample = function (population, sampleSize) {
-    return Random.sample(this.engine, population, sampleSize);
-  };
-
-  Random.die = function (sideCount) {
-    return Random.integer(1, sideCount);
-  };
-  proto.die = function (sideCount) {
-    return Random.die(sideCount)(this.engine);
-  };
-
-  Random.dice = function (sideCount, dieCount) {
-    var distribution = Random.die(sideCount);
-    return function (engine) {
-      var result = [];
-      result.length = dieCount;
-      for (var i = 0; i < dieCount; ++i) {
-        result[i] = distribution(engine);
-      }
-      return result;
-    };
-  };
-  proto.dice = function (sideCount, dieCount) {
-    return Random.dice(sideCount, dieCount)(this.engine);
-  };
-
-  // http://en.wikipedia.org/wiki/Universally_unique_identifier
-  Random.uuid4 = (function () {
-    function zeroPad(string, zeroCount) {
-      return stringRepeat("0", zeroCount - string.length) + string;
-    }
-
-    return function (engine) {
-      var a = engine() >>> 0;
-      var b = engine() | 0;
-      var c = engine() | 0;
-      var d = engine() >>> 0;
-
-      return (
-        zeroPad(a.toString(16), 8) +
-        "-" +
-        zeroPad((b & 0xffff).toString(16), 4) +
-        "-" +
-        zeroPad((((b >> 4) & 0x0fff) | 0x4000).toString(16), 4) +
-        "-" +
-        zeroPad(((c & 0x3fff) | 0x8000).toString(16), 4) +
-        "-" +
-        zeroPad(((c >> 4) & 0xffff).toString(16), 4) +
-        zeroPad(d.toString(16), 8));
-    };
-  }());
-  proto.uuid4 = function () {
-    return Random.uuid4(this.engine);
-  };
-
-  Random.string = (function () {
-    // has 2**x chars, for faster uniform distribution
-    var DEFAULT_STRING_POOL = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";
-
-    return function (pool) {
-      if (pool == null) {
-        pool = DEFAULT_STRING_POOL;
-      }
-
-      var length = pool.length;
-      if (!length) {
-        throw new Error("Expected pool not to be an empty string");
-      }
-
-      var distribution = Random.integer(0, length - 1);
-      return function (engine, length) {
-        var result = "";
-        for (var i = 0; i < length; ++i) {
-          var j = distribution(engine);
-          result += pool.charAt(j);
-        }
-        return result;
-      };
-    };
-  }());
-  proto.string = function (length, pool) {
-    return Random.string(pool)(this.engine, length);
-  };
-
-  Random.hex = (function () {
-    var LOWER_HEX_POOL = "0123456789abcdef";
-    var lowerHex = Random.string(LOWER_HEX_POOL);
-    var upperHex = Random.string(LOWER_HEX_POOL.toUpperCase());
-
-    return function (upper) {
-      if (upper) {
-        return upperHex;
-      } else {
-        return lowerHex;
-      }
-    };
-  }());
-  proto.hex = function (length, upper) {
-    return Random.hex(upper)(this.engine, length);
-  };
-
-  Random.date = function (start, end) {
-    if (!(start instanceof Date)) {
-      throw new TypeError("Expected start to be a Date, got " + typeof start);
-    } else if (!(end instanceof Date)) {
-      throw new TypeError("Expected end to be a Date, got " + typeof end);
-    }
-    var distribution = Random.integer(start.getTime(), end.getTime());
-    return function (engine) {
-      return new Date(distribution(engine));
-    };
-  };
-  proto.date = function (start, end) {
-    return Random.date(start, end)(this.engine);
-  };
-
-  if (true) {
-    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
-      return Random;
-    }.call(exports, __webpack_require__, exports, module),
-				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-  } else if (typeof module !== "undefined" && typeof require === "function") {
-    module.exports = Random;
-  } else {
-    (function () {
-      var oldGlobal = root[GLOBAL_KEY];
-      Random.noConflict = function () {
-        root[GLOBAL_KEY] = oldGlobal;
-        return this;
-      };
-    }());
-    root[GLOBAL_KEY] = Random;
-  }
-}(this));
-
-/***/ }),
-/* 214 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-module.exports = __webpack_require__(228);
+module.exports = __webpack_require__(204);
 
 
 /***/ }),
-/* 215 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42167,7 +36766,7 @@ var ARIADOMPropertyConfig = {
 module.exports = ARIADOMPropertyConfig;
 
 /***/ }),
-/* 216 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42196,7 +36795,7 @@ var AutoFocusUtils = {
 module.exports = AutoFocusUtils;
 
 /***/ }),
-/* 217 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42214,9 +36813,9 @@ module.exports = AutoFocusUtils;
 
 var EventPropagators = __webpack_require__(29);
 var ExecutionEnvironment = __webpack_require__(7);
-var FallbackCompositionState = __webpack_require__(223);
-var SyntheticCompositionEvent = __webpack_require__(260);
-var SyntheticInputEvent = __webpack_require__(263);
+var FallbackCompositionState = __webpack_require__(199);
+var SyntheticCompositionEvent = __webpack_require__(236);
+var SyntheticInputEvent = __webpack_require__(239);
 
 var END_KEYCODES = [9, 13, 27, 32]; // Tab, Return, Esc, Space
 var START_KEYCODE = 229;
@@ -42586,7 +37185,7 @@ var BeforeInputEventPlugin = {
 module.exports = BeforeInputEventPlugin;
 
 /***/ }),
-/* 218 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42602,14 +37201,14 @@ module.exports = BeforeInputEventPlugin;
 
 
 
-var CSSProperty = __webpack_require__(88);
+var CSSProperty = __webpack_require__(87);
 var ExecutionEnvironment = __webpack_require__(7);
 var ReactInstrumentation = __webpack_require__(10);
 
-var camelizeStyleName = __webpack_require__(149);
-var dangerousStyleValue = __webpack_require__(269);
-var hyphenateStyleName = __webpack_require__(156);
-var memoizeStringOnly = __webpack_require__(159);
+var camelizeStyleName = __webpack_require__(145);
+var dangerousStyleValue = __webpack_require__(245);
+var hyphenateStyleName = __webpack_require__(152);
+var memoizeStringOnly = __webpack_require__(155);
 var warning = __webpack_require__(1);
 
 var processStyleName = memoizeStringOnly(function (styleName) {
@@ -42800,7 +37399,7 @@ var CSSPropertyOperations = {
 module.exports = CSSPropertyOperations;
 
 /***/ }),
-/* 219 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -42823,9 +37422,9 @@ var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
 var SyntheticEvent = __webpack_require__(12);
 
-var getEventTarget = __webpack_require__(60);
-var isEventSupported = __webpack_require__(61);
-var isTextInputElement = __webpack_require__(105);
+var getEventTarget = __webpack_require__(58);
+var isEventSupported = __webpack_require__(59);
+var isTextInputElement = __webpack_require__(104);
 
 var eventTypes = {
   change: {
@@ -43126,7 +37725,7 @@ var ChangeEventPlugin = {
 module.exports = ChangeEventPlugin;
 
 /***/ }),
-/* 220 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43147,7 +37746,7 @@ var _prodInvariant = __webpack_require__(2);
 var DOMLazyTree = __webpack_require__(19);
 var ExecutionEnvironment = __webpack_require__(7);
 
-var createNodesFromMarkup = __webpack_require__(152);
+var createNodesFromMarkup = __webpack_require__(148);
 var emptyFunction = __webpack_require__(9);
 var invariant = __webpack_require__(0);
 
@@ -43179,7 +37778,7 @@ var Danger = {
 module.exports = Danger;
 
 /***/ }),
-/* 221 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43210,7 +37809,7 @@ var DefaultEventPluginOrder = ['ResponderEventPlugin', 'SimpleEventPlugin', 'Tap
 module.exports = DefaultEventPluginOrder;
 
 /***/ }),
-/* 222 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43315,7 +37914,7 @@ var EnterLeaveEventPlugin = {
 module.exports = EnterLeaveEventPlugin;
 
 /***/ }),
-/* 223 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43335,7 +37934,7 @@ var _assign = __webpack_require__(4);
 
 var PooledClass = __webpack_require__(17);
 
-var getTextContentAccessor = __webpack_require__(103);
+var getTextContentAccessor = __webpack_require__(102);
 
 /**
  * This helper class stores information about text content of a target node,
@@ -43415,7 +38014,7 @@ PooledClass.addPoolingTo(FallbackCompositionState);
 module.exports = FallbackCompositionState;
 
 /***/ }),
-/* 224 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43632,7 +38231,7 @@ var HTMLDOMPropertyConfig = {
 module.exports = HTMLDOMPropertyConfig;
 
 /***/ }),
-/* 225 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43650,10 +38249,10 @@ module.exports = HTMLDOMPropertyConfig;
 
 var ReactReconciler = __webpack_require__(21);
 
-var instantiateReactComponent = __webpack_require__(104);
-var KeyEscapeUtils = __webpack_require__(52);
-var shouldUpdateReactComponent = __webpack_require__(62);
-var traverseAllChildren = __webpack_require__(107);
+var instantiateReactComponent = __webpack_require__(103);
+var KeyEscapeUtils = __webpack_require__(50);
+var shouldUpdateReactComponent = __webpack_require__(60);
+var traverseAllChildren = __webpack_require__(106);
 var warning = __webpack_require__(1);
 
 var ReactComponentTreeHook;
@@ -43664,7 +38263,7 @@ if (typeof process !== 'undefined' && process.env && "production" === 'test') {
   // https://github.com/facebook/react/issues/7240
   // Remove the inline requires when we don't need them anymore:
   // https://github.com/facebook/react/pull/7178
-  ReactComponentTreeHook = __webpack_require__(113);
+  ReactComponentTreeHook = __webpack_require__(112);
 }
 
 function instantiateChild(childInstances, child, name, selfDebugID) {
@@ -43792,7 +38391,7 @@ module.exports = ReactChildReconciler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 226 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43808,8 +38407,8 @@ module.exports = ReactChildReconciler;
 
 
 
-var DOMChildrenOperations = __webpack_require__(48);
-var ReactDOMIDOperations = __webpack_require__(233);
+var DOMChildrenOperations = __webpack_require__(46);
+var ReactDOMIDOperations = __webpack_require__(209);
 
 /**
  * Abstracts away all functionality of the reconciler that requires knowledge of
@@ -43827,7 +38426,7 @@ var ReactComponentBrowserEnvironment = {
 module.exports = ReactComponentBrowserEnvironment;
 
 /***/ }),
-/* 227 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -43847,12 +38446,12 @@ var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
 var React = __webpack_require__(22);
-var ReactComponentEnvironment = __webpack_require__(54);
+var ReactComponentEnvironment = __webpack_require__(52);
 var ReactCurrentOwner = __webpack_require__(13);
-var ReactErrorUtils = __webpack_require__(55);
+var ReactErrorUtils = __webpack_require__(53);
 var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(10);
-var ReactNodeTypes = __webpack_require__(98);
+var ReactNodeTypes = __webpack_require__(97);
 var ReactReconciler = __webpack_require__(21);
 
 if (false) {
@@ -43862,7 +38461,7 @@ if (false) {
 var emptyObject = __webpack_require__(27);
 var invariant = __webpack_require__(0);
 var shallowEqual = __webpack_require__(42);
-var shouldUpdateReactComponent = __webpack_require__(62);
+var shouldUpdateReactComponent = __webpack_require__(60);
 var warning = __webpack_require__(1);
 
 var CompositeTypes = {
@@ -44734,7 +39333,7 @@ var ReactCompositeComponent = {
 module.exports = ReactCompositeComponent;
 
 /***/ }),
-/* 228 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44753,15 +39352,15 @@ module.exports = ReactCompositeComponent;
 
 
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactDefaultInjection = __webpack_require__(241);
-var ReactMount = __webpack_require__(97);
+var ReactDefaultInjection = __webpack_require__(217);
+var ReactMount = __webpack_require__(96);
 var ReactReconciler = __webpack_require__(21);
 var ReactUpdates = __webpack_require__(11);
-var ReactVersion = __webpack_require__(254);
+var ReactVersion = __webpack_require__(230);
 
-var findDOMNode = __webpack_require__(270);
-var getHostComponentFromComposite = __webpack_require__(102);
-var renderSubtreeIntoContainer = __webpack_require__(278);
+var findDOMNode = __webpack_require__(246);
+var getHostComponentFromComposite = __webpack_require__(101);
+var renderSubtreeIntoContainer = __webpack_require__(254);
 var warning = __webpack_require__(1);
 
 ReactDefaultInjection.inject();
@@ -44850,7 +39449,7 @@ if (false) {
 module.exports = ReactDOM;
 
 /***/ }),
-/* 229 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44871,31 +39470,31 @@ module.exports = ReactDOM;
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
-var AutoFocusUtils = __webpack_require__(216);
-var CSSPropertyOperations = __webpack_require__(218);
+var AutoFocusUtils = __webpack_require__(192);
+var CSSPropertyOperations = __webpack_require__(194);
 var DOMLazyTree = __webpack_require__(19);
-var DOMNamespaces = __webpack_require__(49);
+var DOMNamespaces = __webpack_require__(47);
 var DOMProperty = __webpack_require__(20);
-var DOMPropertyOperations = __webpack_require__(90);
+var DOMPropertyOperations = __webpack_require__(89);
 var EventPluginHub = __webpack_require__(28);
-var EventPluginRegistry = __webpack_require__(50);
+var EventPluginRegistry = __webpack_require__(48);
 var ReactBrowserEventEmitter = __webpack_require__(34);
-var ReactDOMComponentFlags = __webpack_require__(91);
+var ReactDOMComponentFlags = __webpack_require__(90);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactDOMInput = __webpack_require__(234);
-var ReactDOMOption = __webpack_require__(235);
-var ReactDOMSelect = __webpack_require__(92);
-var ReactDOMTextarea = __webpack_require__(238);
+var ReactDOMInput = __webpack_require__(210);
+var ReactDOMOption = __webpack_require__(211);
+var ReactDOMSelect = __webpack_require__(91);
+var ReactDOMTextarea = __webpack_require__(214);
 var ReactInstrumentation = __webpack_require__(10);
-var ReactMultiChild = __webpack_require__(247);
-var ReactServerRenderingTransaction = __webpack_require__(252);
+var ReactMultiChild = __webpack_require__(223);
+var ReactServerRenderingTransaction = __webpack_require__(228);
 
 var emptyFunction = __webpack_require__(9);
 var escapeTextContentForBrowser = __webpack_require__(37);
 var invariant = __webpack_require__(0);
-var isEventSupported = __webpack_require__(61);
+var isEventSupported = __webpack_require__(59);
 var shallowEqual = __webpack_require__(42);
-var validateDOMNesting = __webpack_require__(63);
+var validateDOMNesting = __webpack_require__(61);
 var warning = __webpack_require__(1);
 
 var Flags = ReactDOMComponentFlags;
@@ -45856,7 +40455,7 @@ _assign(ReactDOMComponent.prototype, ReactDOMComponent.Mixin, ReactMultiChild.Mi
 module.exports = ReactDOMComponent;
 
 /***/ }),
-/* 230 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45872,7 +40471,7 @@ module.exports = ReactDOMComponent;
 
 
 
-var validateDOMNesting = __webpack_require__(63);
+var validateDOMNesting = __webpack_require__(61);
 
 var DOC_NODE_TYPE = 9;
 
@@ -45894,7 +40493,7 @@ function ReactDOMContainerInfo(topLevelWrapper, node) {
 module.exports = ReactDOMContainerInfo;
 
 /***/ }),
-/* 231 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45959,7 +40558,7 @@ _assign(ReactDOMEmptyComponent.prototype, {
 module.exports = ReactDOMEmptyComponent;
 
 /***/ }),
-/* 232 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45983,7 +40582,7 @@ var ReactDOMFeatureFlags = {
 module.exports = ReactDOMFeatureFlags;
 
 /***/ }),
-/* 233 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45999,7 +40598,7 @@ module.exports = ReactDOMFeatureFlags;
 
 
 
-var DOMChildrenOperations = __webpack_require__(48);
+var DOMChildrenOperations = __webpack_require__(46);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 /**
@@ -46022,7 +40621,7 @@ var ReactDOMIDOperations = {
 module.exports = ReactDOMIDOperations;
 
 /***/ }),
-/* 234 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46041,8 +40640,8 @@ module.exports = ReactDOMIDOperations;
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
-var DOMPropertyOperations = __webpack_require__(90);
-var LinkedValueUtils = __webpack_require__(53);
+var DOMPropertyOperations = __webpack_require__(89);
+var LinkedValueUtils = __webpack_require__(51);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
 
@@ -46305,7 +40904,7 @@ function _handleChange(event) {
 module.exports = ReactDOMInput;
 
 /***/ }),
-/* 235 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46325,7 +40924,7 @@ var _assign = __webpack_require__(4);
 
 var React = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactDOMSelect = __webpack_require__(92);
+var ReactDOMSelect = __webpack_require__(91);
 
 var warning = __webpack_require__(1);
 var didWarnInvalidOptionChildren = false;
@@ -46433,7 +41032,7 @@ var ReactDOMOption = {
 module.exports = ReactDOMOption;
 
 /***/ }),
-/* 236 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46451,8 +41050,8 @@ module.exports = ReactDOMOption;
 
 var ExecutionEnvironment = __webpack_require__(7);
 
-var getNodeForCharacterOffset = __webpack_require__(275);
-var getTextContentAccessor = __webpack_require__(103);
+var getNodeForCharacterOffset = __webpack_require__(251);
+var getTextContentAccessor = __webpack_require__(102);
 
 /**
  * While `isCollapsed` is available on the Selection object and `collapsed`
@@ -46650,7 +41249,7 @@ var ReactDOMSelection = {
 module.exports = ReactDOMSelection;
 
 /***/ }),
-/* 237 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46669,13 +41268,13 @@ module.exports = ReactDOMSelection;
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
-var DOMChildrenOperations = __webpack_require__(48);
+var DOMChildrenOperations = __webpack_require__(46);
 var DOMLazyTree = __webpack_require__(19);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var escapeTextContentForBrowser = __webpack_require__(37);
 var invariant = __webpack_require__(0);
-var validateDOMNesting = __webpack_require__(63);
+var validateDOMNesting = __webpack_require__(61);
 
 /**
  * Text nodes violate a couple assumptions that React makes about components:
@@ -46819,7 +41418,7 @@ _assign(ReactDOMTextComponent.prototype, {
 module.exports = ReactDOMTextComponent;
 
 /***/ }),
-/* 238 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -46838,7 +41437,7 @@ module.exports = ReactDOMTextComponent;
 var _prodInvariant = __webpack_require__(2),
     _assign = __webpack_require__(4);
 
-var LinkedValueUtils = __webpack_require__(53);
+var LinkedValueUtils = __webpack_require__(51);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
 
@@ -46984,7 +41583,7 @@ function _handleChange(event) {
 module.exports = ReactDOMTextarea;
 
 /***/ }),
-/* 239 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47125,7 +41724,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 240 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47198,7 +41797,7 @@ var ReactDefaultBatchingStrategy = {
 module.exports = ReactDefaultBatchingStrategy;
 
 /***/ }),
-/* 241 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47214,25 +41813,25 @@ module.exports = ReactDefaultBatchingStrategy;
 
 
 
-var ARIADOMPropertyConfig = __webpack_require__(215);
-var BeforeInputEventPlugin = __webpack_require__(217);
-var ChangeEventPlugin = __webpack_require__(219);
-var DefaultEventPluginOrder = __webpack_require__(221);
-var EnterLeaveEventPlugin = __webpack_require__(222);
-var HTMLDOMPropertyConfig = __webpack_require__(224);
-var ReactComponentBrowserEnvironment = __webpack_require__(226);
-var ReactDOMComponent = __webpack_require__(229);
+var ARIADOMPropertyConfig = __webpack_require__(191);
+var BeforeInputEventPlugin = __webpack_require__(193);
+var ChangeEventPlugin = __webpack_require__(195);
+var DefaultEventPluginOrder = __webpack_require__(197);
+var EnterLeaveEventPlugin = __webpack_require__(198);
+var HTMLDOMPropertyConfig = __webpack_require__(200);
+var ReactComponentBrowserEnvironment = __webpack_require__(202);
+var ReactDOMComponent = __webpack_require__(205);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactDOMEmptyComponent = __webpack_require__(231);
-var ReactDOMTreeTraversal = __webpack_require__(239);
-var ReactDOMTextComponent = __webpack_require__(237);
-var ReactDefaultBatchingStrategy = __webpack_require__(240);
-var ReactEventListener = __webpack_require__(244);
-var ReactInjection = __webpack_require__(245);
-var ReactReconcileTransaction = __webpack_require__(250);
-var SVGDOMPropertyConfig = __webpack_require__(255);
-var SelectEventPlugin = __webpack_require__(256);
-var SimpleEventPlugin = __webpack_require__(257);
+var ReactDOMEmptyComponent = __webpack_require__(207);
+var ReactDOMTreeTraversal = __webpack_require__(215);
+var ReactDOMTextComponent = __webpack_require__(213);
+var ReactDefaultBatchingStrategy = __webpack_require__(216);
+var ReactEventListener = __webpack_require__(220);
+var ReactInjection = __webpack_require__(221);
+var ReactReconcileTransaction = __webpack_require__(226);
+var SVGDOMPropertyConfig = __webpack_require__(231);
+var SelectEventPlugin = __webpack_require__(232);
+var SimpleEventPlugin = __webpack_require__(233);
 
 var alreadyInjected = false;
 
@@ -47289,7 +41888,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 242 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47314,7 +41913,7 @@ var REACT_ELEMENT_TYPE = typeof Symbol === 'function' && Symbol['for'] && Symbol
 module.exports = REACT_ELEMENT_TYPE;
 
 /***/ }),
-/* 243 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47352,7 +41951,7 @@ var ReactEventEmitterMixin = {
 module.exports = ReactEventEmitterMixin;
 
 /***/ }),
-/* 244 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47376,8 +41975,8 @@ var PooledClass = __webpack_require__(17);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
 
-var getEventTarget = __webpack_require__(60);
-var getUnboundedScrollPosition = __webpack_require__(154);
+var getEventTarget = __webpack_require__(58);
+var getUnboundedScrollPosition = __webpack_require__(150);
 
 /**
  * Find the deepest React component completely containing the root of the
@@ -47512,7 +42111,7 @@ var ReactEventListener = {
 module.exports = ReactEventListener;
 
 /***/ }),
-/* 245 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47530,11 +42129,11 @@ module.exports = ReactEventListener;
 
 var DOMProperty = __webpack_require__(20);
 var EventPluginHub = __webpack_require__(28);
-var EventPluginUtils = __webpack_require__(51);
-var ReactComponentEnvironment = __webpack_require__(54);
-var ReactEmptyComponent = __webpack_require__(93);
+var EventPluginUtils = __webpack_require__(49);
+var ReactComponentEnvironment = __webpack_require__(52);
+var ReactEmptyComponent = __webpack_require__(92);
 var ReactBrowserEventEmitter = __webpack_require__(34);
-var ReactHostComponent = __webpack_require__(95);
+var ReactHostComponent = __webpack_require__(94);
 var ReactUpdates = __webpack_require__(11);
 
 var ReactInjection = {
@@ -47551,7 +42150,7 @@ var ReactInjection = {
 module.exports = ReactInjection;
 
 /***/ }),
-/* 246 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47567,7 +42166,7 @@ module.exports = ReactInjection;
 
 
 
-var adler32 = __webpack_require__(268);
+var adler32 = __webpack_require__(244);
 
 var TAG_END = /\/?>/;
 var COMMENT_START = /^<\!\-\-/;
@@ -47606,7 +42205,7 @@ var ReactMarkupChecksum = {
 module.exports = ReactMarkupChecksum;
 
 /***/ }),
-/* 247 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -47624,16 +42223,16 @@ module.exports = ReactMarkupChecksum;
 
 var _prodInvariant = __webpack_require__(2);
 
-var ReactComponentEnvironment = __webpack_require__(54);
+var ReactComponentEnvironment = __webpack_require__(52);
 var ReactInstanceMap = __webpack_require__(30);
 var ReactInstrumentation = __webpack_require__(10);
 
 var ReactCurrentOwner = __webpack_require__(13);
 var ReactReconciler = __webpack_require__(21);
-var ReactChildReconciler = __webpack_require__(225);
+var ReactChildReconciler = __webpack_require__(201);
 
 var emptyFunction = __webpack_require__(9);
-var flattenChildren = __webpack_require__(271);
+var flattenChildren = __webpack_require__(247);
 var invariant = __webpack_require__(0);
 
 /**
@@ -48061,7 +42660,7 @@ var ReactMultiChild = {
 module.exports = ReactMultiChild;
 
 /***/ }),
-/* 248 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48160,7 +42759,7 @@ var ReactOwner = {
 module.exports = ReactOwner;
 
 /***/ }),
-/* 249 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48182,7 +42781,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 250 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48200,13 +42799,13 @@ module.exports = ReactPropTypesSecret;
 
 var _assign = __webpack_require__(4);
 
-var CallbackQueue = __webpack_require__(89);
+var CallbackQueue = __webpack_require__(88);
 var PooledClass = __webpack_require__(17);
 var ReactBrowserEventEmitter = __webpack_require__(34);
-var ReactInputSelection = __webpack_require__(96);
+var ReactInputSelection = __webpack_require__(95);
 var ReactInstrumentation = __webpack_require__(10);
 var Transaction = __webpack_require__(36);
-var ReactUpdateQueue = __webpack_require__(56);
+var ReactUpdateQueue = __webpack_require__(54);
 
 /**
  * Ensures that, when possible, the selection range (currently selected text
@@ -48365,7 +42964,7 @@ PooledClass.addPoolingTo(ReactReconcileTransaction);
 module.exports = ReactReconcileTransaction;
 
 /***/ }),
-/* 251 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48382,7 +42981,7 @@ module.exports = ReactReconcileTransaction;
 
 
 
-var ReactOwner = __webpack_require__(248);
+var ReactOwner = __webpack_require__(224);
 
 var ReactRef = {};
 
@@ -48459,7 +43058,7 @@ ReactRef.detachRefs = function (instance, element) {
 module.exports = ReactRef;
 
 /***/ }),
-/* 252 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48480,7 +43079,7 @@ var _assign = __webpack_require__(4);
 var PooledClass = __webpack_require__(17);
 var Transaction = __webpack_require__(36);
 var ReactInstrumentation = __webpack_require__(10);
-var ReactServerUpdateQueue = __webpack_require__(253);
+var ReactServerUpdateQueue = __webpack_require__(229);
 
 /**
  * Executed within the scope of the `Transaction` instance. Consider these as
@@ -48554,7 +43153,7 @@ PooledClass.addPoolingTo(ReactServerRenderingTransaction);
 module.exports = ReactServerRenderingTransaction;
 
 /***/ }),
-/* 253 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48573,7 +43172,7 @@ module.exports = ReactServerRenderingTransaction;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var ReactUpdateQueue = __webpack_require__(56);
+var ReactUpdateQueue = __webpack_require__(54);
 
 var warning = __webpack_require__(1);
 
@@ -48698,7 +43297,7 @@ var ReactServerUpdateQueue = function () {
 module.exports = ReactServerUpdateQueue;
 
 /***/ }),
-/* 254 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48717,7 +43316,7 @@ module.exports = ReactServerUpdateQueue;
 module.exports = '15.4.2';
 
 /***/ }),
-/* 255 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49024,7 +43623,7 @@ Object.keys(ATTRS).forEach(function (key) {
 module.exports = SVGDOMPropertyConfig;
 
 /***/ }),
-/* 256 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49043,11 +43642,11 @@ module.exports = SVGDOMPropertyConfig;
 var EventPropagators = __webpack_require__(29);
 var ExecutionEnvironment = __webpack_require__(7);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactInputSelection = __webpack_require__(96);
+var ReactInputSelection = __webpack_require__(95);
 var SyntheticEvent = __webpack_require__(12);
 
 var getActiveElement = __webpack_require__(75);
-var isTextInputElement = __webpack_require__(105);
+var isTextInputElement = __webpack_require__(104);
 var shallowEqual = __webpack_require__(42);
 
 var skipSelectionChangeEvent = ExecutionEnvironment.canUseDOM && 'documentMode' in document && document.documentMode <= 11;
@@ -49220,7 +43819,7 @@ var SelectEventPlugin = {
 module.exports = SelectEventPlugin;
 
 /***/ }),
-/* 257 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49242,20 +43841,20 @@ var _prodInvariant = __webpack_require__(2);
 var EventListener = __webpack_require__(73);
 var EventPropagators = __webpack_require__(29);
 var ReactDOMComponentTree = __webpack_require__(5);
-var SyntheticAnimationEvent = __webpack_require__(258);
-var SyntheticClipboardEvent = __webpack_require__(259);
+var SyntheticAnimationEvent = __webpack_require__(234);
+var SyntheticClipboardEvent = __webpack_require__(235);
 var SyntheticEvent = __webpack_require__(12);
-var SyntheticFocusEvent = __webpack_require__(262);
-var SyntheticKeyboardEvent = __webpack_require__(264);
+var SyntheticFocusEvent = __webpack_require__(238);
+var SyntheticKeyboardEvent = __webpack_require__(240);
 var SyntheticMouseEvent = __webpack_require__(35);
-var SyntheticDragEvent = __webpack_require__(261);
-var SyntheticTouchEvent = __webpack_require__(265);
-var SyntheticTransitionEvent = __webpack_require__(266);
+var SyntheticDragEvent = __webpack_require__(237);
+var SyntheticTouchEvent = __webpack_require__(241);
+var SyntheticTransitionEvent = __webpack_require__(242);
 var SyntheticUIEvent = __webpack_require__(31);
-var SyntheticWheelEvent = __webpack_require__(267);
+var SyntheticWheelEvent = __webpack_require__(243);
 
 var emptyFunction = __webpack_require__(9);
-var getEventCharCode = __webpack_require__(58);
+var getEventCharCode = __webpack_require__(56);
 var invariant = __webpack_require__(0);
 
 /**
@@ -49453,7 +44052,7 @@ var SimpleEventPlugin = {
 module.exports = SimpleEventPlugin;
 
 /***/ }),
-/* 258 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49497,7 +44096,7 @@ SyntheticEvent.augmentClass(SyntheticAnimationEvent, AnimationEventInterface);
 module.exports = SyntheticAnimationEvent;
 
 /***/ }),
-/* 259 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49540,7 +44139,7 @@ SyntheticEvent.augmentClass(SyntheticClipboardEvent, ClipboardEventInterface);
 module.exports = SyntheticClipboardEvent;
 
 /***/ }),
-/* 260 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49581,7 +44180,7 @@ SyntheticEvent.augmentClass(SyntheticCompositionEvent, CompositionEventInterface
 module.exports = SyntheticCompositionEvent;
 
 /***/ }),
-/* 261 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49622,7 +44221,7 @@ SyntheticMouseEvent.augmentClass(SyntheticDragEvent, DragEventInterface);
 module.exports = SyntheticDragEvent;
 
 /***/ }),
-/* 262 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49663,7 +44262,7 @@ SyntheticUIEvent.augmentClass(SyntheticFocusEvent, FocusEventInterface);
 module.exports = SyntheticFocusEvent;
 
 /***/ }),
-/* 263 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49705,7 +44304,7 @@ SyntheticEvent.augmentClass(SyntheticInputEvent, InputEventInterface);
 module.exports = SyntheticInputEvent;
 
 /***/ }),
-/* 264 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49723,9 +44322,9 @@ module.exports = SyntheticInputEvent;
 
 var SyntheticUIEvent = __webpack_require__(31);
 
-var getEventCharCode = __webpack_require__(58);
-var getEventKey = __webpack_require__(272);
-var getEventModifierState = __webpack_require__(59);
+var getEventCharCode = __webpack_require__(56);
+var getEventKey = __webpack_require__(248);
+var getEventModifierState = __webpack_require__(57);
 
 /**
  * @interface KeyboardEvent
@@ -49794,7 +44393,7 @@ SyntheticUIEvent.augmentClass(SyntheticKeyboardEvent, KeyboardEventInterface);
 module.exports = SyntheticKeyboardEvent;
 
 /***/ }),
-/* 265 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49812,7 +44411,7 @@ module.exports = SyntheticKeyboardEvent;
 
 var SyntheticUIEvent = __webpack_require__(31);
 
-var getEventModifierState = __webpack_require__(59);
+var getEventModifierState = __webpack_require__(57);
 
 /**
  * @interface TouchEvent
@@ -49844,7 +44443,7 @@ SyntheticUIEvent.augmentClass(SyntheticTouchEvent, TouchEventInterface);
 module.exports = SyntheticTouchEvent;
 
 /***/ }),
-/* 266 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49888,7 +44487,7 @@ SyntheticEvent.augmentClass(SyntheticTransitionEvent, TransitionEventInterface);
 module.exports = SyntheticTransitionEvent;
 
 /***/ }),
-/* 267 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49947,7 +44546,7 @@ SyntheticMouseEvent.augmentClass(SyntheticWheelEvent, WheelEventInterface);
 module.exports = SyntheticWheelEvent;
 
 /***/ }),
-/* 268 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -49996,7 +44595,7 @@ function adler32(data) {
 module.exports = adler32;
 
 /***/ }),
-/* 269 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50012,7 +44611,7 @@ module.exports = adler32;
 
 
 
-var CSSProperty = __webpack_require__(88);
+var CSSProperty = __webpack_require__(87);
 var warning = __webpack_require__(1);
 
 var isUnitlessNumber = CSSProperty.isUnitlessNumber;
@@ -50080,7 +44679,7 @@ function dangerousStyleValue(name, value, component) {
 module.exports = dangerousStyleValue;
 
 /***/ }),
-/* 270 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50102,7 +44701,7 @@ var ReactCurrentOwner = __webpack_require__(13);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstanceMap = __webpack_require__(30);
 
-var getHostComponentFromComposite = __webpack_require__(102);
+var getHostComponentFromComposite = __webpack_require__(101);
 var invariant = __webpack_require__(0);
 var warning = __webpack_require__(1);
 
@@ -50145,7 +44744,7 @@ function findDOMNode(componentOrElement) {
 module.exports = findDOMNode;
 
 /***/ }),
-/* 271 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50162,8 +44761,8 @@ module.exports = findDOMNode;
 
 
 
-var KeyEscapeUtils = __webpack_require__(52);
-var traverseAllChildren = __webpack_require__(107);
+var KeyEscapeUtils = __webpack_require__(50);
+var traverseAllChildren = __webpack_require__(106);
 var warning = __webpack_require__(1);
 
 var ReactComponentTreeHook;
@@ -50174,7 +44773,7 @@ if (typeof process !== 'undefined' && process.env && "production" === 'test') {
   // https://github.com/facebook/react/issues/7240
   // Remove the inline requires when we don't need them anymore:
   // https://github.com/facebook/react/pull/7178
-  ReactComponentTreeHook = __webpack_require__(113);
+  ReactComponentTreeHook = __webpack_require__(112);
 }
 
 /**
@@ -50227,7 +44826,7 @@ module.exports = flattenChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
 
 /***/ }),
-/* 272 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50243,7 +44842,7 @@ module.exports = flattenChildren;
 
 
 
-var getEventCharCode = __webpack_require__(58);
+var getEventCharCode = __webpack_require__(56);
 
 /**
  * Normalization of deprecated HTML5 `key` values
@@ -50334,7 +44933,7 @@ function getEventKey(nativeEvent) {
 module.exports = getEventKey;
 
 /***/ }),
-/* 273 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50380,7 +44979,7 @@ function getIteratorFn(maybeIterable) {
 module.exports = getIteratorFn;
 
 /***/ }),
-/* 274 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50406,7 +45005,7 @@ function getNextDebugID() {
 module.exports = getNextDebugID;
 
 /***/ }),
-/* 275 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50485,7 +45084,7 @@ function getNodeForCharacterOffset(root, offset) {
 module.exports = getNodeForCharacterOffset;
 
 /***/ }),
-/* 276 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50591,7 +45190,7 @@ function getVendorPrefixedEventName(eventName) {
 module.exports = getVendorPrefixedEventName;
 
 /***/ }),
-/* 277 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50622,7 +45221,7 @@ function quoteAttributeValueForBrowser(value) {
 module.exports = quoteAttributeValueForBrowser;
 
 /***/ }),
-/* 278 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50638,19 +45237,19 @@ module.exports = quoteAttributeValueForBrowser;
 
 
 
-var ReactMount = __webpack_require__(97);
+var ReactMount = __webpack_require__(96);
 
 module.exports = ReactMount.renderSubtreeIntoContainer;
 
 /***/ }),
-/* 279 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(282);
+module.exports = __webpack_require__(258);
 
 
 /***/ }),
-/* 280 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50659,13 +45258,13 @@ module.exports = __webpack_require__(282);
 
 
 if (true) {
-  module.exports = __webpack_require__(281);
+  module.exports = __webpack_require__(257);
 } else {
   module.exports = require('./AppContainer.dev');
 }
 
 /***/ }),
-/* 281 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -50710,13 +45309,13 @@ var AppContainer = function (_Component) {
 module.exports = AppContainer;
 
 /***/ }),
-/* 282 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var AppContainer = __webpack_require__(280);
+var AppContainer = __webpack_require__(256);
 
 module.exports = function warnAboutIncorrectUsage(arg) {
   if (this && this.callback) {
@@ -50731,14 +45330,14 @@ module.exports = function warnAboutIncorrectUsage(arg) {
 module.exports.AppContainer = AppContainer;
 
 /***/ }),
-/* 283 */
+/* 259 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_PropTypes__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_PropTypes__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(62);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Provider; });
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -50809,16 +45408,16 @@ Provider.childContextTypes = {
 Provider.displayName = 'Provider';
 
 /***/ }),
-/* 284 */
+/* 260 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_connectAdvanced__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_shallowEqual__ = __webpack_require__(291);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapDispatchToProps__ = __webpack_require__(285);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mapStateToProps__ = __webpack_require__(286);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mergeProps__ = __webpack_require__(287);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectorFactory__ = __webpack_require__(288);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_connectAdvanced__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_shallowEqual__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__mapDispatchToProps__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mapStateToProps__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mergeProps__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__selectorFactory__ = __webpack_require__(264);
 /* unused harmony export createConnect */
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -50925,12 +45524,12 @@ function createConnect() {
 /* harmony default export */ __webpack_exports__["a"] = createConnect();
 
 /***/ }),
-/* 285 */
+/* 261 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wrapMapToProps__ = __webpack_require__(108);
 /* unused harmony export whenMapDispatchToPropsIsFunction */
 /* unused harmony export whenMapDispatchToPropsIsMissing */
 /* unused harmony export whenMapDispatchToPropsIsObject */
@@ -50956,11 +45555,11 @@ function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
 /* harmony default export */ __webpack_exports__["a"] = [whenMapDispatchToPropsIsFunction, whenMapDispatchToPropsIsMissing, whenMapDispatchToPropsIsObject];
 
 /***/ }),
-/* 286 */
+/* 262 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__wrapMapToProps__ = __webpack_require__(108);
 /* unused harmony export whenMapStateToPropsIsFunction */
 /* unused harmony export whenMapStateToPropsIsMissing */
 
@@ -50978,11 +45577,11 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
 /* harmony default export */ __webpack_exports__["a"] = [whenMapStateToPropsIsFunction, whenMapStateToPropsIsMissing];
 
 /***/ }),
-/* 287 */
+/* 263 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_verifyPlainObject__ = __webpack_require__(111);
 /* unused harmony export defaultMergeProps */
 /* unused harmony export wrapMergePropsFunc */
 /* unused harmony export whenMergePropsIsFunction */
@@ -51034,11 +45633,11 @@ function whenMergePropsIsOmitted(mergeProps) {
 /* harmony default export */ __webpack_exports__["a"] = [whenMergePropsIsFunction, whenMergePropsIsOmitted];
 
 /***/ }),
-/* 288 */
+/* 264 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__verifySubselectors__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__verifySubselectors__ = __webpack_require__(265);
 /* unused harmony export impureFinalPropsSelectorFactory */
 /* unused harmony export pureFinalPropsSelectorFactory */
 /* harmony export (immutable) */ __webpack_exports__["a"] = finalPropsSelectorFactory;
@@ -51146,11 +45745,11 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
 }
 
 /***/ }),
-/* 289 */
+/* 265 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_warning__ = __webpack_require__(62);
 /* unused harmony export default */
 
 
@@ -51171,7 +45770,7 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
 }
 
 /***/ }),
-/* 290 */
+/* 266 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51267,7 +45866,7 @@ var Subscription = function () {
 
 
 /***/ }),
-/* 291 */
+/* 267 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51304,7 +45903,7 @@ function shallowEqual(objA, objB) {
 }
 
 /***/ }),
-/* 292 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51368,7 +45967,7 @@ var KeyEscapeUtils = {
 module.exports = KeyEscapeUtils;
 
 /***/ }),
-/* 293 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51485,7 +46084,7 @@ var PooledClass = {
 module.exports = PooledClass;
 
 /***/ }),
-/* 294 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51501,11 +46100,11 @@ module.exports = PooledClass;
 
 
 
-var PooledClass = __webpack_require__(293);
+var PooledClass = __webpack_require__(269);
 var ReactElement = __webpack_require__(23);
 
 var emptyFunction = __webpack_require__(9);
-var traverseAllChildren = __webpack_require__(302);
+var traverseAllChildren = __webpack_require__(278);
 
 var twoArgumentPooler = PooledClass.twoArgumentPooler;
 var fourArgumentPooler = PooledClass.fourArgumentPooler;
@@ -51681,7 +46280,7 @@ var ReactChildren = {
 module.exports = ReactChildren;
 
 /***/ }),
-/* 295 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -51700,10 +46299,10 @@ module.exports = ReactChildren;
 var _prodInvariant = __webpack_require__(24),
     _assign = __webpack_require__(4);
 
-var ReactComponent = __webpack_require__(65);
+var ReactComponent = __webpack_require__(63);
 var ReactElement = __webpack_require__(23);
-var ReactPropTypeLocationNames = __webpack_require__(115);
-var ReactNoopUpdateQueue = __webpack_require__(66);
+var ReactPropTypeLocationNames = __webpack_require__(114);
+var ReactNoopUpdateQueue = __webpack_require__(64);
 
 var emptyObject = __webpack_require__(27);
 var invariant = __webpack_require__(0);
@@ -52403,7 +47002,7 @@ var ReactClass = {
 module.exports = ReactClass;
 
 /***/ }),
-/* 296 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52578,7 +47177,7 @@ var ReactDOMFactories = {
 module.exports = ReactDOMFactories;
 
 /***/ }),
-/* 297 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -52595,11 +47194,11 @@ module.exports = ReactDOMFactories;
 
 
 var ReactElement = __webpack_require__(23);
-var ReactPropTypeLocationNames = __webpack_require__(115);
-var ReactPropTypesSecret = __webpack_require__(298);
+var ReactPropTypeLocationNames = __webpack_require__(114);
+var ReactPropTypesSecret = __webpack_require__(274);
 
 var emptyFunction = __webpack_require__(9);
-var getIteratorFn = __webpack_require__(117);
+var getIteratorFn = __webpack_require__(116);
 var warning = __webpack_require__(1);
 
 /**
@@ -53017,7 +47616,7 @@ function getClassName(propValue) {
 module.exports = ReactPropTypes;
 
 /***/ }),
-/* 298 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53039,7 +47638,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
 /***/ }),
-/* 299 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53057,8 +47656,8 @@ module.exports = ReactPropTypesSecret;
 
 var _assign = __webpack_require__(4);
 
-var ReactComponent = __webpack_require__(65);
-var ReactNoopUpdateQueue = __webpack_require__(66);
+var ReactComponent = __webpack_require__(63);
+var ReactNoopUpdateQueue = __webpack_require__(64);
 
 var emptyObject = __webpack_require__(27);
 
@@ -53086,7 +47685,7 @@ ReactPureComponent.prototype.isPureReactComponent = true;
 module.exports = ReactPureComponent;
 
 /***/ }),
-/* 300 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53105,7 +47704,7 @@ module.exports = ReactPureComponent;
 module.exports = '15.4.2';
 
 /***/ }),
-/* 301 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53148,7 +47747,7 @@ function onlyChild(children) {
 module.exports = onlyChild;
 
 /***/ }),
-/* 302 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53167,11 +47766,11 @@ module.exports = onlyChild;
 var _prodInvariant = __webpack_require__(24);
 
 var ReactCurrentOwner = __webpack_require__(13);
-var REACT_ELEMENT_TYPE = __webpack_require__(114);
+var REACT_ELEMENT_TYPE = __webpack_require__(113);
 
-var getIteratorFn = __webpack_require__(117);
+var getIteratorFn = __webpack_require__(116);
 var invariant = __webpack_require__(0);
-var KeyEscapeUtils = __webpack_require__(292);
+var KeyEscapeUtils = __webpack_require__(268);
 var warning = __webpack_require__(1);
 
 var SEPARATOR = '.';
@@ -53329,14 +47928,14 @@ function traverseAllChildren(children, callback, traverseContext) {
 module.exports = traverseAllChildren;
 
 /***/ }),
-/* 303 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(18)
 
 
 /***/ }),
-/* 304 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -53406,25 +48005,25 @@ BufferList.prototype.concat = function (n) {
 };
 
 /***/ }),
-/* 305 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(118)
+module.exports = __webpack_require__(117)
 
 
 /***/ }),
-/* 306 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(68)
+module.exports = __webpack_require__(66)
 
 
 /***/ }),
-/* 307 */
+/* 283 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__compose__ = __webpack_require__(120);
 /* harmony export (immutable) */ __webpack_exports__["a"] = applyMiddleware;
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -53476,7 +48075,7 @@ function applyMiddleware() {
 }
 
 /***/ }),
-/* 308 */
+/* 284 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53530,13 +48129,13 @@ function bindActionCreators(actionCreators, dispatch) {
 }
 
 /***/ }),
-/* 309 */
+/* 285 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__createStore__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_es_isPlainObject__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_warning__ = __webpack_require__(122);
 /* harmony export (immutable) */ __webpack_exports__["a"] = combineReducers;
 
 
@@ -53669,7 +48268,7 @@ function combineReducers(reducers) {
 }
 
 /***/ }),
-/* 310 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -53862,14 +48461,14 @@ function combineReducers(reducers) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(8)))
 
 /***/ }),
-/* 311 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(Buffer, global, process) {var capability = __webpack_require__(124)
+/* WEBPACK VAR INJECTION */(function(Buffer, global, process) {var capability = __webpack_require__(123)
 var inherits = __webpack_require__(14)
-var response = __webpack_require__(312)
-var stream = __webpack_require__(69)
-var toArrayBuffer = __webpack_require__(319)
+var response = __webpack_require__(288)
+var stream = __webpack_require__(67)
+var toArrayBuffer = __webpack_require__(295)
 
 var IncomingMessage = response.IncomingMessage
 var rStates = response.readyStates
@@ -54163,12 +48762,12 @@ var unsafeHeaders = [
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(6), __webpack_require__(8)))
 
 /***/ }),
-/* 312 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(process, Buffer, global) {var capability = __webpack_require__(124)
+/* WEBPACK VAR INJECTION */(function(process, Buffer, global) {var capability = __webpack_require__(123)
 var inherits = __webpack_require__(14)
-var stream = __webpack_require__(69)
+var stream = __webpack_require__(67)
 
 var rStates = exports.readyStates = {
 	UNSENT: 0,
@@ -54352,7 +48951,7 @@ IncomingMessage.prototype._onXHRProgress = function () {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8), __webpack_require__(3).Buffer, __webpack_require__(6)))
 
 /***/ }),
-/* 313 */
+/* 289 */
 /***/ (function(module, exports) {
 
 /*
@@ -54604,16 +49203,16 @@ function updateLink(linkElement, obj) {
 
 
 /***/ }),
-/* 314 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(143);
+var content = __webpack_require__(142);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(313)(content, {});
+var update = __webpack_require__(289)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -54630,14 +49229,14 @@ if(false) {
 }
 
 /***/ }),
-/* 315 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(316);
+module.exports = __webpack_require__(292);
 
 
 /***/ }),
-/* 316 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54647,7 +49246,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _ponyfill = __webpack_require__(317);
+var _ponyfill = __webpack_require__(293);
 
 var _ponyfill2 = _interopRequireDefault(_ponyfill);
 
@@ -54670,10 +49269,10 @@ if (typeof self !== 'undefined') {
 
 var result = (0, _ponyfill2['default'])(root);
 exports['default'] = result;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(125)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6), __webpack_require__(124)(module)))
 
 /***/ }),
-/* 317 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54702,7 +49301,7 @@ function symbolObservablePonyfill(root) {
 };
 
 /***/ }),
-/* 318 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var apply = Function.prototype.apply;
@@ -54755,13 +49354,13 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(310);
+__webpack_require__(286);
 exports.setImmediate = setImmediate;
 exports.clearImmediate = clearImmediate;
 
 
 /***/ }),
-/* 319 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Buffer = __webpack_require__(3).Buffer
@@ -54794,7 +49393,7 @@ module.exports = function (buf) {
 
 
 /***/ }),
-/* 320 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -54817,7 +49416,7 @@ module.exports = {
 
 
 /***/ }),
-/* 321 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {
@@ -54891,7 +49490,7 @@ function config (name) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
 
 /***/ }),
-/* 322 */
+/* 298 */
 /***/ (function(module, exports) {
 
 if (typeof Object.create === 'function') {
@@ -54920,7 +49519,7 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 323 */
+/* 299 */
 /***/ (function(module, exports) {
 
 module.exports = function isBuffer(arg) {
@@ -54931,7 +49530,7 @@ module.exports = function isBuffer(arg) {
 }
 
 /***/ }),
-/* 324 */
+/* 300 */
 /***/ (function(module, exports) {
 
 module.exports = extend
@@ -54954,6 +49553,5410 @@ function extend() {
     return target
 }
 
+
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Big = __webpack_require__(303);
+var Random = __webpack_require__(324);
+var engine = Random.engines.nativeMath;
+var distribution = Random.hex(false);
+
+
+class Utilities {
+    /**
+     * Generate a random payment id.
+     * @param type {string} use 'short' to generate a 16 char payment id for integrated addresses.
+     * @returns {*}
+     */
+    static generatePaymentId(type = 'std') {
+        let length = (type == 'short') ? 16 : 64;
+        let paymentId = distribution(engine, length);
+        return type == 'short' ? zeropad(paymentId, 48) : paymentId;
+    }
+
+    /**
+     * Convert atomic units to float.
+     * @param atomic
+     * @returns {number}
+     */
+    static toFloat(atomic) {
+        let big = new Big(atomic);
+        return Number(big.div(1e12));
+    }
+
+    /**
+     * Convert a float to atomic units.
+     * @param float
+     * @returns {number}
+     */
+    static toAtomic(float) {
+        let big = new Big(float);
+        return Number(big.times(1e12))
+    }
+}
+
+function zeropad(str, length) {
+    let arr = new Array(length);
+    arr.fill(0);
+    return str + arr.join('');
+}
+
+module.exports = Utilities;
+
+/***/ }),
+/* 302 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var fetch = (typeof self === 'undefined' || self.fetch) || __webpack_require__(321);
+var Utilities = __webpack_require__(301);
+
+class Wallet {
+    constructor(hostname, port, secure) {
+        this.hostname = hostname || '127.0.0.1';
+        this.port = port || 18082;
+        this.protocol = secure === true ? 'https' : 'http';
+        this.params = {};
+    }
+
+    /**
+     * Get the standard public address of this wallet.
+     * @returns {object}
+     */
+    address() {
+        this.method = 'getaddress';
+        return _request(this);
+    }
+
+    /**
+     * Get the current balance of this wallet.
+     * @returns {object}
+     */
+    balance() {
+        this.method = 'getbalance';
+        return _request(this);
+    }
+
+    /**
+     * Get the current block height of this wallet.
+     * @returns {object}
+     */
+    height() {
+        this.method = 'getheight';
+        return _request(this);
+    }
+
+    /**
+     * Get incoming transfers to this wallet.
+     * @param type {string} must be one of: 'all', 'available', or 'unavailable'
+     * @returns {object}
+     */
+    incomingTransfers(type) {
+        this.method = 'incoming_transfers'
+        this.params = {transfer_type: type}
+        return _request(this);
+    }
+
+    /**
+     * Get payments to this wallet from a single payment id.
+     * @param paymentId
+     * @returns {object}
+     */
+    getPayments(paymentId) {
+        this.method = 'get_payments';
+        this.params = {payment_id: paymentId}
+        return _request(this);
+    }
+
+    /**
+     * Get payments to this wallet from a list of payment ids.
+     * @param paymentIds
+     * @param minBlockHeight
+     * @returns {object}
+     */
+    getBulkPayments(paymentIds, minBlockHeight) {
+        this.method = 'get_bulk_payments';
+        this.params.paymentIds = paymentIds;
+        this.params.minBlockHeight = minBlockHeight;
+        return _request(this);
+    }
+
+    makeIntegratedAddress(paymentId) {
+        this.method = 'make_integrated_address';
+        this.params.payment_id = paymentId;
+        return _request(this);
+    }
+
+    splitIntegratedAddress(address) {
+        return _request('split_integrated_address', {integrated_address: address});
+    }
+
+    store() {
+        return _request('store');
+    }
+
+    stopWallet() {
+        return _request('stop_wallet');
+    }
+
+    transfer(destinations, options = {}, method = 'transfer') {
+        if (Array.isArray(destinations)) {
+            destinations.forEach((dest) => dest.amount = Utilities.toAtomic(dest.amount));
+        } else {
+            destinations.amount = Utilities.toAtomic(destinations.amount);
+            destinations = [destinations];
+        }
+        let params = {
+            destinations: destinations,
+            mixin: parseInt(options.mixin) || 4,
+            unlock_time: parseInt(options.unlockTime) || 0,
+            payment_id: options.pid || null
+        };
+        return _request(method, params);
+    }
+
+    transferSplit(destinations, options) {
+        return this.transfer(destinations, options, 'transfer_split');
+    }
+
+    getTransfers(options) {
+        this.method = 'get_transfers'
+        this.params = options
+        return _request(this);
+    }
+}
+
+// private method for making RPC requests
+function _request(self) {
+    let body = {
+        jsonrpc: '2.0',
+        id: '0',
+        method: self.method,
+        params: self.params
+    };
+    let options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(body)
+    };
+
+    return new Promise((resolve, reject) => {
+        fetch(`${self.protocol}://${self.hostname}:${self.port}/json_rpc`, options)
+        .then((response) => {
+            if(response.ok) {
+                response.json().then((json) => {
+                    if (json && json.result) {
+                        resolve(json.result);
+                    } else if (json && json.error) {
+                        reject(json.error);
+                    } else {
+                        reject(response);
+                    }
+                })
+            } else {
+                reject(response);
+            }
+        })
+        .catch(reject);
+    });
+}
+
+module.exports = Wallet;
+
+
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/big.js/LICENCE */
+;(function (global) {
+    'use strict';
+
+/*
+  big.js v3.1.3
+  A small, fast, easy-to-use library for arbitrary-precision decimal arithmetic.
+  https://github.com/MikeMcl/big.js/
+  Copyright (c) 2014 Michael Mclaughlin <M8ch88l@gmail.com>
+  MIT Expat Licence
+*/
+
+/***************************** EDITABLE DEFAULTS ******************************/
+
+    // The default values below must be integers within the stated ranges.
+
+    /*
+     * The maximum number of decimal places of the results of operations
+     * involving division: div and sqrt, and pow with negative exponents.
+     */
+    var DP = 20,                           // 0 to MAX_DP
+
+        /*
+         * The rounding mode used when rounding to the above decimal places.
+         *
+         * 0 Towards zero (i.e. truncate, no rounding).       (ROUND_DOWN)
+         * 1 To nearest neighbour. If equidistant, round up.  (ROUND_HALF_UP)
+         * 2 To nearest neighbour. If equidistant, to even.   (ROUND_HALF_EVEN)
+         * 3 Away from zero.                                  (ROUND_UP)
+         */
+        RM = 1,                            // 0, 1, 2 or 3
+
+        // The maximum value of DP and Big.DP.
+        MAX_DP = 1E6,                      // 0 to 1000000
+
+        // The maximum magnitude of the exponent argument to the pow method.
+        MAX_POWER = 1E6,                   // 1 to 1000000
+
+        /*
+         * The exponent value at and beneath which toString returns exponential
+         * notation.
+         * JavaScript's Number type: -7
+         * -1000000 is the minimum recommended exponent value of a Big.
+         */
+        E_NEG = -7,                   // 0 to -1000000
+
+        /*
+         * The exponent value at and above which toString returns exponential
+         * notation.
+         * JavaScript's Number type: 21
+         * 1000000 is the maximum recommended exponent value of a Big.
+         * (This limit is not enforced or checked.)
+         */
+        E_POS = 21,                   // 0 to 1000000
+
+/******************************************************************************/
+
+        // The shared prototype object.
+        P = {},
+        isValid = /^-?(\d+(\.\d*)?|\.\d+)(e[+-]?\d+)?$/i,
+        Big;
+
+
+    /*
+     * Create and return a Big constructor.
+     *
+     */
+    function bigFactory() {
+
+        /*
+         * The Big constructor and exported function.
+         * Create and return a new instance of a Big number object.
+         *
+         * n {number|string|Big} A numeric value.
+         */
+        function Big(n) {
+            var x = this;
+
+            // Enable constructor usage without new.
+            if (!(x instanceof Big)) {
+                return n === void 0 ? bigFactory() : new Big(n);
+            }
+
+            // Duplicate.
+            if (n instanceof Big) {
+                x.s = n.s;
+                x.e = n.e;
+                x.c = n.c.slice();
+            } else {
+                parse(x, n);
+            }
+
+            /*
+             * Retain a reference to this Big constructor, and shadow
+             * Big.prototype.constructor which points to Object.
+             */
+            x.constructor = Big;
+        }
+
+        Big.prototype = P;
+        Big.DP = DP;
+        Big.RM = RM;
+        Big.E_NEG = E_NEG;
+        Big.E_POS = E_POS;
+
+        return Big;
+    }
+
+
+    // Private functions
+
+
+    /*
+     * Return a string representing the value of Big x in normal or exponential
+     * notation to dp fixed decimal places or significant digits.
+     *
+     * x {Big} The Big to format.
+     * dp {number} Integer, 0 to MAX_DP inclusive.
+     * toE {number} 1 (toExponential), 2 (toPrecision) or undefined (toFixed).
+     */
+    function format(x, dp, toE) {
+        var Big = x.constructor,
+
+            // The index (normal notation) of the digit that may be rounded up.
+            i = dp - (x = new Big(x)).e,
+            c = x.c;
+
+        // Round?
+        if (c.length > ++dp) {
+            rnd(x, i, Big.RM);
+        }
+
+        if (!c[0]) {
+            ++i;
+        } else if (toE) {
+            i = dp;
+
+        // toFixed
+        } else {
+            c = x.c;
+
+            // Recalculate i as x.e may have changed if value rounded up.
+            i = x.e + i + 1;
+        }
+
+        // Append zeros?
+        for (; c.length < i; c.push(0)) {
+        }
+        i = x.e;
+
+        /*
+         * toPrecision returns exponential notation if the number of
+         * significant digits specified is less than the number of digits
+         * necessary to represent the integer part of the value in normal
+         * notation.
+         */
+        return toE === 1 || toE && (dp <= i || i <= Big.E_NEG) ?
+
+          // Exponential notation.
+          (x.s < 0 && c[0] ? '-' : '') +
+            (c.length > 1 ? c[0] + '.' + c.join('').slice(1) : c[0]) +
+              (i < 0 ? 'e' : 'e+') + i
+
+          // Normal notation.
+          : x.toString();
+    }
+
+
+    /*
+     * Parse the number or string value passed to a Big constructor.
+     *
+     * x {Big} A Big number instance.
+     * n {number|string} A numeric value.
+     */
+    function parse(x, n) {
+        var e, i, nL;
+
+        // Minus zero?
+        if (n === 0 && 1 / n < 0) {
+            n = '-0';
+
+        // Ensure n is string and check validity.
+        } else if (!isValid.test(n += '')) {
+            throwErr(NaN);
+        }
+
+        // Determine sign.
+        x.s = n.charAt(0) == '-' ? (n = n.slice(1), -1) : 1;
+
+        // Decimal point?
+        if ((e = n.indexOf('.')) > -1) {
+            n = n.replace('.', '');
+        }
+
+        // Exponential form?
+        if ((i = n.search(/e/i)) > 0) {
+
+            // Determine exponent.
+            if (e < 0) {
+                e = i;
+            }
+            e += +n.slice(i + 1);
+            n = n.substring(0, i);
+
+        } else if (e < 0) {
+
+            // Integer.
+            e = n.length;
+        }
+
+        // Determine leading zeros.
+        for (i = 0; n.charAt(i) == '0'; i++) {
+        }
+
+        if (i == (nL = n.length)) {
+
+            // Zero.
+            x.c = [ x.e = 0 ];
+        } else {
+
+            // Determine trailing zeros.
+            for (; n.charAt(--nL) == '0';) {
+            }
+
+            x.e = e - i - 1;
+            x.c = [];
+
+            // Convert string to array of digits without leading/trailing zeros.
+            for (e = 0; i <= nL; x.c[e++] = +n.charAt(i++)) {
+            }
+        }
+
+        return x;
+    }
+
+
+    /*
+     * Round Big x to a maximum of dp decimal places using rounding mode rm.
+     * Called by div, sqrt and round.
+     *
+     * x {Big} The Big to round.
+     * dp {number} Integer, 0 to MAX_DP inclusive.
+     * rm {number} 0, 1, 2 or 3 (DOWN, HALF_UP, HALF_EVEN, UP)
+     * [more] {boolean} Whether the result of division was truncated.
+     */
+    function rnd(x, dp, rm, more) {
+        var u,
+            xc = x.c,
+            i = x.e + dp + 1;
+
+        if (rm === 1) {
+
+            // xc[i] is the digit after the digit that may be rounded up.
+            more = xc[i] >= 5;
+        } else if (rm === 2) {
+            more = xc[i] > 5 || xc[i] == 5 &&
+              (more || i < 0 || xc[i + 1] !== u || xc[i - 1] & 1);
+        } else if (rm === 3) {
+            more = more || xc[i] !== u || i < 0;
+        } else {
+            more = false;
+
+            if (rm !== 0) {
+                throwErr('!Big.RM!');
+            }
+        }
+
+        if (i < 1 || !xc[0]) {
+
+            if (more) {
+
+                // 1, 0.1, 0.01, 0.001, 0.0001 etc.
+                x.e = -dp;
+                x.c = [1];
+            } else {
+
+                // Zero.
+                x.c = [x.e = 0];
+            }
+        } else {
+
+            // Remove any digits after the required decimal places.
+            xc.length = i--;
+
+            // Round up?
+            if (more) {
+
+                // Rounding up may mean the previous digit has to be rounded up.
+                for (; ++xc[i] > 9;) {
+                    xc[i] = 0;
+
+                    if (!i--) {
+                        ++x.e;
+                        xc.unshift(1);
+                    }
+                }
+            }
+
+            // Remove trailing zeros.
+            for (i = xc.length; !xc[--i]; xc.pop()) {
+            }
+        }
+
+        return x;
+    }
+
+
+    /*
+     * Throw a BigError.
+     *
+     * message {string} The error message.
+     */
+    function throwErr(message) {
+        var err = new Error(message);
+        err.name = 'BigError';
+
+        throw err;
+    }
+
+
+    // Prototype/instance methods
+
+
+    /*
+     * Return a new Big whose value is the absolute value of this Big.
+     */
+    P.abs = function () {
+        var x = new this.constructor(this);
+        x.s = 1;
+
+        return x;
+    };
+
+
+    /*
+     * Return
+     * 1 if the value of this Big is greater than the value of Big y,
+     * -1 if the value of this Big is less than the value of Big y, or
+     * 0 if they have the same value.
+    */
+    P.cmp = function (y) {
+        var xNeg,
+            x = this,
+            xc = x.c,
+            yc = (y = new x.constructor(y)).c,
+            i = x.s,
+            j = y.s,
+            k = x.e,
+            l = y.e;
+
+        // Either zero?
+        if (!xc[0] || !yc[0]) {
+            return !xc[0] ? !yc[0] ? 0 : -j : i;
+        }
+
+        // Signs differ?
+        if (i != j) {
+            return i;
+        }
+        xNeg = i < 0;
+
+        // Compare exponents.
+        if (k != l) {
+            return k > l ^ xNeg ? 1 : -1;
+        }
+
+        i = -1;
+        j = (k = xc.length) < (l = yc.length) ? k : l;
+
+        // Compare digit by digit.
+        for (; ++i < j;) {
+
+            if (xc[i] != yc[i]) {
+                return xc[i] > yc[i] ^ xNeg ? 1 : -1;
+            }
+        }
+
+        // Compare lengths.
+        return k == l ? 0 : k > l ^ xNeg ? 1 : -1;
+    };
+
+
+    /*
+     * Return a new Big whose value is the value of this Big divided by the
+     * value of Big y, rounded, if necessary, to a maximum of Big.DP decimal
+     * places using rounding mode Big.RM.
+     */
+    P.div = function (y) {
+        var x = this,
+            Big = x.constructor,
+            // dividend
+            dvd = x.c,
+            //divisor
+            dvs = (y = new Big(y)).c,
+            s = x.s == y.s ? 1 : -1,
+            dp = Big.DP;
+
+        if (dp !== ~~dp || dp < 0 || dp > MAX_DP) {
+            throwErr('!Big.DP!');
+        }
+
+        // Either 0?
+        if (!dvd[0] || !dvs[0]) {
+
+            // If both are 0, throw NaN
+            if (dvd[0] == dvs[0]) {
+                throwErr(NaN);
+            }
+
+            // If dvs is 0, throw +-Infinity.
+            if (!dvs[0]) {
+                throwErr(s / 0);
+            }
+
+            // dvd is 0, return +-0.
+            return new Big(s * 0);
+        }
+
+        var dvsL, dvsT, next, cmp, remI, u,
+            dvsZ = dvs.slice(),
+            dvdI = dvsL = dvs.length,
+            dvdL = dvd.length,
+            // remainder
+            rem = dvd.slice(0, dvsL),
+            remL = rem.length,
+            // quotient
+            q = y,
+            qc = q.c = [],
+            qi = 0,
+            digits = dp + (q.e = x.e - y.e) + 1;
+
+        q.s = s;
+        s = digits < 0 ? 0 : digits;
+
+        // Create version of divisor with leading zero.
+        dvsZ.unshift(0);
+
+        // Add zeros to make remainder as long as divisor.
+        for (; remL++ < dvsL; rem.push(0)) {
+        }
+
+        do {
+
+            // 'next' is how many times the divisor goes into current remainder.
+            for (next = 0; next < 10; next++) {
+
+                // Compare divisor and remainder.
+                if (dvsL != (remL = rem.length)) {
+                    cmp = dvsL > remL ? 1 : -1;
+                } else {
+
+                    for (remI = -1, cmp = 0; ++remI < dvsL;) {
+
+                        if (dvs[remI] != rem[remI]) {
+                            cmp = dvs[remI] > rem[remI] ? 1 : -1;
+                            break;
+                        }
+                    }
+                }
+
+                // If divisor < remainder, subtract divisor from remainder.
+                if (cmp < 0) {
+
+                    // Remainder can't be more than 1 digit longer than divisor.
+                    // Equalise lengths using divisor with extra leading zero?
+                    for (dvsT = remL == dvsL ? dvs : dvsZ; remL;) {
+
+                        if (rem[--remL] < dvsT[remL]) {
+                            remI = remL;
+
+                            for (; remI && !rem[--remI]; rem[remI] = 9) {
+                            }
+                            --rem[remI];
+                            rem[remL] += 10;
+                        }
+                        rem[remL] -= dvsT[remL];
+                    }
+                    for (; !rem[0]; rem.shift()) {
+                    }
+                } else {
+                    break;
+                }
+            }
+
+            // Add the 'next' digit to the result array.
+            qc[qi++] = cmp ? next : ++next;
+
+            // Update the remainder.
+            if (rem[0] && cmp) {
+                rem[remL] = dvd[dvdI] || 0;
+            } else {
+                rem = [ dvd[dvdI] ];
+            }
+
+        } while ((dvdI++ < dvdL || rem[0] !== u) && s--);
+
+        // Leading zero? Do not remove if result is simply zero (qi == 1).
+        if (!qc[0] && qi != 1) {
+
+            // There can't be more than one zero.
+            qc.shift();
+            q.e--;
+        }
+
+        // Round?
+        if (qi > digits) {
+            rnd(q, dp, Big.RM, rem[0] !== u);
+        }
+
+        return q;
+    };
+
+
+    /*
+     * Return true if the value of this Big is equal to the value of Big y,
+     * otherwise returns false.
+     */
+    P.eq = function (y) {
+        return !this.cmp(y);
+    };
+
+
+    /*
+     * Return true if the value of this Big is greater than the value of Big y,
+     * otherwise returns false.
+     */
+    P.gt = function (y) {
+        return this.cmp(y) > 0;
+    };
+
+
+    /*
+     * Return true if the value of this Big is greater than or equal to the
+     * value of Big y, otherwise returns false.
+     */
+    P.gte = function (y) {
+        return this.cmp(y) > -1;
+    };
+
+
+    /*
+     * Return true if the value of this Big is less than the value of Big y,
+     * otherwise returns false.
+     */
+    P.lt = function (y) {
+        return this.cmp(y) < 0;
+    };
+
+
+    /*
+     * Return true if the value of this Big is less than or equal to the value
+     * of Big y, otherwise returns false.
+     */
+    P.lte = function (y) {
+         return this.cmp(y) < 1;
+    };
+
+
+    /*
+     * Return a new Big whose value is the value of this Big minus the value
+     * of Big y.
+     */
+    P.sub = P.minus = function (y) {
+        var i, j, t, xLTy,
+            x = this,
+            Big = x.constructor,
+            a = x.s,
+            b = (y = new Big(y)).s;
+
+        // Signs differ?
+        if (a != b) {
+            y.s = -b;
+            return x.plus(y);
+        }
+
+        var xc = x.c.slice(),
+            xe = x.e,
+            yc = y.c,
+            ye = y.e;
+
+        // Either zero?
+        if (!xc[0] || !yc[0]) {
+
+            // y is non-zero? x is non-zero? Or both are zero.
+            return yc[0] ? (y.s = -b, y) : new Big(xc[0] ? x : 0);
+        }
+
+        // Determine which is the bigger number.
+        // Prepend zeros to equalise exponents.
+        if (a = xe - ye) {
+
+            if (xLTy = a < 0) {
+                a = -a;
+                t = xc;
+            } else {
+                ye = xe;
+                t = yc;
+            }
+
+            t.reverse();
+            for (b = a; b--; t.push(0)) {
+            }
+            t.reverse();
+        } else {
+
+            // Exponents equal. Check digit by digit.
+            j = ((xLTy = xc.length < yc.length) ? xc : yc).length;
+
+            for (a = b = 0; b < j; b++) {
+
+                if (xc[b] != yc[b]) {
+                    xLTy = xc[b] < yc[b];
+                    break;
+                }
+            }
+        }
+
+        // x < y? Point xc to the array of the bigger number.
+        if (xLTy) {
+            t = xc;
+            xc = yc;
+            yc = t;
+            y.s = -y.s;
+        }
+
+        /*
+         * Append zeros to xc if shorter. No need to add zeros to yc if shorter
+         * as subtraction only needs to start at yc.length.
+         */
+        if (( b = (j = yc.length) - (i = xc.length) ) > 0) {
+
+            for (; b--; xc[i++] = 0) {
+            }
+        }
+
+        // Subtract yc from xc.
+        for (b = i; j > a;){
+
+            if (xc[--j] < yc[j]) {
+
+                for (i = j; i && !xc[--i]; xc[i] = 9) {
+                }
+                --xc[i];
+                xc[j] += 10;
+            }
+            xc[j] -= yc[j];
+        }
+
+        // Remove trailing zeros.
+        for (; xc[--b] === 0; xc.pop()) {
+        }
+
+        // Remove leading zeros and adjust exponent accordingly.
+        for (; xc[0] === 0;) {
+            xc.shift();
+            --ye;
+        }
+
+        if (!xc[0]) {
+
+            // n - n = +0
+            y.s = 1;
+
+            // Result must be zero.
+            xc = [ye = 0];
+        }
+
+        y.c = xc;
+        y.e = ye;
+
+        return y;
+    };
+
+
+    /*
+     * Return a new Big whose value is the value of this Big modulo the
+     * value of Big y.
+     */
+    P.mod = function (y) {
+        var yGTx,
+            x = this,
+            Big = x.constructor,
+            a = x.s,
+            b = (y = new Big(y)).s;
+
+        if (!y.c[0]) {
+            throwErr(NaN);
+        }
+
+        x.s = y.s = 1;
+        yGTx = y.cmp(x) == 1;
+        x.s = a;
+        y.s = b;
+
+        if (yGTx) {
+            return new Big(x);
+        }
+
+        a = Big.DP;
+        b = Big.RM;
+        Big.DP = Big.RM = 0;
+        x = x.div(y);
+        Big.DP = a;
+        Big.RM = b;
+
+        return this.minus( x.times(y) );
+    };
+
+
+    /*
+     * Return a new Big whose value is the value of this Big plus the value
+     * of Big y.
+     */
+    P.add = P.plus = function (y) {
+        var t,
+            x = this,
+            Big = x.constructor,
+            a = x.s,
+            b = (y = new Big(y)).s;
+
+        // Signs differ?
+        if (a != b) {
+            y.s = -b;
+            return x.minus(y);
+        }
+
+        var xe = x.e,
+            xc = x.c,
+            ye = y.e,
+            yc = y.c;
+
+        // Either zero?
+        if (!xc[0] || !yc[0]) {
+
+            // y is non-zero? x is non-zero? Or both are zero.
+            return yc[0] ? y : new Big(xc[0] ? x : a * 0);
+        }
+        xc = xc.slice();
+
+        // Prepend zeros to equalise exponents.
+        // Note: Faster to use reverse then do unshifts.
+        if (a = xe - ye) {
+
+            if (a > 0) {
+                ye = xe;
+                t = yc;
+            } else {
+                a = -a;
+                t = xc;
+            }
+
+            t.reverse();
+            for (; a--; t.push(0)) {
+            }
+            t.reverse();
+        }
+
+        // Point xc to the longer array.
+        if (xc.length - yc.length < 0) {
+            t = yc;
+            yc = xc;
+            xc = t;
+        }
+        a = yc.length;
+
+        /*
+         * Only start adding at yc.length - 1 as the further digits of xc can be
+         * left as they are.
+         */
+        for (b = 0; a;) {
+            b = (xc[--a] = xc[a] + yc[a] + b) / 10 | 0;
+            xc[a] %= 10;
+        }
+
+        // No need to check for zero, as +x + +y != 0 && -x + -y != 0
+
+        if (b) {
+            xc.unshift(b);
+            ++ye;
+        }
+
+         // Remove trailing zeros.
+        for (a = xc.length; xc[--a] === 0; xc.pop()) {
+        }
+
+        y.c = xc;
+        y.e = ye;
+
+        return y;
+    };
+
+
+    /*
+     * Return a Big whose value is the value of this Big raised to the power n.
+     * If n is negative, round, if necessary, to a maximum of Big.DP decimal
+     * places using rounding mode Big.RM.
+     *
+     * n {number} Integer, -MAX_POWER to MAX_POWER inclusive.
+     */
+    P.pow = function (n) {
+        var x = this,
+            one = new x.constructor(1),
+            y = one,
+            isNeg = n < 0;
+
+        if (n !== ~~n || n < -MAX_POWER || n > MAX_POWER) {
+            throwErr('!pow!');
+        }
+
+        n = isNeg ? -n : n;
+
+        for (;;) {
+
+            if (n & 1) {
+                y = y.times(x);
+            }
+            n >>= 1;
+
+            if (!n) {
+                break;
+            }
+            x = x.times(x);
+        }
+
+        return isNeg ? one.div(y) : y;
+    };
+
+
+    /*
+     * Return a new Big whose value is the value of this Big rounded to a
+     * maximum of dp decimal places using rounding mode rm.
+     * If dp is not specified, round to 0 decimal places.
+     * If rm is not specified, use Big.RM.
+     *
+     * [dp] {number} Integer, 0 to MAX_DP inclusive.
+     * [rm] 0, 1, 2 or 3 (ROUND_DOWN, ROUND_HALF_UP, ROUND_HALF_EVEN, ROUND_UP)
+     */
+    P.round = function (dp, rm) {
+        var x = this,
+            Big = x.constructor;
+
+        if (dp == null) {
+            dp = 0;
+        } else if (dp !== ~~dp || dp < 0 || dp > MAX_DP) {
+            throwErr('!round!');
+        }
+        rnd(x = new Big(x), dp, rm == null ? Big.RM : rm);
+
+        return x;
+    };
+
+
+    /*
+     * Return a new Big whose value is the square root of the value of this Big,
+     * rounded, if necessary, to a maximum of Big.DP decimal places using
+     * rounding mode Big.RM.
+     */
+    P.sqrt = function () {
+        var estimate, r, approx,
+            x = this,
+            Big = x.constructor,
+            xc = x.c,
+            i = x.s,
+            e = x.e,
+            half = new Big('0.5');
+
+        // Zero?
+        if (!xc[0]) {
+            return new Big(x);
+        }
+
+        // If negative, throw NaN.
+        if (i < 0) {
+            throwErr(NaN);
+        }
+
+        // Estimate.
+        i = Math.sqrt(x.toString());
+
+        // Math.sqrt underflow/overflow?
+        // Pass x to Math.sqrt as integer, then adjust the result exponent.
+        if (i === 0 || i === 1 / 0) {
+            estimate = xc.join('');
+
+            if (!(estimate.length + e & 1)) {
+                estimate += '0';
+            }
+
+            r = new Big( Math.sqrt(estimate).toString() );
+            r.e = ((e + 1) / 2 | 0) - (e < 0 || e & 1);
+        } else {
+            r = new Big(i.toString());
+        }
+
+        i = r.e + (Big.DP += 4);
+
+        // Newton-Raphson iteration.
+        do {
+            approx = r;
+            r = half.times( approx.plus( x.div(approx) ) );
+        } while ( approx.c.slice(0, i).join('') !==
+                       r.c.slice(0, i).join('') );
+
+        rnd(r, Big.DP -= 4, Big.RM);
+
+        return r;
+    };
+
+
+    /*
+     * Return a new Big whose value is the value of this Big times the value of
+     * Big y.
+     */
+    P.mul = P.times = function (y) {
+        var c,
+            x = this,
+            Big = x.constructor,
+            xc = x.c,
+            yc = (y = new Big(y)).c,
+            a = xc.length,
+            b = yc.length,
+            i = x.e,
+            j = y.e;
+
+        // Determine sign of result.
+        y.s = x.s == y.s ? 1 : -1;
+
+        // Return signed 0 if either 0.
+        if (!xc[0] || !yc[0]) {
+            return new Big(y.s * 0);
+        }
+
+        // Initialise exponent of result as x.e + y.e.
+        y.e = i + j;
+
+        // If array xc has fewer digits than yc, swap xc and yc, and lengths.
+        if (a < b) {
+            c = xc;
+            xc = yc;
+            yc = c;
+            j = a;
+            a = b;
+            b = j;
+        }
+
+        // Initialise coefficient array of result with zeros.
+        for (c = new Array(j = a + b); j--; c[j] = 0) {
+        }
+
+        // Multiply.
+
+        // i is initially xc.length.
+        for (i = b; i--;) {
+            b = 0;
+
+            // a is yc.length.
+            for (j = a + i; j > i;) {
+
+                // Current sum of products at this digit position, plus carry.
+                b = c[j] + yc[i] * xc[j - i - 1] + b;
+                c[j--] = b % 10;
+
+                // carry
+                b = b / 10 | 0;
+            }
+            c[j] = (c[j] + b) % 10;
+        }
+
+        // Increment result exponent if there is a final carry.
+        if (b) {
+            ++y.e;
+        }
+
+        // Remove any leading zero.
+        if (!c[0]) {
+            c.shift();
+        }
+
+        // Remove trailing zeros.
+        for (i = c.length; !c[--i]; c.pop()) {
+        }
+        y.c = c;
+
+        return y;
+    };
+
+
+    /*
+     * Return a string representing the value of this Big.
+     * Return exponential notation if this Big has a positive exponent equal to
+     * or greater than Big.E_POS, or a negative exponent equal to or less than
+     * Big.E_NEG.
+     */
+    P.toString = P.valueOf = P.toJSON = function () {
+        var x = this,
+            Big = x.constructor,
+            e = x.e,
+            str = x.c.join(''),
+            strL = str.length;
+
+        // Exponential notation?
+        if (e <= Big.E_NEG || e >= Big.E_POS) {
+            str = str.charAt(0) + (strL > 1 ? '.' + str.slice(1) : '') +
+              (e < 0 ? 'e' : 'e+') + e;
+
+        // Negative exponent?
+        } else if (e < 0) {
+
+            // Prepend zeros.
+            for (; ++e; str = '0' + str) {
+            }
+            str = '0.' + str;
+
+        // Positive exponent?
+        } else if (e > 0) {
+
+            if (++e > strL) {
+
+                // Append zeros.
+                for (e -= strL; e-- ; str += '0') {
+                }
+            } else if (e < strL) {
+                str = str.slice(0, e) + '.' + str.slice(e);
+            }
+
+        // Exponent zero.
+        } else if (strL > 1) {
+            str = str.charAt(0) + '.' + str.slice(1);
+        }
+
+        // Avoid '-0'
+        return x.s < 0 && x.c[0] ? '-' + str : str;
+    };
+
+
+    /*
+     ***************************************************************************
+     * If toExponential, toFixed, toPrecision and format are not required they
+     * can safely be commented-out or deleted. No redundant code will be left.
+     * format is used only by toExponential, toFixed and toPrecision.
+     ***************************************************************************
+     */
+
+
+    /*
+     * Return a string representing the value of this Big in exponential
+     * notation to dp fixed decimal places and rounded, if necessary, using
+     * Big.RM.
+     *
+     * [dp] {number} Integer, 0 to MAX_DP inclusive.
+     */
+    P.toExponential = function (dp) {
+
+        if (dp == null) {
+            dp = this.c.length - 1;
+        } else if (dp !== ~~dp || dp < 0 || dp > MAX_DP) {
+            throwErr('!toExp!');
+        }
+
+        return format(this, dp, 1);
+    };
+
+
+    /*
+     * Return a string representing the value of this Big in normal notation
+     * to dp fixed decimal places and rounded, if necessary, using Big.RM.
+     *
+     * [dp] {number} Integer, 0 to MAX_DP inclusive.
+     */
+    P.toFixed = function (dp) {
+        var str,
+            x = this,
+            Big = x.constructor,
+            neg = Big.E_NEG,
+            pos = Big.E_POS;
+
+        // Prevent the possibility of exponential notation.
+        Big.E_NEG = -(Big.E_POS = 1 / 0);
+
+        if (dp == null) {
+            str = x.toString();
+        } else if (dp === ~~dp && dp >= 0 && dp <= MAX_DP) {
+            str = format(x, x.e + dp);
+
+            // (-0).toFixed() is '0', but (-0.1).toFixed() is '-0'.
+            // (-0).toFixed(1) is '0.0', but (-0.01).toFixed(1) is '-0.0'.
+            if (x.s < 0 && x.c[0] && str.indexOf('-') < 0) {
+        //E.g. -0.5 if rounded to -0 will cause toString to omit the minus sign.
+                str = '-' + str;
+            }
+        }
+        Big.E_NEG = neg;
+        Big.E_POS = pos;
+
+        if (!str) {
+            throwErr('!toFix!');
+        }
+
+        return str;
+    };
+
+
+    /*
+     * Return a string representing the value of this Big rounded to sd
+     * significant digits using Big.RM. Use exponential notation if sd is less
+     * than the number of digits necessary to represent the integer part of the
+     * value in normal notation.
+     *
+     * sd {number} Integer, 1 to MAX_DP inclusive.
+     */
+    P.toPrecision = function (sd) {
+
+        if (sd == null) {
+            return this.toString();
+        } else if (sd !== ~~sd || sd < 1 || sd > MAX_DP) {
+            throwErr('!toPre!');
+        }
+
+        return format(this, sd - 1, 2);
+    };
+
+
+    // Export
+
+
+    Big = bigFactory();
+
+    //AMD.
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+            return Big;
+        }.call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
+    // Node and other CommonJS-like environments that support module.exports.
+    } else if (typeof module !== 'undefined' && module.exports) {
+        module.exports = Big;
+
+    //Browser.
+    } else {
+        global.Big = Big;
+    }
+})(this);
+
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	throw new Error("Cannot find module '" + req + "'.");
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = 304;
+
+
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+var iconvLite = __webpack_require__(318);
+// Load Iconv from an external file to be able to disable Iconv for webpack
+// Add /\/iconv-loader$/ to webpack.IgnorePlugin to ignore it
+var Iconv = __webpack_require__(306);
+
+// Expose to the world
+module.exports.convert = convert;
+
+/**
+ * Convert encoding of an UTF-8 string or a buffer
+ *
+ * @param {String|Buffer} str String to be converted
+ * @param {String} to Encoding to be converted to
+ * @param {String} [from='UTF-8'] Encoding to be converted from
+ * @param {Boolean} useLite If set to ture, force to use iconvLite
+ * @return {Buffer} Encoded string
+ */
+function convert(str, to, from, useLite) {
+    from = checkEncoding(from || 'UTF-8');
+    to = checkEncoding(to || 'UTF-8');
+    str = str || '';
+
+    var result;
+
+    if (from !== 'UTF-8' && typeof str === 'string') {
+        str = new Buffer(str, 'binary');
+    }
+
+    if (from === to) {
+        if (typeof str === 'string') {
+            result = new Buffer(str);
+        } else {
+            result = str;
+        }
+    } else if (Iconv && !useLite) {
+        try {
+            result = convertIconv(str, to, from);
+        } catch (E) {
+            console.error(E);
+            try {
+                result = convertIconvLite(str, to, from);
+            } catch (E) {
+                console.error(E);
+                result = str;
+            }
+        }
+    } else {
+        try {
+            result = convertIconvLite(str, to, from);
+        } catch (E) {
+            console.error(E);
+            result = str;
+        }
+    }
+
+
+    if (typeof result === 'string') {
+        result = new Buffer(result, 'utf-8');
+    }
+
+    return result;
+}
+
+/**
+ * Convert encoding of a string with node-iconv (if available)
+ *
+ * @param {String|Buffer} str String to be converted
+ * @param {String} to Encoding to be converted to
+ * @param {String} [from='UTF-8'] Encoding to be converted from
+ * @return {Buffer} Encoded string
+ */
+function convertIconv(str, to, from) {
+    var response, iconv;
+    iconv = new Iconv(from, to + '//TRANSLIT//IGNORE');
+    response = iconv.convert(str);
+    return response.slice(0, response.length);
+}
+
+/**
+ * Convert encoding of astring with iconv-lite
+ *
+ * @param {String|Buffer} str String to be converted
+ * @param {String} to Encoding to be converted to
+ * @param {String} [from='UTF-8'] Encoding to be converted from
+ * @return {Buffer} Encoded string
+ */
+function convertIconvLite(str, to, from) {
+    if (to === 'UTF-8') {
+        return iconvLite.decode(str, from);
+    } else if (from === 'UTF-8') {
+        return iconvLite.encode(str, to);
+    } else {
+        return iconvLite.encode(iconvLite.decode(str, from), to);
+    }
+}
+
+/**
+ * Converts charset name if needed
+ *
+ * @param {String} name Character set
+ * @return {String} Character set name
+ */
+function checkEncoding(name) {
+    return (name || '').toString().trim().
+    replace(/^latin[\-_]?(\d+)$/i, 'ISO-8859-$1').
+    replace(/^win(?:dows)?[\-_]?(\d+)$/i, 'WINDOWS-$1').
+    replace(/^utf[\-_]?(\d+)$/i, 'UTF-$1').
+    replace(/^ks_c_5601\-1987$/i, 'CP949').
+    replace(/^us[\-_]?ascii$/i, 'ASCII').
+    toUpperCase();
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var iconv_package;
+var Iconv;
+
+try {
+    // this is to fool browserify so it doesn't try (in vain) to install iconv.
+    iconv_package = 'iconv';
+    Iconv = !(function webpackMissingModule() { var e = new Error("Cannot find module \".\""); e.code = 'MODULE_NOT_FOUND';; throw e; }()).Iconv;
+} catch (E) {
+    // node-iconv not present
+}
+
+module.exports = Iconv;
+
+
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+// Multibyte codec. In this scheme, a character is represented by 1 or more bytes.
+// Our codec supports UTF-16 surrogates, extensions for GB18030 and unicode sequences.
+// To save memory and loading time, we read table files only when requested.
+
+exports._dbcs = DBCSCodec;
+
+var UNASSIGNED = -1,
+    GB18030_CODE = -2,
+    SEQ_START  = -10,
+    NODE_START = -1000,
+    UNASSIGNED_NODE = new Array(0x100),
+    DEF_CHAR = -1;
+
+for (var i = 0; i < 0x100; i++)
+    UNASSIGNED_NODE[i] = UNASSIGNED;
+
+
+// Class DBCSCodec reads and initializes mapping tables.
+function DBCSCodec(codecOptions, iconv) {
+    this.encodingName = codecOptions.encodingName;
+    if (!codecOptions)
+        throw new Error("DBCS codec is called without the data.")
+    if (!codecOptions.table)
+        throw new Error("Encoding '" + this.encodingName + "' has no data.");
+
+    // Load tables.
+    var mappingTable = codecOptions.table();
+
+
+    // Decode tables: MBCS -> Unicode.
+
+    // decodeTables is a trie, encoded as an array of arrays of integers. Internal arrays are trie nodes and all have len = 256.
+    // Trie root is decodeTables[0].
+    // Values: >=  0 -> unicode character code. can be > 0xFFFF
+    //         == UNASSIGNED -> unknown/unassigned sequence.
+    //         == GB18030_CODE -> this is the end of a GB18030 4-byte sequence.
+    //         <= NODE_START -> index of the next node in our trie to process next byte.
+    //         <= SEQ_START  -> index of the start of a character code sequence, in decodeTableSeq.
+    this.decodeTables = [];
+    this.decodeTables[0] = UNASSIGNED_NODE.slice(0); // Create root node.
+
+    // Sometimes a MBCS char corresponds to a sequence of unicode chars. We store them as arrays of integers here. 
+    this.decodeTableSeq = [];
+
+    // Actual mapping tables consist of chunks. Use them to fill up decode tables.
+    for (var i = 0; i < mappingTable.length; i++)
+        this._addDecodeChunk(mappingTable[i]);
+
+    this.defaultCharUnicode = iconv.defaultCharUnicode;
+
+    
+    // Encode tables: Unicode -> DBCS.
+
+    // `encodeTable` is array mapping from unicode char to encoded char. All its values are integers for performance.
+    // Because it can be sparse, it is represented as array of buckets by 256 chars each. Bucket can be null.
+    // Values: >=  0 -> it is a normal char. Write the value (if <=256 then 1 byte, if <=65536 then 2 bytes, etc.).
+    //         == UNASSIGNED -> no conversion found. Output a default char.
+    //         <= SEQ_START  -> it's an index in encodeTableSeq, see below. The character starts a sequence.
+    this.encodeTable = [];
+    
+    // `encodeTableSeq` is used when a sequence of unicode characters is encoded as a single code. We use a tree of
+    // objects where keys correspond to characters in sequence and leafs are the encoded dbcs values. A special DEF_CHAR key
+    // means end of sequence (needed when one sequence is a strict subsequence of another).
+    // Objects are kept separately from encodeTable to increase performance.
+    this.encodeTableSeq = [];
+
+    // Some chars can be decoded, but need not be encoded.
+    var skipEncodeChars = {};
+    if (codecOptions.encodeSkipVals)
+        for (var i = 0; i < codecOptions.encodeSkipVals.length; i++) {
+            var val = codecOptions.encodeSkipVals[i];
+            if (typeof val === 'number')
+                skipEncodeChars[val] = true;
+            else
+                for (var j = val.from; j <= val.to; j++)
+                    skipEncodeChars[j] = true;
+        }
+        
+    // Use decode trie to recursively fill out encode tables.
+    this._fillEncodeTable(0, 0, skipEncodeChars);
+
+    // Add more encoding pairs when needed.
+    if (codecOptions.encodeAdd) {
+        for (var uChar in codecOptions.encodeAdd)
+            if (Object.prototype.hasOwnProperty.call(codecOptions.encodeAdd, uChar))
+                this._setEncodeChar(uChar.charCodeAt(0), codecOptions.encodeAdd[uChar]);
+    }
+
+    this.defCharSB  = this.encodeTable[0][iconv.defaultCharSingleByte.charCodeAt(0)];
+    if (this.defCharSB === UNASSIGNED) this.defCharSB = this.encodeTable[0]['?'];
+    if (this.defCharSB === UNASSIGNED) this.defCharSB = "?".charCodeAt(0);
+
+
+    // Load & create GB18030 tables when needed.
+    if (typeof codecOptions.gb18030 === 'function') {
+        this.gb18030 = codecOptions.gb18030(); // Load GB18030 ranges.
+
+        // Add GB18030 decode tables.
+        var thirdByteNodeIdx = this.decodeTables.length;
+        var thirdByteNode = this.decodeTables[thirdByteNodeIdx] = UNASSIGNED_NODE.slice(0);
+
+        var fourthByteNodeIdx = this.decodeTables.length;
+        var fourthByteNode = this.decodeTables[fourthByteNodeIdx] = UNASSIGNED_NODE.slice(0);
+
+        for (var i = 0x81; i <= 0xFE; i++) {
+            var secondByteNodeIdx = NODE_START - this.decodeTables[0][i];
+            var secondByteNode = this.decodeTables[secondByteNodeIdx];
+            for (var j = 0x30; j <= 0x39; j++)
+                secondByteNode[j] = NODE_START - thirdByteNodeIdx;
+        }
+        for (var i = 0x81; i <= 0xFE; i++)
+            thirdByteNode[i] = NODE_START - fourthByteNodeIdx;
+        for (var i = 0x30; i <= 0x39; i++)
+            fourthByteNode[i] = GB18030_CODE
+    }        
+}
+
+DBCSCodec.prototype.encoder = DBCSEncoder;
+DBCSCodec.prototype.decoder = DBCSDecoder;
+
+// Decoder helpers
+DBCSCodec.prototype._getDecodeTrieNode = function(addr) {
+    var bytes = [];
+    for (; addr > 0; addr >>= 8)
+        bytes.push(addr & 0xFF);
+    if (bytes.length == 0)
+        bytes.push(0);
+
+    var node = this.decodeTables[0];
+    for (var i = bytes.length-1; i > 0; i--) { // Traverse nodes deeper into the trie.
+        var val = node[bytes[i]];
+
+        if (val == UNASSIGNED) { // Create new node.
+            node[bytes[i]] = NODE_START - this.decodeTables.length;
+            this.decodeTables.push(node = UNASSIGNED_NODE.slice(0));
+        }
+        else if (val <= NODE_START) { // Existing node.
+            node = this.decodeTables[NODE_START - val];
+        }
+        else
+            throw new Error("Overwrite byte in " + this.encodingName + ", addr: " + addr.toString(16));
+    }
+    return node;
+}
+
+
+DBCSCodec.prototype._addDecodeChunk = function(chunk) {
+    // First element of chunk is the hex mbcs code where we start.
+    var curAddr = parseInt(chunk[0], 16);
+
+    // Choose the decoding node where we'll write our chars.
+    var writeTable = this._getDecodeTrieNode(curAddr);
+    curAddr = curAddr & 0xFF;
+
+    // Write all other elements of the chunk to the table.
+    for (var k = 1; k < chunk.length; k++) {
+        var part = chunk[k];
+        if (typeof part === "string") { // String, write as-is.
+            for (var l = 0; l < part.length;) {
+                var code = part.charCodeAt(l++);
+                if (0xD800 <= code && code < 0xDC00) { // Decode surrogate
+                    var codeTrail = part.charCodeAt(l++);
+                    if (0xDC00 <= codeTrail && codeTrail < 0xE000)
+                        writeTable[curAddr++] = 0x10000 + (code - 0xD800) * 0x400 + (codeTrail - 0xDC00);
+                    else
+                        throw new Error("Incorrect surrogate pair in "  + this.encodingName + " at chunk " + chunk[0]);
+                }
+                else if (0x0FF0 < code && code <= 0x0FFF) { // Character sequence (our own encoding used)
+                    var len = 0xFFF - code + 2;
+                    var seq = [];
+                    for (var m = 0; m < len; m++)
+                        seq.push(part.charCodeAt(l++)); // Simple variation: don't support surrogates or subsequences in seq.
+
+                    writeTable[curAddr++] = SEQ_START - this.decodeTableSeq.length;
+                    this.decodeTableSeq.push(seq);
+                }
+                else
+                    writeTable[curAddr++] = code; // Basic char
+            }
+        } 
+        else if (typeof part === "number") { // Integer, meaning increasing sequence starting with prev character.
+            var charCode = writeTable[curAddr - 1] + 1;
+            for (var l = 0; l < part; l++)
+                writeTable[curAddr++] = charCode++;
+        }
+        else
+            throw new Error("Incorrect type '" + typeof part + "' given in "  + this.encodingName + " at chunk " + chunk[0]);
+    }
+    if (curAddr > 0xFF)
+        throw new Error("Incorrect chunk in "  + this.encodingName + " at addr " + chunk[0] + ": too long" + curAddr);
+}
+
+// Encoder helpers
+DBCSCodec.prototype._getEncodeBucket = function(uCode) {
+    var high = uCode >> 8; // This could be > 0xFF because of astral characters.
+    if (this.encodeTable[high] === undefined)
+        this.encodeTable[high] = UNASSIGNED_NODE.slice(0); // Create bucket on demand.
+    return this.encodeTable[high];
+}
+
+DBCSCodec.prototype._setEncodeChar = function(uCode, dbcsCode) {
+    var bucket = this._getEncodeBucket(uCode);
+    var low = uCode & 0xFF;
+    if (bucket[low] <= SEQ_START)
+        this.encodeTableSeq[SEQ_START-bucket[low]][DEF_CHAR] = dbcsCode; // There's already a sequence, set a single-char subsequence of it.
+    else if (bucket[low] == UNASSIGNED)
+        bucket[low] = dbcsCode;
+}
+
+DBCSCodec.prototype._setEncodeSequence = function(seq, dbcsCode) {
+    
+    // Get the root of character tree according to first character of the sequence.
+    var uCode = seq[0];
+    var bucket = this._getEncodeBucket(uCode);
+    var low = uCode & 0xFF;
+
+    var node;
+    if (bucket[low] <= SEQ_START) {
+        // There's already a sequence with  - use it.
+        node = this.encodeTableSeq[SEQ_START-bucket[low]];
+    }
+    else {
+        // There was no sequence object - allocate a new one.
+        node = {};
+        if (bucket[low] !== UNASSIGNED) node[DEF_CHAR] = bucket[low]; // If a char was set before - make it a single-char subsequence.
+        bucket[low] = SEQ_START - this.encodeTableSeq.length;
+        this.encodeTableSeq.push(node);
+    }
+
+    // Traverse the character tree, allocating new nodes as needed.
+    for (var j = 1; j < seq.length-1; j++) {
+        var oldVal = node[uCode];
+        if (typeof oldVal === 'object')
+            node = oldVal;
+        else {
+            node = node[uCode] = {}
+            if (oldVal !== undefined)
+                node[DEF_CHAR] = oldVal
+        }
+    }
+
+    // Set the leaf to given dbcsCode.
+    uCode = seq[seq.length-1];
+    node[uCode] = dbcsCode;
+}
+
+DBCSCodec.prototype._fillEncodeTable = function(nodeIdx, prefix, skipEncodeChars) {
+    var node = this.decodeTables[nodeIdx];
+    for (var i = 0; i < 0x100; i++) {
+        var uCode = node[i];
+        var mbCode = prefix + i;
+        if (skipEncodeChars[mbCode])
+            continue;
+
+        if (uCode >= 0)
+            this._setEncodeChar(uCode, mbCode);
+        else if (uCode <= NODE_START)
+            this._fillEncodeTable(NODE_START - uCode, mbCode << 8, skipEncodeChars);
+        else if (uCode <= SEQ_START)
+            this._setEncodeSequence(this.decodeTableSeq[SEQ_START - uCode], mbCode);
+    }
+}
+
+
+
+// == Encoder ==================================================================
+
+function DBCSEncoder(options, codec) {
+    // Encoder state
+    this.leadSurrogate = -1;
+    this.seqObj = undefined;
+    
+    // Static data
+    this.encodeTable = codec.encodeTable;
+    this.encodeTableSeq = codec.encodeTableSeq;
+    this.defaultCharSingleByte = codec.defCharSB;
+    this.gb18030 = codec.gb18030;
+}
+
+DBCSEncoder.prototype.write = function(str) {
+    var newBuf = new Buffer(str.length * (this.gb18030 ? 4 : 3)), 
+        leadSurrogate = this.leadSurrogate,
+        seqObj = this.seqObj, nextChar = -1,
+        i = 0, j = 0;
+
+    while (true) {
+        // 0. Get next character.
+        if (nextChar === -1) {
+            if (i == str.length) break;
+            var uCode = str.charCodeAt(i++);
+        }
+        else {
+            var uCode = nextChar;
+            nextChar = -1;    
+        }
+
+        // 1. Handle surrogates.
+        if (0xD800 <= uCode && uCode < 0xE000) { // Char is one of surrogates.
+            if (uCode < 0xDC00) { // We've got lead surrogate.
+                if (leadSurrogate === -1) {
+                    leadSurrogate = uCode;
+                    continue;
+                } else {
+                    leadSurrogate = uCode;
+                    // Double lead surrogate found.
+                    uCode = UNASSIGNED;
+                }
+            } else { // We've got trail surrogate.
+                if (leadSurrogate !== -1) {
+                    uCode = 0x10000 + (leadSurrogate - 0xD800) * 0x400 + (uCode - 0xDC00);
+                    leadSurrogate = -1;
+                } else {
+                    // Incomplete surrogate pair - only trail surrogate found.
+                    uCode = UNASSIGNED;
+                }
+                
+            }
+        }
+        else if (leadSurrogate !== -1) {
+            // Incomplete surrogate pair - only lead surrogate found.
+            nextChar = uCode; uCode = UNASSIGNED; // Write an error, then current char.
+            leadSurrogate = -1;
+        }
+
+        // 2. Convert uCode character.
+        var dbcsCode = UNASSIGNED;
+        if (seqObj !== undefined && uCode != UNASSIGNED) { // We are in the middle of the sequence
+            var resCode = seqObj[uCode];
+            if (typeof resCode === 'object') { // Sequence continues.
+                seqObj = resCode;
+                continue;
+
+            } else if (typeof resCode == 'number') { // Sequence finished. Write it.
+                dbcsCode = resCode;
+
+            } else if (resCode == undefined) { // Current character is not part of the sequence.
+
+                // Try default character for this sequence
+                resCode = seqObj[DEF_CHAR];
+                if (resCode !== undefined) {
+                    dbcsCode = resCode; // Found. Write it.
+                    nextChar = uCode; // Current character will be written too in the next iteration.
+
+                } else {
+                    // TODO: What if we have no default? (resCode == undefined)
+                    // Then, we should write first char of the sequence as-is and try the rest recursively.
+                    // Didn't do it for now because no encoding has this situation yet.
+                    // Currently, just skip the sequence and write current char.
+                }
+            }
+            seqObj = undefined;
+        }
+        else if (uCode >= 0) {  // Regular character
+            var subtable = this.encodeTable[uCode >> 8];
+            if (subtable !== undefined)
+                dbcsCode = subtable[uCode & 0xFF];
+            
+            if (dbcsCode <= SEQ_START) { // Sequence start
+                seqObj = this.encodeTableSeq[SEQ_START-dbcsCode];
+                continue;
+            }
+
+            if (dbcsCode == UNASSIGNED && this.gb18030) {
+                // Use GB18030 algorithm to find character(s) to write.
+                var idx = findIdx(this.gb18030.uChars, uCode);
+                if (idx != -1) {
+                    var dbcsCode = this.gb18030.gbChars[idx] + (uCode - this.gb18030.uChars[idx]);
+                    newBuf[j++] = 0x81 + Math.floor(dbcsCode / 12600); dbcsCode = dbcsCode % 12600;
+                    newBuf[j++] = 0x30 + Math.floor(dbcsCode / 1260); dbcsCode = dbcsCode % 1260;
+                    newBuf[j++] = 0x81 + Math.floor(dbcsCode / 10); dbcsCode = dbcsCode % 10;
+                    newBuf[j++] = 0x30 + dbcsCode;
+                    continue;
+                }
+            }
+        }
+
+        // 3. Write dbcsCode character.
+        if (dbcsCode === UNASSIGNED)
+            dbcsCode = this.defaultCharSingleByte;
+        
+        if (dbcsCode < 0x100) {
+            newBuf[j++] = dbcsCode;
+        }
+        else if (dbcsCode < 0x10000) {
+            newBuf[j++] = dbcsCode >> 8;   // high byte
+            newBuf[j++] = dbcsCode & 0xFF; // low byte
+        }
+        else {
+            newBuf[j++] = dbcsCode >> 16;
+            newBuf[j++] = (dbcsCode >> 8) & 0xFF;
+            newBuf[j++] = dbcsCode & 0xFF;
+        }
+    }
+
+    this.seqObj = seqObj;
+    this.leadSurrogate = leadSurrogate;
+    return newBuf.slice(0, j);
+}
+
+DBCSEncoder.prototype.end = function() {
+    if (this.leadSurrogate === -1 && this.seqObj === undefined)
+        return; // All clean. Most often case.
+
+    var newBuf = new Buffer(10), j = 0;
+
+    if (this.seqObj) { // We're in the sequence.
+        var dbcsCode = this.seqObj[DEF_CHAR];
+        if (dbcsCode !== undefined) { // Write beginning of the sequence.
+            if (dbcsCode < 0x100) {
+                newBuf[j++] = dbcsCode;
+            }
+            else {
+                newBuf[j++] = dbcsCode >> 8;   // high byte
+                newBuf[j++] = dbcsCode & 0xFF; // low byte
+            }
+        } else {
+            // See todo above.
+        }
+        this.seqObj = undefined;
+    }
+
+    if (this.leadSurrogate !== -1) {
+        // Incomplete surrogate pair - only lead surrogate found.
+        newBuf[j++] = this.defaultCharSingleByte;
+        this.leadSurrogate = -1;
+    }
+    
+    return newBuf.slice(0, j);
+}
+
+// Export for testing
+DBCSEncoder.prototype.findIdx = findIdx;
+
+
+// == Decoder ==================================================================
+
+function DBCSDecoder(options, codec) {
+    // Decoder state
+    this.nodeIdx = 0;
+    this.prevBuf = new Buffer(0);
+
+    // Static data
+    this.decodeTables = codec.decodeTables;
+    this.decodeTableSeq = codec.decodeTableSeq;
+    this.defaultCharUnicode = codec.defaultCharUnicode;
+    this.gb18030 = codec.gb18030;
+}
+
+DBCSDecoder.prototype.write = function(buf) {
+    var newBuf = new Buffer(buf.length*2),
+        nodeIdx = this.nodeIdx, 
+        prevBuf = this.prevBuf, prevBufOffset = this.prevBuf.length,
+        seqStart = -this.prevBuf.length, // idx of the start of current parsed sequence.
+        uCode;
+
+    if (prevBufOffset > 0) // Make prev buf overlap a little to make it easier to slice later.
+        prevBuf = Buffer.concat([prevBuf, buf.slice(0, 10)]);
+    
+    for (var i = 0, j = 0; i < buf.length; i++) {
+        var curByte = (i >= 0) ? buf[i] : prevBuf[i + prevBufOffset];
+
+        // Lookup in current trie node.
+        var uCode = this.decodeTables[nodeIdx][curByte];
+
+        if (uCode >= 0) { 
+            // Normal character, just use it.
+        }
+        else if (uCode === UNASSIGNED) { // Unknown char.
+            // TODO: Callback with seq.
+            //var curSeq = (seqStart >= 0) ? buf.slice(seqStart, i+1) : prevBuf.slice(seqStart + prevBufOffset, i+1 + prevBufOffset);
+            i = seqStart; // Try to parse again, after skipping first byte of the sequence ('i' will be incremented by 'for' cycle).
+            uCode = this.defaultCharUnicode.charCodeAt(0);
+        }
+        else if (uCode === GB18030_CODE) {
+            var curSeq = (seqStart >= 0) ? buf.slice(seqStart, i+1) : prevBuf.slice(seqStart + prevBufOffset, i+1 + prevBufOffset);
+            var ptr = (curSeq[0]-0x81)*12600 + (curSeq[1]-0x30)*1260 + (curSeq[2]-0x81)*10 + (curSeq[3]-0x30);
+            var idx = findIdx(this.gb18030.gbChars, ptr);
+            uCode = this.gb18030.uChars[idx] + ptr - this.gb18030.gbChars[idx];
+        }
+        else if (uCode <= NODE_START) { // Go to next trie node.
+            nodeIdx = NODE_START - uCode;
+            continue;
+        }
+        else if (uCode <= SEQ_START) { // Output a sequence of chars.
+            var seq = this.decodeTableSeq[SEQ_START - uCode];
+            for (var k = 0; k < seq.length - 1; k++) {
+                uCode = seq[k];
+                newBuf[j++] = uCode & 0xFF;
+                newBuf[j++] = uCode >> 8;
+            }
+            uCode = seq[seq.length-1];
+        }
+        else
+            throw new Error("iconv-lite internal error: invalid decoding table value " + uCode + " at " + nodeIdx + "/" + curByte);
+
+        // Write the character to buffer, handling higher planes using surrogate pair.
+        if (uCode > 0xFFFF) { 
+            uCode -= 0x10000;
+            var uCodeLead = 0xD800 + Math.floor(uCode / 0x400);
+            newBuf[j++] = uCodeLead & 0xFF;
+            newBuf[j++] = uCodeLead >> 8;
+
+            uCode = 0xDC00 + uCode % 0x400;
+        }
+        newBuf[j++] = uCode & 0xFF;
+        newBuf[j++] = uCode >> 8;
+
+        // Reset trie node.
+        nodeIdx = 0; seqStart = i+1;
+    }
+
+    this.nodeIdx = nodeIdx;
+    this.prevBuf = (seqStart >= 0) ? buf.slice(seqStart) : prevBuf.slice(seqStart + prevBufOffset);
+    return newBuf.slice(0, j).toString('ucs2');
+}
+
+DBCSDecoder.prototype.end = function() {
+    var ret = '';
+
+    // Try to parse all remaining chars.
+    while (this.prevBuf.length > 0) {
+        // Skip 1 character in the buffer.
+        ret += this.defaultCharUnicode;
+        var buf = this.prevBuf.slice(1);
+
+        // Parse remaining as usual.
+        this.prevBuf = new Buffer(0);
+        this.nodeIdx = 0;
+        if (buf.length > 0)
+            ret += this.write(buf);
+    }
+
+    this.nodeIdx = 0;
+    return ret;
+}
+
+// Binary search for GB18030. Returns largest i such that table[i] <= val.
+function findIdx(table, val) {
+    if (table[0] > val)
+        return -1;
+
+    var l = 0, r = table.length;
+    while (l < r-1) { // always table[l] <= val < table[r]
+        var mid = l + Math.floor((r-l+1)/2);
+        if (table[mid] <= val)
+            l = mid;
+        else
+            r = mid;
+    }
+    return l;
+}
+
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Description of supported double byte encodings and aliases.
+// Tables are not require()-d until they are needed to speed up library load.
+// require()-s are direct to support Browserify.
+
+module.exports = {
+    
+    // == Japanese/ShiftJIS ====================================================
+    // All japanese encodings are based on JIS X set of standards:
+    // JIS X 0201 - Single-byte encoding of ASCII + ¥ + Kana chars at 0xA1-0xDF.
+    // JIS X 0208 - Main set of 6879 characters, placed in 94x94 plane, to be encoded by 2 bytes. 
+    //              Has several variations in 1978, 1983, 1990 and 1997.
+    // JIS X 0212 - Supplementary plane of 6067 chars in 94x94 plane. 1990. Effectively dead.
+    // JIS X 0213 - Extension and modern replacement of 0208 and 0212. Total chars: 11233.
+    //              2 planes, first is superset of 0208, second - revised 0212.
+    //              Introduced in 2000, revised 2004. Some characters are in Unicode Plane 2 (0x2xxxx)
+
+    // Byte encodings are:
+    //  * Shift_JIS: Compatible with 0201, uses not defined chars in top half as lead bytes for double-byte
+    //               encoding of 0208. Lead byte ranges: 0x81-0x9F, 0xE0-0xEF; Trail byte ranges: 0x40-0x7E, 0x80-0x9E, 0x9F-0xFC.
+    //               Windows CP932 is a superset of Shift_JIS. Some companies added more chars, notably KDDI.
+    //  * EUC-JP:    Up to 3 bytes per character. Used mostly on *nixes.
+    //               0x00-0x7F       - lower part of 0201
+    //               0x8E, 0xA1-0xDF - upper part of 0201
+    //               (0xA1-0xFE)x2   - 0208 plane (94x94).
+    //               0x8F, (0xA1-0xFE)x2 - 0212 plane (94x94).
+    //  * JIS X 208: 7-bit, direct encoding of 0208. Byte ranges: 0x21-0x7E (94 values). Uncommon.
+    //               Used as-is in ISO2022 family.
+    //  * ISO2022-JP: Stateful encoding, with escape sequences to switch between ASCII, 
+    //                0201-1976 Roman, 0208-1978, 0208-1983.
+    //  * ISO2022-JP-1: Adds esc seq for 0212-1990.
+    //  * ISO2022-JP-2: Adds esc seq for GB2313-1980, KSX1001-1992, ISO8859-1, ISO8859-7.
+    //  * ISO2022-JP-3: Adds esc seq for 0201-1976 Kana set, 0213-2000 Planes 1, 2.
+    //  * ISO2022-JP-2004: Adds 0213-2004 Plane 1.
+    //
+    // After JIS X 0213 appeared, Shift_JIS-2004, EUC-JISX0213 and ISO2022-JP-2004 followed, with just changing the planes.
+    //
+    // Overall, it seems that it's a mess :( http://www8.plala.or.jp/tkubota1/unicode-symbols-map2.html
+
+    'shiftjis': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(164) },
+        encodeAdd: {'\u00a5': 0x5C, '\u203E': 0x7E},
+        encodeSkipVals: [{from: 0xED40, to: 0xF940}],
+    },
+    'csshiftjis': 'shiftjis',
+    'mskanji': 'shiftjis',
+    'sjis': 'shiftjis',
+    'windows31j': 'shiftjis',
+    'ms31j': 'shiftjis',
+    'xsjis': 'shiftjis',
+    'windows932': 'shiftjis',
+    'ms932': 'shiftjis',
+    '932': 'shiftjis',
+    'cp932': 'shiftjis',
+
+    'eucjp': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(162) },
+        encodeAdd: {'\u00a5': 0x5C, '\u203E': 0x7E},
+    },
+
+    // TODO: KDDI extension to Shift_JIS
+    // TODO: IBM CCSID 942 = CP932, but F0-F9 custom chars and other char changes.
+    // TODO: IBM CCSID 943 = Shift_JIS = CP932 with original Shift_JIS lower 128 chars.
+
+
+    // == Chinese/GBK ==========================================================
+    // http://en.wikipedia.org/wiki/GBK
+    // We mostly implement W3C recommendation: https://www.w3.org/TR/encoding/#gbk-encoder
+
+    // Oldest GB2312 (1981, ~7600 chars) is a subset of CP936
+    'gb2312': 'cp936',
+    'gb231280': 'cp936',
+    'gb23121980': 'cp936',
+    'csgb2312': 'cp936',
+    'csiso58gb231280': 'cp936',
+    'euccn': 'cp936',
+
+    // Microsoft's CP936 is a subset and approximation of GBK.
+    'windows936': 'cp936',
+    'ms936': 'cp936',
+    '936': 'cp936',
+    'cp936': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(43) },
+    },
+
+    // GBK (~22000 chars) is an extension of CP936 that added user-mapped chars and some other.
+    'gbk': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(43).concat(__webpack_require__(78)) },
+    },
+    'xgbk': 'gbk',
+    'isoir58': 'gbk',
+
+    // GB18030 is an algorithmic extension of GBK.
+    // Main source: https://www.w3.org/TR/encoding/#gbk-encoder
+    // http://icu-project.org/docs/papers/gb18030.html
+    // http://source.icu-project.org/repos/icu/data/trunk/charset/data/xml/gb-18030-2000.xml
+    // http://www.khngai.com/chinese/charmap/tblgbk.php?page=0
+    'gb18030': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(43).concat(__webpack_require__(78)) },
+        gb18030: function() { return __webpack_require__(163) },
+        encodeSkipVals: [0x80],
+        encodeAdd: {'€': 0xA2E3},
+    },
+
+    'chinese': 'gb18030',
+
+
+    // == Korean ===============================================================
+    // EUC-KR, KS_C_5601 and KS X 1001 are exactly the same.
+    'windows949': 'cp949',
+    'ms949': 'cp949',
+    '949': 'cp949',
+    'cp949': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(161) },
+    },
+
+    'cseuckr': 'cp949',
+    'csksc56011987': 'cp949',
+    'euckr': 'cp949',
+    'isoir149': 'cp949',
+    'korean': 'cp949',
+    'ksc56011987': 'cp949',
+    'ksc56011989': 'cp949',
+    'ksc5601': 'cp949',
+
+
+    // == Big5/Taiwan/Hong Kong ================================================
+    // There are lots of tables for Big5 and cp950. Please see the following links for history:
+    // http://moztw.org/docs/big5/  http://www.haible.de/bruno/charsets/conversion-tables/Big5.html
+    // Variations, in roughly number of defined chars:
+    //  * Windows CP 950: Microsoft variant of Big5. Canonical: http://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP950.TXT
+    //  * Windows CP 951: Microsoft variant of Big5-HKSCS-2001. Seems to be never public. http://me.abelcheung.org/articles/research/what-is-cp951/
+    //  * Big5-2003 (Taiwan standard) almost superset of cp950.
+    //  * Unicode-at-on (UAO) / Mozilla 1.8. Falling out of use on the Web. Not supported by other browsers.
+    //  * Big5-HKSCS (-2001, -2004, -2008). Hong Kong standard. 
+    //    many unicode code points moved from PUA to Supplementary plane (U+2XXXX) over the years.
+    //    Plus, it has 4 combining sequences.
+    //    Seems that Mozilla refused to support it for 10 yrs. https://bugzilla.mozilla.org/show_bug.cgi?id=162431 https://bugzilla.mozilla.org/show_bug.cgi?id=310299
+    //    because big5-hkscs is the only encoding to include astral characters in non-algorithmic way.
+    //    Implementations are not consistent within browsers; sometimes labeled as just big5.
+    //    MS Internet Explorer switches from big5 to big5-hkscs when a patch applied.
+    //    Great discussion & recap of what's going on https://bugzilla.mozilla.org/show_bug.cgi?id=912470#c31
+    //    In the encoder, it might make sense to support encoding old PUA mappings to Big5 bytes seq-s.
+    //    Official spec: http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/doc/2003cmp_2008.txt
+    //                   http://www.ogcio.gov.hk/tc/business/tech_promotion/ccli/terms/doc/hkscs-2008-big5-iso.txt
+    // 
+    // Current understanding of how to deal with Big5(-HKSCS) is in the Encoding Standard, http://encoding.spec.whatwg.org/#big5-encoder
+    // Unicode mapping (http://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/OTHER/BIG5.TXT) is said to be wrong.
+
+    'windows950': 'cp950',
+    'ms950': 'cp950',
+    '950': 'cp950',
+    'cp950': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(77) },
+    },
+
+    // Big5 has many variations and is an extension of cp950. We use Encoding Standard's as a consensus.
+    'big5': 'big5hkscs',
+    'big5hkscs': {
+        type: '_dbcs',
+        table: function() { return __webpack_require__(77).concat(__webpack_require__(160)) },
+        encodeSkipVals: [0xa2cc],
+    },
+
+    'cnbig5': 'big5hkscs',
+    'csbig5': 'big5hkscs',
+    'xxbig5': 'big5hkscs',
+};
+
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Update this array if you add/rename/remove files in this directory.
+// We support Browserify by skipping automatic module discovery and requiring modules directly.
+var modules = [
+    __webpack_require__(310),
+    __webpack_require__(314),
+    __webpack_require__(315),
+    __webpack_require__(311),
+    __webpack_require__(313),
+    __webpack_require__(312),
+    __webpack_require__(307),
+    __webpack_require__(308),
+];
+
+// Put all encoding/alias/codec definitions to single object and export it. 
+for (var i = 0; i < modules.length; i++) {
+    var module = modules[i];
+    for (var enc in module)
+        if (Object.prototype.hasOwnProperty.call(module, enc))
+            exports[enc] = module[enc];
+}
+
+
+/***/ }),
+/* 310 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+// Export Node.js internal encodings.
+
+module.exports = {
+    // Encodings
+    utf8:   { type: "_internal", bomAware: true},
+    cesu8:  { type: "_internal", bomAware: true},
+    unicode11utf8: "utf8",
+
+    ucs2:   { type: "_internal", bomAware: true},
+    utf16le: "ucs2",
+
+    binary: { type: "_internal" },
+    base64: { type: "_internal" },
+    hex:    { type: "_internal" },
+
+    // Codec.
+    _internal: InternalCodec,
+};
+
+//------------------------------------------------------------------------------
+
+function InternalCodec(codecOptions, iconv) {
+    this.enc = codecOptions.encodingName;
+    this.bomAware = codecOptions.bomAware;
+
+    if (this.enc === "base64")
+        this.encoder = InternalEncoderBase64;
+    else if (this.enc === "cesu8") {
+        this.enc = "utf8"; // Use utf8 for decoding.
+        this.encoder = InternalEncoderCesu8;
+
+        // Add decoder for versions of Node not supporting CESU-8
+        if (new Buffer("eda080", 'hex').toString().length == 3) {
+            this.decoder = InternalDecoderCesu8;
+            this.defaultCharUnicode = iconv.defaultCharUnicode;
+        }
+    }
+}
+
+InternalCodec.prototype.encoder = InternalEncoder;
+InternalCodec.prototype.decoder = InternalDecoder;
+
+//------------------------------------------------------------------------------
+
+// We use node.js internal decoder. Its signature is the same as ours.
+var StringDecoder = __webpack_require__(69).StringDecoder;
+
+if (!StringDecoder.prototype.end) // Node v0.8 doesn't have this method.
+    StringDecoder.prototype.end = function() {};
+
+
+function InternalDecoder(options, codec) {
+    StringDecoder.call(this, codec.enc);
+}
+
+InternalDecoder.prototype = StringDecoder.prototype;
+
+
+//------------------------------------------------------------------------------
+// Encoder is mostly trivial
+
+function InternalEncoder(options, codec) {
+    this.enc = codec.enc;
+}
+
+InternalEncoder.prototype.write = function(str) {
+    return new Buffer(str, this.enc);
+}
+
+InternalEncoder.prototype.end = function() {
+}
+
+
+//------------------------------------------------------------------------------
+// Except base64 encoder, which must keep its state.
+
+function InternalEncoderBase64(options, codec) {
+    this.prevStr = '';
+}
+
+InternalEncoderBase64.prototype.write = function(str) {
+    str = this.prevStr + str;
+    var completeQuads = str.length - (str.length % 4);
+    this.prevStr = str.slice(completeQuads);
+    str = str.slice(0, completeQuads);
+
+    return new Buffer(str, "base64");
+}
+
+InternalEncoderBase64.prototype.end = function() {
+    return new Buffer(this.prevStr, "base64");
+}
+
+
+//------------------------------------------------------------------------------
+// CESU-8 encoder is also special.
+
+function InternalEncoderCesu8(options, codec) {
+}
+
+InternalEncoderCesu8.prototype.write = function(str) {
+    var buf = new Buffer(str.length * 3), bufIdx = 0;
+    for (var i = 0; i < str.length; i++) {
+        var charCode = str.charCodeAt(i);
+        // Naive implementation, but it works because CESU-8 is especially easy
+        // to convert from UTF-16 (which all JS strings are encoded in).
+        if (charCode < 0x80)
+            buf[bufIdx++] = charCode;
+        else if (charCode < 0x800) {
+            buf[bufIdx++] = 0xC0 + (charCode >>> 6);
+            buf[bufIdx++] = 0x80 + (charCode & 0x3f);
+        }
+        else { // charCode will always be < 0x10000 in javascript.
+            buf[bufIdx++] = 0xE0 + (charCode >>> 12);
+            buf[bufIdx++] = 0x80 + ((charCode >>> 6) & 0x3f);
+            buf[bufIdx++] = 0x80 + (charCode & 0x3f);
+        }
+    }
+    return buf.slice(0, bufIdx);
+}
+
+InternalEncoderCesu8.prototype.end = function() {
+}
+
+//------------------------------------------------------------------------------
+// CESU-8 decoder is not implemented in Node v4.0+
+
+function InternalDecoderCesu8(options, codec) {
+    this.acc = 0;
+    this.contBytes = 0;
+    this.accBytes = 0;
+    this.defaultCharUnicode = codec.defaultCharUnicode;
+}
+
+InternalDecoderCesu8.prototype.write = function(buf) {
+    var acc = this.acc, contBytes = this.contBytes, accBytes = this.accBytes, 
+        res = '';
+    for (var i = 0; i < buf.length; i++) {
+        var curByte = buf[i];
+        if ((curByte & 0xC0) !== 0x80) { // Leading byte
+            if (contBytes > 0) { // Previous code is invalid
+                res += this.defaultCharUnicode;
+                contBytes = 0;
+            }
+
+            if (curByte < 0x80) { // Single-byte code
+                res += String.fromCharCode(curByte);
+            } else if (curByte < 0xE0) { // Two-byte code
+                acc = curByte & 0x1F;
+                contBytes = 1; accBytes = 1;
+            } else if (curByte < 0xF0) { // Three-byte code
+                acc = curByte & 0x0F;
+                contBytes = 2; accBytes = 1;
+            } else { // Four or more are not supported for CESU-8.
+                res += this.defaultCharUnicode;
+            }
+        } else { // Continuation byte
+            if (contBytes > 0) { // We're waiting for it.
+                acc = (acc << 6) | (curByte & 0x3f);
+                contBytes--; accBytes++;
+                if (contBytes === 0) {
+                    // Check for overlong encoding, but support Modified UTF-8 (encoding NULL as C0 80)
+                    if (accBytes === 2 && acc < 0x80 && acc > 0)
+                        res += this.defaultCharUnicode;
+                    else if (accBytes === 3 && acc < 0x800)
+                        res += this.defaultCharUnicode;
+                    else
+                        // Actually add character.
+                        res += String.fromCharCode(acc);
+                }
+            } else { // Unexpected continuation byte
+                res += this.defaultCharUnicode;
+            }
+        }
+    }
+    this.acc = acc; this.contBytes = contBytes; this.accBytes = accBytes;
+    return res;
+}
+
+InternalDecoderCesu8.prototype.end = function() {
+    var res = 0;
+    if (this.contBytes > 0)
+        res += this.defaultCharUnicode;
+    return res;
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 311 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+// Single-byte codec. Needs a 'chars' string parameter that contains 256 or 128 chars that
+// correspond to encoded bytes (if 128 - then lower half is ASCII). 
+
+exports._sbcs = SBCSCodec;
+function SBCSCodec(codecOptions, iconv) {
+    if (!codecOptions)
+        throw new Error("SBCS codec is called without the data.")
+    
+    // Prepare char buffer for decoding.
+    if (!codecOptions.chars || (codecOptions.chars.length !== 128 && codecOptions.chars.length !== 256))
+        throw new Error("Encoding '"+codecOptions.type+"' has incorrect 'chars' (must be of len 128 or 256)");
+    
+    if (codecOptions.chars.length === 128) {
+        var asciiString = "";
+        for (var i = 0; i < 128; i++)
+            asciiString += String.fromCharCode(i);
+        codecOptions.chars = asciiString + codecOptions.chars;
+    }
+
+    this.decodeBuf = new Buffer(codecOptions.chars, 'ucs2');
+    
+    // Encoding buffer.
+    var encodeBuf = new Buffer(65536);
+    encodeBuf.fill(iconv.defaultCharSingleByte.charCodeAt(0));
+
+    for (var i = 0; i < codecOptions.chars.length; i++)
+        encodeBuf[codecOptions.chars.charCodeAt(i)] = i;
+
+    this.encodeBuf = encodeBuf;
+}
+
+SBCSCodec.prototype.encoder = SBCSEncoder;
+SBCSCodec.prototype.decoder = SBCSDecoder;
+
+
+function SBCSEncoder(options, codec) {
+    this.encodeBuf = codec.encodeBuf;
+}
+
+SBCSEncoder.prototype.write = function(str) {
+    var buf = new Buffer(str.length);
+    for (var i = 0; i < str.length; i++)
+        buf[i] = this.encodeBuf[str.charCodeAt(i)];
+    
+    return buf;
+}
+
+SBCSEncoder.prototype.end = function() {
+}
+
+
+function SBCSDecoder(options, codec) {
+    this.decodeBuf = codec.decodeBuf;
+}
+
+SBCSDecoder.prototype.write = function(buf) {
+    // Strings are immutable in JS -> we use ucs2 buffer to speed up computations.
+    var decodeBuf = this.decodeBuf;
+    var newBuf = new Buffer(buf.length*2);
+    var idx1 = 0, idx2 = 0;
+    for (var i = 0; i < buf.length; i++) {
+        idx1 = buf[i]*2; idx2 = i*2;
+        newBuf[idx2] = decodeBuf[idx1];
+        newBuf[idx2+1] = decodeBuf[idx1+1];
+    }
+    return newBuf.toString('ucs2');
+}
+
+SBCSDecoder.prototype.end = function() {
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 312 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Generated data for sbcs codec. Don't edit manually. Regenerate using generation/gen-sbcs.js script.
+module.exports = {
+  "437": "cp437",
+  "737": "cp737",
+  "775": "cp775",
+  "850": "cp850",
+  "852": "cp852",
+  "855": "cp855",
+  "856": "cp856",
+  "857": "cp857",
+  "858": "cp858",
+  "860": "cp860",
+  "861": "cp861",
+  "862": "cp862",
+  "863": "cp863",
+  "864": "cp864",
+  "865": "cp865",
+  "866": "cp866",
+  "869": "cp869",
+  "874": "windows874",
+  "922": "cp922",
+  "1046": "cp1046",
+  "1124": "cp1124",
+  "1125": "cp1125",
+  "1129": "cp1129",
+  "1133": "cp1133",
+  "1161": "cp1161",
+  "1162": "cp1162",
+  "1163": "cp1163",
+  "1250": "windows1250",
+  "1251": "windows1251",
+  "1252": "windows1252",
+  "1253": "windows1253",
+  "1254": "windows1254",
+  "1255": "windows1255",
+  "1256": "windows1256",
+  "1257": "windows1257",
+  "1258": "windows1258",
+  "28591": "iso88591",
+  "28592": "iso88592",
+  "28593": "iso88593",
+  "28594": "iso88594",
+  "28595": "iso88595",
+  "28596": "iso88596",
+  "28597": "iso88597",
+  "28598": "iso88598",
+  "28599": "iso88599",
+  "28600": "iso885910",
+  "28601": "iso885911",
+  "28603": "iso885913",
+  "28604": "iso885914",
+  "28605": "iso885915",
+  "28606": "iso885916",
+  "windows874": {
+    "type": "_sbcs",
+    "chars": "€����…�����������‘’“”•–—�������� กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
+  },
+  "win874": "windows874",
+  "cp874": "windows874",
+  "windows1250": {
+    "type": "_sbcs",
+    "chars": "€�‚�„…†‡�‰Š‹ŚŤŽŹ�‘’“”•–—�™š›śťžź ˇ˘Ł¤Ą¦§¨©Ş«¬­®Ż°±˛ł´µ¶·¸ąş»Ľ˝ľżŔÁÂĂÄĹĆÇČÉĘËĚÍÎĎĐŃŇÓÔŐÖ×ŘŮÚŰÜÝŢßŕáâăäĺćçčéęëěíîďđńňóôőö÷řůúűüýţ˙"
+  },
+  "win1250": "windows1250",
+  "cp1250": "windows1250",
+  "windows1251": {
+    "type": "_sbcs",
+    "chars": "ЂЃ‚ѓ„…†‡€‰Љ‹ЊЌЋЏђ‘’“”•–—�™љ›њќћџ ЎўЈ¤Ґ¦§Ё©Є«¬­®Ї°±Ііґµ¶·ё№є»јЅѕїАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
+  },
+  "win1251": "windows1251",
+  "cp1251": "windows1251",
+  "windows1252": {
+    "type": "_sbcs",
+    "chars": "€�‚ƒ„…†‡ˆ‰Š‹Œ�Ž��‘’“”•–—˜™š›œ�žŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
+  },
+  "win1252": "windows1252",
+  "cp1252": "windows1252",
+  "windows1253": {
+    "type": "_sbcs",
+    "chars": "€�‚ƒ„…†‡�‰�‹�����‘’“”•–—�™�›���� ΅Ά£¤¥¦§¨©�«¬­®―°±²³΄µ¶·ΈΉΊ»Ό½ΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡ�ΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώ�"
+  },
+  "win1253": "windows1253",
+  "cp1253": "windows1253",
+  "windows1254": {
+    "type": "_sbcs",
+    "chars": "€�‚ƒ„…†‡ˆ‰Š‹Œ����‘’“”•–—˜™š›œ��Ÿ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ"
+  },
+  "win1254": "windows1254",
+  "cp1254": "windows1254",
+  "windows1255": {
+    "type": "_sbcs",
+    "chars": "€�‚ƒ„…†‡ˆ‰�‹�����‘’“”•–—˜™�›���� ¡¢£₪¥¦§¨©×«¬­®¯°±²³´µ¶·¸¹÷»¼½¾¿ְֱֲֳִֵֶַָֹ�ֻּֽ־ֿ׀ׁׂ׃װױײ׳״�������אבגדהוזחטיךכלםמןנסעףפץצקרשת��‎‏�"
+  },
+  "win1255": "windows1255",
+  "cp1255": "windows1255",
+  "windows1256": {
+    "type": "_sbcs",
+    "chars": "€پ‚ƒ„…†‡ˆ‰ٹ‹Œچژڈگ‘’“”•–—ک™ڑ›œ‌‍ں ،¢£¤¥¦§¨©ھ«¬­®¯°±²³´µ¶·¸¹؛»¼½¾؟ہءآأؤإئابةتثجحخدذرزسشصض×طظعغـفقكàلâمنهوçèéêëىيîïًٌٍَôُِ÷ّùْûü‎‏ے"
+  },
+  "win1256": "windows1256",
+  "cp1256": "windows1256",
+  "windows1257": {
+    "type": "_sbcs",
+    "chars": "€�‚�„…†‡�‰�‹�¨ˇ¸�‘’“”•–—�™�›�¯˛� �¢£¤�¦§Ø©Ŗ«¬­®Æ°±²³´µ¶·ø¹ŗ»¼½¾æĄĮĀĆÄÅĘĒČÉŹĖĢĶĪĻŠŃŅÓŌÕÖ×ŲŁŚŪÜŻŽßąįāćäåęēčéźėģķīļšńņóōõö÷ųłśūüżž˙"
+  },
+  "win1257": "windows1257",
+  "cp1257": "windows1257",
+  "windows1258": {
+    "type": "_sbcs",
+    "chars": "€�‚ƒ„…†‡ˆ‰�‹Œ����‘’“”•–—˜™�›œ��Ÿ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂĂÄÅÆÇÈÉÊË̀ÍÎÏĐÑ̉ÓÔƠÖ×ØÙÚÛÜỮßàáâăäåæçèéêë́íîïđṇ̃óôơö÷øùúûüư₫ÿ"
+  },
+  "win1258": "windows1258",
+  "cp1258": "windows1258",
+  "iso88591": {
+    "type": "_sbcs",
+    "chars": " ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
+  },
+  "cp28591": "iso88591",
+  "iso88592": {
+    "type": "_sbcs",
+    "chars": " Ą˘Ł¤ĽŚ§¨ŠŞŤŹ­ŽŻ°ą˛ł´ľśˇ¸šşťź˝žżŔÁÂĂÄĹĆÇČÉĘËĚÍÎĎĐŃŇÓÔŐÖ×ŘŮÚŰÜÝŢßŕáâăäĺćçčéęëěíîďđńňóôőö÷řůúűüýţ˙"
+  },
+  "cp28592": "iso88592",
+  "iso88593": {
+    "type": "_sbcs",
+    "chars": " Ħ˘£¤�Ĥ§¨İŞĞĴ­�Ż°ħ²³´µĥ·¸ışğĵ½�żÀÁÂ�ÄĊĈÇÈÉÊËÌÍÎÏ�ÑÒÓÔĠÖ×ĜÙÚÛÜŬŜßàáâ�äċĉçèéêëìíîï�ñòóôġö÷ĝùúûüŭŝ˙"
+  },
+  "cp28593": "iso88593",
+  "iso88594": {
+    "type": "_sbcs",
+    "chars": " ĄĸŖ¤ĨĻ§¨ŠĒĢŦ­Ž¯°ą˛ŗ´ĩļˇ¸šēģŧŊžŋĀÁÂÃÄÅÆĮČÉĘËĖÍÎĪĐŅŌĶÔÕÖ×ØŲÚÛÜŨŪßāáâãäåæįčéęëėíîīđņōķôõö÷øųúûüũū˙"
+  },
+  "cp28594": "iso88594",
+  "iso88595": {
+    "type": "_sbcs",
+    "chars": " ЁЂЃЄЅІЇЈЉЊЋЌ­ЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя№ёђѓєѕіїјљњћќ§ўџ"
+  },
+  "cp28595": "iso88595",
+  "iso88596": {
+    "type": "_sbcs",
+    "chars": " ���¤�������،­�������������؛���؟�ءآأؤإئابةتثجحخدذرزسشصضطظعغ�����ـفقكلمنهوىيًٌٍَُِّْ�������������"
+  },
+  "cp28596": "iso88596",
+  "iso88597": {
+    "type": "_sbcs",
+    "chars": " ‘’£€₯¦§¨©ͺ«¬­�―°±²³΄΅Ά·ΈΉΊ»Ό½ΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡ�ΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώ�"
+  },
+  "cp28597": "iso88597",
+  "iso88598": {
+    "type": "_sbcs",
+    "chars": " �¢£¤¥¦§¨©×«¬­®¯°±²³´µ¶·¸¹÷»¼½¾��������������������������������‗אבגדהוזחטיךכלםמןנסעףפץצקרשת��‎‏�"
+  },
+  "cp28598": "iso88598",
+  "iso88599": {
+    "type": "_sbcs",
+    "chars": " ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäåæçèéêëìíîïğñòóôõö÷øùúûüışÿ"
+  },
+  "cp28599": "iso88599",
+  "iso885910": {
+    "type": "_sbcs",
+    "chars": " ĄĒĢĪĨĶ§ĻĐŠŦŽ­ŪŊ°ąēģīĩķ·ļđšŧž―ūŋĀÁÂÃÄÅÆĮČÉĘËĖÍÎÏÐŅŌÓÔÕÖŨØŲÚÛÜÝÞßāáâãäåæįčéęëėíîïðņōóôõöũøųúûüýþĸ"
+  },
+  "cp28600": "iso885910",
+  "iso885911": {
+    "type": "_sbcs",
+    "chars": " กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
+  },
+  "cp28601": "iso885911",
+  "iso885913": {
+    "type": "_sbcs",
+    "chars": " ”¢£¤„¦§Ø©Ŗ«¬­®Æ°±²³“µ¶·ø¹ŗ»¼½¾æĄĮĀĆÄÅĘĒČÉŹĖĢĶĪĻŠŃŅÓŌÕÖ×ŲŁŚŪÜŻŽßąįāćäåęēčéźėģķīļšńņóōõö÷ųłśūüżž’"
+  },
+  "cp28603": "iso885913",
+  "iso885914": {
+    "type": "_sbcs",
+    "chars": " Ḃḃ£ĊċḊ§Ẁ©ẂḋỲ­®ŸḞḟĠġṀṁ¶ṖẁṗẃṠỳẄẅṡÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏŴÑÒÓÔÕÖṪØÙÚÛÜÝŶßàáâãäåæçèéêëìíîïŵñòóôõöṫøùúûüýŷÿ"
+  },
+  "cp28604": "iso885914",
+  "iso885915": {
+    "type": "_sbcs",
+    "chars": " ¡¢£€¥Š§š©ª«¬­®¯°±²³Žµ¶·ž¹º»ŒœŸ¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
+  },
+  "cp28605": "iso885915",
+  "iso885916": {
+    "type": "_sbcs",
+    "chars": " ĄąŁ€„Š§š©Ș«Ź­źŻ°±ČłŽ”¶·žčș»ŒœŸżÀÁÂĂÄĆÆÇÈÉÊËÌÍÎÏĐŃÒÓÔŐÖŚŰÙÚÛÜĘȚßàáâăäćæçèéêëìíîïđńòóôőöśűùúûüęțÿ"
+  },
+  "cp28606": "iso885916",
+  "cp437": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜ¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+  },
+  "ibm437": "cp437",
+  "csibm437": "cp437",
+  "cp737": {
+    "type": "_sbcs",
+    "chars": "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρσςτυφχψ░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀ωάέήϊίόύϋώΆΈΉΊΌΎΏ±≥≤ΪΫ÷≈°∙·√ⁿ²■ "
+  },
+  "ibm737": "cp737",
+  "csibm737": "cp737",
+  "cp775": {
+    "type": "_sbcs",
+    "chars": "ĆüéāäģåćłēŖŗīŹÄÅÉæÆōöĢ¢ŚśÖÜø£Ø×¤ĀĪóŻżź”¦©®¬½¼Ł«»░▒▓│┤ĄČĘĖ╣║╗╝ĮŠ┐└┴┬├─┼ŲŪ╚╔╩╦╠═╬Žąčęėįšųūž┘┌█▄▌▐▀ÓßŌŃõÕµńĶķĻļņĒŅ’­±“¾¶§÷„°∙·¹³²■ "
+  },
+  "ibm775": "cp775",
+  "csibm775": "cp775",
+  "cp850": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ðÐÊËÈıÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµþÞÚÛÙýÝ¯´­±‗¾¶§÷¸°¨·¹³²■ "
+  },
+  "ibm850": "cp850",
+  "csibm850": "cp850",
+  "cp852": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäůćçłëŐőîŹÄĆÉĹĺôöĽľŚśÖÜŤťŁ×čáíóúĄąŽžĘę¬źČş«»░▒▓│┤ÁÂĚŞ╣║╗╝Żż┐└┴┬├─┼Ăă╚╔╩╦╠═╬¤đĐĎËďŇÍÎě┘┌█▄ŢŮ▀ÓßÔŃńňŠšŔÚŕŰýÝţ´­˝˛ˇ˘§÷¸°¨˙űŘř■ "
+  },
+  "ibm852": "cp852",
+  "csibm852": "cp852",
+  "cp855": {
+    "type": "_sbcs",
+    "chars": "ђЂѓЃёЁєЄѕЅіІїЇјЈљЉњЊћЋќЌўЎџЏюЮъЪаАбБцЦдДеЕфФгГ«»░▒▓│┤хХиИ╣║╗╝йЙ┐└┴┬├─┼кК╚╔╩╦╠═╬¤лЛмМнНоОп┘┌█▄Пя▀ЯрРсСтТуУжЖвВьЬ№­ыЫзЗшШэЭщЩчЧ§■ "
+  },
+  "ibm855": "cp855",
+  "csibm855": "cp855",
+  "cp856": {
+    "type": "_sbcs",
+    "chars": "אבגדהוזחטיךכלםמןנסעףפץצקרשת�£�×����������®¬½¼�«»░▒▓│┤���©╣║╗╝¢¥┐└┴┬├─┼��╚╔╩╦╠═╬¤���������┘┌█▄¦�▀������µ�������¯´­±‗¾¶§÷¸°¨·¹³²■ "
+  },
+  "ibm856": "cp856",
+  "csibm856": "cp856",
+  "cp857": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäàåçêëèïîıÄÅÉæÆôöòûùİÖÜø£ØŞşáíóúñÑĞğ¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ºªÊËÈ�ÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµ�×ÚÛÙìÿ¯´­±�¾¶§÷¸°¨·¹³²■ "
+  },
+  "ibm857": "cp857",
+  "csibm857": "cp857",
+  "cp858": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø×ƒáíóúñÑªº¿®¬½¼¡«»░▒▓│┤ÁÂÀ©╣║╗╝¢¥┐└┴┬├─┼ãÃ╚╔╩╦╠═╬¤ðÐÊËÈ€ÍÎÏ┘┌█▄¦Ì▀ÓßÔÒõÕµþÞÚÛÙýÝ¯´­±‗¾¶§÷¸°¨·¹³²■ "
+  },
+  "ibm858": "cp858",
+  "csibm858": "cp858",
+  "cp860": {
+    "type": "_sbcs",
+    "chars": "ÇüéâãàÁçêÊèÍÔìÃÂÉÀÈôõòÚùÌÕÜ¢£Ù₧ÓáíóúñÑªº¿Ò¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+  },
+  "ibm860": "cp860",
+  "csibm860": "cp860",
+  "cp861": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäàåçêëèÐðÞÄÅÉæÆôöþûÝýÖÜø£Ø₧ƒáíóúÁÍÓÚ¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+  },
+  "ibm861": "cp861",
+  "csibm861": "cp861",
+  "cp862": {
+    "type": "_sbcs",
+    "chars": "אבגדהוזחטיךכלםמןנסעףפץצקרשת¢£¥₧ƒáíóúñÑªº¿⌐¬½¼¡«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+  },
+  "ibm862": "cp862",
+  "csibm862": "cp862",
+  "cp863": {
+    "type": "_sbcs",
+    "chars": "ÇüéâÂà¶çêëèïî‗À§ÉÈÊôËÏûù¤ÔÜ¢£ÙÛƒ¦´óú¨¸³¯Î⌐¬½¼¾«»░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+  },
+  "ibm863": "cp863",
+  "csibm863": "cp863",
+  "cp864": {
+    "type": "_sbcs",
+    "chars": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$٪&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~°·∙√▒─│┼┤┬├┴┐┌└┘β∞φ±½¼≈«»ﻷﻸ��ﻻﻼ� ­ﺂ£¤ﺄ��ﺎﺏﺕﺙ،ﺝﺡﺥ٠١٢٣٤٥٦٧٨٩ﻑ؛ﺱﺵﺹ؟¢ﺀﺁﺃﺅﻊﺋﺍﺑﺓﺗﺛﺟﺣﺧﺩﺫﺭﺯﺳﺷﺻﺿﻁﻅﻋﻏ¦¬÷×ﻉـﻓﻗﻛﻟﻣﻧﻫﻭﻯﻳﺽﻌﻎﻍﻡﹽّﻥﻩﻬﻰﻲﻐﻕﻵﻶﻝﻙﻱ■�"
+  },
+  "ibm864": "cp864",
+  "csibm864": "cp864",
+  "cp865": {
+    "type": "_sbcs",
+    "chars": "ÇüéâäàåçêëèïîìÄÅÉæÆôöòûùÿÖÜø£Ø₧ƒáíóúñÑªº¿⌐¬½¼¡«¤░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀αßΓπΣσµτΦΘΩδ∞φε∩≡±≥≤⌠⌡÷≈°∙·√ⁿ²■ "
+  },
+  "ibm865": "cp865",
+  "csibm865": "cp865",
+  "cp866": {
+    "type": "_sbcs",
+    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмноп░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀рстуфхцчшщъыьэюяЁёЄєЇїЎў°∙·√№¤■ "
+  },
+  "ibm866": "cp866",
+  "csibm866": "cp866",
+  "cp869": {
+    "type": "_sbcs",
+    "chars": "������Ά�·¬¦‘’Έ―ΉΊΪΌ��ΎΫ©Ώ²³ά£έήίϊΐόύΑΒΓΔΕΖΗ½ΘΙ«»░▒▓│┤ΚΛΜΝ╣║╗╝ΞΟ┐└┴┬├─┼ΠΡ╚╔╩╦╠═╬ΣΤΥΦΧΨΩαβγ┘┌█▄δε▀ζηθικλμνξοπρσςτ΄­±υφχ§ψ΅°¨ωϋΰώ■ "
+  },
+  "ibm869": "cp869",
+  "csibm869": "cp869",
+  "cp922": {
+    "type": "_sbcs",
+    "chars": " ¡¢£¤¥¦§¨©ª«¬­®‾°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏŠÑÒÓÔÕÖ×ØÙÚÛÜÝŽßàáâãäåæçèéêëìíîïšñòóôõö÷øùúûüýžÿ"
+  },
+  "ibm922": "cp922",
+  "csibm922": "cp922",
+  "cp1046": {
+    "type": "_sbcs",
+    "chars": "ﺈ×÷ﹱ■│─┐┌└┘ﹹﹻﹽﹿﹷﺊﻰﻳﻲﻎﻏﻐﻶﻸﻺﻼ ¤ﺋﺑﺗﺛﺟﺣ،­ﺧﺳ٠١٢٣٤٥٦٧٨٩ﺷ؛ﺻﺿﻊ؟ﻋءآأؤإئابةتثجحخدذرزسشصضطﻇعغﻌﺂﺄﺎﻓـفقكلمنهوىيًٌٍَُِّْﻗﻛﻟﻵﻷﻹﻻﻣﻧﻬﻩ�"
+  },
+  "ibm1046": "cp1046",
+  "csibm1046": "cp1046",
+  "cp1124": {
+    "type": "_sbcs",
+    "chars": " ЁЂҐЄЅІЇЈЉЊЋЌ­ЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя№ёђґєѕіїјљњћќ§ўџ"
+  },
+  "ibm1124": "cp1124",
+  "csibm1124": "cp1124",
+  "cp1125": {
+    "type": "_sbcs",
+    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмноп░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀рстуфхцчшщъыьэюяЁёҐґЄєІіЇї·√№¤■ "
+  },
+  "ibm1125": "cp1125",
+  "csibm1125": "cp1125",
+  "cp1129": {
+    "type": "_sbcs",
+    "chars": " ¡¢£¤¥¦§œ©ª«¬­®¯°±²³Ÿµ¶·Œ¹º»¼½¾¿ÀÁÂĂÄÅÆÇÈÉÊË̀ÍÎÏĐÑ̉ÓÔƠÖ×ØÙÚÛÜỮßàáâăäåæçèéêë́íîïđṇ̃óôơö÷øùúûüư₫ÿ"
+  },
+  "ibm1129": "cp1129",
+  "csibm1129": "cp1129",
+  "cp1133": {
+    "type": "_sbcs",
+    "chars": " ກຂຄງຈສຊຍດຕຖທນບປຜຝພຟມຢຣລວຫອຮ���ຯະາຳິີຶືຸູຼັົຽ���ເແໂໃໄ່້໊໋໌ໍໆ�ໜໝ₭����������������໐໑໒໓໔໕໖໗໘໙��¢¬¦�"
+  },
+  "ibm1133": "cp1133",
+  "csibm1133": "cp1133",
+  "cp1161": {
+    "type": "_sbcs",
+    "chars": "��������������������������������่กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู้๊๋€฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛¢¬¦ "
+  },
+  "ibm1161": "cp1161",
+  "csibm1161": "cp1161",
+  "cp1162": {
+    "type": "_sbcs",
+    "chars": "€…‘’“”•–— กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
+  },
+  "ibm1162": "cp1162",
+  "csibm1162": "cp1162",
+  "cp1163": {
+    "type": "_sbcs",
+    "chars": " ¡¢£€¥¦§œ©ª«¬­®¯°±²³Ÿµ¶·Œ¹º»¼½¾¿ÀÁÂĂÄÅÆÇÈÉÊË̀ÍÎÏĐÑ̉ÓÔƠÖ×ØÙÚÛÜỮßàáâăäåæçèéêë́íîïđṇ̃óôơö÷øùúûüư₫ÿ"
+  },
+  "ibm1163": "cp1163",
+  "csibm1163": "cp1163",
+  "maccroatian": {
+    "type": "_sbcs",
+    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®Š™´¨≠ŽØ∞±≤≥∆µ∂∑∏š∫ªºΩžø¿¡¬√ƒ≈Ć«Č… ÀÃÕŒœĐ—“”‘’÷◊�©⁄¤‹›Æ»–·‚„‰ÂćÁčÈÍÎÏÌÓÔđÒÚÛÙıˆ˜¯πË˚¸Êæˇ"
+  },
+  "maccyrillic": {
+    "type": "_sbcs",
+    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ†°¢£§•¶І®©™Ђђ≠Ѓѓ∞±≤≥іµ∂ЈЄєЇїЉљЊњјЅ¬√ƒ≈∆«»… ЋћЌќѕ–—“”‘’÷„ЎўЏџ№Ёёяабвгдежзийклмнопрстуфхцчшщъыьэю¤"
+  },
+  "macgreek": {
+    "type": "_sbcs",
+    "chars": "Ä¹²É³ÖÜ΅àâä΄¨çéèêë£™îï•½‰ôö¦­ùûü†ΓΔΘΛΞΠß®©ΣΪ§≠°·Α±≤≥¥ΒΕΖΗΙΚΜΦΫΨΩάΝ¬ΟΡ≈Τ«»… ΥΧΆΈœ–―“”‘’÷ΉΊΌΎέήίόΏύαβψδεφγηιξκλμνοπώρστθωςχυζϊϋΐΰ�"
+  },
+  "maciceland": {
+    "type": "_sbcs",
+    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûüÝ°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤ÐðÞþý·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
+  },
+  "macroman": {
+    "type": "_sbcs",
+    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
+  },
+  "macromania": {
+    "type": "_sbcs",
+    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ĂŞ∞±≤≥¥µ∂∑∏π∫ªºΩăş¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤‹›Ţţ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
+  },
+  "macthai": {
+    "type": "_sbcs",
+    "chars": "«»…“”�•‘’� กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู﻿​–—฿เแโใไๅๆ็่้๊๋์ํ™๏๐๑๒๓๔๕๖๗๘๙®©����"
+  },
+  "macturkish": {
+    "type": "_sbcs",
+    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸĞğİıŞş‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙ�ˆ˜¯˘˙˚¸˝˛ˇ"
+  },
+  "macukraine": {
+    "type": "_sbcs",
+    "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ†°Ґ£§•¶І®©™Ђђ≠Ѓѓ∞±≤≥іµґЈЄєЇїЉљЊњјЅ¬√ƒ≈∆«»… ЋћЌќѕ–—“”‘’÷„ЎўЏџ№Ёёяабвгдежзийклмнопрстуфхцчшщъыьэю¤"
+  },
+  "koi8r": {
+    "type": "_sbcs",
+    "chars": "─│┌┐└┘├┤┬┴┼▀▄█▌▐░▒▓⌠■∙√≈≤≥ ⌡°²·÷═║╒ё╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡Ё╢╣╤╥╦╧╨╩╪╫╬©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
+  },
+  "koi8u": {
+    "type": "_sbcs",
+    "chars": "─│┌┐└┘├┤┬┴┼▀▄█▌▐░▒▓⌠■∙√≈≤≥ ⌡°²·÷═║╒ёє╔ії╗╘╙╚╛ґ╝╞╟╠╡ЁЄ╣ІЇ╦╧╨╩╪Ґ╬©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
+  },
+  "koi8ru": {
+    "type": "_sbcs",
+    "chars": "─│┌┐└┘├┤┬┴┼▀▄█▌▐░▒▓⌠■∙√≈≤≥ ⌡°²·÷═║╒ёє╔ії╗╘╙╚╛ґў╞╟╠╡ЁЄ╣ІЇ╦╧╨╩╪ҐЎ©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
+  },
+  "koi8t": {
+    "type": "_sbcs",
+    "chars": "қғ‚Ғ„…†‡�‰ҳ‹ҲҷҶ�Қ‘’“”•–—�™�›�����ӯӮё¤ӣ¦§���«¬­®�°±²Ё�Ӣ¶·�№�»���©юабцдефгхийклмнопярстужвьызшэщчъЮАБЦДЕФГХИЙКЛМНОПЯРСТУЖВЬЫЗШЭЩЧЪ"
+  },
+  "armscii8": {
+    "type": "_sbcs",
+    "chars": " �և։)(»«—.՝,-֊…՜՛՞ԱաԲբԳգԴդԵեԶզԷէԸըԹթԺժԻիԼլԽխԾծԿկՀհՁձՂղՃճՄմՅյՆնՇշՈոՉչՊպՋջՌռՍսՎվՏտՐրՑցՒւՓփՔքՕօՖֆ՚�"
+  },
+  "rk1048": {
+    "type": "_sbcs",
+    "chars": "ЂЃ‚ѓ„…†‡€‰Љ‹ЊҚҺЏђ‘’“”•–—�™љ›њқһџ ҰұӘ¤Ө¦§Ё©Ғ«¬­®Ү°±Ііөµ¶·ё№ғ»әҢңүАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
+  },
+  "tcvn": {
+    "type": "_sbcs",
+    "chars": "\u0000ÚỤ\u0003ỪỬỮ\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010ỨỰỲỶỸÝỴ\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÀẢÃÁẠẶẬÈẺẼÉẸỆÌỈĨÍỊÒỎÕÓỌỘỜỞỠỚỢÙỦŨ ĂÂÊÔƠƯĐăâêôơưđẶ̀̀̉̃́àảãáạẲằẳẵắẴẮẦẨẪẤỀặầẩẫấậèỂẻẽéẹềểễếệìỉỄẾỒĩíịòỔỏõóọồổỗốộờởỡớợùỖủũúụừửữứựỳỷỹýỵỐ"
+  },
+  "georgianacademy": {
+    "type": "_sbcs",
+    "chars": "‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿აბგდევზთიკლმნოპჟრსტუფქღყშჩცძწჭხჯჰჱჲჳჴჵჶçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
+  },
+  "georgianps": {
+    "type": "_sbcs",
+    "chars": "‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿აბგდევზჱთიკლმნჲოპჟრსტჳუფქღყშჩცძწჭხჴჯჰჵæçèéêëìíîïðñòóôõö÷øùúûüýþÿ"
+  },
+  "pt154": {
+    "type": "_sbcs",
+    "chars": "ҖҒӮғ„…ҶҮҲүҠӢҢҚҺҸҗ‘’“”•–—ҳҷҡӣңқһҹ ЎўЈӨҘҰ§Ё©Ә«¬ӯ®Ҝ°ұІіҙө¶·ё№ә»јҪҫҝАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюя"
+  },
+  "viscii": {
+    "type": "_sbcs",
+    "chars": "\u0000\u0001Ẳ\u0003\u0004ẴẪ\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013Ỷ\u0015\u0016\u0017\u0018Ỹ\u001a\u001b\u001c\u001dỴ\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~ẠẮẰẶẤẦẨẬẼẸẾỀỂỄỆỐỒỔỖỘỢỚỜỞỊỎỌỈỦŨỤỲÕắằặấầẩậẽẹếềểễệốồổỗỠƠộờởịỰỨỪỬơớƯÀÁÂÃẢĂẳẵÈÉÊẺÌÍĨỳĐứÒÓÔạỷừửÙÚỹỵÝỡưàáâãảăữẫèéêẻìíĩỉđựòóôõỏọụùúũủýợỮ"
+  },
+  "iso646cn": {
+    "type": "_sbcs",
+    "chars": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#¥%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}‾��������������������������������������������������������������������������������������������������������������������������������"
+  },
+  "iso646jp": {
+    "type": "_sbcs",
+    "chars": "\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[¥]^_`abcdefghijklmnopqrstuvwxyz{|}‾��������������������������������������������������������������������������������������������������������������������������������"
+  },
+  "hproman8": {
+    "type": "_sbcs",
+    "chars": " ÀÂÈÊËÎÏ´ˋˆ¨˜ÙÛ₤¯Ýý°ÇçÑñ¡¿¤£¥§ƒ¢âêôûáéóúàèòùäëöüÅîØÆåíøæÄìÖÜÉïßÔÁÃãÐðÍÌÓÒÕõŠšÚŸÿÞþ·µ¶¾—¼½ªº«■»±�"
+  },
+  "macintosh": {
+    "type": "_sbcs",
+    "chars": "ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄¤‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔ�ÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ"
+  },
+  "ascii": {
+    "type": "_sbcs",
+    "chars": "��������������������������������������������������������������������������������������������������������������������������������"
+  },
+  "tis620": {
+    "type": "_sbcs",
+    "chars": "���������������������������������กขฃคฅฆงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรฤลฦวศษสหฬอฮฯะัาำิีึืฺุู����฿เแโใไๅๆ็่้๊๋์ํ๎๏๐๑๒๓๔๕๖๗๘๙๚๛����"
+  }
+}
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+// Manually added data to be used by sbcs codec in addition to generated one.
+
+module.exports = {
+    // Not supported by iconv, not sure why.
+    "10029": "maccenteuro",
+    "maccenteuro": {
+        "type": "_sbcs",
+        "chars": "ÄĀāÉĄÖÜáąČäčĆćéŹźĎíďĒēĖóėôöõúĚěü†°Ę£§•¶ß®©™ę¨≠ģĮįĪ≤≥īĶ∂∑łĻļĽľĹĺŅņŃ¬√ńŇ∆«»… ňŐÕőŌ–—“”‘’÷◊ōŔŕŘ‹›řŖŗŠ‚„šŚśÁŤťÍŽžŪÓÔūŮÚůŰűŲųÝýķŻŁżĢˇ"
+    },
+
+    "808": "cp808",
+    "ibm808": "cp808",
+    "cp808": {
+        "type": "_sbcs",
+        "chars": "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмноп░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀рстуфхцчшщъыьэюяЁёЄєЇїЎў°∙·√№€■ "
+    },
+
+    // Aliases of generated encodings.
+    "ascii8bit": "ascii",
+    "usascii": "ascii",
+    "ansix34": "ascii",
+    "ansix341968": "ascii",
+    "ansix341986": "ascii",
+    "csascii": "ascii",
+    "cp367": "ascii",
+    "ibm367": "ascii",
+    "isoir6": "ascii",
+    "iso646us": "ascii",
+    "iso646irv": "ascii",
+    "us": "ascii",
+
+    "latin1": "iso88591",
+    "latin2": "iso88592",
+    "latin3": "iso88593",
+    "latin4": "iso88594",
+    "latin5": "iso88599",
+    "latin6": "iso885910",
+    "latin7": "iso885913",
+    "latin8": "iso885914",
+    "latin9": "iso885915",
+    "latin10": "iso885916",
+
+    "csisolatin1": "iso88591",
+    "csisolatin2": "iso88592",
+    "csisolatin3": "iso88593",
+    "csisolatin4": "iso88594",
+    "csisolatincyrillic": "iso88595",
+    "csisolatinarabic": "iso88596",
+    "csisolatingreek" : "iso88597",
+    "csisolatinhebrew": "iso88598",
+    "csisolatin5": "iso88599",
+    "csisolatin6": "iso885910",
+
+    "l1": "iso88591",
+    "l2": "iso88592",
+    "l3": "iso88593",
+    "l4": "iso88594",
+    "l5": "iso88599",
+    "l6": "iso885910",
+    "l7": "iso885913",
+    "l8": "iso885914",
+    "l9": "iso885915",
+    "l10": "iso885916",
+
+    "isoir14": "iso646jp",
+    "isoir57": "iso646cn",
+    "isoir100": "iso88591",
+    "isoir101": "iso88592",
+    "isoir109": "iso88593",
+    "isoir110": "iso88594",
+    "isoir144": "iso88595",
+    "isoir127": "iso88596",
+    "isoir126": "iso88597",
+    "isoir138": "iso88598",
+    "isoir148": "iso88599",
+    "isoir157": "iso885910",
+    "isoir166": "tis620",
+    "isoir179": "iso885913",
+    "isoir199": "iso885914",
+    "isoir203": "iso885915",
+    "isoir226": "iso885916",
+
+    "cp819": "iso88591",
+    "ibm819": "iso88591",
+
+    "cyrillic": "iso88595",
+
+    "arabic": "iso88596",
+    "arabic8": "iso88596",
+    "ecma114": "iso88596",
+    "asmo708": "iso88596",
+
+    "greek" : "iso88597",
+    "greek8" : "iso88597",
+    "ecma118" : "iso88597",
+    "elot928" : "iso88597",
+
+    "hebrew": "iso88598",
+    "hebrew8": "iso88598",
+
+    "turkish": "iso88599",
+    "turkish8": "iso88599",
+
+    "thai": "iso885911",
+    "thai8": "iso885911",
+
+    "celtic": "iso885914",
+    "celtic8": "iso885914",
+    "isoceltic": "iso885914",
+
+    "tis6200": "tis620",
+    "tis62025291": "tis620",
+    "tis62025330": "tis620",
+
+    "10000": "macroman",
+    "10006": "macgreek",
+    "10007": "maccyrillic",
+    "10079": "maciceland",
+    "10081": "macturkish",
+
+    "cspc8codepage437": "cp437",
+    "cspc775baltic": "cp775",
+    "cspc850multilingual": "cp850",
+    "cspcp852": "cp852",
+    "cspc862latinhebrew": "cp862",
+    "cpgr": "cp869",
+
+    "msee": "cp1250",
+    "mscyrl": "cp1251",
+    "msansi": "cp1252",
+    "msgreek": "cp1253",
+    "msturk": "cp1254",
+    "mshebr": "cp1255",
+    "msarab": "cp1256",
+    "winbaltrim": "cp1257",
+
+    "cp20866": "koi8r",
+    "20866": "koi8r",
+    "ibm878": "koi8r",
+    "cskoi8r": "koi8r",
+
+    "cp21866": "koi8u",
+    "21866": "koi8u",
+    "ibm1168": "koi8u",
+
+    "strk10482002": "rk1048",
+
+    "tcvn5712": "tcvn",
+    "tcvn57121": "tcvn",
+
+    "gb198880": "iso646cn",
+    "cn": "iso646cn",
+
+    "csiso14jisc6220ro": "iso646jp",
+    "jisc62201969ro": "iso646jp",
+    "jp": "iso646jp",
+
+    "cshproman8": "hproman8",
+    "r8": "hproman8",
+    "roman8": "hproman8",
+    "xroman8": "hproman8",
+    "ibm1051": "hproman8",
+
+    "mac": "macintosh",
+    "csmacintosh": "macintosh",
+};
+
+
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+// Note: UTF16-LE (or UCS2) codec is Node.js native. See encodings/internal.js
+
+// == UTF16-BE codec. ==========================================================
+
+exports.utf16be = Utf16BECodec;
+function Utf16BECodec() {
+}
+
+Utf16BECodec.prototype.encoder = Utf16BEEncoder;
+Utf16BECodec.prototype.decoder = Utf16BEDecoder;
+Utf16BECodec.prototype.bomAware = true;
+
+
+// -- Encoding
+
+function Utf16BEEncoder() {
+}
+
+Utf16BEEncoder.prototype.write = function(str) {
+    var buf = new Buffer(str, 'ucs2');
+    for (var i = 0; i < buf.length; i += 2) {
+        var tmp = buf[i]; buf[i] = buf[i+1]; buf[i+1] = tmp;
+    }
+    return buf;
+}
+
+Utf16BEEncoder.prototype.end = function() {
+}
+
+
+// -- Decoding
+
+function Utf16BEDecoder() {
+    this.overflowByte = -1;
+}
+
+Utf16BEDecoder.prototype.write = function(buf) {
+    if (buf.length == 0)
+        return '';
+
+    var buf2 = new Buffer(buf.length + 1),
+        i = 0, j = 0;
+
+    if (this.overflowByte !== -1) {
+        buf2[0] = buf[0];
+        buf2[1] = this.overflowByte;
+        i = 1; j = 2;
+    }
+
+    for (; i < buf.length-1; i += 2, j+= 2) {
+        buf2[j] = buf[i+1];
+        buf2[j+1] = buf[i];
+    }
+
+    this.overflowByte = (i == buf.length-1) ? buf[buf.length-1] : -1;
+
+    return buf2.slice(0, j).toString('ucs2');
+}
+
+Utf16BEDecoder.prototype.end = function() {
+}
+
+
+// == UTF-16 codec =============================================================
+// Decoder chooses automatically from UTF-16LE and UTF-16BE using BOM and space-based heuristic.
+// Defaults to UTF-16LE, as it's prevalent and default in Node.
+// http://en.wikipedia.org/wiki/UTF-16 and http://encoding.spec.whatwg.org/#utf-16le
+// Decoder default can be changed: iconv.decode(buf, 'utf16', {defaultEncoding: 'utf-16be'});
+
+// Encoder uses UTF-16LE and prepends BOM (which can be overridden with addBOM: false).
+
+exports.utf16 = Utf16Codec;
+function Utf16Codec(codecOptions, iconv) {
+    this.iconv = iconv;
+}
+
+Utf16Codec.prototype.encoder = Utf16Encoder;
+Utf16Codec.prototype.decoder = Utf16Decoder;
+
+
+// -- Encoding (pass-through)
+
+function Utf16Encoder(options, codec) {
+    options = options || {};
+    if (options.addBOM === undefined)
+        options.addBOM = true;
+    this.encoder = codec.iconv.getEncoder('utf-16le', options);
+}
+
+Utf16Encoder.prototype.write = function(str) {
+    return this.encoder.write(str);
+}
+
+Utf16Encoder.prototype.end = function() {
+    return this.encoder.end();
+}
+
+
+// -- Decoding
+
+function Utf16Decoder(options, codec) {
+    this.decoder = null;
+    this.initialBytes = [];
+    this.initialBytesLen = 0;
+
+    this.options = options || {};
+    this.iconv = codec.iconv;
+}
+
+Utf16Decoder.prototype.write = function(buf) {
+    if (!this.decoder) {
+        // Codec is not chosen yet. Accumulate initial bytes.
+        this.initialBytes.push(buf);
+        this.initialBytesLen += buf.length;
+        
+        if (this.initialBytesLen < 16) // We need more bytes to use space heuristic (see below)
+            return '';
+
+        // We have enough bytes -> detect endianness.
+        var buf = Buffer.concat(this.initialBytes),
+            encoding = detectEncoding(buf, this.options.defaultEncoding);
+        this.decoder = this.iconv.getDecoder(encoding, this.options);
+        this.initialBytes.length = this.initialBytesLen = 0;
+    }
+
+    return this.decoder.write(buf);
+}
+
+Utf16Decoder.prototype.end = function() {
+    if (!this.decoder) {
+        var buf = Buffer.concat(this.initialBytes),
+            encoding = detectEncoding(buf, this.options.defaultEncoding);
+        this.decoder = this.iconv.getDecoder(encoding, this.options);
+
+        var res = this.decoder.write(buf),
+            trail = this.decoder.end();
+
+        return trail ? (res + trail) : res;
+    }
+    return this.decoder.end();
+}
+
+function detectEncoding(buf, defaultEncoding) {
+    var enc = defaultEncoding || 'utf-16le';
+
+    if (buf.length >= 2) {
+        // Check BOM.
+        if (buf[0] == 0xFE && buf[1] == 0xFF) // UTF-16BE BOM
+            enc = 'utf-16be';
+        else if (buf[0] == 0xFF && buf[1] == 0xFE) // UTF-16LE BOM
+            enc = 'utf-16le';
+        else {
+            // No BOM found. Try to deduce encoding from initial content.
+            // Most of the time, the content has ASCII chars (U+00**), but the opposite (U+**00) is uncommon.
+            // So, we count ASCII as if it was LE or BE, and decide from that.
+            var asciiCharsLE = 0, asciiCharsBE = 0, // Counts of chars in both positions
+                _len = Math.min(buf.length - (buf.length % 2), 64); // Len is always even.
+
+            for (var i = 0; i < _len; i += 2) {
+                if (buf[i] === 0 && buf[i+1] !== 0) asciiCharsBE++;
+                if (buf[i] !== 0 && buf[i+1] === 0) asciiCharsLE++;
+            }
+
+            if (asciiCharsBE > asciiCharsLE)
+                enc = 'utf-16be';
+            else if (asciiCharsBE < asciiCharsLE)
+                enc = 'utf-16le';
+        }
+    }
+
+    return enc;
+}
+
+
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+// UTF-7 codec, according to https://tools.ietf.org/html/rfc2152
+// See also below a UTF-7-IMAP codec, according to http://tools.ietf.org/html/rfc3501#section-5.1.3
+
+exports.utf7 = Utf7Codec;
+exports.unicode11utf7 = 'utf7'; // Alias UNICODE-1-1-UTF-7
+function Utf7Codec(codecOptions, iconv) {
+    this.iconv = iconv;
+};
+
+Utf7Codec.prototype.encoder = Utf7Encoder;
+Utf7Codec.prototype.decoder = Utf7Decoder;
+Utf7Codec.prototype.bomAware = true;
+
+
+// -- Encoding
+
+var nonDirectChars = /[^A-Za-z0-9'\(\),-\.\/:\? \n\r\t]+/g;
+
+function Utf7Encoder(options, codec) {
+    this.iconv = codec.iconv;
+}
+
+Utf7Encoder.prototype.write = function(str) {
+    // Naive implementation.
+    // Non-direct chars are encoded as "+<base64>-"; single "+" char is encoded as "+-".
+    return new Buffer(str.replace(nonDirectChars, function(chunk) {
+        return "+" + (chunk === '+' ? '' : 
+            this.iconv.encode(chunk, 'utf16-be').toString('base64').replace(/=+$/, '')) 
+            + "-";
+    }.bind(this)));
+}
+
+Utf7Encoder.prototype.end = function() {
+}
+
+
+// -- Decoding
+
+function Utf7Decoder(options, codec) {
+    this.iconv = codec.iconv;
+    this.inBase64 = false;
+    this.base64Accum = '';
+}
+
+var base64Regex = /[A-Za-z0-9\/+]/;
+var base64Chars = [];
+for (var i = 0; i < 256; i++)
+    base64Chars[i] = base64Regex.test(String.fromCharCode(i));
+
+var plusChar = '+'.charCodeAt(0), 
+    minusChar = '-'.charCodeAt(0),
+    andChar = '&'.charCodeAt(0);
+
+Utf7Decoder.prototype.write = function(buf) {
+    var res = "", lastI = 0,
+        inBase64 = this.inBase64,
+        base64Accum = this.base64Accum;
+
+    // The decoder is more involved as we must handle chunks in stream.
+
+    for (var i = 0; i < buf.length; i++) {
+        if (!inBase64) { // We're in direct mode.
+            // Write direct chars until '+'
+            if (buf[i] == plusChar) {
+                res += this.iconv.decode(buf.slice(lastI, i), "ascii"); // Write direct chars.
+                lastI = i+1;
+                inBase64 = true;
+            }
+        } else { // We decode base64.
+            if (!base64Chars[buf[i]]) { // Base64 ended.
+                if (i == lastI && buf[i] == minusChar) {// "+-" -> "+"
+                    res += "+";
+                } else {
+                    var b64str = base64Accum + buf.slice(lastI, i).toString();
+                    res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
+                }
+
+                if (buf[i] != minusChar) // Minus is absorbed after base64.
+                    i--;
+
+                lastI = i+1;
+                inBase64 = false;
+                base64Accum = '';
+            }
+        }
+    }
+
+    if (!inBase64) {
+        res += this.iconv.decode(buf.slice(lastI), "ascii"); // Write direct chars.
+    } else {
+        var b64str = base64Accum + buf.slice(lastI).toString();
+
+        var canBeDecoded = b64str.length - (b64str.length % 8); // Minimal chunk: 2 quads -> 2x3 bytes -> 3 chars.
+        base64Accum = b64str.slice(canBeDecoded); // The rest will be decoded in future.
+        b64str = b64str.slice(0, canBeDecoded);
+
+        res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
+    }
+
+    this.inBase64 = inBase64;
+    this.base64Accum = base64Accum;
+
+    return res;
+}
+
+Utf7Decoder.prototype.end = function() {
+    var res = "";
+    if (this.inBase64 && this.base64Accum.length > 0)
+        res = this.iconv.decode(new Buffer(this.base64Accum, 'base64'), "utf16-be");
+
+    this.inBase64 = false;
+    this.base64Accum = '';
+    return res;
+}
+
+
+// UTF-7-IMAP codec.
+// RFC3501 Sec. 5.1.3 Modified UTF-7 (http://tools.ietf.org/html/rfc3501#section-5.1.3)
+// Differences:
+//  * Base64 part is started by "&" instead of "+"
+//  * Direct characters are 0x20-0x7E, except "&" (0x26)
+//  * In Base64, "," is used instead of "/"
+//  * Base64 must not be used to represent direct characters.
+//  * No implicit shift back from Base64 (should always end with '-')
+//  * String must end in non-shifted position.
+//  * "-&" while in base64 is not allowed.
+
+
+exports.utf7imap = Utf7IMAPCodec;
+function Utf7IMAPCodec(codecOptions, iconv) {
+    this.iconv = iconv;
+};
+
+Utf7IMAPCodec.prototype.encoder = Utf7IMAPEncoder;
+Utf7IMAPCodec.prototype.decoder = Utf7IMAPDecoder;
+Utf7IMAPCodec.prototype.bomAware = true;
+
+
+// -- Encoding
+
+function Utf7IMAPEncoder(options, codec) {
+    this.iconv = codec.iconv;
+    this.inBase64 = false;
+    this.base64Accum = new Buffer(6);
+    this.base64AccumIdx = 0;
+}
+
+Utf7IMAPEncoder.prototype.write = function(str) {
+    var inBase64 = this.inBase64,
+        base64Accum = this.base64Accum,
+        base64AccumIdx = this.base64AccumIdx,
+        buf = new Buffer(str.length*5 + 10), bufIdx = 0;
+
+    for (var i = 0; i < str.length; i++) {
+        var uChar = str.charCodeAt(i);
+        if (0x20 <= uChar && uChar <= 0x7E) { // Direct character or '&'.
+            if (inBase64) {
+                if (base64AccumIdx > 0) {
+                    bufIdx += buf.write(base64Accum.slice(0, base64AccumIdx).toString('base64').replace(/\//g, ',').replace(/=+$/, ''), bufIdx);
+                    base64AccumIdx = 0;
+                }
+
+                buf[bufIdx++] = minusChar; // Write '-', then go to direct mode.
+                inBase64 = false;
+            }
+
+            if (!inBase64) {
+                buf[bufIdx++] = uChar; // Write direct character
+
+                if (uChar === andChar)  // Ampersand -> '&-'
+                    buf[bufIdx++] = minusChar;
+            }
+
+        } else { // Non-direct character
+            if (!inBase64) {
+                buf[bufIdx++] = andChar; // Write '&', then go to base64 mode.
+                inBase64 = true;
+            }
+            if (inBase64) {
+                base64Accum[base64AccumIdx++] = uChar >> 8;
+                base64Accum[base64AccumIdx++] = uChar & 0xFF;
+
+                if (base64AccumIdx == base64Accum.length) {
+                    bufIdx += buf.write(base64Accum.toString('base64').replace(/\//g, ','), bufIdx);
+                    base64AccumIdx = 0;
+                }
+            }
+        }
+    }
+
+    this.inBase64 = inBase64;
+    this.base64AccumIdx = base64AccumIdx;
+
+    return buf.slice(0, bufIdx);
+}
+
+Utf7IMAPEncoder.prototype.end = function() {
+    var buf = new Buffer(10), bufIdx = 0;
+    if (this.inBase64) {
+        if (this.base64AccumIdx > 0) {
+            bufIdx += buf.write(this.base64Accum.slice(0, this.base64AccumIdx).toString('base64').replace(/\//g, ',').replace(/=+$/, ''), bufIdx);
+            this.base64AccumIdx = 0;
+        }
+
+        buf[bufIdx++] = minusChar; // Write '-', then go to direct mode.
+        this.inBase64 = false;
+    }
+
+    return buf.slice(0, bufIdx);
+}
+
+
+// -- Decoding
+
+function Utf7IMAPDecoder(options, codec) {
+    this.iconv = codec.iconv;
+    this.inBase64 = false;
+    this.base64Accum = '';
+}
+
+var base64IMAPChars = base64Chars.slice();
+base64IMAPChars[','.charCodeAt(0)] = true;
+
+Utf7IMAPDecoder.prototype.write = function(buf) {
+    var res = "", lastI = 0,
+        inBase64 = this.inBase64,
+        base64Accum = this.base64Accum;
+
+    // The decoder is more involved as we must handle chunks in stream.
+    // It is forgiving, closer to standard UTF-7 (for example, '-' is optional at the end).
+
+    for (var i = 0; i < buf.length; i++) {
+        if (!inBase64) { // We're in direct mode.
+            // Write direct chars until '&'
+            if (buf[i] == andChar) {
+                res += this.iconv.decode(buf.slice(lastI, i), "ascii"); // Write direct chars.
+                lastI = i+1;
+                inBase64 = true;
+            }
+        } else { // We decode base64.
+            if (!base64IMAPChars[buf[i]]) { // Base64 ended.
+                if (i == lastI && buf[i] == minusChar) { // "&-" -> "&"
+                    res += "&";
+                } else {
+                    var b64str = base64Accum + buf.slice(lastI, i).toString().replace(/,/g, '/');
+                    res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
+                }
+
+                if (buf[i] != minusChar) // Minus may be absorbed after base64.
+                    i--;
+
+                lastI = i+1;
+                inBase64 = false;
+                base64Accum = '';
+            }
+        }
+    }
+
+    if (!inBase64) {
+        res += this.iconv.decode(buf.slice(lastI), "ascii"); // Write direct chars.
+    } else {
+        var b64str = base64Accum + buf.slice(lastI).toString().replace(/,/g, '/');
+
+        var canBeDecoded = b64str.length - (b64str.length % 8); // Minimal chunk: 2 quads -> 2x3 bytes -> 3 chars.
+        base64Accum = b64str.slice(canBeDecoded); // The rest will be decoded in future.
+        b64str = b64str.slice(0, canBeDecoded);
+
+        res += this.iconv.decode(new Buffer(b64str, 'base64'), "utf16-be");
+    }
+
+    this.inBase64 = inBase64;
+    this.base64Accum = base64Accum;
+
+    return res;
+}
+
+Utf7IMAPDecoder.prototype.end = function() {
+    var res = "";
+    if (this.inBase64 && this.base64Accum.length > 0)
+        res = this.iconv.decode(new Buffer(this.base64Accum, 'base64'), "utf16-be");
+
+    this.inBase64 = false;
+    this.base64Accum = '';
+    return res;
+}
+
+
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var BOMChar = '\uFEFF';
+
+exports.PrependBOM = PrependBOMWrapper
+function PrependBOMWrapper(encoder, options) {
+    this.encoder = encoder;
+    this.addBOM = true;
+}
+
+PrependBOMWrapper.prototype.write = function(str) {
+    if (this.addBOM) {
+        str = BOMChar + str;
+        this.addBOM = false;
+    }
+
+    return this.encoder.write(str);
+}
+
+PrependBOMWrapper.prototype.end = function() {
+    return this.encoder.end();
+}
+
+
+//------------------------------------------------------------------------------
+
+exports.StripBOM = StripBOMWrapper;
+function StripBOMWrapper(decoder, options) {
+    this.decoder = decoder;
+    this.pass = false;
+    this.options = options || {};
+}
+
+StripBOMWrapper.prototype.write = function(buf) {
+    var res = this.decoder.write(buf);
+    if (this.pass || !res)
+        return res;
+
+    if (res[0] === BOMChar) {
+        res = res.slice(1);
+        if (typeof this.options.stripBOM === 'function')
+            this.options.stripBOM();
+    }
+
+    this.pass = true;
+    return res;
+}
+
+StripBOMWrapper.prototype.end = function() {
+    return this.decoder.end();
+}
+
+
+
+/***/ }),
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+// == Extend Node primitives to use iconv-lite =================================
+
+module.exports = function (iconv) {
+    var original = undefined; // Place to keep original methods.
+
+    // Node authors rewrote Buffer internals to make it compatible with
+    // Uint8Array and we cannot patch key functions since then.
+    iconv.supportsNodeEncodingsExtension = !(new Buffer(0) instanceof Uint8Array);
+
+    iconv.extendNodeEncodings = function extendNodeEncodings() {
+        if (original) return;
+        original = {};
+
+        if (!iconv.supportsNodeEncodingsExtension) {
+            console.error("ACTION NEEDED: require('iconv-lite').extendNodeEncodings() is not supported in your version of Node");
+            console.error("See more info at https://github.com/ashtuchkin/iconv-lite/wiki/Node-v4-compatibility");
+            return;
+        }
+
+        var nodeNativeEncodings = {
+            'hex': true, 'utf8': true, 'utf-8': true, 'ascii': true, 'binary': true, 
+            'base64': true, 'ucs2': true, 'ucs-2': true, 'utf16le': true, 'utf-16le': true,
+        };
+
+        Buffer.isNativeEncoding = function(enc) {
+            return enc && nodeNativeEncodings[enc.toLowerCase()];
+        }
+
+        // -- SlowBuffer -----------------------------------------------------------
+        var SlowBuffer = __webpack_require__(3).SlowBuffer;
+
+        original.SlowBufferToString = SlowBuffer.prototype.toString;
+        SlowBuffer.prototype.toString = function(encoding, start, end) {
+            encoding = String(encoding || 'utf8').toLowerCase();
+
+            // Use native conversion when possible
+            if (Buffer.isNativeEncoding(encoding))
+                return original.SlowBufferToString.call(this, encoding, start, end);
+
+            // Otherwise, use our decoding method.
+            if (typeof start == 'undefined') start = 0;
+            if (typeof end == 'undefined') end = this.length;
+            return iconv.decode(this.slice(start, end), encoding);
+        }
+
+        original.SlowBufferWrite = SlowBuffer.prototype.write;
+        SlowBuffer.prototype.write = function(string, offset, length, encoding) {
+            // Support both (string, offset, length, encoding)
+            // and the legacy (string, encoding, offset, length)
+            if (isFinite(offset)) {
+                if (!isFinite(length)) {
+                    encoding = length;
+                    length = undefined;
+                }
+            } else {  // legacy
+                var swap = encoding;
+                encoding = offset;
+                offset = length;
+                length = swap;
+            }
+
+            offset = +offset || 0;
+            var remaining = this.length - offset;
+            if (!length) {
+                length = remaining;
+            } else {
+                length = +length;
+                if (length > remaining) {
+                    length = remaining;
+                }
+            }
+            encoding = String(encoding || 'utf8').toLowerCase();
+
+            // Use native conversion when possible
+            if (Buffer.isNativeEncoding(encoding))
+                return original.SlowBufferWrite.call(this, string, offset, length, encoding);
+
+            if (string.length > 0 && (length < 0 || offset < 0))
+                throw new RangeError('attempt to write beyond buffer bounds');
+
+            // Otherwise, use our encoding method.
+            var buf = iconv.encode(string, encoding);
+            if (buf.length < length) length = buf.length;
+            buf.copy(this, offset, 0, length);
+            return length;
+        }
+
+        // -- Buffer ---------------------------------------------------------------
+
+        original.BufferIsEncoding = Buffer.isEncoding;
+        Buffer.isEncoding = function(encoding) {
+            return Buffer.isNativeEncoding(encoding) || iconv.encodingExists(encoding);
+        }
+
+        original.BufferByteLength = Buffer.byteLength;
+        Buffer.byteLength = SlowBuffer.byteLength = function(str, encoding) {
+            encoding = String(encoding || 'utf8').toLowerCase();
+
+            // Use native conversion when possible
+            if (Buffer.isNativeEncoding(encoding))
+                return original.BufferByteLength.call(this, str, encoding);
+
+            // Slow, I know, but we don't have a better way yet.
+            return iconv.encode(str, encoding).length;
+        }
+
+        original.BufferToString = Buffer.prototype.toString;
+        Buffer.prototype.toString = function(encoding, start, end) {
+            encoding = String(encoding || 'utf8').toLowerCase();
+
+            // Use native conversion when possible
+            if (Buffer.isNativeEncoding(encoding))
+                return original.BufferToString.call(this, encoding, start, end);
+
+            // Otherwise, use our decoding method.
+            if (typeof start == 'undefined') start = 0;
+            if (typeof end == 'undefined') end = this.length;
+            return iconv.decode(this.slice(start, end), encoding);
+        }
+
+        original.BufferWrite = Buffer.prototype.write;
+        Buffer.prototype.write = function(string, offset, length, encoding) {
+            var _offset = offset, _length = length, _encoding = encoding;
+            // Support both (string, offset, length, encoding)
+            // and the legacy (string, encoding, offset, length)
+            if (isFinite(offset)) {
+                if (!isFinite(length)) {
+                    encoding = length;
+                    length = undefined;
+                }
+            } else {  // legacy
+                var swap = encoding;
+                encoding = offset;
+                offset = length;
+                length = swap;
+            }
+
+            encoding = String(encoding || 'utf8').toLowerCase();
+
+            // Use native conversion when possible
+            if (Buffer.isNativeEncoding(encoding))
+                return original.BufferWrite.call(this, string, _offset, _length, _encoding);
+
+            offset = +offset || 0;
+            var remaining = this.length - offset;
+            if (!length) {
+                length = remaining;
+            } else {
+                length = +length;
+                if (length > remaining) {
+                    length = remaining;
+                }
+            }
+
+            if (string.length > 0 && (length < 0 || offset < 0))
+                throw new RangeError('attempt to write beyond buffer bounds');
+
+            // Otherwise, use our encoding method.
+            var buf = iconv.encode(string, encoding);
+            if (buf.length < length) length = buf.length;
+            buf.copy(this, offset, 0, length);
+            return length;
+
+            // TODO: Set _charsWritten.
+        }
+
+
+        // -- Readable -------------------------------------------------------------
+        if (iconv.supportsStreams) {
+            var Readable = __webpack_require__(16).Readable;
+
+            original.ReadableSetEncoding = Readable.prototype.setEncoding;
+            Readable.prototype.setEncoding = function setEncoding(enc, options) {
+                // Use our own decoder, it has the same interface.
+                // We cannot use original function as it doesn't handle BOM-s.
+                this._readableState.decoder = iconv.getDecoder(enc, options);
+                this._readableState.encoding = enc;
+            }
+
+            Readable.prototype.collect = iconv._collect;
+        }
+    }
+
+    // Remove iconv-lite Node primitive extensions.
+    iconv.undoExtendNodeEncodings = function undoExtendNodeEncodings() {
+        if (!iconv.supportsNodeEncodingsExtension)
+            return;
+        if (!original)
+            throw new Error("require('iconv-lite').undoExtendNodeEncodings(): Nothing to undo; extendNodeEncodings() is not called.")
+
+        delete Buffer.isNativeEncoding;
+
+        var SlowBuffer = __webpack_require__(3).SlowBuffer;
+
+        SlowBuffer.prototype.toString = original.SlowBufferToString;
+        SlowBuffer.prototype.write = original.SlowBufferWrite;
+
+        Buffer.isEncoding = original.BufferIsEncoding;
+        Buffer.byteLength = original.BufferByteLength;
+        Buffer.prototype.toString = original.BufferToString;
+        Buffer.prototype.write = original.BufferWrite;
+
+        if (iconv.supportsStreams) {
+            var Readable = __webpack_require__(16).Readable;
+
+            Readable.prototype.setEncoding = original.ReadableSetEncoding;
+            delete Readable.prototype.collect;
+        }
+
+        original = undefined;
+    }
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer, process) {
+
+var bomHandling = __webpack_require__(316),
+    iconv = module.exports;
+
+// All codecs and aliases are kept here, keyed by encoding name/alias.
+// They are lazy loaded in `iconv.getCodec` from `encodings/index.js`.
+iconv.encodings = null;
+
+// Characters emitted in case of error.
+iconv.defaultCharUnicode = '�';
+iconv.defaultCharSingleByte = '?';
+
+// Public API.
+iconv.encode = function encode(str, encoding, options) {
+    str = "" + (str || ""); // Ensure string.
+
+    var encoder = iconv.getEncoder(encoding, options);
+
+    var res = encoder.write(str);
+    var trail = encoder.end();
+    
+    return (trail && trail.length > 0) ? Buffer.concat([res, trail]) : res;
+}
+
+iconv.decode = function decode(buf, encoding, options) {
+    if (typeof buf === 'string') {
+        if (!iconv.skipDecodeWarning) {
+            console.error('Iconv-lite warning: decode()-ing strings is deprecated. Refer to https://github.com/ashtuchkin/iconv-lite/wiki/Use-Buffers-when-decoding');
+            iconv.skipDecodeWarning = true;
+        }
+
+        buf = new Buffer("" + (buf || ""), "binary"); // Ensure buffer.
+    }
+
+    var decoder = iconv.getDecoder(encoding, options);
+
+    var res = decoder.write(buf);
+    var trail = decoder.end();
+
+    return trail ? (res + trail) : res;
+}
+
+iconv.encodingExists = function encodingExists(enc) {
+    try {
+        iconv.getCodec(enc);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+// Legacy aliases to convert functions
+iconv.toEncoding = iconv.encode;
+iconv.fromEncoding = iconv.decode;
+
+// Search for a codec in iconv.encodings. Cache codec data in iconv._codecDataCache.
+iconv._codecDataCache = {};
+iconv.getCodec = function getCodec(encoding) {
+    if (!iconv.encodings)
+        iconv.encodings = __webpack_require__(309); // Lazy load all encoding definitions.
+    
+    // Canonicalize encoding name: strip all non-alphanumeric chars and appended year.
+    var enc = (''+encoding).toLowerCase().replace(/[^0-9a-z]|:\d{4}$/g, "");
+
+    // Traverse iconv.encodings to find actual codec.
+    var codecOptions = {};
+    while (true) {
+        var codec = iconv._codecDataCache[enc];
+        if (codec)
+            return codec;
+
+        var codecDef = iconv.encodings[enc];
+
+        switch (typeof codecDef) {
+            case "string": // Direct alias to other encoding.
+                enc = codecDef;
+                break;
+
+            case "object": // Alias with options. Can be layered.
+                for (var key in codecDef)
+                    codecOptions[key] = codecDef[key];
+
+                if (!codecOptions.encodingName)
+                    codecOptions.encodingName = enc;
+                
+                enc = codecDef.type;
+                break;
+
+            case "function": // Codec itself.
+                if (!codecOptions.encodingName)
+                    codecOptions.encodingName = enc;
+
+                // The codec function must load all tables and return object with .encoder and .decoder methods.
+                // It'll be called only once (for each different options object).
+                codec = new codecDef(codecOptions, iconv);
+
+                iconv._codecDataCache[codecOptions.encodingName] = codec; // Save it to be reused later.
+                return codec;
+
+            default:
+                throw new Error("Encoding not recognized: '" + encoding + "' (searched as: '"+enc+"')");
+        }
+    }
+}
+
+iconv.getEncoder = function getEncoder(encoding, options) {
+    var codec = iconv.getCodec(encoding),
+        encoder = new codec.encoder(options, codec);
+
+    if (codec.bomAware && options && options.addBOM)
+        encoder = new bomHandling.PrependBOM(encoder, options);
+
+    return encoder;
+}
+
+iconv.getDecoder = function getDecoder(encoding, options) {
+    var codec = iconv.getCodec(encoding),
+        decoder = new codec.decoder(options, codec);
+
+    if (codec.bomAware && !(options && options.stripBOM === false))
+        decoder = new bomHandling.StripBOM(decoder, options);
+
+    return decoder;
+}
+
+
+// Load extensions in Node. All of them are omitted in Browserify build via 'browser' field in package.json.
+var nodeVer = typeof process !== 'undefined' && process.versions && process.versions.node;
+if (nodeVer) {
+
+    // Load streaming support in Node v0.10+
+    var nodeVerArr = nodeVer.split(".").map(Number);
+    if (nodeVerArr[0] > 0 || nodeVerArr[1] >= 10) {
+        __webpack_require__(319)(iconv);
+    }
+
+    // Load Node primitive extensions.
+    __webpack_require__(317)(iconv);
+}
+
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(8)))
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(Buffer) {
+
+var Transform = __webpack_require__(16).Transform;
+
+
+// == Exports ==================================================================
+module.exports = function(iconv) {
+    
+    // Additional Public API.
+    iconv.encodeStream = function encodeStream(encoding, options) {
+        return new IconvLiteEncoderStream(iconv.getEncoder(encoding, options), options);
+    }
+
+    iconv.decodeStream = function decodeStream(encoding, options) {
+        return new IconvLiteDecoderStream(iconv.getDecoder(encoding, options), options);
+    }
+
+    iconv.supportsStreams = true;
+
+
+    // Not published yet.
+    iconv.IconvLiteEncoderStream = IconvLiteEncoderStream;
+    iconv.IconvLiteDecoderStream = IconvLiteDecoderStream;
+    iconv._collect = IconvLiteDecoderStream.prototype.collect;
+};
+
+
+// == Encoder stream =======================================================
+function IconvLiteEncoderStream(conv, options) {
+    this.conv = conv;
+    options = options || {};
+    options.decodeStrings = false; // We accept only strings, so we don't need to decode them.
+    Transform.call(this, options);
+}
+
+IconvLiteEncoderStream.prototype = Object.create(Transform.prototype, {
+    constructor: { value: IconvLiteEncoderStream }
+});
+
+IconvLiteEncoderStream.prototype._transform = function(chunk, encoding, done) {
+    if (typeof chunk != 'string')
+        return done(new Error("Iconv encoding stream needs strings as its input."));
+    try {
+        var res = this.conv.write(chunk);
+        if (res && res.length) this.push(res);
+        done();
+    }
+    catch (e) {
+        done(e);
+    }
+}
+
+IconvLiteEncoderStream.prototype._flush = function(done) {
+    try {
+        var res = this.conv.end();
+        if (res && res.length) this.push(res);
+        done();
+    }
+    catch (e) {
+        done(e);
+    }
+}
+
+IconvLiteEncoderStream.prototype.collect = function(cb) {
+    var chunks = [];
+    this.on('error', cb);
+    this.on('data', function(chunk) { chunks.push(chunk); });
+    this.on('end', function() {
+        cb(null, Buffer.concat(chunks));
+    });
+    return this;
+}
+
+
+// == Decoder stream =======================================================
+function IconvLiteDecoderStream(conv, options) {
+    this.conv = conv;
+    options = options || {};
+    options.encoding = this.encoding = 'utf8'; // We output strings.
+    Transform.call(this, options);
+}
+
+IconvLiteDecoderStream.prototype = Object.create(Transform.prototype, {
+    constructor: { value: IconvLiteDecoderStream }
+});
+
+IconvLiteDecoderStream.prototype._transform = function(chunk, encoding, done) {
+    if (!Buffer.isBuffer(chunk))
+        return done(new Error("Iconv decoding stream needs buffers as its input."));
+    try {
+        var res = this.conv.write(chunk);
+        if (res && res.length) this.push(res, this.encoding);
+        done();
+    }
+    catch (e) {
+        done(e);
+    }
+}
+
+IconvLiteDecoderStream.prototype._flush = function(done) {
+    try {
+        var res = this.conv.end();
+        if (res && res.length) this.push(res, this.encoding);                
+        done();
+    }
+    catch (e) {
+        done(e);
+    }
+}
+
+IconvLiteDecoderStream.prototype.collect = function(cb) {
+    var res = '';
+    this.on('error', cb);
+    this.on('data', function(chunk) { res += chunk; });
+    this.on('end', function() {
+        cb(null, res);
+    });
+    return this;
+}
+
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer))
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isStream = module.exports = function (stream) {
+	return stream !== null && typeof stream === 'object' && typeof stream.pipe === 'function';
+};
+
+isStream.writable = function (stream) {
+	return isStream(stream) && stream.writable !== false && typeof stream._write === 'function' && typeof stream._writableState === 'object';
+};
+
+isStream.readable = function (stream) {
+	return isStream(stream) && stream.readable !== false && typeof stream._read === 'function' && typeof stream._readableState === 'object';
+};
+
+isStream.duplex = function (stream) {
+	return isStream.writable(stream) && isStream.readable(stream);
+};
+
+isStream.transform = function (stream) {
+	return isStream.duplex(stream) && typeof stream._transform === 'function' && typeof stream._transformState === 'object';
+};
+
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(Buffer, global) {
+/**
+ * index.js
+ *
+ * a request API compatible with window.fetch
+ */
+
+var parse_url = __webpack_require__(40).parse;
+var resolve_url = __webpack_require__(40).resolve;
+var http = __webpack_require__(68);
+var https = __webpack_require__(157);
+var zlib = __webpack_require__(140);
+var stream = __webpack_require__(16);
+
+var Body = __webpack_require__(71);
+var Response = __webpack_require__(323);
+var Headers = __webpack_require__(72);
+var Request = __webpack_require__(322);
+var FetchError = __webpack_require__(125);
+
+// commonjs
+module.exports = Fetch;
+// es6 default export compatibility
+module.exports.default = module.exports;
+
+/**
+ * Fetch class
+ *
+ * @param   Mixed    url   Absolute url or Request instance
+ * @param   Object   opts  Fetch options
+ * @return  Promise
+ */
+function Fetch(url, opts) {
+
+	// allow call as function
+	if (!(this instanceof Fetch))
+		return new Fetch(url, opts);
+
+	// allow custom promise
+	if (!Fetch.Promise) {
+		throw new Error('native promise missing, set Fetch.Promise to your favorite alternative');
+	}
+
+	Body.Promise = Fetch.Promise;
+
+	var self = this;
+
+	// wrap http.request into fetch
+	return new Fetch.Promise(function(resolve, reject) {
+		// build request object
+		var options = new Request(url, opts);
+
+		if (!options.protocol || !options.hostname) {
+			throw new Error('only absolute urls are supported');
+		}
+
+		if (options.protocol !== 'http:' && options.protocol !== 'https:') {
+			throw new Error('only http(s) protocols are supported');
+		}
+
+		var send;
+		if (options.protocol === 'https:') {
+			send = https.request;
+		} else {
+			send = http.request;
+		}
+
+		// normalize headers
+		var headers = new Headers(options.headers);
+
+		if (options.compress) {
+			headers.set('accept-encoding', 'gzip,deflate');
+		}
+
+		if (!headers.has('user-agent')) {
+			headers.set('user-agent', 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)');
+		}
+
+		if (!headers.has('connection') && !options.agent) {
+			headers.set('connection', 'close');
+		}
+
+		if (!headers.has('accept')) {
+			headers.set('accept', '*/*');
+		}
+
+		// detect form data input from form-data module, this hack avoid the need to pass multipart header manually
+		if (!headers.has('content-type') && options.body && typeof options.body.getBoundary === 'function') {
+			headers.set('content-type', 'multipart/form-data; boundary=' + options.body.getBoundary());
+		}
+
+		// bring node-fetch closer to browser behavior by setting content-length automatically
+		if (!headers.has('content-length') && /post|put|patch|delete/i.test(options.method)) {
+			if (typeof options.body === 'string') {
+				headers.set('content-length', Buffer.byteLength(options.body));
+			// detect form data input from form-data module, this hack avoid the need to add content-length header manually
+			} else if (options.body && typeof options.body.getLengthSync === 'function') {
+				// for form-data 1.x
+				if (options.body._lengthRetrievers && options.body._lengthRetrievers.length == 0) {
+					headers.set('content-length', options.body.getLengthSync().toString());
+				// for form-data 2.x
+				} else if (options.body.hasKnownLength && options.body.hasKnownLength()) {
+					headers.set('content-length', options.body.getLengthSync().toString());
+				}
+			// this is only necessary for older nodejs releases (before iojs merge)
+			} else if (options.body === undefined || options.body === null) {
+				headers.set('content-length', '0');
+			}
+		}
+
+		options.headers = headers.raw();
+
+		// http.request only support string as host header, this hack make custom host header possible
+		if (options.headers.host) {
+			options.headers.host = options.headers.host[0];
+		}
+
+		// send request
+		var req = send(options);
+		var reqTimeout;
+
+		if (options.timeout) {
+			req.once('socket', function(socket) {
+				reqTimeout = setTimeout(function() {
+					req.abort();
+					reject(new FetchError('network timeout at: ' + options.url, 'request-timeout'));
+				}, options.timeout);
+			});
+		}
+
+		req.on('error', function(err) {
+			clearTimeout(reqTimeout);
+			reject(new FetchError('request to ' + options.url + ' failed, reason: ' + err.message, 'system', err));
+		});
+
+		req.on('response', function(res) {
+			clearTimeout(reqTimeout);
+
+			// handle redirect
+			if (self.isRedirect(res.statusCode) && options.redirect !== 'manual') {
+				if (options.redirect === 'error') {
+					reject(new FetchError('redirect mode is set to error: ' + options.url, 'no-redirect'));
+					return;
+				}
+
+				if (options.counter >= options.follow) {
+					reject(new FetchError('maximum redirect reached at: ' + options.url, 'max-redirect'));
+					return;
+				}
+
+				if (!res.headers.location) {
+					reject(new FetchError('redirect location header missing at: ' + options.url, 'invalid-redirect'));
+					return;
+				}
+
+				// per fetch spec, for POST request with 301/302 response, or any request with 303 response, use GET when following redirect
+				if (res.statusCode === 303
+					|| ((res.statusCode === 301 || res.statusCode === 302) && options.method === 'POST'))
+				{
+					options.method = 'GET';
+					delete options.body;
+					delete options.headers['content-length'];
+				}
+
+				options.counter++;
+
+				resolve(Fetch(resolve_url(options.url, res.headers.location), options));
+				return;
+			}
+
+			// normalize location header for manual redirect mode
+			var headers = new Headers(res.headers);
+			if (options.redirect === 'manual' && headers.has('location')) {
+				headers.set('location', resolve_url(options.url, headers.get('location')));
+			}
+
+			// prepare response
+			var body = res.pipe(new stream.PassThrough());
+			var response_options = {
+				url: options.url
+				, status: res.statusCode
+				, statusText: res.statusMessage
+				, headers: headers
+				, size: options.size
+				, timeout: options.timeout
+			};
+
+			// response object
+			var output;
+
+			// in following scenarios we ignore compression support
+			// 1. compression support is disabled
+			// 2. HEAD request
+			// 3. no content-encoding header
+			// 4. no content response (204)
+			// 5. content not modified response (304)
+			if (!options.compress || options.method === 'HEAD' || !headers.has('content-encoding') || res.statusCode === 204 || res.statusCode === 304) {
+				output = new Response(body, response_options);
+				resolve(output);
+				return;
+			}
+
+			// otherwise, check for gzip or deflate
+			var name = headers.get('content-encoding');
+
+			// for gzip
+			if (name == 'gzip' || name == 'x-gzip') {
+				body = body.pipe(zlib.createGunzip());
+				output = new Response(body, response_options);
+				resolve(output);
+				return;
+
+			// for deflate
+			} else if (name == 'deflate' || name == 'x-deflate') {
+				// handle the infamous raw deflate response from old servers
+				// a hack for old IIS and Apache servers
+				var raw = res.pipe(new stream.PassThrough());
+				raw.once('data', function(chunk) {
+					// see http://stackoverflow.com/questions/37519828
+					if ((chunk[0] & 0x0F) === 0x08) {
+						body = body.pipe(zlib.createInflate());
+					} else {
+						body = body.pipe(zlib.createInflateRaw());
+					}
+					output = new Response(body, response_options);
+					resolve(output);
+				});
+				return;
+			}
+
+			// otherwise, use response as-is
+			output = new Response(body, response_options);
+			resolve(output);
+			return;
+		});
+
+		// accept string, buffer or readable stream as body
+		// per spec we will call tostring on non-stream objects
+		if (typeof options.body === 'string') {
+			req.write(options.body);
+			req.end();
+		} else if (options.body instanceof Buffer) {
+			req.write(options.body);
+			req.end()
+		} else if (typeof options.body === 'object' && options.body.pipe) {
+			options.body.pipe(req);
+		} else if (typeof options.body === 'object') {
+			req.write(options.body.toString());
+			req.end();
+		} else {
+			req.end();
+		}
+	});
+
+};
+
+/**
+ * Redirect code matching
+ *
+ * @param   Number   code  Status code
+ * @return  Boolean
+ */
+Fetch.prototype.isRedirect = function(code) {
+	return code === 301 || code === 302 || code === 303 || code === 307 || code === 308;
+}
+
+// expose Promise
+Fetch.Promise = global.Promise;
+Fetch.Response = Response;
+Fetch.Headers = Headers;
+Fetch.Request = Request;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3).Buffer, __webpack_require__(6)))
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/**
+ * request.js
+ *
+ * Request class contains server only options
+ */
+
+var parse_url = __webpack_require__(40).parse;
+var Headers = __webpack_require__(72);
+var Body = __webpack_require__(71);
+
+module.exports = Request;
+
+/**
+ * Request class
+ *
+ * @param   Mixed   input  Url or Request instance
+ * @param   Object  init   Custom options
+ * @return  Void
+ */
+function Request(input, init) {
+	var url, url_parsed;
+
+	// normalize input
+	if (!(input instanceof Request)) {
+		url = input;
+		url_parsed = parse_url(url);
+		input = {};
+	} else {
+		url = input.url;
+		url_parsed = parse_url(url);
+	}
+
+	// normalize init
+	init = init || {};
+
+	// fetch spec options
+	this.method = init.method || input.method || 'GET';
+	this.redirect = init.redirect || input.redirect || 'follow';
+	this.headers = new Headers(init.headers || input.headers || {});
+	this.url = url;
+
+	// server only options
+	this.follow = init.follow !== undefined ?
+		init.follow : input.follow !== undefined ?
+		input.follow : 20;
+	this.compress = init.compress !== undefined ?
+		init.compress : input.compress !== undefined ?
+		input.compress : true;
+	this.counter = init.counter || input.counter || 0;
+	this.agent = init.agent || input.agent;
+
+	Body.call(this, init.body || this._clone(input), {
+		timeout: init.timeout || input.timeout || 0,
+		size: init.size || input.size || 0
+	});
+
+	// server request options
+	this.protocol = url_parsed.protocol;
+	this.hostname = url_parsed.hostname;
+	this.port = url_parsed.port;
+	this.path = url_parsed.path;
+	this.auth = url_parsed.auth;
+}
+
+Request.prototype = Object.create(Body.prototype);
+
+/**
+ * Clone this request
+ *
+ * @return  Request
+ */
+Request.prototype.clone = function() {
+	return new Request(this);
+};
+
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/**
+ * response.js
+ *
+ * Response class provides content decoding
+ */
+
+var http = __webpack_require__(68);
+var Headers = __webpack_require__(72);
+var Body = __webpack_require__(71);
+
+module.exports = Response;
+
+/**
+ * Response class
+ *
+ * @param   Stream  body  Readable stream
+ * @param   Object  opts  Response options
+ * @return  Void
+ */
+function Response(body, opts) {
+
+	opts = opts || {};
+
+	this.url = opts.url;
+	this.status = opts.status || 200;
+	this.statusText = opts.statusText || http.STATUS_CODES[this.status];
+	this.headers = new Headers(opts.headers);
+	this.ok = this.status >= 200 && this.status < 300;
+
+	Body.call(this, body, opts);
+
+}
+
+Response.prototype = Object.create(Body.prototype);
+
+/**
+ * Clone this response
+ *
+ * @return  Response
+ */
+Response.prototype.clone = function() {
+	return new Response(this._clone(this), {
+		url: this.url
+		, status: this.status
+		, statusText: this.statusText
+		, headers: this.headers
+		, ok: this.ok
+	});
+};
+
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/*jshint eqnull:true*/
+(function (root) {
+  "use strict";
+
+  var GLOBAL_KEY = "Random";
+
+  var imul = (typeof Math.imul !== "function" || Math.imul(0xffffffff, 5) !== -5 ?
+    function (a, b) {
+      var ah = (a >>> 16) & 0xffff;
+      var al = a & 0xffff;
+      var bh = (b >>> 16) & 0xffff;
+      var bl = b & 0xffff;
+      // the shift by 0 fixes the sign on the high part
+      // the final |0 converts the unsigned value into a signed value
+      return (al * bl) + (((ah * bl + al * bh) << 16) >>> 0) | 0;
+    } :
+    Math.imul);
+
+  var stringRepeat = (typeof String.prototype.repeat === "function" && "x".repeat(3) === "xxx" ?
+    function (x, y) {
+      return x.repeat(y);
+    } : function (pattern, count) {
+      var result = "";
+      while (count > 0) {
+        if (count & 1) {
+          result += pattern;
+        }
+        count >>= 1;
+        pattern += pattern;
+      }
+      return result;
+    });
+
+  function Random(engine) {
+    if (!(this instanceof Random)) {
+      return new Random(engine);
+    }
+
+    if (engine == null) {
+      engine = Random.engines.nativeMath;
+    } else if (typeof engine !== "function") {
+      throw new TypeError("Expected engine to be a function, got " + typeof engine);
+    }
+    this.engine = engine;
+  }
+  var proto = Random.prototype;
+
+  Random.engines = {
+    nativeMath: function () {
+      return (Math.random() * 0x100000000) | 0;
+    },
+    mt19937: (function (Int32Array) {
+      // http://en.wikipedia.org/wiki/Mersenne_twister
+      function refreshData(data) {
+        var k = 0;
+        var tmp = 0;
+        for (;
+          (k | 0) < 227; k = (k + 1) | 0) {
+          tmp = (data[k] & 0x80000000) | (data[(k + 1) | 0] & 0x7fffffff);
+          data[k] = data[(k + 397) | 0] ^ (tmp >>> 1) ^ ((tmp & 0x1) ? 0x9908b0df : 0);
+        }
+
+        for (;
+          (k | 0) < 623; k = (k + 1) | 0) {
+          tmp = (data[k] & 0x80000000) | (data[(k + 1) | 0] & 0x7fffffff);
+          data[k] = data[(k - 227) | 0] ^ (tmp >>> 1) ^ ((tmp & 0x1) ? 0x9908b0df : 0);
+        }
+
+        tmp = (data[623] & 0x80000000) | (data[0] & 0x7fffffff);
+        data[623] = data[396] ^ (tmp >>> 1) ^ ((tmp & 0x1) ? 0x9908b0df : 0);
+      }
+
+      function temper(value) {
+        value ^= value >>> 11;
+        value ^= (value << 7) & 0x9d2c5680;
+        value ^= (value << 15) & 0xefc60000;
+        return value ^ (value >>> 18);
+      }
+
+      function seedWithArray(data, source) {
+        var i = 1;
+        var j = 0;
+        var sourceLength = source.length;
+        var k = Math.max(sourceLength, 624) | 0;
+        var previous = data[0] | 0;
+        for (;
+          (k | 0) > 0; --k) {
+          data[i] = previous = ((data[i] ^ imul((previous ^ (previous >>> 30)), 0x0019660d)) + (source[j] | 0) + (j | 0)) | 0;
+          i = (i + 1) | 0;
+          ++j;
+          if ((i | 0) > 623) {
+            data[0] = data[623];
+            i = 1;
+          }
+          if (j >= sourceLength) {
+            j = 0;
+          }
+        }
+        for (k = 623;
+          (k | 0) > 0; --k) {
+          data[i] = previous = ((data[i] ^ imul((previous ^ (previous >>> 30)), 0x5d588b65)) - i) | 0;
+          i = (i + 1) | 0;
+          if ((i | 0) > 623) {
+            data[0] = data[623];
+            i = 1;
+          }
+        }
+        data[0] = 0x80000000;
+      }
+
+      function mt19937() {
+        var data = new Int32Array(624);
+        var index = 0;
+        var uses = 0;
+
+        function next() {
+          if ((index | 0) >= 624) {
+            refreshData(data);
+            index = 0;
+          }
+
+          var value = data[index];
+          index = (index + 1) | 0;
+          uses += 1;
+          return temper(value) | 0;
+        }
+        next.getUseCount = function() {
+          return uses;
+        };
+        next.discard = function (count) {
+          uses += count;
+          if ((index | 0) >= 624) {
+            refreshData(data);
+            index = 0;
+          }
+          while ((count - index) > 624) {
+            count -= 624 - index;
+            refreshData(data);
+            index = 0;
+          }
+          index = (index + count) | 0;
+          return next;
+        };
+        next.seed = function (initial) {
+          var previous = 0;
+          data[0] = previous = initial | 0;
+
+          for (var i = 1; i < 624; i = (i + 1) | 0) {
+            data[i] = previous = (imul((previous ^ (previous >>> 30)), 0x6c078965) + i) | 0;
+          }
+          index = 624;
+          uses = 0;
+          return next;
+        };
+        next.seedWithArray = function (source) {
+          next.seed(0x012bd6aa);
+          seedWithArray(data, source);
+          return next;
+        };
+        next.autoSeed = function () {
+          return next.seedWithArray(Random.generateEntropyArray());
+        };
+        return next;
+      }
+
+      return mt19937;
+    }(typeof Int32Array === "function" ? Int32Array : Array)),
+    browserCrypto: (typeof crypto !== "undefined" && typeof crypto.getRandomValues === "function" && typeof Int32Array === "function") ? (function () {
+      var data = null;
+      var index = 128;
+
+      return function () {
+        if (index >= 128) {
+          if (data === null) {
+            data = new Int32Array(128);
+          }
+          crypto.getRandomValues(data);
+          index = 0;
+        }
+
+        return data[index++] | 0;
+      };
+    }()) : null
+  };
+
+  Random.generateEntropyArray = function () {
+    var array = [];
+    var engine = Random.engines.nativeMath;
+    for (var i = 0; i < 16; ++i) {
+      array[i] = engine() | 0;
+    }
+    array.push(new Date().getTime() | 0);
+    return array;
+  };
+
+  function returnValue(value) {
+    return function () {
+      return value;
+    };
+  }
+
+  // [-0x80000000, 0x7fffffff]
+  Random.int32 = function (engine) {
+    return engine() | 0;
+  };
+  proto.int32 = function () {
+    return Random.int32(this.engine);
+  };
+
+  // [0, 0xffffffff]
+  Random.uint32 = function (engine) {
+    return engine() >>> 0;
+  };
+  proto.uint32 = function () {
+    return Random.uint32(this.engine);
+  };
+
+  // [0, 0x1fffffffffffff]
+  Random.uint53 = function (engine) {
+    var high = engine() & 0x1fffff;
+    var low = engine() >>> 0;
+    return (high * 0x100000000) + low;
+  };
+  proto.uint53 = function () {
+    return Random.uint53(this.engine);
+  };
+
+  // [0, 0x20000000000000]
+  Random.uint53Full = function (engine) {
+    while (true) {
+      var high = engine() | 0;
+      if (high & 0x200000) {
+        if ((high & 0x3fffff) === 0x200000 && (engine() | 0) === 0) {
+          return 0x20000000000000;
+        }
+      } else {
+        var low = engine() >>> 0;
+        return ((high & 0x1fffff) * 0x100000000) + low;
+      }
+    }
+  };
+  proto.uint53Full = function () {
+    return Random.uint53Full(this.engine);
+  };
+
+  // [-0x20000000000000, 0x1fffffffffffff]
+  Random.int53 = function (engine) {
+    var high = engine() | 0;
+    var low = engine() >>> 0;
+    return ((high & 0x1fffff) * 0x100000000) + low + (high & 0x200000 ? -0x20000000000000 : 0);
+  };
+  proto.int53 = function () {
+    return Random.int53(this.engine);
+  };
+
+  // [-0x20000000000000, 0x20000000000000]
+  Random.int53Full = function (engine) {
+    while (true) {
+      var high = engine() | 0;
+      if (high & 0x400000) {
+        if ((high & 0x7fffff) === 0x400000 && (engine() | 0) === 0) {
+          return 0x20000000000000;
+        }
+      } else {
+        var low = engine() >>> 0;
+        return ((high & 0x1fffff) * 0x100000000) + low + (high & 0x200000 ? -0x20000000000000 : 0);
+      }
+    }
+  };
+  proto.int53Full = function () {
+    return Random.int53Full(this.engine);
+  };
+
+  function add(generate, addend) {
+    if (addend === 0) {
+      return generate;
+    } else {
+      return function (engine) {
+        return generate(engine) + addend;
+      };
+    }
+  }
+
+  Random.integer = (function () {
+    function isPowerOfTwoMinusOne(value) {
+      return ((value + 1) & value) === 0;
+    }
+
+    function bitmask(masking) {
+      return function (engine) {
+        return engine() & masking;
+      };
+    }
+
+    function downscaleToLoopCheckedRange(range) {
+      var extendedRange = range + 1;
+      var maximum = extendedRange * Math.floor(0x100000000 / extendedRange);
+      return function (engine) {
+        var value = 0;
+        do {
+          value = engine() >>> 0;
+        } while (value >= maximum);
+        return value % extendedRange;
+      };
+    }
+
+    function downscaleToRange(range) {
+      if (isPowerOfTwoMinusOne(range)) {
+        return bitmask(range);
+      } else {
+        return downscaleToLoopCheckedRange(range);
+      }
+    }
+
+    function isEvenlyDivisibleByMaxInt32(value) {
+      return (value | 0) === 0;
+    }
+
+    function upscaleWithHighMasking(masking) {
+      return function (engine) {
+        var high = engine() & masking;
+        var low = engine() >>> 0;
+        return (high * 0x100000000) + low;
+      };
+    }
+
+    function upscaleToLoopCheckedRange(extendedRange) {
+      var maximum = extendedRange * Math.floor(0x20000000000000 / extendedRange);
+      return function (engine) {
+        var ret = 0;
+        do {
+          var high = engine() & 0x1fffff;
+          var low = engine() >>> 0;
+          ret = (high * 0x100000000) + low;
+        } while (ret >= maximum);
+        return ret % extendedRange;
+      };
+    }
+
+    function upscaleWithinU53(range) {
+      var extendedRange = range + 1;
+      if (isEvenlyDivisibleByMaxInt32(extendedRange)) {
+        var highRange = ((extendedRange / 0x100000000) | 0) - 1;
+        if (isPowerOfTwoMinusOne(highRange)) {
+          return upscaleWithHighMasking(highRange);
+        }
+      }
+      return upscaleToLoopCheckedRange(extendedRange);
+    }
+
+    function upscaleWithinI53AndLoopCheck(min, max) {
+      return function (engine) {
+        var ret = 0;
+        do {
+          var high = engine() | 0;
+          var low = engine() >>> 0;
+          ret = ((high & 0x1fffff) * 0x100000000) + low + (high & 0x200000 ? -0x20000000000000 : 0);
+        } while (ret < min || ret > max);
+        return ret;
+      };
+    }
+
+    return function (min, max) {
+      min = Math.floor(min);
+      max = Math.floor(max);
+      if (min < -0x20000000000000 || !isFinite(min)) {
+        throw new RangeError("Expected min to be at least " + (-0x20000000000000));
+      } else if (max > 0x20000000000000 || !isFinite(max)) {
+        throw new RangeError("Expected max to be at most " + 0x20000000000000);
+      }
+
+      var range = max - min;
+      if (range <= 0 || !isFinite(range)) {
+        return returnValue(min);
+      } else if (range === 0xffffffff) {
+        if (min === 0) {
+          return Random.uint32;
+        } else {
+          return add(Random.int32, min + 0x80000000);
+        }
+      } else if (range < 0xffffffff) {
+        return add(downscaleToRange(range), min);
+      } else if (range === 0x1fffffffffffff) {
+        return add(Random.uint53, min);
+      } else if (range < 0x1fffffffffffff) {
+        return add(upscaleWithinU53(range), min);
+      } else if (max - 1 - min === 0x1fffffffffffff) {
+        return add(Random.uint53Full, min);
+      } else if (min === -0x20000000000000 && max === 0x20000000000000) {
+        return Random.int53Full;
+      } else if (min === -0x20000000000000 && max === 0x1fffffffffffff) {
+        return Random.int53;
+      } else if (min === -0x1fffffffffffff && max === 0x20000000000000) {
+        return add(Random.int53, 1);
+      } else if (max === 0x20000000000000) {
+        return add(upscaleWithinI53AndLoopCheck(min - 1, max - 1), 1);
+      } else {
+        return upscaleWithinI53AndLoopCheck(min, max);
+      }
+    };
+  }());
+  proto.integer = function (min, max) {
+    return Random.integer(min, max)(this.engine);
+  };
+
+  // [0, 1] (floating point)
+  Random.realZeroToOneInclusive = function (engine) {
+    return Random.uint53Full(engine) / 0x20000000000000;
+  };
+  proto.realZeroToOneInclusive = function () {
+    return Random.realZeroToOneInclusive(this.engine);
+  };
+
+  // [0, 1) (floating point)
+  Random.realZeroToOneExclusive = function (engine) {
+    return Random.uint53(engine) / 0x20000000000000;
+  };
+  proto.realZeroToOneExclusive = function () {
+    return Random.realZeroToOneExclusive(this.engine);
+  };
+
+  Random.real = (function () {
+    function multiply(generate, multiplier) {
+      if (multiplier === 1) {
+        return generate;
+      } else if (multiplier === 0) {
+        return function () {
+          return 0;
+        };
+      } else {
+        return function (engine) {
+          return generate(engine) * multiplier;
+        };
+      }
+    }
+
+    return function (left, right, inclusive) {
+      if (!isFinite(left)) {
+        throw new RangeError("Expected left to be a finite number");
+      } else if (!isFinite(right)) {
+        throw new RangeError("Expected right to be a finite number");
+      }
+      return add(
+        multiply(
+          inclusive ? Random.realZeroToOneInclusive : Random.realZeroToOneExclusive,
+          right - left),
+        left);
+    };
+  }());
+  proto.real = function (min, max, inclusive) {
+    return Random.real(min, max, inclusive)(this.engine);
+  };
+
+  Random.bool = (function () {
+    function isLeastBitTrue(engine) {
+      return (engine() & 1) === 1;
+    }
+
+    function lessThan(generate, value) {
+      return function (engine) {
+        return generate(engine) < value;
+      };
+    }
+
+    function probability(percentage) {
+      if (percentage <= 0) {
+        return returnValue(false);
+      } else if (percentage >= 1) {
+        return returnValue(true);
+      } else {
+        var scaled = percentage * 0x100000000;
+        if (scaled % 1 === 0) {
+          return lessThan(Random.int32, (scaled - 0x80000000) | 0);
+        } else {
+          return lessThan(Random.uint53, Math.round(percentage * 0x20000000000000));
+        }
+      }
+    }
+
+    return function (numerator, denominator) {
+      if (denominator == null) {
+        if (numerator == null) {
+          return isLeastBitTrue;
+        }
+        return probability(numerator);
+      } else {
+        if (numerator <= 0) {
+          return returnValue(false);
+        } else if (numerator >= denominator) {
+          return returnValue(true);
+        }
+        return lessThan(Random.integer(0, denominator - 1), numerator);
+      }
+    };
+  }());
+  proto.bool = function (numerator, denominator) {
+    return Random.bool(numerator, denominator)(this.engine);
+  };
+
+  function toInteger(value) {
+    var number = +value;
+    if (number < 0) {
+      return Math.ceil(number);
+    } else {
+      return Math.floor(number);
+    }
+  }
+
+  function convertSliceArgument(value, length) {
+    if (value < 0) {
+      return Math.max(value + length, 0);
+    } else {
+      return Math.min(value, length);
+    }
+  }
+  Random.pick = function (engine, array, begin, end) {
+    var length = array.length;
+    var start = begin == null ? 0 : convertSliceArgument(toInteger(begin), length);
+    var finish = end === void 0 ? length : convertSliceArgument(toInteger(end), length);
+    if (start >= finish) {
+      return void 0;
+    }
+    var distribution = Random.integer(start, finish - 1);
+    return array[distribution(engine)];
+  };
+  proto.pick = function (array, begin, end) {
+    return Random.pick(this.engine, array, begin, end);
+  };
+
+  function returnUndefined() {
+    return void 0;
+  }
+  var slice = Array.prototype.slice;
+  Random.picker = function (array, begin, end) {
+    var clone = slice.call(array, begin, end);
+    if (!clone.length) {
+      return returnUndefined;
+    }
+    var distribution = Random.integer(0, clone.length - 1);
+    return function (engine) {
+      return clone[distribution(engine)];
+    };
+  };
+
+  Random.shuffle = function (engine, array, downTo) {
+    var length = array.length;
+    if (length) {
+      if (downTo == null) {
+        downTo = 0;
+      }
+      for (var i = (length - 1) >>> 0; i > downTo; --i) {
+        var distribution = Random.integer(0, i);
+        var j = distribution(engine);
+        if (i !== j) {
+          var tmp = array[i];
+          array[i] = array[j];
+          array[j] = tmp;
+        }
+      }
+    }
+    return array;
+  };
+  proto.shuffle = function (array) {
+    return Random.shuffle(this.engine, array);
+  };
+
+  Random.sample = function (engine, population, sampleSize) {
+    if (sampleSize < 0 || sampleSize > population.length || !isFinite(sampleSize)) {
+      throw new RangeError("Expected sampleSize to be within 0 and the length of the population");
+    }
+
+    if (sampleSize === 0) {
+      return [];
+    }
+
+    var clone = slice.call(population);
+    var length = clone.length;
+    if (length === sampleSize) {
+      return Random.shuffle(engine, clone, 0);
+    }
+    var tailLength = length - sampleSize;
+    return Random.shuffle(engine, clone, tailLength - 1).slice(tailLength);
+  };
+  proto.sample = function (population, sampleSize) {
+    return Random.sample(this.engine, population, sampleSize);
+  };
+
+  Random.die = function (sideCount) {
+    return Random.integer(1, sideCount);
+  };
+  proto.die = function (sideCount) {
+    return Random.die(sideCount)(this.engine);
+  };
+
+  Random.dice = function (sideCount, dieCount) {
+    var distribution = Random.die(sideCount);
+    return function (engine) {
+      var result = [];
+      result.length = dieCount;
+      for (var i = 0; i < dieCount; ++i) {
+        result[i] = distribution(engine);
+      }
+      return result;
+    };
+  };
+  proto.dice = function (sideCount, dieCount) {
+    return Random.dice(sideCount, dieCount)(this.engine);
+  };
+
+  // http://en.wikipedia.org/wiki/Universally_unique_identifier
+  Random.uuid4 = (function () {
+    function zeroPad(string, zeroCount) {
+      return stringRepeat("0", zeroCount - string.length) + string;
+    }
+
+    return function (engine) {
+      var a = engine() >>> 0;
+      var b = engine() | 0;
+      var c = engine() | 0;
+      var d = engine() >>> 0;
+
+      return (
+        zeroPad(a.toString(16), 8) +
+        "-" +
+        zeroPad((b & 0xffff).toString(16), 4) +
+        "-" +
+        zeroPad((((b >> 4) & 0x0fff) | 0x4000).toString(16), 4) +
+        "-" +
+        zeroPad(((c & 0x3fff) | 0x8000).toString(16), 4) +
+        "-" +
+        zeroPad(((c >> 4) & 0xffff).toString(16), 4) +
+        zeroPad(d.toString(16), 8));
+    };
+  }());
+  proto.uuid4 = function () {
+    return Random.uuid4(this.engine);
+  };
+
+  Random.string = (function () {
+    // has 2**x chars, for faster uniform distribution
+    var DEFAULT_STRING_POOL = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-";
+
+    return function (pool) {
+      if (pool == null) {
+        pool = DEFAULT_STRING_POOL;
+      }
+
+      var length = pool.length;
+      if (!length) {
+        throw new Error("Expected pool not to be an empty string");
+      }
+
+      var distribution = Random.integer(0, length - 1);
+      return function (engine, length) {
+        var result = "";
+        for (var i = 0; i < length; ++i) {
+          var j = distribution(engine);
+          result += pool.charAt(j);
+        }
+        return result;
+      };
+    };
+  }());
+  proto.string = function (length, pool) {
+    return Random.string(pool)(this.engine, length);
+  };
+
+  Random.hex = (function () {
+    var LOWER_HEX_POOL = "0123456789abcdef";
+    var lowerHex = Random.string(LOWER_HEX_POOL);
+    var upperHex = Random.string(LOWER_HEX_POOL.toUpperCase());
+
+    return function (upper) {
+      if (upper) {
+        return upperHex;
+      } else {
+        return lowerHex;
+      }
+    };
+  }());
+  proto.hex = function (length, upper) {
+    return Random.hex(upper)(this.engine, length);
+  };
+
+  Random.date = function (start, end) {
+    if (!(start instanceof Date)) {
+      throw new TypeError("Expected start to be a Date, got " + typeof start);
+    } else if (!(end instanceof Date)) {
+      throw new TypeError("Expected end to be a Date, got " + typeof end);
+    }
+    var distribution = Random.integer(start.getTime(), end.getTime());
+    return function (engine) {
+      return new Date(distribution(engine));
+    };
+  };
+  proto.date = function (start, end) {
+    return Random.date(start, end)(this.engine);
+  };
+
+  if (true) {
+    !(__WEBPACK_AMD_DEFINE_RESULT__ = function () {
+      return Random;
+    }.call(exports, __webpack_require__, exports, module),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if (typeof module !== "undefined" && typeof require === "function") {
+    module.exports = Random;
+  } else {
+    (function () {
+      var oldGlobal = root[GLOBAL_KEY];
+      Random.noConflict = function () {
+        root[GLOBAL_KEY] = oldGlobal;
+        return this;
+      };
+    }());
+    root[GLOBAL_KEY] = Random;
+  }
+}(this));
 
 /***/ }),
 /* 325 */
