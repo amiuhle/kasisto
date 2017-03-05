@@ -80,15 +80,19 @@ export class Payment extends EventEmitter {
     const poll = () => {
       this.wallet.proxyGetTransfers({pool: true}).then((result) => {
         const pool = this._pool = result.pool || []
+        const transactionIds = []
         const amount = pool.reduce((amount, transaction) => {
           if (transaction.payment_id === this.paymentId) {
             amount += transaction.amount / 1e12
+            transactionIds.push(transaction.txid)
           }
           return amount
         }, 0)
 
         if (amount >= this.amount) {
           this.emit('payment', {
+            amount,
+            transactionIds,
             confirmed: false
           })
           window.clearInterval(handle)

@@ -80,6 +80,10 @@ PaymentRequest.propTypes = {
   view: PropTypes.oneOf(['client', 'merchant']).isRequired
 }
 
+const selectAll = (e) => {
+  e.target.setSelectionRange(0, e.target.value.length)
+}
+
 class AppComponent extends Component {
 
   constructor (props) {
@@ -87,7 +91,7 @@ class AppComponent extends Component {
 
     this.state = {
       ready: false,
-      paymentReceived: false,
+      amountReceived: 0,
       isRotated: false
     }
 
@@ -96,7 +100,6 @@ class AppComponent extends Component {
   }
 
   componentDidMount () {
-    this.payment.amount = 1.00 // XMR
     this.payment.on('ready', (integratedAddress, paymentId) => {
       this.setState({
         ready: true
@@ -104,14 +107,14 @@ class AppComponent extends Component {
     })
     this.payment.on('payment', (event) => {
       this.setState({
-        paymentReceived: true
+        amountReceived: event.amount
       })
       console.log('onPayment', event, this.payment)
     })
   }
 
   render () {
-    const { paymentReceived, ready, isRotated } = this.state
+    const { amountReceived, ready, isRotated } = this.state
     const { integratedAddress, uri } = this.payment
 
     const rotateButton = (render) => {
@@ -127,8 +130,7 @@ class AppComponent extends Component {
 
     if (ready) {
       const { payment, actions } = this.props
-
-      console.log(payment, actions)
+      this.payment.amount = payment.amount
 
       return (
         <div className={`app ${isRotated ? 'flip' : ''}`}>
@@ -147,26 +149,34 @@ class AppComponent extends Component {
             <div>
               <PaymentRequest view='client' {... payment} {... actions} >
                 <p>
-                <em><strong>Trinkejo</strong></em> is requesting a payment from you.
+                  <em><strong>Trinkejo</strong></em> is requesting a payment from you.
                 </p>
               </PaymentRequest>
             </div>
-            <div className='align-center'>
+            <div className='flex flex--column'>
               <h3>Send Monero</h3>
               {
                 (() => {
-                  if (paymentReceived) {
+                  if (amountReceived > 0) {
                     return (
-                      <p className='success'>
-                        <span className='check'>✔</span>
-                        <strong>Payment received</strong>
-                      </p>
+                      <div className='payment-result'>
+                        <p className='success'>
+                          <span className='check'>✔</span>
+                          <strong>Payment received</strong>
+                        </p>
+                      </div>
                     )
                   } else {
                     return (
-                      <div>
-                        <QRCode value={uri} />
-                        <textarea value={integratedAddress} readOnly />
+                      <div className='payment-result'>
+                        <a className='align-center qr-code' href={uri}><QRCode value={uri} /></a>
+                        <label>
+                          <span>Please send</span>
+                          <input type='text' className='align-right' readOnly value={payment.amount + payment.tip} onFocus={selectAll} />
+                          <code>XMR</code>
+                        </label>
+                        <p className='align-center'>to the following integrated address</p>
+                        <textarea className='integrated-address' value={integratedAddress} readOnly onFocus={selectAll} />
                       </div>
                     )
                   }

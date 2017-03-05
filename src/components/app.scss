@@ -81,6 +81,14 @@ header {
   }
 }
 
+.flex {
+  display: flex;
+
+  &--column {
+    flex-direction: column;
+  }
+}
+
 @mixin soft-border {
   border: 1px solid #ccc;
   border-radius: 0.1em;
@@ -89,19 +97,11 @@ header {
 .app {
   flex: 1;
 
-  margin: 0 1em;
+  margin: 1em;
 
   display: flex;
   flex-direction: column;
   align-items: stretch;
-
-  textarea {
-    @include soft-border();
-
-    text-align: center;
-    padding: 2em;
-    font-family: Courier New, Courier, monospace;
-  }
 }
 
 .client-view, .merchant-view {
@@ -155,26 +155,47 @@ header {
   }
 }
 
-.payment-request {
-  label {
-    display: flex;
-    align-items: center;
+label {
+  display: flex;
+  align-items: center;
 
-    span {
-      flex: 1;
-      text-transform: capitalize;
+  span {
+    flex: 1;
+    text-transform: capitalize;
+  }
+
+  input {
+    @include soft-border();
+    padding: 0.5em;
+    margin: 0.5em;
+    flex: 0 0 100px;
+
+    &[readonly] {
+      border: none;
     }
+  }
+}
 
-    input {
-      @include soft-border();
-      padding: 0.5em;
-      margin: 0.5em;
-      flex: 0 0 100px;
+.payment-result {
+  flex: 1;
 
-      &[readonly] {
-        border: none;
-      }
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .qr-code {
+    margin: 1em;
+  }
+
+  .integrated-address {
+    @include soft-border();
+
+    text-align: center;
+    margin: 1em 0;
+    padding: 1em;
+    flex: 0 0 3em;
+    overflow: hidden;
+    font-family: monospace;
   }
 }
 
