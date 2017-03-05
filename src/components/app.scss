@@ -1,6 +1,18 @@
+html {
+  background-color: #fcfcfc;
+}
+
 body {
-  margin: 0;
   font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+
+  width: 100vw;
+  height: 100vh;
+  max-width: 800px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, h3 {
@@ -25,15 +37,6 @@ h3 {
 
 .flip {
   transform: rotate(180deg);
-}
-
-body {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-
 }
 
 main {
