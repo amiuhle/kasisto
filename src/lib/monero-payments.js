@@ -102,7 +102,7 @@ export class Payment extends EventEmitter {
         }
       })
     }
-    const handle = window.setInterval(poll, 1000)
+    const handle = window.setInterval(poll, 10000)
   }
 }
 
