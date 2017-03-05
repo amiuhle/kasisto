@@ -204,3 +204,15 @@ label {
 .align-center {
   text-align: center;
 }
+
+.testnet {
+  position: fixed;
+  top: 25px;
+  right:-65px;
+  width: 200px;
+  transform: rotate(45deg);
+  font-size: smaller;
+  padding: 0.5em;
+  border: 1px solid red;
+  color: red;
+}
