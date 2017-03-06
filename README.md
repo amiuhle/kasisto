@@ -29,7 +29,7 @@ If you can help with any of these, please submit an issue, or comment if there a
 Development
 -----------
 
-Clone, install dependencies and run.
+Clone, install dependencies and run (`npm` should work just fine).
 
 ```
 git clone https://github.com/amiuhle/kasisto.git
@@ -43,3 +43,18 @@ TODOs
 ### `src/lib/monero-payments`
 
 will eventually become a separate node library to easily receive Monero. Any suggestions for a top level API would be welcome, please submit an issue.
+
+Contribute
+----------
+
+If you want to contribute to Kasisto, you can do so in any of the following ways:
+
+* Test Kasisto by accepting in your cafe, bar or shop. If you have any problems setting things up, open an issue and I'll help!
+* Are you a designer? Screen design would be welcome, please submit an issue to discuss!
+* Submit any other issue or a pull request
+
+You can also support the project by donating to the following address:
+
+```
+4JkULN8gD1M1hjSJBMgnC8FTKhVgMeYg6dzbqnhmSiERc3M4TUrJZ4nDMet1vCkh98C8nJWFmEMiAaaDRwWehqAJFrzAq1WNEP4SXgbVNX
+```
