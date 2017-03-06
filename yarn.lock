@@ -3770,7 +3770,7 @@ mocha@^3.0.0:
 
 "monero-nodejs@https://github.com/amiuhle/monero-nodejs.git#fetch-only":
   version "3.2.2"
-  resolved "https://github.com/amiuhle/monero-nodejs.git#195ad6a46182edfa81128c978d84f58b770a3fda"
+  resolved "https://github.com/amiuhle/monero-nodejs.git#03aee20c52734203d7285d38f2e18070e864759d"
   dependencies:
     big.js "^3.1.3"
     node-fetch "^1.6.3"
