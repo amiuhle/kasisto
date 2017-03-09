@@ -8,7 +8,7 @@ Introduction
 
 Kasisto is a Point of Sale software to receive payments in [Monero](https://getmonero.org/). Example use cases include bars, cafes, restaurants and shops... Any place with an internet connection basically.
 
-To be fast (confirmation within seconds), Kasisto will accept unconfirmed transactions. Combined with the current transaction fees of around $0.25, the targeted payment amounts should be between around $10 and $100. I don't know how likely it is that a transaction will not get mined, so every seller will have to find their own pain barrier. Similarly, buyers will have to find their own personal lower limit in regards to current transaction fees.
+To be fast (confirmation within seconds), Kasisto will accept unconfirmed transactions. Combined with the current transaction fees of around $0.25, the targeted payment amounts should be between $10 and $100. I don't know how likely it is that a transaction will not get mined, so every seller will have to find their own pain barrier. Similarly, buyers will have to find their own personal lower limit in regards to current transaction fees.
 
 Prices will be shown in XMR and any fiat currencies supported by some exchange rate APIs, but there will be no automatic XMR to fiat conversion. Who would sell XMR, right? This is for the keepers and crypto enthusiasts: you will need to have a little server with `monerod` and `monero-wallet-rpc` (accessing a view-only wallet) running.
 
@@ -23,7 +23,7 @@ Technical Details
 
 ### The mobile app
 
-Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself ~~will~~ should still work (#7).
+Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself ~~will~~ should still work (https://github.com/amiuhle/kasisto/issues/7).
 
 All configuration and transaction details will be stored in the browser ([even in iOS 10+](http://caniuse.com/#feat=indexeddb), with polyfills possibly lower), and there will be no cookies on the site that is serving Kasisto. The web really is just a way to distribute and update an application in this case.
 
