@@ -23,7 +23,7 @@ Technical Details
 
 ### The mobile app
 
-Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself ~~will~~ should still work (https://github.com/amiuhle/kasisto/issues/7).
+Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself ~~will~~ should still work ([#7](https://github.com/amiuhle/kasisto/issues/7)).
 
 All configuration and transaction details will be stored in the browser ([even in iOS 10+](http://caniuse.com/#feat=indexeddb), with polyfills possibly lower), and there will be no cookies on the site that is serving Kasisto. The web really is just a way to distribute and update an application in this case.
 
@@ -113,9 +113,7 @@ yarn start
 TODO
 ----
 
-### Research Topics
-
-There are
+### [Research Topics](https://github.com/amiuhle/kasisto/issues?q=is%3Aissue+is%3Aopen+label%3Aresearch)
 
 ### `src/lib/monero-payments`
 
