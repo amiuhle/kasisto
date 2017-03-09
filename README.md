@@ -23,7 +23,7 @@ Technical Details
 
 ### The mobile app
 
-Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself should still work.
+Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself ~~will~~ should still work (#7).
 
 All configuration and transaction details will be stored in the browser ([even in iOS 10+](http://caniuse.com/#feat=indexeddb), with polyfills possibly lower), and there will be no cookies on the site that is serving Kasisto. The web really is just a way to distribute and update an application in this case.
 
@@ -91,7 +91,7 @@ server {
 
 Restart nginx `sudo service nginxn restart`.
 
-### TODOs
+### TODO
 
 * Local SSL options
   * Import self-signed certificate on mobile device
@@ -110,19 +110,16 @@ yarn
 yarn start
 ```
 
-TODOs
------
+TODO
+----
+
+### Research Topics
+
+There are
 
 ### `src/lib/monero-payments`
 
 will eventually become a separate node library to easily receive Monero. Any suggestions for a top level API would be welcome, please submit an issue.
-
-Questions
----------
-
-If you can help with any of these, please submit an issue, or comment if there already is one.
-
-* What's required for proper taxation? Reference to receipt # enough? Would a barcode scanner help?
 
 Contribute
 ----------
@@ -130,7 +127,6 @@ Contribute
 If you want to contribute to Kasisto, you can do so in any of the following ways:
 
 * Test Kasisto by accepting in your cafe, bar or shop. If you have any problems setting things up, open an issue and I'll help!
-* Are you a designer? Screen design would be welcome, please submit an issue to discuss!
 * Submit any other issue or a pull request
 
 You can also support the project by donating to the following address:
