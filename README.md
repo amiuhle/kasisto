@@ -122,10 +122,11 @@ will eventually become a separate node library to easily receive Monero. Any sug
 Contribute
 ----------
 
-If you want to contribute to Kasisto, you can do so in any of the following ways:
+If you want to contribute to Kasisto, you can do so in any of the following ways, in no particular order:
 
 * Test Kasisto by accepting in your cafe, bar or shop. If you have any problems setting things up, open an issue and I'll help!
 * Submit any other issue or a pull request
+* Look at the existing [Issues](https://github.com/amiuhle/kasisto/issues). Not everything is about development, the labels `help-wanted` and especially `research` are mainly configuration / maintenance stuff and actual real-world research.
 
 You can also support the project by donating to the following address:
 
