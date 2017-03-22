@@ -2,7 +2,10 @@
   "name": "kasisto",
   "private": true,
   "version": "0.0.1",
-  "description": "Kasisto - Get paid in XMR",
+  "description": "A Monero Point of Sale payment system",
+  "repository": "",
+  "keywords": ["monero", "xmr", "point-of-sale", "payment-system", "cryptocurrency"],
+  "author": "Timo Uhlmann",
   "main": "src/index.js",
   "scripts": {
     "start": "npm run serve:dev",
@@ -20,9 +23,6 @@
     "release:minor": "npm version prerelease && git push --follow-tags && npm publish --tag beta",
     "release:patch": "npm version prerelease && git push --follow-tags && npm publish --tag beta"
   },
-  "repository": "",
-  "keywords": [],
-  "author": "Your name here",
   "devDependencies": {
     "babel-core": "^6.7.6",
     "babel-eslint": "^7.1.1",

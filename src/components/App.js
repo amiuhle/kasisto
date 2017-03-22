@@ -9,7 +9,6 @@ import {
 import './app.scss'
 
 class PaymentRequest extends Component {
-
   constructor (props) {
     super(props)
 
@@ -85,7 +84,6 @@ const selectAll = (e) => {
 }
 
 class AppComponent extends Component {
-
   constructor (props) {
     super(props)
 
@@ -106,6 +104,7 @@ class AppComponent extends Component {
         ready: true
       })
     })
+
     this.payment.on('payment', (event) => {
       console.log('onPayment', event, this.payment)
       this.setState({
@@ -118,7 +117,7 @@ class AppComponent extends Component {
   }
 
   render () {
-    const { amountReceived, transactionIds, ready, isRotated } = this.state
+    const { amountReceived, isRotated, ready, transactionIds } = this.state
     const { integratedAddress, uri } = this.payment
 
     const rotateButton = (render) => {

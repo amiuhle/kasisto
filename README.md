@@ -1,10 +1,8 @@
-Kasisto
-=======
+# Kasisto
 
 [![Join the chat at https://gitter.im/amiuhle/kasisto](https://badges.gitter.im/amiuhle/kasisto.svg)](https://gitter.im/amiuhle/kasisto?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Introduction
-------------
+## Introduction
 
 Kasisto is a Point of Sale software to receive payments in [Monero](https://getmonero.org/). Example use cases include bars, cafes, restaurants and shops... Any place with an internet connection basically.
 
@@ -18,8 +16,7 @@ In return, you will get a completely independent payment system, without any ext
 
 Here's a [Testnet Demo](https://amiuhle.github.io/kasisto), it's polling the wallet every 10 seconds. In production, it should be possible to lower this to one second, making payments pretty much instant. The split view design is something I played around with, but that will probably not make it into the initial release.
 
-Technical Details
------------------
+## Technical Details
 
 ### The mobile app
 
@@ -39,7 +36,7 @@ Configuration will include:
 
 In addition to the mobile device(s) running the web app, you will need to run a local server. Hardware requirements for dedicated devices will have to be figured out. If you already have a PC running, I will provide instructions how to configure on Ubuntu below, and there will probably be Docker images and sample configurations.
 
-**On your local computer**, create a dedicated wallet for Kasisto first, then [create a view-only wallet](https://github.com/amiuhle/monero-site/blob/eb816710e42229b5c7e6504f48f6dc5ad2fa583a/knowledge-base/user-guides/view_only.md) for it. Upload / copy the view-only wallet file to the server.
+**On your local computer**, create a dedicated wallet for Kasisto first, then [create a view-only wallet](https://getmonero.org/knowledge-base/user-guides/view_only) for it. Upload / copy the view-only wallet file to the server.
 
 #### Configuration
 
@@ -97,21 +94,19 @@ Restart nginx `sudo service nginxn restart`.
   * Import self-signed certificate on mobile device
   * If you have a domain, use [Let's Encrypt](https://letsencrypt.org/) for subdomain and override DNS for local network
 
-Development
------------
+## Development
 
 Clone, install dependencies and run (`npm` should work just fine).
 
 For now, you have to edit `monero-wallet-rpc` connection settings in `src/components/App.js`. This will move to browser storage pretty fast.
 
-```
+```bash
 git clone https://github.com/amiuhle/kasisto.git
 yarn
 yarn start
 ```
 
-TODO
-----
+## TODOs
 
 ### [Research Topics](https://github.com/amiuhle/kasisto/issues?q=is%3Aissue+is%3Aopen+label%3Aresearch)
 
@@ -119,8 +114,7 @@ TODO
 
 will eventually become a separate node library to easily receive Monero. Any suggestions for a top level API would be welcome, please submit an issue.
 
-Contribute
-----------
+## Contribute
 
 If you want to contribute to Kasisto, you can do so in any of the following ways, in no particular order:
 
@@ -128,8 +122,10 @@ If you want to contribute to Kasisto, you can do so in any of the following ways
 * Submit any other issue or a pull request
 * Look at the existing [Issues](https://github.com/amiuhle/kasisto/issues). Not everything is about development, the labels `help-wanted` and especially `research` are mainly configuration / maintenance stuff and actual real-world research.
 
-You can also support the project by donating to the following address:
+You can also support the project by donating to the following address:  
 
-```
+<!-- Maybe GitHub will support Monero at some time by displaying a barcode for this :) -->
+
+```monero
 4JkULN8gD1M1hjSJBMgnC8FTKhVgMeYg6dzbqnhmSiERc3M4TUrJZ4nDMet1vCkh98C8nJWFmEMiAaaDRwWehqAJFrzAq1WNEP4SXgbVNX
 ```
