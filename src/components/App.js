@@ -8,7 +8,7 @@ import {
 
 import './app.scss'
 
-class PaymentRequest extends Component {
+export class PaymentRequest extends Component {
   constructor (props) {
     super(props)
 
@@ -83,7 +83,7 @@ const selectAll = (e) => {
   e.target.setSelectionRange(0, e.target.value.length)
 }
 
-class AppComponent extends Component {
+export default class AppComponent extends Component {
   constructor (props) {
     super(props)
 
@@ -214,5 +214,3 @@ class AppComponent extends Component {
 
 AppComponent.defaultProps = {
 }
-
-export default AppComponent

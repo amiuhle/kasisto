@@ -1,5 +1,4 @@
 // TODO What should be default?
-
 import { EventEmitter } from 'events'
 
 import MoneroWallet from 'monero-nodejs'

@@ -1,8 +1,8 @@
 {
   "presets": [
-    ["es2015", { "modules": false }],
     "react",
-    "airbnb"
+    "es2015",
+    "stage-0"
   ],
   "plugins": [
     "transform-decorators-legacy",
