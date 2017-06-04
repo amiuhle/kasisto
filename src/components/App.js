@@ -54,15 +54,15 @@ export class PaymentRequest extends Component {
         {children}
         <label>
           <span>Receipt #</span>
-          <input type='text' className='align-right' value={receipt} readOnly={isClient} onChange={setReceipt} />
+          <input type='text' className='align-right' value={receipt} readOnly={isClient} onChange={e => setReceipt(e.target.value)} />
         </label>
         <label>
           <span>Amount due</span>
-          <input type='number' className='align-right' value={amount} readOnly={isClient} onChange={setAmount} />
+          <input type='number' className='align-right' value={amount} readOnly={isClient} onChange={e => setAmount(parseFloat(e.target.value))} />
         </label>
         <label>
           <span>Tip</span>
-          <input type='number' className='align-right' value={tip} readOnly={isMerchant} onChange={setTip} />
+          <input type='number' className='align-right' value={tip} readOnly={isMerchant} onChange={e => setTip(parseFloat(e.target.value))} />
         </label>
         <label>
           <span>Total</span>

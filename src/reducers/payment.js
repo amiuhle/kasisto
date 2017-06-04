@@ -3,7 +3,7 @@
  * If you change the type from object to something else, do not forget to update
  * src/container/App.js accordingly.
  */
-import {SET_AMOUNT, SET_RECEIPT, SET_TIP} from '../actions/const'
+import {SET_AMOUNT, SET_RECEIPT, SET_TIP} from '../actions/payments'
 
 const initialState = {
   amount: 0.89,
@@ -17,15 +17,15 @@ function reducer (state = initialState, action) {
 
   switch (action.type) {
     case SET_AMOUNT: {
-      nextState.amount = action.parameter
+      nextState.amount = action.amount
       return nextState
     }
     case SET_RECEIPT: {
-      nextState.receipt = action.parameter
+      nextState.receipt = action.receipt
       return nextState
     }
     case SET_TIP: {
-      nextState.tip = action.parameter
+      nextState.tip = action.tip
       return nextState
     }
     default: {

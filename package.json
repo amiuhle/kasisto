@@ -83,11 +83,15 @@
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
+    "uuid": "^3.0.1",
     "webpack": "^2.1.0-beta.6"
   },
   "jest": {
     "testMatch": [
       "**/__tests__/**/*.js?(x)"
     ]
+  },
+  "standard": {
+    "parser": "babel-eslint"
   }
 }
