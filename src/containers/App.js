@@ -7,17 +7,17 @@ import {
   setAmount,
   setReceipt,
   setTip
-} from '../actions/payments'
+} from '../actions'
 
 import App from '../components/App'
 
 const render = props => {
-  const { actions, payment } = props
-  return <App {... { actions, payment }} />
+  const { actions, payments } = props
+  return <App {... { actions, payments }} />
 }
 
 const mapStateToProps = state => ({
-  payment: state.payment
+  payments: state.payments
 })
 
 const mapDispatchToProps = dispatch => ({

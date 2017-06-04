@@ -1,12 +1,19 @@
-export const SET_AMOUNT = 'SET_AMOUNT'
-export const SET_RECEIPT = 'SET_RECEIPT'
-export const SET_TIP = 'SET_TIP'
+import { v4 as uuid } from 'uuid'
 
-export const setAmount = amount =>
-  ({ type: SET_AMOUNT, amount })
+export const CREATE_PAYMENT = 'CREATE_PAYMENT'
 
-export const setReceipt = receipt =>
-  ({ type: SET_RECEIPT, receipt })
+export const createPayment = (amount, receipt, tip) => ({
+  type: CREATE_PAYMENT,
+  payment: {
+    id: uuid(),
+    amount,
+    receipt,
+    tip,
+    createdAt: timestamp(),
+    updatedAt: timestamp()
+  }
+})
 
-export const setTip = tip =>
-  ({ type: SET_TIP, tip })
+const timestamp = () => {
+  JSON.stringify(new Date())
+}

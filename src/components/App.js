@@ -147,7 +147,8 @@ export default class AppComponent extends Component {
     )
 
     if (ready) {
-      const { payment, actions } = this.props
+      const { payments, actions } = this.props
+      const payment = payments
       this.payment.amount = payment.amount
 
       return (
