@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 import { history } from '../stores'
 
 import CreatePayment from '../containers/payments/create'
+import ConfirmPayment from '../containers/payments/confirm'
 
 export default class App extends Component {
   render () {
@@ -15,6 +16,7 @@ export default class App extends Component {
           <section className='o-app__content'>
             <Route path='/' exact render={() => <Redirect to='/payments/create' />} />
             <Route path='/payments/create' component={CreatePayment} />
+            <Route path='/payment/confirm' component={ConfirmPayment} />
           </section>
         </BrowserRouter>
         <footer className='o-app__footer' />

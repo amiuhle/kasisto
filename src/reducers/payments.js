@@ -5,7 +5,7 @@ import {
 const payments = (state = [], action) => {
   switch (action.type) {
     case CREATE_PAYMENT: {
-      return [action.payment, ...state]
+      return [action.payload, ...state]
     }
     default: {
       return state
