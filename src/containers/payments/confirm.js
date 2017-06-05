@@ -4,8 +4,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import {
-  confirmPayment
+  confirmPayment,
+  setTip
 } from '../../actions'
+
+import {
+  getCurrentPayment
+} from '../../reducers/payments'
 
 import ConfirmPayment from '../../components/payments/confirm'
 
@@ -14,13 +19,13 @@ const render = props => {
 }
 
 const mapStateToProps = state => ({
-  payment: state.payments.slice(0, 1)[0]
+  payment: getCurrentPayment(state.payments)
 })
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({
-    confirmPayment
-  }, dispatch)
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(render)
+export default connect(
+  mapStateToProps,
+  {
+    onConfirmPayment: confirmPayment,
+    onSetTip: setTip
+  }
+)(render)
