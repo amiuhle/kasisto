@@ -7,7 +7,6 @@ const webpack = require('webpack')
 const WebpackBaseConfig = require('./Base')
 
 class WebpackDevConfig extends WebpackBaseConfig {
-
   constructor () {
     super()
     this.config = {

@@ -1,26 +1,3 @@
-body {
-  background-color: #fff;
-
-  width: 100vw;
-  height: 100vh;
-  max-width: 800px;
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-}
-
-h2 {
-  font-size: 16px;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-h3 {
-  font-size: 24px;
-  text-transform: capitalize;
-}
-
 .flip {
   transform: rotate(180deg);
 }
@@ -184,12 +161,4 @@ label {
     overflow: hidden;
     font-family: monospace;
   }
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
 }

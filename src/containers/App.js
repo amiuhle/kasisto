@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import {
-  setAmount,
-  setReceipt,
-  setTip
+  createPayment
 } from '../actions'
 
 import App from '../components/App'
@@ -22,9 +20,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    setReceipt,
-    setAmount,
-    setTip
+    createPayment
   }, dispatch)
 })
 

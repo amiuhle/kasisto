@@ -2,3 +2,11 @@ h1, h2, h3 {
   font-family: 'Ubuntu', sans-serif;
   font-weight: normal;
 }
+
+h1, h3 {
+  text-transform: capitalize;
+}
+
+h2 {
+  text-transform: uppercase;
+}

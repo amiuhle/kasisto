@@ -6,7 +6,7 @@
 .o-app {
   height: 100vh;
   display: grid;
-  grid-gap: $base-spacing-unit;
+  grid-gap: $small-spacing-unit;
   grid-template-rows: $double-spacing-unit 1fr $double-spacing-unit;
   grid-template-columns: $double-spacing-unit 1fr;
   grid-template-areas:
@@ -25,6 +25,7 @@
 
 .o-app__content {
   grid-area: content;
+  padding: 0 $base-spacing-unit;
 }
 
 .o-app__footer {
