@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "cross-env": "^3.2.3",
+    "history": "^4.6.1",
     "inuitcss": "https://github.com/inuitcss/inuitcss.git#develop",
     "monero-nodejs": "https://github.com/amiuhle/monero-nodejs.git#fetch-only",
     "qrcode.react": "^0.6.1",
@@ -83,6 +84,8 @@
     "react-dom": "^15.0.1",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.2",
+    "react-router": "^4.1.1",
+    "react-router-redux": "next",
     "redux": "^3.6.0",
     "uuid": "^3.0.1",
     "webpack": "^2.1.0-beta.6"

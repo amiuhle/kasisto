@@ -1,9 +1,23 @@
-import { createStore } from 'redux'
+import createHistory from 'history/createBrowserHistory'
+import { routerMiddleware } from 'react-router-redux'
+import { applyMiddleware, compose, createStore } from 'redux'
+
 import reducers from '../reducers'
 
-function reduxStore (initialState) {
-  const store = createStore(reducers, initialState,
-    window.devToolsExtension && window.devToolsExtension())
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+export const history = createHistory()
+
+const middlewares = [routerMiddleware(history)]
+
+export default function configureStore (initialState) {
+  const store = createStore(
+    reducers,
+    initialState,
+    composeEnhancers(
+      applyMiddleware(...middlewares)
+    )
+  )
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -17,5 +31,3 @@ function reduxStore (initialState) {
 
   return store
 }
-
-export default reduxStore
