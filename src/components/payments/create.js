@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class PaymentRequest extends Component {
+export default class CreatePayment extends Component {
   state = {
     receipt: '',
     amount: 0
@@ -20,7 +20,10 @@ export default class PaymentRequest extends Component {
     const { amount, receipt } = this.state
     const { createPayment } = this.props.actions
     createPayment(amount, receipt)
+
+    const { history } = this.props
     e.preventDefault()
+    history.push('/payment/confirm')
   }
 
   render () {

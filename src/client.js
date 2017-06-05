@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 
 import configureStore from './stores'
 
-import App from './containers/App'
+import App from './components/App'
 
 const store = configureStore()
 
@@ -21,8 +21,8 @@ render(
 )
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const NextApp = require('./containers/App').default // eslint-disable-line global-require
+  module.hot.accept('./components/App', () => {
+    const NextApp = require('./components/App').default // eslint-disable-line global-require
 
     render(
       <AppContainer>

@@ -5,18 +5,13 @@ import { bindActionCreators } from 'redux'
 
 import {
   createPayment
-} from '../actions'
+} from '../../actions'
 
-import App from '../components/App'
+import CreatePayment from '../../components/payments/create'
 
 const render = props => {
-  const { actions, payments } = props
-  return <App {... { actions, payments }} />
+  return <CreatePayment {...props} />
 }
-
-const mapStateToProps = state => ({
-  payments: state.payments
-})
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
@@ -24,4 +19,4 @@ const mapDispatchToProps = dispatch => ({
   }, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(render)
+export default connect(null, mapDispatchToProps)(render)
