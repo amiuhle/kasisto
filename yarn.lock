@@ -3178,6 +3178,12 @@ interpret@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.0.1.tgz#d579fb7f693b858004947af39fa0db49f795602c"
 
+"inuitcss@https://github.com/inuitcss/inuitcss.git#develop":
+  version "6.0.0-beta.4"
+  resolved "https://github.com/inuitcss/inuitcss.git#6c93fc46f2083ae1c81fb9b738c83970e5f6ea35"
+  dependencies:
+    sass-mq "^3.2.9"
+
 invariant@^2.0.0, invariant@^2.2.0:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
@@ -5727,6 +5733,10 @@ sass-loader@^6.0.1:
     loader-utils "^1.0.1"
     lodash.tail "^4.1.1"
     pify "^2.3.0"
+
+sass-mq@^3.2.9:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/sass-mq/-/sass-mq-3.3.2.tgz#3472e04c31a432bcd55b3b604edc72ae9a4def1a"
 
 sax@^1.2.1, sax@~1.2.1:
   version "1.2.2"

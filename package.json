@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "cross-env": "^3.2.3",
+    "inuitcss": "https://github.com/inuitcss/inuitcss.git#develop",
     "monero-nodejs": "https://github.com/amiuhle/monero-nodejs.git#fetch-only",
     "qrcode.react": "^0.6.1",
     "react": "^15.0.1",

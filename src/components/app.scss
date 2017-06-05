@@ -1,9 +1,4 @@
-html {
-  background-color: #fcfcfc;
-}
-
 body {
-  font-family: 'Open Sans', sans-serif;
   background-color: #fff;
 
   width: 100vw;
@@ -13,15 +8,6 @@ body {
 
   display: flex;
   flex-direction: column;
-}
-
-h1, h2, h3 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 36px;
 }
 
 h2 {
@@ -206,16 +192,4 @@ label {
 
 .align-center {
   text-align: center;
-}
-
-.testnet {
-  position: fixed;
-  top: 25px;
-  right:-65px;
-  width: 200px;
-  transform: rotate(45deg);
-  font-size: smaller;
-  padding: 0.5em;
-  border: 1px solid red;
-  color: red;
 }
