@@ -10,6 +10,7 @@
 // TOOLS
 @import '~inuitcss/tools/tools.font-size';
 @import 'tools.aliases';
+@import 'tools.mixins';
 
 // GENERIC
 @import '~inuitcss/generic/generic.box-sizing';
@@ -26,9 +27,12 @@
 
 // OBJECTS
 @import 'objects.app';
+@import 'objects.flex';
 @import 'objects.forms';
 
 // COMPONENTS
+@import 'components.buttons';
+@import 'components.integrated-address';
 
 // UTILITIES
 @import '~inuitcss/utilities/utilities.spacings';

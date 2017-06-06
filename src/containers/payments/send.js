@@ -18,7 +18,7 @@ class Container extends Component {
   }
 
   componentDidUpdate (prevProps) {
-    this.receiveIntegratedAddress()
+    // this.receiveIntegratedAddress()
   }
 
   receiveIntegratedAddress () {

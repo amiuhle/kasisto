@@ -1,21 +1,40 @@
 import {
   CREATE_PAYMENT,
+  CONFIRM_PAYMENT,
   SET_TIP,
-  CONFIRM_PAYMENT
+  RECEIVE_INTEGRATED_ADDRESS
 } from '../actions/payments'
 
+// TODO This needs to be a more database-like structure
 const payments = (state = [], action) => {
+  const currentPayment = getCurrentPayment(state)
+  const archive = state.slice(1)
   switch (action.type) {
     case CREATE_PAYMENT: {
       return [action.payload, ...state]
     }
+    case CONFIRM_PAYMENT:
+      // TODO CONFIRM_PAYMENT
+      return state
     case SET_TIP: {
-      const currentPayment = getCurrentPayment(state)
-      const archive = state.slice(1)
-      return [Object.assign({}, currentPayment, {
-        tip: action.payload.tip,
-        total: currentPayment.amount + action.payload.tip
-      }), ...archive]
+      const { tip } = action.payload
+      return [
+        Object.assign({}, currentPayment, {
+          tip,
+          total: currentPayment.amount + tip
+        }),
+        ...archive
+      ]
+    }
+    case RECEIVE_INTEGRATED_ADDRESS: {
+      const { integratedAddress, paymentId } = action.payload
+      return [
+        Object.assign({}, currentPayment, {
+          integratedAddress,
+          paymentId
+        }),
+        ...archive
+      ]
     }
     default: {
       return state

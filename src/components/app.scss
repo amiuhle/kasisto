@@ -55,11 +55,6 @@ header {
   }
 }
 
-@mixin soft-border {
-  border: 1px solid #ccc;
-  border-radius: 0.1em;
-}
-
 .app {
   flex: 1;
 
@@ -149,16 +144,5 @@ label {
 
   .qr-code {
     margin: 1em;
-  }
-
-  .integrated-address {
-    @include soft-border();
-
-    text-align: center;
-    margin: 1em 0;
-    padding: 1em;
-    flex: 0 0 3em;
-    overflow: hidden;
-    font-family: monospace;
   }
 }
