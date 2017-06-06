@@ -11,7 +11,7 @@ export default class App extends Component {
   render () {
     return (
       <div className='o-app'>
-        <h1 className='o-app__header u-margin-none'>Kasisto</h1>
+        <h1 className='o-app__header u-margin-none u-margin-left-small'>Kasisto</h1>
         <aside className='o-app__nav' />
         <BrowserRouter forceRefresh={false} history={history}>
           <section className='o-app__content'>

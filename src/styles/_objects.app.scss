@@ -8,9 +8,9 @@
   display: grid;
   grid-gap: $small-spacing-unit;
   grid-template-rows: $double-spacing-unit 1fr $double-spacing-unit;
-  grid-template-columns: $double-spacing-unit 1fr;
+  grid-template-columns: 1fr $double-spacing-unit;
   grid-template-areas:
-    'nav header'
+    'header nav'
     'content content'
     'footer footer';
 }
