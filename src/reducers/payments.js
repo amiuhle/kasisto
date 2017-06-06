@@ -28,6 +28,15 @@ const payments = (state = [], action) => {
     }
     case RECEIVE_INTEGRATED_ADDRESS: {
       const { integratedAddress, paymentId } = action.payload
+
+      if (integratedAddress != null && paymentId != null) {
+        // TODO could wallet have changed?
+        return state
+      } else if (integratedAddress == null || paymentId == null) {
+        // one is valid, one is null
+        throw new Error(`Invalid state: ${JSON.stringify({integratedAddress, paymentId})}`)
+      }
+
       return [
         Object.assign({}, currentPayment, {
           integratedAddress,
