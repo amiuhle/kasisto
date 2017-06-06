@@ -14,7 +14,7 @@ export default class SendPayment extends Component {
         <p className='u-align-center'>
           Please send <br />
           <strong>{total} XMR</strong> <br />
-          to the following address:
+          to the following address
         </p>
       </div>
     )

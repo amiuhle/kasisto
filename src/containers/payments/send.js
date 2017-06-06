@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 
 import {
+  fetchIntegratedAddress
 } from '../../actions'
 
 import {
@@ -11,8 +12,25 @@ import {
 
 import SendPayment from '../../components/payments/send'
 
-const render = props => {
-  return <SendPayment {...props} />
+class Container extends Component {
+  componentDidMount () {
+    this.receiveIntegratedAddress()
+  }
+
+  componentDidUpdate (prevProps) {
+    this.receiveIntegratedAddress()
+  }
+
+  receiveIntegratedAddress () {
+    const { fetchIntegratedAddress } = this.props
+    fetchIntegratedAddress()
+  }
+
+  render () {
+    return (
+      <SendPayment {...this.props} />
+    )
+  }
 }
 
 const mapStateToProps = state => ({
@@ -22,7 +40,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    // onConfirmPayment: confirmPayment,
-    // onSetTip: setTip
+    fetchIntegratedAddress
   }
-)(render)
+)(Container)
