@@ -23,7 +23,7 @@ export default class ConfirmPayment extends Component {
     return (
       <div>
         <h2>Confirm Payment</h2>
-        <form action='/payment/pay' className='o-form' onSubmit={this.handleSubmit}>
+        <form action='/payment/send' className='o-form' onSubmit={this.handleSubmit}>
           <label htmlFor='receipt'>Receipt</label>
           <input disabled id='receipt' value={receipt} type='text' className='u-align-right' />
 
@@ -36,7 +36,7 @@ export default class ConfirmPayment extends Component {
           <label htmlFor='total'>Total</label>
           <input disabled id='total' value={total} type='number' className='u-align-right' />
 
-          <button className='o-form-item--span'>Confirm payment</button>
+          <button className='o-form-item--span'>Start payment</button>
         </form>
       </div>
     )
