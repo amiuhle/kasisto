@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import {
   confirmPayment,
@@ -10,7 +9,7 @@ import {
 
 import {
   getCurrentPayment
-} from '../../reducers/payments'
+} from '../../reducers'
 
 import ConfirmPayment from '../../components/payments/confirm'
 
@@ -19,7 +18,7 @@ const render = props => {
 }
 
 const mapStateToProps = state => ({
-  payment: getCurrentPayment(state.payments)
+  payment: getCurrentPayment(state)
 })
 
 export default connect(
