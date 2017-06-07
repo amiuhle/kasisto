@@ -1,7 +1,7 @@
 import createHistory from 'history/createBrowserHistory'
 import { applyMiddleware, compose, createStore } from 'redux'
 import logger from 'redux-logger'
-import promise from 'redux-promise'
+import thunk from 'redux-thunk'
 
 import reducers from '../reducers'
 
@@ -10,7 +10,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 export const history = createHistory()
 
 export default (initialState) => {
-  const middlewares = [promise]
+  const middlewares = [thunk]
 
   if (process.env.NODE_ENV !== 'production') {
     middlewares.push(logger)
