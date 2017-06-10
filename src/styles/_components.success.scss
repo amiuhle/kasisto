@@ -1,0 +1,25 @@
+.c-success {
+  padding: 1em;
+  align-self: center;
+  color: green;
+  border: 2px solid green;
+  border-radius: 0.2em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: uppercase;
+
+  .check {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    border: inherit;
+    border-radius: 50%;
+
+    margin-right: 0.5em;
+  }
+}

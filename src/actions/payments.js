@@ -11,12 +11,13 @@ export const RECEIVE_INTEGRATED_ADDRESS = 'RECEIVE_INTEGRATED_ADDRESS'
 export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT'
 
 export const listenForPayments = (total, paymentId) => (dispatch) => {
+  console.log('listening for payment', paymentId, total)
   // TODO validate total & paymentId
-  const pool = []
+  // const pool = []
   const poll = () => {
-    wallet.proxyGetTransfers({pool: true}).then((result) => {
+    wallet.getTransfers({pool: true}).then((result) => {
       const transactionIds = []
-      const received = pool.reduce((amount, transaction) => {
+      const received = (result.pool || []).reduce((amount, transaction) => {
         if (transaction.payment_id === paymentId) {
           amount += transaction.amount / 1e12
           transactionIds.push(transaction.txid)
@@ -38,7 +39,7 @@ export const listenForPayments = (total, paymentId) => (dispatch) => {
     })
   }
   // TODO clear handle?
-  const handle = window.setInterval(poll, 10000)
+  const handle = window.setInterval(poll, 5000)
 }
 
 const receivePayment = ({ confirmed, received, transactionIds }) => ({

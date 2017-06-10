@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import {
-  fetchIntegratedAddress
+  fetchIntegratedAddress,
+  listenForPayments
 } from '../../actions'
 
 import {
@@ -14,16 +15,31 @@ import SendPayment from '../../components/payments/send'
 
 class Container extends Component {
   componentDidMount () {
-    this.receiveIntegratedAddress()
+    this.fetchStuff()
   }
 
   componentDidUpdate (prevProps) {
-    // this.receiveIntegratedAddress()
+    this.fetchStuff()
   }
 
-  receiveIntegratedAddress () {
-    const { fetchIntegratedAddress } = this.props
-    fetchIntegratedAddress()
+  fetchStuff () {
+    const {
+      fetchIntegratedAddress,
+      listenForPayments,
+      payment
+    } = this.props
+
+    const {
+      integratedAddress,
+      paymentId,
+      total
+    } = payment
+
+    if (integratedAddress == null || paymentId == null) {
+      fetchIntegratedAddress()
+    } else {
+      listenForPayments(total, paymentId)
+    }
   }
 
   render () {
@@ -40,6 +56,7 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    fetchIntegratedAddress
+    fetchIntegratedAddress,
+    listenForPayments
   }
 )(Container)
