@@ -1,9 +1,28 @@
-import { createStore } from 'redux'
+import createHistory from 'history/createBrowserHistory'
+import { applyMiddleware, compose, createStore } from 'redux'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+
 import reducers from '../reducers'
 
-function reduxStore (initialState) {
-  const store = createStore(reducers, initialState,
-    window.devToolsExtension && window.devToolsExtension())
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+export const history = createHistory()
+
+export default (initialState) => {
+  const middlewares = [thunk]
+
+  if (process.env.NODE_ENV !== 'production') {
+    middlewares.push(logger)
+  }
+
+  const store = createStore(
+    reducers,
+    initialState,
+    composeEnhancers(
+      applyMiddleware(...middlewares)
+    )
+  )
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
@@ -17,5 +36,3 @@ function reduxStore (initialState) {
 
   return store
 }
-
-export default reduxStore

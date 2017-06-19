@@ -1,0 +1,11 @@
+.o-flex {
+  display: flex;
+}
+
+.o-flex--col {
+  flex-direction: column
+}
+
+.o-flex--center {
+  justify-content: center;
+}

@@ -1,40 +1,3 @@
-html {
-  background-color: #fcfcfc;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #fff;
-
-  width: 100vw;
-  height: 100vh;
-  max-width: 800px;
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-}
-
-h1, h2, h3 {
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 36px;
-}
-
-h2 {
-  font-size: 16px;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-h3 {
-  font-size: 24px;
-  text-transform: capitalize;
-}
-
 .flip {
   transform: rotate(180deg);
 }
@@ -90,11 +53,6 @@ header {
   &--column {
     flex-direction: column;
   }
-}
-
-@mixin soft-border {
-  border: 1px solid #ccc;
-  border-radius: 0.1em;
 }
 
 .app {
@@ -187,35 +145,4 @@ label {
   .qr-code {
     margin: 1em;
   }
-
-  .integrated-address {
-    @include soft-border();
-
-    text-align: center;
-    margin: 1em 0;
-    padding: 1em;
-    flex: 0 0 3em;
-    overflow: hidden;
-    font-family: monospace;
-  }
-}
-
-.align-right {
-  text-align: right;
-}
-
-.align-center {
-  text-align: center;
-}
-
-.testnet {
-  position: fixed;
-  top: 25px;
-  right:-65px;
-  width: 200px;
-  transform: rotate(45deg);
-  font-size: smaller;
-  padding: 0.5em;
-  border: 1px solid red;
-  color: red;
 }

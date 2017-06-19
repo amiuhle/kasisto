@@ -1,0 +1,13 @@
+.o-form {
+  display: grid;
+  grid-gap: $base-spacing-unit;
+  grid-template-columns: 2fr 3fr;
+
+  label, input, button {
+    align-self: center;
+  }
+}
+
+.o-form-item--span {
+  grid-column: span 2;
+}

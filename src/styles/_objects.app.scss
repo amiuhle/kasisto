@@ -1,0 +1,33 @@
+// #APP
+/*
+ * App layout using CSS Grid Layout
+ */
+
+.o-app {
+  height: 100vh;
+  display: grid;
+  grid-gap: $small-spacing-unit;
+  grid-template-rows: $double-spacing-unit 1fr $double-spacing-unit;
+  grid-template-columns: 1fr $double-spacing-unit;
+  grid-template-areas:
+    'header nav'
+    'content content'
+    'footer footer';
+}
+
+.o-app__header {
+  grid-area: header;
+}
+
+.o-app__nav {
+  grid-area: nav;
+}
+
+.o-app__content {
+  grid-area: content;
+  padding: 0 $base-spacing-unit;
+}
+
+.o-app__footer {
+  grid-area: footer;
+}

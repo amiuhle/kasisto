@@ -1,13 +1,23 @@
+import './styles/main.scss'
+
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import { Provider } from 'react-redux'
-import App from './containers/App'
+
+import { loadState, saveState } from './lib/persistence'
+
 import configureStore from './stores'
 
-const store = configureStore()
+import App from './components/App'
 
-ReactDOM.render(
+const persistedState = loadState()
+const store = configureStore(persistedState)
+store.subscribe(() => {
+  saveState(store.getState())
+})
+
+render(
   <AppContainer>
     <Provider store={store}>
       <App />
@@ -17,10 +27,10 @@ ReactDOM.render(
 )
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => {
-    const NextApp = require('./containers/App').default // eslint-disable-line global-require
+  module.hot.accept('./components/App', () => {
+    const NextApp = require('./components/App').default // eslint-disable-line global-require
 
-    ReactDOM.render(
+    render(
       <AppContainer>
         <Provider store={store}>
           <NextApp />

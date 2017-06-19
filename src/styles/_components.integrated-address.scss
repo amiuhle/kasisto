@@ -1,0 +1,6 @@
+.c-integrated-address {
+  @include soft-border();
+  text-align: center;
+  padding: $small-spacing-unit;
+  font-family: monospace;
+}

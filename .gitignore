@@ -34,3 +34,7 @@ dist/
 
 # IDE/Editor data
 .idea/
+
+# VS Code configuration
+.vscode/*
+!.vscode/*.default
