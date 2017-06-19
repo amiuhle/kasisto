@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid'
 
-import Wallet from '../../src/lib/monero-payments'
+import Wallet from 'monero-nodejs'
 
 const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
@@ -10,7 +10,6 @@ export const RECEIVE_INTEGRATED_ADDRESS = 'RECEIVE_INTEGRATED_ADDRESS'
 export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT'
 
 export const listenForPayments = (total, paymentId) => (dispatch) => new Promise((resolve, reject) => {
-  console.log('listening for payment', paymentId, total)
   // TODO validate total & paymentId
   // const pool = []
   const poll = () => {
