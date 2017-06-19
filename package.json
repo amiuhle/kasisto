@@ -15,7 +15,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "npm run serve:dev",
-    "test": "jest",
+    "test": "yarn lint; yarn jest",
     "posttest": "npm run lint",
     "test:watch": "jest --watch",
     "serve:dev": "webpack-dev-server --env dev",
