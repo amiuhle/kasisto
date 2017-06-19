@@ -1,6 +1,5 @@
 import {
   CREATE_PAYMENT,
-  CONFIRM_PAYMENT,
   SET_TIP,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_PAYMENT
@@ -14,15 +13,13 @@ const payments = (state = [], action) => {
     case CREATE_PAYMENT: {
       return [action.payload, ...state]
     }
-    case CONFIRM_PAYMENT:
-      // TODO CONFIRM_PAYMENT
-      return state
     case SET_TIP: {
-      const { tip } = action.payload
+      const { tip, updatedAt } = action.payload
       return [
         Object.assign({}, currentPayment, {
           tip,
-          total: currentPayment.amount + tip
+          total: currentPayment.amount + tip,
+          updatedAt
         }),
         ...archive
       ]
@@ -49,7 +46,6 @@ const payments = (state = [], action) => {
     }
     case RECEIVE_PAYMENT: {
       const { received, transactionIds } = action.payload
-      console.log(RECEIVE_PAYMENT, received, transactionIds)
       return [
         Object.assign({}, currentPayment, {
           received,

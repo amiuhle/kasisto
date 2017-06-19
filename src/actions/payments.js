@@ -6,11 +6,10 @@ const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
 export const CREATE_PAYMENT = 'CREATE_PAYMENT'
 export const SET_TIP = 'SET_TIP'
-export const CONFIRM_PAYMENT = 'CONFIRM_PAYMENT'
 export const RECEIVE_INTEGRATED_ADDRESS = 'RECEIVE_INTEGRATED_ADDRESS'
 export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT'
 
-export const listenForPayments = (total, paymentId) => (dispatch) => {
+export const listenForPayments = (total, paymentId) => (dispatch) => new Promise((resolve, reject) => {
   console.log('listening for payment', paymentId, total)
   // TODO validate total & paymentId
   // const pool = []
@@ -32,6 +31,7 @@ export const listenForPayments = (total, paymentId) => (dispatch) => {
           transactionIds
         }))
         window.clearInterval(handle)
+        resolve()
       }
       if (received > 0) {
         console.log('[PaymentRequest] transfers', received, result.pool)
@@ -40,7 +40,7 @@ export const listenForPayments = (total, paymentId) => (dispatch) => {
   }
   // TODO clear handle?
   const handle = window.setInterval(poll, 5000)
-}
+})
 
 const receivePayment = ({ confirmed, received, transactionIds }) => ({
   type: RECEIVE_PAYMENT,
@@ -92,13 +92,5 @@ export const setTip = (tip) => {
   }
 }
 
-export const confirmPayment = () => ({
-  type: CONFIRM_PAYMENT,
-  payload: {
-
-  }
-})
-
-const timestamp = () => {
-  JSON.stringify(new Date())
-}
+const timestamp = () =>
+  new Date().toISOString()

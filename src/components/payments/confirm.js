@@ -7,9 +7,9 @@ export default class ConfirmPayment extends Component {
   }
 
   handleSubmit = (e) => {
-    const { confirmPayment } = this.props.actions
-    confirmPayment()
+    const { history } = this.props
     e.preventDefault()
+    history.push('/payment/send')
   }
 
   render () {

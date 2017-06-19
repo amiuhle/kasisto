@@ -1,7 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`experiments with Jest 1`] = `
-<i>
-  Waiting for wallet...
-</i>
+<div
+  className="o-app"
+>
+  <h1
+    className="o-app__header u-margin-none u-margin-left-small"
+  >
+    Kasisto
+  </h1>
+  <aside
+    className="o-app__nav"
+  />
+  <section
+    className="o-app__content"
+  />
+  <footer
+    className="o-app__footer"
+  />
+</div>
 `;
