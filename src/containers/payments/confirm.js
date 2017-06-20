@@ -3,7 +3,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import {
-  confirmPayment,
   setTip
 } from '../../actions'
 
@@ -24,7 +23,6 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   {
-    onConfirmPayment: confirmPayment,
     onSetTip: setTip
   }
 )(render)
