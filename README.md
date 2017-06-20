@@ -1,6 +1,7 @@
 # Kasisto
 
 [![Join the chat at https://gitter.im/amiuhle/kasisto](https://badges.gitter.im/amiuhle/kasisto.svg)](https://gitter.im/amiuhle/kasisto?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/amiuhle/kasisto.svg?branch=master)](https://travis-ci.org/amiuhle/kasisto)
 
 ## Introduction
 
