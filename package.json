@@ -48,6 +48,7 @@
     "gh-pages": "^1.0.0",
     "jest": "^20.0.4",
     "nock": "^9.0.13",
+    "node-fetch": "^1.7.1",
     "node-sass": "^4.5.3",
     "null-loader": "^0.1.1",
     "postcss": "^6.0.2",
@@ -82,6 +83,9 @@
     "uuid": "^3.1.0"
   },
   "jest": {
+    "setupFiles": [
+      "./setupJest.js"
+    ],
     "testMatch": [
       "**/__tests__/**/*.js?(x)"
     ]
