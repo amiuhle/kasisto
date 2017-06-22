@@ -3,8 +3,9 @@ import { v4 as uuid } from 'uuid'
 import Wallet from 'monero-nodejs'
 
 import * as types from './constants/payments'
-const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
+const { fetch } = window
+const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
 export const listenForPayments = (total, paymentId) => (dispatch) => new Promise((resolve, reject) => {
   // TODO validate total & paymentId
@@ -47,7 +48,7 @@ const receivePayment = ({ confirmed, received, transactionIds }) => ({
   }
 })
 
-export const fetchIntegratedAddress = () => (dispatch) =>
+const fetchIntegratedAddress = () => (dispatch) =>
   wallet.makeIntegratedAddress().then(
     result => dispatch(receiveIntegratedAddress(result))
   )
@@ -60,33 +61,63 @@ const receiveIntegratedAddress = ({ integrated_address, payment_id }) => ({
   }
 })
 
-export const createPayment = (amount, receipt) => {
-  amount = Number.parseFloat(amount) || 0
-  const total = amount
-  return {
-    type: types.CREATE_PAYMENT,
-    payload: {
-      id: uuid(),
-      amount,
-      receipt,
-      tip: 0,
-      total,
-      createdAt: timestamp(),
-      updatedAt: timestamp()
-    }
-  }
+export const startPayment = (currency) => (dispatch) => {
+  dispatch(createPayment())
+  return Promise.all([
+    dispatch(fetchExchangeRate(currency)),
+    dispatch(fetchIntegratedAddress())
+  ])
 }
+
+const createPayment = () => updatedAt({
+  type: types.CREATE_PAYMENT,
+  payload: {
+    id: uuid(),
+    createdAt: timestamp()
+  }
+})
+
+export const setReceipt = (receipt) => updatedAt({
+  type: types.SET_RECEIPT,
+  payload: {
+    receipt
+  }
+})
+
+export const setAmount = (amount) => updatedAt({
+  type: types.SET_AMOUNT,
+  payload: {
+    amount
+  }
+})
 
 export const setTip = (tip) => {
   tip = Math.max(0, Number.parseFloat(tip) || 0)
-  return {
+  return updatedAt({
     type: types.SET_TIP,
     payload: {
-      tip,
-      updatedAt: timestamp()
+      tip
     }
-  }
+  })
 }
+
+const fetchExchangeRate = (currency) => (dispatch) =>
+  fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
+    .then(response => response.json())
+    .then(json => dispatch(receiveExchangeRate(
+      currency,
+      Number.parseFloat(json.result[`XXMRZ${currency}`]['p'][1])
+    )))
+
+const receiveExchangeRate = (currency, rate) => ({
+  type: types.RECEIVE_EXCHANGE_RATE,
+  payload: { currency, rate }
+})
+
+const updatedAt = (action) => ({
+  ...action,
+  payload: Object.assign(action.payload, { updatedAt: timestamp() })
+})
 
 const timestamp = () =>
   new Date().toISOString()
