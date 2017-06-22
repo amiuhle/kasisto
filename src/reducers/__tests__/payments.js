@@ -1,10 +1,13 @@
 /* eslint-env jest */
 import {
   CREATE_PAYMENT,
+  SET_RECEIPT,
+  SET_AMOUNT,
   SET_TIP,
+  RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_PAYMENT
- } from '../../actions/constants/payments'
+} from '../../actions/constants/payments'
 import payments from '../payments'
 
 describe('Payments Reducer', () => {
@@ -17,12 +20,8 @@ describe('Payments Reducer', () => {
   describe(CREATE_PAYMENT, () => {
     it('adds a new payment', () => {
       const payload = {
-        amount: 1.23,
-        createdAt: '2017-06-17T17:32:04.735Z',
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
-        receipt: '070617/229-9',
-        tip: 0,
-        total: 1.23,
+        createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
 
@@ -32,6 +31,102 @@ describe('Payments Reducer', () => {
           payload
         })
       ).toEqual([payload])
+    })
+  })
+
+  describe(RECEIVE_EXCHANGE_RATE, () => {
+    it('sets exchange, currency and rate', () => {
+      const payment = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z'
+      }
+      expect(
+        payments([payment], {
+          type: RECEIVE_EXCHANGE_RATE,
+          payload: {
+            currency: 'EUR',
+            exchange: 'https://www.kraken.com/',
+            rate: 46.68377619
+          }
+        })
+      ).toEqual([{
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z',
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619
+      }])
+    })
+  })
+
+  describe(SET_RECEIPT, () => {
+    it('sets exchange, currency and rate', () => {
+      const payment = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z',
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619
+      }
+      expect(
+        payments([payment], {
+          type: SET_RECEIPT,
+          payload: {
+            receipt: '070617/229-9'
+          }
+        })
+      ).toEqual([{
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z',
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619,
+
+        receipt: '070617/229-9'
+      }])
+    })
+  })
+
+  describe(SET_AMOUNT, () => {
+    it('sets exchange, currency and rate', () => {
+      const payment = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z',
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619,
+
+        receipt: '070617/229-9'
+      }
+      expect(
+        payments([payment], {
+          type: SET_AMOUNT,
+          payload: {
+            amount: 1.23
+          }
+        })
+      ).toEqual([{
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z',
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619,
+
+        receipt: '070617/229-9',
+
+        amount: 1.23
+      }])
     })
   })
 

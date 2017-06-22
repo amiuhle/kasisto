@@ -111,7 +111,11 @@ const fetchExchangeRate = (currency) => (dispatch) =>
 
 const receiveExchangeRate = (currency, rate) => ({
   type: types.RECEIVE_EXCHANGE_RATE,
-  payload: { currency, rate }
+  payload: {
+    currency,
+    rate,
+    exchange: 'https://www.kraken.com/'
+  }
 })
 
 const updatedAt = (action) => ({

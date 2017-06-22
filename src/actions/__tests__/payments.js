@@ -70,6 +70,7 @@ describe('Payment Actions', () => {
             {
               type: types.RECEIVE_EXCHANGE_RATE,
               payload: {
+                exchange: 'https://www.kraken.com/',
                 currency,
                 rate
               }
