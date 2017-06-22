@@ -22,7 +22,7 @@
     "serve:dist": "webpack-dev-server --env dist --progress",
     "dist": "npm run clean && npm run copy && webpack --progress --bail --env dist",
     "publish:staging": "yarn run dist && gh-pages -d dist",
-    "lint": "standard ./src",
+    "lint": "standard 'src/**/*.js'",
     "clean": "rimraf dist/*",
     "copy": "copyfiles -f ./src/index.html ./dist && copyfiles -u 1 \"./src/static/**\" ./dist",
     "release:major": "npm version prerelease && git push --follow-tags && npm publish --tag beta",
