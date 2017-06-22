@@ -1,6 +1,7 @@
 /* eslint-env jest */
 
 import * as actions from '../payments'
+import * as types from '../constants/payments'
 
 import nock from 'nock'
 import configureMockStore from 'redux-mock-store'
@@ -21,7 +22,7 @@ describe('Payment Actions', () => {
   describe('createPayment', () => {
     it('creates an action to create a payment', () => {
       const expectedAction = {
-        type: actions.CREATE_PAYMENT,
+        type: types.CREATE_PAYMENT,
         payload: {
           createdAt: '2017-06-17T17:32:04.735Z',
           id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
@@ -40,7 +41,7 @@ describe('Payment Actions', () => {
   describe('setTip', () => {
     it('creates an action to set the tip', () => {
       const expectedAction = {
-        type: actions.SET_TIP,
+        type: types.SET_TIP,
         payload: {
           tip: 0.07,
           updatedAt: '2017-06-17T17:32:04.735Z'
@@ -74,7 +75,7 @@ describe('Payment Actions', () => {
 
       const expectedActions = [
         {
-          type: actions.RECEIVE_INTEGRATED_ADDRESS,
+          type: types.RECEIVE_INTEGRATED_ADDRESS,
           payload: {
             integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
             paymentId: '6b1887e13bbd81db'
@@ -130,7 +131,7 @@ describe('Payment Actions', () => {
 
       const expectedActions = [
         {
-          type: actions.RECEIVE_PAYMENT,
+          type: types.RECEIVE_PAYMENT,
           payload: {
             confirmed: false,
             received: 1.3,

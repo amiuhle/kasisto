@@ -4,7 +4,7 @@ import {
   SET_TIP,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_PAYMENT
- } from '../../actions/payments'
+ } from '../../actions/constants/payments'
 import payments from '../payments'
 
 describe('Payments Reducer', () => {
