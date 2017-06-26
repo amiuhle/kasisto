@@ -1,44 +1,40 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export default class CreatePayment extends Component {
-  state = {
-    receipt: '',
-    amount: 0
-  }
-
-  handleInputChange = (event) => {
-    const target = event.target
-    const value = target.type === 'checkbox' ? target.checked : target.value
-    const id = target.id
-
-    this.setState({
-      [id]: value
-    })
-  }
-
   handleSubmit = (e) => {
-    const { amount, receipt } = this.state
-    const { createPayment } = this.props.actions
-    createPayment(amount, receipt)
-
     const { history } = this.props
     e.preventDefault()
     history.push('/payment/confirm')
   }
 
   render () {
-    const { amount, receipt } = this.state
+    const {
+      amount,
+      receipt,
+      actions: {
+        setAmount,
+        setReceipt
+      }
+    } = this.props
     return (
       <div>
         <h2>Create Payment</h2>
         <form className='o-form' onSubmit={this.handleSubmit}>
           <label htmlFor='receipt'>Receipt</label>
-          <input id='receipt' value={receipt} onChange={this.handleInputChange} type='text' className='u-align-right' autoFocus />
+          <input id='receipt' value={receipt} onChange={e => setReceipt(e.target.value)} type='text' className='u-align-right' autoFocus />
           <label htmlFor='amount'>Amount due</label>
-          <input id='amount' value={amount} onChange={this.handleInputChange} type='number' className='u-align-right' />
+          <input id='amount' value={amount} onChange={e => setAmount(e.target.value)} type='number' step='.01' className='u-align-right' />
           <button className='o-form-item--span'>Request payment</button>
         </form>
       </div>
     )
+  }
+
+  static propTypes = {
+    actions: PropTypes.shape({
+      setAmount: PropTypes.func.isRequired,
+      setReceipt: PropTypes.func.isRequired
+    })
   }
 }

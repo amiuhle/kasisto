@@ -4,20 +4,18 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import {
-  setAmount,
-  setReceipt
-} from '../../actions'
+  startPayment
+} from '../actions'
 
-import CreatePayment from '../../components/payments/create'
+import Dashboard from '../components/dashboard'
 
 const render = props => {
-  return <CreatePayment {...props} />
+  return <Dashboard {...props} />
 }
 
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators({
-    setAmount,
-    setReceipt
+    startPayment
   }, dispatch)
 })
 
