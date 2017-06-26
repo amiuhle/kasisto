@@ -101,20 +101,29 @@ export const setTip = (tip) => {
   })
 }
 
-const fetchExchangeRate = (currency) => (dispatch) =>
-  fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
-    .then(response => response.json())
-    .then(json => dispatch(receiveExchangeRate(
+const fetchExchangeRate = (currency) => (dispatch) => {
+  if (currency === null) {
+    dispatch(receiveExchangeRate(
       currency,
-      Number.parseFloat(json.result[`XXMRZ${currency}`]['p'][1])
-    )))
+      1
+    ))
+    return Promise.resolve()
+  } else {
+    return fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
+      .then(response => response.json())
+      .then(json => dispatch(receiveExchangeRate(
+        currency,
+        Number.parseFloat(json.result[`XXMRZ${currency}`]['p'][1])
+      )))
+  }
+}
 
 const receiveExchangeRate = (currency, rate) => ({
   type: types.RECEIVE_EXCHANGE_RATE,
   payload: {
     currency,
     rate,
-    exchange: 'https://www.kraken.com/'
+    exchange: currency === null ? null : 'https://www.kraken.com/'
   }
 })
 

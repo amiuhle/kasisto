@@ -20,10 +20,19 @@ const payments = (state = [], action) => {
       return [payload, ...state]
     }
     case RECEIVE_EXCHANGE_RATE:
-    case SET_RECEIPT:
-    case SET_AMOUNT: {
+    case SET_RECEIPT: {
       return [
         Object.assign({}, currentPayment, payload)
+      ]
+    }
+    case SET_AMOUNT: {
+      const { rate } = currentPayment
+      const requestedAmount = payload.amount
+      return [
+        Object.assign({}, currentPayment, {
+          requestedAmount,
+          computedAmount: requestedAmount / rate
+        })
       ]
     }
     case SET_TIP: {

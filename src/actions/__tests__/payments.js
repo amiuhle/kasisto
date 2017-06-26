@@ -32,32 +32,24 @@ describe('Payment Actions', () => {
   describe('Setup', () => {
     describe('startPayment', () => {
       beforeEach(() => {
-        nock('https://api.kraken.com')
-          .get('/0/public/Ticker?pair=xmreur,xmrusd')
-          .reply(200, krakenReply)
-
         nock('https://testnet.kasisto.io:28082')
-        .post('/json_rpc', {
-          id: '0',
-          jsonrpc: '2.0',
-          method: 'make_integrated_address',
-          params: {}
-        }).reply(200, {
-          id: '0',
-          jsonrpc: '2.0',
-          result: {
-            integrated_address: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
-            payment_id: '6b1887e13bbd81db'
-          }
-        })
+          .post('/json_rpc', {
+            id: '0',
+            jsonrpc: '2.0',
+            method: 'make_integrated_address',
+            params: {}
+          }).reply(200, {
+            id: '0',
+            jsonrpc: '2.0',
+            result: {
+              integrated_address: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+              payment_id: '6b1887e13bbd81db'
+            }
+          })
       })
-
-      ;[
-        { currency: 'EUR', rate: 46.68377619 },
-        { currency: 'USD', rate: 50.95416569 }
-      ].forEach(({ currency, rate }) => {
-        const creationTime = '2017-06-17T17:30:00.000Z'
-        it(`creates a new payment with ${currency}`, () => {
+      const creationTime = '2017-06-17T17:30:00.000Z'
+      describe('for XMR', () => {
+        it(`creates a new payment with XMR`, () => {
           const expectedActions = [
             {
               type: types.CREATE_PAYMENT,
@@ -70,9 +62,9 @@ describe('Payment Actions', () => {
             {
               type: types.RECEIVE_EXCHANGE_RATE,
               payload: {
-                exchange: 'https://www.kraken.com/',
-                currency,
-                rate
+                exchange: null,
+                currency: null,
+                rate: 1
               }
             },
             {
@@ -87,8 +79,57 @@ describe('Payment Actions', () => {
           const store = mockStore()
 
           return at(creationTime, () => {
-            return store.dispatch(actions.startPayment(currency)).then(() => {
+            return store.dispatch(actions.startPayment(null)).then(() => {
               expect(store.getActions()).toEqual(expectedActions)
+            })
+          })
+        })
+      })
+
+      describe('for fiat currencies', () => {
+        beforeEach(() => {
+          nock('https://api.kraken.com')
+            .get('/0/public/Ticker?pair=xmreur,xmrusd')
+            .reply(200, krakenReply)
+        })
+
+        ;[
+          { currency: 'EUR', rate: 46.68377619 },
+          { currency: 'USD', rate: 50.95416569 }
+        ].forEach(({ currency, rate }) => {
+          it(`creates a new payment with ${currency}`, () => {
+            const expectedActions = [
+              {
+                type: types.CREATE_PAYMENT,
+                payload: {
+                  id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+                  createdAt: creationTime,
+                  updatedAt: creationTime
+                }
+              },
+              {
+                type: types.RECEIVE_EXCHANGE_RATE,
+                payload: {
+                  exchange: 'https://www.kraken.com/',
+                  currency,
+                  rate
+                }
+              },
+              {
+                type: types.RECEIVE_INTEGRATED_ADDRESS,
+                payload: {
+                  integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+                  paymentId: '6b1887e13bbd81db'
+                }
+              }
+            ]
+
+            const store = mockStore()
+
+            return at(creationTime, () => {
+              return store.dispatch(actions.startPayment(currency)).then(() => {
+                expect(store.getActions()).toEqual(expectedActions)
+              })
             })
           })
         })
