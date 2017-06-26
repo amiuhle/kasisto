@@ -26,11 +26,11 @@ describe('Payments Reducer', () => {
       }
 
       expect(
-        payments([], {
+        payments(previousPayments, {
           type: CREATE_PAYMENT,
           payload
         })
-      ).toEqual([payload])
+      ).toEqual([payload, ...previousPayments])
     })
   })
 
@@ -42,7 +42,7 @@ describe('Payments Reducer', () => {
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
       expect(
-        payments([payment], {
+        payments([payment, ...previousPayments], {
           type: RECEIVE_EXCHANGE_RATE,
           payload: {
             currency: 'EUR',
@@ -58,7 +58,7 @@ describe('Payments Reducer', () => {
         currency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619
-      }])
+      }, ...previousPayments])
     })
   })
 
@@ -74,7 +74,7 @@ describe('Payments Reducer', () => {
         rate: 46.68377619
       }
       expect(
-        payments([payment], {
+        payments([payment, ...previousPayments], {
           type: SET_RECEIPT,
           payload: {
             receipt: '070617/229-9'
@@ -90,7 +90,7 @@ describe('Payments Reducer', () => {
         rate: 46.68377619,
 
         receipt: '070617/229-9'
-      }])
+      }, ...previousPayments])
     })
   })
 
@@ -109,7 +109,7 @@ describe('Payments Reducer', () => {
           receipt: '070617/229-9'
         }
         expect(
-          payments([payment], {
+          payments([payment, ...previousPayments], {
             type: SET_AMOUNT,
             payload: {
               amount: 1.23
@@ -128,7 +128,7 @@ describe('Payments Reducer', () => {
 
           requestedAmount: 1.23,
           computedAmount: 1.23
-        }])
+        }, ...previousPayments])
       })
     })
 
@@ -146,7 +146,7 @@ describe('Payments Reducer', () => {
           receipt: '070617/229-9'
         }
         expect(
-          payments([payment], {
+          payments([payment, ...previousPayments], {
             type: SET_AMOUNT,
             payload: {
               amount: 49.90
@@ -165,7 +165,7 @@ describe('Payments Reducer', () => {
 
           requestedAmount: 49.9,
           computedAmount: 1.068893822918484
-        }])
+        }, ...previousPayments])
       })
     })
   })
@@ -183,7 +183,7 @@ describe('Payments Reducer', () => {
       }
 
       expect(
-        payments([payment], {
+        payments([payment, ...previousPayments], {
           type: SET_TIP,
           payload: {
             tip: 0.07,
@@ -198,7 +198,7 @@ describe('Payments Reducer', () => {
         updatedAt: '2017-06-17T17:41:14.353Z',
         tip: 0.07,
         total: 1.3
-      }])
+      }, ...previousPayments])
     })
   })
 
@@ -214,7 +214,7 @@ describe('Payments Reducer', () => {
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
       expect(
-        payments([payment], {
+        payments([payment, ...previousPayments], {
           type: RECEIVE_INTEGRATED_ADDRESS,
           payload: {
             integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
@@ -231,7 +231,7 @@ describe('Payments Reducer', () => {
         tip: 0,
         total: 1.23,
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }])
+      }, ...previousPayments])
     })
   })
 
@@ -250,7 +250,7 @@ describe('Payments Reducer', () => {
       }
 
       expect(
-        payments([payment], {
+        payments([payment, ...previousPayments], {
           type: RECEIVE_PAYMENT,
           payload: {
             confirmed: false,
@@ -274,7 +274,9 @@ describe('Payments Reducer', () => {
           '703b7eacf8f53016609671133f0584ba1cccb616ccdbafd49cc73fbba13a117b'
         ],
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }])
+      }, ...previousPayments])
     })
   })
 })
+
+const previousPayments = ['payment 2', 'payment 1']

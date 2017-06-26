@@ -22,7 +22,8 @@ const payments = (state = [], action) => {
     case RECEIVE_EXCHANGE_RATE:
     case SET_RECEIPT: {
       return [
-        Object.assign({}, currentPayment, payload)
+        Object.assign({}, currentPayment, payload),
+        ...archive
       ]
     }
     case SET_AMOUNT: {
@@ -32,7 +33,8 @@ const payments = (state = [], action) => {
         Object.assign({}, currentPayment, {
           requestedAmount,
           computedAmount: requestedAmount / rate
-        })
+        }),
+        ...archive
       ]
     }
     case SET_TIP: {
