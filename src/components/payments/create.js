@@ -1,32 +1,51 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-export default class CreatePayment extends Component {
-  handleSubmit = (e) => {
-    const { history } = this.props
-    e.preventDefault()
-    history.push('/payment/confirm')
-  }
+import Hint from '../settings/noob-hint'
 
+export default class CreatePayment extends Component {
   render () {
     const {
-      amount,
-      receipt,
-      actions: {
-        setAmount,
-        setReceipt
+      onSetAmount,
+      onSetReceipt,
+      onRequestPayment,
+      payment: {
+        exchange,
+        rate,
+        receipt,
+        requestedAmount,
+        convertedAmount
       }
     } = this.props
+
     return (
       <div>
         <h2>Create Payment</h2>
-        <form className='o-form' onSubmit={this.handleSubmit}>
-          <label htmlFor='receipt'>Receipt</label>
-          <input id='receipt' value={receipt} onChange={e => setReceipt(e.target.value)} type='text' className='u-align-right' autoFocus />
-          <label htmlFor='amount'>Amount due</label>
-          <input id='amount' value={amount} onChange={e => setAmount(e.target.value)} type='number' step='.01' className='u-align-right' />
-          <button className='o-form-item--span'>Request payment</button>
-        </form>
+        <div className='u-align-center'>
+          <h3 className='u-margin-bottom-tiny'>
+            <label htmlFor='receipt'>Receipt</label>
+          </h3>
+          <Hint text='A hint so you can identify this payment later' />
+          <p className='u-margin-bottom'>
+            <input id='receipt' value={receipt} onChange={onSetReceipt} type='text' className='u-align-right' autoFocus />
+          </p>
+          <h3 className='u-margin-bottom-tiny'>
+            <label htmlFor='amount'>Amount due</label>
+          </h3>
+          <p className='u-margin-bottom-tiny'>
+            <input id='amount' value={requestedAmount} onChange={onSetAmount} type='number' step='.01' className='u-align-right' /><span>EUR</span>
+          </p>
+          <p className='u-margin-bottom'>
+            <input id='amount' value={convertedAmount} disabled className='u-align-right' /><span>XMR</span>
+          </p>
+          <p className='u-margin-bottom'>
+            <button className='c-btn' onClick={onRequestPayment}>Request payment</button>
+          </p>
+          <aside className='u-muted'>
+            1 XMR = {rate} EUR <br />
+            <a target='_blank' href={exchange}>{exchange}</a>
+          </aside>
+        </div>
       </div>
     )
   }
