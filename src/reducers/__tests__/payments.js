@@ -127,7 +127,7 @@ describe('Payments Reducer', () => {
           receipt: '070617/229-9',
 
           requestedAmount: 1.23,
-          computedAmount: 1.23
+          convertedAmount: 1.23
         }, ...previousPayments])
       })
     })
@@ -164,7 +164,7 @@ describe('Payments Reducer', () => {
           receipt: '070617/229-9',
 
           requestedAmount: 49.9,
-          computedAmount: 1.068893822918484
+          convertedAmount: 1.068893822918484
         }, ...previousPayments])
       })
     })

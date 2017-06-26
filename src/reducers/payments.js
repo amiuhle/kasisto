@@ -32,7 +32,7 @@ const payments = (state = [], action) => {
       return [
         Object.assign({}, currentPayment, {
           requestedAmount,
-          computedAmount: requestedAmount / rate
+          convertedAmount: requestedAmount / rate
         }),
         ...archive
       ]
