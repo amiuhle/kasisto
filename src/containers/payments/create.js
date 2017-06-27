@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
@@ -21,16 +22,15 @@ const mapStateToProps = state => ({
   payment: getCurrentPayment(state)
 })
 
-export default connect(
-  mapStateToProps,
-  {
-    onSetAmount: e => setAmount(e.target.value),
-    onSetReceipt: e => setReceipt(e.target.value),
-    onRequestPayment (e) {
-      console.log('onRequestPayment')
-      const { history } = this.props
-      e.preventDefault()
-      history.push('/payment/confirm')
-    }
+const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({
+  onSetAmount: e => setAmount(e.target.value),
+  onSetReceipt: e => setReceipt(e.target.value),
+  onRequestPayment (e) {
+    console.log('onRequestPayment')
+    const { history } = ownProps
+    e.preventDefault()
+    history.push('/payment/confirm')
   }
-)(render)
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(render)
