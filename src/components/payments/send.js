@@ -12,11 +12,11 @@ export default class SendPayment extends Component {
     const {
       integratedAddress,
       received,
-      total,
+      totalAmount,
       transactionIds
     } = this.props.payment
 
-    if (received != null && received >= total) {
+    if (received != null && received >= totalAmount) {
       return (
         <div className='o-flex o-flex--col o-flex--center'>
           <p className='c-success'>
@@ -31,14 +31,14 @@ export default class SendPayment extends Component {
         </div>
       )
     } else {
-      const qrCode = `monero:${integratedAddress}?tx_amount=${encodeURIComponent(total)}`
+      const qrCode = `monero:${integratedAddress}?tx_amount=${encodeURIComponent(totalAmount)}`
 
       return (
         <div>
           <h2>Send Monero</h2>
           <p className='u-align-center'>
             Please send <br />
-            <strong>{total} XMR</strong> <br />
+            <strong>{totalAmount} XMR</strong> <br />
             to the following address
           </p>
           {

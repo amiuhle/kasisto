@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
 
 import Hint from '../settings/noob-hint'
 
 export default class CreatePayment extends Component {
   render () {
+    if (this.props.payment == null) {
+      return <Redirect to='/payments/create' />
+    }
     const {
       onSetAmount,
       onSetReceipt,
@@ -27,19 +31,42 @@ export default class CreatePayment extends Component {
           </h3>
           <Hint text='A hint so you can identify this payment later' />
           <p className='u-margin-bottom'>
-            <input id='receipt' value={receipt} onChange={onSetReceipt} type='text' className='u-align-right' autoFocus />
+            <input
+              id='receipt'
+              value={receipt}
+              onChange={onSetReceipt}
+              type='text'
+              className='u-align-right'
+              autoFocus
+            />
           </p>
           <h3 className='u-margin-bottom-tiny'>
             <label htmlFor='amount'>Amount due</label>
           </h3>
           <p className='u-margin-bottom-tiny'>
-            <input id='amount' value={requestedAmount} onChange={onSetAmount} type='number' step='.01' className='u-align-right' /><span>EUR</span>
+            <input
+              id='amount'
+              value={requestedAmount}
+              onChange={onSetAmount}
+              type='number'
+              step={0.01}
+              className='u-align-right'
+            />
+            <span>EUR</span>
           </p>
           <p className='u-margin-bottom'>
-            <input id='amount' value={convertedAmount} disabled className='u-align-right' /><span>XMR</span>
+            <input
+              id='amount'
+              value={convertedAmount}
+              disabled
+              className='u-align-right'
+            />
+            <span>XMR</span>
           </p>
           <p className='u-margin-bottom'>
-            <button className='c-btn' onClick={onRequestPayment}>Request payment</button>
+            <button className='c-btn' onClick={onRequestPayment}>
+              Request payment
+            </button>
           </p>
           <aside className='u-muted'>
             1 XMR = {rate} EUR <br />

@@ -7,8 +7,8 @@ import * as types from './constants/payments'
 const { fetch } = window
 const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
-export const listenForPayments = (total, paymentId) => (dispatch) => new Promise((resolve, reject) => {
-  // TODO validate total & paymentId
+export const listenForPayments = (totalAmount, paymentId) => (dispatch) => new Promise((resolve, reject) => {
+  // TODO validate totalAmount & paymentId
   // const pool = []
   const poll = () => {
     wallet.getTransfers({pool: true}).then((result) => {
@@ -21,7 +21,7 @@ export const listenForPayments = (total, paymentId) => (dispatch) => new Promise
         return amount
       }, 0)
 
-      if (received >= total) {
+      if (received >= totalAmount) {
         dispatch(receivePayment({
           confirmed: false,
           received,

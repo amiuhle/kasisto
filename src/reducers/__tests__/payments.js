@@ -173,31 +173,44 @@ describe('Payments Reducer', () => {
   describe(SET_TIP, () => {
     it('sets tip', () => {
       const payment = {
-        amount: 1.23,
-        createdAt: '2017-06-17T17:32:04.735Z',
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:41:14.353Z',
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619,
+
         receipt: '070617/229-9',
-        tip: 0,
-        total: 1.23,
-        updatedAt: '2017-06-17T17:32:04.735Z'
+
+        requestedAmount: 49.9,
+        convertedAmount: 1.068893822918484
       }
 
       expect(
         payments([payment, ...previousPayments], {
           type: SET_TIP,
           payload: {
-            tip: 0.07,
+            tip: 0.13110617708151606,
             updatedAt: '2017-06-17T17:41:14.353Z'
           }
         })
       ).toEqual([{
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
-        amount: 1.23,
-        receipt: '070617/229-9',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:41:14.353Z',
-        tip: 0.07,
-        total: 1.3
+
+        currency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619,
+
+        receipt: '070617/229-9',
+
+        requestedAmount: 49.9,
+        convertedAmount: 1.068893822918484,
+
+        tip: 0.13110617708151606,
+        totalAmount: 1.2
       }, ...previousPayments])
     })
   })
@@ -210,7 +223,7 @@ describe('Payments Reducer', () => {
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         receipt: '070617/229-9',
         tip: 0,
-        total: 1.23,
+        totalAmount: 1.23,
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
       expect(
@@ -229,7 +242,7 @@ describe('Payments Reducer', () => {
         paymentId: '6b1887e13bbd81db',
         receipt: '070617/229-9',
         tip: 0,
-        total: 1.23,
+        totalAmount: 1.23,
         updatedAt: '2017-06-17T17:32:04.735Z'
       }, ...previousPayments])
     })
@@ -245,7 +258,7 @@ describe('Payments Reducer', () => {
         paymentId: '6b1887e13bbd81db',
         receipt: '070617/229-9',
         tip: 0.07,
-        total: 1.3,
+        totalAmount: 1.3,
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
 
@@ -269,7 +282,7 @@ describe('Payments Reducer', () => {
         receipt: '070617/229-9',
         received: 1.3,
         tip: 0.07,
-        total: 1.3,
+        totalAmount: 1.3,
         transactionIds: [
           '703b7eacf8f53016609671133f0584ba1cccb616ccdbafd49cc73fbba13a117b'
         ],

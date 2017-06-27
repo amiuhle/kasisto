@@ -244,7 +244,7 @@ describe('Payment Actions', () => {
       //     paymentId: '6b1887e13bbd81db',
       //     receipt: '070617/229-9',
       //     tip: 0.07,
-      //     total: 1.3,
+      //     totalAmount: 1.3,
       //     updatedAt: '2017-06-17T17:32:04.735Z'
       //   }])
 

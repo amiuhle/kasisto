@@ -32,13 +32,13 @@ class Container extends Component {
     const {
       integratedAddress,
       paymentId,
-      total
+      totalAmount
     } = payment
 
     if (integratedAddress == null || paymentId == null) {
       fetchIntegratedAddress()
     } else {
-      listenForPayments(total, paymentId)
+      listenForPayments(totalAmount, paymentId)
     }
   }
 

@@ -42,7 +42,7 @@ const payments = (state = [], action) => {
       return [
         Object.assign({}, currentPayment, {
           tip,
-          total: currentPayment.amount + tip,
+          totalAmount: currentPayment.convertedAmount + tip,
           updatedAt
         }),
         ...archive
