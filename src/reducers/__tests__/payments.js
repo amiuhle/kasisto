@@ -35,7 +35,7 @@ describe('Payments Reducer', () => {
   })
 
   describe(RECEIVE_EXCHANGE_RATE, () => {
-    it('sets exchange, currency and rate', () => {
+    it('sets exchange, fiatCurrency and rate', () => {
       const payment = {
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
@@ -45,7 +45,7 @@ describe('Payments Reducer', () => {
         payments([payment, ...previousPayments], {
           type: RECEIVE_EXCHANGE_RATE,
           payload: {
-            currency: 'EUR',
+            fiatCurrency: 'EUR',
             exchange: 'https://www.kraken.com/',
             rate: 46.68377619
           }
@@ -55,7 +55,7 @@ describe('Payments Reducer', () => {
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z',
 
-        currency: 'EUR',
+        fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619
       }, ...previousPayments])
@@ -63,13 +63,13 @@ describe('Payments Reducer', () => {
   })
 
   describe(SET_RECEIPT, () => {
-    it('sets exchange, currency and rate', () => {
+    it('sets exchange, fiatCurrency and rate', () => {
       const payment = {
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z',
 
-        currency: 'EUR',
+        fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619
       }
@@ -85,7 +85,7 @@ describe('Payments Reducer', () => {
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z',
 
-        currency: 'EUR',
+        fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619,
 
@@ -102,7 +102,7 @@ describe('Payments Reducer', () => {
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
 
-          currency: null,
+          fiatCurrency: null,
           exchange: null,
           rate: 1,
 
@@ -120,7 +120,7 @@ describe('Payments Reducer', () => {
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
 
-          currency: null,
+          fiatCurrency: null,
           exchange: null,
           rate: 1,
 
@@ -139,7 +139,7 @@ describe('Payments Reducer', () => {
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
 
-          currency: 'EUR',
+          fiatCurrency: 'EUR',
           exchange: 'https://www.kraken.com/',
           rate: 46.68377619,
 
@@ -157,7 +157,7 @@ describe('Payments Reducer', () => {
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
 
-          currency: 'EUR',
+          fiatCurrency: 'EUR',
           exchange: 'https://www.kraken.com/',
           rate: 46.68377619,
 
@@ -177,7 +177,7 @@ describe('Payments Reducer', () => {
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:41:14.353Z',
 
-        currency: 'EUR',
+        fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619,
 
@@ -200,7 +200,7 @@ describe('Payments Reducer', () => {
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:41:14.353Z',
 
-        currency: 'EUR',
+        fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619,
 

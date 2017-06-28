@@ -63,7 +63,7 @@ describe('Payment Actions', () => {
               type: types.RECEIVE_EXCHANGE_RATE,
               payload: {
                 exchange: null,
-                currency: null,
+                fiatCurrency: null,
                 rate: 1
               }
             },
@@ -94,10 +94,10 @@ describe('Payment Actions', () => {
         })
 
         ;[
-          { currency: 'EUR', rate: 46.68377619 },
-          { currency: 'USD', rate: 50.95416569 }
-        ].forEach(({ currency, rate }) => {
-          it(`creates a new payment with ${currency}`, () => {
+          { fiatCurrency: 'EUR', rate: 46.68377619 },
+          { fiatCurrency: 'USD', rate: 50.95416569 }
+        ].forEach(({ fiatCurrency, rate }) => {
+          it(`creates a new payment with ${fiatCurrency}`, () => {
             const expectedActions = [
               {
                 type: types.CREATE_PAYMENT,
@@ -111,7 +111,7 @@ describe('Payment Actions', () => {
                 type: types.RECEIVE_EXCHANGE_RATE,
                 payload: {
                   exchange: 'https://www.kraken.com/',
-                  currency,
+                  fiatCurrency,
                   rate
                 }
               },
@@ -127,7 +127,7 @@ describe('Payment Actions', () => {
             const store = mockStore()
 
             return at(creationTime, () => {
-              return store.dispatch(actions.startPayment(currency)).then(() => {
+              return store.dispatch(actions.startPayment(fiatCurrency)).then(() => {
                 expect(store.getActions()).toEqual(expectedActions)
               })
             })

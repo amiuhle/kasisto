@@ -1,7 +1,21 @@
-import PropTypes from 'prop-types'
+import {
+  func,
+  number,
+  shape,
+  string
+} from 'prop-types'
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
+import {
+  XMR,
+  EUR,
+
+  amountType
+} from './utils'
+
+import DualCurrency from './dual-currency'
+import ExchangeInfo from './exchange-info'
 import Hint from '../settings/noob-hint'
 
 export default class CreatePayment extends Component {
@@ -33,7 +47,7 @@ export default class CreatePayment extends Component {
           <p className='u-margin-bottom'>
             <input
               id='receipt'
-              value={receipt}
+              value={receipt || ''}
               onChange={onSetReceipt}
               type='text'
               className='u-align-right'
@@ -43,44 +57,37 @@ export default class CreatePayment extends Component {
           <h3 className='u-margin-bottom-tiny'>
             <label htmlFor='amount'>Amount due</label>
           </h3>
-          <p className='u-margin-bottom-tiny'>
-            <input
-              id='amount'
-              value={requestedAmount}
-              onChange={onSetAmount}
-              type='number'
-              step={0.01}
-              className='u-align-right'
-            />
-            <span>EUR</span>
-          </p>
-          <p className='u-margin-bottom'>
-            <input
-              id='amount'
-              value={convertedAmount}
-              disabled
-              className='u-align-right'
-            />
-            <span>XMR</span>
-          </p>
+          <DualCurrency
+            id='amount'
+            from={EUR}
+            to={XMR}
+            fromAmount={requestedAmount}
+            onSetFrom={onSetAmount}
+
+            toAmount={convertedAmount}
+          />
           <p className='u-margin-bottom'>
             <button className='c-btn' onClick={onRequestPayment}>
               Request payment
             </button>
           </p>
-          <aside className='u-muted'>
-            1 XMR = {rate} EUR <br />
-            <a target='_blank' href={exchange}>{exchange}</a>
-          </aside>
+          <ExchangeInfo rate={rate} exchange={exchange} />
         </div>
       </div>
     )
   }
 
   static propTypes = {
-    actions: PropTypes.shape({
-      setAmount: PropTypes.func.isRequired,
-      setReceipt: PropTypes.func.isRequired
-    })
+    onSetAmount: func.isRequired,
+    onSetReceipt: func.isRequired,
+    onRequestPayment: func.isRequired,
+    payment: shape({
+      exchange: string,
+      rate: number,
+      receipt: string,
+      requestedAmount: amountType,
+      convertedAmount: amountType
+    }).isRequired
+
   }
 }

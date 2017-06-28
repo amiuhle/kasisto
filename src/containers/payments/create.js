@@ -20,15 +20,16 @@ const mapStateToProps = state => ({
   payment: getCurrentPayment(state)
 })
 
-const mapDispatchToProps = (dispatch, ownProps) =>
-  bindActionCreators({
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  onRequestPayment (e) {
+    const { history } = ownProps
+    e.preventDefault()
+    history.push('/payment/confirm')
+  },
+  ...bindActionCreators({
     onSetAmount: e => setAmount(e.target.value),
-    onSetReceipt: e => setReceipt(e.target.value),
-    onRequestPayment (e) {
-      const { history } = ownProps
-      e.preventDefault()
-      history.push('/payment/confirm')
-    }
+    onSetReceipt: e => setReceipt(e.target.value)
   }, dispatch)
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(render)

@@ -61,10 +61,10 @@ const receiveIntegratedAddress = ({ integrated_address, payment_id }) => ({
   }
 })
 
-export const startPayment = (currency) => (dispatch) => {
+export const startPayment = (fiatCurrency) => (dispatch) => {
   dispatch(createPayment())
   return Promise.all([
-    dispatch(fetchExchangeRate(currency)),
+    dispatch(fetchExchangeRate(fiatCurrency)),
     dispatch(fetchIntegratedAddress())
   ])
 }
@@ -101,10 +101,10 @@ export const setTip = (tip) => {
   })
 }
 
-const fetchExchangeRate = (currency) => (dispatch) => {
-  if (currency === null) {
+const fetchExchangeRate = (fiatCurrency) => (dispatch) => {
+  if (fiatCurrency === null) {
     dispatch(receiveExchangeRate(
-      currency,
+      fiatCurrency,
       1
     ))
     return Promise.resolve()
@@ -112,18 +112,18 @@ const fetchExchangeRate = (currency) => (dispatch) => {
     return fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
       .then(response => response.json())
       .then(json => dispatch(receiveExchangeRate(
-        currency,
-        Number.parseFloat(json.result[`XXMRZ${currency}`]['p'][1])
+        fiatCurrency,
+        Number.parseFloat(json.result[`XXMRZ${fiatCurrency}`]['p'][1])
       )))
   }
 }
 
-const receiveExchangeRate = (currency, rate) => ({
+const receiveExchangeRate = (fiatCurrency, rate) => ({
   type: types.RECEIVE_EXCHANGE_RATE,
   payload: {
-    currency,
+    fiatCurrency,
     rate,
-    exchange: currency === null ? null : 'https://www.kraken.com/'
+    exchange: fiatCurrency === null ? null : 'https://www.kraken.com/'
   }
 })
 
