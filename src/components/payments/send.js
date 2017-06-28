@@ -7,7 +7,7 @@ import IntegratedAddress from '../monero/integrated-address'
 export default class SendPayment extends Component {
   render () {
     if (this.props.payment == null) {
-      return <Redirect to='/payments/create' />
+      return <Redirect to='/' />
     }
     const {
       integratedAddress,

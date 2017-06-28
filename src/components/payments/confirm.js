@@ -9,7 +9,7 @@ import ExchangeInfo from './exchange-info'
 export default class ConfirmPayment extends Component {
   render () {
     if (this.props.payment == null) {
-      return <Redirect to='/payments/create' />
+      return <Redirect to='/' />
     }
     const {
       onSetTip,

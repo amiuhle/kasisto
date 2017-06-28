@@ -21,7 +21,7 @@ import Hint from '../settings/noob-hint'
 export default class CreatePayment extends Component {
   render () {
     if (this.props.payment == null) {
-      return <Redirect to='/payments/create' />
+      return <Redirect to='/' />
     }
     const {
       onSetAmount,

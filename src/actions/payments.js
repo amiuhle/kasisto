@@ -7,9 +7,7 @@ import * as types from './constants/payments'
 const { fetch } = window
 const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
-export const listenForPayments = (totalAmount, paymentId) => (dispatch) => new Promise((resolve, reject) => {
-  // TODO validate totalAmount & paymentId
-  // const pool = []
+export const listenForPayments = (totalAmount, paymentId) => (dispatch) => {
   const poll = () => {
     wallet.getTransfers({pool: true}).then((result) => {
       const transactionIds = []
@@ -28,16 +26,20 @@ export const listenForPayments = (totalAmount, paymentId) => (dispatch) => new P
           transactionIds
         }))
         window.clearInterval(handle)
-        resolve()
       }
       if (received > 0) {
         console.log('[PaymentRequest] transfers', received, result.pool)
       }
     })
   }
-  // TODO clear handle?
   const handle = window.setInterval(poll, 5000)
-})
+
+  // return the handle to the view so it can cancel polling
+  return Promise.resolve(handle)
+}
+
+export const stopListeningForPayments = (handle) => (dispatch) =>
+  Promise.resolve(window.clearInterval(handle))
 
 const receivePayment = ({ confirmed, received, transactionIds }) => ({
   type: types.RECEIVE_PAYMENT,

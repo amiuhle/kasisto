@@ -256,6 +256,21 @@ describe('Payment Actions', () => {
       //   })
       // })
     })
+
+    describe('stopListeningForPayments', () => {
+      it('cancels polling', () => {
+        const { clearInterval } = global
+        try {
+          const mock = global.clearInterval = jest.fn()
+          const store = mockStore()
+          return store.dispatch(actions.stopListeningForPayments(5)).then(() => {
+            expect(mock).toHaveBeenCalledWith(5)
+          })
+        } finally {
+          global.clearInterval = clearInterval
+        }
+      })
+    })
   })
 })
 
