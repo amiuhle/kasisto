@@ -2,6 +2,14 @@ import QRCode from 'qrcode.react'
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 
+import {
+  XMR,
+  EUR
+
+} from './utils'
+
+import DualCurrency from './dual-currency'
+import ExchangeInfo from './exchange-info'
 import IntegratedAddress from '../monero/integrated-address'
 
 export default class SendPayment extends Component {
@@ -11,23 +19,38 @@ export default class SendPayment extends Component {
     }
     const {
       integratedAddress,
+      exchange,
       received,
       totalAmount,
-      transactionIds
+      transactionIds,
+      rate
     } = this.props.payment
 
     if (received != null && received >= totalAmount) {
       return (
-        <div className='o-flex o-flex--col o-flex--center'>
-          <p className='c-success'>
+        <div className='u-align-center'>
+          <h2 className='c-success'>
             <span className='check'>✔</span>
             <strong>Payment received</strong>
-          </p>
-          <strong className='u-align-center'>{received} XMR</strong>
+          </h2>
+
+          <h3 className='u-margin-bottom-tiny'>
+            <label htmlFor='TODO'>Amount received</label>
+          </h3>
+          <DualCurrency
+            from={XMR}
+            to={EUR}
+            fromAmount={received}
+            toAmount={received * rate}
+          />
           <p className='u-align-center'>Transaction Ids</p>
           <ul className='o-list-bare'>
             { transactionIds.map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}>{txId}</li>) }
           </ul>
+
+          <ExchangeInfo rate={rate} exchange={exchange} className='u-margin-bottom' />
+
+          <Link to='/' className='c-btn'>Home</Link>
         </div>
       )
     } else {
@@ -36,11 +59,16 @@ export default class SendPayment extends Component {
       return (
         <div>
           <h2>Send Monero</h2>
-          <p className='u-align-center'>
+          <div className='u-align-center'>
             Please send <br />
-            <strong>{totalAmount} XMR</strong> <br />
+            <DualCurrency
+              from={XMR}
+              to={EUR}
+              fromAmount={totalAmount}
+              toAmount={totalAmount * rate}
+            />
             to the following address
-          </p>
+          </div>
           {
             integratedAddress ? (
               <div className='o-flex o-flex--col'>
