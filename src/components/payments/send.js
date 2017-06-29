@@ -54,7 +54,7 @@ export default class SendPayment extends Component {
         </div>
       )
     } else {
-      const qrCode = `monero:${integratedAddress}?tx_amount=${encodeURIComponent(totalAmount)}`
+      const qrCode = `monero:${integratedAddress}?tx_amount=${encodeURIComponent(Math.ceil(totalAmount * 1e12) / 1e12)}`
 
       return (
         <div>
