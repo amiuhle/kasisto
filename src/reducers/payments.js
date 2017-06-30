@@ -29,10 +29,14 @@ const payments = (state = [], action) => {
     case SET_AMOUNT: {
       const { rate } = currentPayment
       const requestedAmount = payload.amount
+      const convertedAmount = requestedAmount / rate
+
       return [
         Object.assign({}, currentPayment, {
           requestedAmount,
-          convertedAmount: requestedAmount / rate
+          convertedAmount,
+          tip: 0,
+          totalAmount: convertedAmount
         }),
         ...archive
       ]
