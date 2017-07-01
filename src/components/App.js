@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
-
-import { history } from '../stores'
+import { HashRouter, Route } from 'react-router-dom'
 
 import Dashboard from '../containers/dashboard'
 import CreatePayment from '../containers/payments/create'
@@ -16,14 +14,14 @@ export default class App extends Component {
           <h1 className='u-margin-none u-margin-left'>Kasisto</h1>
         </div>
         <aside className='o-app__nav' />
-        <BrowserRouter forceRefresh={false} history={history}>
+        <HashRouter>
           <section className='o-app__content'>
             <Route path='/' exact component={Dashboard} />
             <Route path='/payments/create' component={CreatePayment} />
             <Route path='/payment/confirm' component={ConfirmPayment} />
             <Route path='/payment/send' component={SendPayment} />
           </section>
-        </BrowserRouter>
+        </HashRouter>
         <footer className='o-app__footer' />
       </div>
     )
