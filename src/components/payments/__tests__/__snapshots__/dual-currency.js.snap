@@ -2,39 +2,45 @@
 
 exports[`DualCurrency renders fiat and money 1`] = `
 <div
-  className="c-dual-currency"
+  className="c-dual-currency "
 >
-  <p
-    className="u-margin-bottom-tiny"
+  <span
+    className="c-currency c-currency--primary"
   >
-    <input
-      className="u-align-right"
-      disabled={true}
-      id={null}
-      onChange={undefined}
-      step={0.01}
-      type="number"
-      value=""
-    />
-    <span>
+    <span
+      className="c-currency__value"
+    >
+      NaN
+    </span>
+    <span
+      className="c-currency__tail"
+    >
+      .00
+    </span>
+    <span
+      className="c-currency__currency"
+    >
       XMR
     </span>
-  </p>
-  <p
-    className="u-margin-bottom"
+  </span>
+  <span
+    className="c-currency c-currency--secondary"
   >
-    <input
-      className="u-align-right"
-      disabled={true}
-      id={null}
-      onChange={undefined}
-      step={0.01}
-      type="number"
-      value=""
-    />
-    <span>
+    <span
+      className="c-currency__value"
+    >
+      NaN
+    </span>
+    <span
+      className="c-currency__tail"
+    >
+      .00
+    </span>
+    <span
+      className="c-currency__currency"
+    >
       XMR
     </span>
-  </p>
+  </span>
 </div>
 `;

@@ -39,39 +39,47 @@ export default class CreatePayment extends Component {
     return (
       <div>
         <h2>Create Payment</h2>
-        <div className='u-align-center'>
-          <h3 className='u-margin-bottom-tiny'>
+        <div>
+          <h3 className='u-margin-bottom-none'>
             <label htmlFor='receipt'>Receipt</label>
           </h3>
-          <Hint text='A hint so you can identify this payment later' />
-          <p className='u-margin-bottom'>
+          <div className='u-margin-bottom o-flex o-flex--col'>
             <input
               id='receipt'
               value={receipt || ''}
               onChange={onSetReceipt}
               type='text'
-              className='u-align-right'
               autoFocus
             />
-          </p>
-          <h3 className='u-margin-bottom-tiny'>
+            <Hint text='A hint so you can identify this payment later' />
+          </div>
+
+          <h3 className='u-margin-bottom-none'>
             <label htmlFor='amount'>Amount due</label>
           </h3>
           <DualCurrency
             id='amount'
-            from={EUR}
-            to={XMR}
-            fromAmount={requestedAmount}
-            onSetFrom={onSetAmount}
+            className='u-margin-bottom o-flex o-flex--col'
 
-            toAmount={convertedAmount}
+            primary={{
+              amount: requestedAmount,
+              currency: EUR,
+              onChange: onSetAmount
+            }}
+
+            secondary={{
+              amount: convertedAmount,
+              currency: XMR
+            }}
           />
-          <p className='u-margin-bottom'>
+
+          <div className='u-margin-bottom o-flex o-flex--col'>
             <button className='c-btn' onClick={onRequestPayment}>
               Request payment
             </button>
-          </p>
-          <ExchangeInfo rate={rate} exchange={exchange} />
+          </div>
+
+          <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
         </div>
       </div>
     )

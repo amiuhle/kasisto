@@ -4,17 +4,17 @@
 
 // SETTINGS
 @import 'settings.config';
-@import '~inuitcss/settings/settings.core';
 @import 'settings.type';
+@import '~inuitcss/settings/settings.core';
 
 // TOOLS
 @import '~inuitcss/tools/tools.font-size';
+@import '~inuitcss/tools/tools.clearfix';
 @import 'tools.aliases';
 @import 'tools.mixins';
 
 // GENERIC
 @import '~inuitcss/generic/generic.box-sizing';
-@import '~inuitcss/generic/generic.normalize';
 @import '~inuitcss/generic/generic.reset';
 @import '~inuitcss/generic/generic.shared';
 
@@ -24,14 +24,17 @@
 @import '~inuitcss/elements/elements.headings';
 @import 'elements.headings';
 @import 'elements.forms';
+@import 'elements.util';
 
 // OBJECTS
 @import 'objects.app';
+@import '~inuitcss/objects/objects.box';
 @import 'objects.flex';
 @import '~inuitcss/objects/objects.list-bare';
 
 // COMPONENTS
 @import 'components.buttons';
+@import 'components.currency';
 @import 'components.hint';
 @import 'components.integrated-address';
 @import 'components.success';

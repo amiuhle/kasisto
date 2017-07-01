@@ -3,12 +3,11 @@ h1, h2, h3 {
   font-weight: normal;
 }
 
-h2 {
-  text-align: center;
-  text-transform: uppercase;
+h1, h2, h3 {
+  text-transform: capitalize;
 }
 
-h1, h3 {
-  text-transform: capitalize;
+h1 {
+  font-size: 1rem;
 }
 

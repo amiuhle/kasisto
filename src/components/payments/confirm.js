@@ -28,61 +28,69 @@ export default class ConfirmPayment extends Component {
     return (
       <div>
         <h2>Confirm Payment</h2>
-        <div className='u-align-center'>
-          <h3 className='u-margin-bottom-tiny'>
+        <div>
+          <h3 className='u-margin-bottom-none'>
             <label htmlFor='receipt'>Receipt</label>
           </h3>
-          <p className='u-margin-bottom'>
-            <input
-              disabled
-              id='receipt'
-              value={receipt}
-              type='text'
-              className='u-align-right'
-            />
-          </p>
+          <div className='u-margin-bottom o-box--tiny'>
+            {receipt}
+          </div>
 
-          <h3 className='u-margin-bottom-tiny'>
-            <label htmlFor='amount'>Amount due</label>
+          <h3 className='u-margin-bottom-none'>
+            Amount due
           </h3>
           <DualCurrency
-            id='amount'
-            from={EUR}
-            to={XMR}
-            fromAmount={requestedAmount}
-            toAmount={convertedAmount}
+            className='u-margin-bottom o-flex o-flex--col'
+            primary={{
+              amount: convertedAmount,
+              currency: XMR
+            }}
+            secondary={{
+              amount: requestedAmount,
+              currency: EUR
+            }}
           />
 
-          <h3 className='u-margin-bottom-tiny'>
+          <h3 className='u-margin-bottom-none'>
             <label htmlFor='tip'>Tip</label>
           </h3>
           <DualCurrency
+            className='u-margin-bottom o-flex o-flex--col'
             id='tip'
-            from={XMR}
-            to={EUR}
-            fromAmount={tip}
-            onSetFrom={onSetTip}
-            toAmount={tip * rate}
+            primary={{
+              amount: tip,
+              currency: XMR,
+              onChange: onSetTip
+            }}
+            secondary={{
+              amount: tip * rate,
+              currency: EUR
+            }}
           />
 
-          <h3 className='u-margin-bottom-tiny'>
+          <h3 className='u-margin-bottom-none'>
             <label htmlFor='totalAmount'>totalAmount</label>
           </h3>
           <DualCurrency
+            className='u-margin-bottom o-flex o-flex--col'
             id='totalAmount'
-            from={XMR}
-            to={EUR}
-            fromAmount={totalAmount}
-            toAmount={totalAmount * rate}
+            primary={{
+              amount: totalAmount,
+              currency: XMR
+            }}
+            secondary={{
+              amount: totalAmount * rate,
+              currency: EUR
+            }}
           />
 
-          <p className='u-margin-bottom'>
+          <div className='u-margin-bottom o-flex o-flex--col'>
             <button className='c-btn' onClick={onStartPayment}>
               Start payment
             </button>
-          </p>
+          </div>
 
-          <ExchangeInfo rate={rate} exchange={exchange} />
+          <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
         </div>
       </div>
     )

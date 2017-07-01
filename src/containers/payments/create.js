@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     history.push('/payment/confirm')
   },
   ...bindActionCreators({
-    onSetAmount: e => setAmount(e.target.value),
+    onSetAmount: setAmount,
     onSetReceipt: e => setReceipt(e.target.value)
   }, dispatch)
 })

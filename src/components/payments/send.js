@@ -34,23 +34,30 @@ export default class SendPayment extends Component {
             <strong>Payment received</strong>
           </h2>
 
-          <h3 className='u-margin-bottom-tiny'>
+          <h3 className='u-margin-bottom-none'>
             <label htmlFor='TODO'>Amount received</label>
           </h3>
           <DualCurrency
-            from={XMR}
-            to={EUR}
-            fromAmount={received}
-            toAmount={received * rate}
+            className='u-margin-bottom o-flex o-flex--col'
+            primary={{
+              amount: received * rate,
+              currency: EUR
+            }}
+            secondary={{
+              amount: received,
+              currency: XMR
+            }}
           />
           <p className='u-align-center'>Transaction Ids</p>
           <ul className='o-list-bare'>
-            { transactionIds.map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}>{txId}</li>) }
+            { transactionIds.map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}><small>{txId}</small></li>) }
           </ul>
 
-          <ExchangeInfo rate={rate} exchange={exchange} className='u-margin-bottom' />
+          <div className='u-margin-bottom o-flex o-flex--col'>
+            <Link to='/' className='c-btn'>Done</Link>
+          </div>
 
-          <Link to='/' className='c-btn'>Home</Link>
+          <ExchangeInfo rate={rate} exchange={exchange} className='u-margin-bottom' />
         </div>
       )
     } else {
@@ -58,29 +65,36 @@ export default class SendPayment extends Component {
 
       return (
         <div>
-          <h2>Send Monero</h2>
-          <div className='u-align-center'>
-            Please send <br />
+          <h2>Waiting for payment</h2>
+          <div>
+            <h3 className='u-margin-bottom-none'>
+              Total Amount
+            </h3>
             <DualCurrency
-              from={XMR}
-              to={EUR}
-              fromAmount={totalAmount}
-              toAmount={totalAmount * rate}
+              className='u-margin-bottom o-flex o-flex--col'
+              primary={{
+                amount: totalAmount,
+                currency: XMR
+              }}
+              secondary={{
+                amount: totalAmount * rate,
+                currency: EUR
+              }}
             />
-            to the following address
-          </div>
-          {
-            integratedAddress ? (
-              <div className='o-flex o-flex--col'>
-                <IntegratedAddress className='u-margin-bottom' integratedAddress={integratedAddress} />
-                <div className='o-flex o-flex--center u-margin-bottom'>
-                  <QRCode size={192} value={qrCode} />
-                </div>
+            <div className='o-flex o-flex--col'>
+              <div className='o-flex o-flex--center u-margin-bottom'>
+                <QRCode size={192} value={qrCode} />
               </div>
-            ) : undefined
-          }
-          <div className='o-flex o-flex--center'>
-            <Link to='/payment/confirm' className='c-btn'>Cancel payment</Link>
+              <h3 className='u-margin-bottom-none'>
+                Integrated address
+              </h3>
+              <IntegratedAddress className='u-margin-bottom' integratedAddress={integratedAddress} />
+            </div>
+            <div className='u-margin-bottom o-flex o-flex--col'>
+              <Link to='/payment/confirm' className='c-btn'>Cancel payment</Link>
+            </div>
+
+            <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
           </div>
         </div>
       )

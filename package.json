@@ -14,20 +14,17 @@
   "author": "Timo Uhlmann",
   "main": "src/index.js",
   "scripts": {
-    "start": "npm run serve:dev",
+    "start": "yarn run serve:dev",
     "test": "jest",
     "posttest": "yarn lint",
     "test:watch": "jest --watch",
     "serve:dev": "webpack-dev-server --env dev",
     "serve:dist": "webpack-dev-server --env dist --progress",
-    "dist": "npm run clean && npm run copy && webpack --progress --bail --env dist",
+    "dist": "yarn run clean && npm run copy && webpack --progress --bail --env dist",
     "publish:staging": "yarn run dist && gh-pages -d dist",
     "lint": "standard 'src/**/*.js'",
     "clean": "rimraf dist/*",
-    "copy": "copyfiles -f ./src/index.html ./dist && copyfiles -u 1 \"./src/static/**\" ./dist",
-    "release:major": "npm version prerelease && git push --follow-tags && npm publish --tag beta",
-    "release:minor": "npm version prerelease && git push --follow-tags && npm publish --tag beta",
-    "release:patch": "npm version prerelease && git push --follow-tags && npm publish --tag beta"
+    "copy": "copyfiles -f ./src/index.html ./dist && copyfiles -u 1 \"./src/static/**\" ./dist"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

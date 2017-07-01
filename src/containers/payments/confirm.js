@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     history.push('/payment/send')
   },
   ...bindActionCreators({
-    onSetTip: e => setTip(e.target.value)
+    onSetTip: setTip
   }, dispatch)
 })
 
