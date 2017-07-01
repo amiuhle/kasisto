@@ -11,7 +11,8 @@ export default class App extends Component {
     return (
       <div className='o-app'>
         <div className='o-app__header'>
-          <h1 className='u-margin-none u-margin-left'>Kasisto</h1>
+          <h1 className='u-margin-none u-margin-left o-flex__stretch'>Kasisto</h1>
+          <small className='u-muted'>Testnet</small>
         </div>
         <aside className='o-app__nav' />
         <HashRouter>

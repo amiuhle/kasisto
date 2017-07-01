@@ -196,7 +196,7 @@ export default class DualCurrency extends Component {
       if (onChange != null) {
         return <CurrencyInput {...{id, value, onChange}} {...rest} />
       } else {
-        return <CurrencyDisplay value={amount} {...rest} />
+        return <CurrencyDisplay value={amount || 0} {...rest} />
       }
     }
 

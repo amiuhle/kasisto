@@ -5,10 +5,12 @@ const Dashboard = (props) => {
   const { onStartPayment } = props
 
   return (
-    <div className='u-align-center'>
-      <button className='c-btn' onClick={onStartPayment}>
-        Start Payment
-      </button>
+    <div>
+      <div className='u-margin-bottom u-margin-top-large o-flex o-flex--col'>
+        <button className='c-btn' onClick={onStartPayment}>
+          Start Payment
+        </button>
+      </div>
     </div>
   )
 }

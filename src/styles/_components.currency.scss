@@ -41,10 +41,6 @@
   }
 }
 
-.c-currency--primary {
-  padding-bottom: 0;
-}
-
 .c-currency--input {
   @extend %input;
   margin-bottom: $tiny-spacing-unit;
