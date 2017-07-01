@@ -1,31 +1,59 @@
 import {
   CREATE_PAYMENT,
+  SET_RECEIPT,
+  SET_AMOUNT,
   SET_TIP,
+  RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_PAYMENT
-} from '../actions/payments'
+} from '../actions/constants/payments'
 
 // TODO This needs to be a more database-like structure
 const payments = (state = [], action) => {
+  const { type, payload } = action
+
   const currentPayment = getCurrentPayment(state)
   const archive = state.slice(1)
-  switch (action.type) {
+
+  switch (type) {
     case CREATE_PAYMENT: {
-      return [action.payload, ...state]
+      return [payload, ...state]
+    }
+    case RECEIVE_EXCHANGE_RATE:
+    case SET_RECEIPT: {
+      return [
+        Object.assign({}, currentPayment, payload),
+        ...archive
+      ]
+    }
+    case SET_AMOUNT: {
+      const { rate } = currentPayment
+      const requestedAmount = payload.amount
+      const convertedAmount = requestedAmount / rate
+
+      return [
+        Object.assign({}, currentPayment, {
+          requestedAmount,
+          convertedAmount,
+          tip: 0,
+          totalAmount: convertedAmount
+        }),
+        ...archive
+      ]
     }
     case SET_TIP: {
-      const { tip, updatedAt } = action.payload
+      const { tip, updatedAt } = payload
       return [
         Object.assign({}, currentPayment, {
           tip,
-          total: currentPayment.amount + tip,
+          totalAmount: currentPayment.convertedAmount + tip,
           updatedAt
         }),
         ...archive
       ]
     }
     case RECEIVE_INTEGRATED_ADDRESS: {
-      const { integratedAddress, paymentId } = action.payload
+      const { integratedAddress, paymentId } = payload
 
       if (currentPayment.integratedAddress != null && currentPayment.paymentId != null) {
         // TODO could wallet have changed?
@@ -45,7 +73,7 @@ const payments = (state = [], action) => {
       ]
     }
     case RECEIVE_PAYMENT: {
-      const { received, transactionIds } = action.payload
+      const { received, transactionIds } = payload
       return [
         Object.assign({}, currentPayment, {
           received,

@@ -6,8 +6,8 @@
 .o-app {
   height: 100vh;
   display: grid;
-  grid-gap: $small-spacing-unit;
-  grid-template-rows: $double-spacing-unit 1fr $double-spacing-unit;
+  grid-gap: $tiny-spacing-unit;
+  grid-template-rows: $base-spacing-unit 1fr $base-spacing-unit;
   grid-template-columns: 1fr $double-spacing-unit;
   grid-template-areas:
     'header nav'
@@ -17,6 +17,8 @@
 
 .o-app__header {
   grid-area: header;
+  display: flex;
+  align-items: baseline;
 }
 
 .o-app__nav {

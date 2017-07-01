@@ -1,0 +1,11 @@
+// Setup
+export const CREATE_PAYMENT = 'CREATE_PAYMENT'
+export const RECEIVE_EXCHANGE_RATE = 'RECEIVE_EXCHANGE_RATE'
+export const RECEIVE_INTEGRATED_ADDRESS = 'RECEIVE_INTEGRATED_ADDRESS'
+// Seller
+export const SET_AMOUNT = 'SET_AMOUNT'
+export const SET_RECEIPT = 'SET_RECEIPT'
+// Buyer
+export const SET_TIP = 'SET_TIP'
+// Confirmation
+export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT'

@@ -1,7 +1,28 @@
 label, button {
   text-transform: capitalize;
+
+  line-height: 1.5;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-input {
+input, %input {
   padding: $tiny-spacing-unit;
+
+  line-height: 1.5;
+  font-family: inherit;
+  font-size: inherit;
+
+  border: 1px solid #333;
+  border-radius: 3px;
 }
+
+input:disabled, %input--disabled {
+  background-color: #eee;
+}
+
+button:focus, input:focus, %input--focus {
+  outline: none;
+  border-color: #ff6c3c;
+}
+

@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
-  fetchIntegratedAddress,
-  listenForPayments
+  listenForPayments,
+  stopListeningForPayments
 } from '../../actions'
 
 import {
@@ -15,31 +16,24 @@ import SendPayment from '../../components/payments/send'
 
 class Container extends Component {
   componentDidMount () {
-    this.fetchStuff()
-  }
-
-  componentDidUpdate (prevProps) {
-    this.fetchStuff()
-  }
-
-  fetchStuff () {
     const {
-      fetchIntegratedAddress,
       listenForPayments,
       payment
     } = this.props
 
     const {
-      integratedAddress,
       paymentId,
-      total
+      totalAmount
     } = payment
 
-    if (integratedAddress == null || paymentId == null) {
-      fetchIntegratedAddress()
-    } else {
-      listenForPayments(total, paymentId)
-    }
+    listenForPayments(totalAmount, paymentId)
+      .then(handle => this.setState({ handle }))
+  }
+
+  componentWillUnmount () {
+    const { stopListeningForPayments } = this.props
+    const { handle } = this.state
+    stopListeningForPayments(handle)
   }
 
   render () {
@@ -53,10 +47,11 @@ const mapStateToProps = state => ({
   payment: getCurrentPayment(state)
 })
 
-export default connect(
-  mapStateToProps,
-  {
-    fetchIntegratedAddress,
-    listenForPayments
-  }
-)(Container)
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  ...bindActionCreators({
+    listenForPayments,
+    stopListeningForPayments
+  }, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Container)

@@ -2,16 +2,12 @@ import { v4 as uuid } from 'uuid'
 
 import Wallet from 'monero-nodejs'
 
+import * as types from './constants/payments'
+
+const { fetch } = window
 const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
-export const CREATE_PAYMENT = 'CREATE_PAYMENT'
-export const SET_TIP = 'SET_TIP'
-export const RECEIVE_INTEGRATED_ADDRESS = 'RECEIVE_INTEGRATED_ADDRESS'
-export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT'
-
-export const listenForPayments = (total, paymentId) => (dispatch) => new Promise((resolve, reject) => {
-  // TODO validate total & paymentId
-  // const pool = []
+export const listenForPayments = (totalAmount, paymentId) => (dispatch) => {
   const poll = () => {
     wallet.getTransfers({pool: true}).then((result) => {
       const transactionIds = []
@@ -23,26 +19,30 @@ export const listenForPayments = (total, paymentId) => (dispatch) => new Promise
         return amount
       }, 0)
 
-      if (received >= total) {
+      if (received >= totalAmount) {
         dispatch(receivePayment({
           confirmed: false,
           received,
           transactionIds
         }))
         window.clearInterval(handle)
-        resolve()
       }
       if (received > 0) {
         console.log('[PaymentRequest] transfers', received, result.pool)
       }
     })
   }
-  // TODO clear handle?
   const handle = window.setInterval(poll, 5000)
-})
+
+  // return the handle to the view so it can cancel polling
+  return Promise.resolve(handle)
+}
+
+export const stopListeningForPayments = (handle) => (dispatch) =>
+  Promise.resolve(window.clearInterval(handle))
 
 const receivePayment = ({ confirmed, received, transactionIds }) => ({
-  type: RECEIVE_PAYMENT,
+  type: types.RECEIVE_PAYMENT,
   payload: {
     confirmed,
     received,
@@ -50,46 +50,89 @@ const receivePayment = ({ confirmed, received, transactionIds }) => ({
   }
 })
 
-export const fetchIntegratedAddress = () => (dispatch) =>
+const fetchIntegratedAddress = () => (dispatch) =>
   wallet.makeIntegratedAddress().then(
     result => dispatch(receiveIntegratedAddress(result))
   )
 
 const receiveIntegratedAddress = ({ integrated_address, payment_id }) => ({
-  type: RECEIVE_INTEGRATED_ADDRESS,
+  type: types.RECEIVE_INTEGRATED_ADDRESS,
   payload: {
     integratedAddress: integrated_address,
     paymentId: payment_id
   }
 })
 
-export const createPayment = (amount, receipt) => {
-  amount = Number.parseFloat(amount) || 0
-  const total = amount
-  return {
-    type: CREATE_PAYMENT,
-    payload: {
-      id: uuid(),
-      amount,
-      receipt,
-      tip: 0,
-      total,
-      createdAt: timestamp(),
-      updatedAt: timestamp()
-    }
-  }
+export const startPayment = (fiatCurrency) => (dispatch) => {
+  dispatch(createPayment())
+  return Promise.all([
+    dispatch(fetchExchangeRate(fiatCurrency)),
+    dispatch(fetchIntegratedAddress())
+  ])
 }
+
+const createPayment = () => updatedAt({
+  type: types.CREATE_PAYMENT,
+  payload: {
+    id: uuid(),
+    createdAt: timestamp()
+  }
+})
+
+export const setReceipt = (receipt) => updatedAt({
+  type: types.SET_RECEIPT,
+  payload: {
+    receipt
+  }
+})
+
+export const setAmount = (amount) => updatedAt({
+  type: types.SET_AMOUNT,
+  payload: {
+    amount
+  }
+})
 
 export const setTip = (tip) => {
   tip = Math.max(0, Number.parseFloat(tip) || 0)
-  return {
-    type: SET_TIP,
+  return updatedAt({
+    type: types.SET_TIP,
     payload: {
-      tip,
-      updatedAt: timestamp()
+      tip
     }
+  })
+}
+
+const fetchExchangeRate = (fiatCurrency) => (dispatch) => {
+  if (fiatCurrency === null) {
+    dispatch(receiveExchangeRate(
+      fiatCurrency,
+      1
+    ))
+    return Promise.resolve()
+  } else {
+    return fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
+      .then(response => response.json())
+      .then(json => dispatch(receiveExchangeRate(
+        fiatCurrency,
+        Number.parseFloat(json.result[`XXMRZ${fiatCurrency}`]['p'][1])
+      )))
   }
 }
+
+const receiveExchangeRate = (fiatCurrency, rate) => ({
+  type: types.RECEIVE_EXCHANGE_RATE,
+  payload: {
+    fiatCurrency,
+    rate,
+    exchange: fiatCurrency === null ? null : 'https://www.kraken.com/'
+  }
+})
+
+const updatedAt = (action) => ({
+  ...action,
+  payload: Object.assign(action.payload, { updatedAt: timestamp() })
+})
 
 const timestamp = () =>
   new Date().toISOString()

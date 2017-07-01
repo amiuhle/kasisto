@@ -1,43 +1,97 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 
+import { XMR, EUR } from './utils'
+
+import DualCurrency from './dual-currency'
+import ExchangeInfo from './exchange-info'
+
 export default class ConfirmPayment extends Component {
-  state = {
-    tip: '0.00'
-  }
-
-  handleSubmit = (e) => {
-    const { history } = this.props
-    e.preventDefault()
-    history.push('/payment/send')
-  }
-
   render () {
     if (this.props.payment == null) {
-      return <Redirect to='/payments/create' />
+      return <Redirect to='/' />
     }
-    const { amount, receipt, tip, total } = this.props.payment
-
-    const { onSetTip } = this.props
+    const {
+      onSetTip,
+      onStartPayment,
+      payment: {
+        exchange,
+        rate,
+        receipt,
+        tip,
+        requestedAmount,
+        convertedAmount,
+        totalAmount
+      }
+    } = this.props
 
     return (
       <div>
         <h2>Confirm Payment</h2>
-        <form action='/payment/send' className='o-form' onSubmit={this.handleSubmit}>
-          <label htmlFor='receipt'>Receipt</label>
-          <input disabled id='receipt' value={receipt} type='text' className='u-align-right' />
+        <div>
+          <h3 className='u-margin-bottom-none'>
+            <label htmlFor='receipt'>Receipt</label>
+          </h3>
+          <div className='u-margin-bottom o-box--tiny'>
+            {receipt}
+          </div>
 
-          <label htmlFor='amount'>Amount due</label>
-          <input disabled id='amount' value={amount} type='number' className='u-align-right' />
+          <h3 className='u-margin-bottom-none'>
+            Amount due
+          </h3>
+          <DualCurrency
+            className='u-margin-bottom o-flex o-flex--col'
+            primary={{
+              amount: convertedAmount,
+              currency: XMR
+            }}
+            secondary={{
+              amount: requestedAmount,
+              currency: EUR
+            }}
+          />
 
-          <label htmlFor='tip'>Tip</label>
-          <input id='tip' value={tip} onChange={e => { onSetTip(e.target.value) }} type='number' className='u-align-right' autoFocus step={0.01} />
+          <h3 className='u-margin-bottom-none'>
+            <label htmlFor='tip'>Tip</label>
+          </h3>
+          <DualCurrency
+            className='u-margin-bottom o-flex o-flex--col'
+            id='tip'
+            primary={{
+              amount: tip,
+              currency: XMR,
+              onChange: onSetTip
+            }}
+            secondary={{
+              amount: tip * rate,
+              currency: EUR
+            }}
+          />
 
-          <label htmlFor='total'>Total</label>
-          <input disabled id='total' value={total} type='number' className='u-align-right' />
+          <h3 className='u-margin-bottom-none'>
+            <label htmlFor='totalAmount'>totalAmount</label>
+          </h3>
+          <DualCurrency
+            className='u-margin-bottom o-flex o-flex--col'
+            id='totalAmount'
+            primary={{
+              amount: totalAmount,
+              currency: XMR
+            }}
+            secondary={{
+              amount: totalAmount * rate,
+              currency: EUR
+            }}
+          />
 
-          <button className='o-form-item--span'>Start payment</button>
-        </form>
+          <div className='u-margin-bottom o-flex o-flex--col'>
+            <button className='c-btn' onClick={onStartPayment}>
+              Start payment
+            </button>
+          </div>
+
+          <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
+        </div>
       </div>
     )
   }

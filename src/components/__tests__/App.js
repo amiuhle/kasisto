@@ -2,12 +2,22 @@
 
 import React from 'react'
 import AppComponent from '../App'
+
+import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
+
+const middlewares = [thunk]
+const mockStore = configureMockStore(middlewares)
 
 it('experiments with Jest', () => {
+  const store = mockStore()
   const component = renderer.create(
     // {... { actions, payment }}
-    <AppComponent />
+    <Provider store={store}>
+      <AppComponent />
+    </Provider>
   )
   let tree = component.toJSON()
 

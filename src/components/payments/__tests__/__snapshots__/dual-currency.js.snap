@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DualCurrency renders fiat and money 1`] = `
+<div
+  className="c-dual-currency "
+>
+  <span
+    className="c-currency c-currency--primary"
+  >
+    <span
+      className="c-currency__value"
+    >
+      0
+    </span>
+    <span
+      className="c-currency__tail"
+    >
+      .00
+    </span>
+    <span
+      className="c-currency__currency"
+    >
+      XMR
+    </span>
+  </span>
+  <span
+    className="c-currency c-currency--secondary"
+  >
+    <span
+      className="c-currency__value"
+    >
+      0
+    </span>
+    <span
+      className="c-currency__tail"
+    >
+      .00
+    </span>
+    <span
+      className="c-currency__currency"
+    >
+      XMR
+    </span>
+  </span>
+</div>
+`;
