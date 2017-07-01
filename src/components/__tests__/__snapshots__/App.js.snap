@@ -8,10 +8,15 @@ exports[`experiments with Jest 1`] = `
     className="o-app__header"
   >
     <h1
-      className="u-margin-none u-margin-left"
+      className="u-margin-none u-margin-left o-flex__stretch"
     >
       Kasisto
     </h1>
+    <small
+      className="u-muted"
+    >
+      Testnet
+    </small>
   </div>
   <aside
     className="o-app__nav"
@@ -19,15 +24,17 @@ exports[`experiments with Jest 1`] = `
   <section
     className="o-app__content"
   >
-    <div
-      className="u-align-center"
-    >
-      <button
-        className="c-btn"
-        onClick={[Function]}
+    <div>
+      <div
+        className="u-margin-bottom u-margin-top-large o-flex o-flex--col"
       >
-        Start Payment
-      </button>
+        <button
+          className="c-btn"
+          onClick={[Function]}
+        >
+          Start Payment
+        </button>
+      </div>
     </div>
   </section>
   <footer

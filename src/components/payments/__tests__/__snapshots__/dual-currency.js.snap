@@ -10,7 +10,7 @@ exports[`DualCurrency renders fiat and money 1`] = `
     <span
       className="c-currency__value"
     >
-      NaN
+      0
     </span>
     <span
       className="c-currency__tail"
@@ -29,7 +29,7 @@ exports[`DualCurrency renders fiat and money 1`] = `
     <span
       className="c-currency__value"
     >
-      NaN
+      0
     </span>
     <span
       className="c-currency__tail"
