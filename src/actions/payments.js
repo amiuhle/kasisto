@@ -9,7 +9,8 @@ const wallet = new Wallet('testnet.kasisto.io', 28082, true)
 
 export const listenForPayments = (totalAmount, paymentId) => (dispatch) => {
   const poll = () => {
-    wallet.getTransfers({pool: true}).then((result) => {
+    console.log('polling')
+    return wallet.getTransfers({pool: true}).then((result) => {
       const transactionIds = []
       const received = (result.pool || []).reduce((amount, transaction) => {
         if (transaction.payment_id === paymentId) {
@@ -32,9 +33,10 @@ export const listenForPayments = (totalAmount, paymentId) => (dispatch) => {
       }
     })
   }
+  console.log('calling setInterval')
   const handle = window.setInterval(poll, 5000)
-
   // return the handle to the view so it can cancel polling
+  console.log('returning promise')
   return Promise.resolve(handle)
 }
 
