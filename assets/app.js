@@ -32622,32 +32622,47 @@ var wallet = new _moneroNodejs2.default('testnet.kasisto.io', 28082, true);
 var listenForPayments = exports.listenForPayments = function listenForPayments(totalAmount, paymentId) {
   return function (dispatch) {
     var poll = function poll() {
-      wallet.getTransfers({ pool: true }).then(function (result) {
-        var transactionIds = [];
-        var received = (result.pool || []).reduce(function (amount, transaction) {
-          if (transaction.payment_id === paymentId) {
-            amount += transaction.amount / 1e12;
-            transactionIds.push(transaction.txid);
-          }
-          return amount;
+      return wallet.getTransfers({ pool: true, in: true, pending: true }).then(function (result) {
+        var confirmed = result.in || [];
+        var pool = result.pool || [];
+        var pending = result.pending || [];
+
+        console.log('pool', pool.length);
+        console.log('pending', pending.length);
+        console.log('confirmed', confirmed.length);
+
+        var transactions = confirmed.concat(pool).concat(pending).filter(function (tx) {
+          return tx.payment_id === paymentId;
+        });
+
+        console.log('filtered transactions', transactions);
+
+        var received = transactions.reduce(function (sum, _ref) {
+          var amount = _ref.amount;
+          return sum + amount;
         }, 0);
 
-        if (received >= totalAmount) {
+        console.log('received', received);
+
+        if (received >= totalAmount * 1e12) {
           dispatch(receivePayment({
             confirmed: false,
-            received: received,
-            transactionIds: transactionIds
+            received: received / 1e12,
+            transactionIds: transactions.map(function (tx) {
+              return tx.txid;
+            })
           }));
           window.clearInterval(handle);
         }
         if (received > 0) {
-          console.log('[PaymentRequest] transfers', received, result.pool);
+          console.log('[PaymentRequest] transfers', received, transactions);
         }
       });
     };
+    console.log('calling setInterval');
     var handle = window.setInterval(poll, 5000);
-
     // return the handle to the view so it can cancel polling
+    console.log('returning promise');
     return Promise.resolve(handle);
   };
 };
@@ -32658,10 +32673,10 @@ var stopListeningForPayments = exports.stopListeningForPayments = function stopL
   };
 };
 
-var receivePayment = function receivePayment(_ref) {
-  var confirmed = _ref.confirmed,
-      received = _ref.received,
-      transactionIds = _ref.transactionIds;
+var receivePayment = function receivePayment(_ref2) {
+  var confirmed = _ref2.confirmed,
+      received = _ref2.received,
+      transactionIds = _ref2.transactionIds;
   return {
     type: types.RECEIVE_PAYMENT,
     payload: {
@@ -32680,9 +32695,9 @@ var fetchIntegratedAddress = function fetchIntegratedAddress() {
   };
 };
 
-var receiveIntegratedAddress = function receiveIntegratedAddress(_ref2) {
-  var integrated_address = _ref2.integrated_address,
-      payment_id = _ref2.payment_id;
+var receiveIntegratedAddress = function receiveIntegratedAddress(_ref3) {
+  var integrated_address = _ref3.integrated_address,
+      payment_id = _ref3.payment_id;
   return {
     type: types.RECEIVE_INTEGRATED_ADDRESS,
     payload: {
