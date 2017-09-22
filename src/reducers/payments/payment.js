@@ -5,6 +5,7 @@ import {
   SET_TIP,
   RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
+  RECEIVE_URI,
   RECEIVE_PAYMENT
 } from '../../actions/constants/payments'
 
@@ -62,6 +63,12 @@ const payment = (state = {}, action) => {
       return Object.assign({}, state, {
         integratedAddress,
         paymentId
+      })
+    }
+    case RECEIVE_URI: {
+      const { uri } = payload
+      return Object.assign({}, state, {
+        uri
       })
     }
     case RECEIVE_PAYMENT: {

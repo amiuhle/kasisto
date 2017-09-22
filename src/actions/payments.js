@@ -61,6 +61,19 @@ const receiveIntegratedAddress = (id, integratedAddress, paymentId) => ({
   }
 })
 
+export const fetchUri = (id, address, amount) => dispatch =>
+  wallet.splitIntegratedAddress(address).then(({standard_address, payment_id}) =>
+    wallet.makeUri(standard_address, Math.round(amount * 1e12), payment_id)
+  ).then(({ uri }) => dispatch(receiveUri(id, uri)))
+
+const receiveUri = (id, uri) => ({
+  type: types.RECEIVE_URI,
+  payload: {
+    id,
+    uri
+  }
+})
+
 export const startPayment = (fiatCurrency) => (dispatch) => {
   const { id } = dispatch(createPayment()).payload
   return Promise.all([
