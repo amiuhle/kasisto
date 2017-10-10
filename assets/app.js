@@ -37413,7 +37413,7 @@ var Settings = function Settings(props) {
     onChange: onSetPort,
     type: 'text',
     autoFocus: true
-  })), _react2.default.createElement('div', { className: 'u-margin-bottom o-flex o-flex--col' }, _react2.default.createElement('a', { className: 'c-btn', href: '/' }, 'Save'))));
+  })), _react2.default.createElement('div', { className: 'u-margin-bottom o-flex o-flex--col' }, _react2.default.createElement('a', { className: 'c-btn', href: '#/' }, 'Save'))));
 };
 
 Settings.propTypes = {
