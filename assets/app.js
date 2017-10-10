@@ -32152,7 +32152,9 @@ class Wallet {
     }
 
     splitIntegratedAddress(address) {
-        return _request('split_integrated_address', {integrated_address: address});
+        this.method = 'split_integrated_address';
+        this.params.integrated_address = address;
+        return _request(this);
     }
 
     store() {
@@ -32161,6 +32163,16 @@ class Wallet {
 
     stopWallet() {
         return _request('stop_wallet');
+    }
+
+    makeUri(address, amount, paymentId, recipientName, txDescription) {
+        this.method = 'make_uri';
+        this.params.address = address,
+        this.params.amount = amount,
+        this.params.payment_id = paymentId,
+        this.params.recipient_name = recipientName,
+        this.params.tx_description = txDescription
+        return _request(this)
     }
 
     transfer(destinations, options = {}, method = 'transfer') {
@@ -32973,28 +32985,25 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/bi
             e = n.length;
         }
 
-        nL = n.length;
-
         // Determine leading zeros.
-        for (i = 0; i < nL && n.charAt(i) == '0'; i++) {
+        for (i = 0; n.charAt(i) == '0'; i++) {
         }
 
-        if (i == nL) {
+        if (i == (nL = n.length)) {
 
             // Zero.
             x.c = [ x.e = 0 ];
         } else {
 
             // Determine trailing zeros.
-            for (; nL > 0 && n.charAt(--nL) == '0';) {
+            for (; n.charAt(--nL) == '0';) {
             }
 
             x.e = e - i - 1;
             x.c = [];
 
             // Convert string to array of digits without leading/trailing zeros.
-            //for (e = 0; i <= nL; x.c[e++] = +n.charAt(i++)) {
-            for (; i <= nL; x.c.push(+n.charAt(i++))) {
+            for (e = 0; i <= nL; x.c[e++] = +n.charAt(i++)) {
             }
         }
 
@@ -33903,7 +33912,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/* big.js v3.1.3 https://github.com/MikeMcl/bi
     // Node and other CommonJS-like environments that support module.exports.
     } else if (typeof module !== 'undefined' && module.exports) {
         module.exports = Big;
-        module.exports.Big = Big;
 
     //Browser.
     } else {
