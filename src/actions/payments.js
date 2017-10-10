@@ -4,8 +4,15 @@ import Wallet from 'monero-nodejs'
 
 import * as types from './constants/payments'
 
+import { loadState } from '../lib/persistence'
+
 const { fetch } = window
-const wallet = new Wallet('testnet.kasisto.io', 28082, true)
+
+const state = loadState()
+const { host, port } = (state || {}).settings || {}
+console.log('settings', host, port)
+
+const wallet = new Wallet(host || 'testnet.kasisto.io', port || 28082, true)
 
 export const listenForPayments = (totalAmount, paymentId) => (dispatch) => {
   const poll = () => {

@@ -42,7 +42,7 @@ const Settings = (props) => {
         </div>
 
         <div className='u-margin-bottom o-flex o-flex--col'>
-          <a className='c-btn' href={'#/'}>
+          <a className='c-btn' href={'/'}>
             Save
           </a>
         </div>
