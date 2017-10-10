@@ -4,7 +4,7 @@ import {
 } from '../actions/constants/settings'
 
 // TODO This needs to be a more database-like structure
-const payments = (state = { host: 'testnet.kasisto.io', port: '28082' }, action) => {
+const payments = (state = {}, action) => {
   const { type, payload } = action
 
   switch (type) {
