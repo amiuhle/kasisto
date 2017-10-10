@@ -7,8 +7,8 @@
   height: 100vh;
   display: grid;
   grid-gap: $tiny-spacing-unit;
-  grid-template-rows: $base-spacing-unit 1fr $base-spacing-unit;
-  grid-template-columns: 1fr $double-spacing-unit;
+  grid-template-rows: $base-spacing-unit 1fr $base-spacing-unit * 1.5;
+  grid-template-columns: 1fr $base-spacing-unit * 1.5;
   grid-template-areas:
     'header nav'
     'content content'
@@ -19,6 +19,11 @@
   grid-area: header;
   display: flex;
   align-items: baseline;
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
 
 .o-app__nav {
