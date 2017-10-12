@@ -5,8 +5,9 @@ import { Link, Redirect } from 'react-router-dom'
 import {
   XMR,
   EUR
-
 } from './utils'
+
+import Icon from '../util/Icon'
 
 import DualCurrency from './dual-currency'
 import ExchangeInfo from './exchange-info'
@@ -32,7 +33,7 @@ export default class SendPayment extends Component {
       return (
         <div className='u-align-center'>
           <h2 className='c-success'>
-            <span className='check'>✔</span>
+            <Icon name='check-circle' className='icon--large' />
             <strong>Payment received</strong>
           </h2>
 
