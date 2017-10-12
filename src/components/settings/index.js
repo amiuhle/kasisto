@@ -24,6 +24,7 @@ const Settings = (props) => {
             value={host || ''}
             onChange={onSetHost}
             type='text'
+            placeholder='testnet.kasisto.io'
             autoFocus
           />
         </div>
@@ -37,7 +38,7 @@ const Settings = (props) => {
             value={port || ''}
             onChange={onSetPort}
             type='text'
-            autoFocus
+            placeholder='28082'
           />
         </div>
 

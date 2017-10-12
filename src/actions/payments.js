@@ -9,10 +9,16 @@ import { loadState } from '../lib/persistence'
 const { fetch } = window
 
 const state = loadState()
-const { host, port } = (state || {}).settings || {}
-console.log('settings', host, port)
 
-const wallet = new Wallet(host || 'testnet.kasisto.io', port || 28082, true)
+let { host, port } = (state || {}).settings || {}
+if (!host) {
+  host = 'testnet.kasisto.io'
+}
+if (!port) {
+  port = '28082'
+}
+console.log('Connecting to', host, port)
+const wallet = new Wallet(host, port, true)
 
 export const listenForPayments = (totalAmount, paymentId) => (dispatch) => {
   const poll = () => {
