@@ -31611,9 +31611,14 @@ var _ref = (state || {}).settings || {},
     host = _ref.host,
     port = _ref.port;
 
-console.log('settings', host, port);
-
-var wallet = new _moneroNodejs2.default(host || 'testnet.kasisto.io', port || 28082, true);
+if (!host) {
+  host = 'testnet.kasisto.io';
+}
+if (!port) {
+  port = '28082';
+}
+console.log('Connecting to', host, port);
+var wallet = new _moneroNodejs2.default(host, port, true);
 
 var listenForPayments = exports.listenForPayments = function listenForPayments(totalAmount, paymentId) {
   return function (dispatch) {
@@ -35005,13 +35010,7 @@ var CreatePayment = (_temp = _class = function (_Component) {
           requestedAmount = _props$payment.requestedAmount,
           convertedAmount = _props$payment.convertedAmount;
 
-      return _react2.default.createElement('div', null, _react2.default.createElement('h2', null, 'Create Payment'), _react2.default.createElement('div', null, _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'receipt' }, 'Receipt')), _react2.default.createElement('div', { className: 'u-margin-bottom o-flex o-flex--col' }, _react2.default.createElement('input', {
-        id: 'receipt',
-        value: receipt || '',
-        onChange: onSetReceipt,
-        type: 'text',
-        autoFocus: true
-      }), _react2.default.createElement(_noobHint2.default, { text: 'A hint so you can identify this payment later' })), _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'amount' }, 'Amount due')), _react2.default.createElement(_dualCurrency2.default, {
+      return _react2.default.createElement('div', null, _react2.default.createElement('h2', null, 'Create Payment'), _react2.default.createElement('div', null, _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'amount' }, 'Amount due')), _react2.default.createElement(_dualCurrency2.default, {
         id: 'amount',
         className: 'u-margin-bottom o-flex o-flex--col',
 
@@ -35414,7 +35413,7 @@ var ConfirmPayment = function (_Component) {
           convertedAmount = _props$payment.convertedAmount,
           totalAmount = _props$payment.totalAmount;
 
-      return _react2.default.createElement('div', null, _react2.default.createElement('h2', null, 'Confirm Payment'), _react2.default.createElement('div', null, _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'receipt' }, 'Receipt')), _react2.default.createElement('div', { className: 'u-margin-bottom o-box--tiny' }, receipt), _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, 'Amount due'), _react2.default.createElement(_dualCurrency2.default, {
+      return _react2.default.createElement('div', null, _react2.default.createElement('h2', null, 'Confirm Payment'), _react2.default.createElement('div', null, _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, 'Amount due'), _react2.default.createElement(_dualCurrency2.default, {
         className: 'u-margin-bottom o-flex o-flex--col',
         primary: {
           amount: convertedAmount,
@@ -35436,7 +35435,7 @@ var ConfirmPayment = function (_Component) {
           amount: tip * rate,
           currency: _utils.EUR
         }
-      }), _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'totalAmount' }, 'totalAmount')), _react2.default.createElement(_dualCurrency2.default, {
+      }), _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'totalAmount' }, 'Total amount')), _react2.default.createElement(_dualCurrency2.default, {
         className: 'u-margin-bottom o-flex o-flex--col',
         id: 'totalAmount',
         primary: {
@@ -37406,13 +37405,14 @@ var Settings = function Settings(props) {
     value: host || '',
     onChange: onSetHost,
     type: 'text',
+    placeholder: 'testnet.kasisto.io',
     autoFocus: true
   })), _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'port' }, 'Port')), _react2.default.createElement('div', { className: 'u-margin-bottom o-flex o-flex--col' }, _react2.default.createElement('input', {
     id: 'port',
     value: port || '',
     onChange: onSetPort,
     type: 'text',
-    autoFocus: true
+    placeholder: '28082'
   })), _react2.default.createElement('div', { className: 'u-margin-bottom o-flex o-flex--col' }, _react2.default.createElement('a', { className: 'c-btn', href: '#/' }, 'Save'))));
 };
 
