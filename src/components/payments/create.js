@@ -40,7 +40,7 @@ export default class CreatePayment extends Component {
       <div>
         <h2>Create Payment</h2>
         <div>
-          <h3 className='u-margin-bottom-none'>
+          {/* <h3 className='u-margin-bottom-none'>
             <label htmlFor='receipt'>Receipt</label>
           </h3>
           <div className='u-margin-bottom o-flex o-flex--col'>
@@ -52,7 +52,7 @@ export default class CreatePayment extends Component {
               autoFocus
             />
             <Hint text='A hint so you can identify this payment later' />
-          </div>
+          </div> */}
 
           <h3 className='u-margin-bottom-none'>
             <label htmlFor='amount'>Amount due</label>

@@ -29,12 +29,12 @@ export default class ConfirmPayment extends Component {
       <div>
         <h2>Confirm Payment</h2>
         <div>
-          <h3 className='u-margin-bottom-none'>
+          {/* <h3 className='u-margin-bottom-none'>
             <label htmlFor='receipt'>Receipt</label>
           </h3>
           <div className='u-margin-bottom o-box--tiny'>
             {receipt}
-          </div>
+          </div> */}
 
           <h3 className='u-margin-bottom-none'>
             Amount due
@@ -69,7 +69,7 @@ export default class ConfirmPayment extends Component {
           />
 
           <h3 className='u-margin-bottom-none'>
-            <label htmlFor='totalAmount'>totalAmount</label>
+            <label htmlFor='totalAmount'>Total amount</label>
           </h3>
           <DualCurrency
             className='u-margin-bottom o-flex o-flex--col'
