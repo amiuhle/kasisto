@@ -28422,7 +28422,7 @@ var payments = function payments() {
         var rate = currentPayment.rate;
 
         var requestedAmount = payload.amount;
-        var convertedAmount = requestedAmount / rate;
+        var convertedAmount = Math.round(requestedAmount / rate * 1e12) / 1e12;
 
         return [Object.assign({}, currentPayment, {
           requestedAmount: requestedAmount,
