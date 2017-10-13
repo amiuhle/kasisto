@@ -30,7 +30,7 @@ const payments = (state = [], action) => {
     case SET_AMOUNT: {
       const { rate } = currentPayment
       const requestedAmount = payload.amount
-      const convertedAmount = requestedAmount / rate
+      const convertedAmount = Math.round((requestedAmount / rate) * 1e12) / 1e12
 
       return [
         Object.assign({}, currentPayment, {
