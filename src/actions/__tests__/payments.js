@@ -206,7 +206,9 @@ describe('Payment Actions', () => {
             jsonrpc: '2.0',
             method: 'get_transfers',
             params: {
-              pool: true
+              pool: true,
+              in: true,
+              pending: true
             }
           }).reply(200, {
             id: '0',
@@ -278,7 +280,9 @@ describe('Payment Actions', () => {
             jsonrpc: '2.0',
             method: 'get_transfers',
             params: {
-              pool: true
+              pool: true,
+              in: true,
+              pending: true
             }
           }).reply(200, {
             id: '0',
