@@ -1,3 +1,5 @@
+// import { combineReducers } from 'redux'
+
 import {
   CREATE_PAYMENT,
   SET_RECEIPT,
@@ -77,35 +79,58 @@ const payment = (state = {}, action) => {
   }
 }
 
-// TODO This needs to be a more database-like structure
-const payments = (state = [], action) => {
-  const currentPayment = getCurrentPayment(state)
-  const archive = state.slice(1)
+// const byId = (state = {}, action) => {
+//   const { type, payload } = action
+//   switch (type) {
+//     case CREATE_PAYMENT:
+//     case RECEIVE_EXCHANGE_RATE:
+//     case SET_RECEIPT:
+//     case SET_AMOUNT:
+//     case SET_TIP:
+//     case RECEIVE_INTEGRATED_ADDRESS:
+//     case RECEIVE_PAYMENT:
+//       return {
+//         ...state,
+//         [payload.id]: payment(state[payload.id], action)
+//       }
+//     default: {
+//       return state
+//     }
+//   }
+// }
 
-  switch (action.type) {
-    case CREATE_PAYMENT: {
-      return [
-        payment(undefined, action),
-        ...state
-      ]
-    }
-    case RECEIVE_EXCHANGE_RATE:
-    case SET_RECEIPT:
-    case SET_AMOUNT:
-    case SET_TIP:
-    case RECEIVE_INTEGRATED_ADDRESS:
-    case RECEIVE_PAYMENT:
-      return [
-        payment(currentPayment, action),
-        ...archive
-      ]
-    default: {
+const allIds = (state = [], { type, payload }) => {
+  // console.log('allIds', state, type, payload)
+  switch (type) {
+    case CREATE_PAYMENT:
+      return [payload.id, ...state]
+    default:
       return state
+  }
+}
+
+export default (state = {}, action) => {
+  const nextIds = allIds(state.allIds, action)
+  const currentPaymentId = getCurrentPaymentId(nextIds)
+  return {
+    allIds: nextIds,
+    byId: {
+      ...state.byId,
+      [currentPaymentId]: currentPaymentId && payment(state.byId[currentPaymentId], action)
     }
   }
 }
 
-export default payments
+// export default combineReducers({
+//   byId,
+//   allIds
+// })
+
+const getCurrentPaymentId = (allIds) =>
+  allIds.slice(0, 1)[0]
 
 export const getCurrentPayment = (state) =>
-  state.slice(0, 1)[0]
+  state.byId[getCurrentPaymentId(state.allIds)]
+
+export const getAllPayments = (state) =>
+  state.allIds.map(id => state.byId[id])
