@@ -7,5 +7,8 @@ const reducers = {
 
 export default combineReducers(reducers)
 
-export const getCurrentPayment = (state) =>
-  fromPayments.getCurrentPayment(state.payments)
+export const getAllPayments = (state) =>
+  fromPayments.getAllPayments(state)
+
+export const getPaymentById = (state, id) =>
+  fromPayments.getPaymentById(state.payments, id)

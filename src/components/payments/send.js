@@ -18,6 +18,7 @@ export default class SendPayment extends Component {
       return <Redirect to='/' />
     }
     const {
+      id,
       integratedAddress,
       exchange,
       received,
@@ -91,7 +92,7 @@ export default class SendPayment extends Component {
               <IntegratedAddress className='u-margin-bottom' integratedAddress={integratedAddress} />
             </div>
             <div className='u-margin-bottom o-flex o-flex--col'>
-              <Link to='/payment/confirm' className='c-btn'>Cancel payment</Link>
+              <Link to={`/payments/${id}/confirm`} className='c-btn'>Cancel payment</Link>
             </div>
 
             <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />

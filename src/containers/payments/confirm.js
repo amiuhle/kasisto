@@ -8,22 +8,21 @@ import {
 } from '../../actions'
 
 import {
-  getCurrentPayment
+  getPaymentById
 } from '../../reducers'
 
 import ConfirmPayment from '../../components/payments/confirm'
 
 const render = props => <ConfirmPayment {...props} />
 
-const mapStateToProps = state => ({
-  payment: getCurrentPayment(state)
+const mapStateToProps = (state, ownProps) => ({
+  payment: getPaymentById(state, ownProps.match.params.id)
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch, { history, match }) => ({
   onStartPayment (e) {
-    const { history } = ownProps
     e.preventDefault()
-    history.push('/payment/send')
+    history.push(`/payments/${match.params.id}/send`)
   },
   ...bindActionCreators({
     onSetTip: setTip

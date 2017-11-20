@@ -9,7 +9,7 @@ import {
 } from '../../actions'
 
 import {
-  getCurrentPayment
+  getPaymentById
 } from '../../reducers'
 
 import SendPayment from '../../components/payments/send'
@@ -22,11 +22,12 @@ class Container extends Component {
     } = this.props
 
     const {
+      id,
       paymentId,
       totalAmount
     } = payment
 
-    listenForPayments(totalAmount, paymentId)
+    listenForPayments(id, totalAmount, paymentId)
       .then(handle => this.setState({ handle }))
   }
 
@@ -43,8 +44,8 @@ class Container extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  payment: getCurrentPayment(state)
+const mapStateToProps = (state, ownProps) => ({
+  payment: getPaymentById(state, ownProps.match.params.id)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

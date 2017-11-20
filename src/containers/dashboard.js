@@ -12,12 +12,13 @@ const render = props => {
   return <Dashboard {...props} />
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch, { history, match }) => ({
   onStartPayment (e) {
-    const { history } = ownProps
-    dispatch(startPayment('EUR'))
+    dispatch(startPayment('EUR')).then(([id]) => {
+      console.log('payment created', id)
+      history.push(`/payments/${id}/create`)
+    })
     e.preventDefault()
-    history.push('/payments/create')
   }
 })
 

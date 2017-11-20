@@ -9,26 +9,25 @@ import {
 } from '../../actions'
 
 import {
-  getCurrentPayment
+  getPaymentById
 } from '../../reducers'
 
 import CreatePayment from '../../components/payments/create'
 
 const render = props => <CreatePayment {...props} />
 
-const mapStateToProps = state => ({
-  payment: getCurrentPayment(state)
+const mapStateToProps = (state, { match }) => ({
+  payment: getPaymentById(state, match.params.id)
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch, { history, match }) => ({
   onRequestPayment (e) {
-    const { history } = ownProps
     e.preventDefault()
-    history.push('/payment/confirm')
+    history.push(`/payments/${match.params.id}/confirm`)
   },
   ...bindActionCreators({
     onSetAmount: setAmount,
-    onSetReceipt: e => setReceipt(e.target.value)
+    onSetReceipt: setReceipt
   }, dispatch)
 })
 
