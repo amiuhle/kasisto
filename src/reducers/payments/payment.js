@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux'
-
 import {
   CREATE_PAYMENT,
   SET_RECEIPT,
@@ -8,7 +6,7 @@ import {
   RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_PAYMENT
-} from '../actions/constants/payments'
+} from '../../actions/constants/payments'
 
 const payment = (state = {}, action) => {
   const { type, payload } = action
@@ -79,42 +77,4 @@ const payment = (state = {}, action) => {
   }
 }
 
-const byId = (state = {}, action) => {
-  const { type, payload } = action
-  switch (type) {
-    case CREATE_PAYMENT:
-    case RECEIVE_EXCHANGE_RATE:
-    case SET_RECEIPT:
-    case SET_AMOUNT:
-    case SET_TIP:
-    case RECEIVE_INTEGRATED_ADDRESS:
-    case RECEIVE_PAYMENT:
-      return {
-        ...state,
-        [payload.id]: payment(state[payload.id], action)
-      }
-    default: {
-      return state
-    }
-  }
-}
-
-const allIds = (state = [], { type, payload }) => {
-  switch (type) {
-    case CREATE_PAYMENT:
-      return [payload.id, ...state]
-    default:
-      return state
-  }
-}
-
-export default combineReducers({
-  byId,
-  allIds
-})
-
-export const getPaymentById = (state, id) =>
-  state.byId[id]
-
-export const getAllPayments = (state) =>
-  state.allIds.map(id => state.byId[id])
+export default payment
