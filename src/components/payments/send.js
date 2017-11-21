@@ -5,8 +5,9 @@ import { Link, Redirect } from 'react-router-dom'
 import {
   XMR,
   EUR
-
 } from './utils'
+
+import Icon from '../util/Icon'
 
 import DualCurrency from './dual-currency'
 import ExchangeInfo from './exchange-info'
@@ -18,11 +19,13 @@ export default class SendPayment extends Component {
       return <Redirect to='/' />
     }
     const {
+      id,
       integratedAddress,
       exchange,
       received,
       totalAmount,
       transactionIds,
+      uri,
       rate
     } = this.props.payment
 
@@ -30,7 +33,7 @@ export default class SendPayment extends Component {
       return (
         <div className='u-align-center'>
           <h2 className='c-success'>
-            <span className='check'>✔</span>
+            <Icon name='check-circle' className='icon--large' />
             <strong>Payment received</strong>
           </h2>
 
@@ -61,8 +64,6 @@ export default class SendPayment extends Component {
         </div>
       )
     } else {
-      const qrCode = `monero:${integratedAddress}?tx_amount=${encodeURIComponent(Math.ceil(totalAmount * 1e12) / 1e12)}`
-
       return (
         <div>
           <h2>Waiting for payment</h2>
@@ -83,7 +84,9 @@ export default class SendPayment extends Component {
             />
             <div className='o-flex o-flex--col'>
               <div className='o-flex o-flex--center u-margin-bottom'>
-                <QRCode size={192} value={qrCode} />
+                {
+                  uri && <QRCode size={192} value={uri} />
+                }
               </div>
               <h3 className='u-margin-bottom-none'>
                 Integrated address
@@ -91,7 +94,7 @@ export default class SendPayment extends Component {
               <IntegratedAddress className='u-margin-bottom' integratedAddress={integratedAddress} />
             </div>
             <div className='u-margin-bottom o-flex o-flex--col'>
-              <Link to='/payment/confirm' className='c-btn'>Cancel payment</Link>
+              <Link to={`/payments/${id}/confirm`} className='c-btn'>Cancel payment</Link>
             </div>
 
             <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />

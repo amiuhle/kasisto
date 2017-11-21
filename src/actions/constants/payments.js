@@ -8,4 +8,5 @@ export const SET_RECEIPT = 'SET_RECEIPT'
 // Buyer
 export const SET_TIP = 'SET_TIP'
 // Confirmation
+export const RECEIVE_URI = 'RECEIVE_URI'
 export const RECEIVE_PAYMENT = 'RECEIVE_PAYMENT'

@@ -28,6 +28,7 @@ export default class CreatePayment extends Component {
       onSetReceipt,
       onRequestPayment,
       payment: {
+        id,
         exchange,
         rate,
         receipt,
@@ -47,7 +48,7 @@ export default class CreatePayment extends Component {
             <input
               id='receipt'
               value={receipt || ''}
-              onChange={onSetReceipt}
+              onChange={(e) => onSetReceipt(id, e.target.value)}
               type='text'
               autoFocus
             />
@@ -64,7 +65,7 @@ export default class CreatePayment extends Component {
             primary={{
               amount: requestedAmount,
               currency: EUR,
-              onChange: onSetAmount
+              onChange: (amount) => onSetAmount(id, amount)
             }}
 
             secondary={{

@@ -6,15 +6,17 @@ import {
   SET_TIP,
   RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
-  RECEIVE_PAYMENT
-} from '../../actions/constants/payments'
-import payments from '../payments'
+  RECEIVE_PAYMENT,
+  RECEIVE_URI
+} from '../../../actions/constants/payments'
+
+import payment from '../payment'
 
 describe('Payments Reducer', () => {
-  it('defaults to an empty list', () => {
+  it('defaults to an empty object', () => {
     expect(
-      payments(undefined, { type: '' })
-    ).toEqual([])
+      payment(undefined, { type: '' })
+    ).toEqual({})
   })
 
   describe(CREATE_PAYMENT, () => {
@@ -25,32 +27,37 @@ describe('Payments Reducer', () => {
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
 
-      expect(
-        payments(previousPayments, {
-          type: CREATE_PAYMENT,
-          payload
-        })
-      ).toEqual([payload, ...previousPayments])
+      const state = payment({}, {
+        type: CREATE_PAYMENT,
+        payload
+      })
+
+      expect(state).toEqual({
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        createdAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:04.735Z'
+      })
     })
   })
 
   describe(RECEIVE_EXCHANGE_RATE, () => {
     it('sets exchange, fiatCurrency and rate', () => {
-      const payment = {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        fiatCurrency: 'EUR',
+        exchange: 'https://www.kraken.com/',
+        rate: 46.68377619
+      }
+      const state = payment({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }
-      expect(
-        payments([payment, ...previousPayments], {
-          type: RECEIVE_EXCHANGE_RATE,
-          payload: {
-            fiatCurrency: 'EUR',
-            exchange: 'https://www.kraken.com/',
-            rate: 46.68377619
-          }
-        })
-      ).toEqual([{
+      }, {
+        type: RECEIVE_EXCHANGE_RATE,
+        payload
+      })
+
+      expect(state).toEqual({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z',
@@ -58,13 +65,17 @@ describe('Payments Reducer', () => {
         fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619
-      }, ...previousPayments])
+      })
     })
   })
 
   describe(SET_RECEIPT, () => {
-    it('sets exchange, fiatCurrency and rate', () => {
-      const payment = {
+    it('sets receipt', () => {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        receipt: '070617/229-9'
+      }
+      const state = payment({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z',
@@ -72,15 +83,11 @@ describe('Payments Reducer', () => {
         fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
         rate: 46.68377619
-      }
-      expect(
-        payments([payment, ...previousPayments], {
-          type: SET_RECEIPT,
-          payload: {
-            receipt: '070617/229-9'
-          }
-        })
-      ).toEqual([{
+      }, {
+        type: SET_RECEIPT,
+        payload
+      })
+      expect(state).toEqual({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z',
@@ -90,14 +97,18 @@ describe('Payments Reducer', () => {
         rate: 46.68377619,
 
         receipt: '070617/229-9'
-      }, ...previousPayments])
+      })
     })
   })
 
   describe(SET_AMOUNT, () => {
     describe('for XMR', () => {
       it('sets amount', () => {
-        const payment = {
+        const payload = {
+          id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+          amount: 1.23
+        }
+        const state = payment({
           id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
@@ -107,15 +118,11 @@ describe('Payments Reducer', () => {
           rate: 1,
 
           receipt: '070617/229-9'
-        }
-        expect(
-          payments([payment, ...previousPayments], {
-            type: SET_AMOUNT,
-            payload: {
-              amount: 1.23
-            }
-          })
-        ).toEqual([{
+        }, {
+          type: SET_AMOUNT,
+          payload
+        })
+        expect(state).toEqual({
           id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
@@ -131,13 +138,17 @@ describe('Payments Reducer', () => {
 
           tip: 0,
           totalAmount: 1.23
-        }, ...previousPayments])
+        })
       })
     })
 
     describe('for fiat currencies', () => {
       it('sets amount', () => {
-        const payment = {
+        const payload = {
+          id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+          amount: 49.90
+        }
+        const state = payment({
           id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
@@ -147,15 +158,12 @@ describe('Payments Reducer', () => {
           rate: 46.68377619,
 
           receipt: '070617/229-9'
-        }
-        expect(
-          payments([payment, ...previousPayments], {
-            type: SET_AMOUNT,
-            payload: {
-              amount: 49.90
-            }
-          })
-        ).toEqual([{
+        }, {
+          type: SET_AMOUNT,
+          payload
+        })
+
+        expect(state).toEqual({
           id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
           createdAt: '2017-06-17T17:32:04.735Z',
           updatedAt: '2017-06-17T17:32:04.735Z',
@@ -171,14 +179,19 @@ describe('Payments Reducer', () => {
 
           tip: 0,
           totalAmount: 1.068893822918484
-        }, ...previousPayments])
+        })
       })
     })
   })
 
   describe(SET_TIP, () => {
     it('sets tip', () => {
-      const payment = {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        tip: 0.13110617708151606,
+        updatedAt: '2017-06-17T17:41:14.353Z'
+      }
+      const state = payment({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:41:14.353Z',
@@ -191,17 +204,12 @@ describe('Payments Reducer', () => {
 
         requestedAmount: 49.9,
         convertedAmount: 1.068893822918484
-      }
+      }, {
+        type: SET_TIP,
+        payload
+      })
 
-      expect(
-        payments([payment, ...previousPayments], {
-          type: SET_TIP,
-          payload: {
-            tip: 0.13110617708151606,
-            updatedAt: '2017-06-17T17:41:14.353Z'
-          }
-        })
-      ).toEqual([{
+      expect(state).toEqual({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:41:14.353Z',
@@ -217,13 +225,18 @@ describe('Payments Reducer', () => {
 
         tip: 0.13110617708151606,
         totalAmount: 1.2
-      }, ...previousPayments])
+      })
     })
   })
 
   describe(RECEIVE_INTEGRATED_ADDRESS, () => {
     it('sets integrated address and payment id', () => {
-      const payment = {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+        paymentId: '6b1887e13bbd81db'
+      }
+      const state = payment({
         amount: 1.23,
         createdAt: '2017-06-17T17:32:04.735Z',
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
@@ -231,16 +244,12 @@ describe('Payments Reducer', () => {
         tip: 0,
         totalAmount: 1.23,
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }
-      expect(
-        payments([payment, ...previousPayments], {
-          type: RECEIVE_INTEGRATED_ADDRESS,
-          payload: {
-            integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
-            paymentId: '6b1887e13bbd81db'
-          }
-        })
-      ).toEqual([{
+      }, {
+        type: RECEIVE_INTEGRATED_ADDRESS,
+        payload
+      })
+
+      expect(state).toEqual({
         amount: 1.23,
         createdAt: '2017-06-17T17:32:04.735Z',
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
@@ -250,13 +259,57 @@ describe('Payments Reducer', () => {
         tip: 0,
         totalAmount: 1.23,
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }, ...previousPayments])
+      })
+    })
+  })
+
+  describe(RECEIVE_URI, () => {
+    it('sets integrated address and payment id', () => {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000'
+      }
+      const state = payment({
+        amount: 1.23,
+        createdAt: '2017-06-17T17:32:04.735Z',
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+        paymentId: '6b1887e13bbd81db',
+        receipt: '070617/229-9',
+        tip: 0,
+        totalAmount: 1.23,
+        updatedAt: '2017-06-17T17:32:04.735Z'
+      }, {
+        type: RECEIVE_URI,
+        payload
+      })
+
+      expect(state).toEqual({
+        amount: 1.23,
+        createdAt: '2017-06-17T17:32:04.735Z',
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+        paymentId: '6b1887e13bbd81db',
+        receipt: '070617/229-9',
+        tip: 0,
+        totalAmount: 1.23,
+        uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000',
+        updatedAt: '2017-06-17T17:32:04.735Z'
+      })
     })
   })
 
   describe(RECEIVE_PAYMENT, () => {
     it('sets amount received and transaction ids', () => {
-      const payment = {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        confirmed: false,
+        received: 1.3,
+        transactionIds: [
+          '703b7eacf8f53016609671133f0584ba1cccb616ccdbafd49cc73fbba13a117b'
+        ]
+      }
+      const state = payment({
         amount: 1.23,
         createdAt: '2017-06-17T17:32:04.735Z',
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
@@ -266,20 +319,12 @@ describe('Payments Reducer', () => {
         tip: 0.07,
         totalAmount: 1.3,
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }
+      }, {
+        type: RECEIVE_PAYMENT,
+        payload
+      })
 
-      expect(
-        payments([payment, ...previousPayments], {
-          type: RECEIVE_PAYMENT,
-          payload: {
-            confirmed: false,
-            received: 1.3,
-            transactionIds: [
-              '703b7eacf8f53016609671133f0584ba1cccb616ccdbafd49cc73fbba13a117b'
-            ]
-          }
-        })
-      ).toEqual([{
+      expect(state).toEqual({
         amount: 1.23,
         createdAt: '2017-06-17T17:32:04.735Z',
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
@@ -293,9 +338,7 @@ describe('Payments Reducer', () => {
           '703b7eacf8f53016609671133f0584ba1cccb616ccdbafd49cc73fbba13a117b'
         ],
         updatedAt: '2017-06-17T17:32:04.735Z'
-      }, ...previousPayments])
+      })
     })
   })
 })
-
-const previousPayments = ['payment 2', 'payment 1']

@@ -25,6 +25,8 @@ jest.mock('uuid', () => ({
 }))
 
 describe('Payment Actions', () => {
+  const id = 'a2f8d724-5c7a-43e9-bbac-b0295b059e82'
+
   afterEach(() => {
     nock.cleanAll()
   })
@@ -54,7 +56,7 @@ describe('Payment Actions', () => {
             {
               type: types.CREATE_PAYMENT,
               payload: {
-                id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+                id,
                 createdAt: creationTime,
                 updatedAt: creationTime
               }
@@ -62,6 +64,7 @@ describe('Payment Actions', () => {
             {
               type: types.RECEIVE_EXCHANGE_RATE,
               payload: {
+                id,
                 exchange: null,
                 fiatCurrency: null,
                 rate: 1
@@ -70,6 +73,7 @@ describe('Payment Actions', () => {
             {
               type: types.RECEIVE_INTEGRATED_ADDRESS,
               payload: {
+                id,
                 integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
                 paymentId: '6b1887e13bbd81db'
               }
@@ -79,7 +83,8 @@ describe('Payment Actions', () => {
           const store = mockStore()
 
           return at(creationTime, () => {
-            return store.dispatch(actions.startPayment(null)).then(() => {
+            return store.dispatch(actions.startPayment(null)).then(([id]) => {
+              expect(id).toBe('a2f8d724-5c7a-43e9-bbac-b0295b059e82')
               expect(store.getActions()).toEqual(expectedActions)
             })
           })
@@ -102,7 +107,7 @@ describe('Payment Actions', () => {
               {
                 type: types.CREATE_PAYMENT,
                 payload: {
-                  id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+                  id,
                   createdAt: creationTime,
                   updatedAt: creationTime
                 }
@@ -110,6 +115,7 @@ describe('Payment Actions', () => {
               {
                 type: types.RECEIVE_EXCHANGE_RATE,
                 payload: {
+                  id,
                   exchange: 'https://www.kraken.com/',
                   fiatCurrency,
                   rate
@@ -118,6 +124,7 @@ describe('Payment Actions', () => {
               {
                 type: types.RECEIVE_INTEGRATED_ADDRESS,
                 payload: {
+                  id,
                   integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
                   paymentId: '6b1887e13bbd81db'
                 }
@@ -127,7 +134,8 @@ describe('Payment Actions', () => {
             const store = mockStore()
 
             return at(creationTime, () => {
-              return store.dispatch(actions.startPayment(fiatCurrency)).then(() => {
+              return store.dispatch(actions.startPayment(fiatCurrency)).then(([id]) => {
+                expect(id).toBe('a2f8d724-5c7a-43e9-bbac-b0295b059e82')
                 expect(store.getActions()).toEqual(expectedActions)
               })
             })
@@ -143,12 +151,13 @@ describe('Payment Actions', () => {
         const expectedAction = {
           type: types.SET_RECEIPT,
           payload: {
+            id,
             receipt: '070617/229-9',
             updatedAt: '2017-06-17T17:31:00.000Z'
           }
         }
         at('2017-06-17T17:31:00.000Z', () => {
-          expect(actions.setReceipt('070617/229-9'))
+          expect(actions.setReceipt(id, '070617/229-9'))
             .toEqual(expectedAction)
         })
       })
@@ -159,12 +168,13 @@ describe('Payment Actions', () => {
         const expectedAction = {
           type: types.SET_AMOUNT,
           payload: {
+            id,
             amount: 1.23,
             updatedAt: '2017-06-17T17:32:00.000Z'
           }
         }
         at('2017-06-17T17:32:00.000Z', () => {
-          expect(actions.setAmount(1.23))
+          expect(actions.setAmount(id, 1.23))
             .toEqual(expectedAction)
         })
       })
@@ -177,12 +187,13 @@ describe('Payment Actions', () => {
         const expectedAction = {
           type: types.SET_TIP,
           payload: {
+            id,
             tip: 0.07,
             updatedAt: '2017-06-17T17:32:04.735Z'
           }
         }
         at('2017-06-17T17:32:04.735Z', () => {
-          expect(actions.setTip(0.07))
+          expect(actions.setTip(id, 0.07))
             .toEqual(expectedAction)
         })
       })
@@ -190,6 +201,69 @@ describe('Payment Actions', () => {
   })
 
   describe('Payment Confirmation', () => {
+    describe('fetchUri', () => {
+      beforeEach(() => {
+        nock('https://testnet.kasisto.io:28082')
+          .post('/json_rpc', {
+            id: '0',
+            jsonrpc: '2.0',
+            method: 'split_integrated_address',
+            params: {
+              integrated_address: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9'
+            }
+          }).reply(200, {
+            id: '0',
+            jsonrpc: '2.0',
+            result: {
+              standard_address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+              payment_id: '6b1887e13bbd81db'
+            }
+          })
+          .post('/json_rpc', {
+            id: '0',
+            jsonrpc: '2.0',
+            method: 'make_uri',
+            params: {
+              address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+              payment_id: '6b1887e13bbd81db',
+              amount: 1300000000000
+            }
+          }).reply(200, {
+            id: '0',
+            jsonrpc: '2.0',
+            result: {
+              uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000'
+            }
+          })
+      })
+      afterEach(() => {
+        nock.cleanAll()
+      })
+
+      it('fetches a barcode URL', () => {
+        const expectedActions = [{
+          type: types.RECEIVE_URI,
+          payload: {
+            id,
+            uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000'
+          }
+        }]
+
+        const store = mockStore()
+        const fetchUri = actions.fetchUri(
+          id,
+          'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+          1.3
+        )
+
+        return store.dispatch(fetchUri).then(() => {
+          expect(store.getActions()).toEqual(expectedActions)
+        })
+        // return at(creationTime, () => {
+        // })
+      })
+    })
+
     describe('listenForPayments', () => {
       beforeEach(() => {
         jest.useFakeTimers()
@@ -206,7 +280,9 @@ describe('Payment Actions', () => {
             jsonrpc: '2.0',
             method: 'get_transfers',
             params: {
-              pool: true
+              pool: true,
+              in: true,
+              pending: true
             }
           }).reply(200, {
             id: '0',
@@ -229,6 +305,7 @@ describe('Payment Actions', () => {
           {
             type: types.RECEIVE_PAYMENT,
             payload: {
+              id,
               confirmed: false,
               received: 1.3,
               transactionIds: [
@@ -240,7 +317,7 @@ describe('Payment Actions', () => {
         const store = mockStore([{
           amount: 1.23,
           createdAt: '2017-06-17T17:32:04.735Z',
-          id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+          id,
           integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
           paymentId: '6b1887e13bbd81db',
           receipt: '070617/229-9',
@@ -254,7 +331,7 @@ describe('Payment Actions', () => {
           const mockInterval = global.setInterval = jest.fn()
           mockInterval.mockReturnValueOnce(4)
 
-          return store.dispatch(actions.listenForPayments(1.3, '6b1887e13bbd81db'))
+          return store.dispatch(actions.listenForPayments(id, 1.3, '6b1887e13bbd81db'))
           .then((handle) => {
             expect(handle).toBe(4)
             const [poll, ms] = mockInterval.mock.calls[0]
@@ -278,7 +355,9 @@ describe('Payment Actions', () => {
             jsonrpc: '2.0',
             method: 'get_transfers',
             params: {
-              pool: true
+              pool: true,
+              in: true,
+              pending: true
             }
           }).reply(200, {
             id: '0',
@@ -311,6 +390,7 @@ describe('Payment Actions', () => {
           {
             type: types.RECEIVE_PAYMENT,
             payload: {
+              id,
               confirmed: false,
               received: 1.3,
               transactionIds: [
@@ -323,7 +403,7 @@ describe('Payment Actions', () => {
         const store = mockStore([{
           amount: 1.23,
           createdAt: '2017-06-17T17:32:04.735Z',
-          id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+          id,
           integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
           paymentId: '6b1887e13bbd81db',
           receipt: '070617/229-9',
@@ -337,7 +417,7 @@ describe('Payment Actions', () => {
           const mockInterval = global.setInterval = jest.fn()
           mockInterval.mockReturnValueOnce(4)
 
-          return store.dispatch(actions.listenForPayments(1.3, '6b1887e13bbd81db'))
+          return store.dispatch(actions.listenForPayments(id, 1.3, '6b1887e13bbd81db'))
           .then((handle) => {
             expect(handle).toBe(4)
             const [poll, ms] = mockInterval.mock.calls[0]

@@ -9,7 +9,7 @@ import { loadState, saveState } from './lib/persistence'
 
 import configureStore from './stores'
 
-import App from './components/App'
+import App from './routes'
 
 const persistedState = loadState()
 const store = configureStore(persistedState)
@@ -27,8 +27,8 @@ render(
 )
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    const NextApp = require('./components/App').default // eslint-disable-line global-require
+  module.hot.accept('./routes', () => {
+    const NextApp = require('./routes').default // eslint-disable-line global-require
 
     render(
       <AppContainer>

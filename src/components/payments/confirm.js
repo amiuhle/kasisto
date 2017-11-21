@@ -15,6 +15,7 @@ export default class ConfirmPayment extends Component {
       onSetTip,
       onStartPayment,
       payment: {
+        id,
         exchange,
         rate,
         receipt,
@@ -60,7 +61,7 @@ export default class ConfirmPayment extends Component {
             primary={{
               amount: tip,
               currency: XMR,
-              onChange: onSetTip
+              onChange: (tip) => onSetTip(id, tip)
             }}
             secondary={{
               amount: tip * rate,
@@ -94,5 +95,9 @@ export default class ConfirmPayment extends Component {
         </div>
       </div>
     )
+  }
+
+  static propTypes = {
+
   }
 }
