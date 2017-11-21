@@ -24,6 +24,7 @@ export default class SendPayment extends Component {
       received,
       totalAmount,
       transactionIds,
+      uri,
       rate
     } = this.props.payment
 
@@ -62,8 +63,6 @@ export default class SendPayment extends Component {
         </div>
       )
     } else {
-      const qrCode = `monero:${integratedAddress}?tx_amount=${encodeURIComponent(Math.ceil(totalAmount * 1e12) / 1e12)}`
-
       return (
         <div>
           <h2>Waiting for payment</h2>
@@ -84,7 +83,9 @@ export default class SendPayment extends Component {
             />
             <div className='o-flex o-flex--col'>
               <div className='o-flex o-flex--center u-margin-bottom'>
-                <QRCode size={192} value={qrCode} />
+                {
+                  uri && <QRCode size={192} value={uri} />
+                }
               </div>
               <h3 className='u-margin-bottom-none'>
                 Integrated address

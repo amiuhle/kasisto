@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
+  fetchUri,
   listenForPayments,
   stopListeningForPayments
 } from '../../actions'
@@ -17,15 +18,19 @@ import SendPayment from '../../components/payments/send'
 class Container extends Component {
   componentDidMount () {
     const {
+      fetchUri,
       listenForPayments,
       payment
     } = this.props
 
     const {
       id,
+      integratedAddress,
       paymentId,
       totalAmount
     } = payment
+
+    fetchUri(id, integratedAddress, totalAmount)
 
     listenForPayments(id, totalAmount, paymentId)
       .then(handle => this.setState({ handle }))
@@ -50,6 +55,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   ...bindActionCreators({
+    fetchUri,
     listenForPayments,
     stopListeningForPayments
   }, dispatch)

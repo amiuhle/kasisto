@@ -6,7 +6,8 @@ import {
   SET_TIP,
   RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
-  RECEIVE_PAYMENT
+  RECEIVE_PAYMENT,
+  RECEIVE_URI
 } from '../../../actions/constants/payments'
 
 import payment from '../payment'
@@ -257,6 +258,42 @@ describe('Payments Reducer', () => {
         receipt: '070617/229-9',
         tip: 0,
         totalAmount: 1.23,
+        updatedAt: '2017-06-17T17:32:04.735Z'
+      })
+    })
+  })
+
+  describe(RECEIVE_URI, () => {
+    it('sets integrated address and payment id', () => {
+      const payload = {
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000'
+      }
+      const state = payment({
+        amount: 1.23,
+        createdAt: '2017-06-17T17:32:04.735Z',
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+        paymentId: '6b1887e13bbd81db',
+        receipt: '070617/229-9',
+        tip: 0,
+        totalAmount: 1.23,
+        updatedAt: '2017-06-17T17:32:04.735Z'
+      }, {
+        type: RECEIVE_URI,
+        payload
+      })
+
+      expect(state).toEqual({
+        amount: 1.23,
+        createdAt: '2017-06-17T17:32:04.735Z',
+        id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+        paymentId: '6b1887e13bbd81db',
+        receipt: '070617/229-9',
+        tip: 0,
+        totalAmount: 1.23,
+        uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000',
         updatedAt: '2017-06-17T17:32:04.735Z'
       })
     })

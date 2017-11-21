@@ -201,6 +201,69 @@ describe('Payment Actions', () => {
   })
 
   describe('Payment Confirmation', () => {
+    describe('fetchUri', () => {
+      beforeEach(() => {
+        nock('https://testnet.kasisto.io:28082')
+          .post('/json_rpc', {
+            id: '0',
+            jsonrpc: '2.0',
+            method: 'split_integrated_address',
+            params: {
+              integrated_address: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9'
+            }
+          }).reply(200, {
+            id: '0',
+            jsonrpc: '2.0',
+            result: {
+              standard_address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+              payment_id: '6b1887e13bbd81db'
+            }
+          })
+          .post('/json_rpc', {
+            id: '0',
+            jsonrpc: '2.0',
+            method: 'make_uri',
+            params: {
+              address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+              payment_id: '6b1887e13bbd81db',
+              amount: 1300000000000
+            }
+          }).reply(200, {
+            id: '0',
+            jsonrpc: '2.0',
+            result: {
+              uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000'
+            }
+          })
+      })
+      afterEach(() => {
+        nock.cleanAll()
+      })
+
+      it('fetches a barcode URL', () => {
+        const expectedActions = [{
+          type: types.RECEIVE_URI,
+          payload: {
+            id,
+            uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.130000000000'
+          }
+        }]
+
+        const store = mockStore()
+        const fetchUri = actions.fetchUri(
+          id,
+          'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
+          1.3
+        )
+
+        return store.dispatch(fetchUri).then(() => {
+          expect(store.getActions()).toEqual(expectedActions)
+        })
+        // return at(creationTime, () => {
+        // })
+      })
+    })
+
     describe('listenForPayments', () => {
       beforeEach(() => {
         jest.useFakeTimers()

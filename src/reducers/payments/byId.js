@@ -5,6 +5,7 @@ import {
   SET_TIP,
   RECEIVE_EXCHANGE_RATE,
   RECEIVE_INTEGRATED_ADDRESS,
+  RECEIVE_URI,
   RECEIVE_PAYMENT
 } from '../../actions/constants/payments'
 
@@ -19,6 +20,7 @@ const byId = (state = {}, action) => {
     case SET_AMOUNT:
     case SET_TIP:
     case RECEIVE_INTEGRATED_ADDRESS:
+    case RECEIVE_URI:
     case RECEIVE_PAYMENT:
       return {
         ...state,
