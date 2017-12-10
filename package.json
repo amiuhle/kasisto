@@ -51,6 +51,7 @@
     "postcss-loader": "^2.0.8",
     "react-test-renderer": "^16.1.1",
     "redux-mock-store": "^1.2.3",
+    "redux-saga-test-plan": "^3.3.1",
     "rimraf": "^2.5.2",
     "sass-loader": "^6.0.6",
     "standard": "^10.0.2",
@@ -60,10 +61,10 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "camelcase-keys": "^4.2.0",
     "cross-env": "^5.1.1",
     "history": "^4.6.3",
     "inuitcss": "https://github.com/inuitcss/inuitcss.git#develop",
-    "monero-nodejs": "https://github.com/amiuhle/monero-nodejs.git#fetch-only",
     "prop-types": "^15.6.0",
     "qrcode.react": "^0.7.2",
     "react": "^16.1.1",
@@ -73,7 +74,9 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
     "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
+    "snakecase-keys": "^1.1.0",
     "svg-sprite-loader": "^3.4.1",
     "uuid": "^3.1.0"
   },
