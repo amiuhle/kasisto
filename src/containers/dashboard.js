@@ -14,11 +14,13 @@ const render = props => {
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
   onStartPayment (e) {
-    dispatch(startPayment('EUR')).then(([id]) => {
+    e.preventDefault()
+    return new Promise((resolve, reject) => {
+      dispatch(startPayment('EUR', resolve, reject))
+    }).then((id) => {
       console.log('payment created', id)
       history.push(`/payments/${id}/create`)
     })
-    e.preventDefault()
   }
 })
 

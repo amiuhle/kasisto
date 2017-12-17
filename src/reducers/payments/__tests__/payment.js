@@ -4,7 +4,7 @@ import {
   SET_RECEIPT,
   SET_AMOUNT,
   SET_TIP,
-  RECEIVE_EXCHANGE_RATE,
+  PREPARE_PAYMENT,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_PAYMENT,
   RECEIVE_URI
@@ -40,27 +40,35 @@ describe('Payments Reducer', () => {
     })
   })
 
-  describe(RECEIVE_EXCHANGE_RATE, () => {
+  describe(PREPARE_PAYMENT, () => {
     it('sets exchange, fiatCurrency and rate', () => {
       const payload = {
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+        paymentId: '6b1887e13bbd81db',
+        height: 1057120,
         fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',
-        rate: 46.68377619
+        rate: 46.68377619,
+        updatedAt: '2017-06-17T17:32:05.735Z'
       }
       const state = payment({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z'
       }, {
-        type: RECEIVE_EXCHANGE_RATE,
+        type: PREPARE_PAYMENT,
         payload
       })
 
       expect(state).toEqual({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
         createdAt: '2017-06-17T17:32:04.735Z',
-        updatedAt: '2017-06-17T17:32:04.735Z',
+        updatedAt: '2017-06-17T17:32:05.735Z',
+
+        address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+        paymentId: '6b1887e13bbd81db',
+        height: 1057120,
 
         fiatCurrency: 'EUR',
         exchange: 'https://www.kraken.com/',

@@ -88,8 +88,6 @@ export default class CreatePayment extends Component {
 
   static propTypes = {
     onSetAmount: func.isRequired,
-    onSetReceipt: func.isRequired,
-    onRequestPayment: func.isRequired,
     payment: shape({
       exchange: string,
       rate: number,

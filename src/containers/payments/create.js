@@ -4,8 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
-  setAmount,
-  setReceipt
+  setAmount
 } from '../../actions'
 
 import {
@@ -26,8 +25,7 @@ const mapDispatchToProps = (dispatch, { history, match }) => ({
     history.push(`/payments/${match.params.id}/confirm`)
   },
   ...bindActionCreators({
-    onSetAmount: setAmount,
-    onSetReceipt: setReceipt
+    onSetAmount: setAmount
   }, dispatch)
 })
 

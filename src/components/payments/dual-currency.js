@@ -51,7 +51,7 @@ class CurrencyInput extends Component {
     }
   }
 
-  onNativeInputChange = e => {
+  onNativeInputChange = (e) => {
     const { onChange } = this.props
     const { value, divisor, hasPendingDecimal } = this.state
     const rawValue = sanitizeValue(e.target.value, divisor)

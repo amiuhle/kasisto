@@ -3,7 +3,7 @@ import {
   SET_RECEIPT,
   SET_AMOUNT,
   SET_TIP,
-  RECEIVE_EXCHANGE_RATE,
+  PREPARE_PAYMENT,
   RECEIVE_INTEGRATED_ADDRESS,
   RECEIVE_URI,
   RECEIVE_PAYMENT
@@ -20,12 +20,24 @@ const payment = (state = {}, action) => {
         updatedAt
       })
     }
-    case RECEIVE_EXCHANGE_RATE:
-      const { rate, exchange, fiatCurrency } = payload
-      return Object.assign({}, state, {
+    case PREPARE_PAYMENT:
+      const {
+        address,
+        height,
+        paymentId,
         rate,
         exchange,
-        fiatCurrency
+        fiatCurrency,
+        updatedAt
+      } = payload
+      return Object.assign({}, state, {
+        address,
+        height,
+        paymentId,
+        rate,
+        exchange,
+        fiatCurrency,
+        updatedAt
       })
     case SET_RECEIPT:
       return Object.assign({}, state, { receipt: payload.receipt })
