@@ -2,6 +2,7 @@ import {
   all,
   call,
   put,
+  take,
   takeEvery
 } from 'redux-saga/effects'
 
@@ -27,7 +28,7 @@ export function * processPayment (action) {
 
   const id = uuid()
 
-  yield put(createPayment(id))
+  yield put(createPayment(id, fiatCurrency))
 
   yield call(resolve, id)
 
@@ -42,7 +43,12 @@ export function * processPayment (action) {
     paymentId
   } = paymentRequest
 
-  yield put(preparePayment(id, address, height, paymentId, fiatCurrency, rate, fiatCurrency === null ? null : 'https://www.kraken.com/'))
+  yield put(preparePayment(id, address, height, paymentId, rate))
+
+  const setAmount = yield take(types.SET_AMOUNT)
+  const { amountRequested } = setAmount.payload
+
+  paymentRequest.setAmount(amountRequested)
 }
 
 export function * watchCreatePayment () {

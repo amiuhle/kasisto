@@ -40,7 +40,7 @@ export default class SendPayment extends Component {
           <h3 className='u-margin-bottom-none'>
             <label htmlFor='TODO'>Amount received</label>
           </h3>
-          <DualCurrency
+          {/* <DualCurrency
             className='u-margin-bottom o-flex o-flex--col'
             primary={{
               amount: received * rate,
@@ -50,7 +50,7 @@ export default class SendPayment extends Component {
               amount: received,
               currency: XMR
             }}
-          />
+          /> */}
           <p className='u-align-center'>Transaction Ids</p>
           <ul className='o-list-bare'>
             { transactionIds.map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}><small>{txId}</small></li>) }
@@ -71,7 +71,7 @@ export default class SendPayment extends Component {
             <h3 className='u-margin-bottom-none'>
               Total Amount
             </h3>
-            <DualCurrency
+            {/* <DualCurrency
               className='u-margin-bottom o-flex o-flex--col'
               primary={{
                 amount: totalAmount,
@@ -81,7 +81,7 @@ export default class SendPayment extends Component {
                 amount: totalAmount * rate,
                 currency: EUR
               }}
-            />
+            /> */}
             <div className='o-flex o-flex--col'>
               <div className='o-flex o-flex--center u-margin-bottom'>
                 {

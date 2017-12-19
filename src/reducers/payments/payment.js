@@ -1,21 +1,17 @@
 import {
   CREATE_PAYMENT,
-  SET_RECEIPT,
-  SET_AMOUNT,
-  SET_TIP,
-  PREPARE_PAYMENT,
-  RECEIVE_INTEGRATED_ADDRESS,
-  RECEIVE_URI,
-  RECEIVE_PAYMENT
+  UPDATE_PAYMENT
 } from '../../actions/constants/payments'
 
 const payment = (state = {}, action) => {
   const { type, payload } = action
   switch (type) {
     case CREATE_PAYMENT: {
-      const { id, createdAt, updatedAt } = payload
+      const { id, fiatCurrency, exchange, createdAt, updatedAt } = payload
       return Object.assign({}, state, {
         id,
+        fiatCurrency,
+        exchange,
         createdAt,
         updatedAt
       })
@@ -26,8 +22,6 @@ const payment = (state = {}, action) => {
         height,
         paymentId,
         rate,
-        exchange,
-        fiatCurrency,
         updatedAt
       } = payload
       return Object.assign({}, state, {
@@ -35,8 +29,6 @@ const payment = (state = {}, action) => {
         height,
         paymentId,
         rate,
-        exchange,
-        fiatCurrency,
         updatedAt
       })
     case SET_RECEIPT:

@@ -17,23 +17,19 @@ import SendPayment from '../../components/payments/send'
 
 class Container extends Component {
   componentDidMount () {
-    const {
-      fetchUri,
-      listenForPayments,
-      payment
-    } = this.props
+    // const {
+    //   listenForPayments,
+    //   payment
+    // } = this.props
 
-    const {
-      id,
-      integratedAddress,
-      paymentId,
-      totalAmount
-    } = payment
+    // const {
+    //   id,
+    //   paymentId,
+    //   totalAmount
+    // } = payment
 
-    fetchUri(id, integratedAddress, totalAmount)
-
-    listenForPayments(id, totalAmount, paymentId)
-      .then(handle => this.setState({ handle }))
+    // listenForPayments(id, totalAmount, paymentId)
+    //   .then(handle => this.setState({ handle }))
   }
 
   componentWillUnmount () {

@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux'
+
+import { reducer as formReducer } from 'redux-form'
+
 import payments, * as fromPayments from './payments'
 
 const reducers = {
+  form: formReducer,
   payments
 }
 

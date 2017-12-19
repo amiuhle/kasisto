@@ -23,6 +23,8 @@ describe('Payments Reducer', () => {
     it('adds a new payment', () => {
       const payload = {
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        fiatCurrency: 'EUR',
+        exchange: 'https://www.kraken.com/',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z'
       }
@@ -34,6 +36,8 @@ describe('Payments Reducer', () => {
 
       expect(state).toEqual({
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        fiatCurrency: 'EUR',
+        exchange: 'https://www.kraken.com/',
         createdAt: '2017-06-17T17:32:04.735Z',
         updatedAt: '2017-06-17T17:32:04.735Z'
       })
@@ -44,11 +48,11 @@ describe('Payments Reducer', () => {
     it('sets exchange, fiatCurrency and rate', () => {
       const payload = {
         id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+        fiatCurrency: 'EUR',
+        exchange: 'https://www.kraken.com/',
         address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
         paymentId: '6b1887e13bbd81db',
         height: 1057120,
-        fiatCurrency: 'EUR',
-        exchange: 'https://www.kraken.com/',
         rate: 46.68377619,
         updatedAt: '2017-06-17T17:32:05.735Z'
       }
@@ -70,8 +74,6 @@ describe('Payments Reducer', () => {
         paymentId: '6b1887e13bbd81db',
         height: 1057120,
 
-        fiatCurrency: 'EUR',
-        exchange: 'https://www.kraken.com/',
         rate: 46.68377619
       })
     })

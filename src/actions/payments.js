@@ -10,28 +10,28 @@ export const startPayment = (fiatCurrency, resolve, reject) => ({
   }
 })
 
-export const createPayment = (id) => updatedAt({
+export const createPayment = (id, fiatCurrency) => updatedAt({
   type: types.CREATE_PAYMENT,
   payload: {
     id,
+    fiatCurrency,
+    exchange: fiatCurrency === null ? null : 'https://www.kraken.com/',
     createdAt: timestamp()
   }
 })
 
-export const preparePayment = (id, address, height, paymentId, fiatCurrency, rate, exchange) => updatedAt({
+export const preparePayment = (id, address, height, paymentId, rate) => updatedAt({
   type: types.PREPARE_PAYMENT,
   payload: {
     id,
     address,
     height,
     paymentId,
-    fiatCurrency,
-    rate,
-    exchange
+    rate
   }
 })
 
-export const setAmount = (id, amount) => updatedAt({
+export const setAmount = (id, amount, receipt) => updatedAt({
   type: types.SET_AMOUNT,
   payload: {
     id,
@@ -50,9 +50,14 @@ export const setTip = (id, tip) => {
   })
 }
 
+export const updatePayment = (id, payment) => updatedAt({
+  type: types.UPDATE_PAYMENT,
+  payload: payment
+})
+
 const updatedAt = (action) => ({
   ...action,
-  payload: Object.assign(action.payload, { updatedAt: timestamp() })
+  payload: Object.assign({}, action.payload, { updatedAt: timestamp() })
 })
 
 const timestamp = () =>

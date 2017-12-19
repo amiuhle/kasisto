@@ -186,24 +186,28 @@ export default class DualCurrency extends Component {
   render () {
     const {
       className,
-      id,
-      primary,
-      secondary
+      fiatCurrency,
+      rate,
+      input: {
+        name,
+        value,
+        onChange
+      }
     } = this.props
 
     const renderCurrency = ({amount, onChange, ...rest}) => {
       const value = amount || ''
       if (onChange != null) {
-        return <CurrencyInput {...{id, value, onChange}} {...rest} />
+        return <CurrencyInput {...{id: name, value, onChange}} {...rest} />
       } else {
-        return <CurrencyDisplay value={amount || 0} {...rest} />
+        return <CurrencyDisplay value={value} {...rest} />
       }
     }
 
     return (
       <div className={`c-dual-currency ${className || ''}`}>
-        {renderCurrency({...primary, className: 'c-currency--primary'})}
-        {renderCurrency({...secondary, className: 'c-currency--secondary'})}
+        {renderCurrency({amount: value, currency: fiatCurrency, onChange, className: 'c-currency--primary'})}
+        {renderCurrency({amount: parseFloat(value) / rate, currency: null, className: 'c-currency--secondary'})}
       </div>
     )
   }

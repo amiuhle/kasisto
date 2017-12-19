@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
@@ -20,13 +19,11 @@ const mapStateToProps = (state, { match }) => ({
 })
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
-  onRequestPayment (e) {
-    e.preventDefault()
-    history.push(`/payments/${match.params.id}/confirm`)
-  },
-  ...bindActionCreators({
-    onSetAmount: setAmount
-  }, dispatch)
+  onSubmit ({ requestedAmount, receipt }) {
+    dispatch(setAmount(match.params.id, requestedAmount, receipt))
+    // e.preventDefault()
+    history.push(`/payments/${match.params.id}/send`)
+  }
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(render)

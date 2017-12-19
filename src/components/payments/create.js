@@ -6,6 +6,7 @@ import {
 } from 'prop-types'
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Field, reduxForm } from 'redux-form'
 
 import {
   XMR,
@@ -18,76 +19,57 @@ import DualCurrency from './dual-currency'
 import ExchangeInfo from './exchange-info'
 import Hint from '../settings/noob-hint'
 
-export default class CreatePayment extends Component {
+class CreatePayment extends Component {
   render () {
     if (this.props.payment == null) {
       return <Redirect to='/' />
     }
     const {
-      onSetAmount,
-      onSetReceipt,
-      onRequestPayment,
+      handleSubmit,
       payment: {
-        id,
         exchange,
-        rate,
-        receipt,
-        requestedAmount,
-        convertedAmount
+        fiatCurrency,
+        rate
       }
     } = this.props
 
     return (
-      <div>
+      <form onSubmit={handleSubmit}>
         <h2>Create Payment</h2>
         <div>
           <h3 className='u-margin-bottom-none'>
             <label htmlFor='receipt'>Receipt</label>
           </h3>
           <div className='u-margin-bottom o-flex o-flex--col'>
-            <input
-              id='receipt'
-              value={receipt || ''}
-              onChange={(e) => onSetReceipt(id, e.target.value)}
-              type='text'
-              autoFocus
-            />
+            <Field name='receipt' component='input' type='text' />
             <Hint text='A hint so you can identify this payment later' />
           </div>
 
           <h3 className='u-margin-bottom-none'>
             <label htmlFor='amount'>Amount due</label>
           </h3>
-          <DualCurrency
-            id='amount'
+          <Field
+            name='requestedAmount'
             className='u-margin-bottom o-flex o-flex--col'
-
-            primary={{
-              amount: requestedAmount,
-              currency: EUR,
-              onChange: (amount) => onSetAmount(id, amount)
-            }}
-
-            secondary={{
-              amount: convertedAmount,
-              currency: XMR
-            }}
+            rate={rate}
+            fiatCurrency={fiatCurrency}
+            component={DualCurrency}
           />
 
           <div className='u-margin-bottom o-flex o-flex--col'>
-            <button className='c-btn' onClick={onRequestPayment}>
+            <button className='c-btn'>
               Request payment
             </button>
           </div>
 
           <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
         </div>
-      </div>
+      </form>
     )
   }
 
   static propTypes = {
-    onSetAmount: func.isRequired,
+    onSubmit: func.isRequired,
     payment: shape({
       exchange: string,
       rate: number,
@@ -95,6 +77,9 @@ export default class CreatePayment extends Component {
       requestedAmount: amountType,
       convertedAmount: amountType
     }).isRequired
-
   }
 }
+
+export default reduxForm({
+  form: 'createPayment'
+})(CreatePayment)
