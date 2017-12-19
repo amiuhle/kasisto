@@ -1,11 +1,11 @@
 /* eslint-env jest */
 import byId, { getPayment } from '../byId'
 import {
-  CREATE_PAYMENT
+  UPDATE_PAYMENT
 } from '../../../actions/constants/payments'
 
 describe('payments.byId Reducer', () => {
-  it('adds new payments', () => {
+  it('creates a new payment', () => {
     const payload = {
       id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
       createdAt: '2017-06-17T17:32:04.735Z',
@@ -13,7 +13,7 @@ describe('payments.byId Reducer', () => {
     }
 
     const state = byId({}, {
-      type: CREATE_PAYMENT,
+      type: UPDATE_PAYMENT,
       payload
     })
 

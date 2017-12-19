@@ -17,7 +17,7 @@ const PAYMENT_KEYS = [
   'tip',
   'totalAmount',
   'uri',
-  'received',
+  'receivedAmount',
   'transactionIds',
   'updatedAt'
 ]

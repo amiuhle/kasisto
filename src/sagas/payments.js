@@ -27,6 +27,7 @@ export function * processPayment (action) {
   } = action.payload
 
   const id = uuid()
+
   // create the initial payment in the store
   yield put(updatePayment(id, { fiatCurrency }))
 
@@ -56,7 +57,16 @@ export function * processPayment (action) {
     receipt
   }))
 
-  paymentRequest.setAmount(requestedAmount)
+  paymentRequest.setAmount(parseInt(convertedAmount, 10))
+
+  const { uri } = yield call([paymentRequest, 'makeUri'], 0, 'Cafe', receipt)
+  console.log(uri)
+
+  yield put(updatePayment(id, { uri }))
+
+  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
+
+  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
 }
 
 export function * watchCreatePayment () {

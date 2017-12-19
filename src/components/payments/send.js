@@ -1,3 +1,4 @@
+import Big from 'big.js'
 import QRCode from 'qrcode.react'
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
@@ -22,14 +23,14 @@ export default class SendPayment extends Component {
       id,
       address,
       exchange,
-      received,
-      totalAmount,
+      receivedAmount,
+      convertedAmount,
       transactionIds,
       uri,
       rate
     } = this.props.payment
 
-    if (received != null && received >= totalAmount) {
+    if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
         <div className='u-align-center'>
           <h2 className='c-success'>
@@ -53,7 +54,7 @@ export default class SendPayment extends Component {
           /> */}
           <p className='u-align-center'>Transaction Ids</p>
           <ul className='o-list-bare'>
-            { transactionIds.map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}><small>{txId}</small></li>) }
+            { (transactionIds || []).map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}><small>{txId}</small></li>) }
           </ul>
 
           <div className='u-margin-bottom o-flex o-flex--col'>
