@@ -20,7 +20,7 @@ export default class SendPayment extends Component {
     }
     const {
       id,
-      integratedAddress,
+      address,
       exchange,
       received,
       totalAmount,
@@ -91,7 +91,7 @@ export default class SendPayment extends Component {
               <h3 className='u-margin-bottom-none'>
                 Integrated address
               </h3>
-              <IntegratedAddress className='u-margin-bottom' integratedAddress={integratedAddress} />
+              <IntegratedAddress className='u-margin-bottom' integratedAddress={address} />
             </div>
             <div className='u-margin-bottom o-flex o-flex--col'>
               <Link to={`/payments/${id}/confirm`} className='c-btn'>Cancel payment</Link>

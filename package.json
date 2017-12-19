@@ -60,6 +60,7 @@
     "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
+    "big.js": "^5.0.3",
     "camelcase-keys": "^4.2.0",
     "cross-env": "^5.1.1",
     "history": "^4.6.3",

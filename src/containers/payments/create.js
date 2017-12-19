@@ -20,7 +20,7 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
   onSubmit ({ requestedAmount, receipt }) {
-    dispatch(setAmount(match.params.id, requestedAmount, receipt))
+    dispatch(setAmount(requestedAmount, receipt))
     // e.preventDefault()
     history.push(`/payments/${match.params.id}/send`)
   }

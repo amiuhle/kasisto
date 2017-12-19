@@ -1,3 +1,6 @@
+import Big from 'big.js'
+import { v4 as uuid } from 'uuid'
+
 import {
   all,
   call,
@@ -6,13 +9,10 @@ import {
   takeEvery
 } from 'redux-saga/effects'
 
-import { v4 as uuid } from 'uuid'
-
 import { requestPayment } from '../../lib/fetch-monero'
 
 import {
-  createPayment,
-  preparePayment
+  updatePayment
 } from '../actions/payments'
 
 import * as types from '../actions/constants/payments'
@@ -27,8 +27,8 @@ export function * processPayment (action) {
   } = action.payload
 
   const id = uuid()
-
-  yield put(createPayment(id, fiatCurrency))
+  // create the initial payment in the store
+  yield put(updatePayment(id, { fiatCurrency }))
 
   yield call(resolve, id)
 
@@ -43,16 +43,24 @@ export function * processPayment (action) {
     paymentId
   } = paymentRequest
 
-  yield put(preparePayment(id, address, height, paymentId, rate))
+  yield put(updatePayment(id, { address, height, paymentId, rate }))
 
   const setAmount = yield take(types.SET_AMOUNT)
-  const { amountRequested } = setAmount.payload
 
-  paymentRequest.setAmount(amountRequested)
+  const { requestedAmount, receipt } = setAmount.payload
+  const convertedAmount = new Big(requestedAmount).times(1e12).div(rate).round()
+
+  yield put(updatePayment(id, {
+    requestedAmount,
+    convertedAmount: convertedAmount.div(1e12).toFixed(12),
+    receipt
+  }))
+
+  paymentRequest.setAmount(requestedAmount)
 }
 
 export function * watchCreatePayment () {
-  yield takeEvery(types.START_PAYMENT, processPayment)
+  yield takeEvery(types.REQUEST_PAYMENT, processPayment)
 }
 
 const fetchExchangeRate = (fiatCurrency) => {
