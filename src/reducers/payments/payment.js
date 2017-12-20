@@ -15,7 +15,6 @@ const PAYMENT_KEYS = [
   'requestedAmount',
   'convertedAmount',
   'tip',
-  'totalAmount',
   'uri',
   'receivedAmount',
   'transactionIds',
@@ -28,7 +27,7 @@ const filterProps = (payload) => {
   const payment = {}
   Object.keys(payload).forEach((key) => {
     const value = payload[key]
-    if (value != null && validPaymentKey(key)) {
+    if (value !== undefined && validPaymentKey(key)) {
       payment[key] = value
     }
   })
