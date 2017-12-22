@@ -1,22 +1,24 @@
 import { func } from 'prop-types'
 import React from 'react'
 
-import moneroAccepted from '../images/monero-accepted-white-01.svg'
-
-const Dashboard = (props) => {
-  const { onStartPayment } = props
-
-  return (
-    <div className='o-flex o-flex--col' style={{ height: '100%' }}>
-      <img className='o-flex__stretch' src={moneroAccepted} />
-      <div className='u-margin-bottom u-margin-top-large o-flex o-flex--col'>
-        <button className='c-btn' onClick={onStartPayment}>
-          Start Payment
-        </button>
-      </div>
+const Dashboard = ({ onStartPayment }) => (
+  <div className='c-dashboard'>
+    <div className='c-dashboard--top'>
+      <img
+        style={{ width: '60px', height: '60px', borderRadius: '50%', marginBottom: '10px' }}
+        src='https://s3-alpha.figma.com/img/b1e6/db2f/ca3b257e50393b55874c13d33f4daf70?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJK6APQGEHTP6I3PA%2F20171222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20171222T194139Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=c7246ecb112f28d1874366ddb5c7eccb62b140f7f2bb7b25649b6c1df5a54362'
+      />
+      <h1 className='u-margin-none'>Coffee shop</h1>
+      <small>14 December 2017</small>
     </div>
-  )
-}
+    <div className='c-dashboard--bottom'>
+      <button className='c-btn' onClick={onStartPayment}>
+        Request New Payment
+      </button>
+    </div>
+    <div className='c-dashboard--overlay' />
+  </div>
+)
 
 Dashboard.propTypes = {
   onStartPayment: func.isRequired

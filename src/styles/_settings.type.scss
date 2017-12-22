@@ -1,5 +1,13 @@
-$inuit-global-font-size: 24px;
-$inuit-global-line-height: 36px;
+@import url('https://fonts.googleapis.com/css?family=Barlow:200,400,500');
+
+$inuit-global-font-size: 18px;
+$inuit-global-line-height: 24px;
+
+$small-font-size: 14px;
+$base-font-size: 18px;
+$large-font-size: 22px;
+$huge-font-size: 72px;
+
 
 // TODO pull in the font files using webpack / node module
-$font-family: 'Open Sans', sans-serif;
+$font-family: 'Barlow', sans-serif;

@@ -6,13 +6,12 @@
 .o-app {
   height: 100vh;
   display: grid;
-  grid-gap: $tiny-spacing-unit;
-  grid-template-rows: $base-spacing-unit 1fr $base-spacing-unit;
-  grid-template-columns: 1fr $double-spacing-unit;
+  grid-template-rows: 27px 1fr 27px;
+  grid-template-columns: 27px 1fr 27px;
   grid-template-areas:
-    'header nav'
-    'content content'
-    'footer footer';
+    'header header header'
+    'content content content'
+    'footer footer footer';
 }
 
 .o-app__header {
@@ -26,8 +25,8 @@
 }
 
 .o-app__content {
-  grid-area: content;
-  padding: 0 $base-spacing-unit;
+  grid-row: 1 / 4;
+  grid-column: 1 / 4;
 }
 
 .o-app__footer {

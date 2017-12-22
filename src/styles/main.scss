@@ -5,6 +5,7 @@
 // SETTINGS
 @import 'settings.config';
 @import 'settings.type';
+@import 'settings.colors';
 @import '~inuitcss/settings/settings.core';
 
 // TOOLS
@@ -35,6 +36,7 @@
 // COMPONENTS
 @import 'components.buttons';
 @import 'components.currency';
+@import 'components.dashboard';
 @import 'components.hint';
 @import 'components.icons';
 @import 'components.integrated-address';
