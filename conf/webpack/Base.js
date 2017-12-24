@@ -38,7 +38,7 @@ class WebpackBaseConfig {
         contentBase: './src/',
         publicPath: '/assets/',
         historyApiFallback: true,
-        hot: true,
+        hot: false,
         inline: true,
         port: 8000
       },
