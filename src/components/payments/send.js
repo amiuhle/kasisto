@@ -3,16 +3,9 @@ import QRCode from 'qrcode.react'
 import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 
-import {
-  XMR,
-  EUR
-} from './utils'
-
 import Icon from '../util/Icon'
 
-import DualCurrency from './dual-currency'
 import ExchangeInfo from './exchange-info'
-import IntegratedAddress from '../monero/integrated-address'
 
 export default class SendPayment extends Component {
   render () {
@@ -20,11 +13,12 @@ export default class SendPayment extends Component {
       return <Redirect to='/' />
     }
     const {
-      id,
-      address,
       exchange,
+      fiatCurrency,
+      requestedAmount,
       receivedAmount,
       convertedAmount,
+      tip,
       transactionIds,
       uri,
       rate
@@ -41,17 +35,7 @@ export default class SendPayment extends Component {
           <h3 className='u-margin-bottom-none'>
             <label htmlFor='TODO'>Amount received</label>
           </h3>
-          {/* <DualCurrency
-            className='u-margin-bottom o-flex o-flex--col'
-            primary={{
-              amount: received * rate,
-              currency: EUR
-            }}
-            secondary={{
-              amount: received,
-              currency: XMR
-            }}
-          /> */}
+
           <p className='u-align-center'>Transaction Ids</p>
           <ul className='o-list-bare'>
             { (transactionIds || []).map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}><small>{txId}</small></li>) }
@@ -66,40 +50,44 @@ export default class SendPayment extends Component {
       )
     } else {
       return (
-        <div>
-          <h2>Waiting for payment</h2>
-          <div>
-            <h3 className='u-margin-bottom-none'>
-              Total Amount
-            </h3>
-            {/* <DualCurrency
-              className='u-margin-bottom o-flex o-flex--col'
-              primary={{
-                amount: totalAmount,
-                currency: XMR
-              }}
-              secondary={{
-                amount: totalAmount * rate,
-                currency: EUR
-              }}
-            /> */}
-            <div className='o-flex o-flex--col'>
-              <div className='o-flex o-flex--center u-margin-bottom'>
-                {
-                  uri && <QRCode size={192} value={uri} />
-                }
-              </div>
-              <h3 className='u-margin-bottom-none'>
-                Integrated address
-              </h3>
-              <IntegratedAddress className='u-margin-bottom' integratedAddress={address} />
-            </div>
-            <div className='u-margin-bottom o-flex o-flex--col'>
-              <Link to={`/payments/${id}/confirm`} className='c-btn'>Cancel payment</Link>
-            </div>
+        <div className='o-content'>
+          <h3 className='u-margin-bottom'>
+            Add a tip?
+          </h3>
 
-            <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
+          <ul className='o-list-inline c-tips'>
+            <li className='o-list-inline__item'><a href='#'>15%</a></li>
+            <li className='o-list-inline__item'><a href='#'>18%</a></li>
+            <li className='o-list-inline__item'><a href='#'>20%</a></li>
+          </ul>
+
+          <p>To Coffee shop</p>
+
+          <table className='c-payment-summary u-margin-bottom-large'>
+            <tr>
+              <th scope='row'>Amount</th>
+              <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
+            </tr>
+            <tr>
+              <th scope='row'>Tip</th>
+              <td>{tip || '0'}&nbsp;{fiatCurrency}</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total</th>
+              <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
+            </tr>
+          </table>
+
+          <div className='o-flex o-flex--col'>
+            <div className='o-flex o-flex--center u-margin-bottom'>
+              {
+                uri && <QRCode size={192} value={uri} />
+              }
+            </div>
           </div>
+          <small>
+            <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
+          </small>
         </div>
       )
     }

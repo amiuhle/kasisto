@@ -33,6 +33,8 @@
 @import 'objects.content';
 @import 'objects.flex';
 @import '~inuitcss/objects/objects.list-bare';
+@import '~inuitcss/objects/objects.list-inline';
+@import '~inuitcss/objects/objects.table';
 
 // COMPONENTS
 @import 'components.buttons';
@@ -40,8 +42,9 @@
 @import 'components.dashboard';
 @import 'components.hint';
 @import 'components.icons';
-@import 'components.integrated-address';
+@import 'components.payments';
 @import 'components.success';
+@import 'components.tips';
 
 // UTILITIES
 @import '~inuitcss/utilities/utilities.spacings';
