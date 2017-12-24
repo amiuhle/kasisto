@@ -4,7 +4,7 @@ export const startPayment = (fiatCurrency, resolve, reject) => ({
   type: types.REQUEST_PAYMENT,
   payload: {
     fiatCurrency,
-    url: 'https://testnet.kasisto.io:28082/json_rpc',
+    url: 'https://testnet.kasisto.io:28084/json_rpc',
     resolve,
     reject
   }

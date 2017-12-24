@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
-import {
-  string
-} from 'prop-types'
-
-import {
-  currencyDisplayType
-} from './utils'
+import { Field } from 'redux-form'
+import Big from 'big.js'
 
 const zeros = (times) => new Array(Math.max(0, times)).fill('0').join('')
 const getCurrencyString = fiatCurrency => fiatCurrency || 'XMR'
@@ -21,55 +16,16 @@ const sanitizeValue = (value, divisor) => {
   return (valuesDiffer ? sanitized : value).toString()
 }
 
+const toXmr = (amount, rate = 1) => new Big(isNaN(amount) ? '0.0' : amount).div(rate).toFixed(12)
+
 class CurrencyInput extends Component {
-  constructor (props, context) {
-    super(props, context)
-
-    const {
-      currency,
-      value
-    } = props
-
-    const divisor = getDivisor(currency)
-
-    this.state = {
-      currencyString: getCurrencyString(currency),
-      maxDecimals: getMaxDecimals(currency),
-      divisor,
-      value,
-      rawValue: sanitizeValue(value, divisor),
-      hasFocus: false
-    }
-  }
-
-  componentWillReceiveProps (nextProps) {
-    const { value } = nextProps
-    if (this.props.value !== value) {
-      this.setState({
-        value
-      })
-    }
-  }
-
-  onNativeInputChange = (e) => {
-    const { onChange } = this.props
-    const { value, divisor, hasPendingDecimal } = this.state
-    const rawValue = sanitizeValue(e.target.value, divisor)
-
-    this.setState({
-      rawValue
-    })
-
-    // eslint-disable-next-line eqeqeq
-    if (value != rawValue && !hasPendingDecimal) {
-      onChange(rawValue)
-    }
+  state = {
+    hasPendingDecimal: false
   }
 
   onKeyDown = e => {
-    const { rawValue } = this.state
-    if ((e.key === '.' || e.keyCode === 229) || (e.keyCode === 8 && rawValue.match(/\.\d$/))
-      ) {
+    const { value } = this.props.input
+    if ((e.key === '.' || e.keyCode === 229) || (e.keyCode === 8 && value.match(/\.\d$/))) {
       this.setState({
         hasPendingDecimal: true
       })
@@ -80,49 +36,27 @@ class CurrencyInput extends Component {
     }
   }
 
-  nativeInputRef = (nativeInput) => {
-    if (nativeInput === null) {
-      this.nativeInput.removeEventListener('focus', this.onFocus)
-      this.nativeInput.removeEventListener('blur', this.onBlur)
-    } else {
-      nativeInput.addEventListener('focus', this.onFocus)
-      nativeInput.addEventListener('blur', this.onBlur)
-    }
-
-    this.nativeInput = nativeInput
-  }
-
-  onFocus = (e) => {
-    this.setState({
-      hasFocus: true
-    })
-  }
-
-  onBlur = (e) => {
-    this.setState({
-      hasFocus: false
-    })
-  }
-
   render () {
     const {
       id,
       className,
-      disabled
+      currency,
+      input
     } = this.props
 
     const {
-      currencyString,
-      maxDecimals,
-      rawValue,
-      hasPendingDecimal,
-      hasFocus
-    } = this.state
+      onChange,
+      value
+    } = input
 
-    let [, fraction] = rawValue.split('.')
+    const { hasPendingDecimal } = this.state
+
+    let [, fraction] = value.split('.')
     let decimals
 
     const hasFraction = fraction !== undefined
+
+    const maxDecimals = getMaxDecimals(currency)
 
     if (hasFraction) {
       decimals = maxDecimals - fraction.length
@@ -134,24 +68,21 @@ class CurrencyInput extends Component {
 
     return (
       <label
-        className={`c-currency c-currency--input ${disabled ? 'c-currency--disabled' : ''} ${hasFocus ? 'c-currency--input--focus' : ''} ${className || ''}`}>
+        className={`c-currency c-currency--input ${className || ''}`}>
         <input
-          ref={this.nativeInputRef}
-          className='c-currency--input__native_input'
+          id={id}
+          onChange={onChange}
+          value={value}
           onKeyDown={this.onKeyDown}
-          onChange={this.onNativeInputChange}
-          {...{
-            id,
-            value: rawValue,
-            disabled
-          }}
+          className='c-currency--input__native_input'
+          placeholder='00'
           type='number'
-          step={`0.${zeros(maxDecimals - 1)}1`}
+          step='0.01'
         />
         <span className='c-currency__tail'>
           {tail}
         </span>
-        <small className='c-currency__currency'>{currencyString}</small>
+        <small className='c-currency__currency'>{currency}</small>
       </label>
     )
   }
@@ -182,40 +113,19 @@ const CurrencyDisplay = ({ className, value, currency }) => {
   )
 }
 
-export default class DualCurrency extends Component {
-  render () {
-    const {
-      className,
-      fiatCurrency,
-      rate,
-      input: {
-        name,
-        value,
-        onChange
-      }
-    } = this.props
+const DualCurrency = ({id, className, fiatCurrency, input, rate, ...props}) => (
+  <div className={`c-dual-currency ${className || ''}`}>
+    <CurrencyInput className='c-currency--primary' id={id} input={input} currency={fiatCurrency} />
+    <CurrencyDisplay className='c-currency--secondary' value={toXmr(input.value, rate)} currency={null} />
+  </div>
+)
 
-    const renderCurrency = ({amount, onChange, ...rest}) => {
-      const value = amount || ''
-      if (onChange != null) {
-        return <CurrencyInput {...{id: name, value, onChange}} {...rest} />
-      } else {
-        return <CurrencyDisplay value={value} {...rest} />
-      }
-    }
-
-    return (
-      <div className={`c-dual-currency ${className || ''}`}>
-        {renderCurrency({amount: value, currency: fiatCurrency, onChange, className: 'c-currency--primary'})}
-        {renderCurrency({amount: parseFloat(value) / rate, currency: null, className: 'c-currency--secondary'})}
-      </div>
-    )
-  }
-
-  static propTypes = {
-    id: string,
-    className: string,
-    primary: currencyDisplayType,
-    secondary: currencyDisplayType
-  }
-}
+export default ({ rate, fiatCurrency }) =>
+  <Field
+    id='requestedAmount'
+    name='requestedAmount'
+    component={DualCurrency}
+    rate={rate}
+    fiatCurrency={fiatCurrency}
+    format={(value) => sanitizeValue(value, getDivisor(fiatCurrency))}
+  />

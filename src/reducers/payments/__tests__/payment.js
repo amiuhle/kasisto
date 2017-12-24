@@ -1,8 +1,5 @@
 /* eslint-env jest */
 import {
-  REQUEST_PAYMENT,
-  SET_AMOUNT,
-  SET_RECEIPT,
   UPDATE_PAYMENT
 } from '../../../actions/constants/payments'
 

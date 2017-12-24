@@ -1,20 +1,11 @@
-label, button {
-  text-transform: capitalize;
-
-  line-height: 1.5;
-  font-family: inherit;
-  font-size: inherit;
+label {
+  color: $brand-primary;
 }
 
 input, %input {
-  padding: $tiny-spacing-unit;
-
   line-height: 1.5;
   font-family: inherit;
   font-size: inherit;
-
-  border: 1px solid #333;
-  border-radius: 3px;
 }
 
 input:disabled, %input--disabled {

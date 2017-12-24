@@ -6,20 +6,26 @@ import {
 } from 'prop-types'
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Field, reduxForm } from 'redux-form'
+import { reduxForm } from 'redux-form'
 
-import {
-  XMR,
-  EUR,
-
-  amountType
-} from './utils'
+import { amountType } from './utils'
 
 import DualCurrency from './dual-currency'
 import ExchangeInfo from './exchange-info'
-import Hint from '../settings/noob-hint'
 
 class CreatePayment extends Component {
+  isReady = () => {
+    const {
+      address,
+      height,
+      paymentId,
+      rate
+    } = this.props.payment
+    const { requestedAmount } = this.props
+    console.log(requestedAmount)
+    return !!(requestedAmount && address && height && paymentId && rate)
+  }
+
   render () {
     if (this.props.payment == null) {
       return <Redirect to='/' />
@@ -33,36 +39,21 @@ class CreatePayment extends Component {
       }
     } = this.props
 
+    const isReady = this.isReady()
+
     return (
       <form onSubmit={handleSubmit}>
-        <h2>Create Payment</h2>
-        <div>
+        <div className='o-content'>
           <h3 className='u-margin-bottom-none'>
-            <label htmlFor='receipt'>Receipt</label>
+            <label htmlFor='requestedAmount'>Amount due</label>
           </h3>
-          <div className='u-margin-bottom o-flex o-flex--col'>
-            <Field name='receipt' component='input' type='text' />
-            <Hint text='A hint so you can identify this payment later' />
-          </div>
 
-          <h3 className='u-margin-bottom-none'>
-            <label htmlFor='amount'>Amount due</label>
-          </h3>
-          <Field
-            name='requestedAmount'
-            className='u-margin-bottom o-flex o-flex--col'
-            rate={rate}
-            fiatCurrency={fiatCurrency}
-            component={DualCurrency}
-          />
-
-          <div className='u-margin-bottom o-flex o-flex--col'>
-            <button className='c-btn'>
-              Request payment
-            </button>
-          </div>
-
+          <DualCurrency rate={rate} fiatCurrency={fiatCurrency} />
           <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
+
+          <button className='c-btn' style={{width: '100%', marginTop: '300px', position: 'fixed', bottom: '0', borderRadius: '0'}} disabled={!isReady}>
+            Request payment
+          </button>
         </div>
       </form>
     )
@@ -80,6 +71,8 @@ class CreatePayment extends Component {
   }
 }
 
-export default reduxForm({
+const createForm = reduxForm({
   form: 'createPayment'
-})(CreatePayment)
+})
+
+export default createForm(CreatePayment)
