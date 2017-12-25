@@ -4,15 +4,16 @@ import {
   Route
 } from 'react-router-dom'
 
-import App from '../components/App'
+import AppLayout from '../views/layouts'
+
 import Dashboard from '../containers/dashboard'
 import Payments from './payments'
 
 export default () => (
   <HashRouter>
-    <App>
+    <AppLayout>
       <Route path='/' exact component={Dashboard} />
       <Payments />
-    </App>
+    </AppLayout>
   </HashRouter>
 )

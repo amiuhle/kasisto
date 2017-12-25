@@ -14,7 +14,7 @@ import {
   getPaymentById
 } from '../../reducers'
 
-import SendPayment from '../../components/payments/send'
+import SendPayment from '../../views/payments/send'
 
 class Container extends Component {
   componentDidMount () {
@@ -34,9 +34,9 @@ class Container extends Component {
   }
 
   componentWillUnmount () {
-    const { stopListeningForPayments } = this.props
-    const { handle } = this.state
-    stopListeningForPayments(handle)
+    // const { stopListeningForPayments } = this.props
+    // const { handle } = this.state
+    // stopListeningForPayments(handle)
   }
 
   render () {

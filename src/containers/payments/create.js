@@ -10,7 +10,7 @@ import {
   getPaymentById
 } from '../../reducers'
 
-import CreatePayment from '../../components/payments/create'
+import CreatePayment from '../../views/payments/create'
 
 const render = props => <CreatePayment {...props} />
 

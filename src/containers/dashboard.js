@@ -6,7 +6,7 @@ import {
   startPayment
 } from '../actions'
 
-import Dashboard from '../components/dashboard'
+import Dashboard from '../views/dashboard'
 
 const render = props => {
   return <Dashboard {...props} />

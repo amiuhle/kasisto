@@ -4,11 +4,13 @@ import {
   shape,
   string
 } from 'prop-types'
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Redirect } from 'react-router-dom'
 import { reduxForm } from 'redux-form'
 
 import { amountType } from './utils'
+
+import CancelPayment from '../../components/CancelPayment'
 
 import DualCurrency from './dual-currency'
 import ExchangeInfo from './exchange-info'
@@ -42,20 +44,25 @@ class CreatePayment extends Component {
     const isReady = this.isReady()
 
     return (
-      <form onSubmit={handleSubmit}>
-        <div className='o-content'>
-          <h3 className='u-margin-bottom-none'>
-            <label htmlFor='requestedAmount'>Amount due</label>
-          </h3>
+      <Fragment>
+        <div className='o-app__content'>
+          <form onSubmit={handleSubmit}>
+            <div className='o-content'>
+              <h3 className='u-margin-bottom-none'>
+                <label htmlFor='requestedAmount'>Amount due</label>
+              </h3>
 
-          <DualCurrency rate={rate} fiatCurrency={fiatCurrency} />
-          <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
+              <DualCurrency rate={rate} fiatCurrency={fiatCurrency} />
+              <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
 
-          <button className='c-btn' style={{width: '100%', marginTop: '300px', position: 'fixed', bottom: '0', borderRadius: '0'}} disabled={!isReady}>
-            Request payment
-          </button>
+            </div>
+          </form>
         </div>
-      </form>
+        <CancelPayment />
+        <button className='o-app__footer c-btn' disabled={!isReady}>
+          Request payment
+        </button>
+      </Fragment>
     )
   }
 

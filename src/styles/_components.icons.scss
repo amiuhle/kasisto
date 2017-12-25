@@ -1,20 +1,26 @@
 .icon {
+  color: $text-color;
+  fill: currentColor;
+
   width: $base-spacing-unit;
   height: $base-spacing-unit;
-  fill: currentColor;
 
   svg {
     width: $base-spacing-unit;
     height: $base-spacing-unit;
   }
-  
+
   &--large {
     width: $double-spacing-unit;
     height: $double-spacing-unit;
-  
+
     svg {
       width: $double-spacing-unit;
       height: $double-spacing-unit;
     }
   }
+}
+
+.icon--white {
+  color: $background-color;
 }

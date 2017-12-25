@@ -1,7 +1,7 @@
 /* eslint-env jest */
 
 import React from 'react'
-import AppComponent from '../App'
+import AppLayout from '../'
 
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
@@ -16,7 +16,7 @@ it('experiments with Jest', () => {
   const component = renderer.create(
     // {... { actions, payment }}
     <Provider store={store}>
-      <AppComponent />
+      <AppLayout />
     </Provider>
   )
   let tree = component.toJSON()
