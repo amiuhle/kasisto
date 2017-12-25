@@ -12,7 +12,6 @@ export default class ConfirmPayment extends Component {
       return <Redirect to='/' />
     }
     const {
-      onSetTip,
       onStartPayment,
       payment: {
         id,

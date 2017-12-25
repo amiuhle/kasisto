@@ -8,21 +8,34 @@ import Icon from '../util/Icon'
 import ExchangeInfo from './exchange-info'
 
 export default class SendPayment extends Component {
+  state = {
+    tipIndex: null
+  }
+
   render () {
     if (this.props.payment == null) {
       return <Redirect to='/' />
     }
     const {
-      exchange,
-      fiatCurrency,
-      requestedAmount,
-      receivedAmount,
-      convertedAmount,
-      tip,
-      transactionIds,
-      uri,
-      rate
-    } = this.props.payment
+      setTip,
+      payment: {
+        exchange,
+        fiatCurrency,
+        requestedAmount,
+        receivedAmount,
+        convertedAmount,
+        tip,
+        transactionIds,
+        uri,
+        rate
+      }
+    } = this.props
+
+    const {
+      tipIndex
+    } = this.state
+
+    console.log(tipIndex)
 
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
@@ -56,26 +69,41 @@ export default class SendPayment extends Component {
           </h3>
 
           <ul className='o-list-inline c-tips'>
-            <li className='o-list-inline__item'><a href='#'>15%</a></li>
-            <li className='o-list-inline__item'><a href='#'>18%</a></li>
-            <li className='o-list-inline__item'><a href='#'>20%</a></li>
+            {
+              [0.15, 0.18, 0.20].map((tipRate, key) =>
+                <li
+                  key={key}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setTip(tipRate * convertedAmount)
+                    this.setState({
+                      tipIndex: key
+                    })
+                  }}
+                  className='o-list-inline__item'>
+                  <a href='#' className={`c-tips__tip ${key === tipIndex ? 'c-tips__tip--active' : 'bar'}`}>{tipRate * 100}%</a>
+                </li>
+              )
+            }
           </ul>
 
           <p>To Coffee shop</p>
 
           <table className='c-payment-summary u-margin-bottom-large'>
-            <tr>
-              <th scope='row'>Amount</th>
-              <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
-            </tr>
-            <tr>
-              <th scope='row'>Tip</th>
-              <td>{tip || '0'}&nbsp;{fiatCurrency}</td>
-            </tr>
-            <tr>
-              <th scope='row'>Total</th>
-              <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
-            </tr>
+            <tbody>
+              <tr>
+                <th scope='row'>Amount</th>
+                <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
+              </tr>
+              <tr>
+                <th scope='row'>Tip</th>
+                <td>{tip || '0'}&nbsp;{fiatCurrency}</td>
+              </tr>
+              <tr>
+                <th scope='row'>Total</th>
+                <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
+              </tr>
+            </tbody>
           </table>
 
           <div className='o-flex o-flex--col'>

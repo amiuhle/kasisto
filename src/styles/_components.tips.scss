@@ -1,9 +1,26 @@
 .c-tips {
   font-size: 28px;
+  line-height: 34px;
   font-weight: 200;
 
   margin: 0 30px 30px;
   display: flex;
   align-self: stretch;
   justify-content: space-evenly;
+
+  a {
+    color: $text-color;
+    font-weight: 200;
+    text-decoration: none;
+
+    &.c-tips__tip {
+      padding: 0 10px 5px;
+    }
+
+    &.c-tips__tip--active  {
+      font-weight: normal;
+      color: $brand-primary;
+      border-bottom: 3px solid currentColor;
+    }
+  }
 }

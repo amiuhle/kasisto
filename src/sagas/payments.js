@@ -67,6 +67,10 @@ export function * processPayment (action) {
   const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
 
   yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+
+  const tip = yield takeEvery(types.SET_TIP)
+
+  yield put(updatePayment(id, { tip }))
 }
 
 export function * watchCreatePayment () {
