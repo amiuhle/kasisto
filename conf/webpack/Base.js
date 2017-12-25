@@ -61,7 +61,11 @@ class WebpackBaseConfig {
           },
           {
             test: /icons\/.*\.svg$/,
-            loader: 'svg-sprite-loader'
+            loaders: [
+              'svg-sprite-loader',
+              'svg-fill-loader',
+              'svgo-loader'
+            ]
           },
           {
             test: /images\/.*\.(png|jpg|gif|mp4|ogg|svg|woff|woff2)$/,

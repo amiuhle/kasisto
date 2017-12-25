@@ -5,7 +5,7 @@ const className = ({ className } = {}, ...rest) =>
   .filter(value => typeof value === 'string' && value.length > 0)
   .join(' ')
 
-const icons = require.context('../../icons', false, /\.svg$/)
+const icons = require.context('../icons', false, /\.svg$/)
 icons.keys().forEach(icons)
 
 export default ({name, onClick, href, ...props}) => {

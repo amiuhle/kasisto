@@ -55,6 +55,9 @@
     "sass-loader": "^6.0.6",
     "standard": "^10.0.2",
     "style-loader": "^0.19.1",
+    "svg-fill-loader": "^0.0.8",
+    "svgo": "^1.0.3",
+    "svgo-loader": "^2.1.0",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
@@ -78,7 +81,7 @@
     "redux-saga": "^0.16.0",
     "redux-thunk": "^2.2.0",
     "snakecase-keys": "^1.1.0",
-    "svg-sprite-loader": "^3.5.4",
+    "svg-sprite-loader": "^3.6.0",
     "uuid": "^3.1.0"
   },
   "jest": {
