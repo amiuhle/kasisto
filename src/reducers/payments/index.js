@@ -1,3 +1,4 @@
+import { isToday } from 'date-fns'
 import { combineReducers } from 'redux'
 
 import byId, * as fromById from './byId'
@@ -11,4 +12,13 @@ export default combineReducers({
 export const getPaymentById = (state, id) => fromById.getPayment(state.byId, id)
 
 export const getAllPayments = (state) =>
-  fromAllIds.getIds(state.ids).map(id => fromById.getPayment(state.byId, id))
+  fromAllIds.getIds(state.allIds).map(id => fromById.getPayment(state.byId, id))
+
+export const getTodaysLastPayment = (state) => {
+  const id = fromAllIds.getIds(state.allIds).slice(0, 10).find((id, index) => {
+    const payment = getPaymentById(state, id)
+    console.log(index, payment.createdAt)
+    return isToday(payment.createdAt)
+  })
+  return getPaymentById(state, id)
+}

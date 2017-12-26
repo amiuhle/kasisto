@@ -19,6 +19,7 @@ import {
 } from '../reducers'
 
 import {
+  createPayment,
   updatePayment
 } from '../actions/payments'
 
@@ -53,7 +54,7 @@ export function * processPayment (action) {
   const id = uuid()
 
   // create the initial payment in the store
-  yield put(updatePayment(id, { fiatCurrency }))
+  yield put(createPayment(id, { fiatCurrency }))
 
   yield call(resolve, id)
 

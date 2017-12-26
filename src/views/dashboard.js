@@ -32,7 +32,7 @@ const Dashboard = ({ onStartPayment, settings, lastPayment }) => (
             <small>XMR / {settings.fiatCurrency}</small>
           </div>
           <div>
-            <span>{lastPayment || '--'}</span>
+            <span>{lastPayment ? format(lastPayment.createdAt, 'HH:mm') : '--'}</span>
             <small>Last payment</small>
           </div>
         </div>

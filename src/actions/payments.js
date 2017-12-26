@@ -26,6 +26,11 @@ export const setTip = (tip) => {
   }
 }
 
+export const createPayment = (id, payment, timestamp = () => new Date().toISOString()) => ({
+  type: types.CREATE_PAYMENT,
+  payload: Object.assign({}, payment, { id }, { createdAt: timestamp() })
+})
+
 export const updatePayment = (id, payment, timestamp = () => new Date().toISOString()) => ({
   type: types.UPDATE_PAYMENT,
   payload: Object.assign({}, payment, { id }, { updatedAt: timestamp() })

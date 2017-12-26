@@ -19,5 +19,8 @@ export const getAllPayments = (state) =>
 export const getPaymentById = (state, id) =>
   fromPayments.getPaymentById(state.payments, id)
 
+export const getTodaysLastPayment = (state) =>
+  fromPayments.getTodaysLastPayment(state.payments)
+
 export const getSettings = (state) =>
   fromSettings.getSettings(state.settings)

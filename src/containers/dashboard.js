@@ -9,7 +9,8 @@ import {
 } from '../actions'
 
 import {
-  getSettings
+  getSettings,
+  getTodaysLastPayment
 } from '../reducers'
 
 import Dashboard from '../views/dashboard'
@@ -25,6 +26,7 @@ class DashboardContainer extends Component {
 }
 
 const mapStateToProps = (state, { match }) => ({
+  lastPayment: getTodaysLastPayment(state),
   settings: getSettings(state)
 })
 
