@@ -17,7 +17,8 @@
 .o-app__header {
   grid-area: header;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
 }
 
 .o-app__top-left {

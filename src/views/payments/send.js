@@ -21,6 +21,7 @@ export default class SendPayment extends Component {
       setTip,
       settings,
       payment: {
+        address,
         exchange,
         fiatCurrency,
         requestedAmount,
@@ -36,6 +37,8 @@ export default class SendPayment extends Component {
     const {
       tipIndex
     } = this.state
+
+    const isTestnet = address != null && !address.startsWith('4')
 
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
@@ -118,6 +121,8 @@ export default class SendPayment extends Component {
           </div>
 
           <CancelPayment />
+
+          { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
         </Fragment>
       )
     }

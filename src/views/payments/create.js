@@ -33,11 +33,13 @@ class CreatePayment extends Component {
     const {
       handleSubmit,
       payment: {
-        exchange,
+        address,
         fiatCurrency,
         rate
       }
     } = this.props
+
+    const isTestnet = address != null && !address.startsWith('4')
 
     const isReady = this.isReady()
 
@@ -57,6 +59,7 @@ class CreatePayment extends Component {
         <button form='request-payment' className='o-app__footer c-btn' disabled={!isReady}>
           Request payment
         </button>
+        { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
       </Fragment>
     )
   }
