@@ -3,8 +3,6 @@ import * as types from './constants/payments'
 export const startPayment = (fiatCurrency, resolve, reject) => ({
   type: types.REQUEST_PAYMENT,
   payload: {
-    fiatCurrency,
-    url: 'https://testnet.kasisto.io:28082/json_rpc',
     resolve,
     reject
   }
@@ -27,6 +25,11 @@ export const setTip = (tip) => {
     }
   }
 }
+
+export const createPayment = (id, payment, timestamp = () => new Date().toISOString()) => ({
+  type: types.CREATE_PAYMENT,
+  payload: Object.assign({}, payment, { id }, { createdAt: timestamp() })
+})
 
 export const updatePayment = (id, payment, timestamp = () => new Date().toISOString()) => ({
   type: types.UPDATE_PAYMENT,

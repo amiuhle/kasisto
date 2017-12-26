@@ -1,0 +1,25 @@
+.c-payment-summary {
+  th {
+    font-weight: normal;
+    text-align: left;
+    padding-right: $base-spacing-unit;
+  }
+
+  td {
+    padding-left: $base-spacing-unit;
+    text-align: right;
+  }
+
+  tr:nth-last-child(2) {
+    td, th {
+      padding-bottom: $small-spacing-unit;
+    }
+  }
+
+  tr:nth-last-child(1) {
+    td, th {
+      border-top: 1px solid $text-color;
+      padding-top: $small-spacing-unit;
+    }
+  }
+}

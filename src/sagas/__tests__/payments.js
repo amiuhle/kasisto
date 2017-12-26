@@ -111,7 +111,7 @@ describe('processPayment', () => {
         const resolve = jest.fn()
         return expectSaga(processPayment, startPayment(null, resolve))
           .put({
-            type: types.CREATE_PAYMENT,
+            type: types.UPDATE_PAYMENT,
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               createdAt: creationTime,
@@ -119,7 +119,7 @@ describe('processPayment', () => {
             }
           })
           .put({
-            type: types.PREPARE_PAYMENT,
+            type: types.UPDATE_PAYMENT,
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',

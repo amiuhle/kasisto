@@ -1,0 +1,24 @@
+.c-settings {
+  margin: 67px $base-spacing-unit 0;
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $base-spacing-unit;
+  }
+
+  label {
+    font-size: $label-font-size;
+    line-height: $base-font-size;
+  }
+
+  input, select {
+    font-size: $base-font-size;
+    line-height: $large-font-size;
+    padding: 5px 0;
+
+    background-color: $background-color;
+    border: none;
+    border-bottom: 1px solid currentColor;
+  }
+}

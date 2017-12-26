@@ -4,38 +4,63 @@ import { v4 as uuid } from 'uuid'
 import {
   all,
   call,
+  fork,
   put,
+  select,
   take,
   takeEvery
 } from 'redux-saga/effects'
 
 import { requestPayment } from '../../lib/fetch-monero'
+import { fetchExchangeRate } from '../../lib/exchange-rates'
 
 import {
+  getSettings
+} from '../reducers'
+
+import {
+  createPayment,
   updatePayment
 } from '../actions/payments'
 
 import * as types from '../actions/constants/payments'
 
-const { fetch } = window
+function * waitForPayment (id, paymentRequest) {
+  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
+  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+}
+
+function * listenForTip (id, paymentRequest, name, receipt) {
+  while (true) {
+    const setTip = yield take(types.SET_TIP)
+    const { tip } = setTip.payload
+    const convertedTip = parseInt(new Big(tip).times(1e12).round(), 10)
+    const { uri } = yield call([paymentRequest, 'makeUri'], convertedTip, name, receipt)
+    yield put(updatePayment(id, { tip, uri }))
+  }
+}
 
 export function * processPayment (action) {
   const {
-    url,
-    fiatCurrency,
     resolve
   } = action.payload
+
+  const settings = yield select(getSettings)
+
+  const walletUrl = settings.walletUrl || 'https://testnet.kasisto.io:28084/json_rpc'
+  const fiatCurrency = settings.fiatCurrency || 'EUR'
+  const merchantName = settings.name || 'Coffee shop'
 
   const id = uuid()
 
   // create the initial payment in the store
-  yield put(updatePayment(id, { fiatCurrency }))
+  yield put(createPayment(id, { fiatCurrency }))
 
   yield call(resolve, id)
 
   const [rate, paymentRequest] = yield all([
     call(fetchExchangeRate, fiatCurrency),
-    call(requestPayment, url)
+    call(requestPayment, walletUrl)
   ])
 
   const {
@@ -59,26 +84,13 @@ export function * processPayment (action) {
 
   paymentRequest.setAmount(parseInt(convertedAmount, 10))
 
-  const { uri } = yield call([paymentRequest, 'makeUri'], 0, 'Cafe', receipt)
-  console.log(uri)
-
+  const { uri } = yield call([paymentRequest, 'makeUri'], 0, merchantName, receipt)
   yield put(updatePayment(id, { uri }))
 
-  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
-
-  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+  yield fork(waitForPayment, id, paymentRequest)
+  yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 }
 
 export function * watchCreatePayment () {
   yield takeEvery(types.REQUEST_PAYMENT, processPayment)
-}
-
-const fetchExchangeRate = (fiatCurrency) => {
-  if (fiatCurrency === null) {
-    return Promise.resolve(1)
-  } else {
-    return fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
-      .then(response => response.json())
-      .then(json => Number.parseFloat(json.result[`XXMRZ${fiatCurrency}`]['p'][1]))
-  }
 }

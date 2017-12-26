@@ -1,3 +1,8 @@
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
 small, %small {
-  font-size: 0.7em;
+  font-size: $small-font-size;
 }

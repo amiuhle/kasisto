@@ -6,14 +6,16 @@ import { connect } from 'react-redux'
 import {
   fetchUri,
   listenForPayments,
-  stopListeningForPayments
+  stopListeningForPayments,
+  setTip
 } from '../../actions'
 
 import {
-  getPaymentById
+  getPaymentById,
+  getSettings
 } from '../../reducers'
 
-import SendPayment from '../../components/payments/send'
+import SendPayment from '../../views/payments/send'
 
 class Container extends Component {
   componentDidMount () {
@@ -33,9 +35,9 @@ class Container extends Component {
   }
 
   componentWillUnmount () {
-    const { stopListeningForPayments } = this.props
-    const { handle } = this.state
-    stopListeningForPayments(handle)
+    // const { stopListeningForPayments } = this.props
+    // const { handle } = this.state
+    // stopListeningForPayments(handle)
   }
 
   render () {
@@ -46,14 +48,16 @@ class Container extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  payment: getPaymentById(state, ownProps.match.params.id)
+  payment: getPaymentById(state, ownProps.match.params.id),
+  settings: getSettings(state)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   ...bindActionCreators({
     fetchUri,
     listenForPayments,
-    stopListeningForPayments
+    stopListeningForPayments,
+    setTip
   }, dispatch)
 })
 

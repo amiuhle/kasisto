@@ -1,4 +1,5 @@
 import {
+  CREATE_PAYMENT,
   UPDATE_PAYMENT
 } from '../../actions/constants/payments'
 
@@ -37,6 +38,7 @@ const filterProps = (payload) => {
 const payment = (state = {}, action) => {
   const { type, payload } = action
   switch (type) {
+    case CREATE_PAYMENT:
     case UPDATE_PAYMENT: {
       return Object.assign({}, state, filterProps(payload))
     }

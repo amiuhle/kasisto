@@ -10,18 +10,18 @@ import {
   getPaymentById
 } from '../../reducers'
 
-import CreatePayment from '../../components/payments/create'
+import CreatePayment from '../../views/payments/create'
 
 const render = props => <CreatePayment {...props} />
 
 const mapStateToProps = (state, { match }) => ({
-  payment: getPaymentById(state, match.params.id)
+  payment: getPaymentById(state, match.params.id),
+  requestedAmount: ((state.form.createPayment || {}).values || {}).requestedAmount
 })
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
   onSubmit ({ requestedAmount, receipt }) {
     dispatch(setAmount(requestedAmount, receipt))
-    // e.preventDefault()
     history.push(`/payments/${match.params.id}/send`)
   }
 })

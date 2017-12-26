@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { Component } from 'react'
 
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
-  startPayment
+  startPayment,
+  fetchExchangeRate
 } from '../actions'
 
-import Dashboard from '../components/dashboard'
+import {
+  getSettings,
+  getTodaysLastPayment
+} from '../reducers'
 
-const render = props => {
-  return <Dashboard {...props} />
+import Dashboard from '../views/dashboard'
+
+class DashboardContainer extends Component {
+  componentDidMount () {
+    this.props.fetchExchangeRate(this.props.settings.fiatCurrency)
+  }
+
+  render () {
+    return <Dashboard {...this.props} />
+  }
 }
+
+const mapStateToProps = (state, { match }) => ({
+  lastPayment: getTodaysLastPayment(state),
+  settings: getSettings(state)
+})
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
   onStartPayment (e) {
@@ -21,7 +39,10 @@ const mapDispatchToProps = (dispatch, { history, match }) => ({
       console.log('payment created', id)
       history.push(`/payments/${id}/create`)
     })
-  }
+  },
+  ...bindActionCreators({
+    fetchExchangeRate
+  }, dispatch)
 })
 
-export default connect(null, mapDispatchToProps)(render)
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer)
