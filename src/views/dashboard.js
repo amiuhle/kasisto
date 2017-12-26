@@ -36,7 +36,7 @@ const Dashboard = ({ onStartPayment, settings, lastPayment }) => (
             <small>Last payment</small>
           </div>
         </div>
-        <Link to='/history' className='o-flex o-flex--center u-brand-primary u-medium u-margin-bottom'>
+        <Link to='/payments' className='o-flex o-flex--center u-brand-primary u-medium u-margin-bottom'>
           <Icon name='history' className='icon--brand' />
           <span className='u-margin-left-tiny'>See history</span>
         </Link>
