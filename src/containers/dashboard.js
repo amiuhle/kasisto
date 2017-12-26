@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 import {
-  startPayment
+  startPayment,
+  fetchExchangeRate
 } from '../actions'
 
 import {
@@ -12,8 +14,14 @@ import {
 
 import Dashboard from '../views/dashboard'
 
-const render = props => {
-  return <Dashboard {...props} />
+class DashboardContainer extends Component {
+  componentDidMount () {
+    this.props.fetchExchangeRate(this.props.settings.fiatCurrency)
+  }
+
+  render () {
+    return <Dashboard {...this.props} />
+  }
 }
 
 const mapStateToProps = (state, { match }) => ({
@@ -29,7 +37,10 @@ const mapDispatchToProps = (dispatch, { history, match }) => ({
       console.log('payment created', id)
       history.push(`/payments/${id}/create`)
     })
-  }
+  },
+  ...bindActionCreators({
+    fetchExchangeRate
+  }, dispatch)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(render)
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer)

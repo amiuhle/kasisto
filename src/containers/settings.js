@@ -22,7 +22,7 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
   onSubmit (settings) {
-    dispatch(saveSettings(settings))
+    dispatch(saveSettings(Object.assign({}, settings, { exchangeRate: null })))
     history.push('/')
   }
 })

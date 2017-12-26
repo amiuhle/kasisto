@@ -1,3 +1,19 @@
 .u-muted {
   color: $disabled-color;
 }
+
+.u-light {
+  font-weight: 200;
+}
+
+.u-normal {
+  font-weight: 400;
+}
+
+.u-medium {
+  font-weight: 500;
+}
+
+.u-brand-primary {
+  color: $brand-primary;
+}

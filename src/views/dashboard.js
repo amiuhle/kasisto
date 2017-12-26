@@ -1,11 +1,14 @@
+import Big from 'big.js'
 import { format } from 'date-fns'
 
 import { func } from 'prop-types'
 import React, { Fragment } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import Icon from '../components/Icon'
 
-const Dashboard = ({ onStartPayment, settings }) => (
+const Dashboard = ({ onStartPayment, settings, lastPayment }) => (
   <Fragment>
     <div className='o-app__content c-dashboard'>
       <div className='c-dashboard--top'>
@@ -21,7 +24,23 @@ const Dashboard = ({ onStartPayment, settings }) => (
           Request New Payment
         </button>
       </div>
-      <div className='c-dashboard--overlay' />
+      <div className='c-dashboard--overlay'>
+        <small className='c-badge'>Today</small>
+        <div className='u-margin-top-small u-margin-bottom-large c-dashboard__overview'>
+          <div>
+            <span>{settings.exchangeRate ? new Big(settings.exchangeRate).toFixed(2) : '--'}</span>
+            <small>XMR / {settings.fiatCurrency}</small>
+          </div>
+          <div>
+            <span>{lastPayment || '--'}</span>
+            <small>Last payment</small>
+          </div>
+        </div>
+        <Link to='/history' className='o-flex o-flex--center u-brand-primary u-medium u-margin-bottom'>
+          <Icon name='history' className='icon--brand' />
+          <span className='u-margin-left-tiny'>See history</span>
+        </Link>
+      </div>
     </div>
 
     <div className='o-app__top-right'>

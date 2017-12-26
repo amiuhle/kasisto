@@ -4,8 +4,13 @@ import {
   watchCreatePayment
 } from './payments'
 
+import {
+  watchExchangeRate
+} from './settings'
+
 export default function * rootSaga () {
   yield all([
-    watchCreatePayment()
+    watchCreatePayment(),
+    watchExchangeRate()
   ])
 }

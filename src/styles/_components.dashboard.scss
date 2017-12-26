@@ -46,3 +46,20 @@
 .c-dashboard--top, .c-dashboard--bottom, .c-dashboard--overlay {
   grid-column: 1 / 2;
 }
+
+.c-dashboard__overview {
+  display: flex;
+  justify-content: space-around;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > span {
+      font-size: 30px;
+      line-height: 36px;
+      font-weight: 200;
+    }
+  }
+}
