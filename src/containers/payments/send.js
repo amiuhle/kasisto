@@ -11,7 +11,8 @@ import {
 } from '../../actions'
 
 import {
-  getPaymentById
+  getPaymentById,
+  getSettings
 } from '../../reducers'
 
 import SendPayment from '../../views/payments/send'
@@ -47,7 +48,8 @@ class Container extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  payment: getPaymentById(state, ownProps.match.params.id)
+  payment: getPaymentById(state, ownProps.match.params.id),
+  settings: getSettings(state)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

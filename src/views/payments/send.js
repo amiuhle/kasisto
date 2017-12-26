@@ -19,6 +19,7 @@ export default class SendPayment extends Component {
     }
     const {
       setTip,
+      settings,
       payment: {
         exchange,
         fiatCurrency,
@@ -89,7 +90,7 @@ export default class SendPayment extends Component {
               }
             </ul>
 
-            <p>To Coffee shop</p>
+            <p>To {settings.name || 'Coffee shop'}</p>
 
             <table className='c-payment-summary u-margin-bottom-large'>
               <tbody>

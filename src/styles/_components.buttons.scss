@@ -2,7 +2,6 @@
   color: $background-color;
   background-color: $brand-primary;
   border: 1px solid $brand-primary;
-  border-radius: 4px;
   display: inline-block;
   font-size: $base-font-size;
   line-height: 27px;
@@ -20,4 +19,8 @@
     background-color: $disabled-color;
     border: 1px solid $disabled-color;
   }
+}
+
+.c-btn--rounded {
+  border-radius: 4px;
 }

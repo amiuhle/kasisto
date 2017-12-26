@@ -6,11 +6,19 @@ import {
   startPayment
 } from '../actions'
 
+import {
+  getSettings
+} from '../reducers'
+
 import Dashboard from '../views/dashboard'
 
 const render = props => {
   return <Dashboard {...props} />
 }
+
+const mapStateToProps = (state, { match }) => ({
+  settings: getSettings(state)
+})
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
   onStartPayment (e) {
@@ -24,4 +32,4 @@ const mapDispatchToProps = (dispatch, { history, match }) => ({
   }
 })
 
-export default connect(null, mapDispatchToProps)(render)
+export default connect(mapStateToProps, mapDispatchToProps)(render)

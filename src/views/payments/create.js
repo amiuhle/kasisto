@@ -24,7 +24,6 @@ class CreatePayment extends Component {
       rate
     } = this.props.payment
     const { requestedAmount } = this.props
-    console.log(requestedAmount)
     return !!(requestedAmount && address && height && paymentId && rate)
   }
 
@@ -46,20 +45,18 @@ class CreatePayment extends Component {
     return (
       <Fragment>
         <div className='o-app__content'>
-          <form onSubmit={handleSubmit}>
+          <form id='request-payment' onSubmit={handleSubmit}>
             <div className='o-content'>
               <h3 className='u-margin-bottom-none'>
                 <label htmlFor='requestedAmount'>Amount due</label>
               </h3>
-
               <DualCurrency rate={rate} fiatCurrency={fiatCurrency} />
               <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
-
             </div>
           </form>
         </div>
         <CancelPayment />
-        <button className='o-app__footer c-btn' disabled={!isReady}>
+        <button form='request-payment' className='o-app__footer c-btn' disabled={!isReady}>
           Request payment
         </button>
       </Fragment>
