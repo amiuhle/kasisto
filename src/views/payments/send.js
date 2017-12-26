@@ -37,8 +37,6 @@ export default class SendPayment extends Component {
       tipIndex
     } = this.state
 
-    console.log(tipIndex)
-
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
         <div className='o-app__content u-align-center'>
@@ -60,7 +58,7 @@ export default class SendPayment extends Component {
             <Link to='/' className='c-btn'>Done</Link>
           </div>
 
-          <ExchangeInfo rate={rate} exchange={exchange} className='u-margin-bottom' />
+          <FiatRate className='u-align-center' rate={rate} exchange={exchange} fiatCurrency={fiatCurrency} />
         </div>
       )
     } else {
@@ -100,11 +98,11 @@ export default class SendPayment extends Component {
                 </tr>
                 <tr>
                   <th scope='row'>Tip</th>
-                  <td>{tip || '0'}&nbsp;{fiatCurrency}</td>
+                  <td>{new Big(tip || '0').times(rate).toFixed(2)}&nbsp;{fiatCurrency}</td>
                 </tr>
                 <tr>
                   <th scope='row'>Total</th>
-                  <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
+                  <td>{new Big(requestedAmount).add(new Big(tip || '0').times(rate)).toFixed(2)}&nbsp;{fiatCurrency}</td>
                 </tr>
               </tbody>
             </table>

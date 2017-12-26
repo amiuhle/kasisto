@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid'
 import {
   all,
   call,
+  fork,
   put,
   select,
   take,
@@ -24,17 +25,31 @@ import * as types from '../actions/constants/payments'
 
 const { fetch } = window
 
+function * waitForPayment (id, paymentRequest) {
+  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
+  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+}
+
+function * listenForTip (id, paymentRequest, name, receipt) {
+  while (true) {
+    const setTip = yield take(types.SET_TIP)
+    const { tip } = setTip.payload
+    const convertedTip = parseInt(new Big(tip).times(1e12).round(), 10)
+    const { uri } = yield call([paymentRequest, 'makeUri'], convertedTip, name, receipt)
+    yield put(updatePayment(id, { tip, uri }))
+  }
+}
+
 export function * processPayment (action) {
   const {
     resolve
   } = action.payload
 
-  const {
-    walletUrl,
-    fiatCurrency
-  } = yield select(getSettings)
+  const settings = yield select(getSettings)
 
-  console.log(walletUrl, fiatCurrency)
+  const walletUrl = settings.walletUrl || 'https://testnet.kasisto.io:28084/json_rpc'
+  const fiatCurrency = settings.fiatCurrency || 'EUR'
+  const merchantName = settings.name || 'Coffee shop'
 
   const id = uuid()
 
@@ -69,18 +84,11 @@ export function * processPayment (action) {
 
   paymentRequest.setAmount(parseInt(convertedAmount, 10))
 
-  const { uri } = yield call([paymentRequest, 'makeUri'], 0, 'Cafe', receipt)
-  console.log(uri)
-
+  const { uri } = yield call([paymentRequest, 'makeUri'], 0, merchantName, receipt)
   yield put(updatePayment(id, { uri }))
 
-  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
-
-  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
-
-  const tip = yield takeEvery(types.SET_TIP)
-
-  yield put(updatePayment(id, { tip }))
+  yield fork(waitForPayment, id, paymentRequest)
+  yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 }
 
 export function * watchCreatePayment () {
