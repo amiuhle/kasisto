@@ -5,11 +5,16 @@ import {
   all,
   call,
   put,
+  select,
   take,
   takeEvery
 } from 'redux-saga/effects'
 
 import { requestPayment } from '../../lib/fetch-monero'
+
+import {
+  getSettings
+} from '../reducers'
 
 import {
   updatePayment
@@ -21,10 +26,15 @@ const { fetch } = window
 
 export function * processPayment (action) {
   const {
-    url,
-    fiatCurrency,
     resolve
   } = action.payload
+
+  const {
+    walletUrl,
+    fiatCurrency
+  } = yield select(getSettings)
+
+  console.log(walletUrl, fiatCurrency)
 
   const id = uuid()
 
@@ -35,7 +45,7 @@ export function * processPayment (action) {
 
   const [rate, paymentRequest] = yield all([
     call(fetchExchangeRate, fiatCurrency),
-    call(requestPayment, url)
+    call(requestPayment, walletUrl)
   ])
 
   const {
@@ -81,8 +91,11 @@ const fetchExchangeRate = (fiatCurrency) => {
   if (fiatCurrency === null) {
     return Promise.resolve(1)
   } else {
-    return fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
+    // return fetch('https://api.kraken.com/0/public/Ticker?pair=xmreur,xmrusd')
+    //   .then(response => response.json())
+    //   .then(json => Number.parseFloat(json.result[`XXMRZ${fiatCurrency}`]['p'][1]))
+    return fetch(`https://api.coinmarketcap.com/v1/ticker/monero/?convert=${fiatCurrency}`)
       .then(response => response.json())
-      .then(json => Number.parseFloat(json.result[`XXMRZ${fiatCurrency}`]['p'][1]))
+      .then(json => Number.parseFloat(json[0][`price_${fiatCurrency.toLowerCase()}`]))
   }
 }

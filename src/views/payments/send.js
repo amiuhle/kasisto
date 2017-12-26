@@ -6,7 +6,7 @@ import { Link, Redirect } from 'react-router-dom'
 import Icon from '../../components/Icon'
 import CancelPayment from '../../components/CancelPayment'
 
-import ExchangeInfo from './exchange-info'
+import FiatRate from '../../components/FiatRate'
 
 export default class SendPayment extends Component {
   state = {
@@ -116,9 +116,7 @@ export default class SendPayment extends Component {
                 }
               </div>
             </div>
-            <small>
-              <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
-            </small>
+            <FiatRate className='u-align-center' rate={rate} exchange={exchange} fiatCurrency={fiatCurrency} />
           </div>
 
           <CancelPayment />

@@ -3,8 +3,6 @@ import * as types from './constants/payments'
 export const startPayment = (fiatCurrency, resolve, reject) => ({
   type: types.REQUEST_PAYMENT,
   payload: {
-    fiatCurrency,
-    url: 'http://localhost:28084/json_rpc',
     resolve,
     reject
   }

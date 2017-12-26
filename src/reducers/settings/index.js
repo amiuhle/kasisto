@@ -5,7 +5,7 @@ import {
 export const getSettings = (state) => Object.assign({}, state)
 
 export const defaultSettings = {
-  currency: 'EUR'
+  fiatCurrency: 'EUR'
 }
 
 const settings = (state = defaultSettings, action) => {

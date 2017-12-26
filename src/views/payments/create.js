@@ -13,7 +13,6 @@ import { amountType } from './utils'
 import CancelPayment from '../../components/CancelPayment'
 
 import DualCurrency from './dual-currency'
-import ExchangeInfo from './exchange-info'
 
 class CreatePayment extends Component {
   isReady = () => {
@@ -51,7 +50,6 @@ class CreatePayment extends Component {
                 <label htmlFor='requestedAmount'>Amount due</label>
               </h3>
               <DualCurrency rate={rate} fiatCurrency={fiatCurrency} />
-              <ExchangeInfo className='u-align-center' rate={rate} exchange={exchange} />
             </div>
           </form>
         </div>

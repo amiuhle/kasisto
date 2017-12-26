@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Field } from 'redux-form'
 import Big from 'big.js'
 
+import FiatRate from '../../components/FiatRate'
+
 const zeros = (times) => new Array(Math.max(0, times)).fill('0').join('')
 const getCurrencyString = fiatCurrency => fiatCurrency || 'XMR'
 const getMaxDecimals = currency => currency === null ? 12 : 2
@@ -105,6 +107,7 @@ const CurrencyDisplay = ({ className, value, currency }) => {
       <span className='c-currency__value'>
         {value}
       </span>
+      &nbsp;
       <span className='c-currency__tail'>
         {tail}
       </span>
@@ -115,7 +118,8 @@ const CurrencyDisplay = ({ className, value, currency }) => {
 
 const DualCurrency = ({id, className, fiatCurrency, input, rate, ...props}) => (
   <div className={`c-dual-currency ${className || ''}`}>
-    <CurrencyInput className='c-currency--primary' id={id} input={input} currency={fiatCurrency} />
+    <CurrencyInput className='c-currency--primary u-margin-bottom-none' id={id} input={input} currency={fiatCurrency} />
+    <FiatRate className='u-margin-bottom' fiatCurrency={fiatCurrency} rate={rate} />
     <CurrencyDisplay className='c-currency--secondary' value={toXmr(input.value, rate)} currency={null} />
   </div>
 )

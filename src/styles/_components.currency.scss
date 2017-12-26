@@ -20,6 +20,7 @@
   display: flex;
 
   &__native_input {
+    line-height: 1;
     color: inherit;
     width: 100%;
     vertical-align: baseline;
@@ -47,6 +48,10 @@
 .c-currency--primary {
   font-size: $huge-font-size;
   color: $brand-primary;
+
+  .c-currency__tail {
+    line-height: 1;
+  }
 
   .c-currency__tail, &.c-currency__currency {
     color: $brand-disabled;

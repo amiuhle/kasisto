@@ -4,6 +4,40 @@ import { reduxForm, Field } from 'redux-form'
 
 import Icon from '../components/Icon'
 
+const CMC_CURRENCIES = [
+  'AUD',
+  'BRL',
+  'CAD',
+  'CHF',
+  'CLP',
+  'CNY',
+  'CZK',
+  'DKK',
+  'EUR',
+  'GBP',
+  'HKD',
+  'HUF',
+  'IDR',
+  'ILS',
+  'INR',
+  'JPY',
+  'KRW',
+  'MXN',
+  'MYR',
+  'NOK',
+  'NZD',
+  'PHP',
+  'PKR',
+  'PLN',
+  'RUB',
+  'SEK',
+  'SGD',
+  'THB',
+  'TRY',
+  'TWD',
+  'ZAR'
+]
+
 const Settings = ({ handleSubmit }) => {
   return (
     <Fragment>
@@ -15,9 +49,9 @@ const Settings = ({ handleSubmit }) => {
           </div>
 
           <div className='form-field'>
-            <label htmlFor='currency'>Currency</label>
-            <Field name='currency' component='select'>
-              <option>EUR</option>
+            <label htmlFor='fiatCurrency'>Currency</label>
+            <Field name='fiatCurrency' component='select'>
+              {CMC_CURRENCIES.map((currency) => <option key={currency}>{currency}</option>)}
             </Field>
           </div>
 
