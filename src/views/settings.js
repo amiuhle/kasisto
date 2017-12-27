@@ -35,6 +35,7 @@ const CMC_CURRENCIES = [
   'THB',
   'TRY',
   'TWD',
+  'USD',
   'ZAR'
 ]
 
