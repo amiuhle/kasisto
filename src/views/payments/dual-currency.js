@@ -81,6 +81,7 @@ class CurrencyInput extends Component {
           placeholder='00'
           type='number'
           step='0.01'
+          min='0'
           autoFocus={autoFocus}
         />
         <span className='c-currency__tail'>
