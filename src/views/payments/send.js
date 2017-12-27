@@ -28,7 +28,6 @@ export default class SendPayment extends Component {
         receivedAmount,
         convertedAmount,
         tip,
-        transactionIds,
         uri,
         rate
       }
@@ -42,27 +41,33 @@ export default class SendPayment extends Component {
 
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
-        <div className='o-app__content u-align-center'>
-          <h2 className='c-success'>
-            <Icon name='check' className='icon--large' />
-            <strong>Payment received</strong>
-          </h2>
+        <Fragment>
+          <div className='o-app__content c-success'>
+            <Icon name='check' className='icon--large icon--white u-margin-bottom' />
+            <h3 className='u-background u-medium'>Payment done</h3>
 
-          <h3 className='u-margin-bottom-none'>
-            <label htmlFor='TODO'>Amount received</label>
-          </h3>
-
-          <p className='u-align-center'>Transaction Ids</p>
-          <ul className='o-list-bare'>
-            { (transactionIds || []).map((txId, key) => <li key={key} style={{wordWrap: 'break-word'}}><small>{txId}</small></li>) }
-          </ul>
-
-          <div className='u-margin-bottom o-flex o-flex--col'>
-            <Link to='/' className='c-btn'>Done</Link>
+            <table className='c-payment-summary u-margin-bottom-large'>
+              <tbody>
+                <tr>
+                  <th scope='row'>Amount</th>
+                  <td>{requestedAmount}&nbsp;{fiatCurrency}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>Tip</th>
+                  <td>{new Big(receivedAmount).times(rate).minus(requestedAmount).toFixed(2)}&nbsp;{fiatCurrency}</td>
+                </tr>
+                <tr>
+                  <th scope='row'>Total</th>
+                  <td>{new Big(receivedAmount).times(rate).toFixed(2)}&nbsp;{fiatCurrency}</td>
+                </tr>
+              </tbody>
+            </table>
+            <small>{new Big(receivedAmount).toFixed(12)} XMR</small>
           </div>
-
-          <FiatRate className='u-align-center' rate={rate} exchange={exchange} fiatCurrency={fiatCurrency} />
-        </div>
+          <div className='o-app__top-left'>
+            <Icon href='/' name='close' className='icon--white' />
+          </div>
+        </Fragment>
       )
     } else {
       return (
@@ -93,7 +98,7 @@ export default class SendPayment extends Component {
 
             <p>To {settings.name || 'Coffee shop'}</p>
 
-            <table className='c-payment-summary u-margin-bottom-large'>
+            <table className='c-payment-summary u-margin-bottom-small'>
               <tbody>
                 <tr>
                   <th scope='row'>Amount</th>
@@ -109,6 +114,7 @@ export default class SendPayment extends Component {
                 </tr>
               </tbody>
             </table>
+            <small className='u-margin-bottom-large'>{new Big(convertedAmount).add(new Big(tip || '0')).toFixed(12)} XMR</small>
 
             <div className='o-flex o-flex--col'>
               <div className='o-flex o-flex--center u-margin-bottom'>

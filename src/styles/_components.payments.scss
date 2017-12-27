@@ -18,7 +18,7 @@
 
   tr:nth-last-child(1) {
     td, th {
-      border-top: 1px solid $text-color;
+      border-top: 1px solid currentColor;
       padding-top: $small-spacing-unit;
     }
   }
