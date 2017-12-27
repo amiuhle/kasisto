@@ -1,3 +1,5 @@
+import Big from 'big.js'
+
 import {
   func,
   number,
@@ -15,15 +17,19 @@ import CancelPayment from '../../components/CancelPayment'
 import DualCurrency from './dual-currency'
 
 class CreatePayment extends Component {
-  isReady = () => {
+  hasConnection = () => {
     const {
       address,
       height,
       paymentId,
       rate
     } = this.props.payment
-    const { requestedAmount } = this.props
-    return !!(requestedAmount && address && height && paymentId && rate)
+    return !!(address && height && paymentId && rate)
+  }
+
+  isReady = () => {
+    const requestedAmount = new Big(this.props.requestedAmount || 0)
+    return requestedAmount.gt(0) && this.hasConnection()
   }
 
   render () {
@@ -57,7 +63,7 @@ class CreatePayment extends Component {
         </div>
         <CancelPayment />
         <button form='request-payment' className='o-app__footer c-btn' disabled={!isReady}>
-          Request payment
+          { this.hasConnection() ? 'Request payment' : 'Waiting for wallet...' }
         </button>
         { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
       </Fragment>
