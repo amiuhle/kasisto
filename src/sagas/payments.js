@@ -25,11 +25,6 @@ import {
 
 import * as types from '../actions/constants/payments'
 
-function * waitForPayment (id, paymentRequest) {
-  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
-  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
-}
-
 function * listenForTip (id, paymentRequest, name, receipt) {
   while (true) {
     const setTip = yield take(types.SET_TIP)
@@ -87,8 +82,12 @@ export function * processPayment (action) {
   const { uri } = yield call([paymentRequest, 'makeUri'], 0, merchantName, receipt)
   yield put(updatePayment(id, { uri }))
 
-  yield fork(waitForPayment, id, paymentRequest)
   yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
+
+  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
+  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+
+  console.log('received payment', onFulfilled)
 }
 
 export function * watchCreatePayment () {
