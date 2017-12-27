@@ -29,7 +29,7 @@ const Dashboard = ({ onStartPayment, settings, lastPayment }) => (
         <div className='u-margin-top-small u-margin-bottom-large c-dashboard__overview'>
           <div>
             <span>{settings.exchangeRate ? new Big(settings.exchangeRate).toFixed(2) : '--'}</span>
-            <small>XMR / {settings.fiatCurrency}</small>
+            <small>XMR / {settings.fiatCurrency || 'EUR'}</small>
           </div>
           <div>
             <span>{lastPayment ? format(lastPayment.createdAt, 'HH:mm') : '--'}</span>
