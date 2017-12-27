@@ -17,7 +17,7 @@ import Dashboard from '../views/dashboard'
 
 class DashboardContainer extends Component {
   componentDidMount () {
-    this.props.fetchExchangeRate(this.props.settings.fiatCurrency)
+    this.props.fetchExchangeRate(this.props.settings.fiatCurrency || 'EUR')
   }
 
   render () {
