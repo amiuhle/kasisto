@@ -3320,387 +3320,6 @@ var _temp2 = function () {
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-exports.__esModule = true;
-var addLeadingSlash = exports.addLeadingSlash = function addLeadingSlash(path) {
-  return path.charAt(0) === '/' ? path : '/' + path;
-};
-
-var stripLeadingSlash = exports.stripLeadingSlash = function stripLeadingSlash(path) {
-  return path.charAt(0) === '/' ? path.substr(1) : path;
-};
-
-var hasBasename = exports.hasBasename = function hasBasename(path, prefix) {
-  return new RegExp('^' + prefix + '(\\/|\\?|#|$)', 'i').test(path);
-};
-
-var stripBasename = exports.stripBasename = function stripBasename(path, prefix) {
-  return hasBasename(path, prefix) ? path.substr(prefix.length) : path;
-};
-
-var stripTrailingSlash = exports.stripTrailingSlash = function stripTrailingSlash(path) {
-  return path.charAt(path.length - 1) === '/' ? path.slice(0, -1) : path;
-};
-
-var parsePath = exports.parsePath = function parsePath(path) {
-  var pathname = path || '/';
-  var search = '';
-  var hash = '';
-
-  var hashIndex = pathname.indexOf('#');
-  if (hashIndex !== -1) {
-    hash = pathname.substr(hashIndex);
-    pathname = pathname.substr(0, hashIndex);
-  }
-
-  var searchIndex = pathname.indexOf('?');
-  if (searchIndex !== -1) {
-    search = pathname.substr(searchIndex);
-    pathname = pathname.substr(0, searchIndex);
-  }
-
-  return {
-    pathname: pathname,
-    search: search === '?' ? '' : search,
-    hash: hash === '#' ? '' : hash
-  };
-};
-
-var createPath = exports.createPath = function createPath(location) {
-  var pathname = location.pathname,
-      search = location.search,
-      hash = location.hash;
-
-
-  var path = pathname || '/';
-
-  if (search && search !== '?') path += search.charAt(0) === '?' ? search : '?' + search;
-
-  if (hash && hash !== '#') path += hash.charAt(0) === '#' ? hash : '#' + hash;
-
-  return path;
-};
-
-/***/ }),
-/* 27 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-
-var formatName = function formatName(_ref, name) {
-  var sectionPrefix = _ref._reduxForm.sectionPrefix;
-  return sectionPrefix ? sectionPrefix + '.' + name : name;
-};
-
-
-/* harmony default export */ __webpack_exports__["a"] = (formatName);
-
-/***/ }),
-/* 28 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/**
- * Performs a
- * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
- * comparison between two values to determine if they are equivalent.
- *
- * @static
- * @memberOf _
- * @since 4.0.0
- * @category Lang
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @example
- *
- * var object = { 'a': 1 };
- * var other = { 'a': 1 };
- *
- * _.eq(object, object);
- * // => true
- *
- * _.eq(object, other);
- * // => false
- *
- * _.eq('a', 'a');
- * // => true
- *
- * _.eq('a', Object('a'));
- * // => false
- *
- * _.eq(NaN, NaN);
- * // => true
- */
-function eq(value, other) {
-  return value === other || (value !== value && other !== other);
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (eq);
-
-
-/***/ }),
-/* 29 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isSymbol_js__ = __webpack_require__(45);
-
-
-/** Used as references for various `Number` constants. */
-var INFINITY = 1 / 0;
-
-/**
- * Converts `value` to a string key if it's not a string or symbol.
- *
- * @private
- * @param {*} value The value to inspect.
- * @returns {string|symbol} Returns the key.
- */
-function toKey(value) {
-  if (typeof value == 'string' || Object(__WEBPACK_IMPORTED_MODULE_0__isSymbol_js__["a" /* default */])(value)) {
-    return value;
-  }
-  var result = (value + '');
-  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (toKey);
-
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var parse = __webpack_require__(0)
-
-/**
- * @category Day Helpers
- * @summary Add the specified number of days to the given date.
- *
- * @description
- * Add the specified number of days to the given date.
- *
- * @param {Date|String|Number} date - the date to be changed
- * @param {Number} amount - the amount of days to be added
- * @returns {Date} the new date with the days added
- *
- * @example
- * // Add 10 days to 1 September 2014:
- * var result = addDays(new Date(2014, 8, 1), 10)
- * //=> Thu Sep 11 2014 00:00:00
- */
-function addDays (dirtyDate, dirtyAmount) {
-  var date = parse(dirtyDate)
-  var amount = Number(dirtyAmount)
-  date.setDate(date.getDate() + amount)
-  return date
-}
-
-module.exports = addDays
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var parse = __webpack_require__(0)
-
-/**
- * @category Millisecond Helpers
- * @summary Add the specified number of milliseconds to the given date.
- *
- * @description
- * Add the specified number of milliseconds to the given date.
- *
- * @param {Date|String|Number} date - the date to be changed
- * @param {Number} amount - the amount of milliseconds to be added
- * @returns {Date} the new date with the milliseconds added
- *
- * @example
- * // Add 750 milliseconds to 10 July 2014 12:45:30.000:
- * var result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
- * //=> Thu Jul 10 2014 12:45:30.750
- */
-function addMilliseconds (dirtyDate, dirtyAmount) {
-  var timestamp = parse(dirtyDate).getTime()
-  var amount = Number(dirtyAmount)
-  return new Date(timestamp + amount)
-}
-
-module.exports = addMilliseconds
-
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var getISOYear = __webpack_require__(16)
-var startOfISOWeek = __webpack_require__(17)
-
-/**
- * @category ISO Week-Numbering Year Helpers
- * @summary Return the start of an ISO week-numbering year for the given date.
- *
- * @description
- * Return the start of an ISO week-numbering year,
- * which always starts 3 days before the year's first Thursday.
- * The result will be in the local timezone.
- *
- * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
- *
- * @param {Date|String|Number} date - the original date
- * @returns {Date} the start of an ISO year
- *
- * @example
- * // The start of an ISO week-numbering year for 2 July 2005:
- * var result = startOfISOYear(new Date(2005, 6, 2))
- * //=> Mon Jan 03 2005 00:00:00
- */
-function startOfISOYear (dirtyDate) {
-  var year = getISOYear(dirtyDate)
-  var fourthOfJanuary = new Date(0)
-  fourthOfJanuary.setFullYear(year, 0, 4)
-  fourthOfJanuary.setHours(0, 0, 0, 0)
-  var date = startOfISOWeek(fourthOfJanuary)
-  return date
-}
-
-module.exports = startOfISOYear
-
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var parse = __webpack_require__(0)
-
-/**
- * @category Common Helpers
- * @summary Compare the two dates and return -1, 0 or 1.
- *
- * @description
- * Compare the two dates and return 1 if the first date is after the second,
- * -1 if the first date is before the second or 0 if dates are equal.
- *
- * @param {Date|String|Number} dateLeft - the first date to compare
- * @param {Date|String|Number} dateRight - the second date to compare
- * @returns {Number} the result of the comparison
- *
- * @example
- * // Compare 11 February 1987 and 10 July 1989:
- * var result = compareAsc(
- *   new Date(1987, 1, 11),
- *   new Date(1989, 6, 10)
- * )
- * //=> -1
- *
- * @example
- * // Sort the array of dates:
- * var result = [
- *   new Date(1995, 6, 2),
- *   new Date(1987, 1, 11),
- *   new Date(1989, 6, 10)
- * ].sort(compareAsc)
- * //=> [
- * //   Wed Feb 11 1987 00:00:00,
- * //   Mon Jul 10 1989 00:00:00,
- * //   Sun Jul 02 1995 00:00:00
- * // ]
- */
-function compareAsc (dirtyDateLeft, dirtyDateRight) {
-  var dateLeft = parse(dirtyDateLeft)
-  var timeLeft = dateLeft.getTime()
-  var dateRight = parse(dirtyDateRight)
-  var timeRight = dateRight.getTime()
-
-  if (timeLeft < timeRight) {
-    return -1
-  } else if (timeLeft > timeRight) {
-    return 1
-  } else {
-    return 0
-  }
-}
-
-module.exports = compareAsc
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-// Setup
-var REQUEST_PAYMENT = exports.REQUEST_PAYMENT = 'REQUEST_PAYMENT';
-
-// Merchant input
-var SET_AMOUNT = exports.SET_AMOUNT = 'SET_AMOUNT';
-var SET_RECEIPT = exports.SET_RECEIPT = 'SET_RECEIPT';
-
-// Customer input
-var SET_TIP = exports.SET_TIP = 'SET_TIP';
-
-// Update the store
-var CREATE_PAYMENT = exports.CREATE_PAYMENT = 'CREATE_PAYMENT';
-var UPDATE_PAYMENT = exports.UPDATE_PAYMENT = 'UPDATE_PAYMENT';
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(REQUEST_PAYMENT, 'REQUEST_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(SET_AMOUNT, 'SET_AMOUNT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(SET_RECEIPT, 'SET_RECEIPT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(SET_TIP, 'SET_TIP', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(CREATE_PAYMENT, 'CREATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(UPDATE_PAYMENT, 'UPDATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-}();
-
-;
-;
-
-var _temp2 = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(REQUEST_PAYMENT, 'REQUEST_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(SET_AMOUNT, 'SET_AMOUNT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(SET_RECEIPT, 'SET_RECEIPT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(SET_TIP, 'SET_TIP', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(CREATE_PAYMENT, 'CREATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(UPDATE_PAYMENT, 'UPDATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-
-  __REACT_HOT_LOADER__.register(_temp, '_temp', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
-}();
-
-;
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var __WEBPACK_AMD_DEFINE_RESULT__;/*
  *  big.js v5.0.3
  *  A small, fast, easy-to-use library for arbitrary-precision decimal arithmetic.
@@ -4644,6 +4263,387 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
 
 
 /***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.__esModule = true;
+var addLeadingSlash = exports.addLeadingSlash = function addLeadingSlash(path) {
+  return path.charAt(0) === '/' ? path : '/' + path;
+};
+
+var stripLeadingSlash = exports.stripLeadingSlash = function stripLeadingSlash(path) {
+  return path.charAt(0) === '/' ? path.substr(1) : path;
+};
+
+var hasBasename = exports.hasBasename = function hasBasename(path, prefix) {
+  return new RegExp('^' + prefix + '(\\/|\\?|#|$)', 'i').test(path);
+};
+
+var stripBasename = exports.stripBasename = function stripBasename(path, prefix) {
+  return hasBasename(path, prefix) ? path.substr(prefix.length) : path;
+};
+
+var stripTrailingSlash = exports.stripTrailingSlash = function stripTrailingSlash(path) {
+  return path.charAt(path.length - 1) === '/' ? path.slice(0, -1) : path;
+};
+
+var parsePath = exports.parsePath = function parsePath(path) {
+  var pathname = path || '/';
+  var search = '';
+  var hash = '';
+
+  var hashIndex = pathname.indexOf('#');
+  if (hashIndex !== -1) {
+    hash = pathname.substr(hashIndex);
+    pathname = pathname.substr(0, hashIndex);
+  }
+
+  var searchIndex = pathname.indexOf('?');
+  if (searchIndex !== -1) {
+    search = pathname.substr(searchIndex);
+    pathname = pathname.substr(0, searchIndex);
+  }
+
+  return {
+    pathname: pathname,
+    search: search === '?' ? '' : search,
+    hash: hash === '#' ? '' : hash
+  };
+};
+
+var createPath = exports.createPath = function createPath(location) {
+  var pathname = location.pathname,
+      search = location.search,
+      hash = location.hash;
+
+
+  var path = pathname || '/';
+
+  if (search && search !== '?') path += search.charAt(0) === '?' ? search : '?' + search;
+
+  if (hash && hash !== '#') path += hash.charAt(0) === '#' ? hash : '#' + hash;
+
+  return path;
+};
+
+/***/ }),
+/* 28 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+
+var formatName = function formatName(_ref, name) {
+  var sectionPrefix = _ref._reduxForm.sectionPrefix;
+  return sectionPrefix ? sectionPrefix + '.' + name : name;
+};
+
+
+/* harmony default export */ __webpack_exports__["a"] = (formatName);
+
+/***/ }),
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/**
+ * Performs a
+ * [`SameValueZero`](http://ecma-international.org/ecma-262/7.0/#sec-samevaluezero)
+ * comparison between two values to determine if they are equivalent.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to compare.
+ * @param {*} other The other value to compare.
+ * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
+ * @example
+ *
+ * var object = { 'a': 1 };
+ * var other = { 'a': 1 };
+ *
+ * _.eq(object, object);
+ * // => true
+ *
+ * _.eq(object, other);
+ * // => false
+ *
+ * _.eq('a', 'a');
+ * // => true
+ *
+ * _.eq('a', Object('a'));
+ * // => false
+ *
+ * _.eq(NaN, NaN);
+ * // => true
+ */
+function eq(value, other) {
+  return value === other || (value !== value && other !== other);
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (eq);
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__isSymbol_js__ = __webpack_require__(45);
+
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/**
+ * Converts `value` to a string key if it's not a string or symbol.
+ *
+ * @private
+ * @param {*} value The value to inspect.
+ * @returns {string|symbol} Returns the key.
+ */
+function toKey(value) {
+  if (typeof value == 'string' || Object(__WEBPACK_IMPORTED_MODULE_0__isSymbol_js__["a" /* default */])(value)) {
+    return value;
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (toKey);
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Add the specified number of days to the given date.
+ *
+ * @description
+ * Add the specified number of days to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be added
+ * @returns {Date} the new date with the days added
+ *
+ * @example
+ * // Add 10 days to 1 September 2014:
+ * var result = addDays(new Date(2014, 8, 1), 10)
+ * //=> Thu Sep 11 2014 00:00:00
+ */
+function addDays (dirtyDate, dirtyAmount) {
+  var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
+  date.setDate(date.getDate() + amount)
+  return date
+}
+
+module.exports = addDays
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Add the specified number of milliseconds to the given date.
+ *
+ * @description
+ * Add the specified number of milliseconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be added
+ * @returns {Date} the new date with the milliseconds added
+ *
+ * @example
+ * // Add 750 milliseconds to 10 July 2014 12:45:30.000:
+ * var result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:30.750
+ */
+function addMilliseconds (dirtyDate, dirtyAmount) {
+  var timestamp = parse(dirtyDate).getTime()
+  var amount = Number(dirtyAmount)
+  return new Date(timestamp + amount)
+}
+
+module.exports = addMilliseconds
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getISOYear = __webpack_require__(16)
+var startOfISOWeek = __webpack_require__(17)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the start of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the start of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an ISO year
+ *
+ * @example
+ * // The start of an ISO week-numbering year for 2 July 2005:
+ * var result = startOfISOYear(new Date(2005, 6, 2))
+ * //=> Mon Jan 03 2005 00:00:00
+ */
+function startOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(year, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuary)
+  return date
+}
+
+module.exports = startOfISOYear
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return 1 if the first date is after the second,
+ * -1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989:
+ * var result = compareAsc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> -1
+ *
+ * @example
+ * // Sort the array of dates:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareAsc)
+ * //=> [
+ * //   Wed Feb 11 1987 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00
+ * // ]
+ */
+function compareAsc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft < timeRight) {
+    return -1
+  } else if (timeLeft > timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareAsc
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+// Setup
+var REQUEST_PAYMENT = exports.REQUEST_PAYMENT = 'REQUEST_PAYMENT';
+
+// Merchant input
+var SET_AMOUNT = exports.SET_AMOUNT = 'SET_AMOUNT';
+var SET_RECEIPT = exports.SET_RECEIPT = 'SET_RECEIPT';
+
+// Customer input
+var SET_TIP = exports.SET_TIP = 'SET_TIP';
+
+// Update the store
+var CREATE_PAYMENT = exports.CREATE_PAYMENT = 'CREATE_PAYMENT';
+var UPDATE_PAYMENT = exports.UPDATE_PAYMENT = 'UPDATE_PAYMENT';
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(REQUEST_PAYMENT, 'REQUEST_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(SET_AMOUNT, 'SET_AMOUNT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(SET_RECEIPT, 'SET_RECEIPT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(SET_TIP, 'SET_TIP', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(CREATE_PAYMENT, 'CREATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(UPDATE_PAYMENT, 'UPDATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+}();
+
+;
+;
+
+var _temp2 = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(REQUEST_PAYMENT, 'REQUEST_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(SET_AMOUNT, 'SET_AMOUNT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(SET_RECEIPT, 'SET_RECEIPT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(SET_TIP, 'SET_TIP', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(CREATE_PAYMENT, 'CREATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(UPDATE_PAYMENT, 'UPDATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(_temp, '_temp', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+}();
+
+;
+
+/***/ }),
 /* 36 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5278,7 +5278,7 @@ var updateSyncWarnings = __WEBPACK_IMPORTED_MODULE_0__actions__["a" /* default *
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isArray_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isSymbol_js__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__stringToPath_js__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toString_js__ = __webpack_require__(133);
 
 
@@ -5416,7 +5416,7 @@ ListCache.prototype.set = __WEBPACK_IMPORTED_MODULE_4__listCacheSet_js__["a" /* 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(29);
 
 
 /**
@@ -5969,7 +5969,7 @@ var _valueEqual = __webpack_require__(113);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
-var _PathUtils = __webpack_require__(26);
+var _PathUtils = __webpack_require__(27);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6912,7 +6912,7 @@ module.exports = getDaysInMonth
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addDays = __webpack_require__(30)
+var addDays = __webpack_require__(31)
 
 /**
  * @category Week Helpers
@@ -7002,7 +7002,7 @@ module.exports = compareDesc
 
 var parse = __webpack_require__(0)
 var differenceInCalendarMonths = __webpack_require__(159)
-var compareAsc = __webpack_require__(33)
+var compareAsc = __webpack_require__(34)
 
 /**
  * @category Month Helpers
@@ -7128,7 +7128,7 @@ module.exports = endOfDay
 
 var parse = __webpack_require__(0)
 var startOfISOWeek = __webpack_require__(17)
-var startOfISOYear = __webpack_require__(32)
+var startOfISOYear = __webpack_require__(33)
 
 var MILLISECONDS_IN_WEEK = 604800000
 
@@ -8642,7 +8642,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(61);
 
-var _PathUtils = __webpack_require__(26);
+var _PathUtils = __webpack_require__(27);
 
 var _createTransitionManager = __webpack_require__(62);
 
@@ -11268,7 +11268,7 @@ function matchesStrictComparable(key, srcValue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__castPath_js__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toKey_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toKey_js__ = __webpack_require__(30);
 
 
 
@@ -11357,7 +11357,7 @@ var createIsPristine = function createIsPristine(_ref) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseAssignValue_js__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(29);
 
 
 
@@ -11445,10 +11445,10 @@ var silenceEvent = function silenceEvent(event) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  addDays: __webpack_require__(30),
+  addDays: __webpack_require__(31),
   addHours: __webpack_require__(151),
   addISOYears: __webpack_require__(152),
-  addMilliseconds: __webpack_require__(31),
+  addMilliseconds: __webpack_require__(32),
   addMinutes: __webpack_require__(154),
   addMonths: __webpack_require__(55),
   addQuarters: __webpack_require__(155),
@@ -11458,7 +11458,7 @@ module.exports = {
   areRangesOverlapping: __webpack_require__(423),
   closestIndexTo: __webpack_require__(424),
   closestTo: __webpack_require__(425),
-  compareAsc: __webpack_require__(33),
+  compareAsc: __webpack_require__(34),
   compareDesc: __webpack_require__(84),
   differenceInCalendarDays: __webpack_require__(54),
   differenceInCalendarISOWeeks: __webpack_require__(426),
@@ -11579,7 +11579,7 @@ module.exports = {
   startOfDay: __webpack_require__(18),
   startOfHour: __webpack_require__(173),
   startOfISOWeek: __webpack_require__(17),
-  startOfISOYear: __webpack_require__(32),
+  startOfISOYear: __webpack_require__(33),
   startOfMinute: __webpack_require__(177),
   startOfMonth: __webpack_require__(511),
   startOfQuarter: __webpack_require__(180),
@@ -11606,7 +11606,7 @@ module.exports = {
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(31)
+var addMilliseconds = __webpack_require__(32)
 
 var MILLISECONDS_IN_HOUR = 3600000
 
@@ -11672,7 +11672,7 @@ module.exports = addISOYears
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var startOfISOYear = __webpack_require__(32)
+var startOfISOYear = __webpack_require__(33)
 var differenceInCalendarDays = __webpack_require__(54)
 
 /**
@@ -11713,7 +11713,7 @@ module.exports = setISOYear
 /* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(31)
+var addMilliseconds = __webpack_require__(32)
 
 var MILLISECONDS_IN_MINUTE = 60000
 
@@ -11776,7 +11776,7 @@ module.exports = addQuarters
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(31)
+var addMilliseconds = __webpack_require__(32)
 
 /**
  * @category Second Helpers
@@ -11975,7 +11975,7 @@ module.exports = differenceInCalendarYears
 
 var parse = __webpack_require__(0)
 var differenceInCalendarDays = __webpack_require__(54)
-var compareAsc = __webpack_require__(33)
+var compareAsc = __webpack_require__(34)
 
 /**
  * @category Day Helpers
@@ -12611,7 +12611,7 @@ module.exports = isSameISOWeek
 /* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfISOYear = __webpack_require__(32)
+var startOfISOYear = __webpack_require__(33)
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -13107,7 +13107,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.updatePayment = exports.createPayment = exports.setTip = exports.setAmount = exports.startPayment = undefined;
 
-var _payments = __webpack_require__(34);
+var _payments = __webpack_require__(35);
 
 var types = _interopRequireWildcard(_payments);
 
@@ -13637,7 +13637,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _big = __webpack_require__(35);
+var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
@@ -17206,7 +17206,7 @@ module.exports = ReactPropTypesSecret;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_prefixName__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_prefixName__ = __webpack_require__(28);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -17548,7 +17548,7 @@ var fieldArrayPropTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectedField__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_shallowCompare__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_prefixName__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_prefixName__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__structure_plain__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -19422,7 +19422,7 @@ function cacheHas(cache, key) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Uint8Array_js__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__eq_js__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__eq_js__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__equalArrays_js__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapToArray_js__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setToArray_js__ = __webpack_require__(307);
@@ -20381,7 +20381,7 @@ function keys(value) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectedFields__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_shallowCompare__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__structure_plain__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_prefixName__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_prefixName__ = __webpack_require__(28);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20831,7 +20831,7 @@ var createConnectedFields = function createConnectedFields(structure) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectedFieldArray__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_prefixName__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_prefixName__ = __webpack_require__(28);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21451,7 +21451,7 @@ function getMatchData(object) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isKey_js__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__isStrictComparable_js__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__matchesStrictComparable_js__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toKey_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toKey_js__ = __webpack_require__(30);
 
 
 
@@ -21601,7 +21601,7 @@ function baseHasIn(object, key) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isArray_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isIndex_js__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__isLength_js__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(30);
 
 
 
@@ -21651,7 +21651,7 @@ function hasPath(object, path, hasFunc) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseProperty_js__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basePropertyDeep_js__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isKey_js__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toKey_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toKey_js__ = __webpack_require__(30);
 
 
 
@@ -21899,7 +21899,7 @@ var createFormValueSelector = function createFormValueSelector(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_prefixName__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_prefixName__ = __webpack_require__(28);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -23921,7 +23921,7 @@ function copyObject(source, props, object, customizer) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseAssignValue_js__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(29);
 
 
 
@@ -24304,7 +24304,7 @@ function shortOut(func) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__isArrayLike_js__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isIndex_js__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isObject_js__ = __webpack_require__(11);
@@ -25738,7 +25738,7 @@ module.exports = differenceInHours
 
 var parse = __webpack_require__(0)
 var differenceInCalendarISOYears = __webpack_require__(158)
-var compareAsc = __webpack_require__(33)
+var compareAsc = __webpack_require__(34)
 var subISOYears = __webpack_require__(163)
 
 /**
@@ -25887,7 +25887,7 @@ module.exports = differenceInWeeks
 
 var parse = __webpack_require__(0)
 var differenceInCalendarYears = __webpack_require__(161)
-var compareAsc = __webpack_require__(33)
+var compareAsc = __webpack_require__(34)
 
 /**
  * @category Year Helpers
@@ -27270,7 +27270,7 @@ module.exports = getHours
 /* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfISOYear = __webpack_require__(32)
+var startOfISOYear = __webpack_require__(33)
 var addWeeks = __webpack_require__(83)
 
 var MILLISECONDS_IN_WEEK = 604800000
@@ -28712,7 +28712,7 @@ module.exports = setDate
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var addDays = __webpack_require__(30)
+var addDays = __webpack_require__(31)
 
 /**
  * @category Weekday Helpers
@@ -28823,7 +28823,7 @@ module.exports = setHours
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var addDays = __webpack_require__(30)
+var addDays = __webpack_require__(31)
 var getISODay = __webpack_require__(171)
 
 /**
@@ -29182,7 +29182,7 @@ module.exports = startOfYesterday
 /* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addDays = __webpack_require__(30)
+var addDays = __webpack_require__(31)
 
 /**
  * @category Day Helpers
@@ -29242,7 +29242,7 @@ module.exports = subHours
 /* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(31)
+var addMilliseconds = __webpack_require__(32)
 
 /**
  * @category Millisecond Helpers
@@ -29470,7 +29470,7 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
-var _payments = __webpack_require__(34);
+var _payments = __webpack_require__(35);
 
 var _payment = __webpack_require__(525);
 
@@ -29552,7 +29552,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _payments = __webpack_require__(34);
+var _payments = __webpack_require__(35);
 
 var PAYMENT_KEYS = ['id', 'createdAt', 'fiatCurrency', 'exchange', 'address', 'height', 'paymentId', 'rate', 'receipt', 'requestedAmount', 'convertedAmount', 'tip', 'uri', 'receivedAmount', 'transactionIds', 'updatedAt'];
 
@@ -29643,7 +29643,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getIds = undefined;
 
-var _payments = __webpack_require__(34);
+var _payments = __webpack_require__(35);
 
 var allIds = function allIds() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -29858,7 +29858,7 @@ var _slicedToArray = function () {
 exports.processPayment = processPayment;
 exports.watchCreatePayment = watchCreatePayment;
 
-var _big = __webpack_require__(35);
+var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
@@ -29874,7 +29874,7 @@ var _reducers = __webpack_require__(25);
 
 var _payments = __webpack_require__(189);
 
-var _payments2 = __webpack_require__(34);
+var _payments2 = __webpack_require__(35);
 
 var types = _interopRequireWildcard(_payments2);
 
@@ -31536,7 +31536,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(61);
 
-var _PathUtils = __webpack_require__(26);
+var _PathUtils = __webpack_require__(27);
 
 var _createTransitionManager = __webpack_require__(62);
 
@@ -31940,7 +31940,7 @@ var _warning = __webpack_require__(4);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _PathUtils = __webpack_require__(26);
+var _PathUtils = __webpack_require__(27);
 
 var _LocationUtils = __webpack_require__(61);
 
@@ -33686,7 +33686,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(94);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -34218,7 +34218,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _big = __webpack_require__(35);
+var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
@@ -34247,7 +34247,7 @@ var Dashboard = _ref => {
   return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('div', { className: 'o-app__content c-dashboard' }, _react2.default.createElement('div', { className: 'c-dashboard--top' }, _react2.default.createElement('img', {
     style: { width: '60px', height: '60px', borderRadius: '50%', marginBottom: '10px' },
     src: 'https://s3-alpha.figma.com/img/b1e6/db2f/ca3b257e50393b55874c13d33f4daf70?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJK6APQGEHTP6I3PA%2F20171222%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20171222T194139Z&X-Amz-Expires=60&X-Amz-SignedHeaders=host&X-Amz-Signature=c7246ecb112f28d1874366ddb5c7eccb62b140f7f2bb7b25649b6c1df5a54362'
-  }), _react2.default.createElement('h1', { className: 'u-margin-none' }, settings.name || 'Coffee shop'), _react2.default.createElement('small', null, (0, _dateFns.format)(new Date(), 'DD MMMM YYYY'))), _react2.default.createElement('div', { className: 'c-dashboard--bottom' }, _react2.default.createElement('button', { className: 'c-btn c-btn--rounded', onClick: onStartPayment }, 'Request New Payment')), _react2.default.createElement('div', { className: 'c-dashboard--overlay' }, _react2.default.createElement('small', { className: 'c-badge' }, 'Today'), _react2.default.createElement('div', { className: 'u-margin-top-small u-margin-bottom-large c-dashboard__overview' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, settings.exchangeRate ? new _big2.default(settings.exchangeRate).toFixed(2) : '--'), _react2.default.createElement('small', null, 'XMR / ', settings.fiatCurrency || 'EUR')), _react2.default.createElement('div', null, _react2.default.createElement('span', null, lastPayment ? (0, _dateFns.format)(lastPayment.createdAt, 'HH:mm') : '--'), _react2.default.createElement('small', null, 'Last payment'))), _react2.default.createElement(_reactRouterDom.Link, { to: '/payments', className: 'o-flex o-flex--center u-brand-primary u-medium u-margin-bottom' }, _react2.default.createElement(_Icon2.default, { name: 'history', className: 'icon--brand' }), _react2.default.createElement('span', { className: 'u-margin-left-tiny' }, 'See history')))), _react2.default.createElement('div', { className: 'o-app__top-right' }, _react2.default.createElement(_Icon2.default, { href: '/settings', name: 'settings', className: 'icon--white' })));
+  }), _react2.default.createElement('h1', { className: 'u-margin-none' }, settings.name || 'Coffee shop'), _react2.default.createElement('small', null, (0, _dateFns.format)(new Date(), 'DD MMMM YYYY'))), _react2.default.createElement('div', { className: 'c-dashboard--bottom' }, _react2.default.createElement('button', { className: 'c-btn c-btn--rounded', onClick: onStartPayment }, 'Request New Payment')), _react2.default.createElement('div', { className: 'c-dashboard--overlay' }, _react2.default.createElement('small', { className: 'c-badge' }, 'Today'), _react2.default.createElement('div', { className: 'u-margin-top-small u-margin-bottom-large c-dashboard__overview' }, _react2.default.createElement('div', null, _react2.default.createElement('span', null, settings.exchangeRate ? new _big2.default(settings.exchangeRate).toFixed(2) : '--'), _react2.default.createElement('small', null, settings.fiatCurrency || 'EUR', ' / XMR')), _react2.default.createElement('div', null, _react2.default.createElement('span', null, lastPayment ? (0, _dateFns.format)(lastPayment.createdAt, 'HH:mm') : '--'), _react2.default.createElement('small', null, 'Last payment'))), _react2.default.createElement(_reactRouterDom.Link, { to: '/payments', className: 'o-flex o-flex--center u-brand-primary u-medium u-margin-bottom' }, _react2.default.createElement(_Icon2.default, { name: 'history', className: 'icon--brand' }), _react2.default.createElement('span', { className: 'u-margin-left-tiny' }, 'See history')))), _react2.default.createElement('div', { className: 'o-app__top-right' }, _react2.default.createElement(_Icon2.default, { href: '/settings', name: 'settings', className: 'icon--white' })));
 };
 
 Dashboard.propTypes = {
@@ -34707,6 +34707,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _big = __webpack_require__(26);
+
+var _big2 = _interopRequireDefault(_big);
+
 var _propTypes = __webpack_require__(5);
 
 var _react = __webpack_require__(1);
@@ -34735,20 +34739,26 @@ var CreatePayment = class CreatePayment extends _react.Component {
   constructor() {
     var _temp, _this;
 
-    return _temp = _this = super(...arguments), this.isReady = function () {
+    return _temp = _this = super(...arguments), this.hasConnection = function () {
+      return _this.__hasConnection__REACT_HOT_LOADER__(...arguments);
+    }, this.isReady = function () {
       return _this.__isReady__REACT_HOT_LOADER__(...arguments);
     }, _temp;
   }
 
   __isReady__REACT_HOT_LOADER__() {
+    var requestedAmount = new _big2.default(this.props.requestedAmount || 0);
+    return requestedAmount.gt(0) && this.hasConnection();
+  }
+
+  __hasConnection__REACT_HOT_LOADER__() {
     var _props$payment = this.props.payment,
         address = _props$payment.address,
         height = _props$payment.height,
         paymentId = _props$payment.paymentId,
         rate = _props$payment.rate;
-    var requestedAmount = this.props.requestedAmount;
 
-    return !!(requestedAmount && address && height && paymentId && rate);
+    return !!(address && height && paymentId && rate);
   }
 
   render() {
@@ -34766,7 +34776,7 @@ var CreatePayment = class CreatePayment extends _react.Component {
 
     var isReady = this.isReady();
 
-    return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('div', { className: 'o-app__content' }, _react2.default.createElement('form', { id: 'request-payment', onSubmit: handleSubmit }, _react2.default.createElement('div', { className: 'o-content' }, _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'requestedAmount' }, 'Amount due')), _react2.default.createElement(_dualCurrency2.default, { rate: rate, fiatCurrency: fiatCurrency })))), _react2.default.createElement(_CancelPayment2.default, null), _react2.default.createElement('button', { form: 'request-payment', className: 'o-app__footer c-btn', disabled: !isReady }, 'Request payment'), isTestnet ? _react2.default.createElement('small', { className: 'o-app__header u-brand-primary' }, 'Testnet') : null);
+    return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('div', { className: 'o-app__content' }, _react2.default.createElement('form', { id: 'request-payment', onSubmit: handleSubmit }, _react2.default.createElement('div', { className: 'o-content' }, _react2.default.createElement('h3', { className: 'u-margin-bottom-none' }, _react2.default.createElement('label', { htmlFor: 'requestedAmount' }, 'Amount due')), _react2.default.createElement(_dualCurrency2.default, { rate: rate, fiatCurrency: fiatCurrency, autoFocus: true })))), _react2.default.createElement(_CancelPayment2.default, null), _react2.default.createElement('button', { form: 'request-payment', className: 'o-app__footer c-btn', disabled: !isReady }, this.hasConnection() ? 'Request payment' : 'Waiting for wallet...'), isTestnet ? _react2.default.createElement('small', { className: 'o-app__header u-brand-primary' }, 'Testnet') : null);
   }
 
 };
@@ -34809,6 +34819,8 @@ var _temp3 = function () {
   if (typeof __REACT_HOT_LOADER__ === 'undefined') {
     return;
   }
+
+  __REACT_HOT_LOADER__.register(_big2, '_big2', '/home/timo/Code/github/kasisto/src/views/payments/create.js');
 
   __REACT_HOT_LOADER__.register(_react2, '_react2', '/home/timo/Code/github/kasisto/src/views/payments/create.js');
 
@@ -34943,7 +34955,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reduxForm = __webpack_require__(43);
 
-var _big = __webpack_require__(35);
+var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
@@ -34953,12 +34965,6 @@ var _FiatRate2 = _interopRequireDefault(_FiatRate);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _objectWithoutProperties(obj, keys) {
-  var target = {};for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
-  }return target;
 }
 
 var zeros = times => new Array(Math.max(0, times)).fill('0').join('');
@@ -35010,7 +35016,8 @@ var CurrencyInput = class CurrencyInput extends _react.Component {
         id = _props.id,
         className = _props.className,
         currency = _props.currency,
-        input = _props.input;
+        input = _props.input,
+        autoFocus = _props.autoFocus;
     var onChange = input.onChange,
         value = input.value;
     var hasPendingDecimal = this.state.hasPendingDecimal;
@@ -35042,7 +35049,9 @@ var CurrencyInput = class CurrencyInput extends _react.Component {
       className: 'c-currency--input__native_input',
       placeholder: '00',
       type: 'number',
-      step: '0.01'
+      step: '0.01',
+      min: '0',
+      autoFocus: autoFocus
     }), _react2.default.createElement('span', { className: 'c-currency__tail' }, tail), _react2.default.createElement('small', { className: 'c-currency__currency' }, currency));
   }
 };
@@ -35076,18 +35085,25 @@ var DualCurrency = _ref2 => {
       fiatCurrency = _ref2.fiatCurrency,
       input = _ref2.input,
       rate = _ref2.rate,
-      props = _objectWithoutProperties(_ref2, ['id', 'className', 'fiatCurrency', 'input', 'rate']);
-
-  return _react2.default.createElement('div', { className: `c-dual-currency ${className || ''}` }, _react2.default.createElement(CurrencyInput, { className: 'c-currency--primary u-margin-bottom-none', id: id, input: input, currency: fiatCurrency }), _react2.default.createElement(_FiatRate2.default, { className: 'u-margin-bottom', fiatCurrency: fiatCurrency, rate: rate }), _react2.default.createElement(CurrencyDisplay, { className: 'c-currency--secondary', value: toXmr(input.value, rate), currency: null }));
+      autoFocus = _ref2.autoFocus;
+  return _react2.default.createElement('div', { className: `c-dual-currency ${className || ''}` }, _react2.default.createElement(CurrencyInput, {
+    id: id,
+    className: 'c-currency--primary u-margin-bottom-none',
+    input: input,
+    currency: fiatCurrency,
+    autoFocus: autoFocus
+  }), _react2.default.createElement(_FiatRate2.default, { className: 'u-margin-bottom', fiatCurrency: fiatCurrency, rate: rate }), _react2.default.createElement(CurrencyDisplay, { className: 'c-currency--secondary', value: toXmr(input.value, rate), currency: null }));
 };
 
 var _default = _ref3 => {
   var rate = _ref3.rate,
-      fiatCurrency = _ref3.fiatCurrency;
+      fiatCurrency = _ref3.fiatCurrency,
+      autoFocus = _ref3.autoFocus;
   return _react2.default.createElement(_reduxForm.Field, {
     id: 'requestedAmount',
     name: 'requestedAmount',
     component: DualCurrency,
+    autoFocus: autoFocus,
     rate: rate,
     fiatCurrency: fiatCurrency,
     format: value => sanitizeValue(value, getDivisor(fiatCurrency))
@@ -35140,8 +35156,6 @@ var _temp3 = function () {
   __REACT_HOT_LOADER__.register(_FiatRate2, "_FiatRate2", "/home/timo/Code/github/kasisto/src/views/payments/dual-currency.js");
 
   __REACT_HOT_LOADER__.register(_interopRequireDefault, "_interopRequireDefault", "/home/timo/Code/github/kasisto/src/views/payments/dual-currency.js");
-
-  __REACT_HOT_LOADER__.register(_objectWithoutProperties, "_objectWithoutProperties", "/home/timo/Code/github/kasisto/src/views/payments/dual-currency.js");
 
   __REACT_HOT_LOADER__.register(zeros, "zeros", "/home/timo/Code/github/kasisto/src/views/payments/dual-currency.js");
 
@@ -35309,7 +35323,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = undefined;
 
-var _big = __webpack_require__(35);
+var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
