@@ -5,3 +5,13 @@ html, body, main {
 body {
   font-family: $font-family;
 }
+
+main {
+  @media screen and (min-width: 426px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #EFEFEF;
+  }
+}

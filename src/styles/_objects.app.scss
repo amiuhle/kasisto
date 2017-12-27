@@ -5,6 +5,7 @@
 
 .o-app {
   height: 100%;
+
   display: grid;
   grid-template-rows: 54px 1fr 54px;
   grid-template-columns: 100px 1fr 100px;
@@ -12,6 +13,19 @@
     'icon-left header icon-right'
     'content content content'
     'footer footer footer';
+
+  background-color: $background-color;
+
+  max-width: 425px;
+  max-height: 667px;
+
+  @media screen and (min-width: 426px) {
+    align-self: center;
+    width: 375px;
+    height: 667px;
+
+    flex: 0 0 375px;
+  }
 }
 
 .o-app__header {
