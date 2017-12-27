@@ -34125,7 +34125,7 @@ function _interopRequireDefault(obj) {
 
 var DashboardContainer = class DashboardContainer extends _react.Component {
   componentDidMount() {
-    this.props.fetchExchangeRate(this.props.settings.fiatCurrency);
+    this.props.fetchExchangeRate(this.props.settings.fiatCurrency || 'EUR');
   }
 
   render() {
