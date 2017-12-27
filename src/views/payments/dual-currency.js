@@ -43,7 +43,8 @@ class CurrencyInput extends Component {
       id,
       className,
       currency,
-      input
+      input,
+      autoFocus
     } = this.props
 
     const {
@@ -80,6 +81,7 @@ class CurrencyInput extends Component {
           placeholder='00'
           type='number'
           step='0.01'
+          autoFocus={autoFocus}
         />
         <span className='c-currency__tail'>
           {tail}
@@ -116,19 +118,26 @@ const CurrencyDisplay = ({ className, value, currency }) => {
   )
 }
 
-const DualCurrency = ({id, className, fiatCurrency, input, rate, ...props}) => (
+const DualCurrency = ({id, className, fiatCurrency, input, rate, autoFocus}) => (
   <div className={`c-dual-currency ${className || ''}`}>
-    <CurrencyInput className='c-currency--primary u-margin-bottom-none' id={id} input={input} currency={fiatCurrency} />
+    <CurrencyInput
+      id={id}
+      className='c-currency--primary u-margin-bottom-none'
+      input={input}
+      currency={fiatCurrency}
+      autoFocus={autoFocus}
+    />
     <FiatRate className='u-margin-bottom' fiatCurrency={fiatCurrency} rate={rate} />
     <CurrencyDisplay className='c-currency--secondary' value={toXmr(input.value, rate)} currency={null} />
   </div>
 )
 
-export default ({ rate, fiatCurrency }) =>
+export default ({ rate, fiatCurrency, autoFocus }) =>
   <Field
     id='requestedAmount'
     name='requestedAmount'
     component={DualCurrency}
+    autoFocus={autoFocus}
     rate={rate}
     fiatCurrency={fiatCurrency}
     format={(value) => sanitizeValue(value, getDivisor(fiatCurrency))}

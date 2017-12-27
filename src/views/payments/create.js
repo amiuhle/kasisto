@@ -51,7 +51,7 @@ class CreatePayment extends Component {
               <h3 className='u-margin-bottom-none'>
                 <label htmlFor='requestedAmount'>Amount due</label>
               </h3>
-              <DualCurrency rate={rate} fiatCurrency={fiatCurrency} />
+              <DualCurrency rate={rate} fiatCurrency={fiatCurrency} autoFocus />
             </div>
           </form>
         </div>
