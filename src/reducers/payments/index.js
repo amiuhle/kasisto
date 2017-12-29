@@ -17,7 +17,6 @@ export const getAllPayments = (state) =>
 export const getTodaysLastPayment = (state) => {
   const id = fromAllIds.getIds(state.allIds).slice(0, 10).find((id, index) => {
     const payment = getPaymentById(state, id)
-    console.log(index, payment.createdAt)
     return isToday(payment.createdAt)
   })
   return getPaymentById(state, id)

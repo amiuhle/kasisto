@@ -41,6 +41,7 @@
     "css-loader": "^0.28.4",
     "file-loader": "^1.1.6",
     "gh-pages": "^1.1.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.0.4",
     "nock": "^9.1.5",
     "node-fetch": "^1.7.1",
@@ -91,7 +92,10 @@
     ],
     "testMatch": [
       "**/__tests__/**/*.js?(x)"
-    ]
+    ],
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$": "identity-obj-proxy"
+    }
   },
   "standard": {
     "parser": "babel-eslint"
