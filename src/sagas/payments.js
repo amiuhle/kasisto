@@ -51,6 +51,7 @@ export function * processPayment (action) {
   // create the initial payment in the store
   yield put(createPayment(id, { fiatCurrency }))
 
+  // let the view know the payment was created
   yield call(resolve, id)
 
   const [rate, paymentRequest] = yield all([
@@ -82,12 +83,12 @@ export function * processPayment (action) {
   const { uri } = yield call([paymentRequest, 'makeUri'], 0, merchantName, receipt)
   yield put(updatePayment(id, { uri }))
 
-  yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
+  const tipSaga = yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 
   const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
   yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
 
-  console.log('received payment', onFulfilled)
+  tipSaga.cancel()
 }
 
 export function * watchCreatePayment () {
