@@ -1,46 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DualCurrency renders fiat and money 1`] = `
-<div
-  className="c-dual-currency "
+<form
+  onSubmit={[Function]}
 >
-  <span
-    className="c-currency c-currency--primary"
+  <div
+    className="c-dual-currency "
   >
-    <span
-      className="c-currency__value"
+    <label
+      className="c-currency c-currency--input c-currency--primary u-margin-bottom-none"
     >
-      0
-    </span>
-    <span
-      className="c-currency__tail"
+      <input
+        autoFocus={undefined}
+        className="c-currency--input__native_input"
+        id="requestedAmount"
+        min="0"
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        placeholder="00"
+        step="0.01"
+        type="number"
+        value="NaN"
+      />
+      <span
+        className="c-currency__tail"
+      >
+        .00
+      </span>
+      <small
+        className="c-currency__currency"
+      />
+    </label>
+    <small
+      className="u-margin-bottom"
     >
-      .00
-    </span>
+      <span
+        className="icon icon--loading"
+        onClick={undefined}
+        to={undefined}
+      >
+        <svg>
+          <use
+            xlinkHref="#loading"
+          />
+        </svg>
+      </span>
+       
+       / XMR 
+      <br />
+      <a
+        href={undefined}
+        target="_blank"
+      />
+    </small>
     <span
-      className="c-currency__currency"
+      className="c-currency c-currency--secondary"
     >
-      XMR
+      <span
+        className="c-currency__value"
+      >
+        0.000000000000
+      </span>
+       
+      <span
+        className="c-currency__tail"
+      >
+        
+      </span>
+      <span
+        className="c-currency__currency"
+      >
+        XMR
+      </span>
     </span>
-  </span>
-  <span
-    className="c-currency c-currency--secondary"
-  >
-    <span
-      className="c-currency__value"
-    >
-      0
-    </span>
-    <span
-      className="c-currency__tail"
-    >
-      .00
-    </span>
-    <span
-      className="c-currency__currency"
-    >
-      XMR
-    </span>
-  </span>
-</div>
+  </div>
+</form>
 `;
