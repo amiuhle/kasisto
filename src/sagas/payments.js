@@ -37,7 +37,8 @@ function * listenForTip (id, paymentRequest, name, receipt) {
 
 export function * processPayment (action) {
   const {
-    resolve
+    resolve,
+    pollingInterval
   } = action.payload
 
   const settings = yield select(getSettings)
@@ -85,7 +86,7 @@ export function * processPayment (action) {
 
   const tipSaga = yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 
-  const onFulfilled = yield call([paymentRequest, 'onFulfilled'])
+  const onFulfilled = yield call([paymentRequest, 'onFulfilled'], pollingInterval)
   yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
 
   tipSaga.cancel()

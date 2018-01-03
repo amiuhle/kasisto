@@ -1,10 +1,11 @@
 import * as types from './constants/payments'
 
-export const startPayment = (fiatCurrency, resolve, reject) => ({
+export const startPayment = (fiatCurrency, resolve, reject, pollingInterval = 2000) => ({
   type: types.REQUEST_PAYMENT,
   payload: {
     resolve,
-    reject
+    reject,
+    pollingInterval
   }
 })
 

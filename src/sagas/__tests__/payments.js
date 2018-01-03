@@ -154,7 +154,7 @@ describe('processPayment', () => {
     it('creates a payment', () => {
       return at(creationTime, () => {
         const resolve = jest.fn()
-        return expectSaga(processPayment, startPayment(null, resolve))
+        return expectSaga(processPayment, startPayment(null, resolve, undefined, 200))
           .withState({
             settings: {
               walletUrl: URL,
