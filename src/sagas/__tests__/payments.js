@@ -10,7 +10,7 @@ import {
 } from '../payments'
 
 import {
-  startPayment,
+  requestPayment,
   setAmount,
   setTip
 } from '../../actions/payments'
@@ -154,7 +154,7 @@ describe('processPayment', () => {
     it('creates a payment', () => {
       return at(creationTime, () => {
         const resolve = jest.fn()
-        return expectSaga(processPayment, startPayment(null, resolve, undefined, 200))
+        return expectSaga(processPayment, requestPayment(resolve, undefined, 200))
           .withState({
             settings: {
               walletUrl: URL,

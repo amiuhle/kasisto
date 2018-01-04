@@ -1,6 +1,6 @@
 import * as types from './constants/payments'
 
-export const startPayment = (fiatCurrency, resolve, reject, pollingInterval = 2000) => ({
+export const requestPayment = (resolve, reject, pollingInterval = 2000) => ({
   type: types.REQUEST_PAYMENT,
   payload: {
     resolve,
@@ -9,7 +9,7 @@ export const startPayment = (fiatCurrency, resolve, reject, pollingInterval = 20
   }
 })
 
-export const setAmount = (requestedAmount, receipt) => ({
+export const setAmount = (requestedAmount, receipt = null) => ({
   type: types.SET_AMOUNT,
   payload: {
     requestedAmount,
