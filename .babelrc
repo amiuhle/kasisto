@@ -1,21 +1,22 @@
 {
   "presets": [
-    "react",
-    "es2015",
-    "stage-0"
+    ["env", {
+      "targets": {
+        "chrome": "60",
+        "firefox": "58",
+        "safari": "10",
+        "ios": "10",
+        "edge": "13",
+        "node": "current"
+      },
+      "debug": false
+    }],
+    "react"
   ],
   "plugins": [
+    "transform-class-properties",
     "transform-decorators-legacy",
     "transform-object-rest-spread",
     "react-hot-loader/babel"
-  ],
-  "env": {
-    "test": {
-      "plugins": [
-        "transform-decorators-legacy",
-        "transform-object-rest-spread",
-        "istanbul"
-      ]
-    }
-  }
+  ]
 }

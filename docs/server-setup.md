@@ -12,11 +12,11 @@ sudo mkdir /media/data
 
 # Download, verify and extract Monero to /usr/local/bin
 curl -L https://downloads.getmonero.org/cli/linux64 > /tmp/monero.tar.bz2
-echo "fa7742c822f3c966aa842bf20a9920803d690d9db02033d9b397cefc7cc07ff4 /tmp/monero.tar.bz2" | sha256sum -c
-tar -xf /tmp/monero.tar.bz2 -C /tmp && sudo mv /tmp/monero-v0.11.0.0/* /usr/local/bin/
+echo "6581506f8a030d8d50b38744ba7144f2765c9028d18d990beb316e13655ab248 /tmp/monero.tar.bz2" | sha256sum -c
+tar -xf /tmp/monero.tar.bz2 -C /tmp && sudo mv /tmp/monero-v0.11.1.0/* /usr/local/bin/
 
 monerod --version
-# => Monero 'Helium Hydra' (v0.11.0.0-release)
+# => Monero 'Helium Hydra' (v0.11.1.0-release)
 
 # run daemon
 monerod --detach

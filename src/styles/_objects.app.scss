@@ -4,21 +4,52 @@
  */
 
 .o-app {
-  height: 100vh;
+  height: 100%;
+
   display: grid;
-  grid-gap: $tiny-spacing-unit;
-  grid-template-rows: $base-spacing-unit 1fr $base-spacing-unit;
-  grid-template-columns: 1fr $double-spacing-unit;
+  grid-template-rows: 54px 1fr 54px;
+  grid-template-columns: 100px 1fr 100px;
   grid-template-areas:
-    'header nav'
-    'content content'
-    'footer footer';
+    'icon-left header icon-right'
+    'content content content'
+    'footer footer footer';
+
+  background-color: $background-color;
+
+  max-width: 425px;
+  max-height: 667px;
+
+  @media screen and (min-width: 426px) {
+    align-self: center;
+    width: 375px;
+    height: 667px;
+
+    flex: 0 0 375px;
+  }
 }
 
 .o-app__header {
   grid-area: header;
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  justify-content: center;
+}
+
+.o-app__top-left {
+  grid-area: icon-left;
+  margin-left: $base-spacing-unit;
+  justify-content: flex-start;
+}
+
+.o-app__top-right {
+  grid-area: icon-right;
+  margin-right: $base-spacing-unit;
+  justify-content: flex-end;
+}
+
+.o-app__top-left, .o-app__top-right {
+  display: flex;
+  align-items: center;
 }
 
 .o-app__nav {
@@ -26,8 +57,8 @@
 }
 
 .o-app__content {
-  grid-area: content;
-  padding: 0 $base-spacing-unit;
+  grid-row: 1 / 4;
+  grid-column: 1 / 4;
 }
 
 .o-app__footer {

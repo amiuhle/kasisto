@@ -1,29 +1,33 @@
+.c-dual-currency {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: 0 $double-spacing-unit;
+}
+
 .c-currency {
   overflow: hidden;
   display: flex;
-  justify-content: flex-end;
   align-items: baseline;
 
-  padding-right: $tiny-spacing-unit + 1;
-
-  &__tail, &__currency {
-    color: #555;
-  }
-
-  &__currency {
-    margin-left: 0.2em;
-  }
-
-  &--disabled {
-    @extend %input--disabled;
+  &, &__currency {
+    font-size: $large-font-size;
   }
 }
 
-.c-currency--input, .c-currency--primary {
-  padding: $tiny-spacing-unit;
+.c-currency--input {
+  display: flex;
 
-  .c-currency__currency {
-    @extend %small;
+  &__native_input {
+    line-height: 1;
+    color: inherit;
+    width: 100%;
+    vertical-align: baseline;
+
+    &::placeholder {
+      color: $brand-disabled;
+    }
   }
 
   &__value, &__native_input {
@@ -41,16 +45,29 @@
   }
 }
 
-.c-currency--input {
-  @extend %input;
-  margin-bottom: $tiny-spacing-unit;
+.c-currency--primary {
+  font-size: $huge-font-size;
+  color: $brand-primary;
 
-  &--focus {
-    @extend %input--focus;
+  .c-currency__tail {
+    line-height: 1;
+  }
+
+  .c-currency__tail, &.c-currency__currency {
+    color: $brand-disabled;
+  }
+
+  & .c-currency__currency {
+    margin-left: $base-spacing-unit;
   }
 }
 
 .c-currency--secondary {
   line-height: 1;
-  @extend %small;
+
+  color: $text-color;
+
+  .c-currency__tail, &.c-currency__currency {
+    color: $disabled-color;
+  }
 }

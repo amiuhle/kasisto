@@ -6,40 +6,38 @@ import { connect } from 'react-redux'
 import {
   fetchUri,
   listenForPayments,
-  stopListeningForPayments
+  cancelPayment,
+  setTip
 } from '../../actions'
 
 import {
-  getPaymentById
+  getPaymentById,
+  getSettings
 } from '../../reducers'
 
-import SendPayment from '../../components/payments/send'
+import SendPayment from '../../views/payments/send'
 
 class Container extends Component {
   componentDidMount () {
-    const {
-      fetchUri,
-      listenForPayments,
-      payment
-    } = this.props
+    // const {
+    //   listenForPayments,
+    //   payment
+    // } = this.props
 
-    const {
-      id,
-      integratedAddress,
-      paymentId,
-      totalAmount
-    } = payment
+    // const {
+    //   id,
+    //   paymentId,
+    //   totalAmount
+    // } = payment
 
-    fetchUri(id, integratedAddress, totalAmount)
-
-    listenForPayments(id, totalAmount, paymentId)
-      .then(handle => this.setState({ handle }))
+    // listenForPayments(id, totalAmount, paymentId)
+    //   .then(handle => this.setState({ handle }))
   }
 
   componentWillUnmount () {
-    const { stopListeningForPayments } = this.props
-    const { handle } = this.state
-    stopListeningForPayments(handle)
+    // const { stopListeningForPayments } = this.props
+    // const { handle } = this.state
+    // stopListeningForPayments(handle)
   }
 
   render () {
@@ -50,14 +48,16 @@ class Container extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  payment: getPaymentById(state, ownProps.match.params.id)
+  payment: getPaymentById(state, ownProps.match.params.id),
+  settings: getSettings(state)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   ...bindActionCreators({
     fetchUri,
     listenForPayments,
-    stopListeningForPayments
+    cancelPayment,
+    setTip
   }, dispatch)
 })
 

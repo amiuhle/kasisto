@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`experiments with Jest 1`] = `
+<div
+  className="o-app"
+/>
+`;

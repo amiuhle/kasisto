@@ -1,6 +1,18 @@
 .c-integrated-address {
-  @include soft-border();
-  text-align: center;
-  padding: $small-spacing-unit;
-  font-family: monospace;
+  width: 192px;
+  height: 192px;
+
+  display: flex;
+  flex-direction: column;
+  a {
+    align-self: flex-end;
+  }
+
+  textarea {
+    flex: 1;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: $small-font-size;
+  }
 }

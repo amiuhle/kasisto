@@ -1,16 +1,18 @@
 import createHistory from 'history/createBrowserHistory'
 import { applyMiddleware, compose, createStore } from 'redux'
 import logger from 'redux-logger'
-import thunk from 'redux-thunk'
+import createSagaMiddleware from 'redux-saga'
 
 import reducers from '../reducers'
+import rootSaga from '../sagas'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 export const history = createHistory()
 
 export default (initialState) => {
-  const middlewares = [thunk]
+  const sagaMiddleware = createSagaMiddleware()
+  const middlewares = [sagaMiddleware]
 
   if (process.env.NODE_ENV !== 'production') {
     middlewares.push(logger)
@@ -23,6 +25,8 @@ export default (initialState) => {
       applyMiddleware(...middlewares)
     )
   )
+
+  sagaMiddleware.run(rootSaga)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

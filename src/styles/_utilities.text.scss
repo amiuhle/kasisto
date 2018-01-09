@@ -1,4 +1,23 @@
 .u-muted {
-  font-size: 12px;
-  color: #444;
+  color: $disabled-color;
+}
+
+.u-light {
+  font-weight: 200;
+}
+
+.u-normal {
+  font-weight: 400;
+}
+
+.u-medium {
+  font-weight: 500;
+}
+
+.u-background {
+  color: $background-color;
+}
+
+.u-brand-primary {
+  color: $brand-primary;
 }

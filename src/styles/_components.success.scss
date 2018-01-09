@@ -1,25 +1,21 @@
 .c-success {
-  padding: 1em;
-  align-self: center;
-  color: green;
-  border: 2px solid green;
-  border-radius: 0.2em;
+  background-color: $brand-primary;
+  background-image: $brand-gradient;
+  color: $background-color;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
 
-  text-transform: uppercase;
+  padding-top: 125px;
 
-  .check {
-    display: inline-block;
-    text-align: center;
-    font-size: 1.5em;
-    width: 1.5em;
-    height: 1.5em;
-    border: inherit;
-    border-radius: 50%;
+  .icon--check {
+    width: 80px;
+    height: 80px;
 
-    margin-right: 0.5em;
+    svg {
+      width: 80px;
+      height: 80px;
+    }
   }
 }
