@@ -84,10 +84,11 @@ export default class SendPayment extends Component {
                   <li
                     key={key}
                     onClick={(e) => {
+                      const isResetting = tipIndex === key
                       e.preventDefault()
-                      setTip(tipRate * convertedAmount)
+                      setTip(isResetting ? 0 : tipRate * convertedAmount)
                       this.setState({
-                        tipIndex: key
+                        tipIndex: isResetting ? null : key
                       })
                     }}
                     className='o-list-inline__item'>
