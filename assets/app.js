@@ -4595,6 +4595,8 @@ var SET_RECEIPT = exports.SET_RECEIPT = 'SET_RECEIPT';
 // Customer input
 var SET_TIP = exports.SET_TIP = 'SET_TIP';
 
+var CANCEL_PAYMENT = exports.CANCEL_PAYMENT = 'CANCEL_PAYMENT';
+
 // Update the store
 var CREATE_PAYMENT = exports.CREATE_PAYMENT = 'CREATE_PAYMENT';
 var UPDATE_PAYMENT = exports.UPDATE_PAYMENT = 'UPDATE_PAYMENT';
@@ -4612,6 +4614,8 @@ var _temp = function () {
   __REACT_HOT_LOADER__.register(SET_RECEIPT, 'SET_RECEIPT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
 
   __REACT_HOT_LOADER__.register(SET_TIP, 'SET_TIP', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(CANCEL_PAYMENT, 'CANCEL_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
 
   __REACT_HOT_LOADER__.register(CREATE_PAYMENT, 'CREATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
 
@@ -4633,6 +4637,8 @@ var _temp2 = function () {
   __REACT_HOT_LOADER__.register(SET_RECEIPT, 'SET_RECEIPT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
 
   __REACT_HOT_LOADER__.register(SET_TIP, 'SET_TIP', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
+
+  __REACT_HOT_LOADER__.register(CANCEL_PAYMENT, 'CANCEL_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
 
   __REACT_HOT_LOADER__.register(CREATE_PAYMENT, 'CREATE_PAYMENT', '/home/timo/Code/github/kasisto/src/actions/constants/payments.js');
 
@@ -4735,6 +4741,20 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
+__webpack_require__(580);
+
+__webpack_require__(581);
+
+__webpack_require__(582);
+
+__webpack_require__(583);
+
+__webpack_require__(584);
+
+__webpack_require__(585);
+
+__webpack_require__(586);
+
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
@@ -4762,9 +4782,6 @@ var className = function className() {
   return [className, ...rest].filter(value => typeof value === 'string' && value.length > 0).join(' ');
 };
 
-var icons = __webpack_require__(580);
-icons.keys().forEach(icons);
-
 var _default = _ref2 => {
   var name = _ref2.name,
       onClick = _ref2.onClick,
@@ -4788,8 +4805,6 @@ var _temp = function () {
 
   __REACT_HOT_LOADER__.register(className, 'className', '/home/timo/Code/github/kasisto/src/components/Icon.js');
 
-  __REACT_HOT_LOADER__.register(icons, 'icons', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
   __REACT_HOT_LOADER__.register(_default, 'default', '/home/timo/Code/github/kasisto/src/components/Icon.js');
 }();
 
@@ -4810,8 +4825,6 @@ var _temp2 = function () {
   __REACT_HOT_LOADER__.register(_objectWithoutProperties, '_objectWithoutProperties', '/home/timo/Code/github/kasisto/src/components/Icon.js');
 
   __REACT_HOT_LOADER__.register(className, 'className', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(icons, 'icons', '/home/timo/Code/github/kasisto/src/components/Icon.js');
 
   __REACT_HOT_LOADER__.register(_default, '_default', '/home/timo/Code/github/kasisto/src/components/Icon.js');
 
@@ -13105,7 +13118,7 @@ const fetchExchangeRate = (fiatCurrency) => {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.updatePayment = exports.createPayment = exports.setTip = exports.setAmount = exports.startPayment = undefined;
+exports.updatePayment = exports.createPayment = exports.cancelPayment = exports.setTip = exports.setAmount = exports.requestPayment = undefined;
 
 var _payments = __webpack_require__(35);
 
@@ -13123,21 +13136,28 @@ function _interopRequireWildcard(obj) {
   }
 }
 
-var startPayment = exports.startPayment = (fiatCurrency, resolve, reject) => ({
-  type: types.REQUEST_PAYMENT,
-  payload: {
-    resolve,
-    reject
-  }
-});
+var requestPayment = exports.requestPayment = function requestPayment(resolve, reject) {
+  var pollingInterval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2000;
+  return {
+    type: types.REQUEST_PAYMENT,
+    payload: {
+      resolve,
+      reject,
+      pollingInterval
+    }
+  };
+};
 
-var setAmount = exports.setAmount = (requestedAmount, receipt) => ({
-  type: types.SET_AMOUNT,
-  payload: {
-    requestedAmount,
-    receipt
-  }
-});
+var setAmount = exports.setAmount = function setAmount(requestedAmount) {
+  var receipt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  return {
+    type: types.SET_AMOUNT,
+    payload: {
+      requestedAmount,
+      receipt
+    }
+  };
+};
 
 var setTip = exports.setTip = tip => {
   tip = Math.max(0, Number.parseFloat(tip) || 0);
@@ -13149,11 +13169,18 @@ var setTip = exports.setTip = tip => {
   };
 };
 
+var cancelPayment = exports.cancelPayment = () => ({
+  type: types.CANCEL_PAYMENT
+});
+
 var createPayment = exports.createPayment = function createPayment(id, payment) {
   var timestamp = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : () => new Date().toISOString();
   return {
     type: types.CREATE_PAYMENT,
-    payload: Object.assign({}, payment, { id }, { createdAt: timestamp() })
+    payload: Object.assign({}, payment, { id }, {
+      createdAt: timestamp(),
+      updatedAt: timestamp()
+    })
   };
 };
 
@@ -13161,7 +13188,9 @@ var updatePayment = exports.updatePayment = function updatePayment(id, payment) 
   var timestamp = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : () => new Date().toISOString();
   return {
     type: types.UPDATE_PAYMENT,
-    payload: Object.assign({}, payment, { id }, { updatedAt: timestamp() })
+    payload: Object.assign({}, payment, { id }, {
+      // updatedAt: timestamp()
+    })
   };
 };
 ;
@@ -13171,11 +13200,13 @@ var _temp = function () {
     return;
   }
 
-  __REACT_HOT_LOADER__.register(startPayment, 'startPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
+  __REACT_HOT_LOADER__.register(requestPayment, 'requestPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
   __REACT_HOT_LOADER__.register(setAmount, 'setAmount', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
   __REACT_HOT_LOADER__.register(setTip, 'setTip', '/home/timo/Code/github/kasisto/src/actions/payments.js');
+
+  __REACT_HOT_LOADER__.register(cancelPayment, 'cancelPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
   __REACT_HOT_LOADER__.register(createPayment, 'createPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
@@ -13194,11 +13225,13 @@ var _temp2 = function () {
 
   __REACT_HOT_LOADER__.register(_interopRequireWildcard, '_interopRequireWildcard', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
-  __REACT_HOT_LOADER__.register(startPayment, 'startPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
+  __REACT_HOT_LOADER__.register(requestPayment, 'requestPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
   __REACT_HOT_LOADER__.register(setAmount, 'setAmount', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
   __REACT_HOT_LOADER__.register(setTip, 'setTip', '/home/timo/Code/github/kasisto/src/actions/payments.js');
+
+  __REACT_HOT_LOADER__.register(cancelPayment, 'cancelPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
   __REACT_HOT_LOADER__.register(createPayment, 'createPayment', '/home/timo/Code/github/kasisto/src/actions/payments.js');
 
@@ -25346,7 +25379,6 @@ var getAllPayments = exports.getAllPayments = state => fromAllIds.getIds(state.a
 var getTodaysLastPayment = exports.getTodaysLastPayment = state => {
   var id = fromAllIds.getIds(state.allIds).slice(0, 10).find((id, index) => {
     var payment = getPaymentById(state, id);
-    console.log(index, payment.createdAt);
     return (0, _dateFns.isToday)(payment.createdAt);
   });
   return getPaymentById(state, id);
@@ -29908,8 +29940,23 @@ function* listenForTip(id, paymentRequest, name, receipt) {
   }
 }
 
+function* listenForCancel() {
+  yield (0, _effects.take)(types.CANCEL_PAYMENT);
+  console.log('Received CANCEL_PAYMENT');
+  throw new Error('Payment request cancelled');
+}
+
+function* awaitPayment(paymentRequest, pollingInterval) {
+  var cancelSaga = yield (0, _effects.fork)(listenForCancel);
+  var onFulfilled = yield (0, _effects.call)([paymentRequest, 'onFulfilled'], pollingInterval);
+  cancelSaga.cancel();
+  return onFulfilled;
+}
+
 function* processPayment(action) {
-  var resolve = action.payload.resolve;
+  var _action$payload = action.payload,
+      resolve = _action$payload.resolve,
+      pollingInterval = _action$payload.pollingInterval;
 
   var settings = yield (0, _effects.select)(_reducers.getSettings);
 
@@ -29922,6 +29969,7 @@ function* processPayment(action) {
   // create the initial payment in the store
   yield (0, _effects.put)((0, _payments.createPayment)(id, { fiatCurrency }));
 
+  // let the view know the payment was created
   yield (0, _effects.call)(resolve, id);
 
   var _ref2 = yield (0, _effects.all)([(0, _effects.call)(_exchangeRates.fetchExchangeRate, fiatCurrency), (0, _effects.call)(_fetchMonero.requestPayment, walletUrl)]),
@@ -29956,12 +30004,19 @@ function* processPayment(action) {
 
   yield (0, _effects.put)((0, _payments.updatePayment)(id, { uri }));
 
-  yield (0, _effects.fork)(listenForTip, id, paymentRequest, merchantName, receipt);
+  var tipSaga = yield (0, _effects.fork)(listenForTip, id, paymentRequest, merchantName, receipt);
 
-  var onFulfilled = yield (0, _effects.call)([paymentRequest, 'onFulfilled']);
-  yield (0, _effects.put)((0, _payments.updatePayment)(id, { receivedAmount: new _big2.default(onFulfilled.amountReceived).div(1e12).toFixed(12) }));
+  try {
+    var onFulfilled = yield (0, _effects.call)(awaitPayment, paymentRequest, pollingInterval);
 
-  console.log('received payment', onFulfilled);
+    yield (0, _effects.put)((0, _payments.updatePayment)(id, { receivedAmount: new _big2.default(onFulfilled.amountReceived).div(1e12).toFixed(12) }));
+  } catch (e) {
+    console.warn('Error', e);
+    paymentRequest.cancel();
+    console.log('Payment cancelled');
+  } finally {
+    tipSaga.cancel();
+  }
 }
 
 function* watchCreatePayment() {
@@ -29975,6 +30030,10 @@ var _temp = function () {
   }
 
   __REACT_HOT_LOADER__.register(listenForTip, 'listenForTip', '/home/timo/Code/github/kasisto/src/sagas/payments.js');
+
+  __REACT_HOT_LOADER__.register(listenForCancel, 'listenForCancel', '/home/timo/Code/github/kasisto/src/sagas/payments.js');
+
+  __REACT_HOT_LOADER__.register(awaitPayment, 'awaitPayment', '/home/timo/Code/github/kasisto/src/sagas/payments.js');
 
   __REACT_HOT_LOADER__.register(processPayment, 'processPayment', '/home/timo/Code/github/kasisto/src/sagas/payments.js');
 
@@ -30000,6 +30059,10 @@ var _temp2 = function () {
   __REACT_HOT_LOADER__.register(_interopRequireDefault, "_interopRequireDefault", "/home/timo/Code/github/kasisto/src/sagas/payments.js");
 
   __REACT_HOT_LOADER__.register(listenForTip, "listenForTip", "/home/timo/Code/github/kasisto/src/sagas/payments.js");
+
+  __REACT_HOT_LOADER__.register(listenForCancel, "listenForCancel", "/home/timo/Code/github/kasisto/src/sagas/payments.js");
+
+  __REACT_HOT_LOADER__.register(awaitPayment, "awaitPayment", "/home/timo/Code/github/kasisto/src/sagas/payments.js");
 
   __REACT_HOT_LOADER__.register(processPayment, "processPayment", "/home/timo/Code/github/kasisto/src/sagas/payments.js");
 
@@ -30266,12 +30329,16 @@ const requestPayment = (url, amount = null) => {
     return payment
   })
 
-  let cancel
-  const onFulfilled = (pollingInterval = 5000) => new Promise((resolve, reject) => {
-    cancel = () => {
-      window.clearInterval(handle)
-      reject(new Error('cancelled'))
+  let handle = null
+
+  let cancel = () => {
+    if (handle == null) {
+      throw new Error('onFulfilled has not been called')
     }
+    window.clearInterval(handle)
+  }
+
+  const onFulfilled = (pollingInterval = 5000) => new Promise((resolve, reject) => {
     const poll = () => {
       wallet.getTransfers({
         pool: true,
@@ -30298,7 +30365,8 @@ const requestPayment = (url, amount = null) => {
         }
       })
     }
-    const handle = window.setInterval(poll, pollingInterval)
+    handle = window.setInterval(poll, pollingInterval)
+    // poll()
   })
 
   let _address
@@ -30946,11 +31014,11 @@ var _dashboard = __webpack_require__(578);
 
 var _dashboard2 = _interopRequireDefault(_dashboard);
 
-var _payments = __webpack_require__(588);
+var _payments = __webpack_require__(587);
 
 var _payments2 = _interopRequireDefault(_payments);
 
-var _settings = __webpack_require__(607);
+var _settings = __webpack_require__(606);
 
 var _settings2 = _interopRequireDefault(_settings);
 
@@ -34148,7 +34216,7 @@ var mapDispatchToProps = (dispatch, _ref2) => {
     onStartPayment(e) {
       e.preventDefault();
       return new Promise((resolve, reject) => {
-        dispatch((0, _actions.startPayment)('EUR', resolve, reject));
+        dispatch((0, _actions.requestPayment)(resolve, reject));
       }).then(id => {
         console.log('payment created', id);
         history.push(`/payments/${id}/create`);
@@ -34295,35 +34363,6 @@ var _temp2 = function () {
 
 /***/ }),
 /* 580 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var map = {
-	"./back.svg": 581,
-	"./check.svg": 582,
-	"./close.svg": 583,
-	"./history.svg": 584,
-	"./loading.svg": 585,
-	"./monero.svg": 586,
-	"./settings.svg": 587
-};
-function webpackContext(req) {
-	return __webpack_require__(webpackContextResolve(req));
-};
-function webpackContextResolve(req) {
-	var id = map[req];
-	if(!(id + 1)) // check for number or string
-		throw new Error("Cannot find module '" + req + "'.");
-	return id;
-};
-webpackContext.keys = function webpackContextKeys() {
-	return Object.keys(map);
-};
-webpackContext.resolve = webpackContextResolve;
-module.exports = webpackContext;
-webpackContext.id = 580;
-
-/***/ }),
-/* 581 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34344,7 +34383,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 582 */
+/* 581 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34365,7 +34404,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 583 */
+/* 582 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34386,7 +34425,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 584 */
+/* 583 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34407,7 +34446,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 585 */
+/* 584 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34428,7 +34467,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 586 */
+/* 585 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34449,7 +34488,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 587 */
+/* 586 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34470,7 +34509,7 @@ var result = __WEBPACK_IMPORTED_MODULE_1_svg_sprite_loader_runtime_browser_sprit
 /* harmony default export */ __webpack_exports__["default"] = (symbol);
 
 /***/ }),
-/* 588 */
+/* 587 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34486,15 +34525,15 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(19);
 
-var _payments = __webpack_require__(589);
+var _payments = __webpack_require__(588);
 
 var _payments2 = _interopRequireDefault(_payments);
 
-var _create = __webpack_require__(590);
+var _create = __webpack_require__(589);
 
 var _create2 = _interopRequireDefault(_create);
 
-var _send = __webpack_require__(594);
+var _send = __webpack_require__(593);
 
 var _send2 = _interopRequireDefault(_send);
 
@@ -34541,7 +34580,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 589 */
+/* 588 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34598,7 +34637,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 590 */
+/* 589 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34618,7 +34657,7 @@ var _actions = __webpack_require__(97);
 
 var _reducers = __webpack_require__(25);
 
-var _create = __webpack_require__(591);
+var _create = __webpack_require__(590);
 
 var _create2 = _interopRequireDefault(_create);
 
@@ -34697,7 +34736,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 591 */
+/* 590 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34721,13 +34760,13 @@ var _reactRouterDom = __webpack_require__(19);
 
 var _reduxForm = __webpack_require__(43);
 
-var _utils = __webpack_require__(592);
+var _utils = __webpack_require__(591);
 
 var _CancelPayment = __webpack_require__(194);
 
 var _CancelPayment2 = _interopRequireDefault(_CancelPayment);
 
-var _dualCurrency = __webpack_require__(593);
+var _dualCurrency = __webpack_require__(592);
 
 var _dualCurrency2 = _interopRequireDefault(_dualCurrency);
 
@@ -34842,7 +34881,7 @@ var _temp3 = function () {
 ;
 
 /***/ }),
-/* 592 */
+/* 591 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -34913,7 +34952,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 593 */
+/* 592 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35183,7 +35222,7 @@ var _temp3 = function () {
 ;
 
 /***/ }),
-/* 594 */
+/* 593 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35215,7 +35254,7 @@ var _actions = __webpack_require__(97);
 
 var _reducers = __webpack_require__(25);
 
-var _send = __webpack_require__(595);
+var _send = __webpack_require__(594);
 
 var _send2 = _interopRequireDefault(_send);
 
@@ -35259,7 +35298,7 @@ var mapStateToProps = (state, ownProps) => ({
 var mapDispatchToProps = (dispatch, ownProps) => _extends({}, (0, _redux.bindActionCreators)({
   fetchUri: _actions.fetchUri,
   listenForPayments: _actions.listenForPayments,
-  stopListeningForPayments: _actions.stopListeningForPayments,
+  cancelPayment: _actions.cancelPayment,
   setTip: _actions.setTip
 }, dispatch));
 
@@ -35312,7 +35351,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 595 */
+/* 594 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35327,7 +35366,7 @@ var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
-var _qrcode = __webpack_require__(596);
+var _qrcode = __webpack_require__(595);
 
 var _qrcode2 = _interopRequireDefault(_qrcode);
 
@@ -35368,6 +35407,7 @@ var SendPayment = class SendPayment extends _react.Component {
     }
     var _props = this.props,
         setTip = _props.setTip,
+        cancelPayment = _props.cancelPayment,
         settings = _props.settings,
         _props$payment = _props.payment,
         address = _props$payment.address,
@@ -35395,7 +35435,7 @@ var SendPayment = class SendPayment extends _react.Component {
             tipIndex: key
           });
         },
-        className: 'o-list-inline__item' }, _react2.default.createElement('a', { href: '#', className: `c-tips__tip ${key === tipIndex ? 'c-tips__tip--active' : 'bar'}` }, tipRate * 100, '%')))), _react2.default.createElement('p', null, 'To ', settings.name || 'Coffee shop'), _react2.default.createElement('table', { className: 'c-payment-summary u-margin-bottom-small' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Amount'), _react2.default.createElement('td', null, requestedAmount, '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Tip'), _react2.default.createElement('td', null, new _big2.default(tip || '0').times(rate).toFixed(2), '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Total'), _react2.default.createElement('td', null, new _big2.default(requestedAmount).add(new _big2.default(tip || '0').times(rate)).toFixed(2), '\xA0', fiatCurrency)))), _react2.default.createElement('small', { className: 'u-margin-bottom-large' }, new _big2.default(convertedAmount).add(new _big2.default(tip || '0')).toFixed(12), ' XMR'), _react2.default.createElement('div', { className: 'o-flex o-flex--col' }, _react2.default.createElement('div', { className: 'o-flex o-flex--center u-margin-bottom' }, uri && _react2.default.createElement(_qrcode2.default, { size: 192, value: uri }))), _react2.default.createElement(_FiatRate2.default, { className: 'u-align-center', rate: rate, exchange: exchange, fiatCurrency: fiatCurrency })), _react2.default.createElement(_CancelPayment2.default, null), isTestnet ? _react2.default.createElement('small', { className: 'o-app__header u-brand-primary' }, 'Testnet') : null);
+        className: 'o-list-inline__item' }, _react2.default.createElement('a', { href: '#', className: `c-tips__tip ${key === tipIndex ? 'c-tips__tip--active' : 'bar'}` }, tipRate * 100, '%')))), _react2.default.createElement('p', null, 'To ', settings.name || 'Coffee shop'), _react2.default.createElement('table', { className: 'c-payment-summary u-margin-bottom-small' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Amount'), _react2.default.createElement('td', null, requestedAmount, '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Tip'), _react2.default.createElement('td', null, new _big2.default(tip || '0').times(rate).toFixed(2), '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Total'), _react2.default.createElement('td', null, new _big2.default(requestedAmount).add(new _big2.default(tip || '0').times(rate)).toFixed(2), '\xA0', fiatCurrency)))), _react2.default.createElement('small', { className: 'u-margin-bottom-large' }, new _big2.default(convertedAmount).add(new _big2.default(tip || '0')).toFixed(12), ' XMR'), _react2.default.createElement('div', { className: 'o-flex o-flex--col' }, _react2.default.createElement('div', { className: 'o-flex o-flex--center u-margin-bottom' }, uri && _react2.default.createElement(_qrcode2.default, { size: 192, value: uri }))), _react2.default.createElement(_FiatRate2.default, { className: 'u-align-center', rate: rate, exchange: exchange, fiatCurrency: fiatCurrency })), _react2.default.createElement(_CancelPayment2.default, { onClick: cancelPayment }), isTestnet ? _react2.default.createElement('small', { className: 'o-app__header u-brand-primary' }, 'Testnet') : null);
     }
   }
 };
@@ -35440,7 +35480,7 @@ var _temp3 = function () {
 ;
 
 /***/ }),
-/* 596 */
+/* 595 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35455,10 +35495,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var React = __webpack_require__(1);
-var PropTypes = __webpack_require__(597);
+var PropTypes = __webpack_require__(596);
 // qr.js doesn't handle error level of zero (M) so we need to do it right,
 // thus the deep require.
-var QRCodeImpl = __webpack_require__(602);
+var QRCodeImpl = __webpack_require__(601);
 var ErrorCorrectLevel = __webpack_require__(197);
 
 function getBackingStorePixelRatio(ctx) {
@@ -35592,7 +35632,7 @@ Object.defineProperty(QRCode, 'propTypes', {
 module.exports = QRCode;
 
 /***/ }),
-/* 597 */
+/* 596 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -35623,12 +35663,12 @@ if (false) {
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(598)();
+  module.exports = __webpack_require__(597)();
 }
 
 
 /***/ }),
-/* 598 */
+/* 597 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35643,9 +35683,9 @@ if (false) {
 
 
 
-var emptyFunction = __webpack_require__(599);
-var invariant = __webpack_require__(600);
-var ReactPropTypesSecret = __webpack_require__(601);
+var emptyFunction = __webpack_require__(598);
+var invariant = __webpack_require__(599);
+var ReactPropTypesSecret = __webpack_require__(600);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -35694,7 +35734,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 599 */
+/* 598 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35738,7 +35778,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 600 */
+/* 599 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35799,7 +35839,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 601 */
+/* 600 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35820,13 +35860,13 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 602 */
+/* 601 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BitByte = __webpack_require__(603);
-var RSBlock = __webpack_require__(604);
-var BitBuffer = __webpack_require__(605);
-var util = __webpack_require__(606);
+var BitByte = __webpack_require__(602);
+var RSBlock = __webpack_require__(603);
+var BitBuffer = __webpack_require__(604);
+var util = __webpack_require__(605);
 var Polynomial = __webpack_require__(198);
 
 function QRCode(typeNumber, errorCorrectLevel) {
@@ -36264,7 +36304,7 @@ module.exports = QRCode;
 
 
 /***/ }),
-/* 603 */
+/* 602 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var mode = __webpack_require__(196);
@@ -36293,7 +36333,7 @@ module.exports = QR8bitByte;
 
 
 /***/ }),
-/* 604 */
+/* 603 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ErrorCorrectLevel
@@ -36598,7 +36638,7 @@ module.exports = QRRSBlock;
 
 
 /***/ }),
-/* 605 */
+/* 604 */
 /***/ (function(module, exports) {
 
 function QRBitBuffer() {
@@ -36642,7 +36682,7 @@ module.exports = QRBitBuffer;
 
 
 /***/ }),
-/* 606 */
+/* 605 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Mode = __webpack_require__(196);
@@ -36927,7 +36967,7 @@ module.exports = QRUtil;
 
 
 /***/ }),
-/* 607 */
+/* 606 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36943,7 +36983,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(7);
 
-var _settings = __webpack_require__(608);
+var _settings = __webpack_require__(607);
 
 var _settings2 = _interopRequireDefault(_settings);
 
@@ -37024,7 +37064,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 608 */
+/* 607 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
