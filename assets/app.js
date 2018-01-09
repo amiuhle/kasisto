@@ -4269,6 +4269,125 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }return target;
+};
+
+__webpack_require__(580);
+
+__webpack_require__(581);
+
+__webpack_require__(582);
+
+__webpack_require__(583);
+
+__webpack_require__(584);
+
+__webpack_require__(585);
+
+__webpack_require__(586);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(19);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
+  }return target;
+}
+
+var className = function className() {
+  for (var _len = arguments.length, rest = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    rest[_key - 1] = arguments[_key];
+  }
+
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      className = _ref.className;
+
+  return [className, ...rest].filter(value => typeof value === 'string' && value.length > 0).join(' ');
+};
+
+var _default = _ref2 => {
+  var name = _ref2.name,
+      onClick = _ref2.onClick,
+      href = _ref2.href,
+      props = _objectWithoutProperties(_ref2, ['name', 'onClick', 'href']);
+
+  var Tag = 'span';
+  if (onClick != null) {
+    Tag = 'a';
+  } else if (href != null) {
+    Tag = _reactRouterDom.Link;
+  }
+
+  return _react2.default.createElement(Tag, _extends({}, props, {
+    onClick: onClick,
+    to: href,
+    className: className(props, 'icon', `icon--${name}`) }), _react2.default.createElement('svg', null, _react2.default.createElement('use', { xlinkHref: `#${name}` })));
+};
+
+exports.default = _default;
+;
+
+var _temp = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(className, 'className', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(_default, 'default', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+}();
+
+;
+;
+
+var _temp2 = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(_extends, '_extends', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(_react2, '_react2', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(_objectWithoutProperties, '_objectWithoutProperties', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(className, 'className', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(_default, '_default', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+
+  __REACT_HOT_LOADER__.register(_temp, '_temp', '/home/timo/Code/github/kasisto/src/components/Icon.js');
+}();
+
+;
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 exports.__esModule = true;
 var addLeadingSlash = exports.addLeadingSlash = function addLeadingSlash(path) {
   return path.charAt(0) === '/' ? path : '/' + path;
@@ -4330,7 +4449,7 @@ var createPath = exports.createPath = function createPath(location) {
 };
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4345,7 +4464,7 @@ var formatName = function formatName(_ref, name) {
 /* harmony default export */ __webpack_exports__["a"] = (formatName);
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4389,7 +4508,7 @@ function eq(value, other) {
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4418,7 +4537,7 @@ function toKey(value) {
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -4450,7 +4569,7 @@ module.exports = addDays
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -4481,7 +4600,7 @@ module.exports = addMilliseconds
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getISOYear = __webpack_require__(16)
@@ -4519,7 +4638,7 @@ module.exports = startOfISOYear
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
@@ -4576,7 +4695,7 @@ module.exports = compareAsc
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4650,7 +4769,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4719,119 +4838,6 @@ var createPath = function createPath(location) {
 
   return path;
 };
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }return target;
-};
-
-__webpack_require__(580);
-
-__webpack_require__(581);
-
-__webpack_require__(582);
-
-__webpack_require__(583);
-
-__webpack_require__(584);
-
-__webpack_require__(585);
-
-__webpack_require__(586);
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(19);
-
-function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
-}
-
-function _objectWithoutProperties(obj, keys) {
-  var target = {};for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];
-  }return target;
-}
-
-var className = function className() {
-  for (var _len = arguments.length, rest = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    rest[_key - 1] = arguments[_key];
-  }
-
-  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      className = _ref.className;
-
-  return [className, ...rest].filter(value => typeof value === 'string' && value.length > 0).join(' ');
-};
-
-var _default = _ref2 => {
-  var name = _ref2.name,
-      onClick = _ref2.onClick,
-      href = _ref2.href,
-      props = _objectWithoutProperties(_ref2, ['name', 'onClick', 'href']);
-
-  var Tag = onClick == null && href == null ? 'span' : _reactRouterDom.Link;
-  return _react2.default.createElement(Tag, _extends({}, props, {
-    onClick: onClick,
-    to: href,
-    className: className(props, 'icon', `icon--${name}`) }), _react2.default.createElement('svg', null, _react2.default.createElement('use', { xlinkHref: `#${name}` })));
-};
-
-exports.default = _default;
-;
-
-var _temp = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(className, 'className', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(_default, 'default', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-}();
-
-;
-;
-
-var _temp2 = function () {
-  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
-    return;
-  }
-
-  __REACT_HOT_LOADER__.register(_extends, '_extends', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(_react2, '_react2', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(_objectWithoutProperties, '_objectWithoutProperties', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(className, 'className', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(_default, '_default', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-
-  __REACT_HOT_LOADER__.register(_temp, '_temp', '/home/timo/Code/github/kasisto/src/components/Icon.js');
-}();
-
-;
 
 /***/ }),
 /* 38 */
@@ -5291,7 +5297,7 @@ var updateSyncWarnings = __WEBPACK_IMPORTED_MODULE_0__actions__["a" /* default *
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isArray_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isSymbol_js__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__stringToPath_js__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toString_js__ = __webpack_require__(133);
 
 
@@ -5429,7 +5435,7 @@ ListCache.prototype.set = __WEBPACK_IMPORTED_MODULE_4__listCacheSet_js__["a" /* 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(30);
 
 
 /**
@@ -5795,7 +5801,7 @@ if (false) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return locationsAreEqual; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_resolve_pathname__ = __webpack_require__(112);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_value_equal__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__PathUtils__ = __webpack_require__(37);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 
@@ -5982,7 +5988,7 @@ var _valueEqual = __webpack_require__(113);
 
 var _valueEqual2 = _interopRequireDefault(_valueEqual);
 
-var _PathUtils = __webpack_require__(27);
+var _PathUtils = __webpack_require__(28);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6925,7 +6931,7 @@ module.exports = getDaysInMonth
 /* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addDays = __webpack_require__(31)
+var addDays = __webpack_require__(32)
 
 /**
  * @category Week Helpers
@@ -7015,7 +7021,7 @@ module.exports = compareDesc
 
 var parse = __webpack_require__(0)
 var differenceInCalendarMonths = __webpack_require__(159)
-var compareAsc = __webpack_require__(34)
+var compareAsc = __webpack_require__(35)
 
 /**
  * @category Month Helpers
@@ -7141,7 +7147,7 @@ module.exports = endOfDay
 
 var parse = __webpack_require__(0)
 var startOfISOWeek = __webpack_require__(17)
-var startOfISOYear = __webpack_require__(33)
+var startOfISOYear = __webpack_require__(34)
 
 var MILLISECONDS_IN_WEEK = 604800000
 
@@ -8655,7 +8661,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(61);
 
-var _PathUtils = __webpack_require__(27);
+var _PathUtils = __webpack_require__(28);
 
 var _createTransitionManager = __webpack_require__(62);
 
@@ -11281,7 +11287,7 @@ function matchesStrictComparable(key, srcValue) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__castPath_js__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toKey_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__toKey_js__ = __webpack_require__(31);
 
 
 
@@ -11370,7 +11376,7 @@ var createIsPristine = function createIsPristine(_ref) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseAssignValue_js__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(30);
 
 
 
@@ -11458,10 +11464,10 @@ var silenceEvent = function silenceEvent(event) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
-  addDays: __webpack_require__(31),
+  addDays: __webpack_require__(32),
   addHours: __webpack_require__(151),
   addISOYears: __webpack_require__(152),
-  addMilliseconds: __webpack_require__(32),
+  addMilliseconds: __webpack_require__(33),
   addMinutes: __webpack_require__(154),
   addMonths: __webpack_require__(55),
   addQuarters: __webpack_require__(155),
@@ -11471,7 +11477,7 @@ module.exports = {
   areRangesOverlapping: __webpack_require__(423),
   closestIndexTo: __webpack_require__(424),
   closestTo: __webpack_require__(425),
-  compareAsc: __webpack_require__(34),
+  compareAsc: __webpack_require__(35),
   compareDesc: __webpack_require__(84),
   differenceInCalendarDays: __webpack_require__(54),
   differenceInCalendarISOWeeks: __webpack_require__(426),
@@ -11592,7 +11598,7 @@ module.exports = {
   startOfDay: __webpack_require__(18),
   startOfHour: __webpack_require__(173),
   startOfISOWeek: __webpack_require__(17),
-  startOfISOYear: __webpack_require__(33),
+  startOfISOYear: __webpack_require__(34),
   startOfMinute: __webpack_require__(177),
   startOfMonth: __webpack_require__(511),
   startOfQuarter: __webpack_require__(180),
@@ -11619,7 +11625,7 @@ module.exports = {
 /* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(32)
+var addMilliseconds = __webpack_require__(33)
 
 var MILLISECONDS_IN_HOUR = 3600000
 
@@ -11685,7 +11691,7 @@ module.exports = addISOYears
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var startOfISOYear = __webpack_require__(33)
+var startOfISOYear = __webpack_require__(34)
 var differenceInCalendarDays = __webpack_require__(54)
 
 /**
@@ -11726,7 +11732,7 @@ module.exports = setISOYear
 /* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(32)
+var addMilliseconds = __webpack_require__(33)
 
 var MILLISECONDS_IN_MINUTE = 60000
 
@@ -11789,7 +11795,7 @@ module.exports = addQuarters
 /* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(32)
+var addMilliseconds = __webpack_require__(33)
 
 /**
  * @category Second Helpers
@@ -11988,7 +11994,7 @@ module.exports = differenceInCalendarYears
 
 var parse = __webpack_require__(0)
 var differenceInCalendarDays = __webpack_require__(54)
-var compareAsc = __webpack_require__(34)
+var compareAsc = __webpack_require__(35)
 
 /**
  * @category Day Helpers
@@ -12624,7 +12630,7 @@ module.exports = isSameISOWeek
 /* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfISOYear = __webpack_require__(33)
+var startOfISOYear = __webpack_require__(34)
 
 /**
  * @category ISO Week-Numbering Year Helpers
@@ -13120,7 +13126,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.updatePayment = exports.createPayment = exports.cancelPayment = exports.setTip = exports.setAmount = exports.requestPayment = undefined;
 
-var _payments = __webpack_require__(35);
+var _payments = __webpack_require__(36);
 
 var types = _interopRequireWildcard(_payments);
 
@@ -13678,7 +13684,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Icon = __webpack_require__(37);
+var _Icon = __webpack_require__(27);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -14008,7 +14014,7 @@ exports = module.exports = __webpack_require__(204)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Barlow:200,400,500);", ""]);
 
 // module
-exports.push([module.i, "@charset \"UTF-8\";\n/* ==========================================================================\n   #BOX-SIZING\n   ========================================================================== */\n/**\n * More sensible default box-sizing:\n * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice\n */\nhtml {\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n/* ==========================================================================\n   #RESET\n   ========================================================================== */\n/**\n * A very simple reset that sits on top of Normalize.css.\n */\nbody,\nh1, h2, h3, h4, h5, h6,\nblockquote, p, pre,\ndl, dd, ol, ul,\nfigure,\nhr,\nfieldset, legend {\n  margin: 0;\n  padding: 0; }\n\n/**\n * Remove trailing margins from nested lists.\n */\nli > ol,\nli > ul {\n  margin-bottom: 0; }\n\n/**\n * Remove default table spacing.\n */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/**\n * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`\n *    on fieldsets.\n */\nfieldset {\n  min-width: 0;\n  /* [1] */\n  border: 0; }\n\n/* ==========================================================================\n   #SHARED\n   ========================================================================== */\n/**\n * Shared declarations for certain elements.\n */\n/**\n * Always declare margins in the same direction:\n * csswizardry.com/2012/06/single-direction-margin-declarations\n */\n/* stylelint-disable selector-list-comma-newline-after */\naddress,\nh1, h2, h3, h4, h5, h6,\nblockquote, p, pre,\ndl, ol, ul,\nfigure,\nhr,\ntable,\nfieldset {\n  margin-bottom: 24px; }\n\n/**\n * Consistent indentation for lists.\n */\ndd, ol, ul {\n  margin-left: 24px; }\n\n/* stylelint-enable selector-list-comma-newline-after */\n/* ==========================================================================\n   #PAGE\n   ========================================================================== */\n/**\n * Simple page-level setup.\n *\n * 1. Set the default `font-size` and `line-height` for the entire project,\n *    sourced from our default variables. The `font-size` is calculated to exist\n *    in ems, the `line-height` is calculated to exist unitlessly.\n * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when\n *    navigating between pages that do/do not have enough content to produce\n *    scrollbars naturally.\n * 3. Ensure the page always fills at least the entire height of the viewport.\n */\nhtml {\n  font-size: 1.125em;\n  /* [1] */\n  line-height: 1.33333;\n  /* [1] */\n  overflow-y: scroll;\n  /* [2] */\n  min-height: 100%;\n  /* [3] */ }\n\nhtml, body, main {\n  height: 100%; }\n\nbody {\n  font-family: \"Barlow\", sans-serif; }\n\n@media screen and (min-width: 426px) {\n  main {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: #EFEFEF; } }\n\n/* ==========================================================================\n   #HEADINGS\n   ========================================================================== */\n/**\n * Simple default styles for headings 1 through 6. Anything more opinionated\n * than simple font-size changes should likely be applied via classes (see:\n * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).\n */\nh1 {\n  font-size: 36px;\n  font-size: 2rem;\n  line-height: 1.33333; }\n\nh2 {\n  font-size: 28px;\n  font-size: 1.55556rem;\n  line-height: 1.71429; }\n\nh3 {\n  font-size: 24px;\n  font-size: 1.33333rem;\n  line-height: 1; }\n\nh4 {\n  font-size: 20px;\n  font-size: 1.11111rem;\n  line-height: 1.2; }\n\nh5 {\n  font-size: 18px;\n  font-size: 1rem;\n  line-height: 1.33333; }\n\nh6 {\n  font-size: 16px;\n  font-size: 0.88889rem;\n  line-height: 1.5; }\n\nh1, h3 {\n  font-size: 22px;\n  line-height: 27px;\n  font-weight: normal; }\n\nh3 {\n  color: #FF530D; }\n\ninput, select {\n  line-height: 1.5;\n  font-family: inherit;\n  font-size: inherit; }\n\ninput:disabled {\n  background-color: #eee; }\n\nbutton:focus, input:focus {\n  outline: none;\n  border-color: #ff6c3c; }\n\na {\n  color: #4A4A4A;\n  text-decoration: none; }\n\nsmall {\n  font-size: 14px; }\n\n/*\n * App layout using CSS Grid Layout\n */\n.o-app {\n  height: 100%;\n  display: grid;\n  grid-template-rows: 54px 1fr 54px;\n  grid-template-columns: 100px 1fr 100px;\n  grid-template-areas: 'icon-left header icon-right' 'content content content' 'footer footer footer';\n  background-color: #FFFFFF;\n  max-width: 425px;\n  max-height: 667px; }\n  @media screen and (min-width: 426px) {\n    .o-app {\n      align-self: center;\n      width: 375px;\n      height: 667px;\n      flex: 0 0 375px; } }\n\n.o-app__header {\n  grid-area: header;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.o-app__top-left {\n  grid-area: icon-left;\n  margin-left: 24px;\n  justify-content: flex-start; }\n\n.o-app__top-right {\n  grid-area: icon-right;\n  margin-right: 24px;\n  justify-content: flex-end; }\n\n.o-app__top-left, .o-app__top-right {\n  display: flex;\n  align-items: center; }\n\n.o-app__nav {\n  grid-area: nav; }\n\n.o-app__content {\n  grid-row: 1 / 4;\n  grid-column: 1 / 4; }\n\n.o-app__footer {\n  grid-area: footer; }\n\n/* ==========================================================================\n   #BOX\n   ========================================================================== */\n/**\n * The box object simply boxes off content. Extend with cosmetic styles in the\n * Components layer.\n *\n * 1. So we can apply the `.o-box` class to naturally-inline elements.\n */\n.o-box {\n  display: block;\n  /* [1] */\n  padding: 24px; }\n  .o-box:after {\n    content: \"\" !important;\n    display: block !important;\n    clear: both !important; }\n  .o-box > :last-child {\n    margin-bottom: 0; }\n\n/* Size variants.\n   ========================================================================== */\n.o-box--flush {\n  padding: 0; }\n\n.o-box--tiny {\n  padding: 6px; }\n\n.o-box--small {\n  padding: 12px; }\n\n.o-box--large {\n  padding: 48px; }\n\n.o-box--huge {\n  padding: 96px; }\n\n.o-content {\n  margin-top: 85px;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.o-flex {\n  display: flex; }\n\n.o-flex--col {\n  flex-direction: column; }\n\n.o-flex--center {\n  justify-content: center; }\n\n.o-flex__stretch {\n  flex: 1; }\n\n/* ==========================================================================\n   #LIST-BARE\n   ========================================================================== */\n/**\n * Strip list-like appearance from lists by removing their bullets, and any\n * indentation.\n *\n * Note: Declaring the item-class might not be necessary everywhere but\n * is for example in <dl> lists for the <dd> childs.\n */\n.o-list-bare {\n  list-style: none;\n  margin-left: 0; }\n\n.o-list-bare__item {\n  margin-left: 0; }\n\n/* ==========================================================================\n   #LIST-INLINE\n   ========================================================================== */\n/**\n * The list-inline object simply displays a list of items in one line.\n */\n.o-list-inline {\n  margin-left: 0;\n  list-style: none; }\n\n.o-list-inline__item {\n  display: inline-block; }\n\n/* ==========================================================================\n   #TABLE\n   ========================================================================== */\n/**\n * A simple object for manipulating the structure of HTML `table`s.\n */\n.o-table {\n  width: 100%; }\n\n/* Equal-width table cells.\n   ========================================================================== */\n/**\n * `table-layout: fixed` forces all cells within a table to occupy the same\n * width as each other. This also has performance benefits: because the browser\n * does not need to (re)calculate cell dimensions based on content it discovers,\n * the table can be rendered very quickly. Further reading:\n * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values\n */\n.o-table--fixed {\n  table-layout: fixed; }\n\n/* Size variants.\n   ========================================================================== */\n.o-table--tiny th,\n.o-table--tiny td {\n  padding: 6px; }\n\n.o-table--small th,\n.o-table--small td {\n  padding: 12px; }\n\n.o-table--large th,\n.o-table--large td {\n  padding: 48px; }\n\n.o-table--huge th,\n.o-table--huge td {\n  padding: 96px; }\n\n.c-badge {\n  background-color: #EFEFEF;\n  padding: 6px 14px;\n  border-radius: 14px; }\n\n.c-btn {\n  color: #FFFFFF;\n  background-color: #FF530D;\n  border: 1px solid #FF530D;\n  display: inline-block;\n  font-size: 18px;\n  line-height: 27px;\n  font-weight: 500;\n  text-decoration: none;\n  text-align: center;\n  padding: 12px; }\n  .c-btn:focus, .c-btn:active {\n    border: 1px solid #DA4001;\n    background-color: #DA4001; }\n  .c-btn:disabled {\n    background-color: #E8E8E8;\n    border: 1px solid #E8E8E8; }\n\n.c-btn--rounded {\n  border-radius: 4px; }\n\n.c-dual-currency {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 48px; }\n\n.c-currency {\n  overflow: hidden;\n  display: flex;\n  align-items: baseline; }\n  .c-currency, .c-currency__currency {\n    font-size: 22px; }\n\n.c-currency--input {\n  display: flex; }\n  .c-currency--input__native_input {\n    line-height: 1;\n    color: inherit;\n    width: 100%;\n    vertical-align: baseline; }\n    .c-currency--input__native_input::placeholder {\n      color: rgba(255, 83, 13, 0.4); }\n  .c-currency--input__value, .c-currency--input__native_input {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    text-align: right;\n    flex-grow: 0;\n    flex-shrink: 1; }\n    .c-currency--input__value:focus, .c-currency--input__native_input:focus {\n      outline: none; }\n\n.c-currency--primary {\n  font-size: 72px;\n  color: #FF530D; }\n  .c-currency--primary .c-currency__tail {\n    line-height: 1; }\n  .c-currency--primary .c-currency__tail, .c-currency--primary.c-currency__currency {\n    color: rgba(255, 83, 13, 0.4); }\n  .c-currency--primary .c-currency__currency {\n    margin-left: 24px; }\n\n.c-currency--secondary {\n  line-height: 1;\n  color: #4A4A4A; }\n  .c-currency--secondary .c-currency__tail, .c-currency--secondary.c-currency__currency {\n    color: #E8E8E8; }\n\n.c-dashboard {\n  display: grid;\n  grid-template-rows: 1fr 100px 100px 1fr;\n  grid-template-columns: 1fr;\n  height: 100%; }\n\n.c-dashboard--top, .c-dashboard--bottom {\n  padding: 0 27px; }\n\n.c-dashboard--top {\n  background-color: #FF530D;\n  background-image: linear-gradient(224.34deg, #F23828 -3.81%, #FF530D 67.53%, #FF8820 149.18%);\n  color: #FFFFFF;\n  overflow: hidden;\n  grid-row: 1 / 3;\n  padding-top: 67px;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.c-dashboard--bottom {\n  grid-row: 3 / 5;\n  padding-top: 140px;\n  display: flex;\n  flex-direction: column; }\n\n.c-dashboard--overlay {\n  grid-row: 2 / 4;\n  margin: 0 27px;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0px 5px 15px rgba(111, 111, 111, 0.3);\n  padding: 12px; }\n\n.c-dashboard--top, .c-dashboard--bottom, .c-dashboard--overlay {\n  grid-column: 1 / 2; }\n\n.c-dashboard__overview {\n  display: flex;\n  justify-content: space-around; }\n  .c-dashboard__overview > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n    .c-dashboard__overview > div > span {\n      font-size: 30px;\n      line-height: 36px;\n      font-weight: 200; }\n\n.c-hint {\n  display: block; }\n\n.icon {\n  color: #4A4A4A;\n  fill: currentColor;\n  width: 24px;\n  height: 24px; }\n  .icon svg {\n    width: 24px;\n    height: 24px; }\n  .icon--large {\n    width: 48px;\n    height: 48px; }\n    .icon--large svg {\n      width: 48px;\n      height: 48px; }\n\n.icon--white {\n  color: #FFFFFF; }\n\n.icon--brand {\n  color: #FF530D; }\n\n.c-payment-summary th {\n  font-weight: normal;\n  text-align: left;\n  padding-right: 24px; }\n\n.c-payment-summary td {\n  padding-left: 24px;\n  text-align: right; }\n\n.c-payment-summary tr:nth-last-child(2) td, .c-payment-summary tr:nth-last-child(2) th {\n  padding-bottom: 12px; }\n\n.c-payment-summary tr:nth-last-child(1) td, .c-payment-summary tr:nth-last-child(1) th {\n  border-top: 1px solid currentColor;\n  padding-top: 12px; }\n\n.c-success {\n  background-color: #FF530D;\n  background-image: linear-gradient(224.34deg, #F23828 -3.81%, #FF530D 67.53%, #FF8820 149.18%);\n  color: #FFFFFF;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding-top: 125px; }\n  .c-success .icon--check {\n    width: 80px;\n    height: 80px; }\n    .c-success .icon--check svg {\n      width: 80px;\n      height: 80px; }\n\n.c-settings {\n  margin: 67px 24px 0; }\n  .c-settings .form-field {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 24px; }\n  .c-settings label {\n    font-size: 15px;\n    line-height: 18px; }\n  .c-settings input, .c-settings select {\n    font-size: 18px;\n    line-height: 22px;\n    padding: 5px 0;\n    background-color: #FFFFFF;\n    border: none;\n    border-bottom: 1px solid currentColor; }\n\n.c-tips {\n  font-size: 28px;\n  line-height: 34px;\n  font-weight: 200;\n  margin: 0 30px 30px;\n  display: flex;\n  align-self: stretch;\n  justify-content: space-evenly; }\n  .c-tips a {\n    color: #4A4A4A;\n    font-weight: 200;\n    text-decoration: none; }\n    .c-tips a.c-tips__tip {\n      padding: 0 10px 5px; }\n    .c-tips a.c-tips__tip--active {\n      font-weight: normal;\n      color: #FF530D;\n      border-bottom: 3px solid currentColor; }\n\n/* ==========================================================================\n   #SPACINGS\n   ========================================================================== */\n/**\n * Utility classes to put specific spacing values onto elements. The below loop\n * will generate us a suite of classes like:\n *\n *   .u-margin-top {}\n *   .u-padding-left-large {}\n *   .u-margin-right-small {}\n *   .u-padding {}\n *   .u-padding-right-none {}\n *   .u-padding-horizontal {}\n *   .u-padding-vertical-small {}\n */\n/* stylelint-disable string-quotes */\n.u-padding {\n  padding: 24px !important; }\n\n.u-padding-tiny {\n  padding: 6px !important; }\n\n.u-padding-small {\n  padding: 12px !important; }\n\n.u-padding-large {\n  padding: 48px !important; }\n\n.u-padding-huge {\n  padding: 96px !important; }\n\n.u-padding-none {\n  padding: 0 !important; }\n\n.u-padding-top {\n  padding-top: 24px !important; }\n\n.u-padding-top-tiny {\n  padding-top: 6px !important; }\n\n.u-padding-top-small {\n  padding-top: 12px !important; }\n\n.u-padding-top-large {\n  padding-top: 48px !important; }\n\n.u-padding-top-huge {\n  padding-top: 96px !important; }\n\n.u-padding-top-none {\n  padding-top: 0 !important; }\n\n.u-padding-right {\n  padding-right: 24px !important; }\n\n.u-padding-right-tiny {\n  padding-right: 6px !important; }\n\n.u-padding-right-small {\n  padding-right: 12px !important; }\n\n.u-padding-right-large {\n  padding-right: 48px !important; }\n\n.u-padding-right-huge {\n  padding-right: 96px !important; }\n\n.u-padding-right-none {\n  padding-right: 0 !important; }\n\n.u-padding-bottom {\n  padding-bottom: 24px !important; }\n\n.u-padding-bottom-tiny {\n  padding-bottom: 6px !important; }\n\n.u-padding-bottom-small {\n  padding-bottom: 12px !important; }\n\n.u-padding-bottom-large {\n  padding-bottom: 48px !important; }\n\n.u-padding-bottom-huge {\n  padding-bottom: 96px !important; }\n\n.u-padding-bottom-none {\n  padding-bottom: 0 !important; }\n\n.u-padding-left {\n  padding-left: 24px !important; }\n\n.u-padding-left-tiny {\n  padding-left: 6px !important; }\n\n.u-padding-left-small {\n  padding-left: 12px !important; }\n\n.u-padding-left-large {\n  padding-left: 48px !important; }\n\n.u-padding-left-huge {\n  padding-left: 96px !important; }\n\n.u-padding-left-none {\n  padding-left: 0 !important; }\n\n.u-padding-horizontal {\n  padding-left: 24px !important;\n  padding-right: 24px !important; }\n\n.u-padding-horizontal-tiny {\n  padding-left: 6px !important;\n  padding-right: 6px !important; }\n\n.u-padding-horizontal-small {\n  padding-left: 12px !important;\n  padding-right: 12px !important; }\n\n.u-padding-horizontal-large {\n  padding-left: 48px !important;\n  padding-right: 48px !important; }\n\n.u-padding-horizontal-huge {\n  padding-left: 96px !important;\n  padding-right: 96px !important; }\n\n.u-padding-horizontal-none {\n  padding-left: 0 !important;\n  padding-right: 0 !important; }\n\n.u-padding-vertical {\n  padding-top: 24px !important;\n  padding-bottom: 24px !important; }\n\n.u-padding-vertical-tiny {\n  padding-top: 6px !important;\n  padding-bottom: 6px !important; }\n\n.u-padding-vertical-small {\n  padding-top: 12px !important;\n  padding-bottom: 12px !important; }\n\n.u-padding-vertical-large {\n  padding-top: 48px !important;\n  padding-bottom: 48px !important; }\n\n.u-padding-vertical-huge {\n  padding-top: 96px !important;\n  padding-bottom: 96px !important; }\n\n.u-padding-vertical-none {\n  padding-top: 0 !important;\n  padding-bottom: 0 !important; }\n\n.u-margin {\n  margin: 24px !important; }\n\n.u-margin-tiny {\n  margin: 6px !important; }\n\n.u-margin-small {\n  margin: 12px !important; }\n\n.u-margin-large {\n  margin: 48px !important; }\n\n.u-margin-huge {\n  margin: 96px !important; }\n\n.u-margin-none {\n  margin: 0 !important; }\n\n.u-margin-top {\n  margin-top: 24px !important; }\n\n.u-margin-top-tiny {\n  margin-top: 6px !important; }\n\n.u-margin-top-small {\n  margin-top: 12px !important; }\n\n.u-margin-top-large {\n  margin-top: 48px !important; }\n\n.u-margin-top-huge {\n  margin-top: 96px !important; }\n\n.u-margin-top-none {\n  margin-top: 0 !important; }\n\n.u-margin-right {\n  margin-right: 24px !important; }\n\n.u-margin-right-tiny {\n  margin-right: 6px !important; }\n\n.u-margin-right-small {\n  margin-right: 12px !important; }\n\n.u-margin-right-large {\n  margin-right: 48px !important; }\n\n.u-margin-right-huge {\n  margin-right: 96px !important; }\n\n.u-margin-right-none {\n  margin-right: 0 !important; }\n\n.u-margin-bottom {\n  margin-bottom: 24px !important; }\n\n.u-margin-bottom-tiny {\n  margin-bottom: 6px !important; }\n\n.u-margin-bottom-small {\n  margin-bottom: 12px !important; }\n\n.u-margin-bottom-large {\n  margin-bottom: 48px !important; }\n\n.u-margin-bottom-huge {\n  margin-bottom: 96px !important; }\n\n.u-margin-bottom-none {\n  margin-bottom: 0 !important; }\n\n.u-margin-left {\n  margin-left: 24px !important; }\n\n.u-margin-left-tiny {\n  margin-left: 6px !important; }\n\n.u-margin-left-small {\n  margin-left: 12px !important; }\n\n.u-margin-left-large {\n  margin-left: 48px !important; }\n\n.u-margin-left-huge {\n  margin-left: 96px !important; }\n\n.u-margin-left-none {\n  margin-left: 0 !important; }\n\n.u-margin-horizontal {\n  margin-left: 24px !important;\n  margin-right: 24px !important; }\n\n.u-margin-horizontal-tiny {\n  margin-left: 6px !important;\n  margin-right: 6px !important; }\n\n.u-margin-horizontal-small {\n  margin-left: 12px !important;\n  margin-right: 12px !important; }\n\n.u-margin-horizontal-large {\n  margin-left: 48px !important;\n  margin-right: 48px !important; }\n\n.u-margin-horizontal-huge {\n  margin-left: 96px !important;\n  margin-right: 96px !important; }\n\n.u-margin-horizontal-none {\n  margin-left: 0 !important;\n  margin-right: 0 !important; }\n\n.u-margin-vertical {\n  margin-top: 24px !important;\n  margin-bottom: 24px !important; }\n\n.u-margin-vertical-tiny {\n  margin-top: 6px !important;\n  margin-bottom: 6px !important; }\n\n.u-margin-vertical-small {\n  margin-top: 12px !important;\n  margin-bottom: 12px !important; }\n\n.u-margin-vertical-large {\n  margin-top: 48px !important;\n  margin-bottom: 48px !important; }\n\n.u-margin-vertical-huge {\n  margin-top: 96px !important;\n  margin-bottom: 96px !important; }\n\n.u-margin-vertical-none {\n  margin-top: 0 !important;\n  margin-bottom: 0 !important; }\n\n/* stylelint-enable string-quotes */\n.u-align-left {\n  text-align: left; }\n\n.u-align-center {\n  text-align: center; }\n\n.u-align-right {\n  text-align: right; }\n\n.u-muted {\n  color: #E8E8E8; }\n\n.u-light {\n  font-weight: 200; }\n\n.u-normal {\n  font-weight: 400; }\n\n.u-medium {\n  font-weight: 500; }\n\n.u-background {\n  color: #FFFFFF; }\n\n.u-brand-primary {\n  color: #FF530D; }\n", ""]);
+exports.push([module.i, "@charset \"UTF-8\";\n/* ==========================================================================\n   #BOX-SIZING\n   ========================================================================== */\n/**\n * More sensible default box-sizing:\n * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice\n */\nhtml {\n  box-sizing: border-box; }\n\n*, *:before, *:after {\n  box-sizing: inherit; }\n\n/* ==========================================================================\n   #RESET\n   ========================================================================== */\n/**\n * A very simple reset that sits on top of Normalize.css.\n */\nbody,\nh1, h2, h3, h4, h5, h6,\nblockquote, p, pre,\ndl, dd, ol, ul,\nfigure,\nhr,\nfieldset, legend {\n  margin: 0;\n  padding: 0; }\n\n/**\n * Remove trailing margins from nested lists.\n */\nli > ol,\nli > ul {\n  margin-bottom: 0; }\n\n/**\n * Remove default table spacing.\n */\ntable {\n  border-collapse: collapse;\n  border-spacing: 0; }\n\n/**\n * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`\n *    on fieldsets.\n */\nfieldset {\n  min-width: 0;\n  /* [1] */\n  border: 0; }\n\n/* ==========================================================================\n   #SHARED\n   ========================================================================== */\n/**\n * Shared declarations for certain elements.\n */\n/**\n * Always declare margins in the same direction:\n * csswizardry.com/2012/06/single-direction-margin-declarations\n */\n/* stylelint-disable selector-list-comma-newline-after */\naddress,\nh1, h2, h3, h4, h5, h6,\nblockquote, p, pre,\ndl, ol, ul,\nfigure,\nhr,\ntable,\nfieldset {\n  margin-bottom: 24px; }\n\n/**\n * Consistent indentation for lists.\n */\ndd, ol, ul {\n  margin-left: 24px; }\n\n/* stylelint-enable selector-list-comma-newline-after */\n/* ==========================================================================\n   #PAGE\n   ========================================================================== */\n/**\n * Simple page-level setup.\n *\n * 1. Set the default `font-size` and `line-height` for the entire project,\n *    sourced from our default variables. The `font-size` is calculated to exist\n *    in ems, the `line-height` is calculated to exist unitlessly.\n * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when\n *    navigating between pages that do/do not have enough content to produce\n *    scrollbars naturally.\n * 3. Ensure the page always fills at least the entire height of the viewport.\n */\nhtml {\n  font-size: 1.125em;\n  /* [1] */\n  line-height: 1.33333;\n  /* [1] */\n  overflow-y: scroll;\n  /* [2] */\n  min-height: 100%;\n  /* [3] */ }\n\nhtml, body, main {\n  height: 100%; }\n\nbody {\n  font-family: \"Barlow\", sans-serif; }\n\n@media screen and (min-width: 426px) {\n  main {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: #EFEFEF; } }\n\n/* ==========================================================================\n   #HEADINGS\n   ========================================================================== */\n/**\n * Simple default styles for headings 1 through 6. Anything more opinionated\n * than simple font-size changes should likely be applied via classes (see:\n * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).\n */\nh1 {\n  font-size: 36px;\n  font-size: 2rem;\n  line-height: 1.33333; }\n\nh2 {\n  font-size: 28px;\n  font-size: 1.55556rem;\n  line-height: 1.71429; }\n\nh3 {\n  font-size: 24px;\n  font-size: 1.33333rem;\n  line-height: 1; }\n\nh4 {\n  font-size: 20px;\n  font-size: 1.11111rem;\n  line-height: 1.2; }\n\nh5 {\n  font-size: 18px;\n  font-size: 1rem;\n  line-height: 1.33333; }\n\nh6 {\n  font-size: 16px;\n  font-size: 0.88889rem;\n  line-height: 1.5; }\n\nh1, h3 {\n  font-size: 22px;\n  line-height: 27px;\n  font-weight: normal; }\n\nh3 {\n  color: #FF530D; }\n\ninput, select, textarea {\n  line-height: 1.5;\n  font-family: inherit;\n  font-size: inherit; }\n\ninput:disabled {\n  background-color: #eee; }\n\nbutton:focus, input:focus {\n  outline: none;\n  border-color: #ff6c3c; }\n\na {\n  color: #4A4A4A;\n  text-decoration: none; }\n\nsmall {\n  font-size: 14px; }\n\n/*\n * App layout using CSS Grid Layout\n */\n.o-app {\n  height: 100%;\n  display: grid;\n  grid-template-rows: 54px 1fr 54px;\n  grid-template-columns: 100px 1fr 100px;\n  grid-template-areas: 'icon-left header icon-right' 'content content content' 'footer footer footer';\n  background-color: #FFFFFF;\n  max-width: 425px;\n  max-height: 667px; }\n  @media screen and (min-width: 426px) {\n    .o-app {\n      align-self: center;\n      width: 375px;\n      height: 667px;\n      flex: 0 0 375px; } }\n\n.o-app__header {\n  grid-area: header;\n  display: flex;\n  align-items: center;\n  justify-content: center; }\n\n.o-app__top-left {\n  grid-area: icon-left;\n  margin-left: 24px;\n  justify-content: flex-start; }\n\n.o-app__top-right {\n  grid-area: icon-right;\n  margin-right: 24px;\n  justify-content: flex-end; }\n\n.o-app__top-left, .o-app__top-right {\n  display: flex;\n  align-items: center; }\n\n.o-app__nav {\n  grid-area: nav; }\n\n.o-app__content {\n  grid-row: 1 / 4;\n  grid-column: 1 / 4; }\n\n.o-app__footer {\n  grid-area: footer; }\n\n/* ==========================================================================\n   #BOX\n   ========================================================================== */\n/**\n * The box object simply boxes off content. Extend with cosmetic styles in the\n * Components layer.\n *\n * 1. So we can apply the `.o-box` class to naturally-inline elements.\n */\n.o-box {\n  display: block;\n  /* [1] */\n  padding: 24px; }\n  .o-box:after {\n    content: \"\" !important;\n    display: block !important;\n    clear: both !important; }\n  .o-box > :last-child {\n    margin-bottom: 0; }\n\n/* Size variants.\n   ========================================================================== */\n.o-box--flush {\n  padding: 0; }\n\n.o-box--tiny {\n  padding: 6px; }\n\n.o-box--small {\n  padding: 12px; }\n\n.o-box--large {\n  padding: 48px; }\n\n.o-box--huge {\n  padding: 96px; }\n\n.o-content {\n  margin-top: 85px;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.o-flex {\n  display: flex; }\n\n.o-flex--col {\n  flex-direction: column; }\n\n.o-flex--center {\n  justify-content: center; }\n\n.o-flex__stretch {\n  flex: 1; }\n\n/* ==========================================================================\n   #LIST-BARE\n   ========================================================================== */\n/**\n * Strip list-like appearance from lists by removing their bullets, and any\n * indentation.\n *\n * Note: Declaring the item-class might not be necessary everywhere but\n * is for example in <dl> lists for the <dd> childs.\n */\n.o-list-bare {\n  list-style: none;\n  margin-left: 0; }\n\n.o-list-bare__item {\n  margin-left: 0; }\n\n/* ==========================================================================\n   #LIST-INLINE\n   ========================================================================== */\n/**\n * The list-inline object simply displays a list of items in one line.\n */\n.o-list-inline {\n  margin-left: 0;\n  list-style: none; }\n\n.o-list-inline__item {\n  display: inline-block; }\n\n/* ==========================================================================\n   #TABLE\n   ========================================================================== */\n/**\n * A simple object for manipulating the structure of HTML `table`s.\n */\n.o-table {\n  width: 100%; }\n\n/* Equal-width table cells.\n   ========================================================================== */\n/**\n * `table-layout: fixed` forces all cells within a table to occupy the same\n * width as each other. This also has performance benefits: because the browser\n * does not need to (re)calculate cell dimensions based on content it discovers,\n * the table can be rendered very quickly. Further reading:\n * https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values\n */\n.o-table--fixed {\n  table-layout: fixed; }\n\n/* Size variants.\n   ========================================================================== */\n.o-table--tiny th,\n.o-table--tiny td {\n  padding: 6px; }\n\n.o-table--small th,\n.o-table--small td {\n  padding: 12px; }\n\n.o-table--large th,\n.o-table--large td {\n  padding: 48px; }\n\n.o-table--huge th,\n.o-table--huge td {\n  padding: 96px; }\n\n.c-badge {\n  background-color: #EFEFEF;\n  padding: 6px 14px;\n  border-radius: 14px; }\n\n.c-btn {\n  color: #FFFFFF;\n  background-color: #FF530D;\n  border: 1px solid #FF530D;\n  display: inline-block;\n  font-size: 18px;\n  line-height: 27px;\n  font-weight: 500;\n  text-decoration: none;\n  text-align: center;\n  padding: 12px; }\n  .c-btn:focus, .c-btn:active {\n    border: 1px solid #DA4001;\n    background-color: #DA4001; }\n  .c-btn:disabled {\n    background-color: #E8E8E8;\n    border: 1px solid #E8E8E8; }\n\n.c-btn--rounded {\n  border-radius: 4px; }\n\n.c-dual-currency {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  margin: 0 48px; }\n\n.c-currency {\n  overflow: hidden;\n  display: flex;\n  align-items: baseline; }\n  .c-currency, .c-currency__currency {\n    font-size: 22px; }\n\n.c-currency--input {\n  display: flex; }\n  .c-currency--input__native_input {\n    line-height: 1;\n    color: inherit;\n    width: 100%;\n    vertical-align: baseline; }\n    .c-currency--input__native_input::placeholder {\n      color: rgba(255, 83, 13, 0.4); }\n  .c-currency--input__value, .c-currency--input__native_input {\n    margin: 0;\n    padding: 0;\n    border: 0;\n    text-align: right;\n    flex-grow: 0;\n    flex-shrink: 1; }\n    .c-currency--input__value:focus, .c-currency--input__native_input:focus {\n      outline: none; }\n\n.c-currency--primary {\n  font-size: 72px;\n  color: #FF530D; }\n  .c-currency--primary .c-currency__tail {\n    line-height: 1; }\n  .c-currency--primary .c-currency__tail, .c-currency--primary.c-currency__currency {\n    color: rgba(255, 83, 13, 0.4); }\n  .c-currency--primary .c-currency__currency {\n    margin-left: 24px; }\n\n.c-currency--secondary {\n  line-height: 1;\n  color: #4A4A4A; }\n  .c-currency--secondary .c-currency__tail, .c-currency--secondary.c-currency__currency {\n    color: #E8E8E8; }\n\n.c-dashboard {\n  display: grid;\n  grid-template-rows: 1fr 100px 100px 1fr;\n  grid-template-columns: 1fr;\n  height: 100%; }\n\n.c-dashboard--top, .c-dashboard--bottom {\n  padding: 0 27px; }\n\n.c-dashboard--top {\n  background-color: #FF530D;\n  background-image: linear-gradient(224.34deg, #F23828 -3.81%, #FF530D 67.53%, #FF8820 149.18%);\n  color: #FFFFFF;\n  overflow: hidden;\n  grid-row: 1 / 3;\n  padding-top: 67px;\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.c-dashboard--bottom {\n  grid-row: 3 / 5;\n  padding-top: 140px;\n  display: flex;\n  flex-direction: column; }\n\n.c-dashboard--overlay {\n  grid-row: 2 / 4;\n  margin: 0 27px;\n  background-color: white;\n  border-radius: 10px;\n  box-shadow: 0px 5px 15px rgba(111, 111, 111, 0.3);\n  padding: 12px; }\n\n.c-dashboard--top, .c-dashboard--bottom, .c-dashboard--overlay {\n  grid-column: 1 / 2; }\n\n.c-dashboard__overview {\n  display: flex;\n  justify-content: space-around; }\n  .c-dashboard__overview > div {\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n    .c-dashboard__overview > div > span {\n      font-size: 30px;\n      line-height: 36px;\n      font-weight: 200; }\n\n.c-hint {\n  display: block; }\n\n.icon {\n  color: #4A4A4A;\n  fill: currentColor;\n  width: 24px;\n  height: 24px; }\n  .icon svg {\n    width: 24px;\n    height: 24px; }\n  .icon--large {\n    width: 48px;\n    height: 48px; }\n    .icon--large svg {\n      width: 48px;\n      height: 48px; }\n\n.icon--white {\n  color: #FFFFFF; }\n\n.icon--brand {\n  color: #FF530D; }\n\n.c-integrated-address {\n  width: 192px;\n  height: 192px;\n  display: flex;\n  flex-direction: column; }\n  .c-integrated-address a {\n    align-self: flex-end; }\n  .c-integrated-address textarea {\n    flex: 1;\n    text-align: center;\n    border: none;\n    outline: none;\n    font-size: 14px; }\n\n.c-payment-summary th {\n  font-weight: normal;\n  text-align: left;\n  padding-right: 24px; }\n\n.c-payment-summary td {\n  padding-left: 24px;\n  text-align: right; }\n\n.c-payment-summary tr:nth-last-child(2) td, .c-payment-summary tr:nth-last-child(2) th {\n  padding-bottom: 12px; }\n\n.c-payment-summary tr:nth-last-child(1) td, .c-payment-summary tr:nth-last-child(1) th {\n  border-top: 1px solid currentColor;\n  padding-top: 12px; }\n\n.c-success {\n  background-color: #FF530D;\n  background-image: linear-gradient(224.34deg, #F23828 -3.81%, #FF530D 67.53%, #FF8820 149.18%);\n  color: #FFFFFF;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding-top: 125px; }\n  .c-success .icon--check {\n    width: 80px;\n    height: 80px; }\n    .c-success .icon--check svg {\n      width: 80px;\n      height: 80px; }\n\n.c-settings {\n  margin: 67px 24px 0; }\n  .c-settings .form-field {\n    display: flex;\n    flex-direction: column;\n    margin-bottom: 24px; }\n  .c-settings label {\n    font-size: 15px;\n    line-height: 18px; }\n  .c-settings input, .c-settings select {\n    font-size: 18px;\n    line-height: 22px;\n    padding: 5px 0;\n    background-color: #FFFFFF;\n    border: none;\n    border-bottom: 1px solid currentColor; }\n\n.c-tips {\n  font-size: 28px;\n  line-height: 34px;\n  font-weight: 200;\n  margin: 0 30px 30px;\n  display: flex;\n  align-self: stretch;\n  justify-content: space-evenly; }\n  .c-tips a {\n    color: #4A4A4A;\n    font-weight: 200;\n    text-decoration: none; }\n    .c-tips a.c-tips__tip {\n      padding: 0 10px 5px; }\n    .c-tips a.c-tips__tip--active {\n      font-weight: normal;\n      color: #FF530D;\n      border-bottom: 3px solid currentColor; }\n\n/* ==========================================================================\n   #SPACINGS\n   ========================================================================== */\n/**\n * Utility classes to put specific spacing values onto elements. The below loop\n * will generate us a suite of classes like:\n *\n *   .u-margin-top {}\n *   .u-padding-left-large {}\n *   .u-margin-right-small {}\n *   .u-padding {}\n *   .u-padding-right-none {}\n *   .u-padding-horizontal {}\n *   .u-padding-vertical-small {}\n */\n/* stylelint-disable string-quotes */\n.u-padding {\n  padding: 24px !important; }\n\n.u-padding-tiny {\n  padding: 6px !important; }\n\n.u-padding-small {\n  padding: 12px !important; }\n\n.u-padding-large {\n  padding: 48px !important; }\n\n.u-padding-huge {\n  padding: 96px !important; }\n\n.u-padding-none {\n  padding: 0 !important; }\n\n.u-padding-top {\n  padding-top: 24px !important; }\n\n.u-padding-top-tiny {\n  padding-top: 6px !important; }\n\n.u-padding-top-small {\n  padding-top: 12px !important; }\n\n.u-padding-top-large {\n  padding-top: 48px !important; }\n\n.u-padding-top-huge {\n  padding-top: 96px !important; }\n\n.u-padding-top-none {\n  padding-top: 0 !important; }\n\n.u-padding-right {\n  padding-right: 24px !important; }\n\n.u-padding-right-tiny {\n  padding-right: 6px !important; }\n\n.u-padding-right-small {\n  padding-right: 12px !important; }\n\n.u-padding-right-large {\n  padding-right: 48px !important; }\n\n.u-padding-right-huge {\n  padding-right: 96px !important; }\n\n.u-padding-right-none {\n  padding-right: 0 !important; }\n\n.u-padding-bottom {\n  padding-bottom: 24px !important; }\n\n.u-padding-bottom-tiny {\n  padding-bottom: 6px !important; }\n\n.u-padding-bottom-small {\n  padding-bottom: 12px !important; }\n\n.u-padding-bottom-large {\n  padding-bottom: 48px !important; }\n\n.u-padding-bottom-huge {\n  padding-bottom: 96px !important; }\n\n.u-padding-bottom-none {\n  padding-bottom: 0 !important; }\n\n.u-padding-left {\n  padding-left: 24px !important; }\n\n.u-padding-left-tiny {\n  padding-left: 6px !important; }\n\n.u-padding-left-small {\n  padding-left: 12px !important; }\n\n.u-padding-left-large {\n  padding-left: 48px !important; }\n\n.u-padding-left-huge {\n  padding-left: 96px !important; }\n\n.u-padding-left-none {\n  padding-left: 0 !important; }\n\n.u-padding-horizontal {\n  padding-left: 24px !important;\n  padding-right: 24px !important; }\n\n.u-padding-horizontal-tiny {\n  padding-left: 6px !important;\n  padding-right: 6px !important; }\n\n.u-padding-horizontal-small {\n  padding-left: 12px !important;\n  padding-right: 12px !important; }\n\n.u-padding-horizontal-large {\n  padding-left: 48px !important;\n  padding-right: 48px !important; }\n\n.u-padding-horizontal-huge {\n  padding-left: 96px !important;\n  padding-right: 96px !important; }\n\n.u-padding-horizontal-none {\n  padding-left: 0 !important;\n  padding-right: 0 !important; }\n\n.u-padding-vertical {\n  padding-top: 24px !important;\n  padding-bottom: 24px !important; }\n\n.u-padding-vertical-tiny {\n  padding-top: 6px !important;\n  padding-bottom: 6px !important; }\n\n.u-padding-vertical-small {\n  padding-top: 12px !important;\n  padding-bottom: 12px !important; }\n\n.u-padding-vertical-large {\n  padding-top: 48px !important;\n  padding-bottom: 48px !important; }\n\n.u-padding-vertical-huge {\n  padding-top: 96px !important;\n  padding-bottom: 96px !important; }\n\n.u-padding-vertical-none {\n  padding-top: 0 !important;\n  padding-bottom: 0 !important; }\n\n.u-margin {\n  margin: 24px !important; }\n\n.u-margin-tiny {\n  margin: 6px !important; }\n\n.u-margin-small {\n  margin: 12px !important; }\n\n.u-margin-large {\n  margin: 48px !important; }\n\n.u-margin-huge {\n  margin: 96px !important; }\n\n.u-margin-none {\n  margin: 0 !important; }\n\n.u-margin-top {\n  margin-top: 24px !important; }\n\n.u-margin-top-tiny {\n  margin-top: 6px !important; }\n\n.u-margin-top-small {\n  margin-top: 12px !important; }\n\n.u-margin-top-large {\n  margin-top: 48px !important; }\n\n.u-margin-top-huge {\n  margin-top: 96px !important; }\n\n.u-margin-top-none {\n  margin-top: 0 !important; }\n\n.u-margin-right {\n  margin-right: 24px !important; }\n\n.u-margin-right-tiny {\n  margin-right: 6px !important; }\n\n.u-margin-right-small {\n  margin-right: 12px !important; }\n\n.u-margin-right-large {\n  margin-right: 48px !important; }\n\n.u-margin-right-huge {\n  margin-right: 96px !important; }\n\n.u-margin-right-none {\n  margin-right: 0 !important; }\n\n.u-margin-bottom {\n  margin-bottom: 24px !important; }\n\n.u-margin-bottom-tiny {\n  margin-bottom: 6px !important; }\n\n.u-margin-bottom-small {\n  margin-bottom: 12px !important; }\n\n.u-margin-bottom-large {\n  margin-bottom: 48px !important; }\n\n.u-margin-bottom-huge {\n  margin-bottom: 96px !important; }\n\n.u-margin-bottom-none {\n  margin-bottom: 0 !important; }\n\n.u-margin-left {\n  margin-left: 24px !important; }\n\n.u-margin-left-tiny {\n  margin-left: 6px !important; }\n\n.u-margin-left-small {\n  margin-left: 12px !important; }\n\n.u-margin-left-large {\n  margin-left: 48px !important; }\n\n.u-margin-left-huge {\n  margin-left: 96px !important; }\n\n.u-margin-left-none {\n  margin-left: 0 !important; }\n\n.u-margin-horizontal {\n  margin-left: 24px !important;\n  margin-right: 24px !important; }\n\n.u-margin-horizontal-tiny {\n  margin-left: 6px !important;\n  margin-right: 6px !important; }\n\n.u-margin-horizontal-small {\n  margin-left: 12px !important;\n  margin-right: 12px !important; }\n\n.u-margin-horizontal-large {\n  margin-left: 48px !important;\n  margin-right: 48px !important; }\n\n.u-margin-horizontal-huge {\n  margin-left: 96px !important;\n  margin-right: 96px !important; }\n\n.u-margin-horizontal-none {\n  margin-left: 0 !important;\n  margin-right: 0 !important; }\n\n.u-margin-vertical {\n  margin-top: 24px !important;\n  margin-bottom: 24px !important; }\n\n.u-margin-vertical-tiny {\n  margin-top: 6px !important;\n  margin-bottom: 6px !important; }\n\n.u-margin-vertical-small {\n  margin-top: 12px !important;\n  margin-bottom: 12px !important; }\n\n.u-margin-vertical-large {\n  margin-top: 48px !important;\n  margin-bottom: 48px !important; }\n\n.u-margin-vertical-huge {\n  margin-top: 96px !important;\n  margin-bottom: 96px !important; }\n\n.u-margin-vertical-none {\n  margin-top: 0 !important;\n  margin-bottom: 0 !important; }\n\n/* stylelint-enable string-quotes */\n.u-align-left {\n  text-align: left; }\n\n.u-align-center {\n  text-align: center; }\n\n.u-align-right {\n  text-align: right; }\n\n.u-muted {\n  color: #E8E8E8; }\n\n.u-light {\n  font-weight: 200; }\n\n.u-normal {\n  font-weight: 400; }\n\n.u-medium {\n  font-weight: 500; }\n\n.u-background {\n  color: #FFFFFF; }\n\n.u-brand-primary {\n  color: #FF530D; }\n", ""]);
 
 // exports
 
@@ -17239,7 +17245,7 @@ module.exports = ReactPropTypesSecret;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_prefixName__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_prefixName__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -17581,7 +17587,7 @@ var fieldArrayPropTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectedField__ = __webpack_require__(263);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_shallowCompare__ = __webpack_require__(138);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_prefixName__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_prefixName__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__structure_plain__ = __webpack_require__(2);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -19455,7 +19461,7 @@ function cacheHas(cache, key) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Symbol_js__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Uint8Array_js__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__eq_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__eq_js__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__equalArrays_js__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mapToArray_js__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__setToArray_js__ = __webpack_require__(307);
@@ -20414,7 +20420,7 @@ function keys(value) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectedFields__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_shallowCompare__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__structure_plain__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_prefixName__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_prefixName__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -20864,7 +20870,7 @@ var createConnectedFields = function createConnectedFields(structure) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ConnectedFieldArray__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_prefixName__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__util_prefixName__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -21484,7 +21490,7 @@ function getMatchData(object) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isKey_js__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__isStrictComparable_js__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__matchesStrictComparable_js__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toKey_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__toKey_js__ = __webpack_require__(31);
 
 
 
@@ -21634,7 +21640,7 @@ function baseHasIn(object, key) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isArray_js__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isIndex_js__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__isLength_js__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toKey_js__ = __webpack_require__(31);
 
 
 
@@ -21684,7 +21690,7 @@ function hasPath(object, path, hasFunc) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseProperty_js__ = __webpack_require__(348);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__basePropertyDeep_js__ = __webpack_require__(349);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isKey_js__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toKey_js__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__toKey_js__ = __webpack_require__(31);
 
 
 
@@ -21932,7 +21938,7 @@ var createFormValueSelector = function createFormValueSelector(_ref) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_prop_types__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_redux__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_prefixName__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_prefixName__ = __webpack_require__(29);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -23954,7 +23960,7 @@ function copyObject(source, props, object, customizer) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__baseAssignValue_js__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__eq_js__ = __webpack_require__(30);
 
 
 
@@ -24337,7 +24343,7 @@ function shortOut(func) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__eq_js__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__isArrayLike_js__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__isIndex_js__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__isObject_js__ = __webpack_require__(11);
@@ -25770,7 +25776,7 @@ module.exports = differenceInHours
 
 var parse = __webpack_require__(0)
 var differenceInCalendarISOYears = __webpack_require__(158)
-var compareAsc = __webpack_require__(34)
+var compareAsc = __webpack_require__(35)
 var subISOYears = __webpack_require__(163)
 
 /**
@@ -25919,7 +25925,7 @@ module.exports = differenceInWeeks
 
 var parse = __webpack_require__(0)
 var differenceInCalendarYears = __webpack_require__(161)
-var compareAsc = __webpack_require__(34)
+var compareAsc = __webpack_require__(35)
 
 /**
  * @category Year Helpers
@@ -27302,7 +27308,7 @@ module.exports = getHours
 /* 456 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var startOfISOYear = __webpack_require__(33)
+var startOfISOYear = __webpack_require__(34)
 var addWeeks = __webpack_require__(83)
 
 var MILLISECONDS_IN_WEEK = 604800000
@@ -28744,7 +28750,7 @@ module.exports = setDate
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var addDays = __webpack_require__(31)
+var addDays = __webpack_require__(32)
 
 /**
  * @category Weekday Helpers
@@ -28855,7 +28861,7 @@ module.exports = setHours
 /***/ (function(module, exports, __webpack_require__) {
 
 var parse = __webpack_require__(0)
-var addDays = __webpack_require__(31)
+var addDays = __webpack_require__(32)
 var getISODay = __webpack_require__(171)
 
 /**
@@ -29214,7 +29220,7 @@ module.exports = startOfYesterday
 /* 515 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addDays = __webpack_require__(31)
+var addDays = __webpack_require__(32)
 
 /**
  * @category Day Helpers
@@ -29274,7 +29280,7 @@ module.exports = subHours
 /* 517 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var addMilliseconds = __webpack_require__(32)
+var addMilliseconds = __webpack_require__(33)
 
 /**
  * @category Millisecond Helpers
@@ -29502,7 +29508,7 @@ var _extends = Object.assign || function (target) {
   }return target;
 };
 
-var _payments = __webpack_require__(35);
+var _payments = __webpack_require__(36);
 
 var _payment = __webpack_require__(525);
 
@@ -29584,9 +29590,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _payments = __webpack_require__(35);
+var _payments = __webpack_require__(36);
 
-var PAYMENT_KEYS = ['id', 'createdAt', 'fiatCurrency', 'exchange', 'address', 'height', 'paymentId', 'rate', 'receipt', 'requestedAmount', 'convertedAmount', 'tip', 'uri', 'receivedAmount', 'transactionIds', 'updatedAt'];
+var PAYMENT_KEYS = ['id', 'createdAt', 'fiatCurrency', 'exchange', 'address', 'integratedAddress', 'height', 'paymentId', 'rate', 'receipt', 'requestedAmount', 'convertedAmount', 'tip', 'uri', 'receivedAmount', 'transactionIds', 'updatedAt'];
 
 var validPaymentKey = key => PAYMENT_KEYS.indexOf(key) > -1;
 
@@ -29675,7 +29681,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.getIds = undefined;
 
-var _payments = __webpack_require__(35);
+var _payments = __webpack_require__(36);
 
 var allIds = function allIds() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -29906,7 +29912,7 @@ var _reducers = __webpack_require__(25);
 
 var _payments = __webpack_require__(189);
 
-var _payments2 = __webpack_require__(35);
+var _payments2 = __webpack_require__(36);
 
 var types = _interopRequireWildcard(_payments2);
 
@@ -29978,10 +29984,11 @@ function* processPayment(action) {
       paymentRequest = _ref3[1];
 
   var address = paymentRequest.address,
+      integratedAddress = paymentRequest.integratedAddress,
       height = paymentRequest.height,
       paymentId = paymentRequest.paymentId;
 
-  yield (0, _effects.put)((0, _payments.updatePayment)(id, { address, height, paymentId, rate }));
+  yield (0, _effects.put)((0, _payments.updatePayment)(id, { address, integratedAddress, height, paymentId, rate }));
 
   var setAmount = yield (0, _effects.take)(types.SET_AMOUNT);
 
@@ -31018,7 +31025,7 @@ var _payments = __webpack_require__(587);
 
 var _payments2 = _interopRequireDefault(_payments);
 
-var _settings = __webpack_require__(606);
+var _settings = __webpack_require__(607);
 
 var _settings2 = _interopRequireDefault(_settings);
 
@@ -31604,7 +31611,7 @@ var _invariant2 = _interopRequireDefault(_invariant);
 
 var _LocationUtils = __webpack_require__(61);
 
-var _PathUtils = __webpack_require__(27);
+var _PathUtils = __webpack_require__(28);
 
 var _createTransitionManager = __webpack_require__(62);
 
@@ -32008,7 +32015,7 @@ var _warning = __webpack_require__(4);
 
 var _warning2 = _interopRequireDefault(_warning);
 
-var _PathUtils = __webpack_require__(27);
+var _PathUtils = __webpack_require__(28);
 
 var _LocationUtils = __webpack_require__(61);
 
@@ -32924,7 +32931,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LocationUtils__ = __webpack_require__(58);
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["a"]; });
 /* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__LocationUtils__["b"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__PathUtils__ = __webpack_require__(37);
 /* unused harmony reexport parsePath */
 /* unused harmony reexport createPath */
 
@@ -32947,7 +32954,7 @@ Redirect.contextTypes = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(193);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -33251,7 +33258,7 @@ var createBrowserHistory = function createBrowserHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_invariant___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_invariant__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__PathUtils__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__createTransitionManager__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__DOMUtils__ = __webpack_require__(193);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -33569,7 +33576,7 @@ var createHashHistory = function createHashHistory() {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_warning___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_warning__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__PathUtils__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LocationUtils__ = __webpack_require__(58);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__createTransitionManager__ = __webpack_require__(96);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -33754,7 +33761,7 @@ var createMemoryHistory = function createMemoryHistory() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_prop_types___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_prop_types__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_history_PathUtils___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_history_PathUtils__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Router__ = __webpack_require__(94);
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -34300,7 +34307,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(19);
 
-var _Icon = __webpack_require__(37);
+var _Icon = __webpack_require__(27);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -34594,7 +34601,7 @@ var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Icon = __webpack_require__(37);
+var _Icon = __webpack_require__(27);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
@@ -35366,23 +35373,23 @@ var _big = __webpack_require__(26);
 
 var _big2 = _interopRequireDefault(_big);
 
-var _qrcode = __webpack_require__(595);
-
-var _qrcode2 = _interopRequireDefault(_qrcode);
-
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(19);
 
-var _Icon = __webpack_require__(37);
+var _Icon = __webpack_require__(27);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
 var _CancelPayment = __webpack_require__(194);
 
 var _CancelPayment2 = _interopRequireDefault(_CancelPayment);
+
+var _PaymentRequest = __webpack_require__(595);
+
+var _PaymentRequest2 = _interopRequireDefault(_PaymentRequest);
 
 var _FiatRate = __webpack_require__(195);
 
@@ -35411,6 +35418,7 @@ var SendPayment = class SendPayment extends _react.Component {
         settings = _props.settings,
         _props$payment = _props.payment,
         address = _props$payment.address,
+        integratedAddress = _props$payment.integratedAddress,
         exchange = _props$payment.exchange,
         fiatCurrency = _props$payment.fiatCurrency,
         requestedAmount = _props$payment.requestedAmount,
@@ -35429,13 +35437,14 @@ var SendPayment = class SendPayment extends _react.Component {
       return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('div', { className: 'o-app__content o-content' }, _react2.default.createElement('h3', { className: 'u-margin-bottom' }, 'Add a tip?'), _react2.default.createElement('ul', { className: 'o-list-inline c-tips' }, [0.15, 0.18, 0.20].map((tipRate, key) => _react2.default.createElement('li', {
         key: key,
         onClick: e => {
+          var isResetting = tipIndex === key;
           e.preventDefault();
-          setTip(tipRate * convertedAmount);
+          setTip(isResetting ? 0 : tipRate * convertedAmount);
           this.setState({
-            tipIndex: key
+            tipIndex: isResetting ? null : key
           });
         },
-        className: 'o-list-inline__item' }, _react2.default.createElement('a', { href: '#', className: `c-tips__tip ${key === tipIndex ? 'c-tips__tip--active' : 'bar'}` }, tipRate * 100, '%')))), _react2.default.createElement('p', null, 'To ', settings.name || 'Coffee shop'), _react2.default.createElement('table', { className: 'c-payment-summary u-margin-bottom-small' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Amount'), _react2.default.createElement('td', null, requestedAmount, '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Tip'), _react2.default.createElement('td', null, new _big2.default(tip || '0').times(rate).toFixed(2), '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Total'), _react2.default.createElement('td', null, new _big2.default(requestedAmount).add(new _big2.default(tip || '0').times(rate)).toFixed(2), '\xA0', fiatCurrency)))), _react2.default.createElement('small', { className: 'u-margin-bottom-large' }, new _big2.default(convertedAmount).add(new _big2.default(tip || '0')).toFixed(12), ' XMR'), _react2.default.createElement('div', { className: 'o-flex o-flex--col' }, _react2.default.createElement('div', { className: 'o-flex o-flex--center u-margin-bottom' }, uri && _react2.default.createElement(_qrcode2.default, { size: 192, value: uri }))), _react2.default.createElement(_FiatRate2.default, { className: 'u-align-center', rate: rate, exchange: exchange, fiatCurrency: fiatCurrency })), _react2.default.createElement(_CancelPayment2.default, { onClick: cancelPayment }), isTestnet ? _react2.default.createElement('small', { className: 'o-app__header u-brand-primary' }, 'Testnet') : null);
+        className: 'o-list-inline__item' }, _react2.default.createElement('a', { href: '#', className: `c-tips__tip ${key === tipIndex ? 'c-tips__tip--active' : 'bar'}` }, tipRate * 100, '%')))), _react2.default.createElement('p', null, 'To ', settings.name || 'Coffee shop'), _react2.default.createElement('table', { className: 'c-payment-summary u-margin-bottom-small' }, _react2.default.createElement('tbody', null, _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Amount'), _react2.default.createElement('td', null, requestedAmount, '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Tip'), _react2.default.createElement('td', null, new _big2.default(tip || '0').times(rate).toFixed(2), '\xA0', fiatCurrency)), _react2.default.createElement('tr', null, _react2.default.createElement('th', { scope: 'row' }, 'Total'), _react2.default.createElement('td', null, new _big2.default(requestedAmount).add(new _big2.default(tip || '0').times(rate)).toFixed(2), '\xA0', fiatCurrency)))), _react2.default.createElement('small', { className: 'u-margin-bottom-large' }, new _big2.default(convertedAmount).add(new _big2.default(tip || '0')).toFixed(12), ' XMR'), _react2.default.createElement('div', { className: 'o-flex o-flex--col' }, _react2.default.createElement('div', { className: 'o-flex o-flex--center u-margin-bottom' }, _react2.default.createElement(_PaymentRequest2.default, { integratedAddress: integratedAddress, uri: uri }))), _react2.default.createElement(_FiatRate2.default, { className: 'u-align-center', rate: rate, exchange: exchange, fiatCurrency: fiatCurrency })), _react2.default.createElement(_CancelPayment2.default, { onClick: cancelPayment }), isTestnet ? _react2.default.createElement('small', { className: 'o-app__header u-brand-primary' }, 'Testnet') : null);
     }
   }
 };
@@ -35460,13 +35469,13 @@ var _temp3 = function () {
 
   __REACT_HOT_LOADER__.register(_big2, '_big2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
 
-  __REACT_HOT_LOADER__.register(_qrcode2, '_qrcode2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
-
   __REACT_HOT_LOADER__.register(_react2, '_react2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
 
   __REACT_HOT_LOADER__.register(_Icon2, '_Icon2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
 
   __REACT_HOT_LOADER__.register(_CancelPayment2, '_CancelPayment2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
+
+  __REACT_HOT_LOADER__.register(_PaymentRequest2, '_PaymentRequest2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
 
   __REACT_HOT_LOADER__.register(_FiatRate2, '_FiatRate2', '/home/timo/Code/github/kasisto/src/views/payments/send.js');
 
@@ -35486,6 +35495,110 @@ var _temp3 = function () {
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
+
+var _qrcode = __webpack_require__(596);
+
+var _qrcode2 = _interopRequireDefault(_qrcode);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Icon = __webpack_require__(27);
+
+var _Icon2 = _interopRequireDefault(_Icon);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var selectAll = e => {
+  e.target.setSelectionRange(0, e.target.value.length);
+};
+
+var PaymentRequest = class PaymentRequest extends _react.Component {
+  constructor() {
+    var _temp, _this;
+
+    return _temp = _this = super(...arguments), this.state = {
+      showAddress: false
+    }, this.toggle = function () {
+      return _this.__toggle__REACT_HOT_LOADER__(...arguments);
+    }, _temp;
+  }
+
+  __toggle__REACT_HOT_LOADER__() {
+    this.setState({
+      showAddress: !this.state.showAddress
+    });
+  }
+
+  render() {
+    var _props = this.props,
+        integratedAddress = _props.integratedAddress,
+        uri = _props.uri;
+    var showAddress = this.state.showAddress;
+
+    return _react2.default.createElement(_react.Fragment, null, (() => {
+      if (showAddress) {
+        return _react2.default.createElement('div', { className: 'c-integrated-address' }, _react2.default.createElement(_Icon2.default, { name: 'close', className: 'u-margin-bottom-small', onClick: this.toggle }), _react2.default.createElement('textarea', { autoFocus: true, onFocus: selectAll, defaultValue: integratedAddress }));
+      } else if (uri != null) {
+        return _react2.default.createElement('div', { onClick: this.toggle }, _react2.default.createElement(_qrcode2.default, { size: 192, value: uri }));
+      } else {
+        return null;
+      }
+    })());
+  }
+};
+exports.default = PaymentRequest;
+;
+
+var _temp2 = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(selectAll, 'selectAll', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(PaymentRequest, 'PaymentRequest', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+}();
+
+;
+;
+
+var _temp3 = function () {
+  if (typeof __REACT_HOT_LOADER__ === 'undefined') {
+    return;
+  }
+
+  __REACT_HOT_LOADER__.register(_qrcode2, '_qrcode2', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(_react2, '_react2', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(_Icon2, '_Icon2', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(_interopRequireDefault, '_interopRequireDefault', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(selectAll, 'selectAll', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(PaymentRequest, 'PaymentRequest', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+
+  __REACT_HOT_LOADER__.register(_temp2, '_temp2', '/home/timo/Code/github/kasisto/src/components/PaymentRequest.js');
+}();
+
+;
+
+/***/ }),
+/* 596 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35495,10 +35608,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var React = __webpack_require__(1);
-var PropTypes = __webpack_require__(596);
+var PropTypes = __webpack_require__(597);
 // qr.js doesn't handle error level of zero (M) so we need to do it right,
 // thus the deep require.
-var QRCodeImpl = __webpack_require__(601);
+var QRCodeImpl = __webpack_require__(602);
 var ErrorCorrectLevel = __webpack_require__(197);
 
 function getBackingStorePixelRatio(ctx) {
@@ -35632,7 +35745,7 @@ Object.defineProperty(QRCode, 'propTypes', {
 module.exports = QRCode;
 
 /***/ }),
-/* 596 */
+/* 597 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -35663,12 +35776,12 @@ if (false) {
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(597)();
+  module.exports = __webpack_require__(598)();
 }
 
 
 /***/ }),
-/* 597 */
+/* 598 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35683,9 +35796,9 @@ if (false) {
 
 
 
-var emptyFunction = __webpack_require__(598);
-var invariant = __webpack_require__(599);
-var ReactPropTypesSecret = __webpack_require__(600);
+var emptyFunction = __webpack_require__(599);
+var invariant = __webpack_require__(600);
+var ReactPropTypesSecret = __webpack_require__(601);
 
 module.exports = function() {
   function shim(props, propName, componentName, location, propFullName, secret) {
@@ -35734,7 +35847,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 598 */
+/* 599 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35778,7 +35891,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 599 */
+/* 600 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35839,7 +35952,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 600 */
+/* 601 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35860,13 +35973,13 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 601 */
+/* 602 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var BitByte = __webpack_require__(602);
-var RSBlock = __webpack_require__(603);
-var BitBuffer = __webpack_require__(604);
-var util = __webpack_require__(605);
+var BitByte = __webpack_require__(603);
+var RSBlock = __webpack_require__(604);
+var BitBuffer = __webpack_require__(605);
+var util = __webpack_require__(606);
 var Polynomial = __webpack_require__(198);
 
 function QRCode(typeNumber, errorCorrectLevel) {
@@ -36304,7 +36417,7 @@ module.exports = QRCode;
 
 
 /***/ }),
-/* 602 */
+/* 603 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var mode = __webpack_require__(196);
@@ -36333,7 +36446,7 @@ module.exports = QR8bitByte;
 
 
 /***/ }),
-/* 603 */
+/* 604 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ErrorCorrectLevel
@@ -36638,7 +36751,7 @@ module.exports = QRRSBlock;
 
 
 /***/ }),
-/* 604 */
+/* 605 */
 /***/ (function(module, exports) {
 
 function QRBitBuffer() {
@@ -36682,7 +36795,7 @@ module.exports = QRBitBuffer;
 
 
 /***/ }),
-/* 605 */
+/* 606 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Mode = __webpack_require__(196);
@@ -36967,7 +37080,7 @@ module.exports = QRUtil;
 
 
 /***/ }),
-/* 606 */
+/* 607 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36983,7 +37096,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(7);
 
-var _settings = __webpack_require__(607);
+var _settings = __webpack_require__(608);
 
 var _settings2 = _interopRequireDefault(_settings);
 
@@ -37064,7 +37177,7 @@ var _temp2 = function () {
 ;
 
 /***/ }),
-/* 607 */
+/* 608 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37080,7 +37193,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reduxForm = __webpack_require__(43);
 
-var _Icon = __webpack_require__(37);
+var _Icon = __webpack_require__(27);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
