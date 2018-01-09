@@ -9,6 +9,7 @@ const PAYMENT_KEYS = [
   'fiatCurrency',
   'exchange',
   'address',
+  'integratedAddress',
   'height',
   'paymentId',
   'rate',

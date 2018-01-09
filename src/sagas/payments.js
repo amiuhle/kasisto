@@ -75,11 +75,12 @@ export function * processPayment (action) {
 
   const {
     address,
+    integratedAddress,
     height,
     paymentId
   } = paymentRequest
 
-  yield put(updatePayment(id, { address, height, paymentId, rate }))
+  yield put(updatePayment(id, { address, integratedAddress, height, paymentId, rate }))
 
   const setAmount = yield take(types.SET_AMOUNT)
 

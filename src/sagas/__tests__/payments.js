@@ -176,6 +176,7 @@ describe('processPayment', () => {
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               address: '9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6',
+              integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
               paymentId: '6b1887e13bbd81db',
               height: 1057120,
               rate: 315.84800377

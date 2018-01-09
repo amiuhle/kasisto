@@ -1,10 +1,10 @@
 import Big from 'big.js'
-import QRCode from 'qrcode.react'
 import React, { Component, Fragment } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 import Icon from '../../components/Icon'
 import CancelPayment from '../../components/CancelPayment'
+import PaymentRequest from '../../components/PaymentRequest'
 
 import FiatRate from '../../components/FiatRate'
 
@@ -23,6 +23,7 @@ export default class SendPayment extends Component {
       settings,
       payment: {
         address,
+        integratedAddress,
         exchange,
         fiatCurrency,
         requestedAmount,
@@ -120,9 +121,7 @@ export default class SendPayment extends Component {
 
             <div className='o-flex o-flex--col'>
               <div className='o-flex o-flex--center u-margin-bottom'>
-                {
-                  uri && <QRCode size={192} value={uri} />
-                }
+                <PaymentRequest integratedAddress={integratedAddress} uri={uri} />
               </div>
             </div>
             <FiatRate className='u-align-center' rate={rate} exchange={exchange} fiatCurrency={fiatCurrency} />

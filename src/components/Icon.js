@@ -15,7 +15,13 @@ const className = ({ className } = {}, ...rest) =>
   .join(' ')
 
 export default ({name, onClick, href, ...props}) => {
-  const Tag = onClick == null && href == null ? 'span' : Link
+  let Tag = 'span'
+  if (onClick != null) {
+    Tag = 'a'
+  } else if (href != null) {
+    Tag = Link
+  }
+
   return (
     <Tag
       {...props}
