@@ -19,6 +19,7 @@ export default class SendPayment extends Component {
     }
     const {
       setTip,
+      cancelPayment,
       settings,
       payment: {
         address,
@@ -126,7 +127,7 @@ export default class SendPayment extends Component {
             <FiatRate className='u-align-center' rate={rate} exchange={exchange} fiatCurrency={fiatCurrency} />
           </div>
 
-          <CancelPayment />
+          <CancelPayment onClick={cancelPayment} />
 
           { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
         </Fragment>

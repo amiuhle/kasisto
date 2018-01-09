@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import {
   fetchUri,
   listenForPayments,
-  stopListeningForPayments,
+  cancelPayment,
   setTip
 } from '../../actions'
 
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   ...bindActionCreators({
     fetchUri,
     listenForPayments,
-    stopListeningForPayments,
+    cancelPayment,
     setTip
   }, dispatch)
 })

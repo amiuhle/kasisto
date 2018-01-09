@@ -35,6 +35,19 @@ function * listenForTip (id, paymentRequest, name, receipt) {
   }
 }
 
+function * listenForCancel () {
+  yield take(types.CANCEL_PAYMENT)
+  console.log('Received CANCEL_PAYMENT')
+  throw new Error('Payment request cancelled')
+}
+
+function * awaitPayment (paymentRequest, pollingInterval) {
+  const cancelSaga = yield fork(listenForCancel)
+  const onFulfilled = yield call([paymentRequest, 'onFulfilled'], pollingInterval)
+  cancelSaga.cancel()
+  return onFulfilled
+}
+
 export function * processPayment (action) {
   const {
     resolve,
@@ -86,10 +99,17 @@ export function * processPayment (action) {
 
   const tipSaga = yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 
-  const onFulfilled = yield call([paymentRequest, 'onFulfilled'], pollingInterval)
-  yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+  try {
+    const onFulfilled = yield call(awaitPayment, paymentRequest, pollingInterval)
 
-  tipSaga.cancel()
+    yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+  } catch (e) {
+    console.warn('Error', e)
+    paymentRequest.cancel()
+    console.log('Payment cancelled')
+  } finally {
+    tipSaga.cancel()
+  }
 }
 
 export function * watchCreatePayment () {

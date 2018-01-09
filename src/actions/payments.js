@@ -27,6 +27,10 @@ export const setTip = (tip) => {
   }
 }
 
+export const cancelPayment = () => ({
+  type: types.CANCEL_PAYMENT
+})
+
 export const createPayment = (id, payment, timestamp = () => new Date().toISOString()) => ({
   type: types.CREATE_PAYMENT,
   payload: Object.assign({}, payment, { id },
