@@ -13142,17 +13142,13 @@ function _interopRequireWildcard(obj) {
   }
 }
 
-var requestPayment = exports.requestPayment = function requestPayment(resolve, reject) {
-  var pollingInterval = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2000;
-  return {
-    type: types.REQUEST_PAYMENT,
-    payload: {
-      resolve,
-      reject,
-      pollingInterval
-    }
-  };
-};
+var requestPayment = exports.requestPayment = (resolve, reject) => ({
+  type: types.REQUEST_PAYMENT,
+  payload: {
+    resolve,
+    reject
+  }
+});
 
 var setAmount = exports.setAmount = function setAmount(requestedAmount) {
   var receipt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
@@ -29948,7 +29944,6 @@ function* listenForTip(id, paymentRequest, name, receipt) {
 
 function* listenForCancel() {
   yield (0, _effects.take)(types.CANCEL_PAYMENT);
-  console.log('Received CANCEL_PAYMENT');
   throw new Error('Payment request cancelled');
 }
 
@@ -29960,15 +29955,16 @@ function* awaitPayment(paymentRequest, pollingInterval) {
 }
 
 function* processPayment(action) {
-  var _action$payload = action.payload,
-      resolve = _action$payload.resolve,
-      pollingInterval = _action$payload.pollingInterval;
+  var resolve = action.payload.resolve;
 
   var settings = yield (0, _effects.select)(_reducers.getSettings);
 
   var walletUrl = settings.walletUrl || 'https://testnet.kasisto.io:28084/json_rpc';
   var fiatCurrency = settings.fiatCurrency || 'EUR';
   var merchantName = settings.name || 'Coffee shop';
+  var username = settings.username,
+      password = settings.password,
+      pollingInterval = settings.pollingInterval;
 
   var id = (0, _uuid.v4)();
 
@@ -29978,7 +29974,7 @@ function* processPayment(action) {
   // let the view know the payment was created
   yield (0, _effects.call)(resolve, id);
 
-  var _ref2 = yield (0, _effects.all)([(0, _effects.call)(_exchangeRates.fetchExchangeRate, fiatCurrency), (0, _effects.call)(_fetchMonero.requestPayment, walletUrl)]),
+  var _ref2 = yield (0, _effects.all)([(0, _effects.call)(_exchangeRates.fetchExchangeRate, fiatCurrency), (0, _effects.call)(_fetchMonero.requestPayment, walletUrl, username, password)]),
       _ref3 = _slicedToArray(_ref2, 2),
       rate = _ref3[0],
       paymentRequest = _ref3[1];
@@ -30250,7 +30246,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 const { fetch } = window
 
-const rawRpc = (url, method, params) => new Promise((resolve, reject) => {
+const rawRpc = (url, username = null, password = null, method, params) => new Promise((resolve, reject) => {
+  const headers = {
+    'Content-Type': 'application/json'
+  }
+
+  if (username != null || password != null) {
+    headers['Authorization'] = `Basic ${window.btoa(`${username}:${password}`)}`
+  }
+
   const body = {
     jsonrpc: '2.0',
     id: '0',
@@ -30259,9 +30263,7 @@ const rawRpc = (url, method, params) => new Promise((resolve, reject) => {
   }
   return fetch(url, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
+    headers,
     body: JSON.stringify(body)
   }).then((response) => {
     if (response.ok) {
@@ -30282,48 +30284,48 @@ const rawRpc = (url, method, params) => new Promise((resolve, reject) => {
 /* harmony export (immutable) */ __webpack_exports__["rawRpc"] = rawRpc;
 
 
-const wrapRpc = (url, method, options = {}, mapOptions = __WEBPACK_IMPORTED_MODULE_1_snakecase_keys___default.a, mapResponse = __WEBPACK_IMPORTED_MODULE_0_camelcase_keys___default.a) =>
-  rawRpc(url, method, mapOptions(options)).then(mapResponse)
+const wrapRpc = (url, username, password, method, options = {}, mapOptions = __WEBPACK_IMPORTED_MODULE_1_snakecase_keys___default.a, mapResponse = __WEBPACK_IMPORTED_MODULE_0_camelcase_keys___default.a) =>
+  rawRpc(url, username, password, method, mapOptions(options)).then(mapResponse)
 /* harmony export (immutable) */ __webpack_exports__["wrapRpc"] = wrapRpc;
 
 
-const getAddress = (url) => rawRpc(url, 'getaddress')
+const getAddress = (url, username, password) => rawRpc(url, username, password, 'getaddress')
 /* harmony export (immutable) */ __webpack_exports__["getAddress"] = getAddress;
 
 
-const getHeight = (url) => rawRpc(url, 'getheight')
+const getHeight = (url, username, password) => rawRpc(url, username, password, 'getheight')
 /* harmony export (immutable) */ __webpack_exports__["getHeight"] = getHeight;
 
 
-const makeIntegratedAddress = (url, options) =>
-  wrapRpc(url, 'make_integrated_address', options)
+const makeIntegratedAddress = (url, username, password, options) =>
+  wrapRpc(url, username, password, 'make_integrated_address', options)
 /* harmony export (immutable) */ __webpack_exports__["makeIntegratedAddress"] = makeIntegratedAddress;
 
 
-const makeUri = (url, options) =>
-  wrapRpc(url, 'make_uri', options)
+const makeUri = (url, username, password, options) =>
+  wrapRpc(url, username, password, 'make_uri', options)
 /* harmony export (immutable) */ __webpack_exports__["makeUri"] = makeUri;
 
 
-const getTransfers = (url, options) =>
-  wrapRpc(url, 'get_transfers', options)
+const getTransfers = (url, username, password, options) =>
+  wrapRpc(url, username, password, 'get_transfers', options)
 /* harmony export (immutable) */ __webpack_exports__["getTransfers"] = getTransfers;
 
 
-const curryUrl = (fn, url) => (options) => fn(url, options)
+const curryUrl = (fn, url, username, password) => (options) => fn(url, username, password, options)
 
-const connect = (url) => ({
-  getAddress: curryUrl(getAddress, url),
-  getHeight: curryUrl(getHeight, url),
-  makeIntegratedAddress: curryUrl(makeIntegratedAddress, url),
-  makeUri: curryUrl(makeUri, url),
-  getTransfers: curryUrl(getTransfers, url)
+const connect = (url, username, password) => ({
+  getAddress: curryUrl(getAddress, url, username, password),
+  getHeight: curryUrl(getHeight, url, username, password),
+  makeIntegratedAddress: curryUrl(makeIntegratedAddress, url, username, password),
+  makeUri: curryUrl(makeUri, url, username, password),
+  getTransfers: curryUrl(getTransfers, url, username, password)
 })
 /* harmony export (immutable) */ __webpack_exports__["connect"] = connect;
 
 
-const requestPayment = (url, amount = null) => {
-  const wallet = connect(url)
+const requestPayment = (url, username, password, amount = null) => {
+  const wallet = connect(url, username, password)
   const ready = Promise.all([
     wallet.getAddress(),
     wallet.makeIntegratedAddress(),
@@ -37206,7 +37208,7 @@ var CMC_CURRENCIES = ['AUD', 'BRL', 'CAD', 'CHF', 'CLP', 'CNY', 'CZK', 'DKK', 'E
 var Settings = _ref => {
   var handleSubmit = _ref.handleSubmit;
 
-  return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('div', { className: 'o-app__content c-settings' }, _react2.default.createElement('form', { id: 'settings-form', onSubmit: handleSubmit }, _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'name' }, 'Name'), _react2.default.createElement(_reduxForm.Field, { name: 'name', component: 'input', placeholder: 'Coffee shop' })), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'fiatCurrency' }, 'Currency'), _react2.default.createElement(_reduxForm.Field, { name: 'fiatCurrency', component: 'select' }, CMC_CURRENCIES.map(currency => _react2.default.createElement('option', { key: currency }, currency)))), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'walletUrl' }, 'Wallet URL'), _react2.default.createElement(_reduxForm.Field, { name: 'walletUrl', component: 'input', placeholder: 'https://testnet.kasisto.io:28084/json_rpc' })))), _react2.default.createElement('div', { className: 'o-app__top-left' }, _react2.default.createElement(_Icon2.default, { href: '/', name: 'back' })), _react2.default.createElement('button', { form: 'settings-form', className: 'o-app__footer c-btn' }, 'Save'));
+  return _react2.default.createElement(_react.Fragment, null, _react2.default.createElement('div', { className: 'o-app__content c-settings' }, _react2.default.createElement('form', { id: 'settings-form', onSubmit: handleSubmit }, _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'name' }, 'Name'), _react2.default.createElement(_reduxForm.Field, { name: 'name', component: 'input', placeholder: 'Coffee shop' })), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'fiatCurrency' }, 'Currency'), _react2.default.createElement(_reduxForm.Field, { name: 'fiatCurrency', component: 'select' }, CMC_CURRENCIES.map(currency => _react2.default.createElement('option', { key: currency }, currency)))), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'walletUrl' }, 'Wallet URL'), _react2.default.createElement(_reduxForm.Field, { name: 'walletUrl', component: 'input', placeholder: 'https://testnet.kasisto.io:28084/json_rpc' })), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'pollingInterval' }, 'Polling interval (ms)'), _react2.default.createElement(_reduxForm.Field, { name: 'pollingInterval', component: 'input', placeholder: '2000' })), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'username' }, 'Username'), _react2.default.createElement(_reduxForm.Field, { name: 'username', component: 'input' })), _react2.default.createElement('div', { className: 'form-field' }, _react2.default.createElement('label', { htmlFor: 'password' }, 'Password'), _react2.default.createElement(_reduxForm.Field, { name: 'password', component: 'input', type: 'password' })))), _react2.default.createElement('div', { className: 'o-app__top-left' }, _react2.default.createElement(_Icon2.default, { href: '/', name: 'back' })), _react2.default.createElement('button', { form: 'settings-form', className: 'o-app__footer c-btn' }, 'Save'));
 };
 
 var createForm = (0, _reduxForm.reduxForm)({
