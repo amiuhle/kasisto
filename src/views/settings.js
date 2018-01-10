@@ -60,6 +60,21 @@ const Settings = ({ handleSubmit }) => {
             <label htmlFor='walletUrl'>Wallet URL</label>
             <Field name='walletUrl' component='input' placeholder='https://testnet.kasisto.io:28084/json_rpc' />
           </div>
+
+          <div className='form-field'>
+            <label htmlFor='pollingInterval'>Polling interval (ms)</label>
+            <Field name='pollingInterval' component='input' placeholder='2000' />
+          </div>
+
+          <div className='form-field'>
+            <label htmlFor='username'>Username</label>
+            <Field name='username' component='input' />
+          </div>
+
+          <div className='form-field'>
+            <label htmlFor='password'>Password</label>
+            <Field name='password' component='input' type='password' />
+          </div>
         </form>
       </div>
 

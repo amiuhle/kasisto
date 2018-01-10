@@ -37,7 +37,6 @@ function * listenForTip (id, paymentRequest, name, receipt) {
 
 function * listenForCancel () {
   yield take(types.CANCEL_PAYMENT)
-  console.log('Received CANCEL_PAYMENT')
   throw new Error('Payment request cancelled')
 }
 
@@ -50,8 +49,7 @@ function * awaitPayment (paymentRequest, pollingInterval) {
 
 export function * processPayment (action) {
   const {
-    resolve,
-    pollingInterval
+    resolve
   } = action.payload
 
   const settings = yield select(getSettings)
@@ -59,6 +57,7 @@ export function * processPayment (action) {
   const walletUrl = settings.walletUrl || 'https://testnet.kasisto.io:28084/json_rpc'
   const fiatCurrency = settings.fiatCurrency || 'EUR'
   const merchantName = settings.name || 'Coffee shop'
+  const { username, password, pollingInterval } = settings
 
   const id = uuid()
 
@@ -70,7 +69,7 @@ export function * processPayment (action) {
 
   const [rate, paymentRequest] = yield all([
     call(fetchExchangeRate, fiatCurrency),
-    call(requestPayment, walletUrl)
+    call(requestPayment, walletUrl, username, password)
   ])
 
   const {
