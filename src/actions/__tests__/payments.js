@@ -16,20 +16,7 @@ describe('Payment Actions', () => {
           type: types.REQUEST_PAYMENT,
           payload: {
             resolve: noop,
-            reject: noop,
-            pollingInterval: 3000
-          }
-        })
-    })
-
-    it('defaults to 2000ms pollingInterval', () => {
-      expect(actions.requestPayment(noop, noop))
-        .toEqual({
-          type: types.REQUEST_PAYMENT,
-          payload: {
-            resolve: noop,
-            reject: noop,
-            pollingInterval: 2000
+            reject: noop
           }
         })
     })

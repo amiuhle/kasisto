@@ -154,12 +154,13 @@ describe('processPayment', () => {
     it('creates a payment', () => {
       return at(creationTime, () => {
         const resolve = jest.fn()
-        return expectSaga(processPayment, requestPayment(resolve, undefined, 200))
+        return expectSaga(processPayment, requestPayment(resolve, undefined))
           .withState({
             settings: {
               walletUrl: URL,
               name: 'Barolo Beach Cafe',
-              fiatCurrency: 'EUR'
+              fiatCurrency: 'EUR',
+              pollingInterval: 200
             }
           })
           .put({
