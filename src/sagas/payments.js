@@ -57,7 +57,8 @@ export function * processPayment (action) {
   const walletUrl = settings.walletUrl || 'https://testnet.kasisto.io:28084/json_rpc'
   const fiatCurrency = settings.fiatCurrency || 'EUR'
   const merchantName = settings.name || 'Coffee shop'
-  const { username, password, pollingInterval } = settings
+  const pollingInterval = settings.pollingInterval || 2000
+  const { username, password } = settings
 
   const id = uuid()
 

@@ -63,7 +63,7 @@ const Settings = ({ handleSubmit }) => {
 
           <div className='form-field'>
             <label htmlFor='pollingInterval'>Polling interval (ms)</label>
-            <Field name='pollingInterval' component='input' placeholder='2000' />
+            <Field name='pollingInterval' component='input' type='number' placeholder='2000' />
           </div>
 
           <div className='form-field'>
