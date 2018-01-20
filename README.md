@@ -3,39 +3,30 @@
 [![Join the chat at https://gitter.im/amiuhle/kasisto](https://badges.gitter.im/amiuhle/kasisto.svg)](https://gitter.im/amiuhle/kasisto?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/amiuhle/kasisto.svg?branch=master)](https://travis-ci.org/amiuhle/kasisto)
 
-## Introduction
+Kasisto is a Point of Sale payment system to accept the cryptocurrency [Monero](https://getmonero.org/). The only requirement is an internet connection, there are no third parties involved.
 
-Kasisto is a Point of Sale software to receive payments in [Monero](https://getmonero.org/). Example use cases include bars, cafes, restaurants and shops... Any place with an internet connection basically.
+To be fast (confirmation within seconds), Kasisto accepts unconfirmed transactions.
 
-To be fast (confirmation within seconds), Kasisto will accept unconfirmed transactions. Combined with the current transaction fees of around $0.25, the targeted payment amounts should be between $10 and $100. I don't know how likely it is that a transaction will not get mined, so every seller will have to find their own pain barrier. Similarly, buyers will have to find their own personal lower limit in regards to current transaction fees.
+## Try it
 
-Prices will be shown in XMR and any fiat currencies supported by some exchange rate APIs, but there will be no automatic XMR to fiat conversion. Who would sell XMR, right? This is for the keepers and crypto enthusiasts: you will need to have a little server with `monerod` and `monero-wallet-rpc` (accessing a view-only wallet) running.
+If no wallet is configured in the settings, Kasisto will default to a testnet wallet so it can be easily tested. Download [Monerujo](https://monerujo.io/) and create a testnet wallet. Note that you have to be on the old v6 testnet network, before the v7 (bulletproof) hardfork. You can use `testnet.kasisto.io` as a remote node.
 
-In return, you will get a completely independent payment system, without any external payment provider involved. It's Monero being used as cash! And you'll also help the network by running a full node, of course!
+## Getting Started
 
-### Current Status
-
-Here's a [Testnet Demo](https://amiuhle.github.io/kasisto), it's polling the wallet every 10 seconds. In production, it should be possible to lower this to one second, making payments pretty much instant. The split view design is something I played around with, but that will probably not make it into the initial release.
-
-## Technical Details
+Kasisto consists of an app running on a mobile phone or tablet and a server to which the app connects to listen for incoming payments.
 
 ### The mobile app
 
-Kasisto is a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It runs run on any modern browser, but only browsers [supporting ServiceWorker](https://jakearchibald.github.io/isserviceworkerready/) will have offline usage. It's implemented as a web app because this gets rid of the necessity to develop individual apps for Android, iOS and smaller platforms. Plus, the web comes with a free auto-update functionality, and there's no requirement in Kasisto that can't be met with a decent browser today. Safari is kind of the new Internet Explorer when it comes to things like this though, so there will be missing features in iOS (offline support) for now, but the app itself ~~will~~ should still work ([#7](https://github.com/amiuhle/kasisto/issues/7)).
+Kasisto is implemented as a [Progressive Web App](https://en.wikipedia.org/wiki/Progressive_web_app). It's targeted to run on any modern mobile browser, including Chrome for Android, Firefox, Safari iOS and Edge. It can be added to the home screen and will run without showing the browser's address bar if done so.
 
-All configuration and transaction details will be stored in the browser ([even in iOS 10+](http://caniuse.com/#feat=indexeddb), with polyfills possibly lower), and there will be no cookies on the site that is serving Kasisto. The web really is just a way to distribute and update an application in this case.
+All payment details and configuration settings are stored locally in the app, the server is accessed in a read-only way to listen for incoming transactions.
 
-Configuration will include:
 
-* The only mandatory requirement for Kasisto to work: Connection details to `monero-wallet-rpc` accessing a **view-only** wallet
-  * `url` - http(s) URL to wallet RPC service
-  * `username` - *(optional)* Configurable credentials in `monero-wallet-rpc`
-  * `password` - *(optional)* Configurable credentials in `monero-wallet-rpc`
-* Connection details for fiat exchange rate API (Poloniex, Cryptonator). Can be left blank if no fiat exchange rates are needed.
+### The server
 
-### The local server
+The server is responsible for communicating with the Monero network and can be located in your local network or anywhere on the internet. It needs to run the Monero daemon, a view-only wallet and a web proxy for handling HTTPS.
 
-In addition to the mobile device(s) running the web app, you will need to run a local server. Hardware requirements for dedicated devices will have to be figured out. If you already have a PC running, I will provide instructions how to configure on Ubuntu below, and there will probably be Docker images and sample configurations.
+For detailed setup instructions, see [the server setup docs](docs/server-setup.md).
 
 **On your local computer**, create a dedicated wallet for Kasisto first, then [create a view-only wallet](https://getmonero.org/knowledge-base/user-guides/view_only) for it. Upload / copy the view-only wallet file to the server.
 
@@ -87,43 +78,22 @@ server {
 }
 ```
 
-Restart nginx `sudo service nginxn restart`.
-
-### TODO
-
-* Local SSL options
-  * Import self-signed certificate on mobile device
-  * If you have a domain, use [Let's Encrypt](https://letsencrypt.org/) for subdomain and override DNS for local network
-
 ## Development
 
-Clone, install dependencies and run (`npm` should work just fine).
+Clone, install dependencies and run `yarn` to install dependencies. (`npm install` should work just fine).
 
-For now, you have to edit `monero-wallet-rpc` connection settings in `src/components/App.js`. This will move to browser storage pretty fast.
+To start a local server, run `yarn start`.
 
-```bash
-git clone https://github.com/amiuhle/kasisto.git
-yarn
-yarn start
-```
-
-## TODOs
-
-### [Research Topics](https://github.com/amiuhle/kasisto/issues?q=is%3Aissue+is%3Aopen+label%3Aresearch)
-
-### `src/lib/monero-payments`
-
-will eventually become a separate node library to easily receive Monero. Any suggestions for a top level API would be welcome, please submit an issue.
 
 ## Contribute
 
 If you want to contribute to Kasisto, you can do so in any of the following ways, in no particular order:
 
-* Test Kasisto by accepting in your cafe, bar or shop. If you have any problems setting things up, open an issue and I'll help!
+* Test Kasisto by using it in your cafe, bar or shop. If you have any problems setting things up, open an issue and I'll help!
 * Submit any other issue or a pull request
 * Look at the existing [Issues](https://github.com/amiuhle/kasisto/issues). Not everything is about development, the labels `help-wanted` and especially `research` are mainly configuration / maintenance stuff and actual real-world research.
 
-You can also support the project by donating to the following address:  
+You can also support the project by donating to the following address:
 
 <!-- Maybe GitHub will support Monero at some time by displaying a barcode for this :) -->
 
