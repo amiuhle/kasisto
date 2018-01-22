@@ -7,7 +7,7 @@ Kasisto is a Point of Sale payment system to accept the cryptocurrency [Monero](
 
 To be fast (confirmation within seconds), Kasisto accepts unconfirmed transactions.
 
-<div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/LittleCompleteAllosaurus' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
+[Kasisto in 22 seconds](https://gfycat.com/gifs/detail/littlecompleteallosaurus)
 
 ## Try it
 
