@@ -7,6 +7,8 @@ Kasisto is a Point of Sale payment system to accept the cryptocurrency [Monero](
 
 To be fast (confirmation within seconds), Kasisto accepts unconfirmed transactions.
 
+<div style='position:relative;padding-bottom:54%'><iframe src='https://gfycat.com/ifr/LittleCompleteAllosaurus' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe></div>
+
 ## Try it
 
 If no wallet is configured in the settings, Kasisto will default to a testnet wallet so it can be easily tested. Download [Monerujo](https://monerujo.io/) and create a testnet wallet. Note that you have to be on the old v6 testnet network, before the v7 (bulletproof) hardfork. You can use `testnet.kasisto.io` as a remote node.
