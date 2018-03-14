@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Route, Switch } from 'react-router-dom'
 
-import Payments from '../views/payments'
+import Payments from '../containers/payments'
 import CreatePayment from '../containers/payments/create'
 import SendPayment from '../containers/payments/send'
 

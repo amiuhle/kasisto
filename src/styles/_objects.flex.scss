@@ -6,8 +6,12 @@
   flex-direction: column
 }
 
-.o-flex--center {
+.o-flex--jc-center {
   justify-content: center;
+}
+
+.o-flex--ai-center {
+  align-items: center;
 }
 
 .o-flex__stretch {

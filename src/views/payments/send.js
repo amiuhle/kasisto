@@ -120,7 +120,7 @@ export default class SendPayment extends Component {
             <small className='u-margin-bottom-large'>{new Big(convertedAmount).add(new Big(tip || '0')).toFixed(12)} XMR</small>
 
             <div className='o-flex o-flex--col'>
-              <div className='o-flex o-flex--center u-margin-bottom'>
+              <div className='o-flex o-flex--jc-center u-margin-bottom'>
                 <PaymentRequest integratedAddress={integratedAddress} uri={uri} />
               </div>
             </div>

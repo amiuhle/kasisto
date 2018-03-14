@@ -30,6 +30,7 @@
 // OBJECTS
 @import 'objects.app';
 @import '~inuitcss/objects/objects.box';
+@import 'objects.circle';
 @import 'objects.content';
 @import 'objects.flex';
 @import '~inuitcss/objects/objects.list-bare';
@@ -52,4 +53,5 @@
 // UTILITIES
 @import '~inuitcss/utilities/utilities.spacings';
 @import 'utilities.alignments';
+@import 'utilities.notice.scss';
 @import 'utilities.text';

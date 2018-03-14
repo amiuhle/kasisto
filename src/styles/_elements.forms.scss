@@ -5,7 +5,7 @@ input, %input, select, %select, textarea, %textarea {
 }
 
 input:disabled, %input--disabled {
-  background-color: #eee;
+  background-color: $disabled-color;
 }
 
 button:focus, input:focus, %input--focus {
