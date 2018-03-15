@@ -3,6 +3,11 @@ import React, { Fragment } from 'react'
 
 import Icon from '../../components/Icon'
 
+const {
+  Blob,
+  URL
+} = window
+
 const formatDate = (dateString) => new Date(dateString).toLocaleString()
 // {
 //   const date = new Date(dateString)
@@ -30,10 +35,15 @@ const ListItem = ({id, receivedAmount, rate, fiatCurrency, updatedAt, paymentId}
   </li>
 )
 
+const download = (json) => {
+  const blob = new Blob([JSON.stringify(json, null, 2)], { type: 'application/json' })
+  return URL.createObjectURL(blob)
+}
+
 export default ({ payments }) => (
   <Fragment>
-    <div className='o-app__content' style={{marginTop: '85px'}}>
-      <ul className='c-payments o-list-bare u-margin-horizontal-small'>
+    <div className='o-app__content' style={{margin: '54px 0'}}>
+      <ul className='c-payments o-list-bare u-margin-horizontal-small u-margin-vertical-none'>
         { payments.map(payment => <ListItem key={payment.id} {...payment} />) }
       </ul>
     </div>
@@ -41,5 +51,11 @@ export default ({ payments }) => (
       <Icon href='/' name='back' />
     </div>
     <div className='o-app__header'>History</div>
+    <a className='c-btn o-app__footer'
+      href={download(payments)}
+      download={`kasisto-payments-${new Date().toISOString()}.json`}
+    >
+      Download
+    </a>
   </Fragment>
 )
