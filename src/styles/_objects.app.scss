@@ -59,8 +59,11 @@
 .o-app__content {
   grid-row: 1 / 4;
   grid-column: 1 / 4;
+
+  overflow-y: auto;
 }
 
 .o-app__footer {
   grid-area: footer;
+  z-index: 1;
 }
