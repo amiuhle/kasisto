@@ -3,15 +3,15 @@
 }
 
 .u-light {
-  font-weight: 200;
+  font-weight: 200 !important;
 }
 
 .u-normal {
-  font-weight: 400;
+  font-weight: 400 !important;
 }
 
 .u-medium {
-  font-weight: 500;
+  font-weight: 500 !important;
 }
 
 .u-background {
@@ -19,10 +19,15 @@
 }
 
 .u-brand-primary {
-  color: $brand-primary;
+  color: $brand-primary !important;
 }
 
 .u-smaller {
-  font-size: $label-font-size;
+  font-size: $label-font-size !important;
   line-height: 24px;
+}
+
+.u-base-size {
+  font-size: $base-font-size !important;
+  line-height: $inuit-global-line-height !important;
 }

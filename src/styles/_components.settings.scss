@@ -12,7 +12,7 @@
     line-height: $base-font-size;
   }
 
-  input, select {
+  input:not([type='file']), select {
     font-size: $base-font-size;
     line-height: $large-font-size;
     padding: 5px 0;
