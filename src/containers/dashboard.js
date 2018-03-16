@@ -36,7 +36,6 @@ const mapDispatchToProps = (dispatch, { history, match }) => ({
     return new Promise((resolve, reject) => {
       dispatch(requestPayment(resolve, reject))
     }).then((id) => {
-      console.log('payment created', id)
       history.push(`/payments/${id}/create`)
     })
   },

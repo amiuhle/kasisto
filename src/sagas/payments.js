@@ -107,7 +107,6 @@ export function * processPayment (action) {
   } catch (e) {
     console.warn('Error', e)
     paymentRequest.cancel()
-    console.log('Payment cancelled')
   } finally {
     tipSaga.cancel()
   }
