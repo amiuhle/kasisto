@@ -8,10 +8,10 @@ const webpack = require('webpack')
 const WebpackBaseConfig = require('./Base')
 
 class WebpackDistConfig extends WebpackBaseConfig {
-
   constructor () {
     super()
     this.config = {
+      mode: 'production',
       cache: false,
       devtool: 'source-map',
       entry: [
