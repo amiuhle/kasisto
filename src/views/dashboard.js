@@ -6,6 +6,8 @@ import React, { Fragment } from 'react'
 
 import { Link } from 'react-router-dom'
 
+import { defaultLogo } from './settings'
+
 import Icon from '../components/Icon'
 
 const Dashboard = ({ onStartPayment, settings, lastPayment }) => (
@@ -14,7 +16,7 @@ const Dashboard = ({ onStartPayment, settings, lastPayment }) => (
       <div className='c-dashboard--top'>
         <img
           className='c-owner-logo u-margin-bottom-small'
-          src={settings.logo}
+          src={settings.logo || defaultLogo}
         />
         <h1 className='u-margin-none'>{settings.name || 'Coffee shop'}</h1>
         <small>{format(new Date(), 'DD MMMM YYYY')}</small>
