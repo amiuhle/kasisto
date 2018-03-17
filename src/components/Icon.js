@@ -10,9 +10,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const className = ({ className } = {}, ...rest) =>
-[className, ...rest]
-  .filter(value => typeof value === 'string' && value.length > 0)
-  .join(' ')
+  [className, ...rest]
+    .filter(value => typeof value === 'string' && value.length > 0)
+    .join(' ')
 
 export default ({name, onClick, href, ...props}) => {
   let Tag = 'span'
