@@ -19,16 +19,16 @@ sudo apt upgrade -y
 # Download Monero
 curl -L https://downloads.getmonero.org/cli/linux64 -o /tmp/monero.tar.bz2
 
-# Verify checksum. This is for 0.11.1.0 release.
+# Verify checksum. This is for 0.12.0.0 release.
 # For newer releases, seehttps://getmonero.org/downloads/#linux
-echo "6581506f8a030d8d50b38744ba7144f2765c9028d18d990beb316e13655ab248 /tmp/monero.tar.bz2" | sha256sum -c
+echo "928ad08ff0dea2790c7777a70e610b2d33c35a5df5900fbb050cc8c659237636 /tmp/monero.tar.bz2" | sha256sum -c
 
 # Extract to /usr/local/bin, omitting directories
 tar -xf /tmp/monero.tar.bz2 -C /usr/local/bin --strip 2
 rm /tmp/monero.tar.bz2
 
 monerod --version
-# => Monero 'Helium Hydra' (v0.11.1.0-release)
+# => Monero 'Lithium Luna' (v0.12.0.0-master-release)
 
 # create a dedicated user to run monero daemon and wallet
 sudo adduser monero
