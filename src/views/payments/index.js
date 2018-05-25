@@ -1,37 +1,32 @@
-import Big from 'big.js'
+import { format } from 'date-fns'
+
 import React, { Fragment } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import Icon from '../../components/Icon'
+
+import {
+  formatCurrency
+} from './show'
 
 const {
   Blob,
   URL
 } = window
 
-const formatDate = (dateString) => new Date(dateString).toLocaleString()
-// {
-//   const date = new Date(dateString)
-//   return `${date.toLocaleDateString()} – ${date.toLocaleTimeString()}`
-// }
-
-const getAmount = (receivedAmount, rate, fiatCurrency) => {
-  try {
-    return `${new Big(receivedAmount).times(rate).toFixed(2)} ${fiatCurrency}`
-  } catch (e) {
-    return '—'
-  }
-}
-
 const ListItem = ({id, receivedAmount, rate, fiatCurrency, updatedAt, paymentId}) => (
-  <li className='c-payments__item o-list-bare__item u-padding-vertical u-padding-horizontal-small o-flex o-flex--ai-center'>
-    <span className={`o-circle u-notice--${receivedAmount ? 'success' : 'error'}`} />
-    <span className='o-flex__stretch u-margin-horizontal o-flex o-flex--col o-flex--jc-center u-smaller'>
-      <span>{formatDate(updatedAt)}</span>
-      <span>{paymentId || '—'}</span>
-    </span>
-    <span className='u-medium'>
-      {getAmount(receivedAmount, rate, fiatCurrency)}
-    </span>
+  <li className='c-payments__item o-list-bare__item u-padding-vertical u-padding-horizontal-small'>
+    <Link to={`/payments/${id}`} className='o-flex o-flex--ai-center'>
+      <span className={`o-circle u-notice--${receivedAmount ? 'success' : 'error'}`} />
+      <span className='o-flex__stretch u-margin-horizontal o-flex o-flex--col o-flex--jc-center u-smaller'>
+        <span>{format(updatedAt, 'MM/DD/YYYY – HH:MM')}</span>
+        <span>{paymentId || '—'}</span>
+      </span>
+      <span className='u-medium'>
+        {formatCurrency(receivedAmount, fiatCurrency, rate)}
+      </span>
+    </Link>
   </li>
 )
 

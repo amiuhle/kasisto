@@ -1,7 +1,8 @@
 import React from 'react'
 import {
   HashRouter,
-  Route
+  Route,
+  Switch
 } from 'react-router-dom'
 
 import AppLayout from '../views/layouts'
@@ -13,9 +14,11 @@ import Settings from '../containers/settings'
 export default () => (
   <HashRouter>
     <AppLayout>
-      <Route path='/' exact component={Dashboard} />
-      <Payments />
-      <Route path='/settings' exact component={Settings} />
+      <Switch>
+        <Route path='/' exact component={Dashboard} />
+        <Route path='/settings' exact component={Settings} />
+        <Payments />
+      </Switch>
     </AppLayout>
   </HashRouter>
 )

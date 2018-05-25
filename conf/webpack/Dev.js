@@ -17,11 +17,11 @@ class WebpackDevConfig extends WebpackBaseConfig {
       //   'webpack/hot/only-dev-server',
       //   'react-hot-loader/patch',
         './client.js'
-      ],
-      plugins: [
-        // new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin()
       ]
+      // plugins: [
+      //   // new webpack.HotModuleReplacementPlugin(),
+      //   new webpack.NoEmitOnErrorsPlugin()
+      // ]
     }
   }
 }

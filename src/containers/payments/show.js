@@ -2,18 +2,18 @@ import React from 'react'
 
 import { connect } from 'react-redux'
 
-import Payments from '../../views/payments/index'
+import ShowPayment from '../../views/payments/show'
 
 import {
-  getAllPayments
+  getPaymentById
 } from '../../reducers'
 
 const render = props => {
-  return <Payments {...props} />
+  return <ShowPayment {...props} />
 }
 
 const mapStateToProps = (state, { match }) => ({
-  payments: getAllPayments(state)
+  payment: getPaymentById(state, match.params.id)
 })
 
 const mapDispatchToProps = (dispatch, { history, match }) => ({
