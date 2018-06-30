@@ -5,6 +5,7 @@ import {
 
 const PAYMENT_KEYS = [
   'id',
+  'state',
   'createdAt',
   'fiatCurrency',
   'exchange',

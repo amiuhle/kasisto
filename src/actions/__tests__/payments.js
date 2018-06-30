@@ -22,6 +22,25 @@ describe('Payment Actions', () => {
     })
   })
 
+  describe('createPayment', () => {
+    it('creates an action', () => {
+      expect(actions.createPayment(
+        'a2f8d724-5c7a-43e9-bbac-b0295b059e82', {
+          fiatCurrency: 'EUR'
+        }, createdAt)
+      ).toEqual({
+        type: types.CREATE_PAYMENT,
+        payload: {
+          id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
+          state: 'CREATED',
+          fiatCurrency: 'EUR',
+          createdAt: '2017-06-17T17:30:00.000Z',
+          updatedAt: '2017-06-17T17:30:00.000Z'
+        }
+      })
+    })
+  })
+
   describe('setAmount', () => {
     it('creates an action', () => {
       expect(actions.setAmount('29.95', 'Receipt')).toEqual({
@@ -50,24 +69,6 @@ describe('Payment Actions', () => {
         type: types.SET_TIP,
         payload: {
           tip: 3
-        }
-      })
-    })
-  })
-
-  describe('createPayment', () => {
-    it('creates an action', () => {
-      expect(actions.createPayment(
-        'a2f8d724-5c7a-43e9-bbac-b0295b059e82', {
-          fiatCurrency: 'EUR'
-        }, createdAt)
-      ).toEqual({
-        type: types.CREATE_PAYMENT,
-        payload: {
-          id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
-          fiatCurrency: 'EUR',
-          createdAt: '2017-06-17T17:30:00.000Z',
-          updatedAt: '2017-06-17T17:30:00.000Z'
         }
       })
     })

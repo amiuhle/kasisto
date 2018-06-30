@@ -171,6 +171,7 @@ describe('processPayment', () => {
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               fiatCurrency: 'EUR',
+              state: 'CREATED',
               createdAt: creationTime,
               updatedAt: creationTime
             }
