@@ -27,7 +27,7 @@ const at = (timestamp, execute) => {
   }
 }
 
-const URL_BASE = 'https://testnet.kasisto.io:28082'
+const URL_BASE = 'https://stagenet.kasisto.io:28082'
 const URL_PATH = '/json_rpc'
 const URL = `${URL_BASE}${URL_PATH}`
 

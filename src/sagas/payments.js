@@ -54,7 +54,7 @@ export function * processPayment (action) {
 
   const settings = yield select(getSettings)
 
-  const walletUrl = settings.walletUrl || 'https://testnet.kasisto.io:28084/json_rpc'
+  const walletUrl = settings.walletUrl || 'https://stagenet.kasisto.io:28084/json_rpc'
   const fiatCurrency = settings.fiatCurrency || 'EUR'
   const merchantName = settings.name || 'Coffee shop'
   const pollingInterval = settings.pollingInterval || 2000

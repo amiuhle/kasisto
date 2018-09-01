@@ -98,7 +98,7 @@ class Settings extends Component {
 
             <div className='form-field'>
               <label htmlFor='walletUrl'>Wallet URL</label>
-              <Field name='walletUrl' component='input' placeholder='https://testnet.kasisto.io:28084/json_rpc' />
+              <Field name='walletUrl' component='input' placeholder='https://stagenet.kasisto.io:28084/json_rpc' />
             </div>
 
             <div className='form-field'>

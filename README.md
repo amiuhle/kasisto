@@ -11,7 +11,7 @@ To be fast (confirmation within seconds), Kasisto accepts unconfirmed transactio
 
 ## Try it
 
-If no wallet is configured in the settings, Kasisto will default to a testnet wallet so it can be easily tested. Download [Monerujo](https://monerujo.io/) and create a testnet wallet. Note that you have to be on the old v6 testnet network, before the v7 (bulletproof) hardfork. You can use `testnet.kasisto.io` as a remote node.
+If no wallet is configured in the settings, Kasisto will default to a stagenet wallet so it can be easily tested. Download [Monerujo](https://monerujo.io/) and create a stagenet wallet.
 
 ## Getting Started
 

@@ -39,7 +39,7 @@ export default class SendPayment extends Component {
       tipIndex
     } = this.state
 
-    const isTestnet = address != null && !address.startsWith('4')
+    const isStagenet = address != null && !address.startsWith('4')
 
     if (receivedAmount != null && new Big(receivedAmount).gte(new Big(convertedAmount))) {
       return (
@@ -129,7 +129,7 @@ export default class SendPayment extends Component {
 
           <CancelPayment onClick={cancelPayment} />
 
-          { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
+          { isStagenet ? <small className='o-app__header u-brand-primary'>Stagenet</small> : null }
         </Fragment>
       )
     }

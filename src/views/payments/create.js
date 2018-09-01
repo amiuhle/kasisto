@@ -45,7 +45,7 @@ class CreatePayment extends Component {
       }
     } = this.props
 
-    const isTestnet = address != null && !address.startsWith('4')
+    const isStagenet = address != null && !address.startsWith('4')
 
     const isReady = this.isReady()
 
@@ -65,7 +65,7 @@ class CreatePayment extends Component {
         <button form='request-payment' className='o-app__footer c-btn' disabled={!isReady}>
           { this.hasConnection() ? 'Request payment' : 'Waiting for wallet...' }
         </button>
-        { isTestnet ? <small className='o-app__header u-brand-primary'>Testnet</small> : null }
+        { isStagenet ? <small className='o-app__header u-brand-primary'>Stagenet</small> : null }
       </Fragment>
     )
   }
