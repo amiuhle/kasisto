@@ -76,11 +76,23 @@ Check progress with `monerod status` or by viewing the log file.
 
 ### Set up `nginx` reverse proxy with TLS
 
-You will need an SSL certificate. You can use [LetsEncrypt](https://letsencrypt.org/), any other certificate. If you use a self-signed certificate, you must import it on the mobile device you use Kasisto on ([Android](https://coderwall.com/p/wv6fpq/add-self-signed-ssl-certificate-to-android-for-browsing) | iOS).
+You will need an SSL certificate. You can use [LetsEncrypt](https://letsencrypt.org/) or any other certificate. If you use a self-signed certificate, you must import it on the mobile device you use Kasisto on ([Android](https://coderwall.com/p/wv6fpq/add-self-signed-ssl-certificate-to-android-for-browsing) | iOS).
 
 ```bash
 sudo apt install nginx -y
 ```
+
+Create an nginx configuration in `/etc/nginx/sites-available/` and symlink it to`/etc/nginx/sites-enabled/`. This file determines what has to be configured in
+[Kasisto's settings](https://amiuhle.github.io/kasisto/#/settings).
+
+According to the example below, the **Wallet URL** would be
+`https://example.com:18082/json_rpc`. You can host several view-only
+wallets using the same nginx instance. Each wallet will need its own
+`monero-wallet-rpc` instance running on an individual port. Point
+the `proxy_pass` to the corresponding local port of the wallet and 
+adjust the `location` parameter accordingly.
+
+See below for **Username** and **Password** settings.
 
 ```nginx
 server {
@@ -94,6 +106,7 @@ server {
 
   charset UTF-8;
 
+  # `/json_rpc` can be any `/path`
   location /json_rpc {
     # Optional HTTP Basic Authentication
     # auth_basic "Restricted";
@@ -123,7 +136,16 @@ server {
 }
 ```
 
+#### Authentication
+
 Currently only HTTP Basic Authentication is supported. Since HTTPS is required, the password will not be sent over the network unencrypted.
+
+Using apache2-utils, create a password file in `/etc/nginx/.htpasswd`.
+This file is referenced in the nginx configuration above. If several
+wallets are configured, it most likely makes sense to use a password
+file for each `location` configuration.  
+`user1` can be any username, this and the password entered must be
+adjusted in the Kasisto settings.
 
 ```bash
 sudo apt install apache2-utils -y
@@ -131,4 +153,4 @@ sudo apt install apache2-utils -y
 sudo htpasswd -c /etc/nginx/.htpasswd user1
 ```
 
-Enter and confirm the password and enable authentication commenting in the two auth_basic lines in the nginx configuration.
+Enter and confirm the password and enable authentication commenting in the two `auth_basic` lines in the nginx configuration.
