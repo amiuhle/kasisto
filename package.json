@@ -33,6 +33,7 @@
     "@babel/plugin-transform-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.1.5",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -89,6 +90,14 @@
     "svg-sprite-loader": "^4.1.2",
     "uuid": "^3.2.1"
   },
+  "browserslist": [
+    "chrome 60",
+    "firefox 58",
+    "safari 10",
+    "ios 10",
+    "edge 13",
+    "current node"
+  ],
   "jest": {
     "setupFiles": [
       "./setupJest.js"
