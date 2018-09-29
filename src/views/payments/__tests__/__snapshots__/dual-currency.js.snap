@@ -11,7 +11,6 @@ exports[`DualCurrency renders fiat and money 1`] = `
       className="c-currency c-currency--input c-currency--primary u-margin-bottom-none"
     >
       <input
-        autoFocus={undefined}
         className="c-currency--input__native_input"
         id="requestedAmount"
         min="0"
@@ -36,8 +35,6 @@ exports[`DualCurrency renders fiat and money 1`] = `
     >
       <span
         className="icon icon--loading"
-        onClick={undefined}
-        to={undefined}
       >
         <svg>
           <use
@@ -49,7 +46,6 @@ exports[`DualCurrency renders fiat and money 1`] = `
        / XMR 
       <br />
       <a
-        href={undefined}
         target="_blank"
       />
     </small>

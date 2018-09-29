@@ -15,7 +15,7 @@ const {
   URL
 } = window
 
-const ListItem = ({id, receivedAmount, rate, fiatCurrency, updatedAt, paymentId}) => (
+const ListItem = ({ id, receivedAmount, rate, fiatCurrency, updatedAt, paymentId }) => (
   <li className='c-payments__item o-list-bare__item u-padding-vertical u-padding-horizontal-small'>
     <Link to={`/payments/${id}`} className='o-flex o-flex--ai-center'>
       <span className={`o-circle u-notice--${receivedAmount ? 'success' : 'error'}`} />
@@ -37,7 +37,7 @@ const download = (json) => {
 
 export default ({ payments }) => (
   <Fragment>
-    <div className='o-app__content' style={{margin: '54px 0'}}>
+    <div className='o-app__content' style={{ margin: '54px 0' }}>
       <ul className='c-payments o-list-bare u-margin-horizontal-small u-margin-vertical-none'>
         { payments.map(payment => <ListItem key={payment.id} {...payment} />) }
       </ul>

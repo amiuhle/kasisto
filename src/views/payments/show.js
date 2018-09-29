@@ -6,12 +6,12 @@ import React, { Fragment } from 'react'
 
 import Icon from '../../components/Icon'
 
-export default ({payment: {
+export default ({ payment: {
   address, convertedAmount, createdAt, fiatCurrency, height, id, integratedAddress,
-  paymentId, rate, receipt, receivedAmount, requestedAmount, updatedAt, uri }}
+  paymentId, rate, receipt, receivedAmount, requestedAmount, updatedAt, uri } }
 ) => (
   <Fragment>
-    <div className='o-app__content u-margin-horizontal' style={{margin: '54px 0'}}>
+    <div className='o-app__content u-margin-horizontal' style={{ margin: '54px 0' }}>
       <table className='o-table o-table--tiny u-margin-top'>
         <tbody>
           <tr>

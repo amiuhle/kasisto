@@ -119,7 +119,7 @@ const CurrencyDisplay = ({ className, value, currency }) => {
   )
 }
 
-const DualCurrency = ({id, className, fiatCurrency, input, rate, autoFocus}) => (
+const DualCurrency = ({ id, className, fiatCurrency, input, rate, autoFocus }) => (
   <div className={`c-dual-currency ${className || ''}`}>
     <CurrencyInput
       id={id}
