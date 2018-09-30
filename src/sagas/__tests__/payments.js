@@ -17,6 +17,9 @@ import {
 
 import * as types from '../../actions/constants/payments'
 
+// Travis CI timeout using default 250ms
+expectSaga.DEFAULT_TIMEOUT = process.env.ASYNC_TIMEOUT || expectSaga.DEFAULT_TIMEOUT
+
 const at = (timestamp, execute) => {
   const { Date } = global
   global.Date = jest.fn(() => new Date(timestamp))
