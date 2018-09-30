@@ -73,7 +73,7 @@ class Settings extends Component {
           <form id='settings-form' onSubmit={handleSubmit}>
             <div className='form-field u-margin-top-small o-flex o-flex--ai-center'>
               <input id='logo' name='logo' type='file' accept='image/*'
-                style={{opacity: 0, height: 0}}
+                style={{ opacity: 0, height: 0 }}
                 onChange={this.readImage}
               />
               <label htmlFor='logo' className='u-brand-primary u-medium u-base-size o-flex o-flex--col o-flex--ai-center'>

@@ -14,7 +14,7 @@ const className = ({ className } = {}, ...rest) =>
     .filter(value => typeof value === 'string' && value.length > 0)
     .join(' ')
 
-export default ({name, onClick, href, ...props}) => {
+export default ({ name, onClick, href, ...props }) => {
   let Tag = 'span'
   if (onClick != null) {
     Tag = 'a'
