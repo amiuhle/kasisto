@@ -16,9 +16,6 @@
 
   background-color: $background-color;
 
-  max-width: 425px;
-  max-height: 667px;
-
   @media screen and (min-width: 426px) {
     align-self: center;
     width: 375px;
