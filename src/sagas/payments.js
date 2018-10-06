@@ -20,7 +20,10 @@ import {
 
 import {
   createPayment,
-  updatePayment
+  networkInput,
+  sellerInput,
+  setUri,
+  receivePayment
 } from '../actions/payments'
 
 import * as types from '../actions/constants/payments'
@@ -31,7 +34,7 @@ function * listenForTip (id, paymentRequest, name, receipt) {
     const { tip } = setTip.payload
     const convertedTip = parseInt(new Big(tip).times(1e12).round(), 10)
     const { uri } = yield call([paymentRequest, 'makeUri'], convertedTip, name, receipt)
-    yield put(updatePayment(id, { tip, uri }))
+    yield put(setUri(id, uri, tip))
   }
 }
 
@@ -80,32 +83,28 @@ export function * processPayment (action) {
     paymentId
   } = paymentRequest
 
-  yield put(updatePayment(id, { address, integratedAddress, height, paymentId, rate }))
+  yield put(networkInput(id, address, integratedAddress, height, paymentId, rate))
 
   const setAmount = yield take(types.SET_AMOUNT)
 
   const { requestedAmount, receipt } = setAmount.payload
   const convertedAmount = new Big(requestedAmount).times(1e12).div(rate).round()
 
-  yield put(updatePayment(id, {
-    requestedAmount,
-    convertedAmount: convertedAmount.div(1e12).toFixed(12),
-    receipt
-  }))
+  yield put(sellerInput(id, requestedAmount, convertedAmount.div(1e12).toFixed(12)))
 
   paymentRequest.setAmount(parseInt(convertedAmount, 10))
 
   const { uri } = yield call([paymentRequest, 'makeUri'], 0, merchantName, receipt)
-  yield put(updatePayment(id, { uri }))
+  yield put(setUri(id, uri))
 
   const tipSaga = yield fork(listenForTip, id, paymentRequest, merchantName, receipt)
 
   try {
     const onFulfilled = yield call(awaitPayment, paymentRequest, pollingInterval)
 
-    yield put(updatePayment(id, { receivedAmount: new Big(onFulfilled.amountReceived).div(1e12).toFixed(12) }))
+    yield put(receivePayment(id, new Big(onFulfilled.amountReceived).div(1e12).toFixed(12)))
   } catch (e) {
-    console.warn('Error', e)
+    console.warn(e)
     paymentRequest.cancel()
   } finally {
     tipSaga.cancel()

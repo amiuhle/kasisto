@@ -87,6 +87,7 @@ export default class SendPayment extends Component {
                     onClick={(e) => {
                       const isResetting = tipIndex === key
                       e.preventDefault()
+                      // TODO Use Big
                       setTip(isResetting ? 0 : tipRate * convertedAmount)
                       this.setState({
                         tipIndex: isResetting ? null : key
