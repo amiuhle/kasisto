@@ -1,24 +1,5 @@
-<svg width="48" height="48" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<title>history</title>
-<desc>Created using Figma</desc>
-<g id="Canvas" transform="translate(-107 -136)">
-<g id="icn/history">
-<g id="Page 1">
-<g id="Fill 1">
-<use xlink:href="#path0_fill" transform="translate(112 142.001)"/>
-</g>
-<g id="Stroke 2">
-<use xlink:href="#path1_fill" transform="translate(128 152)"/>
-</g>
-<g id="Stroke 3">
-<use xlink:href="#path2_fill" transform="translate(114.443 138)"/>
-</g>
-</g>
-</g>
-</g>
-<defs>
-<path id="path0_fill" fill-rule="evenodd" d="M 0 7.999L 8 7.999L 0 0L 0 7.999Z"/>
-<path id="path1_fill" d="M 4 6.55848L 14.6325 10.1026L 13.3675 13.8974L 0 9.44152L 0 0L 4 0L 4 6.55848Z"/>
-<path id="path2_fill" d="M 2.82825 9.27179L 0 6.44318C 8.59204 -2.14776 22.5223 -2.14776 31.1134 6.44337C 39.7044 15.0354 39.7044 28.9657 31.1133 37.5567C 22.5223 46.1477 8.59204 46.1477 0 37.5568L 2.82825 34.7282C 9.8582 41.7572 21.2559 41.7572 28.2849 34.7283C 35.3139 27.6993 35.3139 16.3016 28.2849 9.2717C 21.2559 2.24274 9.8582 2.24274 2.82825 9.27179Z"/>
-</defs>
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5 13.9996H13L5 6.0006V13.9996Z"/>
+<path d="M25 22.5585L35.6325 26.1026L34.3675 29.8974L21 25.4415V16H25V22.5585Z"/>
+<path d="M10.2715 11.2717L7.44328 8.44309C16.0353 -0.147851 29.9656 -0.14785 38.5567 8.44327C47.1476 17.0353 47.1476 30.9656 38.5566 39.5566C29.9656 48.1476 16.0353 48.1476 7.44328 39.5567L10.2715 36.7281C17.3015 43.7571 28.6992 43.7571 35.7282 36.7282C42.7572 29.6992 42.7572 18.3015 35.7282 11.2716C28.6992 4.24264 17.3015 4.24264 10.2715 11.2717Z"/>
 </svg>
