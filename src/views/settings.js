@@ -92,7 +92,7 @@ class Settings extends Component {
             <div className='form-field'>
               <label htmlFor='fiatCurrency'>Currency</label>
               <Field name='fiatCurrency' component='select'>
-                {CMC_CURRENCIES.map((currency) => <option key={currency}>{currency}</option>)}
+                {['EUR', 'USD'].map((currency) => <option key={currency}>{currency}</option>)}
               </Field>
             </div>
 
