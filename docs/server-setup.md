@@ -19,16 +19,16 @@ sudo apt upgrade -y
 # Download Monero
 curl -L https://downloads.getmonero.org/cli/linux64 -o /tmp/monero.tar.bz2
 
-# Verify checksum. This is for 0.13.0.2 release.
-# For newer releases, seehttps://getmonero.org/downloads/#linux
-echo "a59fc0fffb325b4f92a5b500438bf340ddbf78e91581eb4df95ad2d5e5fb42a8 /tmp/monero.tar.bz2" | sha256sum -c
+# Verify checksum. This is for 0.14.0.0 release.
+# For newer releases, see https://getmonero.org/downloads/#linux
+echo "1e67163de7a924d65f30da251932ab31fdbccf8042d5e04ef63041709eec7854 /tmp/monero.tar.bz2" | sha256sum -c
 
 # Extract to /usr/local/bin, omitting directories
 tar -xf /tmp/monero.tar.bz2 -C /usr/local/bin --strip 2
 rm /tmp/monero.tar.bz2
 
 monerod --version
-# => Monero 'Lithium Luna' (v0.12.0.0-master-release)
+# => Monero 'Boron Butterfly' (v0.14.0.0-release)
 
 # create a dedicated user to run monero daemon and wallet
 sudo adduser monero
@@ -89,7 +89,7 @@ According to the example below, the **Wallet URL** would be
 `https://example.com:18082/json_rpc`. You can host several view-only
 wallets using the same nginx instance. Each wallet will need its own
 `monero-wallet-rpc` instance running on an individual port. Point
-the `proxy_pass` to the corresponding local port of the wallet and 
+the `proxy_pass` to the corresponding local port of the wallet and
 adjust the `location` parameter accordingly.
 
 See below for **Username** and **Password** settings.
@@ -143,7 +143,7 @@ Currently only HTTP Basic Authentication is supported. Since HTTPS is required, 
 Using apache2-utils, create a password file in `/etc/nginx/.htpasswd`.
 This file is referenced in the nginx configuration above. If several
 wallets are configured, it most likely makes sense to use a password
-file for each `location` configuration.  
+file for each `location` configuration.
 `user1` can be any username, this and the password entered must be
 adjusted in the Kasisto settings.
 
