@@ -171,6 +171,7 @@ describe('processPayment', () => {
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               fiatCurrency: 'EUR',
+              state: 'CREATED',
               createdAt: creationTime,
               updatedAt: creationTime
             }
@@ -183,7 +184,8 @@ describe('processPayment', () => {
               integratedAddress: 'A3Brqw9sVmwLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMVqg62UVmnbzRji2SB9',
               paymentId: '6b1887e13bbd81db',
               height: 1057120,
-              rate: 315.84800377
+              rate: 315.84800377,
+              state: 'NETWORK_INPUT'
             }
           })
           .put({
@@ -192,14 +194,15 @@ describe('processPayment', () => {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               requestedAmount: '49.95',
               convertedAmount: '0.158145688444',
-              receipt: 'Receipt #12'
+              state: 'SELLER_INPUT'
             }
           })
           .put({
             type: types.UPDATE_PAYMENT,
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
-              uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.158145688444&recipient_name=Barolo%20Beach%20Cafe&tx_description=Receipt%20%2312'
+              uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.158145688444&recipient_name=Barolo%20Beach%20Cafe&tx_description=Receipt%20%2312',
+              tip: null
             }
           })
           .put({
@@ -207,14 +210,15 @@ describe('processPayment', () => {
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
               uri: 'monero:9sVBq8LNtWRLyWS8EWeUw1VqpqfwnDHTkG7Pb4NJ3RmZWeeMZhGMe2ZXz4bSk7BbtEYF5981nLxkDYQ6B46tX5DMLRHQFh6?tx_payment_id=6b1887e13bbd81db&tx_amount=0.173960257288&recipient_name=Barolo%20Beach%20Cafe&tx_description=Receipt%20%2312',
-              tip: 0.015814568844
+              tip: '0.015814568844'
             }
           })
           .put({
             type: types.UPDATE_PAYMENT,
             payload: {
               id: 'a2f8d724-5c7a-43e9-bbac-b0295b059e82',
-              receivedAmount: '0.158145688444'
+              receivedAmount: '0.158145688444',
+              state: 'PAYMENT_RECEIVED'
             }
           })
           .dispatch(setAmount('49.95', 'Receipt #12'))
